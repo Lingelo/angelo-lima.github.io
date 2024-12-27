@@ -249,6 +249,8 @@ footer-hover-col: "#0085A1"
 
 # Ruby Date Format to show dates of posts
 date_format: "%d %B %Y"
+languages: ["fr"]
+defaultLang: fr
 
 # Facebook App ID
 #fb_app_id: ""
