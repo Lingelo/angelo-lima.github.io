@@ -251,6 +251,7 @@ commentbox: "5650063258812416-proj" # Project ID, e.g. "5694267682979840-proj"
 date_format: "%d %B %Y"
 languages: ["fr"]
 defaultLang: fr
+locale : "fr-FR"
 
 # Facebook App ID
 #fb_app_id: ""
