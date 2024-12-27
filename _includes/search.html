@@ -3,15 +3,15 @@
 <div id="beautifuljekyll-search-overlay">
 
   <div id="nav-search-exit" title="Exit search">✕</div>
-  <input type="text" id="nav-search-input" placeholder="Search">
+  <input type="text" id="nav-search-input" placeholder="Rechercher un article">
   <ul id="search-results-container"></ul>
-  
+
   <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
   <script>
     SimpleJekyllSearch({
       searchInput: document.getElementById('nav-search-input'),
       resultsContainer: document.getElementById('search-results-container'),
-      json: '{{ site.baseurl }}/assets/data/searchcorpus.json' 
+      json: '{{ site.baseurl }}/assets/data/searchcorpus.json'
     });
   </script>
 </div>
