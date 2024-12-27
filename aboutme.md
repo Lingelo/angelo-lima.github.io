@@ -1,16 +1,18 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: À propos de moi
+subtitle: Entre lignes de code et sorts de développeur 🧙‍♂️💻
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Salut ! Moi, c'est **Angelo Lima**, un Franco-Portugais de la génération Millennials (🤘), passionné par tout ce qui touche à la **tech**, au **code** et à la **culture geek**. Développeur depuis 2023, après trois années d'apprentissage intensif (les longues nuits avec un SDK et beaucoup de café, ça vous parle ?), je jongle aujourd'hui entre projets numériques et explorations curieuses des merveilles du web.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+Sur ce blog, tu trouveras un joyeux mélange de **tout et n'importe quoi** :  
+- De l'**informatique**, forcément (parce que c'est mon quotidien)  
+- Des réflexions un peu **nerdy**  
+- Des astuces pratiques  
+- Et mes coups de cœur **geek**  
 
-What else do you need?
+Ici, on parle passions, découvertes et parfois même des trucs absurdes qui méritent d'être partagés 🌌. Bref, c'est un espace qui me ressemble, **sans prise de tête**, et j'espère que ça te plaira !
 
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Alors bienvenue dans mon univers, et si t'as des idées, des suggestions ou juste envie de discuter… les **commentaires** sont là pour ça 💬.  
+C'est parti pour l'aventure ! 🚀
