@@ -4,7 +4,7 @@ title: À propos de moi
 subtitle: Entre lignes de code et sorts de développeur 🧙‍♂️💻
 ---
 
-Salut ! Moi, c'est **Angelo Lima**, un Franco-Portugais de la génération Millennials (🤘), passionné par tout ce qui touche à la **tech**, au **code** et à la **culture geek**. Développeur depuis 2023, après trois années d'apprentissage intensif (les longues nuits avec un SDK et beaucoup de café, ça vous parle ?), je jongle aujourd'hui entre projets numériques et explorations curieuses des merveilles du web.
+Salut ! Moi, c'est **Angelo Lima**, un Franco-Portugais de la génération Millennials (🤘), passionné par tout ce qui touche à la **tech**, au **code** et à la **culture geek**. Développeur depuis 2013, après trois années d'apprentissage intensif (les longues nuits avec un SDK et beaucoup de café, ça vous parle ?), je jongle aujourd'hui entre projets numériques et explorations curieuses des merveilles du web.
 
 Sur ce blog, tu trouveras un joyeux mélange de **tout et n'importe quoi** :  
 - De l'**informatique**, forcément (parce que c'est mon quotidien)  
