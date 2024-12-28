@@ -83,7 +83,15 @@ Un autre point fort réside dans la possibilité de déployer un **microservice 
 
 <h3>Guide video d'intégration d'un microservice NVIDIA NIM  🎥</h3>
 
-<iframe width="1195" height="672" src="https://www.youtube.com/embed/087spL8hMvM" title="How to Deploy NVIDIA NIM in 5 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+src="https://www.youtube.com/embed/087spL8hMvM"
+title="How to Deploy NVIDIA NIM in 5 Minutes"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen
+style="width: 100%; height: auto; aspect-ratio: 16/9; border: none;">
+</iframe>
 
 ---
 
