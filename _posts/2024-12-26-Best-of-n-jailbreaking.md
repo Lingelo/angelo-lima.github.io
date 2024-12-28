@@ -5,7 +5,7 @@ subtitle: "Comprendre comment cette méthode exploitant les variations de prompt
 cover-img: /assets/img/bon-llm.png
 share-img: /assets/img/bon-llm.png
 tags: [IA, llm]
-author: [Ton Nom ou Pseudo]
+author: [Angelo Lima]
 ---
 
 # Best-of-N Jailbreaking : Quand les IA trébuchent sous une avalanche de prompts 🎯🤖
