@@ -28,16 +28,12 @@ Concrètement, NIM fonctionne comme une **interface pratique**, directement int�
 
 ## Jensen Huang et la vision d’une IA « localisée »
 
-
-
 Pour comprendre le coup de génie derrière NIM, on peut faire un petit détour par la vision de **Jensen Huang**, le CEO de NVIDIA. Son objectif ? Offrir aux développeurs et entreprises une **puissance de calcul flexible** et abordable pour surfer sur la vague des innovations en IA.
 
 ### Une architecture hybride, le meilleur des deux mondes
 
 <div align="center">
-
-![Jensen Huang, photographie : Nvidia.](/assets/img/jensen-huang.png)
-
+  <img src="/assets/img/jensen-huang.png" alt="Jensen Huang, photographie : Nvidia." />
 </div>
 
 Au lieu d’une centralisation stricte autour des infrastructures cloud traditionnelles, Huang imagine un futur dans lequel les capacités des LLM seraient **aussi accessibles localement que dans le cloud**. Ce modèle hybride permettrait non seulement de s’affranchir d’une dépendance totale à des services distants (et souvent coûteux), mais aussi de rapprocher l’IA des besoins spécifiques des utilisateurs et des entreprises. Une sorte de démocratisation du GPU computing, mais avec une couche d'intelligence supplémentaire.
@@ -87,7 +83,8 @@ Un autre point fort réside dans la possibilité de déployer un **microservice 
 
 <h3>Guide video d'intégration d'un microservice NVIDIA NIM  🎥</h3>
 
-<iframe width="560" height="315" src="https://youtu.be/087spL8hMvM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1195" height="672" src="https://www.youtube.com/embed/087spL8hMvM" title="How to Deploy NVIDIA NIM in 5 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ## **Ce que cela signifie (et pourquoi c’est cool pour toi)**
