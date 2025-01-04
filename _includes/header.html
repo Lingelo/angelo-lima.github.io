@@ -1,4 +1,4 @@
-{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+{% assign date_format = site.date_format | default: "%d %m %Y" %}
 
 {% if page.cover-img %}
   <div id="header-big-imgs" data-num-img={% if page.cover-img.first %}{{ page.cover-img.size }}{% else %}1{% endif %}
@@ -32,16 +32,16 @@
               <h2 class="{{ include.type }}-subheading">{{ page.subtitle | strip_html }}</h2>
             {% endif %}
           {% endif %}
-          
-          {% if include.type == "post" %} 
+
+          {% if include.type == "post" %}
             {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
+              Par <strong>{{ page.author | strip_html }}</strong><br>
             {% endif%}
-            <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
+            <span class="post-meta">Posté le {{ page.date | date: date_format }}</span>
             {% if page.last-updated %}
               <span class="post-meta">
                 <span class="d-none d-md-inline middot">&middot;</span>
-                Last updated {{ page.last-updated | date: date_format }}
+                Mis à jour le {{ page.last-updated | date: date_format }}
               </span>
             {% endif %}
             {% if page.readtime %}
