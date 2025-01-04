@@ -50,7 +50,7 @@ layout: page
         <span>Par <strong>{{ post.author | strip_html }}</strong></span>
       {% endif %}
       <p class="post-meta">
-        {% assign date_format = site.date_format | default: "%d %m %Y" %}
+        {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
         Posté le {{ post.date | date: date_format }}
       </p>
 
