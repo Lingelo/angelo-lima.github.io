@@ -143,7 +143,19 @@ Ce format est non seulement uniforme, mais aussi facilement exploitable par d’
 
 ---
 
-### Un outil fait par des développeurs pour ceux qui veulent l'utiliser 🛠️✨
+### Créez vos propres templates 🎨
+
+Si les modèles existants ne vous suffisent pas, vous pouvez **créer votre propre template**. JSON Resume utilise des technologies standard comme **HTML**, **CSS**, et **JavaScript** (utilisation de la lib **[Handlebars](https://handlebarsjs.com/)**) pour personnaliser l'apparence de votre CV. 
+
+1. **Téléchargez un template existant** pour l'explorer, ou partez de zéro.
+2. **Modifiez la structure** pour qu'elle corresponde à vos besoins.
+3. **Testez votre modèle** à l'aide de l'outil CLI avec cette commande :
+
+   ```bash
+   resume export my-cv.html --theme your-template
+   ```
+
+## Un outil fait par des développeurs pour ceux qui veulent l'utiliser 🛠️✨
 
 JSON Resume va bien au-delà de la simple rédaction. 💡 Ce format structuré rend la maintenance de votre CV beaucoup plus simple et rapide. Plus besoin de tout reprendre à zéro à chaque mise à jour ou modification : adaptez et générez facilement différentes versions selon vos besoins. 🖥️⚡
 
