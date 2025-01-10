@@ -143,10 +143,8 @@ Ce format est non seulement uniforme, mais aussi facilement exploitable par d’
 
 ---
 
-### Un outil adapté à vos ambitions
+### Un outil fait par des développeurs pour ceux qui veulent l'utiliser 🛠️✨
 
-**Un outil adapté à vos ambitions**  
-JSON Resume n’est pas seulement une nouvelle manière de rédiger un CV. C’est une approche qui correspond aux besoins des développeurs modernes qui aiment automatiser, réutiliser et avoir un contrôle total sur leurs outils.
+JSON Resume va bien au-delà de la simple rédaction. 💡 Ce format structuré rend la maintenance de votre CV beaucoup plus simple et rapide. Plus besoin de tout reprendre à zéro à chaque mise à jour ou modification : adaptez et générez facilement différentes versions selon vos besoins. 🖥️⚡
 
-Alors, prêt à franchir le pas vers un CV plus agile, plus esthétique et plus performant ? Que pensez-vous du concept ? Vous vous imaginez l’utiliser pour vos prochaines candidatures ? Partagez vos impressions ! 💬
-
+Prêt à adopter un format plus efficace, plus personnalisable et mieux adapté à vos ambitions professionnelles ? 🚀 Que pensez-vous de ce concept ? Envisagez-vous de l’utiliser pour vos futures candidatures ? Partagez vos retours ! 💬  
