@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "JSON Resume : Le CV aussi pratique qu’une API pour les développeurs 🛠️"
+title: "JSON Resume : Transformez votre CV comme un développeur 🚀"
 subtitle: "Un format open source élégant et flexible pour gérer votre carrière"
 cover-img: /assets/img/json-resume.png
 share-img: /assets/img/json-resume.png
 tags: [JSON, développeur, outils]
 author: Angelo Lima
 ---
-# JSON Resume : Le CV aussi pratique qu’une API pour les développeurs 🛠️
+# JSON Resume : Transformez votre CV comme un développeur 🚀
 
 Créer un CV peut vite devenir un casse-tête. Entre les outils limités, les mises en page qui ne tiennent pas la route et les heures passées à ajuster des marges, on aimerait parfois une solution plus simple et plus efficace, surtout quand on est développeur et qu’on aime les outils pratiques. Si vous vous reconnaissez là-dedans, laissez-moi vous présenter **JSON Resume** — une manière moderne, ouverte et flexible de gérer votre CV.
 
