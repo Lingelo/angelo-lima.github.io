@@ -8,6 +8,7 @@
 
     if (dataIdentifier.startsWith("/")) {
         dataIdentifier = dataIdentifier.substring(1);
+        dataIdentifier = dataIdentifier.replace("/", "");
     }
 
     const lyketDiv = document.querySelector('[data-lyket-id]');
