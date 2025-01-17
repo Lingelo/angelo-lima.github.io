@@ -1,40 +1,20 @@
-<div style="display: flex; align-items: center; width: 100%; padding: 10px;">
-    <span></span>
-    <span class="likebtn-wrapper"
-          data-theme="custom"
-          data-btn_size="25"
-          data-f_size="14"
-          data-icon_size="17"
-          data-icon_l="hrt6"
-          data-lang="fr"
-          data-ef_voting="heartbeat"
-          data-identifier=""
-          data-dislike_enabled="false"
-          data-icon_dislike_show="false"></span>
-</div>
+<div data-lyket-type="like" data-lyket-id=""></div>
+
+<script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_fdb2ce3fc432acf37c4edb0a385249"></script>
 
 <script>
-    (function(d, e, s) {
-        // Mettre à jour dynamiquement data-identifier avec la partie de l'URL après le domaine
-        const currentURL = window.location.href;
-        const urlAfterDomain = new URL(currentURL).pathname + new URL(currentURL).search;
+    const currentURL = window.location.href;
 
-        // Optionnel : retirer le slash initial
-        const dataIdentifier = urlAfterDomain.startsWith("/") ? urlAfterDomain.substring(1) : urlAfterDomain;
+    const urlObject = new URL(currentURL);
 
-        // Sélectionner l'élément LikeBtn et mettre à jour son data-identifier
-        const likeBtnWrapper = d.querySelector('.likebtn-wrapper');
-        if (likeBtnWrapper) {
-            likeBtnWrapper.setAttribute('data-identifier', dataIdentifier);
-        }
+    let dataIdentifier = urlObject.pathname + urlObject.search;
 
-        // Charger le script LikeBtn
-        if (d.getElementById("likebtn_wjs")) return;
-        const a = d.createElement(e);
-        const m = d.getElementsByTagName(e)[0];
-        a.async = 1;
-        a.id = "likebtn_wjs";
-        a.src = s;
-        m.parentNode.insertBefore(a, m);
-    })(document, "script", "//w.likebtn.com/js/w/widget.js");
+    if (dataIdentifier.startsWith("/")) {
+        dataIdentifier = dataIdentifier.substring(1);
+    }
+
+    const lyketDiv = document.querySelector('[data-lyket-id]');
+    if (lyketDiv) {
+        lyketDiv.setAttribute('data-lyket-id', dataIdentifier);
+    }
 </script>
