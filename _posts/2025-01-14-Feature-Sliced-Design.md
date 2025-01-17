@@ -128,23 +128,9 @@ Pour bien comprendre cette architecture, un schéma est souvent utile. Voici que
 
 Pense aux différentes couches comme une pyramide inversée où chaque couche dépend strictement de celles en dessous.
 
-```plaintext
-[ App Layer ]
-    |
-[ Process Layer ]
-    |
-[ Page Layer ]
-  --> CartPage
-    |
-[ Features Layer ]
-  --> cart/
-    |
-[ Entities Layer ]
-  --> product/, user/
-    |
-[ Shared Layer ]
-  --> utils/, Button/, Modal/
-```
+<div align="center">
+  <img src="/assets/img/FSD.png" alt="Feature-Sliced Design couches" />
+</div>
 
 ---
 
