@@ -15,7 +15,7 @@ title: "Blog"
 # Your name to show in the footer
 author: Angélo LIMA
 
-description: Site internet d'Angélo LIMA, parle de tech, code, geek
+description: Bienvenue sur le blog d'Angelo Lima ! Passionné par le développement web et la programmation, je partage mes astuces, tutoriels, et réflexions autour de la création web moderne, pour les développeurs et curieux de la tech.
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -87,7 +87,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-#rss-description: This website is a virtual proof that I'm awesome
+rss-description: Feed RSS angelo-lima.fr
 
 ###########################
 # --- General options --- #
@@ -95,8 +95,8 @@ social-network-links:
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: false
-  facebook: false
+  twitter: true
+  facebook: true
   linkedin: true
   vk: false
 
@@ -128,7 +128,7 @@ edit_page_button: false
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "IA,Angélo LIMA, développement"
+keywords: "Angelo Lima, blog développement web, blog tech, développeur web full stack, programmation web, tutoriels développement, création de blogs, technologies web modernes, HTML, CSS, JavaScript, apprendre le développement web, conception web, développement front-end, développement back-end, astuces de code, solutions web, Angelo Lima blog personnel, parcours de développeur, blogueur tech, blog web design, innovation digitale, actualités tech, blog de développeur en France, partager ses connaissances en programmation, outils pour développeurs web, bonnes pratiques web, langage JavaScript, blog pour développeurs, ressources pour développeurs débutants, apprendre le code, ressources pour web design, blog professionnel"
 
 ######################################
 # --- Colours / background image --- #
@@ -203,7 +203,7 @@ gtag: "G-EQK9L2XD8X"
 #fb_comment_id: ""
 
 # To use CommentBox, sign up for a Project ID on https://commentbox.io
-commentbox: "5650063258812416-proj" # Project ID, e.g. "5694267682979840-proj"
+#commentbox: "5650063258812416-proj" # Project ID, e.g. "5694267682979840-proj"
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
@@ -282,7 +282,7 @@ defaults:
       lang: "fr"
       date_format: "%d/%m/%Y"
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: false  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
   -
     scope:
