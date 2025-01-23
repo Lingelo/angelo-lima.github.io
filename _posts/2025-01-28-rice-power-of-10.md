@@ -76,35 +76,118 @@ Pour les curieux, vous pouvez consulter le document officiel :
 ### Les 10 règles de la NASA, adaptées au web 🌐🚀
 
 #### 1. **Simplifie ton code autant que possible**
-- Documentation recommandée : [Clean Code Principles par Uncle Bob](https://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
-- Architecture : Privilégiez des frameworks modernes qui favorisent des "design patterns" simples et efficaces (ex. [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxt.com/)).
+
+- Privilégiez la **clarté et la lisibilité** à la complexité ou aux "hacks" malins.
+- Introduisez une architecture moderne et bien définie comme **MVC**, **Clean Architecture** ou **Flux**.
+- Évitez de surcharger vos projets avec trop de dépendances. Utilisez uniquement les bibliothèques et frameworks essentiels.
+
+**Exemple Web :**
+- Utilisez des frameworks comme [Next.js](https://nextjs.org/) ou [Nuxt.js](https://nuxt.com/) pour des projets structurés.
+- Réduisez la complexité des requêtes API en centralisant les appels dans des fichiers ou services dédiés.
+
+📚 **Ressources :**
+- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
 
 #### 2. **Travaillez avec des limites définies**
-- Bibliothèques à explorer : [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod), [AJV](https://ajv.js.org/).
 
-#### 3. **Maîtrisez l'allocation mémoire**
-- Explorez l’optimisation mémoire dans React avec des [patterns pour `useEffect`](https://react.dev/learn/using-the-effect-hook).
+- Les applications web doivent garantir que les **données utilisateur** et les **entrées** respectent des limites claires.
+- Implémentez des **plafonds** pour éviter les dépassements, tels que les limites de taille pour les fichiers téléversés ou les limites de pagination.
+
+**Exemple Web :**
+- Utilisez des bibliothèques de validation d’entrée (comme [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod) ou [AJV](https://ajv.js.org/)) pour gérer des formulaires côté client et serveur.
+
+📚 **Ressources :**
+- [Validation avec Yup](https://formik.org/docs/guides/validation)
+
+#### 3. **Maîtrisez l’allocation mémoire**
+
+- En développement web, une mauvaise gestion des ressources peut rapidement entraîner de graves conséquences comme des **fuites mémoire** ou des applications qui plantent.
+- Assurez une gestion stricte de **l’allocation dynamique** des ressources mémoire, surtout dans des environnements réactifs comme React ou Vue.js.
+
+**Exemple Web :**
+- En **React**, nettoyez vos listeners ou timers résiduels à l’aide de `useEffect` pour éviter les fuites mémoire.
+
+📚 **Ressources :**
+- [Gérer efficacement les effets en React](https://react.dev/learn/using-the-effect-hook)
 
 #### 4. **Évitez la récursivité profonde**
-- Apprenez la différence entre récursivité et itération dans [Recursion in JavaScript](https://www.freecodecamp.org/news/recursion-in-javascript-e5a274814a59/).
 
-#### 5. **Contrôlez les boucles**
-- Découvrez l’art de rationaliser vos boucles dans [Reducing Loops Effectively](https://betterprogramming.pub/how-to-prevent-bad-for-loops-in-javascript-1e22b03fad3e).
+- Préférez les solutions **itératives** aux appels récursifs qui deviennent difficiles à déboguer en cas de boucle infinie.
+- La récursivité peut causer un dépassement de la pile ou une consommation excessive de mémoire.
+
+**Exemple Web :**
+- Convertissez une fonction récursive en une boucle avec des structures comme `while` ou `for`.
+
+📚 **Ressources :**
+- [Récursivité vs Itération en JavaScript](https://www.freecodecamp.org/news/recursion-in-javascript-e5a274814a59/)
+
+#### 5. **Contrôlez la complexité des boucles**
+
+- Les boucles imbriquées ou sans fin alourdissent le code et peuvent nuire à la performance globale.
+- Réduisez la complexité des boucles en limitant leur profondeur et en intégrant des conditions de sortie explicites.
+
+**Exemple Web :**
+- Paginer les résultats d’un appel API ou utiliser des traitements par lots pour manipuler des données massives.
+
+📚 **Ressources :**
+- [Comment optimiser les boucles en JavaScript](https://betterprogramming.pub/how-to-prevent-bad-for-loops-in-javascript-1e22b03fad3e)
 
 #### 6. **Une tâche unique par module ou composant**
-- Suivez le principe SRP (Single Responsibility Principle) pour des composants React ou Vue.js en lisant [Design Principles Explained Simply](https://medium.com/swlh/design-principles-explained-single-responsibility-principle-dea6b95f65df).
+
+- Respectez le **Single Responsibility Principle** (SRP) : un composant ou une fonction doit s’occuper d’une seule tâche.
+- Décomposez vos composants React/Vue pour distinguer la logique d’état, l’affichage, ou les appels API.
+
+**Exemple Web :**
+- En React, créez des hooks personnalisés (`useCustomHook`) pour isoler la logique métier du composant visuel.
+
+📚 **Ressources :**
+- [Design Principles Explained Simply: Single Responsibility Principle](https://medium.com/swlh/design-principles-explained-single-responsibility-principle-dea6b95f65df)
 
 #### 7. **Réduisez l'accès global**
-- Examinez des alternatives comme [Redux](https://redux.js.org/), [Zustand](https://github.com/pmndrs/zustand) ou [Context API](https://react.dev/learn/passing-data-deeply-with-context).
 
-#### 8. **Gérez bien l'asynchronisme**
-- Explorez des mécanismes comme Axios et des systèmes Retry dans [Axios Retry](https://axios-http.com/docs/interceptors).
+- Réduisez la dépendance aux **variables globales** qui rendent le comportement du code difficile à prédire.
+- Gérez les états partagés de façon centralisée avec des bibliothèques d’état comme **Redux**, **Zustand**, ou **Context API**.
+
+**Exemple Web :**
+- Utilisez des variables d’environnement sécurisées (.env) pour stocker vos secrets et API keys.
+
+📚 **Ressources :**
+- [Guide de Redux pour les débutants](https://redux.js.org/basics/basic-tutorial)
+- [Documentation officielle de Zustand](https://zustand-demo.pmnd.rs/)
+
+#### 8. **Gérez bien l’asynchronisme**
+
+- Protégez vos appels asynchrones contre les erreurs grâce à des blocs `try/catch` ou `.catch()` sur vos Promises.
+- Implémentez des systèmes de **retry** pour des tâches critiques lancées via des API ou des traitements asynchrones.
+
+**Exemple Web :**
+- Ajoutez des **Interceptors** pour gérer automatiquement les erreurs dans vos requêtes Axios.
+
+📚 **Ressources :**
+- [Axios Interceptors Documentation](https://axios-http.com/docs/interceptors)
 
 #### 9. **Testez tout systématiquement**
-- Découvrez les bases des tests unitaires avec [Jest](https://jestjs.io/) et des tests end-to-end avec [Cypress](https://www.cypress.io/).
 
-#### 10. **Faites de la sécurité une priorité**
-- Renforcez vos backends grâce à des middlewares comme [Helmet](https://helmetjs.github.io/).
+- Rédigez des tests unitaires, d’intégration et de bout-en-bout pour protéger les fonctionnalités critiques.
+- Utilisez des frameworks comme [Jest](https://jestjs.io/) pour les tests unitaires et [Cypress](https://www.cypress.io/) pour les workflows utilisateurs.
+
+**Exemple Web :**
+- Testez un formulaire de connexion : assurez-vous que les erreurs sont affichées en cas de soumission invalide et que l’utilisateur est redirigé après un succès.
+
+📚 **Ressources :**
+- [Guide des tests end-to-end avec Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+
+#### 10. **La sécurité est une priorité**
+
+- Validez toutes les **données entrants**, que ce soit via des requêtes API, fichiers téléversés, ou formulaires utilisateur.
+- Ajoutez des protections côté serveur avec des middlewares comme [Helmet](https://helmetjs.github.io/) pour renforcer les headers HTTP.
+
+**Exemple Web :**
+- Utilisez des bibliothèques comme Helmet.js pour limiter l’exposition à des attaques **XSS**, **CSRF**, ou **Clickjacking**.
+
+📚 **Ressources :**
+- [Helmet.js - Documentation](https://helmetjs.github.io/)
+
 
 ---
 
