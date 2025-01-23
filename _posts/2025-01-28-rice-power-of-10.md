@@ -103,6 +103,7 @@ Le Power of 10 repose sur une philosophie simple : **Réduire la complexité au 
 - [“The Power of 10 – Rules for Developing Safety-Critical Code”](https://shemesh.larc.nasa.gov/people/hill/pow10.pdf)
 - [NASA Coding Standards](https://ntrs.nasa.gov/citations/20080039948)
 - [Video "Comment la NASA code sans bug" de V2F](https://www.youtube.com/watch?v=wTZcGN4N334)
+
 ---
 
 ## Alors, parfait ou humain ?
