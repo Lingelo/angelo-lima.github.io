@@ -2,8 +2,8 @@
 layout: post
 title: "Comprendre le théorème de Rice et le Power of 10 pour un web de qualité 🚀"
 subtitle: "Entre limitations théoriques et pratiques minimalistes, créez des applications web robustes"
-cover-img: /assets/img/rice-web.png
-share-img: /assets/img/rice-web.png
+cover-img: /assets/img/rice-nasa.png
+share-img: /assets/img/rice-nasa.png
 tags: [Théorie, Calculabilité, Développement Web, Qualité Logicielle, Architecture]
 author: "Angelo LIMA"
 ---
@@ -39,13 +39,17 @@ Traduisons cela en quelque chose de plus digeste. Imaginons que vous essayez de 
 
 Pourquoi ? Parce que toute analyse concernant l’exécution d’un code (c’est-à-dire comment ce programme se comporte concrètement quand il tourne) repose sur le **problème de l’arrêt**, qui est lui-même indécidable. Décider mécaniquement si un programme donné va toujours fonctionner correctement est donc une tâche théoriquement impossible.
 
+Pour en savoir plus :
+- [Théorème de Rice sur Wikipédia](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice)
+- [Le problème de l’arrêt sur Wikipédia](https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_l%27arr%C3%AAt)
+
 ---
 
 ### Pourquoi ça nous concerne, développeurs web 💻
 
 Les implications de ce théorème sont importantes même dans nos projets web du quotidien. Par exemple :
-- **Tests automatiques et outils d’analyse statique** : Des outils comme ESLint, SonarQube, ou TypeScript ne peuvent détecter que certaines classes de problèmes bien définies, mais ils ne peuvent garantir à 100 % qu'une base de code est exempte de défauts.
-- **Tests unitaires et d'intégration** : Même avec d'excellentes pratiques de test, il est impossible de couvrir toutes les combinaisons possibles d'exécutions.
+- **Tests automatiques et outils d’analyse statique** : Des outils comme [ESLint](https://eslint.org/), [SonarQube](https://www.sonarsource.com/products/sonarqube/), ou [TypeScript](https://www.typescriptlang.org/) ne peuvent détecter que certaines classes de problèmes bien définies, mais ils ne peuvent garantir à 100 % qu'une base de code est exempte de défauts.
+- **Tests unitaires et d'intégration** : Même avec d'excellentes pratiques de test avec des outils comme [Jest](https://jestjs.io/) ou [Cypress](https://www.cypress.io/), il est impossible de couvrir toutes les combinaisons possibles d'exécutions.
 
 Cela signifie qu'il **est inutile de chercher la perfection automatisée** dans vos tests et analyses. Au lieu de cela, vous pouvez combiner :
 - **Des outils d’analyse** pour détecter les erreurs évidentes.
@@ -64,55 +68,43 @@ La NASA, en lançant des missions critiques dans les années 1980, s’est rendu
 
 Ces règles visent à minimiser la complexité du code, maximiser la lisibilité, et éliminer au maximum les risques imprévisibles. Bien qu'elles aient été pensées pour des systèmes embarqués critiques, ces règles s’appliquent parfaitement à nos projets de développement web.
 
+Pour les curieux, vous pouvez consulter le document officiel :
+- [The Power of 10 – Rules for Developing Safety-Critical Code (NASA)](https://en.wikipedia.org/wiki/The_Power_of_10:_Rules_for_Developing_Safety-Critical_Code).
+
 ---
 
 ### Les 10 règles de la NASA, adaptées au web 🌐🚀
 
 #### 1. **Simplifie ton code autant que possible**
-- Architecture : Privilégiez des approches claires comme MVC ou des frameworks modernes qui favorisent les "patterns propres" (ex. Next.js, Nuxt.js).
-- Code : Évitez les solutions "astucieuses" difficiles à maintenir.
+- Documentation recommandée : [Clean Code Principles par Uncle Bob](https://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+- Architecture : Privilégiez des frameworks modernes qui favorisent des "design patterns" simples et efficaces (ex. [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxt.com/)).
 
 #### 2. **Travaillez avec des limites définies**
-- Ne faites jamais confiance aux données utilisateur : Validez-les systématiquement avec des bibliothèques comme `Yup`, `Zod`, ou `AJV`.
-- Implémentez des maximums pour les tailles de fichiers ou limites de pagination.
+- Bibliothèques à explorer : [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod), [AJV](https://ajv.js.org/).
 
 #### 3. **Maîtrisez l'allocation mémoire**
-- Côté serveur : Configurez des quotas pour empêcher des fuites mémoires (ex. file upload).
-- Côté front : Nettoyez les éventements ou effets `React` correctement (`useEffect`).
+- Explorez l’optimisation mémoire dans React avec des [patterns pour `useEffect`](https://react.dev/learn/using-the-effect-hook).
 
 #### 4. **Évitez la récursivité profonde**
-- Remplacez les fonctions récursives par des structures itératives (`for`, `while`).
-- Imitez des systèmes de "queue" dans vos opérateurs (`Promise.all`) quand nécessaire.
+- Apprenez la différence entre récursivité et itération dans [Recursion in JavaScript](https://www.freecodecamp.org/news/recursion-in-javascript-e5a274814a59/).
 
 #### 5. **Contrôlez les boucles**
-- Les boucles excédentaires compliquent la lisibilité : Fractionnez-les autant que possible.
-- Utilisez des limites explicites pour éviter les surcharges.
+- Découvrez l’art de rationaliser vos boucles dans [Reducing Loops Effectively](https://betterprogramming.pub/how-to-prevent-bad-for-loops-in-javascript-1e22b03fad3e).
 
 #### 6. **Une tâche unique par module ou composant**
-- Le principe SRP (Single Responsibility Principle) : Une fonction, un composant doit faire **une seule chose et bien**.
-- Découpez vos composants React ou Vue.js pour gérer séparément logique d’état, UI, etc.
+- Suivez le principe SRP (Single Responsibility Principle) pour des composants React ou Vue.js en lisant [Design Principles Explained Simply](https://medium.com/swlh/design-principles-explained-single-responsibility-principle-dea6b95f65df).
 
 #### 7. **Réduisez l'accès global**
-- Privilégiez les bibliothèques comme Redux, Zustand ou Context API pour gérer vos états de manière prévisible et centralisée.
-- Évitez de manipuler directement des variables globales dans le navigateur.
+- Examinez des alternatives comme [Redux](https://redux.js.org/), [Zustand](https://github.com/pmndrs/zustand) ou [Context API](https://react.dev/learn/passing-data-deeply-with-context).
 
 #### 8. **Gérez bien l'asynchronisme**
-- Protégez vos `Promise` avec des gestionnaires d'erreurs (`.catch`).
-- Implémentez des mécanismes de "retry" pour éviter des échecs dus à des erreurs réseau (ex : Axios Interceptors).
+- Explorez des mécanismes comme Axios et des systèmes Retry dans [Axios Retry](https://axios-http.com/docs/interceptors).
 
 #### 9. **Testez tout systématiquement**
-- Adoptez des outils comme Jest ou Cypress pour les tests automatisés.
-- Priorisez les scénarios critiques : Authentification, paiements, etc.
+- Découvrez les bases des tests unitaires avec [Jest](https://jestjs.io/) et des tests end-to-end avec [Cypress](https://www.cypress.io/).
 
 #### 10. **Faites de la sécurité une priorité**
-- Ajoutez des middlewares au backend pour valider les entrées (Helmet, CSRF).
-- Limitez l'exposition d'informations sensibles (token, session).
-
----
-
-### Pourquoi ça fonctionne ? 🤔
-
-Le Power of 10 impose une discipline stricte : **chaque ligne de code a une raison d’être et doit être la plus simple possible.** Résultat ? Moins de bugs, des corrections plus rapides, et des projets à long terme plus faciles à maintenir.
+- Renforcez vos backends grâce à des middlewares comme [Helmet](https://helmetjs.github.io/).
 
 ---
 
