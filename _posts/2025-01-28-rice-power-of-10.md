@@ -82,7 +82,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Évitez de surcharger vos projets avec trop de dépendances. Utilisez uniquement les bibliothèques et frameworks essentiels.
 
 **Exemple Web :**
-- Utilisez des frameworks comme [Next.js](https://nextjs.org/) ou [Nuxt.js](https://nuxt.com/) pour des projets structurés.
+- Utilisez des frameworks comme [Nest.js](https://nestjs.com/) ou [Nuxt.js](https://nuxt.com/) pour des projets structurés.
 - Réduisez la complexité des requêtes API en centralisant les appels dans des fichiers ou services dédiés.
 
 📚 **Ressources :**
@@ -97,7 +97,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Utilisez des bibliothèques de validation d’entrée (comme [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod) ou [AJV](https://ajv.js.org/)) pour gérer des formulaires côté client et serveur.
 
 📚 **Ressources :**
-- [Validation avec Yup](https://formik.org/docs/guides/validation)
+- [Validation avec Zod](https://zod.dev/ERROR_HANDLING?id=a-working-example)
 
 #### 3. **Maîtrisez l’allocation mémoire**
 
@@ -108,7 +108,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - En **React**, nettoyez vos listeners ou timers résiduels à l’aide de `useEffect` pour éviter les fuites mémoire.
 
 📚 **Ressources :**
-- [Gérer efficacement les effets en React](https://react.dev/learn/using-the-effect-hook)
+- [Gérer efficacement les effets en React](https://legacy.reactjs.org/docs/hooks-effect.html)
 
 #### 4. **Évitez la récursivité profonde**
 
@@ -119,7 +119,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Convertissez une fonction récursive en une boucle avec des structures comme `while` ou `for`.
 
 📚 **Ressources :**
-- [Récursivité vs Itération en JavaScript](https://www.freecodecamp.org/news/recursion-in-javascript-e5a274814a59/)
+- [Récursivité vs Itération en JavaScript](https://dev.to/thawkin3/recursion-vs-loops-in-javascript-14em)
 
 #### 5. **Contrôlez la complexité des boucles**
 
@@ -130,7 +130,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Paginer les résultats d’un appel API ou utiliser des traitements par lots pour manipuler des données massives.
 
 📚 **Ressources :**
-- [Comment optimiser les boucles en JavaScript](https://betterprogramming.pub/how-to-prevent-bad-for-loops-in-javascript-1e22b03fad3e)
+- [Comment optimiser les boucles en JavaScript](https://dev.to/srsajjad/optimizing-loop-in-javascript-3la)
 
 #### 6. **Une tâche unique par module ou composant**
 
@@ -141,7 +141,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - En React, créez des hooks personnalisés (`useCustomHook`) pour isoler la logique métier du composant visuel.
 
 📚 **Ressources :**
-- [Design Principles Explained Simply: Single Responsibility Principle](https://medium.com/swlh/design-principles-explained-single-responsibility-principle-dea6b95f65df)
+- [Design Principles Explained Simply: Single Responsibility Principle](https://medium.com/@Code_With_K/understanding-the-single-responsibility-principle-srp-a-cornerstone-of-solid-principles-in-game-d28c3d553e58)
 
 #### 7. **Réduisez l'accès global**
 
