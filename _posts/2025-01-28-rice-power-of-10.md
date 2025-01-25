@@ -75,18 +75,20 @@ Pour les curieux, vous pouvez consulter le document officiel :
 
 ### Les 10 règles de la NASA, adaptées au web 🌐🚀
 
-#### 1. **Simplifie ton code autant que possible**
-
-- Privilégiez la **clarté et la lisibilité** à la complexité ou aux "hacks" malins.
-- Introduisez une architecture moderne et bien définie comme **MVC**, **Clean Architecture** ou **Flux**.
-- Évitez de surcharger vos projets avec trop de dépendances. Utilisez uniquement les bibliothèques et frameworks essentiels.
+#### 1. **Simplifiez votre code autant que possible**
+- Privilégiez la **clarté et la lisibilité** à la complexité ou aux “hacks” ingénieux.
+- Adoptez une architecture moderne et bien structurée comme **MVC**, **Clean Architecture** ou **Flux**, pour garantir une meilleure maintenabilité de votre application.
+- Évitez de surcharger vos projets avec des dépendances inutiles. Intégrez uniquement les bibliothèques et frameworks essentiels.
 
 **Exemple :**
-- Utilisez des frameworks comme [Nest.js](https://nestjs.com/) ou [Nuxt.js](https://nuxt.com/) pour des projets structurés.
-- Réduisez la complexité des requêtes API en centralisant les appels dans des fichiers ou services dédiés.
+- **Angular** : Organisez votre application en suivant les meilleures pratiques, comme la séparation claire entre les composants, services et modules. Répartissez la logique métier dans des services réutilisables pour réduire la complexité des composants.
+- **Nest.js** : Utilisez ce framework backend pour concevoir des applications serveur modélisées autour d’une architecture modulaire, ce qui simplifie la gestion et l’évolution des projets complexes.
+- **Nuxt.js** : Développez des applications frontales en Vue.js avec une organisation claire et une configuration simplifiée, idéale pour des applications modernes.
 
-📚 **Ressources :**
-- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.fr/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+#### 📚 **Ressources**
+- [Angular - Documentation Officielle](https://angular.io/docs)
+- [Nest.js - Framework Node.js Progressif](https://nestjs.com/)
+- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.goodreads.com/book/show/3735293-clean-code)
 
 #### 2. **Travaillez avec des limites définies**
 
@@ -94,10 +96,16 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Implémentez des **plafonds** pour éviter les dépassements, tels que les limites de taille pour les fichiers téléversés ou les limites de pagination.
 
 **Exemple :**
-- Utilisez des bibliothèques de validation d’entrée (comme [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod) ou [AJV](https://ajv.js.org/)) pour gérer des formulaires côté client et serveur.
+- **Validation des formulaires** : Angular propose un système complet de gestion des formulaires avec la possibilité de définir des contraintes via les **validators** (`Reactive Forms` et `Validators` intégrés).  
+  En combinant ces outils avec `Async Validators`, il est également possible d'effectuer des vérifications côté serveur ou asynchrones.
+- **Règles côté serveur** : Si vous utilisez Angular en tandem avec un framework backend comme **Nest.js**, complétez la validation côté client par des validations robustes avec `class-validator` ou des solutions avancées comme `Zod` ou `Yup`.
+- **Gestion des dépassements** : Prévoyez des garde-fous pour éviter des scénarios problématiques, comme des formulaires avec des champs trop longs ou des tailles de fichiers dépassant les limites autorisées.
 
 📚 **Ressources :**
-- [Validation avec Zod](https://zod.dev/ERROR_HANDLING?id=a-working-example)
+- [Angular - Reactive Forms](https://angular.io/guide/reactive-forms)
+- [NestJS - Validation via class-validator](https://docs.nestjs.com/techniques/validation)
+- [Zod - Validation avec des schémas](https://zod.dev/)
+- [Yup - Validation de données](https://github.com/jquense/yup)
 
 #### 3. **Maîtrisez l’allocation mémoire**
 
