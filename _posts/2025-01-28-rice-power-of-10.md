@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Comprendre le théorème de Rice et le Power of 10 pour un web de qualité 🚀"
+title: "Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA 🚀"
 subtitle: "Entre limitations théoriques et pratiques minimalistes, créez des applications web robustes"
 cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
@@ -8,7 +8,7 @@ tags: [Théorie, Calculabilité, Développement Web, Qualité Logicielle, Archit
 author: "Angelo LIMA"
 ---
 
-# Comprendre le théorème de Rice et le Power of 10 : Des fondations théoriques à l'excellence du code web 🌐
+# Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA 🚀
 
 ## Introduction : L'équilibre entre complexité et robustesse
 
@@ -81,7 +81,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Introduisez une architecture moderne et bien définie comme **MVC**, **Clean Architecture** ou **Flux**.
 - Évitez de surcharger vos projets avec trop de dépendances. Utilisez uniquement les bibliothèques et frameworks essentiels.
 
-**Exemple Web :**
+**Exemple :**
 - Utilisez des frameworks comme [Nest.js](https://nestjs.com/) ou [Nuxt.js](https://nuxt.com/) pour des projets structurés.
 - Réduisez la complexité des requêtes API en centralisant les appels dans des fichiers ou services dédiés.
 
@@ -93,7 +93,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Les applications web doivent garantir que les **données utilisateur** et les **entrées** respectent des limites claires.
 - Implémentez des **plafonds** pour éviter les dépassements, tels que les limites de taille pour les fichiers téléversés ou les limites de pagination.
 
-**Exemple Web :**
+**Exemple :**
 - Utilisez des bibliothèques de validation d’entrée (comme [Yup](https://github.com/jquense/yup), [Zod](https://github.com/colinhacks/zod) ou [AJV](https://ajv.js.org/)) pour gérer des formulaires côté client et serveur.
 
 📚 **Ressources :**
@@ -101,21 +101,22 @@ Pour les curieux, vous pouvez consulter le document officiel :
 
 #### 3. **Maîtrisez l’allocation mémoire**
 
-- En développement web, une mauvaise gestion des ressources peut rapidement entraîner de graves conséquences comme des **fuites mémoire** ou des applications qui plantent.
-- Assurez une gestion stricte de **l’allocation dynamique** des ressources mémoire, surtout dans des environnements réactifs comme React ou Vue.js.
+En développement web, une mauvaise gestion des ressources peut rapidement entraîner des conséquences graves, comme des **fuites mémoire** ou des applications instables. C’est particulièrement vrai dans des frameworks réactifs tels qu’**Angular**, où des comportements asynchrones et les cycles de vie des composants doivent être gérés avec soin.
 
-**Exemple Web :**
-- En **React**, nettoyez vos listeners ou timers résiduels à l’aide de `useEffect` pour éviter les fuites mémoire.
+**Exemple :**
 
-📚 **Ressources :**
-- [Gérer efficacement les effets en React](https://legacy.reactjs.org/docs/hooks-effect.html)
+Dans **Angular**, les composants sont souvent abonnés à des Observables (via `RxJS`), par exemple lorsqu’ils utilisent `HttpClient` ou des Observables personnalisés. Si ces abonnements ne sont pas nettoyés efficacement lors de la destruction d’un composant (`ngOnDestroy`), cela peut entraîner des **fuites mémoire**.
+
+📚 **Ressources**
+* [Angular - Lifecycle Hooks](https://angular.io/guide/lifecycle-hooks)
+* [RxJS - Guide des abonnements](https://rxjs.dev/guide/overview)
 
 #### 4. **Évitez la récursivité profonde**
 
 - Préférez les solutions **itératives** aux appels récursifs qui deviennent difficiles à déboguer en cas de boucle infinie.
 - La récursivité peut causer un dépassement de la pile ou une consommation excessive de mémoire.
 
-**Exemple Web :**
+**Exemple :**
 - Convertissez une fonction récursive en une boucle avec des structures comme `while` ou `for`.
 
 📚 **Ressources :**
@@ -126,7 +127,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Les boucles imbriquées ou sans fin alourdissent le code et peuvent nuire à la performance globale.
 - Réduisez la complexité des boucles en limitant leur profondeur et en intégrant des conditions de sortie explicites.
 
-**Exemple Web :**
+**Exemple :**
 - Paginer les résultats d’un appel API ou utiliser des traitements par lots pour manipuler des données massives.
 
 📚 **Ressources :**
@@ -135,10 +136,9 @@ Pour les curieux, vous pouvez consulter le document officiel :
 #### 6. **Une tâche unique par module ou composant**
 
 - Respectez le **Single Responsibility Principle** (SRP) : un composant ou une fonction doit s’occuper d’une seule tâche.
-- Décomposez vos composants React/Vue pour distinguer la logique d’état, l’affichage, ou les appels API.
 
-**Exemple Web :**
-- En React, créez des hooks personnalisés (`useCustomHook`) pour isoler la logique métier du composant visuel.
+**Exemple :**
+- En Angular, structurez votre code en décomposant les responsabilités : utilisez des composants pour l'affichage, des services pour la logique métier et les appels API, et des modules pour regrouper les fonctionnalités par domaine.
 
 📚 **Ressources :**
 - [Design Principles Explained Simply: Single Responsibility Principle](https://medium.com/@Code_With_K/understanding-the-single-responsibility-principle-srp-a-cornerstone-of-solid-principles-in-game-d28c3d553e58)
@@ -146,32 +146,32 @@ Pour les curieux, vous pouvez consulter le document officiel :
 #### 7. **Réduisez l'accès global**
 
 - Réduisez la dépendance aux **variables globales** qui rendent le comportement du code difficile à prédire.
-- Gérez les états partagés de façon centralisée avec des bibliothèques d’état comme **Redux**, **Zustand**, ou **Context API**.
+- **Minimisez l'usage des variables globales :** Elles compliquent le débogage et rendent ton code imprévisible. Si plusieurs parties du code modifient la même variable directement, ça peut vite devenir chaotique. 🌀
 
-**Exemple Web :**
-- Utilisez des variables d’environnement sécurisées (.env) pour stocker vos secrets et API keys.
+**Exemple :**
+- **Centralisez la gestion des états partagés :** En Angular, vous pouvez utiliser des solutions robustes comme @ngrx/store (version Angular de Redux), ou encore des services "singleton" bien structurés.
 
 📚 **Ressources :**
-- [Guide de Redux pour les débutants](https://redux.js.org/basics/basic-tutorial)
-- [Documentation officielle de Zustand](https://zustand-demo.pmnd.rs/)
+- [ngRx](https://ngrx.io/)
 
 #### 8. **Gérez bien l’asynchronisme**
 
 - Protégez vos appels asynchrones contre les erreurs grâce à des blocs `try/catch` ou `.catch()` sur vos Promises.
 - Implémentez des systèmes de **retry** pour des tâches critiques lancées via des API ou des traitements asynchrones.
 
-**Exemple Web :**
-- Ajoutez des **Interceptors** pour gérer automatiquement les erreurs dans vos requêtes Axios.
+**Exemple :**
+- Ajoutez des **Interceptors** pour gérer automatiquement les erreurs dans vos requêtes.
 
 📚 **Ressources :**
 - [Axios Interceptors Documentation](https://axios-http.com/docs/interceptors)
+- [Intercepteurs en Angular](https://angular.fr/http/interceptor)
 
 #### 9. **Testez tout systématiquement**
 
 - Rédigez des tests unitaires, d’intégration et de bout-en-bout pour protéger les fonctionnalités critiques.
 - Utilisez des frameworks comme [Jest](https://jestjs.io/) pour les tests unitaires et [Cypress](https://www.cypress.io/) pour les workflows utilisateurs.
 
-**Exemple Web :**
+**Exemple :**
 - Testez un formulaire de connexion : assurez-vous que les erreurs sont affichées en cas de soumission invalide et que l’utilisateur est redirigé après un succès.
 
 📚 **Ressources :**
@@ -182,7 +182,7 @@ Pour les curieux, vous pouvez consulter le document officiel :
 - Validez toutes les **données entrants**, que ce soit via des requêtes API, fichiers téléversés, ou formulaires utilisateur.
 - Ajoutez des protections côté serveur avec des middlewares comme [Helmet](https://helmetjs.github.io/) pour renforcer les headers HTTP.
 
-**Exemple Web :**
+**Exemple :**
 - Utilisez des bibliothèques comme Helmet.js pour limiter l’exposition à des attaques **XSS**, **CSRF**, ou **Clickjacking**.
 
 📚 **Ressources :**
