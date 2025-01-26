@@ -6,6 +6,7 @@ cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
 tags: [Théorie, Calculabilité, Développement Web, Qualité Logicielle, Architecture]
 author: "Angelo LIMA"
+date: 2025-01-28 00:00 +0000
 ---
 
 # Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA 🚀
