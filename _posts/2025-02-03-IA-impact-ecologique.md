@@ -6,7 +6,6 @@ cover-img: /assets/img/ia-impact-ecologique.png
 share-img: /assets/img/ia-impact-ecologique.png
 tags: [IA, Écologie, Empreinte Carbone, Data Science, Développement Durable, Cloud Computing]
 author: "Angelo LIMA"
-date: 2025-02-03 00:00 +0000
 ---
 
 # 🌍 L’impact écologique de l’intelligence artificielle : entre usages et apprentissages
