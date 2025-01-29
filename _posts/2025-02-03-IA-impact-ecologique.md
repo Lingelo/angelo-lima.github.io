@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jailbreaking des LLMs : Exploration des limites avec DeepSeek R1 🛠️"
-subtitle: "Techniques, découvertes et éthique autour du contournement des censures dans les modèles de langage"
-cover-img: /assets/img/deepseek-jailbreak.png
-share-img: /assets/img/deepseek-jailbreak.png
-tags: [LLM, IA, Jailbreaking, Censure, Exploration, DeepSeek R1]
+title: "L’IA et son coût écologique : Entraîner ou utiliser, que pèse vraiment votre modèle ? 🌍"
+subtitle: "Décortiquer l'empreinte carbone de l’intelligence artificielle et explorer des pistes durables"
+cover-img: /assets/img/ia-impact-ecologique.png
+share-img: /assets/img/ia-impact-ecologique.png
+tags: [IA, Écologie, Empreinte Carbone, Data Science, Développement Durable, Cloud Computing]
 author: "Angelo LIMA"
 ---
 

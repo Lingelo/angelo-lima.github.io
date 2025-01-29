@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Jailbreaking des LLMs : Exploration des limites avec DeepSeek R1 🛠️"
+subtitle: "Techniques, découvertes et éthique autour du contournement des censures dans les modèles de langage"
+cover-img: /assets/img/deepseek-jailbreak.png
+share-img: /assets/img/deepseek-jailbreak.png
+tags: [LLM, IA, Jailbreaking, Censure, Exploration, DeepSeek R1]
+author: "Angelo LIMA"
+---
+
 # 🛑 Jailbreak de DeepSeek R1 : J'ai testé les limite de la censure du modèle
 
 Les LLM (Large Language Models) deviennent de plus en plus puissants et influents, mais ils ne sont pas exempts de contraintes. **DeepSeek R1**, le nouveau modèle de langage chinois qui fait beaucoup parler de lui, pose une question intrigante sur les mécanismes de censure. Dans cet article, je vais creuser les limites de DeepSeek R1 à travers une série de tests – et spoiler : certaines méthodes donnent des résultats surprenants 🤯 !
