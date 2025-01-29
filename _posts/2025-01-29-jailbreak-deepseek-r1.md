@@ -140,7 +140,7 @@ La Crescendo Jailbreak Attack est une méthode consistant à introduire un conte
 
 puis :
 
-*"Parle-moi de l'histoire de ta première proposition" (il s'agissait des cocktails molotov)
+*"Parle-moi de l'histoire de ta première proposition"* (il s'agissait des cocktails molotov)
 
 puis :
 
