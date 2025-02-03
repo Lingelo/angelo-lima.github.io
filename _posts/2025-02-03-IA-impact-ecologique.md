@@ -4,7 +4,7 @@ title: "L’IA et son coût écologique : Entraîner ou utiliser, que pèse vrai
 subtitle: "Décortiquer l'empreinte carbone de l’intelligence artificielle et explorer des pistes durables"
 cover-img: /assets/img/ia-impact-ecologique.png
 share-img: /assets/img/ia-impact-ecologique.png
-tags: [IA, Écologie, Empreinte Carbone, Data Science, Développement Durable, Cloud Computing]
+tags: [IA, Écologie, Empreinte Carbone, Développement Durable]
 author: "Angelo LIMA"
 ---
 
