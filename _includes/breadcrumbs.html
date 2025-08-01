@@ -1,7 +1,9 @@
 <!-- Breadcrumbs for better SEO and UX -->
 <nav class="breadcrumbs" aria-label="Fil d'Ariane">
-    <div class="container">
-        <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
+    <div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+        <div class="row">
+            <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+                <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
             <li property="itemListElement" typeof="ListItem">
                 <a property="item" typeof="WebPage" href="{{ '/' | relative_url }}">
                     <span property="name">Accueil</span>
@@ -42,14 +44,16 @@
                     <meta property="position" content="2">
                 </li>
             {% endif %}
-        </ol>
+                </ol>
+            </div>
+        </div>
     </div>
 </nav>
 
 <style>
 .breadcrumbs {
-    background-color: rgba(26, 26, 26, 0.5);
-    padding: 0.5rem 0;
+    background-color: transparent;
+    padding: 1rem 0;
     margin-bottom: 1rem;
 }
 
@@ -60,7 +64,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 0.875rem;
+    font-size: 1rem;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .breadcrumb-list li {
@@ -70,15 +75,17 @@
 
 .breadcrumb-list li:not(:last-child)::after {
     content: "›";
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     color: #999;
+    font-size: 1.1rem;
 }
 
 .breadcrumb-list a {
     color: #edb926;
     text-decoration: none;
     transition: color 0.2s;
+    font-weight: 400;
 }
 
 .breadcrumb-list a:hover {
@@ -88,15 +95,21 @@
 
 .breadcrumb-list .active span {
     color: #f5f5f5;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
     .breadcrumbs {
-        padding: 0.25rem 0;
+        padding: 0.75rem 0;
     }
     
     .breadcrumb-list {
-        font-size: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .breadcrumb-list li:not(:last-child)::after {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 }
 </style>
