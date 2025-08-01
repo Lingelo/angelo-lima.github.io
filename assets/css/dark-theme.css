@@ -1,0 +1,299 @@
+---
+layout: null
+---
+
+/* Dark Theme Variables and Styles for Beautiful Jekyll */
+
+:root {
+  /* Light theme variables (default) */
+  --page-col-light: {{ site.page-col | default: "#FFFFFF" }};
+  --text-col-light: {{ site.text-col | default: "#404040" }};
+  --link-col-light: {{ site.link-col | default: "#008AFF" }};
+  --hover-col-light: {{ site.hover-col | default: "#0085A1" }};
+  --navbar-col-light: {{ site.navbar-col | default: "#EAEAEA" }};
+  --navbar-text-col-light: {{ site.navbar-text-col | default: "#404040" }};
+  --navbar-border-col-light: {{ site.navbar-border-col | default: "#DDDDDD" }};
+  --footer-col-light: {{ site.footer-col | default: "#EAEAEA" }};
+  --footer-text-col-light: {{ site.footer-text-col | default: "#777777" }};
+  --footer-link-col-light: {{ site.footer-link-col | default: "#404040" }};
+  --footer-hover-col-light: {{ site.footer-hover-col | default: "#0085A1" }};
+
+  /* Dark theme variables */
+  --page-col-dark: #1a1a1a;
+  --text-col-dark: #e0e0e0;
+  --link-col-dark: #66b3ff;
+  --hover-col-dark: #4da6d9;
+  --navbar-col-dark: #2d2d2d;
+  --navbar-text-col-dark: #e0e0e0;
+  --navbar-border-col-dark: #404040;
+  --footer-col-dark: #2d2d2d;
+  --footer-text-col-dark: #b0b0b0;
+  --footer-link-col-dark: #e0e0e0;
+  --footer-hover-col-dark: #4da6d9;
+
+  /* Card and content backgrounds for dark theme */
+  --card-bg-dark: #2a2a2a;
+  --code-bg-dark: #3d3d3d;
+  --blockquote-bg-dark: #333;
+  --border-col-dark: #404040;
+}
+
+/* Default light theme */
+body {
+  --page-col: var(--page-col-light);
+  --text-col: var(--text-col-light);
+  --link-col: var(--link-col-light);
+  --hover-col: var(--hover-col-light);
+  --navbar-col: var(--navbar-col-light);
+  --navbar-text-col: var(--navbar-text-col-light);
+  --navbar-border-col: var(--navbar-border-col-light);
+  --footer-col: var(--footer-col-light);
+  --footer-text-col: var(--footer-text-col-light);
+  --footer-link-col: var(--footer-link-col-light);
+  --footer-hover-col: var(--footer-hover-col-light);
+}
+
+/* Dark theme styles */
+body.dark-theme {
+  --page-col: var(--page-col-dark);
+  --text-col: var(--text-col-dark);
+  --link-col: var(--link-col-dark);
+  --hover-col: var(--hover-col-dark);
+  --navbar-col: var(--navbar-col-dark);
+  --navbar-text-col: var(--navbar-text-col-dark);
+  --navbar-border-col: var(--navbar-border-col-dark);
+  --footer-col: var(--footer-col-dark);
+  --footer-text-col: var(--footer-text-col-dark);
+  --footer-link-col: var(--footer-link-col-dark);
+  --footer-hover-col: var(--footer-hover-col-dark);
+}
+
+/* Enhanced dark theme styles for specific elements */
+body.dark-theme {
+  background-color: var(--page-col);
+  color: var(--text-col);
+}
+
+body.dark-theme .post-preview {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--border-col-dark);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+body.dark-theme .post-preview:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme pre,
+body.dark-theme code {
+  background-color: var(--code-bg-dark) !important;
+  color: #f8f8f2;
+  border: 1px solid var(--border-col-dark);
+}
+
+body.dark-theme blockquote {
+  background-color: var(--blockquote-bg-dark);
+  border-left: 4px solid var(--link-col);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+body.dark-theme .table {
+  background-color: var(--card-bg-dark);
+  color: var(--text-col);
+}
+
+body.dark-theme .table th,
+body.dark-theme .table td {
+  border-color: var(--border-col-dark);
+}
+
+/* Dark theme toggle button styles */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--navbar-text-col);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--hover-col);
+}
+
+.theme-toggle::before {
+  content: '☀️';
+  font-size: 16px;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+body.dark-theme .theme-toggle::before {
+  content: '🌙';
+}
+
+.theme-toggle-slider {
+  background-color: var(--navbar-text-col);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark-theme .theme-toggle-slider {
+  transform: translateX(28px);
+  background-color: var(--text-col);
+}
+
+/* Mobile optimizations for images - Enhanced responsive design */
+@media (max-width: 768px) {
+  /* Base responsive image styles */
+  .post-preview img,
+  .post img,
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Image hover effects */
+  .post img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Ensure cover images are responsive and well-cropped */
+  .intro-header .big-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+  }
+
+  /* Post preview images optimization */
+  .post-preview .post-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Gallery and content images */
+  .post-preview .post-content img,
+  .post-content img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+  }
+
+  /* Featured images in articles */
+  .post .cover-img,
+  .post-preview .cover-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Thumbnail images in feed */
+  .post-preview .thumbnail-img {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+    float: left;
+  }
+
+  /* Very small screens optimizations */
+  @media (max-width: 480px) {
+    .post img,
+    .post-preview img {
+      width: calc(100vw - 2rem);
+      max-width: calc(100vw - 2rem);
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+
+    .intro-header .big-img {
+      height: 40vh;
+    }
+
+    .post-preview .thumbnail-img {
+      float: none;
+      margin: 0 0 1rem 0;
+      max-width: 100%;
+      height: 200px;
+    }
+
+    /* Stack images vertically on very small screens */
+    .post-preview .post-content {
+      flex-direction: column;
+    }
+  }
+
+  /* Loading placeholder for images */
+  img[data-src] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+
+  body.dark-theme img[data-src] {
+    background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+    background-size: 200% 100%;
+  }
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Enhanced mobile navigation for dark theme */
+@media (max-width: 991px) {
+  body.dark-theme .navbar-collapse {
+    background-color: var(--navbar-col);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Smooth transitions for all theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Override for elements that shouldn't transition */
+.theme-toggle,
+.theme-toggle-slider,
+.theme-toggle::before {
+  transition: all 0.3s ease !important;
+}
