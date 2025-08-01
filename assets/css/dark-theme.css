@@ -405,6 +405,11 @@ blockquote {
   color: var(--text-col-dark);
 }
 
+.post-preview .post-meta strong {
+  color: var(--link-col-dark);
+  font-weight: 600;
+}
+
 .post-preview .post-entry {
   margin: 0 0 1.5rem 0;
   line-height: 1.5;
@@ -457,6 +462,18 @@ blockquote {
 /* Hide empty tags completely */
 .post-preview .blog-tags a:empty,
 .blog-tags a:empty {
+  display: none !important;
+}
+
+/* Hide tags with only whitespace or no visible content */
+.post-preview .blog-tags a[href$="#"],
+.blog-tags a[href$="#"] {
+  display: none !important;
+}
+
+/* Additional safety for completely empty tag links */
+.post-preview .blog-tags a:not([href*="#"]):empty,
+.blog-tags a:not([href*="#"]):empty {
   display: none !important;
 }
 
