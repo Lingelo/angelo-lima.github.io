@@ -163,8 +163,8 @@ site-css:
   - "/assets/css/dark-theme.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
-site-js:
-  - "/assets/js/dark-theme.js"
+#site-js:
+#  - "/assets/js/dark-theme.js"
 
 #################################
 # --- Web Analytics Section --- #
@@ -203,7 +203,7 @@ gtag: "G-EQK9L2XD8X"
 #fb_comment_id: ""
 
 # To use CommentBox, sign up for a Project ID on https://commentbox.io
-commentbox: "5650063258812416-proj" # Project ID, e.g. "5694267682979840-proj"
+#commentbox: "5650063258812416-proj" # Project ID, e.g. "5694267682979840-proj"
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
