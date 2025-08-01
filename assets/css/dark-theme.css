@@ -105,7 +105,7 @@ a:hover {
 
 /* Navigation menu background */
 .navbar-nav {
-  background-color: var(--page-col-dark) !important;
+  background-color: var(--navbar-col-dark) !important;
   border-radius: 8px;
   padding: 0.5rem;
 }
@@ -726,7 +726,7 @@ main {
 /* Enhanced mobile navigation */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background-color: var(--page-col-dark);
+    background-color: var(--navbar-col-dark);
     border-radius: 8px;
     margin-top: 0.5rem;
     padding: 1rem;
