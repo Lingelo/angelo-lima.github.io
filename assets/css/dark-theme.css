@@ -359,7 +359,7 @@ blockquote {
 /* Article content - Below image */
 .post-preview .post-content {
   flex: 1;
-  padding: 1.25rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -480,11 +480,12 @@ blockquote {
     order: 1;
     width: 100%;
     height: 180px;
+    display: block !important; /* Force image display on mobile */
   }
 
   .post-preview .post-content {
     order: 2;
-    padding: 1rem;
+    padding: 0.75rem;
   }
 
   .post-preview h2.post-title {
@@ -517,11 +518,12 @@ blockquote {
   .post-preview .post-image {
     order: 1;
     height: 160px;
+    display: block !important; /* Force image display on small mobile */
   }
 
   .post-preview .post-content {
     order: 2;
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 
   .post-preview h2.post-title {
