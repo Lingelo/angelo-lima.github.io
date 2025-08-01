@@ -1,13 +1,30 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://angelo-lima.fr/sitemap.xml
+Sitemap: https://angelo-lima.fr/feed.xml
 
-# Allow search engines to crawl CSS and JS files
+# Allow search engines to crawl important resources
 Allow: /assets/
 Allow: /*.css$
 Allow: /*.js$
+Allow: /tag/
+Allow: /page*/
+
+# Prioritize important pages for crawling
+# Main content
+Allow: /
+Allow: /aboutme
+Allow: /tags
+
+# Tag pages (high value content)
+Allow: /tag/ia/
+Allow: /tag/developpement/
+Allow: /tag/web/
+Allow: /tag/tech/
+Allow: /tag/personnel/
+Allow: /tag/securite/
 
 # Disallow admin-type pages and development files
 Disallow: /404.html
@@ -15,6 +32,11 @@ Disallow: /CHANGELOG.md
 Disallow: /Gemfile
 Disallow: /README.md
 Disallow: /docs/
+Disallow: /.git/
+Disallow: /_site/
 
-# Crawl delay (optional, helps prevent overload)
+# Crawl delay (helps prevent overload)
 Crawl-delay: 1
+
+# Cache directive for better performance
+Cache-delay: 86400
