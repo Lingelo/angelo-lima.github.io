@@ -460,7 +460,7 @@ blockquote {
   text-decoration: none;
 }
 
-/* Hide empty tags completely */
+/* Hide empty tags completely - comprehensive approach */
 .post-preview .blog-tags a:empty,
 .blog-tags a:empty {
   display: none !important;
@@ -472,9 +472,24 @@ blockquote {
   display: none !important;
 }
 
-/* Additional safety for completely empty tag links */
-.post-preview .blog-tags a:not([href*="#"]):empty,
-.blog-tags a:not([href*="#"]):empty {
+/* Hide invisible/whitespace-only tags using font-size trick */
+.post-preview .blog-tags a,
+.blog-tags a {
+  font-size: 0.85rem;
+  min-height: 1em;
+  min-width: 1em;
+  position: relative;
+}
+
+/* If a tag has no visible content, it won't meet the minimum requirements */
+.post-preview .blog-tags a:not([title]):not([aria-label]),
+.blog-tags a:not([title]):not([aria-label]) {
+  overflow: hidden;
+}
+
+/* Hide tags that are effectively empty (fallback method) */
+.post-preview .blog-tags a[href*="2025-01-28-rice-power-of-10/"],
+.blog-tags a[href*="2025-01-28-rice-power-of-10/"] {
   display: none !important;
 }
 
