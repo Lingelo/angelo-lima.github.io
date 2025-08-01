@@ -2,9 +2,14 @@
 layout: page
 ---
 
-{% assign posts = page.posts %}
-{% assign posts_count = posts | size %}
 {% assign tag = page.tag %}
+{% assign posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.tags contains tag %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign posts_count = posts | size %}
 
 <div class="posts-section">
     <p class="tag-description">

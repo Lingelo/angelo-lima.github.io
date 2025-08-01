@@ -15,7 +15,15 @@
                 <!-- Page d'article -->
                 {% if page.tags and page.tags.size > 0 %}
                     <li property="itemListElement" typeof="ListItem">
-                        <a property="item" typeof="WebPage" href="{{ page.tags.first | tag_url }}">
+                        {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
+                        {% if page.tags.first == "Développement" %}
+                          {% assign tag_url = "/tag/developpement/" %}
+                        {% elsif page.tags.first == "Sécurité" %}
+                          {% assign tag_url = "/tag/securite/" %}
+                        {% else %}
+                          {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
+                        {% endif %}
+                        <a property="item" typeof="WebPage" href="{{ tag_url }}">
                             <span property="name">{{ page.tags.first }}</span>
                         </a>
                         <meta property="position" content="2">
