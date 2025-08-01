@@ -853,9 +853,6 @@ main {
   transition: transform 0.2s ease;
 }
 
-.cv-dropdown:hover .cv-dropdown-btn .fa-chevron-down {
-  transform: rotate(180deg);
-}
 
 .cv-dropdown-content {
   display: none;
@@ -871,8 +868,7 @@ main {
   margin-top: 0.5rem;
 }
 
-/* Show dropdown on hover (desktop) or when open class is added (mobile) */
-.cv-dropdown:hover .cv-dropdown-content,
+/* Show dropdown only when open class is added (click/touch only) */
 .cv-dropdown.open .cv-dropdown-content {
   display: block;
 }
