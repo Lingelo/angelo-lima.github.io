@@ -296,13 +296,15 @@ blockquote {
 
 .pagination .page-link:hover {
   background-color: var(--link-col-dark);
-  color: var(--page-col-dark);
+  color: #ffffff !important;
+  border-color: var(--link-col-dark);
+  text-decoration: none;
 }
 
 .pagination .page-item.active .page-link {
   background-color: var(--link-col-dark);
   border-color: var(--link-col-dark);
-  color: var(--page-col-dark);
+  color: #ffffff !important;
 }
 
 /* Article grid layout - Vertical cards inspired by Korben */
@@ -447,8 +449,9 @@ blockquote {
 
 .post-preview .blog-tags a:hover {
   background-color: var(--link-col-dark);
-  color: var(--page-col-dark);
+  color: #ffffff !important;
   transform: translateY(-1px);
+  text-decoration: none;
 }
 
 /* Hide empty tags completely */
@@ -489,8 +492,9 @@ blockquote {
 .blog-tags a:hover,
 .blog-tags .tag-link:hover {
   background-color: var(--link-col-dark);
-  color: var(--page-col-dark);
+  color: #ffffff !important;
   transform: translateY(-1px);
+  text-decoration: none;
 }
 
 /* Remove theme toggle styles - no longer needed */
