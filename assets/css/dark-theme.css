@@ -578,8 +578,6 @@ blockquote {
 
 /* Header background styling */
 .intro-header {
-  background-color: var(--card-bg-dark);
-  border-bottom: 1px solid var(--border-col-dark);
   padding: 1.5rem 0;
   margin-bottom: 0;
 }
