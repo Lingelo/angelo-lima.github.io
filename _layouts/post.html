@@ -47,7 +47,10 @@ layout: base
         <div class="blog-tags">
           <span>Tags:</span>
           {% for tag in page.tags %}
-            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            <a href="{{ '/tags' | relative_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
+            {% endif %}
           {% endfor %}
         </div>
       {% endif %}

@@ -439,12 +439,19 @@ blockquote {
   margin-bottom: 0.5rem;
   display: inline-block;
   transition: all 0.2s ease;
+  min-width: 1px; /* Ensure tag has minimum width if content exists */
 }
 
 .post-preview .blog-tags a:hover {
   background-color: var(--link-col-dark);
   color: var(--page-col-dark);
   transform: translateY(-1px);
+}
+
+/* Hide empty tags completely */
+.post-preview .blog-tags a:empty,
+.blog-tags a:empty {
+  display: none !important;
 }
 
 /* Remove theme toggle styles - no longer needed */
