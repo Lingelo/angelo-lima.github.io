@@ -91,7 +91,7 @@ a:hover {
 
 /* Navigation styles */
 .navbar {
-  background-color: transparent !important;
+  background-color: var(--navbar-col-dark) !important;
   border-bottom: 1px solid var(--border-col-dark);
 }
 
@@ -105,7 +105,7 @@ a:hover {
 
 /* Navigation menu background */
 .navbar-nav {
-  background-color: #0a0a0a !important;
+  background-color: var(--page-col-dark) !important;
   border-radius: 8px;
   padding: 0.5rem;
 }
@@ -134,7 +134,7 @@ footer a:hover {
 }
 
 .post-preview:hover {
-  background-color: #222222;
+  background-color: var(--navbar-col-dark);
   transform: translateY(-2px);
 }
 
@@ -303,7 +303,7 @@ blockquote {
 
 .pagination .page-link:hover {
   background-color: var(--link-col-dark);
-  color: #ffffff !important;
+  color: var(--page-col-dark) !important;
   border-color: var(--link-col-dark);
   text-decoration: none;
 }
@@ -311,7 +311,7 @@ blockquote {
 .pagination .page-item.active .page-link {
   background-color: var(--link-col-dark);
   border-color: var(--link-col-dark);
-  color: #ffffff !important;
+  color: var(--page-col-dark) !important;
 }
 
 /* Article grid layout - Vertical cards inspired by Korben */
@@ -462,7 +462,7 @@ blockquote {
 
 .post-preview .blog-tags a:hover {
   background-color: var(--link-col-dark);
-  color: #ffffff !important;
+  color: var(--page-col-dark) !important;
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -532,7 +532,7 @@ blockquote {
 .blog-tags a:hover,
 .blog-tags .tag-link:hover {
   background-color: var(--link-col-dark);
-  color: #ffffff !important;
+  color: var(--page-col-dark) !important;
   transform: translateY(-1px);
   text-decoration: none;
 }
@@ -726,7 +726,7 @@ main {
 /* Enhanced mobile navigation */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background-color: #0a0a0a;
+    background-color: var(--page-col-dark);
     border-radius: 8px;
     margin-top: 0.5rem;
     padding: 1rem;
