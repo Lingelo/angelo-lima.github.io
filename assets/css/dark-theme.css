@@ -18,25 +18,25 @@ layout: null
   --footer-link-col-light: {{ site.footer-link-col | default: "#404040" }};
   --footer-hover-col-light: {{ site.footer-hover-col | default: "#0085A1" }};
 
-  /* Dark theme variables - Enhanced colors */
-  --page-col-dark: #1a1a1a;
-  --text-col-dark: #e8e8e8;
-  --link-col-dark: #7dd3fc;
-  --hover-col-dark: #38bdf8;
-  --navbar-col-dark: #2d2d2d;
-  --navbar-text-col-dark: #e8e8e8;
-  --navbar-border-col-dark: #404040;
-  --footer-col-dark: #2d2d2d;
-  --footer-text-col-dark: #b8b8b8;
-  --footer-link-col-dark: #e8e8e8;
-  --footer-hover-col-dark: #38bdf8;
+  /* Dark theme variables - Korben-inspired colors */
+  --page-col-dark: #0a0a0a;
+  --text-col-dark: #f5f5f5;
+  --link-col-dark: #00d4aa;
+  --hover-col-dark: #00b894;
+  --navbar-col-dark: #1a1a1a;
+  --navbar-text-col-dark: #f5f5f5;
+  --navbar-border-col-dark: #333333;
+  --footer-col-dark: #1a1a1a;
+  --footer-text-col-dark: #cccccc;
+  --footer-link-col-dark: #f5f5f5;
+  --footer-hover-col-dark: #00d4aa;
 
-  /* Card and content backgrounds for dark theme */
-  --card-bg-dark: #2a2a2a;
-  --code-bg-dark: #282c34;
-  --code-text-dark: #abb2bf;
-  --blockquote-bg-dark: #333;
-  --border-col-dark: #404040;
+  /* Card and content backgrounds for dark theme - Korben style */
+  --card-bg-dark: #1a1a1a;
+  --code-bg-dark: #1e1e1e;
+  --code-text-dark: #f8f8f2;
+  --blockquote-bg-dark: #2a2a2a;
+  --border-col-dark: #333333;
   
   /* Enhanced code highlighting colors */
   --code-keyword-dark: #c678dd;
@@ -76,7 +76,8 @@ body {
 }
 
 .post-preview:hover {
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  background-color: #222222;
+  transform: translateY(-2px);
 }
 
 /* Enhanced code block styling with Dracula theme */
@@ -84,7 +85,7 @@ pre,
 code {
   background-color: var(--code-bg-dark) !important;
   color: var(--code-text-dark) !important;
-  border: 1px solid var(--border-col-dark);
+  border: none;
   border-radius: 6px;
 }
 
@@ -191,16 +192,18 @@ blockquote {
   border-color: var(--border-col-dark);
 }
 
-/* Post preview layout improvements */
+/* Post preview layout improvements - Korben-inspired */
 .post-preview {
   display: flex;
   flex-direction: column;
   background-color: var(--card-bg-dark);
-  border: 1px solid var(--border-col-dark);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 0;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
   overflow: hidden;
+  border-bottom: 1px solid var(--border-col-dark);
+  transition: background-color 0.2s ease;
 }
 
 .post-preview article {
@@ -209,36 +212,69 @@ blockquote {
   width: 100%;
 }
 
-/* Ensure proper order: image first, then content */
+/* Ensure proper order: image first, then content - Korben style */
 .post-preview .post-image {
   order: 1;
   width: 100%;
-  margin: 0 0 1rem 0;
+  margin: 0 auto 1.5rem auto;
+  text-align: center;
 }
 
 .post-preview h2.post-title {
   order: 2;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .post-preview h3.post-subtitle {
   order: 3;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+  line-height: 1.4;
 }
 
 .post-preview .post-meta {
   order: 4;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .post-preview .post-entry {
   order: 5;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
 .post-preview .blog-tags {
   order: 6;
   margin: 0;
+}
+
+.post-preview .blog-tags a {
+  background-color: var(--link-col-dark);
+  color: var(--page-col-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.post-preview .blog-tags a:hover {
+  background-color: var(--hover-col-dark);
+  transform: translateY(-1px);
 }
 
 /* Remove theme toggle styles - no longer needed */
@@ -319,7 +355,7 @@ blockquote {
     object-fit: cover;
     border-radius: 8px;
     display: block;
-    margin: 0;
+    margin: 0 auto;
   }
 
   /* Remove floating behavior for all post images */
@@ -331,7 +367,7 @@ blockquote {
     object-fit: cover;
     border-radius: 8px;
     float: none !important;
-    margin: 0 0 1rem 0;
+    margin: 0 auto 1rem auto;
     display: block;
   }
 
