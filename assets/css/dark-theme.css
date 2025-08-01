@@ -661,7 +661,7 @@ blockquote {
   line-height: 1.7;
 }
 
-/* Social share section styling */
+/* Social share section styling - match footer style */
 #social-share-section {
   background-color: var(--card-bg-dark);
   padding: 1.5rem;
@@ -671,35 +671,23 @@ blockquote {
   border: 1px solid var(--border-col-dark);
 }
 
-#social-share-section .btn-social-icon {
-  background-color: var(--link-col-dark);
-  color: var(--page-col-dark) !important;
-  border: none;
-  margin: 0 0.5rem;
-  width: 45px;
-  height: 45px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+#social-share-section .social-share-link {
+  margin: 0 0.25rem;
+  display: inline-block;
   transition: all 0.2s ease;
 }
 
-#social-share-section .btn-social-icon:hover {
-  background-color: var(--hover-col-dark) !important;
-  color: var(--page-col-dark) !important;
+#social-share-section .social-share-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(237, 185, 38, 0.3);
 }
 
-#social-share-section .btn-social-icon .fab {
-  font-size: 1.2rem;
-  color: var(--page-col-dark) !important;
+/* Style the fa-stack circles like footer */
+#social-share-section .fa-stack .fa-circle {
+  color: var(--link-col-dark);
 }
 
-/* Remove specific social media colors on hover - use consistent golden theme */
-#social-share-section .btn-social-icon:hover .fab {
-  color: var(--page-col-dark) !important;
+#social-share-section .social-share-link:hover .fa-stack .fa-circle {
+  color: var(--hover-col-dark);
 }
 
 /* Smooth transitions for theme elements */
