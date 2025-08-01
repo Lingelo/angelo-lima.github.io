@@ -89,7 +89,7 @@
   <meta name="author" content="{{ author }}">
   {% endif %}
 
-  <meta name="description" content="Bienvenue sur le blog d'Angelo Lima ! Passionné par le développement web et la programmation, je partage mes astuces, tutoriels, et réflexions autour de la création web moderne, pour les développeurs et curieux de la tech.">
+  <meta name="description" content="{{ description }}">
 
   {% if site.mobile-theme-col %}
   <meta name="theme-color" content="{{ site.mobile-theme-col }}">
@@ -99,9 +99,28 @@
   <meta name="keywords" content="{{ site.keywords }}">
   {% endif %}
 
+  <!-- Additional SEO meta tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="language" content="French">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  {% if page.id %}
+  <meta name="article:author" content="{{ page.author | default: site.author | strip_html }}">
+  {% endif %}
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | absolute_url }}">
+
   {% if site.rss-description %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
   {% endif %}
+  
+  <!-- DNS prefetch for performance -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  
+  <!-- Preconnect for critical resources -->
+  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 
   {% include gtag.html %}
   {% include gtm_head.html %}
@@ -165,7 +184,17 @@
   {%- assign img=img | strip -%}
 
   <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="Bienvenue sur le blog d'Angelo Lima ! Passionné par le développement web et la programmation, je partage mes astuces, tutoriels, et réflexions autour de la création web moderne, pour les développeurs et curieux de la tech.">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:locale" content="fr_FR">
+  {% if page.id %}
+  <meta property="og:article:section" content="{{ page.categories.first | default: 'Blog' }}">
+  {% if page.tags and page.tags.size > 0 %}
+  {% for tag in page.tags %}
+  <meta property="og:article:tag" content="{{ tag }}">
+  {% endfor %}
+  {% endif %}
+  <meta property="og:article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}">
+  {% endif %}
 
   {% if img != "" %}
   <meta property="og:image" content="{{ img | absolute_url }}">
@@ -190,8 +219,10 @@
   {% else %}
   <meta name="twitter:card" content="summary">
   {% endif %}
+  {% if site.social-network-links.twitter %}
   <meta name="twitter:site" content="@{{ site.social-network-links.twitter }}">
   <meta name="twitter:creator" content="@{{ site.social-network-links.twitter }}">
+  {% endif %}
 
   <meta property="twitter:title" content="{{ title }}">
   <meta property="twitter:description" content="{{ description }}">
@@ -200,6 +231,7 @@
   <meta name="twitter:image" content="{{ img | absolute_url }}">
   {% endif %}
 
+  {% include schema-org.html %}
   {% include matomo.html %}
 
   {% if page.comments and site.staticman.repository and site.staticman.branch %}

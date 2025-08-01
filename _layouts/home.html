@@ -7,9 +7,9 @@ layout: page
 {% assign posts = paginator.posts | default: site.posts %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-<ul class="posts-list list-unstyled" role="list">
+<ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles de blog">
   {% for post in posts %}
-  <li class="post-preview">
+  <li class="post-preview" role="listitem">
     {%- capture thumbnail -%}
       {% if post.thumbnail-img %}
         {{ post.thumbnail-img }}
@@ -24,39 +24,39 @@ layout: page
     {% endcapture %}
     {% assign thumbnail=thumbnail | strip %}
 
-    <a href="{{ post.url | absolute_url }}" class="article-link">
+    <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
       <!-- Image section at top -->
       {% if thumbnail != "" %}
       <div class="post-image">
-        <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail" loading="lazy" width="300" height="200">
+        <img src="{{ thumbnail | absolute_url }}" alt="Image de couverture pour l'article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
       </div>
       {% endif %}
 
       <!-- Content section below image -->
       <div class="post-content">
-        <h2 class="post-title">{{ post.title | strip_html }}</h2>
+        <h2 class="post-title" id="post-title-{{ forloop.index }}">{{ post.title | strip_html }}</h2>
         {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle | strip_html }}</h3>
+          <h3 class="post-subtitle" aria-describedby="post-title-{{ forloop.index }}">{{ post.subtitle | strip_html }}</h3>
         {% endif %}
 
-        <p class="post-meta">
+        <p class="post-meta" aria-label="Informations sur l'article">
           {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
           {% if post.author %}Par <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
         </p>
 
         {% unless site.feed_show_excerpt == false %}
-        <div class="post-entry">
+        <div class="post-entry" aria-label="Extrait de l'article">
           {% assign excerpt_length = site.excerpt_length | default: 50 %}
           {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
         </div>
         {% endunless %}
 
         {% if site.feed_show_tags != false and post.tags.size > 0 %}
-        <div class="blog-tags">
+        <div class="blog-tags" role="list" aria-label="Tags de l'article">
           {% for tag in post.tags %}
             {% assign clean_tag = tag | strip %}
             {% if clean_tag != "" %}
-            <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
+            <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
             {% endif %}
           {% endfor %}
         </div>
@@ -68,20 +68,20 @@ layout: page
 </ul>
 
 {% if paginator.total_pages > 1 %}
-<ul class="pagination main-pager">
+<ul class="pagination main-pager" role="navigation" aria-label="Navigation de pagination">
   {% if paginator.previous_page %}
-  <li class="page-item previous">
-    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">
-      <i class="fas fa-arrow-left" alt="Newer Posts"></i>
+  <li class="page-item previous" role="none">
+    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i>
       <span class="d-none d-sm-inline-block">Articles les plus récents</span>
     </a>
   </li>
   {% endif %}
   {% if paginator.next_page %}
-  <li class="page-item next">
-    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">
+  <li class="page-item next" role="none">
+    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
       <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
-      <i class="fas fa-arrow-right" alt="Articles les plus anciens"></i>
+      <i class="fas fa-arrow-right" aria-hidden="true"></i>
     </a>
   </li>
   {% endif %}

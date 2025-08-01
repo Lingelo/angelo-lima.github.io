@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Allow search engines to crawl CSS and JS files
+Allow: /assets/
+
+# Disallow admin-type pages
+Disallow: /404.html
+
+# Crawl delay (optional, helps prevent overload)
+Crawl-delay: 1
