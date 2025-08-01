@@ -3,6 +3,7 @@ layout: page
 title: À propos de moi
 subtitle: Entre lignes de code et sorts de développeur 🧙‍♂️💻
 description: "Angelo Lima, développeur web full-stack Franco-Portugais depuis 2013. Passionné par le développement, l'IA, les nouvelles technologies et la culture geek. Découvrez mon parcours et mes projets."
+comments: false
 ---
 
 ## Qui suis-je ? 👨‍💻
@@ -58,6 +59,6 @@ Sur ce blog, tu trouveras un joyeux mélange de contenus autour de mes passions 
 
 Ici, on parle passions, découvertes et parfois même des trucs absurdes qui méritent d'être partagés 🌌. Bref, c'est un espace qui me ressemble, **sans prise de tête**, et j'espère que ça te plaira !
 
-Alors bienvenue dans mon univers, et si t'as des idées, des suggestions ou juste envie de discuter… les **commentaires** sont là pour ça 💬.  
+Alors bienvenue dans mon univers, et si t'as des idées, des suggestions ou juste envie de discuter… n'hésite pas à me contacter 💬.  
 
 C'est parti pour l'aventure ! 🚀

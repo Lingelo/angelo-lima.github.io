@@ -159,4 +159,4 @@ Si les modèles existants ne vous suffisent pas, vous pouvez **créer votre prop
 
 JSON Resume va bien au-delà de la simple rédaction. 💡 Ce format structuré rend la maintenance de votre CV beaucoup plus simple et rapide. Plus besoin de tout reprendre à zéro à chaque mise à jour ou modification : adaptez et générez facilement différentes versions selon vos besoins. 🖥️⚡
 
-Prêt à adopter un format plus efficace, plus personnalisable et mieux adapté à vos ambitions professionnelles ? 🚀 Que pensez-vous de ce concept ? Envisagez-vous de l’utiliser pour vos futures candidatures ? Partagez vos retours ! 💬  
+Prêt à adopter un format plus efficace, plus personnalisable et mieux adapté à vos ambitions professionnelles ? 🚀 Que pensez-vous de ce concept ? Envisagez-vous de l’utiliser pour vos futures candidatures ? Contactez-moi pour partager vos retours ! 💬  

@@ -203,4 +203,4 @@ Dans **Angular**, les composants sont souvent abonnés à des Observables (via `
 
 Entre les limites imposées par le théorème de Rice et les méthodologies comme Power of 10, nous avons un mélange de théorie et de pratique pour nous guider. Le développement web n’atteindra jamais une perfection théorique, mais avec des règles pragmatiques, nous pouvons atteindre un niveau de robustesse suffisant pour répondre aux attentes des utilisateurs.
 
-Alors, qu'allez-vous appliquer en priorité dans vos futurs projets web ? Partagez vos pratiques préférées dans les commentaires ! 🚀
+Alors, qu'allez-vous appliquer en priorité dans vos futurs projets web ? Partagez vos pratiques préférées en me contactant ! 🚀

@@ -171,4 +171,4 @@ Voilà mon **setup IA personnel**, qui combine :
 
 Grâce à ce duo, je peux expérimenter, optimiser mes dépenses en crédits API, tout en gardant le contrôle sur les données que j’utilise. Une fois configuré, tout tourne parfaitement, et Open Web UI apporte une simplicité qui change la donne.
 
-Et vous, **êtes-vous plutôt IA locale (comme llama3) ou IA cloud comme GPT-4 ?** Partagez vos préférences, vos astuces ou vos retours dans les commentaires ! 😊✨  
+Et vous, **êtes-vous plutôt IA locale (comme llama3) ou IA cloud comme GPT-4 ?** N'hésitez pas à me faire savoir vos préférences ! 😊✨  

@@ -187,6 +187,6 @@ Le **Feature-Sliced Design** se positionne comme une solution robuste aux défis
 
 Mais comme pour toute méthodologie, le contexte est un facteur clé. Le FSD brille surtout pour des projets complexes ou à long terme, mais il peut être trop lourd pour de simples prototypes ou des projets à petite échelle.
 
-👉 **Et toi, as-tu envie d’essayer le Feature-Sliced Design ? L’as-tu déjà appliqué sur un projet complexe ? Partage ton retour d’expérience en commentaire !**
+👉 **Et toi, as-tu envie d’essayer le Feature-Sliced Design ? L’as-tu déjà appliqué sur un projet complexe ? Partage ton retour d’expérience en me contactant directement !**
 
 ➡️ **Tu veux approfondir ? Consulte le guide complet** : [**Feature-Sliced Design Documentation**](https://feature-sliced.design/).

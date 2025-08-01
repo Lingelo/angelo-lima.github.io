@@ -112,7 +112,7 @@ Pour le moment, des solutions sont envisagées, mais elles nécessitent du temps
 
 Ces découvertes vous inquiètent-elles ou vous fascinent-elles ?  
 Pensez-vous que les IA peuvent – et doivent – être mieux sécurisées ?  
-Partagez votre avis, et continuons la discussion.
+N'hésitez pas à me contacter pour partager votre avis et continuer la discussion.
 
 ---
 

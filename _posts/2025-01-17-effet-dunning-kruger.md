@@ -110,4 +110,4 @@ L’effet Dunning-Kruger, ce n’est ni un défaut, ni une honte. C’est une pr
 
 Alors, la prochaine fois que tu te sens un peu *trop* sûr·e de toi, ou bien que tu as l’impression de ne rien comprendre, repense à cette courbe. Et rappelle-toi : ce n’est qu’une étape, et l’important, c’est de garder la curiosité de continuer. 🚀
 
-Et toi ? As-tu déjà découvert que tu étais "au sommet de l’ignorance triomphante" sur un sujet ? Ou vécu une descente mémorable dans la vallée de l’humilité ? Viens partager ton expérience en commentaire, ça pourrait nous faire sourire (ou réfléchir 😊).  
+Et toi ? As-tu déjà découvert que tu étais "au sommet de l’ignorance triomphante" sur un sujet ? Ou vécu une descente mémorable dans la vallée de l’humilité ? Viens partager ton expérience en me contactant, ça pourrait nous faire sourire (ou réfléchir 😊).  
