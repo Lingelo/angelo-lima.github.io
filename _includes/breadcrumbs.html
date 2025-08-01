@@ -52,6 +52,14 @@
                     <meta property="position" content="2">
                 </li>
             {% endif %}
+            
+            <!-- Pagination pour la liste des articles -->
+            {% if paginator and paginator.page > 1 %}
+                <li property="itemListElement" typeof="ListItem" class="active">
+                    <span property="name">Page {{ paginator.page }}</span>
+                    <meta property="position" content="2">
+                </li>
+            {% endif %}
                 </ol>
             </div>
         </div>
