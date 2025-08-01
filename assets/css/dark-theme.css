@@ -833,7 +833,7 @@ main {
 .cv-dropdown-btn {
   background: none;
   border: none;
-  color: var(--link-col-dark);
+  color: var(--link-col-dark) !important;
   cursor: pointer;
   padding: 0;
   font-size: inherit;
@@ -844,7 +844,7 @@ main {
 }
 
 .cv-dropdown-btn:hover {
-  color: var(--hover-col-dark);
+  color: var(--hover-col-dark) !important;
 }
 
 .cv-dropdown-btn .fa-chevron-down {
