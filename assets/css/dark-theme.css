@@ -871,8 +871,44 @@ main {
   margin-top: 0.5rem;
 }
 
-.cv-dropdown:hover .cv-dropdown-content {
+/* Show dropdown on hover (desktop) or when open class is added (mobile) */
+.cv-dropdown:hover .cv-dropdown-content,
+.cv-dropdown.open .cv-dropdown-content {
   display: block;
+}
+
+/* Rotate arrow when dropdown is open */
+.cv-dropdown.open .cv-dropdown-btn .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Touch device specific styles */
+.touch-device .cv-dropdown-content {
+  /* Prevent hover issues on touch devices */
+  display: none !important;
+}
+
+.touch-device .cv-dropdown.open .cv-dropdown-content {
+  display: block !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .cv-dropdown-content {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 250px;
+    max-width: 90vw;
+    top: auto;
+    bottom: auto;
+    margin-top: 1rem;
+  }
+  
+  .cv-dropdown-content a {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
 }
 
 .cv-dropdown-content a {
