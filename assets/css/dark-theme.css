@@ -497,6 +497,48 @@ blockquote {
   text-decoration: none;
 }
 
+/* Page header styling - Make title prominent */
+.intro-header .page-heading h1,
+.intro-header .post-heading h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--text-col-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.intro-header .page-subheading,
+.intro-header .post-subheading {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--text-col-dark);
+  opacity: 0.9;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Add golden accent for main page title */
+.intro-header .page-heading h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--link-col-dark), var(--hover-col-dark));
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* Header background styling */
+.intro-header {
+  background-color: var(--card-bg-dark);
+  border-bottom: 1px solid var(--border-col-dark);
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
 /* Remove theme toggle styles - no longer needed */
 
 /* Mobile responsive grid layout */
@@ -542,6 +584,23 @@ blockquote {
   .post-preview .post-entry {
     font-size: 0.9rem;
   }
+
+  /* Mobile header adjustments */
+  .intro-header {
+    padding: 2rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-header .page-heading h1,
+  .intro-header .post-heading h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .intro-header .page-subheading,
+  .intro-header .post-subheading {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    padding: 0 1rem;
+  }
 }
 
 /* Very small screens */
@@ -575,6 +634,17 @@ blockquote {
 
   .post-preview .post-entry {
     font-size: 0.85rem;
+  }
+
+  /* Very small screen header adjustments */
+  .intro-header {
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .intro-header .page-heading h1::after {
+    width: 40px;
+    height: 2px;
   }
 }
 
