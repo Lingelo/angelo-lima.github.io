@@ -126,3 +126,113 @@ When making style changes:
 - Cover images: Full-width hero images for individual posts  
 - Format: PNG/JPG optimized for web
 - Location: `/assets/img/` directory
+
+## SEO Maintenance Workflows
+
+### Creating New Articles
+
+When creating a new blog post, follow these steps to ensure proper SEO optimization:
+
+1. **Create the post file** in `_posts/` with proper naming: `YYYY-MM-DD-title.md`
+
+2. **Required frontmatter structure**:
+```yaml
+---
+layout: post
+title: "Article Title"
+subtitle: "Article subtitle (optional but recommended)"
+description: "Custom SEO description (recommended for popular articles)"
+thumbnail-img: "/assets/img/article-thumbnail.png"
+cover-img: "/assets/img/article-cover.png" (optional)
+tags: [IA, Développement, Web, Tech, Personnel, Sécurité] # Use existing tags only
+author: "Angelo Lima" (optional, will be highlighted in golden)
+---
+```
+
+3. **Post-publication SEO updates** (automatic via Jekyll):
+   - Sitemap.xml automatically includes new posts
+   - RSS feed.xml automatically includes new posts (latest 20)
+   - Pagination automatically updates if needed
+   - Breadcrumbs automatically include the post
+
+**No manual SEO file updates needed** for new articles using existing tags.
+
+### Adding New Tags
+
+When adding a completely new tag category, follow these steps to prevent 404 errors:
+
+#### 1. Create Tag Page
+Create a new file in `/tag/` directory: `/tag/new-tag-name.html`
+```yaml
+---
+layout: tag
+title: "Articles sur [Category Name]"
+subtitle: "Description of the category"
+description: "SEO description for the tag page"
+tag: NewTagName # Must match exactly the tag used in posts
+permalink: /tag/new-tag-name/
+---
+```
+
+#### 2. Update SEO Files
+After creating a new tag page, update these files:
+
+**A. Update `sitemap.xml`** - Add new tag URL:
+```xml
+<url>
+  <loc>{{ site.url }}/tag/new-tag-name/</loc>
+  <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+```
+
+**B. Update `robots.txt`** - Add new tag to allowed crawling:
+```
+Allow: /tag/new-tag-name/
+```
+
+**C. Update `sitemap.html`** - Add new tag category to the tags grid section:
+```html
+<div class="tag-category">
+  <h3><a href="/tag/new-tag-name/">🔧 New Category Name</a></h3>
+  <p>Description of articles in this category</p>
+</div>
+```
+
+#### 3. Standardized Tag Names
+Current standardized tags (use these preferentially):
+- **IA**: Intelligence Artificielle, LLM, machine learning
+- **Développement**: Programming, development tools, coding
+- **Web**: Web technologies, frameworks, frontend/backend
+- **Tech**: Technology news, innovations, hardware
+- **Personnel**: Personal experiences, reflections, career
+- **Sécurité**: Cybersecurity, best practices, security tools
+
+#### 4. Tag Page Template
+All tag pages use the unified template in `_layouts/tag.html` which provides:
+- Automatic article listing for the tag
+- Consistent styling with the site theme  
+- Breadcrumb navigation support
+- SEO meta tags and structured data
+
+### SEO File Structure
+
+Current SEO-optimized files that auto-update with content:
+- **`sitemap.xml`**: Main sitemap with posts, pages, tags, pagination
+- **`robots.txt`**: Crawling directives for all tag pages and content  
+- **`feed.xml`**: RSS feed with full content and metadata (latest 20 posts)
+- **`sitemap.html`**: Human-readable site navigation page
+
+### Automated vs Manual SEO Updates
+
+**Automated (no action needed)**:
+- New posts appear in sitemap.xml and feed.xml
+- Pagination updates automatically
+- Breadcrumbs include new posts automatically
+- Social sharing meta tags generated per post
+
+**Manual updates required**:
+- Adding completely new tag categories (requires tag page + SEO file updates)
+- Major site structure changes
+- Custom SEO descriptions for important articles
