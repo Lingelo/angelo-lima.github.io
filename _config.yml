@@ -10,12 +10,15 @@
 ############################
 
 # Name of website
-title: "Blog"
+title: "Angelo Lima - Blog Tech & Développement Web"
 
 # Your name to show in the footer
 author: "Angélo LIMA"
 
 description: "Bienvenue sur le blog d'Angelo Lima ! Passionné par le développement web et la programmation, je partage mes astuces, tutoriels, et réflexions autour de la création web moderne, pour les développeurs et curieux de la tech."
+
+# URL du site pour le SEO
+url: "https://angelo-lima.fr"
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -23,6 +26,7 @@ description: "Bienvenue sur le blog d'Angelo Lima ! Passionné par le développe
 
 navbar-links:
   À propos de moi: "aboutme"
+  Tags: "tags"
   #Resources:
   #  - Beautiful Jekyll: "https://beautifuljekyll.com"
   #  - Learn markdown: "https://www.markdowntutorial.com/"
@@ -105,7 +109,7 @@ share-links-active:
 #url-pretty: "MyWebsite.com"
 
 # Add the website title to the title of every page
-title-on-all-pages: true
+title-on-all-pages: false
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -166,6 +170,7 @@ site-css:
 # If you have common JavaScript files that should be included in every page, list them here
 site-js:
   - "/assets/js/hide-empty-tags.js"
+  - "/assets/js/image-optimization.js"
 
 #################################
 # --- Web Analytics Section --- #

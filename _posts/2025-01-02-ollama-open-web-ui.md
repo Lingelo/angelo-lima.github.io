@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "🛠️ Configurer Ollama et Open Web UI : Mon setup IA quotidien 🤖"
-subtitle: "✨ Comment j’utilise les LLMs comme GPT-4 et Llama3 pour travailler efficacement 🚀"
+subtitle: "✨ Comment j'utilise les LLMs comme GPT-4 et Llama3 pour travailler efficacement 🚀"
+description: "Guide complet pour installer et configurer Ollama avec Open Web UI. Créez votre setup IA local avec Docker, connexion OpenAI et modèles LLM comme Llama3 pour développeurs."
 cover-img: /assets/img/ai-setup.png
 thumbnail-img: /assets/img/ai-setup.png
 share-img: /assets/img/ai-setup.png

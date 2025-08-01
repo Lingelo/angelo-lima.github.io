@@ -2,13 +2,19 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: https://angelo-lima.fr/sitemap.xml
 
 # Allow search engines to crawl CSS and JS files
 Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
 
-# Disallow admin-type pages
+# Disallow admin-type pages and development files
 Disallow: /404.html
+Disallow: /CHANGELOG.md
+Disallow: /Gemfile
+Disallow: /README.md
+Disallow: /docs/
 
 # Crawl delay (optional, helps prevent overload)
 Crawl-delay: 1
