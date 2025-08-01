@@ -54,6 +54,7 @@ Sur ce blog, tu trouveras un joyeux mélange de contenus autour de mes passions 
 - **GitHub** : [Lingelo](https://github.com/lingelo)  
 - **LinkedIn** : [Angelo Lima](https://linkedin.com/in/angélo-lima)
 - **Email** : angelomiguellima@gmail.com
+- **CV** : [Mon CV complet](https://angelo-lima.dev/resume/cv-angelo-lima.html){:target="_blank"} <i class="fa fa-external-link" aria-hidden="true"></i>
 
 Ici, on parle passions, découvertes et parfois même des trucs absurdes qui méritent d'être partagés 🌌. Bref, c'est un espace qui me ressemble, **sans prise de tête**, et j'espère que ça te plaira !
 
