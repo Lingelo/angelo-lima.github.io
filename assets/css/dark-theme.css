@@ -103,6 +103,13 @@ a:hover {
   color: var(--link-col-dark) !important;
 }
 
+/* Navigation menu background */
+.navbar-nav {
+  background-color: #0a0a0a !important;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
 /* Footer styles */
 footer {
   background-color: var(--footer-col-dark);
