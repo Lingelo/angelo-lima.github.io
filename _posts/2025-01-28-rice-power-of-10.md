@@ -4,7 +4,7 @@ title: "Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice �
 subtitle: "Entre limitations théoriques et pratiques minimalistes, créez des applications web robustes"
 cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
-tags: [Théorie, Calculabilité, Développement Web, Qualité Logicielle, Architecture]
+tags: [Développement, Web]
 author: "Angelo LIMA"
 ---
 

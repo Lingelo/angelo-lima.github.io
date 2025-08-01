@@ -4,7 +4,7 @@ title: "Feature-Sliced Design : La clé d'une architecture frontend évolutive �
 subtitle: "Une approche moderne pour organiser vos projets frontend complexes"
 cover-img: /assets/img/feature-sliced-design.png
 share-img: /assets/img/feature-sliced-design.png
-tags: [Frontend, Architecture, Développement]
+tags: [Développement, Web]
 author: Angelo Lima
 ---
 # Feature-Sliced Design : Une architecture frontend moderne et méthodique 🧩

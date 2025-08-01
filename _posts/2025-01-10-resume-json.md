@@ -4,7 +4,7 @@ title: "JSON Resume : Transformez votre CV comme un développeur 🚀"
 subtitle: "Un format open source élégant et flexible pour gérer votre carrière"
 cover-img: /assets/img/json-resume.png
 share-img: /assets/img/json-resume.png
-tags: [JSON, développeur, outils]
+tags: [Développement]
 author: Angelo Lima
 ---
 # JSON Resume : Transformez votre CV comme un développeur 🚀

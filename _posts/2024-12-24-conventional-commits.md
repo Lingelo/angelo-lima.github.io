@@ -5,7 +5,7 @@ subtitle: "Rendre ton Git lisible et éviter de rendre ton équipe folle"
 cover-img: /assets/img/conventional-commits.png
 thumbnail-img: /assets/img/thumb-conventional-commits.png
 share-img: /assets/img/conventional-commits.png
-tags: [git, développeur]
+tags: [Développement]
 author: Angelo Lima
 ---
 

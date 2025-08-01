@@ -4,7 +4,7 @@ title: "Fin des Fact-Checkers : Meta, Désinformation et le Risque d’un Intern
 subtitle: "Quand la vérité devient une option facultative : Zoom sur Meta, le Texas et ce que cela signifie pour la France et le reste du monde."  
 cover-img: /assets/img/fake-news.png  
 share-img: /assets/img/fake-news.png  
-tags: [Réseaux sociaux, Désinformation, Fact-checking, Politique, France, Tech]  
+tags: [Tech, Web]  
 author: Angelo LIMA  
 ---
 

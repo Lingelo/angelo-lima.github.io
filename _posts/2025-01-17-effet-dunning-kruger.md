@@ -4,7 +4,7 @@ title: "L’effet Dunning-Kruger : Quand tu crois tout savoir (mais ce n’est q
 subtitle: "Décryptage d’un biais cognitif qui touche tout le monde, de la tech à la vie quotidienne"
 cover-img: /assets/img/dunning-kruger-cover.png
 share-img: /assets/img/dunning-kruger-cover.png
-tags: [Psychologie, Développement personnel, Tech, Apprentissage]
+tags: [Personnel, Tech]
 author: Angelo LIMA
 ---
 

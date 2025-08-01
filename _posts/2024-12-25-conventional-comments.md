@@ -4,7 +4,7 @@ title: "Boostez vos Reviews de Code avec les Conventional Comments 🚀"
 subtitle: "Parce que les revues de code, c’est mieux quand tout le monde parle la même langue"
 cover-img: /assets/img/conventional-comments.png
 share-img: /assets/img/conventional-comments.png
-tags: [git, développeur]
+tags: [Développement]
 author: Angelo Lima
 ---
 

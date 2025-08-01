@@ -4,7 +4,7 @@ title: "Jailbreaking des LLMs : Exploration des limites avec DeepSeek R1 🛠️
 subtitle: "Techniques, découvertes et éthique autour du contournement des censures dans les modèles de langage"
 cover-img: /assets/img/deepseek-jailbreak.png
 share-img: /assets/img/deepseek-jailbreak.png
-tags: [LLM, IA, Jailbreaking, Censure, Exploration, DeepSeek R1]
+tags: [IA, Sécurité]
 author: "Angelo LIMA"
 ---
 

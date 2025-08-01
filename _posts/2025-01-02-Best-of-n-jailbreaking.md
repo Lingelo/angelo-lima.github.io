@@ -4,7 +4,7 @@ title: "Best-of-N Jailbreaking : Quand les IA trébuchent face à des attaques r
 subtitle: "Comprendre comment cette méthode exploitant les variations de prompts met à mal nos intelligences artificielles"
 cover-img: /assets/img/bon-llm.png
 share-img: /assets/img/bon-llm.png
-tags: [IA, llm]
+tags: [IA, Sécurité]
 author: Angelo Lima
 ---
 

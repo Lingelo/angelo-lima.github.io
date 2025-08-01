@@ -4,7 +4,7 @@ title: "NVIDIA NIM : Déployez des LLM localement comme un pro 💻"
 subtitle: "Découvrez comment NVIDIA redéfinit l’IA de pointe sur vos infrastructures"
 cover-img: /assets/img/nvidia-nim.png
 share-img: /assets/img/nvidia-nim.png
-tags: [IA, docker, développeur]
+tags: [IA, Développement]
 author: Angelo Lima
 ---
 # 🚀 Nvidia NIM : Libérez la puissance des LLMs dans vos infrastructures

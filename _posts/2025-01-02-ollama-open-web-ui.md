@@ -5,7 +5,7 @@ subtitle: "✨ Comment j’utilise les LLMs comme GPT-4 et Llama3 pour travaille
 cover-img: /assets/img/ai-setup.png
 thumbnail-img: /assets/img/ai-setup.png
 share-img: /assets/img/ai-setup.png
-tags: [IA, Ollama, Open Web UI, geek]
+tags: [IA, Développement]
 author: Angelo Lima
 ---
 

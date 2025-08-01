@@ -4,7 +4,7 @@ title: "SQL Assistant : Convertissez du texte en requêtes SQL exécutables 🚀
 subtitle: "Un outil open-source pour générer des requêtes SQL en langage naturel et interagir avec votre base de données"
 cover-img: /assets/img/sql-assistant-cover.png
 share-img: /assets/img/sql-assistant-cover.png
-tags: [SQL, IA, Open Source, PostgreSQL, Développement]
+tags: [IA, Développement]
 author: "Angelo LIMA"
 ---
 
