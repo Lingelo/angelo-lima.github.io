@@ -91,7 +91,7 @@ a:hover {
 
 /* Navigation styles */
 .navbar {
-  background-color: var(--navbar-col-dark) !important;
+  background-color: transparent !important;
   border-bottom: 1px solid var(--border-col-dark);
 }
 
@@ -719,7 +719,7 @@ main {
 /* Enhanced mobile navigation */
 @media (max-width: 991px) {
   .navbar-collapse {
-    background-color: var(--navbar-col);
+    background-color: transparent;
     border-radius: 8px;
     margin-top: 0.5rem;
     padding: 1rem;
