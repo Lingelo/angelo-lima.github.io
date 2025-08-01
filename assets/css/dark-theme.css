@@ -824,6 +824,22 @@ main {
   color: var(--hover-col-dark);
 }
 
+/* CV link styling */
+.cv-link {
+  color: var(--link-col-dark) !important;
+  position: relative;
+}
+
+.cv-link:hover {
+  color: var(--hover-col-dark) !important;
+}
+
+.cv-link .fa-external-link {
+  margin-left: 0.25rem;
+  font-size: 0.8em;
+  vertical-align: top;
+}
+
 /* Smooth transitions for theme elements */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
