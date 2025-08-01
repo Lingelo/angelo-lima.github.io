@@ -12,6 +12,11 @@
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto" role="menubar">
+      <li class="nav-item" role="none">
+        <a class="nav-link cv-link" href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem" aria-label="Mon CV - Ouvre dans une nouvelle fenêtre">
+          Mon CV <i class="fa fa-external-link" aria-hidden="true"></i>
+        </a>
+      </li>
       {%- for link in site.navbar-links -%}
         {%- if link[1].first %}
           <li class="nav-item dropdown" role="none">
@@ -30,11 +35,6 @@
           </li>
         {%- endif -%}
       {%- endfor -%}
-      <li class="nav-item" role="none">
-        <a class="nav-link cv-link" href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem" aria-label="Mon CV - Ouvre dans une nouvelle fenêtre">
-          CV <i class="fa fa-external-link" aria-hidden="true"></i>
-        </a>
-      </li>
       {% if site.post_search %}
         <li class="nav-item" role="none">
           <a class="nav-link" id="nav-search-link" href="#" title="Rechercher" role="menuitem" aria-label="Ouvrir la recherche">

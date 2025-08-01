@@ -828,6 +828,8 @@ main {
 .cv-link {
   color: var(--link-col-dark) !important;
   position: relative;
+  display: flex !important;
+  align-items: center;
 }
 
 .cv-link:hover {
@@ -835,9 +837,8 @@ main {
 }
 
 .cv-link .fa-external-link {
-  margin-left: 0.25rem;
+  margin-left: 0.4rem;
   font-size: 0.8em;
-  vertical-align: top;
 }
 
 /* Smooth transitions for theme elements */
