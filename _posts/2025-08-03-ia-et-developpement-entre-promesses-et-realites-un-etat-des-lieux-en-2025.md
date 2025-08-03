@@ -101,7 +101,7 @@ Les chiffres parlent d'eux-mêmes selon Micode :
 
 Micode identifie le vrai risque : ["le junior reste un 'vibe codeur' : celui qui sait prompter, mais qui ne comprend pas les fondations, celui qui ne sait pas **pourquoi** le code fonctionne."](https://www.linkedin.com/feed/update/urn:li:activity:7339649188034404352)⁹
 
-C'est exactement ce que révèlent nos études : la différence entre un développeur qui utilise l'IA comme béquille et celui qui la maîtrise comme un outil.
+Les données convergent vers le même constat : il y a un fossé grandissant entre le développeur qui subit l'IA comme une béquille et celui qui la maîtrise comme un véritable multiplicateur de force.
 
 ## Comment S'en Sortir ? Guide Pratique pour Développeurs
 
