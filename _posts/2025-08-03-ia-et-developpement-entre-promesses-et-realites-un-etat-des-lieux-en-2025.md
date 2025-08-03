@@ -9,7 +9,7 @@ tags: [IA, Développement]
 author: "Angelo Lima"
 ---
 
-La ["Loi de Falkland"](https://fr.wikipedia.org/wiki/Loi_de_Falkland), formulée par le psychologue Robert Falkland, énonce un principe simple : **si tout fonctionne bien, pourquoi forcer le changement ?** Cette règle, basée sur l'observation des comportements en entreprise, nous rappelle qu'il faut peser les coûts avant de changer juste pour changer.
+La ["Loi de Falkland"](https://www.hulkapps.com/fr/blogs/ecommerce-hub/comprendre-la-loi-des-iles-falkland-adopter-la-patience-dans-la-prise-de-decisions), formulée par le psychologue Robert Falkland, énonce un principe simple : **si tout fonctionne bien, pourquoi forcer le changement ?** Cette règle, basée sur l'observation des comportements en entreprise, nous rappelle qu'il faut peser les coûts avant de changer juste pour changer.
 
 Quand quelque chose marche bien, mieux vaut souvent ne pas y toucher. Et si on peut attendre avant de décider sans que ça pose problème, autant prendre le temps de mieux comprendre la situation.
 
@@ -204,4 +204,4 @@ L'IA transforme notre métier, c'est indéniable. Mais 2025 nous rappelle qu'ent
 
 9. [Post LinkedIn de Micode sur l'IA et l'avenir des développeurs](https://www.linkedin.com/feed/update/urn:li:activity:7339649188034404352) - LinkedIn
 
-10. [Loi de Falkland](https://fr.wikipedia.org/wiki/Loi_de_Falkland) - Wikipedia
+10. [Loi de Falkland : adopter la patience dans la prise de décisions](https://www.hulkapps.com/fr/blogs/ecommerce-hub/comprendre-la-loi-des-iles-falkland-adopter-la-patience-dans-la-prise-de-decisions) - HulkApps
