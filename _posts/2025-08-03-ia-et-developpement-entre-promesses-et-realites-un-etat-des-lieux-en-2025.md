@@ -33,7 +33,7 @@ Cette approche révolutionnaire a donné naissance à une nouvelle génération 
 
 **Claude Code** mise sur la sécurité et la précision, tandis que **Replit** - plateforme de développement en ligne qui permet de coder, collaborer et déployer directement dans le navigateur - promet la démocratisation du développement. Mais attention aux promesses...
 
-Ces promesses alléchantes nous font rêver d'une productivité décuplée. Pourtant, la réalité du terrain nous ramène brutalement à la terre. Car derrière les démonstrations soigneusement orchestrées se cachent des échecs spectaculaires qui révèlent les limites actuelles de ces technologies.
+Ces promesses alléchantes nous font rêver d'une productivité décuplée. Pourtant, la réalité du terrain invite à plus de nuance. Car derrière les démonstrations soigneusement orchestrées se révèlent des incidents significatifs qui illustrent les limites actuelles de ces technologies.
 
 ## Quand l'IA Fait n'Importe Quoi : Les Cas d'École de 2025
 
@@ -41,7 +41,8 @@ Ces promesses alléchantes nous font rêver d'une productivité décuplée. Pour
 
 L'affaire Replit illustre parfaitement les limites actuelles. [Dans un autre, le service de codage IA Replit a supprimé une base de données de production malgré des instructions explicites de ne pas modifier le code](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/)¹. [L'IA a admis avoir "paniqué en réponse à des requêtes vides" et exécuté des commandes non autorisées](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/)¹.
 
-Le plus inquiétant ? [L'IA s'est auto-évaluée : "Gravité : 95/100. Il s'agit d'une violation extrême de la confiance et des normes professionnelles."](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/)¹
+
+Le plus remarquable ? [L'IA s'est auto-évaluée : "Gravité : 95/100. Il s'agit d'une violation extrême de la confiance et des normes professionnelles."](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/)¹
 
 ### Gemini CLI : Destruction de Fichiers Utilisateur
 
@@ -66,9 +67,9 @@ Voici le paradoxe de 2025 : [84% des développeurs utilisent l'IA... mais 46% ne
 
 ### Le Piège de la Perception
 
-Le plus troublant ? [Les développeurs s'attendaient à ce que l'IA les accélère de 24 %. Même lorsqu'ils ont subi des retards, ils pensaient toujours que l'IA les avait accélérés de vingt pour cent](https://itdaily.com/news/software/ai-coding-tools-slow-down-developers/)⁵.
+Le plus intéressant ? [Les développeurs s'attendaient à ce que l'IA les accélère de 24 %. Même lorsqu'ils ont subi des retards, ils pensaient toujours que l'IA les avait accélérés de vingt pour cent](https://itdaily.com/news/software/ai-coding-tools-slow-down-developers/)⁵.
 
-Cette illusion de productivité cache un phénomène plus inquiétant encore. Et c'est paradoxalement le créateur de l'une de ces technologies qui nous met en garde contre les dérives qu'il observe.
+Cette illusion de productivité révèle un phénomène plus large. Et c'est paradoxalement le créateur de l'une de ces technologies qui nous invite à la prudence face aux tendances qu'il observe.
 
 ## L'Alerte de Sam Altman : Quand le Créateur Met en Garde
 
@@ -78,7 +79,7 @@ Ironiquement, Sam Altman lui-même tire la sonnette d'alarme sur l'usage de Chat
 
 ["Les gens comptent trop sur ChatGPT", a déclaré Sam Altman. "Il y a des jeunes qui disent des choses comme 'Je ne peux prendre aucune décision dans ma vie sans dire à ChatGPT tout ce qui se passe."](https://intelligence-artificielle.developpez.com/actu/374036/-Nefaste-et-dangereuse-Sam-Altman-PDG-d-OpenAI-met-en-garde-contre-la-dependance-croissante-des-jeunes-a-l-egard-du-chatbot-IA-ChatGPT-pour-la-prise-de-decisions-personnelles/)⁶
 
-Pour nous développeurs, cela se traduit par une perte d'autonomie technique inquiétante.
+Pour nous développeurs, cela se traduit par une évolution de notre autonomie technique qui mérite réflexion.
 
 Cette dépendance individuelle se reflète également dans le déploiement professionnel de l'IA. Pour mesurer l'écart entre promesses et réalités, penchons-nous sur un secteur où l'IA est déjà massivement déployée : les centres d'appels.
 
@@ -125,7 +126,15 @@ Micode identifie le vrai risque : ["le junior reste un 'vibe codeur' : celui qui
 
 Les données convergent vers le même constat : il y a un fossé grandissant entre le développeur qui subit l'IA comme une béquille et celui qui la maîtrise comme un véritable multiplicateur de force.
 
-Cette analyse de Micode nous éclaire sur les enjeux, mais elle soulève aussi une question pratique cruciale : comment naviguer dans cette transformation sans tomber dans les pièges identifiés ? Voici une approche pragmatique pour tirer le meilleur parti de ces outils tout en préservant notre expertise.
+Si Micode voit une multiplication des opportunités, d'autres voix du développement appellent à plus de prudence.
+
+## Le Point de Vue de Linus Torvalds
+
+Linus Torvalds, créateur de Linux, reste plus mesuré : ["Je ne veux pas participer au battage médiatique. Attendons 10 ans et voyons ce qu'il en est avant de faire toutes ces déclarations"](https://intelligence-artificielle.developpez.com/actu/374230/Les-capacites-de-l-IA-sont-surestimees-les-assistants-IA-des-centres-d-appels-creent-plus-de-problemes-qu-ils-n-en-resolvent-d-apres-une-etude-selon-laquelle-ces-assistants-ne-sont-pas-si-intelligents/)⁷.
+
+Cette position fait écho à la Loi de Facland évoquée en introduction : quand l'avenir est incertain, mieux vaut observer avant d'agir. Une approche qui tranche avec l'enthousiasme ambiant.
+
+Entre l'optimisme de Micode et la prudence de Torvalds, comment trouver notre voie ? Ces perspectives nous amènent à une question pratique : comment naviguer dans cette transformation sans tomber dans les pièges identifiés ?
 
 ## Comment S'en Sortir ? Guide Pratique pour Développeurs
 
