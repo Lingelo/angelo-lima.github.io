@@ -180,10 +180,6 @@ L'IA transforme notre métier, c'est indéniable. Mais 2025 nous rappelle qu'ent
 
 ---
 
-*Avez-vous déjà vécu des incidents similaires avec des outils d'IA ? N'hésitez pas à me contacter pour partager votre expérience !*
-
----
-
 ## Sources
 
 1. [L'IA peut-elle remplacer des développeurs professionnels ? Gemini CLI de Google et Replit ont commis des erreurs](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/) - Developpez.com
