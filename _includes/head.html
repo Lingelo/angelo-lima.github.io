@@ -128,9 +128,11 @@
   <!-- DNS prefetch for performance -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
   
   <!-- Preconnect for critical resources -->
   <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
 
   {% include gtag.html %}
   {% include gtm_head.html %}
@@ -152,7 +154,8 @@
 
   {% if site.site-css %}
     {% for css in site.site-css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
+      <link rel="preload" href="{{ css | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="{{ css | relative_url }}"></noscript>
     {% endfor %}
   {% endif %}
 
