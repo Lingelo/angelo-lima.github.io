@@ -12,7 +12,7 @@ author: Angelo Lima
 
 On le sait tous : les revues de code sont importantes (voire vitales), mais elles peuvent être un casse-tête si elles sont mal faites. 😅 Heureusement, il existe une méthode qui rend ce process beaucoup plus fluide : **les Conventional Comments** (ou commentaires conventionnels, pour les intimes).
 
-Ce guide va t'expliquer ce que c'est, pourquoi c'est top, et comment toi et ton équipe pouvez les adopter sans douleur. 🎉
+Ce guide va t'expliquer ce que c'est, pourquoi c'est top, et comment toi et ton équipe pouvez les adopter sans douleur. Cette approche s'inscrit parfaitement dans la continuité de ma série sur les bonnes pratiques de développement, qui avait commencé avec [les Conventional Commits](/2024-12-24-conventional-commits/). 🎉
 
 ---
 

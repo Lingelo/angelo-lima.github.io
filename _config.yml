@@ -10,12 +10,12 @@
 ############################
 
 # Name of website
-title: "Angelo Lima - Blog"
+title: "Angelo Lima - Développeur Web & IA | Blog Tech"
 
 # Your name to show in the footer
 author: "Angélo LIMA"
 
-description: "Bienvenue sur le blog d'Angelo Lima ! Passionné par le développement web et la programmation, je partage mes astuces, tutoriels, et réflexions autour de la création web moderne, pour les développeurs et curieux de la tech."
+description: "Angelo Lima, développeur web full-stack spécialisé en IA. Blog tech français avec tutoriels développement, analyses d'outils IA (Claude, ChatGPT), et réflexions sur l'innovation digitale moderne."
 
 # URL du site pour le SEO
 url: "https://angelo-lima.fr"
@@ -132,7 +132,7 @@ edit_page_button: false
 navbar-var-length: false
 
 # The keywords to associate with your website, for SEO purposes
-keywords: "Angelo Lima, blog développement web, blog tech, développeur web full stack, programmation web, tutoriels développement, création de blogs, technologies web modernes, HTML, CSS, JavaScript, apprendre le développement web, conception web, développement front-end, développement back-end, astuces de code, solutions web, Angelo Lima blog personnel, parcours de développeur, blogueur tech, blog web design, innovation digitale, actualités tech, blog de développeur en France, partager ses connaissances en programmation, outils pour développeurs web, bonnes pratiques web, langage JavaScript, blog pour développeurs, ressources pour développeurs débutants, apprendre le code, ressources pour web design, blog professionnel"
+keywords: "Angelo Lima développeur France, blog tech Angelo Lima, développeur web IA Angelo Lima, Angelo Lima blog français, programmation web Angelo Lima, tutoriels IA Claude ChatGPT, développeur full-stack France, blog développement Angelo Lima, innovation digitale Angelo Lima, outils IA développeurs, maillage interne SEO, optimisation performance web, Beautiful Jekyll thème sombre, développeur JavaScript TypeScript, blog tech français 2025"
 
 ######################################
 # --- Colours / background image --- #

@@ -14,7 +14,7 @@ Dans le monde du développement frontend, les projets deviennent de plus en plus
 
 C’est précisément dans ce contexte qu’émerge le **Feature-Sliced Design (FSD)**, une méthodologie moderne d’architecture frontend pensée pour mieux organiser les projets complexes. Mais que propose réellement cette méthode ? Et surtout, pourquoi devrais-tu envisager de l’utiliser ?
 
-Dans cet article, je te propose une plongée détaillée dans cette approche : ses principes fondamentaux, sa structure, ses avantages, ses limites… et même des idées de schémas pour la comprendre visuellement. Prêt·e ? C’est parti ! 🚀
+Dans cet article, je te propose une plongée détaillée dans cette approche : ses principes fondamentaux, sa structure, ses avantages, ses limites… et même des idées de schémas pour la comprendre visuellement. Cette réflexion s'inscrit dans mes explorations sur les bonnes pratiques de développement, comme [les Conventional Commits](/2024-12-24-conventional-commits/) et [les Conventional Comments](/2024-12-25-conventional-comments/). Prêt·e ? C'est parti ! 🚀
 
 ---
 

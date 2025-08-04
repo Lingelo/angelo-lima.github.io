@@ -12,7 +12,9 @@ author: "Angelo LIMA"
 
 SQL Assistant est un outil open-source permettant de **convertir du langage naturel en requêtes SQL** et de les **exécuter directement sur une base de données**.
 
-Que vous soyez développeur, data analyste, ou que vous manipuliez des bases de données occasionnellement, **cet assistant vous permet d’interagir avec votre base de manière simple et efficace**.
+Que vous soyez développeur, data analyste, ou que vous manipuliez des bases de données occasionnellement, **cet assistant vous permet d'interagir avec votre base de manière simple et efficace**. 
+
+Cette approche s'inscrit dans mes explorations sur l'utilisation pratique de l'IA en développement, complémentaires à mes analyses sur [les jailbreaks d'IA](/2025-01-29-jailbreak-deepseek-r1/) et [l'impact écologique](/2025-02-03-IA-impact-ecologique/) de ces technologies.
 
 🔗 **Lien vers le projet :** [GitHub – SQL Assistant](https://github.com/Lingelo/sql-assistant)
 

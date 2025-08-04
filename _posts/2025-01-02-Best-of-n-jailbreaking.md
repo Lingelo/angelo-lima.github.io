@@ -12,7 +12,7 @@ author: Angelo Lima
 
 Les intelligences artificielles (IA) comme GPT-4 d’OpenAI ou Claude 3.5 d’Anthropic, qu’on admire tant pour leur puissance, ne sont pas aussi invincibles qu’on pourrait le croire. Une nouvelle méthode, appelée **Best-of-N Jailbreaking (BoN)**, vient de démontrer que même les IA les plus évoluées peuvent être contournées… avec un peu (beaucoup !) de persévérance et de créativité. Résultat ? Ces IA censées être sécurisées affichent des failles inquiétantes, même face à des attaques qui semblent anodines. 😨
 
-Décryptons ensemble cette technique, ses implications, et pourquoi elle devrait sérieusement nous faire réfléchir sur l’avenir de la sécurité des IA. 🚀
+Décryptons ensemble cette technique, ses implications, et pourquoi elle devrait sérieusement nous faire réfléchir sur l'avenir de la sécurité des IA. Cette analyse s'inscrit dans la continuité de mes réflexions sur [l'impact écologique de l'IA](/2025-02-03-IA-impact-ecologique/), où chaque attaque BoN représente des milliers de requêtes coûteuses en énergie. 🚀
 
 ---
 

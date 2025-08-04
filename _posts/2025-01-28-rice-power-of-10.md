@@ -19,7 +19,7 @@ Alors, comment faire face à ces défis ? Dans cet article, nous allons explorer
 1. **Le théorème de Rice**, un rappel des limites de la théorie computationnelle pour l’automatisation des vérifications.
 2. **Les règles Power of 10**, initialement conçues par la NASA, mais parfaitement transposables à la création de logiciels web robustes.
 
-C'est parti pour un voyage qui mêle rigueur scientifique et bonnes pratiques pragmatiques, tout cela pour rendre nos applications web à la fois simples et résilientes ! 💻🚀
+C'est parti pour un voyage qui mêle rigueur scientifique et bonnes pratiques pragmatiques, tout cela pour rendre nos applications web à la fois simples et résilientes ! Cette approche s'inspire de mes retours d'expérience partagés dans [mes réflexions sur l'année 2024](/2025-01-03-welcome-2025-goodbye-2024/) et des bonnes pratiques de développement comme [Feature-Sliced Design](/2025-01-14-Feature-Sliced-Design/). 💻🚀
 
 ---
 

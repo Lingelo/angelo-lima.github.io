@@ -12,7 +12,7 @@ author: "Angelo LIMA"
 
 Les LLM (Large Language Models) deviennent de plus en plus puissants et influents, mais ils ne sont pas exempts de contraintes. **DeepSeek R1**, le nouveau modèle de langage chinois qui fait beaucoup parler de lui, pose une question intrigante sur les mécanismes de censure. Dans cet article, je vais creuser les limites de DeepSeek R1 à travers une série de tests – et spoiler : certaines méthodes donnent des résultats surprenants 🤯 !
 
-Ce contenu est basé sur mes expériences personnelles et les nombreux essais décrits, dont ceux sur des encodages, des aléas linguistiques ou encore des astuces comme le `Leet Speak`.
+Ce contenu est basé sur mes expériences personnelles et les nombreux essais décrits, dont ceux sur des encodages, des aléas linguistiques ou encore des astuces comme le `Leet Speak`. Cette exploration fait écho à mes recherches précédentes sur [les techniques de jailbreak BoN](/2025-01-02-Best-of-n-jailbreaking/) et s'inscrit dans une démarche de compréhension des vulnérabilités des systèmes d'IA.
 
 ---
 

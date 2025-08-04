@@ -11,7 +11,7 @@ author: Angelo Lima
 
 Créer un CV peut vite devenir un casse-tête. Entre les outils limités, les mises en page qui ne tiennent pas la route et les heures passées à ajuster des marges, on aimerait parfois une solution plus simple et plus efficace, surtout quand on est développeur et qu’on aime les outils pratiques. Si vous vous reconnaissez là-dedans, laissez-moi vous présenter **JSON Resume** — une manière moderne, ouverte et flexible de gérer votre CV.
 
-Imaginez un CV formaté comme un fichier JSON, que vous pouvez manipuler avec vos outils de développeur habituels. Ça vous intrigue ? On plonge dedans. 🌟
+Imaginez un CV formaté comme un fichier JSON, que vous pouvez manipuler avec vos outils de développeur habituels. Cette approche s'inscrit dans la lignée de mes réflexions sur les bonnes pratiques de développement, notamment [les Conventional Commits](/2024-12-24-conventional-commits/) et [les Conventional Comments](/2024-12-25-conventional-comments/), où la standardisation améliore l'efficacité. Ça vous intrigue ? On plonge dedans. 🌟
 
 ---
 

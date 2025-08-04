@@ -2,7 +2,7 @@
 layout: page
 title: À propos de moi
 subtitle: Entre lignes de code et sorts de développeur 🧙‍♂️💻
-description: "Angelo Lima, développeur web full-stack Franco-Portugais depuis 2013. Passionné par le développement, l'IA, les nouvelles technologies et la culture geek. Découvrez mon parcours et mes projets."
+description: "Angelo Lima, développeur web full-stack basé en France depuis 2013. Spécialisé en IA, JavaScript, et innovations tech. Blog technique français avec tutoriels, analyses d'outils IA (Claude, ChatGPT) et réflexions développement moderne."
 comments: false
 ---
 
