@@ -1,0 +1,65 @@
+{% comment %}
+Mobile-adaptive title component
+Shows short title on mobile, full SEO title in meta tags
+{% endcomment %}
+
+<script>
+// Mobile title optimization - preserves SEO while improving UX
+(function() {
+  'use strict';
+  
+  function updateTitleForMobile() {
+    const isMobile = window.innerWidth <= 768;
+    const titleElement = document.querySelector('.navbar-brand');
+    
+    if (titleElement && isMobile) {
+      // Short title for mobile display
+      titleElement.innerHTML = 'Angelo Lima';
+    } else if (titleElement && !isMobile) {
+      // Full title for desktop
+      titleElement.innerHTML = '{{ site.title }}';
+    }
+  }
+  
+  // Update on load
+  document.addEventListener('DOMContentLoaded', updateTitleForMobile);
+  
+  // Update on resize
+  window.addEventListener('resize', function() {
+    clearTimeout(window.titleResizeTimeout);
+    window.titleResizeTimeout = setTimeout(updateTitleForMobile, 100);
+  });
+})();
+</script>
+
+<style>
+/* Mobile title optimization */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+  }
+  
+  /* Ensure navbar doesn't break on very small screens */
+  .navbar-nav {
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+    max-width: 150px;
+  }
+}
+
+/* Desktop keeps full title */
+@media (min-width: 769px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+</style>
