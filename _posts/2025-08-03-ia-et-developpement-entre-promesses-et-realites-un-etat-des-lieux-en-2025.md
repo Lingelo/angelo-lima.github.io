@@ -25,13 +25,15 @@ Pour comprendre la situation actuelle, il faut d'abord voir comment notre maniè
 
 Le terme "vibe coding", popularisé par Andrej Karpathy (ex-OpenAI), désigne cette nouvelle pratique où l'on décrit un programme en langage naturel et l'IA se charge de la traduction technique. [Avec l'essor d'outils d'IA tels que ChatGPT, il est désormais possible de décrire un programme en langage naturel (français par exemple) et de demander au modèle d'IA de le traduire en code fonctionnel sans jamais comprendre comment le code fonctionne](https://intelligence-artificielle.developpez.com/actu/374051/L-IA-peut-elle-remplacer-des-developpeurs-professionnels-Gemini-CLI-de-Google-et-Replit-ont-commis-des-erreurs-qui-ont-entraine-la-suppression-des-donnees-inventant-des-repertoires-falsifiant-des-tests/)¹.
 
+Cette transformation rappelle les enjeux que j'évoquais dans mon analyse de [l'impact écologique de l'IA](/2025-02-03-IA-impact-ecologique/), où la facilité d'usage cache souvent des coûts cachés.
+
 Cette approche révolutionnaire a donné naissance à une nouvelle génération d'outils qui promettent de transformer notre quotidien de développeur. Mais que valent vraiment ces nouvelles solutions ?
 
 ### Les Nouveaux Acteurs
 
 **Gemini CLI** fait sensation avec son approche open-source. [Gemini CLI is open source, so you can inspect the code and contribute to its development](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)². [Google offre des quotas généreux : 60 appels par minute et 1 000 appels par jour sans frais](https://www.hfrance.fr/gemini-cli-integrez-lagent-ia-de-google-gratuitement-dans-votre-terminal.html)³, surpassant largement la concurrence payante.
 
-**Claude Code** mise sur la sécurité et la précision, tandis que **Replit** - plateforme de développement en ligne qui permet de coder, collaborer et déployer directement dans le navigateur - promet la démocratisation du développement. Mais attention aux promesses...
+**Claude Code** mise sur la sécurité et la précision, tandis que **Replit** - plateforme de développement en ligne qui permet de coder, collaborer et déployer directement dans le navigateur - promet la démocratisation du développement. J'ai d'ailleurs exploré ces nouveaux paradigmes dans mon article sur [Anthropic MCP](/2025-05-12-anthropic-mcp/). Mais attention aux promesses...
 
 Ces promesses nous font rêver d'une productivité décuplée. Mais la réalité est plus nuancée. Derrière les démos bien préparées, on découvre des problèmes qui montrent les limites de ces technologies.
 
