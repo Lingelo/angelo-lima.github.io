@@ -317,10 +317,10 @@ blockquote {
 /* Article grid layout - Vertical cards inspired by Korben */
 .posts-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
   list-style: none;
-  padding: 1rem;
+  padding: 1.25rem;
   margin: 0;
   background-color: var(--page-col);
 }
