@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "JSON Resume : Transformez votre CV comme un développeur 🚀"
+title: "JSON Resume : Transformez votre CV comme un développeur "
 subtitle: "Un format open source élégant et flexible pour gérer votre carrière"
 cover-img: /assets/img/json-resume.png
 share-img: /assets/img/json-resume.png
 tags: [Développement]
 author: Angelo Lima
 ---
-# JSON Resume : Transformez votre CV comme un développeur 🚀
+# JSON Resume : Transformez votre CV comme un développeur
 
-Créer un CV peut vite devenir un casse-tête. Entre les outils limités, les mises en page qui ne tiennent pas la route et les heures passées à ajuster des marges, on aimerait parfois une solution plus simple et plus efficace, surtout quand on est développeur et qu’on aime les outils pratiques. Si vous vous reconnaissez là-dedans, laissez-moi vous présenter **JSON Resume** — une manière moderne, ouverte et flexible de gérer votre CV.
+La création et la maintenance de curriculum vitae présentent fréquemment des défis techniques et ergonomiques significatifs. Les limitations des outils traditionnels, les contraintes de mise en page et la complexité des ajustements formatifs constituent des obstacles récurrents, particulièrement pour les professionnels familiers avec les environnements de développement structurés. **JSON Resume** propose une approche moderne, open source et modulaire pour la gestion documentaire professionnelle.
 
-Imaginez un CV formaté comme un fichier JSON, que vous pouvez manipuler avec vos outils de développeur habituels. Cette approche s'inscrit dans la lignée de mes réflexions sur les bonnes pratiques de développement, notamment [les Conventional Commits](/2024-12-24-conventional-commits/) et [les Conventional Comments](/2024-12-25-conventional-comments/), où la standardisation améliore l'efficacité. Ça vous intrigue ? On plonge dedans. 🌟
+Cette solution consiste en un format de CV basé sur JSON, manipulable via les outils de développement standards. Cette approche s'inscrit dans la continuité d'analyses sur les bonnes pratiques de développement, notamment [les Conventional Commits](/2024-12-24-conventional-commits/) et [les Conventional Comments](/2024-12-25-conventional-comments/), où la standardisation optimise l'efficacité opérationnelle. 
 
 ---
 
@@ -28,7 +28,7 @@ En d’autres termes, JSON Resume sépare totalement le contenu de son design. V
 
 ---
 
-## Pourquoi choisir JSON Resume pour son CV ? 🛠️
+## Pourquoi choisir JSON Resume pour son CV ? ️
 
 Vous vous demandez pourquoi adopter ce format et abandonner votre éditeur préféré ? Voici quelques bonnes raisons :
 
@@ -38,13 +38,13 @@ Avec JSON Resume, vous rédigez une seule fois votre CV, et ensuite vous pouvez 
 - Créer des versions adaptées en fonction du poste ou du public (ex. résumé simplifié, CV complet).
 - Exporter sans jamais avoir à reformater ou tout recommencer.
 
-### 2. Un outil taillé pour les développeurs 👨‍💻
+### 2. Un outil taillé pour les développeurs ‍
 Si vous êtes déjà familier avec des éditeurs comme VS Code, travailler avec un fichier JSON sera un jeu d’enfant. Et le fait que tout soit un simple fichier texte permet de :
 - Versionner le fichier avec Git (vous savez toujours ce qui a changé et quand).
 - Collaborer facilement (besoin d’un coup de pouce ou d’une relecture ? c’est comme bosser sur du code).
 - L’automatiser via des scripts ou des outils CI/CD (imaginez, votre CV mis à jour et exporté en PDF après chaque commit !).
 
-### 3. Séparation nette du contenu et du design 🎨
+### 3. Séparation nette du contenu et du design 
 L’avantage principal du format JSON est qu’il ne dépend d’aucun outil de mise en page. Vous travaillez sur **le contenu uniquement**, et vous appliquez un design par-dessus grâce à des templates. Besoin de quelque chose de sobre pour une candidature ? Vous utilisez un modèle. Plutôt envie d’un design créatif pour un portfolio ? Changez de template en deux clics.
 
 ### 4. Ouvert et extensible
@@ -55,7 +55,7 @@ JSON Resume est open source, ce qui signifie que :
 
 ---
 
-## Comment ça fonctionne ? 🚀
+## Comment ça fonctionne ? 
 
 ### Étape 1 : Installer l’outil JSON Resume
 Pour commencer, vous avez besoin de l’outil CLI (Command Line Interface) de JSON Resume. Assurez-vous d’avoir Node.js installé sur votre ordinateur, puis tapez :
@@ -143,7 +143,7 @@ Ce format est non seulement uniforme, mais aussi facilement exploitable par d’
 
 ---
 
-### Créez vos propres templates 🎨
+### Créez vos propres templates 
 
 Si les modèles existants ne vous suffisent pas, vous pouvez **créer votre propre template**. JSON Resume utilise des technologies standard comme **HTML**, **CSS**, et **JavaScript** (utilisation de la lib **[Handlebars](https://handlebarsjs.com/)**) pour personnaliser l'apparence de votre CV. 
 
@@ -155,8 +155,8 @@ Si les modèles existants ne vous suffisent pas, vous pouvez **créer votre prop
    resume export my-cv.html --theme your-template
    ```
 
-## Un outil fait par des développeurs pour ceux qui veulent l'utiliser 🛠️✨
+## Conclusion : Optimisation de la gestion documentaire professionnelle
 
-JSON Resume va bien au-delà de la simple rédaction. 💡 Ce format structuré rend la maintenance de votre CV beaucoup plus simple et rapide. Plus besoin de tout reprendre à zéro à chaque mise à jour ou modification : adaptez et générez facilement différentes versions selon vos besoins. 🖥️⚡
+JSON Resume va bien au-delà de la simple rédaction.  Ce format structuré rend la maintenance de votre CV beaucoup plus simple et rapide. Plus besoin de tout reprendre à zéro à chaque mise à jour ou modification : adaptez et générez facilement différentes versions selon vos besoins. ️
 
-Prêt à adopter un format plus efficace, plus personnalisable et mieux adapté à vos ambitions professionnelles ? 🚀 Que pensez-vous de ce concept ? Envisagez-vous de l’utiliser pour vos futures candidatures ? Contactez-moi pour partager vos retours ! 💬  
+Prêt à adopter un format plus efficace, plus personnalisable et mieux adapté à vos ambitions professionnelles ?  Que pensez-vous de ce concept ? Envisagez-vous de l’utiliser pour vos futures candidatures ? Contactez-moi pour partager vos retours !   
