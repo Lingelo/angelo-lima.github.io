@@ -1,16 +1,16 @@
 ---
 layout: page
 title: À propos de moi
-subtitle: Entre lignes de code et sorts de développeur 🧙‍♂️💻
+subtitle: Développeur web full-stack, spécialisé IA et architectures modernes
 description: "Angelo Lima, développeur web full-stack basé en France depuis 2013. Spécialisé en IA, JavaScript, et innovations tech. Blog technique français avec tutoriels, analyses d'outils IA (Claude, ChatGPT) et réflexions développement moderne."
 comments: false
 ---
 
-## Qui suis-je ? 👨‍💻
+## Parcours professionnel
 
-Salut ! Moi, c'est **Angelo Lima**, un Franco-Portugais de la génération Millennials (🤘), passionné par tout ce qui touche à la **tech**, au **code** et à la **culture geek**. 
+Je suis **Angelo Lima**, développeur web full-stack Franco-Portugais avec plus d'une décennie d'expérience dans l'écosystème technologique. Mon parcours a débuté en 2013 après une formation approfondie en développement logiciel.
 
-**Développeur web full-stack depuis 2013**, j'ai commencé mon parcours après trois années d'apprentissage intensif (les longues nuits avec un SDK et beaucoup de café, ça vous parle ?). Aujourd'hui, je jongle entre projets numériques et explorations curieuses des merveilles du web.
+Ma pratique se concentre sur l'architecture de solutions web modernes, l'intégration d'intelligence artificielle et le développement d'outils productifs pour les équipes techniques.
 
 ## Mon expertise technique 💻
 
@@ -22,29 +22,29 @@ Salut ! Moi, c'est **Angelo Lima**, un Franco-Portugais de la génération Mille
 
 ## Ce que vous trouverez sur ce blog 📝
 
-Sur ce blog, tu trouveras un joyeux mélange de contenus autour de mes passions :  
+Ce blog propose une analyse technique approfondie des tendances et innovations du secteur :  
 
-### 🤖 Intelligence Artificielle
-- Tutoriels pratiques sur les LLM (Ollama, OpenAI, Claude)
-- Analyses des nouvelles technologies IA
-- Projets et expérimentations concrètes
+### Intelligence Artificielle
+- Analyses techniques des modèles de langage (LLM)
+- Évaluation critique des outils IA (Ollama, OpenAI, Claude)
+- Implémentations pratiques et cas d'usage
 
-### 💻 Développement Web
-- Guides techniques et bonnes pratiques
-- Découverte de nouveaux outils et frameworks
-- Architectures modernes et scalables
+### Développement Web
+- Architectures modernes et patterns avancés
+- Évaluation de frameworks et technologies émergentes
+- Méthodologies de développement et bonnes pratiques
 
-### ⚡ Tech & Innovation
-- Actualités et tendances technologiques
-- Réflexions sur l'avenir du numérique
-- Reviews d'outils pour développeurs
+### Innovation Technologique
+- Analyse des tendances sectorielles
+- Évaluation critique des nouvelles technologies
+- Impact des innovations sur les pratiques de développement
 
-### 🎯 Personnel & Carrière
-- Retour d'expérience en tant que développeur
-- Conseils pour évoluer dans la tech
-- Réflexions sur l'industrie du logiciel
+### Réflexions Professionnelles
+- Retours d'expérience sur des projets complexes
+- Évolution des compétences techniques
+- Perspectives sur l'écosystème technologique
 
-## Mes projets récents 🚀
+## Projets techniques
 
 - **[SQL Assistant](https://github.com/Lingelo/sql-assistant)** : Outil open-source pour convertir du langage naturel en requêtes SQL
 - **[MCP Atlassian](https://github.com/Lingelo/mcp-atlassian)** : Intégration JIRA/Confluence avec les modèles de langage
@@ -57,8 +57,6 @@ Sur ce blog, tu trouveras un joyeux mélange de contenus autour de mes passions 
 - **Email** : angelomiguellima@gmail.com
 - **CV** : [Consulter en ligne](/resume/cv-angelo-lima.html){:target="_blank"} <i class="fa fa-external-link"></i> | [Télécharger PDF](/resume/cv-angelo-lima.pdf){:download} <i class="fa fa-download"></i>
 
-Ici, on parle passions, découvertes et parfois même des trucs absurdes qui méritent d'être partagés 🌌. Bref, c'est un espace qui me ressemble, **sans prise de tête**, et j'espère que ça te plaira !
+Cette plateforme constitue un espace d'analyse et de partage d'expertise technique, centré sur l'évolution des technologies web et d'intelligence artificielle.
 
-Alors bienvenue dans mon univers, et si t'as des idées, des suggestions ou juste envie de discuter… n'hésite pas à me contacter 💬.  
-
-C'est parti pour l'aventure ! 🚀
+Pour toute discussion technique ou collaboration professionnelle, n'hésitez pas à me contacter via les canaux mentionnés ci-dessus.
