@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "L’effet Dunning-Kruger : Quand tu crois tout savoir (mais ce n’est qu’un début) 🤔"
+title: "L'effet Dunning-Kruger : Analyse d'un biais cognitif dans l'apprentissage technique"
 subtitle: "Décryptage d’un biais cognitif qui touche tout le monde, de la tech à la vie quotidienne"
 cover-img: /assets/img/dunning-kruger-cover.png
 share-img: /assets/img/dunning-kruger-cover.png

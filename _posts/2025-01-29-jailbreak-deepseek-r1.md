@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jailbreaking des LLMs : Exploration des limites avec DeepSeek R1 🛠️"
+title: "Jailbreaking des LLMs : Analyse sécuritaire des mécanismes de contournement"
 subtitle: "Techniques, découvertes et éthique autour du contournement des censures dans les modèles de langage"
 cover-img: /assets/img/deepseek-jailbreak.png
 share-img: /assets/img/deepseek-jailbreak.png
