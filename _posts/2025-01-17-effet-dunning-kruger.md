@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "L'effet Dunning-Kruger : Analyse d'un biais cognitif dans l'apprentissage technique"
+title: "Effet Dunning-Kruger en développement : Psychologie cognitive appliquée aux équipes tech"
 subtitle: "Décryptage d’un biais cognitif qui touche tout le monde, de la tech à la vie quotidienne"
 cover-img: /assets/img/dunning-kruger-cover.png
 share-img: /assets/img/dunning-kruger-cover.png
@@ -8,7 +8,7 @@ tags: [Personnel, Tech]
 author: Angelo Lima
 ---
 
-# L’effet Dunning-Kruger : Quand tu crois tout savoir… mais tu as tout faux (ou presque) 🤷‍♂️
+# Effet Dunning-Kruger en développement : Psychologie cognitive appliquée aux équipes tech
 
 Tu vois cette personne qui, après quelques heures face à un tuto ou à une nouvelle technologie, décrète fièrement qu’elle a "tout compris" et qu’elle va révolutionner le monde ? (Les développeurs juniors, ne vous sentez pas jugés, promis 🙃). Si tu te frottes régulièrement à ce genre de situation – ou si tu te reconnais un peu là-dedans ! – il est temps de parler d’un phénomène aussi fascinant que frustrant : **l’effet Dunning-Kruger**.
 

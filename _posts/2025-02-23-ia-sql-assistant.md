@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL Assistant : Convertissez du texte en requêtes SQL exécutables 🚀"
+title: "SQL Assistant IA : Conversion automatique de langage naturel vers SQL"
 subtitle: "Un outil open-source pour générer des requêtes SQL en langage naturel et interagir avec votre base de données"
 cover-img: /assets/img/sql-assistant-cover.png
 share-img: /assets/img/sql-assistant-cover.png
@@ -8,7 +8,7 @@ tags: [IA, Développement]
 author: Angelo Lima
 ---
 
-# 🏆 SQL Assistant – Transformez du texte en requêtes SQL exécutables
+# SQL Assistant IA : Conversion automatique de langage naturel vers SQL
 
 SQL Assistant est un outil open-source permettant de **convertir du langage naturel en requêtes SQL** et de les **exécuter directement sur une base de données**.
 

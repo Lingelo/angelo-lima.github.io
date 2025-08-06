@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA "
+title: "Développement web robuste : Appliquer les méthodologies NASA pour des applications critiques"
 subtitle: "Entre limitations théoriques et pratiques minimalistes, créez des applications web robustes"
 cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
@@ -8,7 +8,7 @@ tags: [Développement, Web]
 author: Angelo Lima
 ---
 
-# Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA
+# Développement web robuste : Appliquer les méthodologies NASA pour des applications critiques
 
 ## Introduction : L'équilibre entre complexité et robustesse
 

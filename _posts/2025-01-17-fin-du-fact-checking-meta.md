@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: "Fin des Fact-Checkers : Meta, Désinformation et le Risque d’un Internet Hors de Contrôle "  
+title: "Meta abandonne le fact-checking : Impact sur la gouvernance des plateformes numériques"
 subtitle: "Quand la vérité devient une option facultative : Zoom sur Meta, le Texas et ce que cela signifie pour la France et le reste du monde."  
 cover-img: /assets/img/fake-news.png  
 share-img: /assets/img/fake-news.png  
@@ -8,7 +8,7 @@ tags: [Tech, Web]
 author: Angelo Lima  
 ---
 
-# Fin des Fact-Checkers : Meta, Désinformation et le Risque d'un Internet Hors de Contrôle (Avec un Zoom sur la France)
+# Meta abandonne le fact-checking : Impact sur la gouvernance des plateformes numériques
 
 L'évolution des plateformes de réseaux sociaux au cours de la dernière décennie a fondamentalement transformé leur rôle dans l'écosystème informationnel global. Facebook, Instagram, Twitter (désormais X) et leurs équivalents ont évolué au-delà de simples outils de partage social pour devenir **des vecteurs d'influence majeurs sur les opinions publiques, les processus démocratiques et les comportements collectifs.**
 

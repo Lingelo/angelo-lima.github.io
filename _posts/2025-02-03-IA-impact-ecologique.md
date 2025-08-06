@@ -8,7 +8,7 @@ tags: [IA, Tech]
 author: Angelo Lima
 ---
 
-# 🌍 L’impact écologique de l’intelligence artificielle : entre usages et apprentissages
+# Impact écologique de l'IA : Analyse des coûts énergétiques d'entraînement vs inférence
 
 L’intelligence artificielle (IA) joue aujourd’hui un rôle majeur dans de nombreux domaines : recommandations en ligne 🎥, assistants virtuels 📱, recherche scientifique 🔬, et bien d’autres. Mais à l’heure où la transition écologique devient une priorité mondiale, il est crucial de s’interroger sur le coût environnemental de ces technologies. Derrière chaque interaction avec un chatbot ou une requête IA se cache une infrastructure électrique gourmande, pas toujours alignée avec les objectifs climatiques.
 
