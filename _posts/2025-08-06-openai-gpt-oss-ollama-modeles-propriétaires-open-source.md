@@ -50,7 +50,7 @@ Le **gpt-oss-20b** cible les environnements contraints et les applications néce
 
 Le **gpt-oss-120b** vise les déploiements de production où la qualité de raisonnement prime sur les contraintes matérielles. Il nécessite un GPU 80 Go mais offre des capacités de raisonnement avancées.
 
-Au-delà de ces optimisations matérielles, gpt-oss se distingue par ses fonctionnalités avancées qui changent la donne pour le développement d'applications IA.
+Mais au-delà de ces prouesses techniques, c'est dans les fonctionnalités avancées que gpt-oss révèle ses véritables atouts pour le développement d'applications IA modernes.
 
 ## Fonctionnalités avancées intégrées
 
@@ -70,7 +70,7 @@ Les modèles intègrent directement :
 
 Cette approche évite la multiplication des outils externes et simplifie l'architecture des applications basées sur des agents.
 
-Ces capacités techniques impressionnantes s'accompagnent de choix stratégiques qui facilitent l'adoption en entreprise.
+Ces innovations techniques ne seraient rien sans les choix stratégiques d'OpenAI qui visent à faciliter l'adoption massive en entreprise.
 
 ## Implications pour le développement local
 
@@ -84,7 +84,7 @@ Cette décision contraste avec certaines approches plus restrictives du secteur 
 
 L'optimisation spécifique pour les GPU GeForce RTX et RTX PRO vise à démocratiser l'accès aux performances élevées. Cette collaboration technique garantit une exploitation optimale des capacités matérielles disponibles sur le marché grand public.
 
-Maintenant que nous avons vu les aspects techniques et stratégiques, passons à la pratique : comment utiliser concrètement ces modèles ?
+Après cette analyse technique et stratégique, l'heure est venue de passer aux travaux pratiques : comment déployer et utiliser efficacement ces modèles dans des projets réels ?
 
 ## Mise en pratique
 
@@ -108,15 +108,17 @@ Le modèle 20B représente un bon compromis pour les développeurs souhaitant te
 
 La transparence du chain-of-thought apporte une valeur ajoutée significative par rapport aux APIs classiques, particulièrement pour le débogage et la validation des raisonnements complexes.
 
-Ces éléments techniques et pratiques s'inscrivent dans une évolution plus large de l'écosystème IA que cette collaboration illustre parfaitement.
+Cette mise en pratique révèle l'ambition plus large d'OpenAI : s'imposer dans un écosystème en pleine mutation où les frontières entre local et cloud se redéfinissent.
 
-## Perspective pour l'écosystème
+## Perspective pour l'écosystème : Vers l'hybridation intelligente
 
 Cette collaboration OpenAI-Ollama illustre une évolution plus large du secteur vers l'hybridation cloud/local. [L'écart de précision entre modèles open source et propriétaires est désormais négligeable, les premiers étant moins chers, plus rapides et plus personnalisables](https://klu.ai/blog/open-source-llm-models)⁴.
 
-Dans un écosystème où [Llama 3.3 70B offre des performances comparables au modèle 405B à une fraction du coût computationnel](https://www.instaclustr.com/education/open-source-ai/top-10-open-source-llms-for-2025/)⁵, OpenAI arrive dans une course déjà bien avancée.
+Cette tendance trouve son incarnation la plus aboutie dans [l'approche "Minions" d'Ollama](https://ollama.com/blog/minions)⁷, qui révolutionne l'usage hybride des modèles. Le concept est ingénieux : des modèles locaux (les "minions") collaborent intelligemment avec des modèles cloud plus puissants, réduisant les coûts de 30,4x tout en conservant 87% des performances cloud. Cette architecture distribuée transforme nos appareils grand public en assistants collaboratifs.
 
-Cette dynamique d'ouverture des modèles propriétaires, initiée par Meta et accélérée par Mistral, transforme définitivement le paysage de l'IA.
+Dans un écosystème où [Llama 3.3 70B offre des performances comparables au modèle 405B à une fraction du coût computationnel](https://www.instaclustr.com/education/open-source-ai/top-10-open-source-llms-for-2025/)⁵, les modèles gpt-oss d'OpenAI arrivent au moment idéal pour enrichir ces architectures hybrides.
+
+Cette dynamique d'ouverture des modèles propriétaires, initiée par Meta et accélérée par Mistral, transforme définitivement le paysage de l'IA vers une collaboration intelligente entre local et cloud.
 
 ## Bilan
 
@@ -134,3 +136,4 @@ Cette évolution s'inscrit parfaitement dans [l'état des lieux de l'IA en déve
 4. [Best Open Source LLMs of 2025 - Klu](https://klu.ai/blog/open-source-llm-models)
 5. [Top 10 open source LLMs for 2025 - Instaclustr](https://www.instaclustr.com/education/open-source-ai/top-10-open-source-llms-for-2025/)
 6. [OpenAI Returns to Open Source Roots, Releases 120B and 20B AI Models - Beebom](https://beebom.com/openai-releases-gpt-oss-120b-20b-open-weight-ai-models/)
+7. [Minions: AI Collaboration Between Local and Cloud LLMs - Ollama](https://ollama.com/blog/minions)
