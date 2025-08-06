@@ -5,7 +5,7 @@ subtitle: "Techniques, découvertes et éthique autour du contournement des cens
 cover-img: /assets/img/deepseek-jailbreak.png
 share-img: /assets/img/deepseek-jailbreak.png
 tags: [IA, Sécurité]
-author: "Angelo LIMA"
+author: Angelo Lima
 ---
 
 # 🛑 Jailbreak de DeepSeek R1 : J'ai testé les limites de la censure

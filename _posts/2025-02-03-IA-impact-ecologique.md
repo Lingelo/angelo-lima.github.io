@@ -5,7 +5,7 @@ subtitle: "Décortiquer l'empreinte carbone de l’intelligence artificielle et 
 cover-img: /assets/img/ia-impact-ecologique.png
 share-img: /assets/img/ia-impact-ecologique.png
 tags: [IA, Tech]
-author: "Angelo LIMA"
+author: Angelo Lima
 ---
 
 # 🌍 L’impact écologique de l’intelligence artificielle : entre usages et apprentissages

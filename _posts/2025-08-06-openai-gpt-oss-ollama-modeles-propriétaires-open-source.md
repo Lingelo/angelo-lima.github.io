@@ -5,7 +5,7 @@ subtitle: "OpenAI vient d'annoncer ses premiers modèles open weight disponibles
 description: "OpenAI lance gpt-oss sur Ollama : deux modèles open weight (20B et 120B) avec quantification MXFP4. Analyse de cette entrée d'OpenAI dans l'écosystème open source dominé par Meta Llama et Mistral."
 thumbnail-img: "/assets/img/ollama_openai.png"
 tags: [IA, Développement]
-author: "Angelo Lima"
+author: Angelo Lima
 ---
 
 # OpenAI gpt-oss sur Ollama : Quand les modèles propriétaires passent en open source

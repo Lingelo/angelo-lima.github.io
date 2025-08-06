@@ -5,7 +5,7 @@ subtitle: "Décryptage d’un biais cognitif qui touche tout le monde, de la tec
 cover-img: /assets/img/dunning-kruger-cover.png
 share-img: /assets/img/dunning-kruger-cover.png
 tags: [Personnel, Tech]
-author: Angelo LIMA
+author: Angelo Lima
 ---
 
 # L’effet Dunning-Kruger : Quand tu crois tout savoir… mais tu as tout faux (ou presque) 🤷‍♂️

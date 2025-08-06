@@ -5,7 +5,7 @@ subtitle: "Quand la vérité devient une option facultative : Zoom sur Meta, le 
 cover-img: /assets/img/fake-news.png  
 share-img: /assets/img/fake-news.png  
 tags: [Tech, Web]  
-author: Angelo LIMA  
+author: Angelo Lima  
 ---
 
 # Fin des Fact-Checkers : Meta, Désinformation et le Risque d’un Internet Hors de Contrôle (Avec un Zoom sur la France) 🇺🇸🇫🇷

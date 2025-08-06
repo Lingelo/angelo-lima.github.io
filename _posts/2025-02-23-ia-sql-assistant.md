@@ -5,7 +5,7 @@ subtitle: "Un outil open-source pour générer des requêtes SQL en langage natu
 cover-img: /assets/img/sql-assistant-cover.png
 share-img: /assets/img/sql-assistant-cover.png
 tags: [IA, Développement]
-author: "Angelo LIMA"
+author: Angelo Lima
 ---
 
 # 🏆 SQL Assistant – Transformez du texte en requêtes SQL exécutables

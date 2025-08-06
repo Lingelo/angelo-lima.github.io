@@ -5,7 +5,7 @@ subtitle: "Entre limitations théoriques et pratiques minimalistes, créez des a
 cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
 tags: [Développement, Web]
-author: "Angelo LIMA"
+author: Angelo Lima
 ---
 
 # Vers des Applications Web de Qualité : Surmonter la Fatalité de Rice à la Manière de la NASA 🚀

@@ -5,7 +5,7 @@ subtitle: "Découvrez comment MCP facilite l'interaction des modèles de langage
 cover-img: /assets/img/mcp-atlassian-cover.png
 share-img: /assets/img/mcp-atlassian-cover.png
 tags: [IA, Développement]
-author: "Angelo LIMA"
+author: Angelo Lima
 ---
 
 ## Le protocole MCP, c'est quoi ?
