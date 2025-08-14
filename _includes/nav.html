@@ -1,9 +1,17 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}" role="navigation" aria-label="Navigation principale">
 
   {%- if site.title-img -%}
+    {% if page.lang == 'en' %}
+    <a class="navbar-brand navbar-brand-logo" href="{{ '/en/' | absolute_url }}" aria-label="Back to home"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    {% else %}
     <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    {% endif %}
   {%- elsif site.title -%}
+    {% if page.lang == 'en' %}
+    <a class="navbar-brand" href="{{ '/en/' | absolute_url }}" aria-label="Back to home">{{ site.title }}</a>
+    {% else %}
     <a class="navbar-brand" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil">{{ site.title }}</a>
+    {% endif %}
   {%- endif -%}
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">

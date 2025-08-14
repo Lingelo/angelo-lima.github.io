@@ -1,13 +1,23 @@
 <!-- Breadcrumbs for better SEO and UX -->
+{% if page.lang == 'en' %}
+<nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+{% else %}
 <nav class="breadcrumbs" aria-label="Fil d'Ariane">
+{% endif %}
     <div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
         <div class="row">
             <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
                 <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
             <li property="itemListElement" typeof="ListItem">
+                {% if page.lang == 'en' %}
+                <a property="item" typeof="WebPage" href="{{ '/en/' | relative_url }}">
+                    <span property="name">Home</span>
+                </a>
+                {% else %}
                 <a property="item" typeof="WebPage" href="{{ '/' | relative_url }}">
                     <span property="name">Accueil</span>
                 </a>
+                {% endif %}
                 <meta property="position" content="1">
             </li>
             
@@ -15,13 +25,28 @@
                 <!-- Page d'article -->
                 {% if page.tags and page.tags.size > 0 %}
                     <li property="itemListElement" typeof="ListItem">
-                        {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
-                        {% if page.tags.first == "Développement" %}
-                          {% assign tag_url = "/tag/developpement/" %}
-                        {% elsif page.tags.first == "Sécurité" %}
-                          {% assign tag_url = "/tag/securite/" %}
+                        {% if page.lang == 'en' %}
+                            {% assign tag_url = "/en/tag/" | append: page.tags.first | downcase | append: "/" %}
+                            {% if page.tags.first == "Development" %}
+                              {% assign tag_url = "/en/tag/development/" %}
+                            {% elsif page.tags.first == "Security" %}
+                              {% assign tag_url = "/en/tag/security/" %}
+                            {% elsif page.tags.first == "Personal" %}
+                              {% assign tag_url = "/en/tag/personal/" %}
+                            {% elsif page.tags.first == "AI" %}
+                              {% assign tag_url = "/en/tag/ai/" %}
+                            {% else %}
+                              {% assign tag_url = "/en/tag/" | append: page.tags.first | downcase | append: "/" %}
+                            {% endif %}
                         {% else %}
-                          {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
+                            {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
+                            {% if page.tags.first == "Développement" %}
+                              {% assign tag_url = "/tag/developpement/" %}
+                            {% elsif page.tags.first == "Sécurité" %}
+                              {% assign tag_url = "/tag/securite/" %}
+                            {% else %}
+                              {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
+                            {% endif %}
                         {% endif %}
                         <a property="item" typeof="WebPage" href="{{ tag_url }}">
                             <span property="name">{{ page.tags.first }}</span>
@@ -36,9 +61,15 @@
             {% elsif page.url contains "/tag/" %}
                 <!-- Page de tag -->
                 <li property="itemListElement" typeof="ListItem">
+                    {% if page.lang == 'en' %}
+                    <a property="item" typeof="WebPage" href="/en/tags/">
+                        <span property="name">Tags</span>
+                    </a>
+                    {% else %}
                     <a property="item" typeof="WebPage" href="/tags/">
                         <span property="name">Tags</span>
                     </a>
+                    {% endif %}
                     <meta property="position" content="2">
                 </li>
                 <li property="itemListElement" typeof="ListItem" class="active">

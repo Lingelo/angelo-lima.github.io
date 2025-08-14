@@ -4,7 +4,11 @@ layout: page
 
 {{ content }}
 
-{% assign posts = paginator.posts | default: site.posts %}
+{% if page.lang == 'en' %}
+  {% assign posts = site.posts | where: "lang", "en" %}
+{% else %}
+  {% assign posts = paginator.posts | default: site.posts | where: "lang", "fr" %}
+{% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
 {% if page.lang == 'en' %}
@@ -100,23 +104,35 @@ layout: page
   {% endfor %}
 </ul>
 
-{% if paginator.total_pages > 1 %}
-<ul class="pagination main-pager" role="navigation" aria-label="Navigation de pagination">
-  {% if paginator.previous_page %}
-  <li class="page-item previous" role="none">
-    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
-      <i class="fas fa-arrow-left" aria-hidden="true"></i>
-      <span class="d-none d-sm-inline-block">Articles les plus récents</span>
-    </a>
-  </li>
+{% if page.lang == 'en' %}
+  {% comment %}Simple pagination for English posts{% endcomment %}
+  {% assign total_posts = site.posts | where: "lang", "en" | size %}
+  {% assign posts_per_page = 6 %}
+  {% if total_posts > posts_per_page %}
+  <div class="pagination-info">
+    <p>Showing {{ posts.size }} of {{ total_posts }} articles</p>
+  </div>
   {% endif %}
-  {% if paginator.next_page %}
-  <li class="page-item next" role="none">
-    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
-      <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
-      <i class="fas fa-arrow-right" aria-hidden="true"></i>
-    </a>
-  </li>
+{% else %}
+  {% comment %}Standard Jekyll pagination for French posts{% endcomment %}
+  {% if paginator.total_pages > 1 %}
+  <ul class="pagination main-pager" role="navigation" aria-label="Navigation de pagination">
+    {% if paginator.previous_page %}
+    <li class="page-item previous" role="none">
+      <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span class="d-none d-sm-inline-block">Articles les plus récents</span>
+      </a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="page-item next" role="none">
+      <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
+        <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
   {% endif %}
-</ul>
 {% endif %}
