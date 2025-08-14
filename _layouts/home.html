@@ -5,9 +5,15 @@ layout: page
 {{ content }}
 
 {% if page.lang == 'en' %}
-  {% assign posts = site.posts | where: "lang", "en" %}
+  {% comment %}For English: manual pagination since Jekyll can only paginate one language{% endcomment %}
+  {% assign all_en_posts = site.posts | where: "lang", "en" %}
+  {% assign posts_per_page = 6 %}
+  {% assign current_page = page.page | default: 1 %}
+  {% assign offset = current_page | minus: 1 | times: posts_per_page %}
+  {% assign posts = all_en_posts | offset: offset | first: posts_per_page %}
 {% else %}
-  {% assign posts = paginator.posts | default: site.posts | where: "lang", "fr" %}
+  {% comment %}For French: use Jekyll's built-in pagination (configured for 6 posts in _config.yml){% endcomment %}
+  {% assign posts = paginator.posts | default: site.posts %}
 {% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
@@ -105,13 +111,39 @@ layout: page
 </ul>
 
 {% if page.lang == 'en' %}
-  {% comment %}Simple pagination for English posts{% endcomment %}
-  {% assign total_posts = site.posts | where: "lang", "en" | size %}
-  {% assign posts_per_page = 6 %}
-  {% if total_posts > posts_per_page %}
-  <div class="pagination-info">
-    <p>Showing {{ posts.size }} of {{ total_posts }} articles</p>
-  </div>
+  {% comment %}Manual pagination for English posts{% endcomment %}
+  {% assign total_posts = all_en_posts.size %}
+  {% assign total_pages = total_posts | divided_by: posts_per_page %}
+  {% if total_posts modulo posts_per_page > 0 %}
+    {% assign total_pages = total_pages | plus: 1 %}
+  {% endif %}
+  
+  {% if total_pages > 1 %}
+  <ul class="pagination main-pager" role="navigation" aria-label="Pagination navigation">
+    {% if current_page > 1 %}
+      {% assign prev_page = current_page | minus: 1 %}
+      <li class="page-item previous" role="none">
+        {% if prev_page == 1 %}
+          <a class="page-link" href="{{ '/en/' | relative_url }}" aria-label="Previous page - Latest articles">
+        {% else %}
+          <a class="page-link" href="{{ '/en/page' | append: prev_page | append: '/' | relative_url }}" aria-label="Previous page - Latest articles">
+        {% endif %}
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span class="d-none d-sm-inline-block">Latest articles</span>
+        </a>
+      </li>
+    {% endif %}
+    
+    {% if current_page < total_pages %}
+      {% assign next_page = current_page | plus: 1 %}
+      <li class="page-item next" role="none">
+        <a class="page-link" href="{{ '/en/page' | append: next_page | append: '/' | relative_url }}" aria-label="Next page - Older articles">
+          <span class="d-none d-sm-inline-block">Older articles</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
   {% endif %}
 {% else %}
   {% comment %}Standard Jekyll pagination for French posts{% endcomment %}
