@@ -8,22 +8,28 @@ Improves internal linking and user engagement
 {% assign maxRelatedCounter = 0 %}
 
 {% for post in site.posts %}
-  {% assign sameTagCount = 0 %}
-  {% assign commonTags = '' %}
-  
-  {% for tag in post.tags %}
-    {% if page.tags contains tag %}
-      {% assign sameTagCount = sameTagCount | plus: 1 %}
-      {% assign commonTags = commonTags | append: tag | append: ',' %}
-    {% endif %}
-  {% endfor %}
-  
-  {% if sameTagCount >= minCommonTags and post.url != page.url and maxRelatedCounter < maxRelated %}
+  {% comment %}Filter posts by same language{% endcomment %}
+  {% if post.lang == page.lang %}
+    {% assign sameTagCount = 0 %}
+    {% assign commonTags = '' %}
+    
+    {% for tag in post.tags %}
+      {% if page.tags contains tag %}
+        {% assign sameTagCount = sameTagCount | plus: 1 %}
+        {% assign commonTags = commonTags | append: tag | append: ',' %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if sameTagCount >= minCommonTags and post.url != page.url and maxRelatedCounter < maxRelated %}
     {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
     
     {% if maxRelatedCounter == 1 %}
     <section class="related-posts">
+      {% if page.lang == 'en' %}
+      <h3>📚 Related Articles</h3>
+      {% else %}
       <h3>📚 Articles connexes</h3>
+      {% endif %}
       <div class="related-posts-grid">
     {% endif %}
     
@@ -58,6 +64,7 @@ Improves internal linking and user engagement
     {% if maxRelatedCounter == maxRelated %}
       </div>
     </section>
+    {% endif %}
     {% endif %}
   {% endif %}
 {% endfor %}

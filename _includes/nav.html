@@ -87,12 +87,22 @@
       {% endif %}
       {% if site.post_search %}
         <li class="nav-item" role="none">
+          {% if page.lang == 'en' %}
+          <a class="nav-link" id="nav-search-link" href="#" title="Search" role="menuitem" aria-label="Open search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search articles 🔎</span>
+          </a>
+          {% else %}
           <a class="nav-link" id="nav-search-link" href="#" title="Rechercher" role="menuitem" aria-label="Ouvrir la recherche">
             <span id="nav-search-icon" class="fa fa-search"></span>
             <span id="nav-search-text">Rechercher un article 🔎</span>
           </a>
+          {% endif %}
         </li>
       {%- endif -%}
+      <li class="nav-item" role="none">
+        {% include smart-lang-switcher.html %}
+      </li>
     </ul>
   </div>
 

@@ -27,13 +27,11 @@ url: "https://angelo-lima.fr"
 navbar-links:
   À propos de moi: "aboutme"
   Tags: "tags"
-  English: "en/"
 
 # English navbar links
 navbar-links-en:
   About me: "en/aboutme"
   Tags: "en/tags"
-  Français: "/"
 
 ################
 # --- Logo --- #

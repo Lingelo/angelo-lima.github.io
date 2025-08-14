@@ -1,0 +1,107 @@
+{% comment %}
+Smart Language Switcher - Switches between corresponding pages/articles
+{% endcomment %}
+
+<div class="smart-lang-switcher">
+  {% if page.lang == 'en' %}
+    {% comment %}Currently in English, switch to French{% endcomment %}
+    {% if page.layout == 'post' %}
+      {% comment %}For blog posts, find corresponding French article by ref{% endcomment %}
+      {% assign french_post = site.posts | where: "ref", page.ref | where: "lang", "fr" | first %}
+      {% if french_post %}
+        <a href="{{ french_post.url | relative_url }}" class="lang-switch-btn" title="Lire cet article en français">
+          🇫🇷 Français
+        </a>
+      {% else %}
+        <a href="{{ '/' | relative_url }}" class="lang-switch-btn" title="Aller à la page d'accueil française">
+          🇫🇷 Français
+        </a>
+      {% endif %}
+    {% elsif page.url contains '/tags' %}
+      {% comment %}Tag pages{% endcomment %}
+      <a href="{{ '/tags/' | relative_url }}" class="lang-switch-btn" title="Voir les tags en français">
+        🇫🇷 Français
+      </a>
+    {% elsif page.url contains '/aboutme' %}
+      {% comment %}About page{% endcomment %}
+      <a href="{{ '/aboutme/' | relative_url }}" class="lang-switch-btn" title="À propos en français">
+        🇫🇷 Français
+      </a>
+    {% else %}
+      {% comment %}Home or other pages{% endcomment %}
+      <a href="{{ '/' | relative_url }}" class="lang-switch-btn" title="Aller à la page d'accueil française">
+        🇫🇷 Français
+      </a>
+    {% endif %}
+  {% else %}
+    {% comment %}Currently in French, switch to English{% endcomment %}
+    {% if page.layout == 'post' %}
+      {% comment %}For blog posts, find corresponding English article by ref{% endcomment %}
+      {% assign english_post = site.posts | where: "ref", page.ref | where: "lang", "en" | first %}
+      {% if english_post %}
+        <a href="{{ english_post.url | relative_url }}" class="lang-switch-btn" title="Read this article in English">
+          🇺🇸 English
+        </a>
+      {% else %}
+        <a href="{{ '/en/' | relative_url }}" class="lang-switch-btn" title="Go to English homepage">
+          🇺🇸 English
+        </a>
+      {% endif %}
+    {% elsif page.url contains '/tags' %}
+      {% comment %}Tag pages{% endcomment %}
+      <a href="{{ '/en/tags/' | relative_url }}" class="lang-switch-btn" title="View tags in English">
+        🇺🇸 English
+      </a>
+    {% elsif page.url contains '/aboutme' %}
+      {% comment %}About page{% endcomment %}
+      <a href="{{ '/en/aboutme/' | relative_url }}" class="lang-switch-btn" title="About page in English">
+        🇺🇸 English
+      </a>
+    {% else %}
+      {% comment %}Home or other pages{% endcomment %}
+      <a href="{{ '/en/' | relative_url }}" class="lang-switch-btn" title="Go to English homepage">
+        🇺🇸 English
+      </a>
+    {% endif %}
+  {% endif %}
+</div>
+
+<style>
+.smart-lang-switcher {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--navbar-col-dark, #1a1a1a);
+  color: var(--link-col-dark, #edb926);
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid var(--navbar-border-col-dark, #333);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.lang-switch-btn:hover {
+  background: var(--link-col-dark, #edb926);
+  color: var(--page-col-dark, #0a0a0a);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(237, 185, 38, 0.2);
+}
+
+@media (max-width: 768px) {
+  .smart-lang-switcher {
+    margin-left: 0.5rem;
+  }
+  
+  .lang-switch-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+</style>

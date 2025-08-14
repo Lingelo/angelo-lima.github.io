@@ -10,30 +10,41 @@ lang: fr
 
 {%- capture site_tags -%}
     {%- for tag in site.tags -%}
-        {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+        {%- for post in site.tags[tag] -%}
+            {%- if post.lang == 'fr' -%}
+                {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+                {%- break -%}
+            {%- endif -%}
+        {%- endfor -%}
     {%- endfor -%}
 {%- endcapture -%}
-{%- assign tags_list = site_tags | split:',' | sort -%}
+{%- assign tags_list = site_tags | split:',' | sort | uniq -%}
 
 {%- for tag in tags_list -%}
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+    {%- assign fr_posts = site.tags[tag] | where: 'lang', 'fr' -%}
+    {%- if fr_posts.size > 0 -%}
+        <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{fr_posts.size}})</a>
+    {%- endif -%}
 {%- endfor -%}
 
 <div id="full-tags-list">
 {%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
-        <i class="fas fa-tag" aria-hidden="true"></i>
-        &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
-    </h2>
-    <div class="post-list">
-        {%- for post in site.tags[tag] -%}
-            <div class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
-                <div class="entry-date">
-                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: "%d/%m/%Y" -}}</time>
+    {%- assign fr_posts = site.tags[tag] | where: 'lang', 'fr' -%}
+    {%- if fr_posts.size > 0 -%}
+        <h2 id="{{- tag -}}" class="linked-section">
+            <i class="fas fa-tag" aria-hidden="true"></i>
+            &nbsp;{{- tag -}}&nbsp;({{fr_posts.size}})
+        </h2>
+        <div class="post-list">
+            {%- for post in fr_posts -%}
+                <div class="tag-entry">
+                    <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
+                    <div class="entry-date">
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: "%d/%m/%Y" -}}</time>
+                    </div>
                 </div>
-            </div>
-        {%- endfor -%}
-    </div>
+            {%- endfor -%}
+        </div>
+    {%- endif -%}
 {%- endfor -%}
 </div>
