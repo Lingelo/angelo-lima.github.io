@@ -6,6 +6,8 @@ cover-img: /assets/img/ia-impact-ecologique.png
 share-img: /assets/img/ia-impact-ecologique.png
 tags: [IA, Tech]
 author: Angelo Lima
+lang: fr
+ref: ai-ecological-impact
 ---
 
 # Impact écologique de l'IA : Analyse des coûts énergétiques d'entraînement vs inférence

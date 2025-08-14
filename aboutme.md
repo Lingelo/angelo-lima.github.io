@@ -3,6 +3,7 @@ layout: page
 title: À propos de moi
 subtitle: Développeur web full-stack, spécialisé IA et architectures modernes
 description: "Angelo Lima, développeur web full-stack basé en France depuis 2013. Spécialisé en IA, JavaScript, et innovations tech. Blog technique français avec tutoriels, analyses d'outils IA (Claude, ChatGPT) et réflexions développement moderne."
+lang: fr
 comments: false
 ---
 

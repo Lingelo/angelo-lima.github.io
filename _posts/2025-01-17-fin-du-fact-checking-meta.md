@@ -5,7 +5,9 @@ subtitle: "Quand la vérité devient une option facultative : Zoom sur Meta, le 
 cover-img: /assets/img/fake-news.png  
 share-img: /assets/img/fake-news.png  
 tags: [Tech, Web]  
-author: Angelo Lima  
+author: Angelo Lima
+lang: fr
+ref: meta-fact-checking
 ---
 
 # Meta abandonne le fact-checking : Analyse des transformations de la gouvernance informationnelle

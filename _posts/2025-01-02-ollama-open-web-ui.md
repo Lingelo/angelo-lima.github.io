@@ -8,6 +8,8 @@ thumbnail-img: /assets/img/ai-setup.png
 share-img: /assets/img/ai-setup.png
 tags: [IA, Développement]
 author: Angelo Lima
+lang: fr
+ref: ollama-open-webui
 ---
 
 ## Architecture d'inférence locale : enjeux et solutions techniques

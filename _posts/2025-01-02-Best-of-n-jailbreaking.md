@@ -6,6 +6,8 @@ cover-img: /assets/img/bon-llm.png
 share-img: /assets/img/bon-llm.png
 tags: [IA, Sécurité]
 author: Angelo Lima
+lang: fr
+ref: best-of-n-jailbreaking
 ---
 
 # Best-of-N Jailbreaking : Analyse des vulnérabilités par force brute sur les LLMs

@@ -6,6 +6,8 @@ cover-img: /assets/img/json-resume.png
 share-img: /assets/img/json-resume.png
 tags: [Développement]
 author: Angelo Lima
+lang: fr
+ref: json-resume
 ---
 
 # JSON Resume : Approche structurée de la gestion documentaire professionnelle

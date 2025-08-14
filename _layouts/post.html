@@ -47,6 +47,15 @@ layout: base
 
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
+          {% if page.lang == 'en' %}
+          <span>Tags:</span>
+          {% for tag in page.tags %}
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            <a href="{{ '/en/tags' | relative_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
+            {% endif %}
+          {% endfor %}
+          {% else %}
           <span>Tags:</span>
           {% for tag in page.tags %}
             {% assign clean_tag = tag | strip %}
@@ -54,6 +63,7 @@ layout: base
             <a href="{{ '/tags' | relative_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
             {% endif %}
           {% endfor %}
+          {% endif %}
         </div>
       {% endif %}
 

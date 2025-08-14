@@ -12,20 +12,37 @@
 
   <div class="collapse navbar-collapse" id="main-navbar">
     <ul class="navbar-nav ml-auto" role="menubar">
-      <li class="nav-item cv-dropdown" role="none">
-        <button class="nav-link cv-dropdown-btn" role="menuitem" aria-label="Mon CV - Options">
-          Mon CV <i class="fa fa-chevron-down"></i>
-        </button>
-        <div class="cv-dropdown-content">
-          <a href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem">
-            <i class="fa fa-external-link"></i> Consulter en ligne
-          </a>
-          <a href="/resume/cv-angelo-lima.pdf" download role="menuitem">
-            <i class="fa fa-download"></i> Télécharger PDF
-          </a>
-        </div>
-      </li>
-      {%- for link in site.navbar-links -%}
+      {% if page.lang == 'en' %}
+        <li class="nav-item cv-dropdown" role="none">
+          <button class="nav-link cv-dropdown-btn" role="menuitem" aria-label="My CV - Options">
+            My CV <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="cv-dropdown-content">
+            <a href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem">
+              <i class="fa fa-external-link"></i> View online
+            </a>
+            <a href="/resume/cv-angelo-lima.pdf" download role="menuitem">
+              <i class="fa fa-download"></i> Download PDF
+            </a>
+          </div>
+        </li>
+        {%- for link in site.navbar-links-en -%}
+      {% else %}
+        <li class="nav-item cv-dropdown" role="none">
+          <button class="nav-link cv-dropdown-btn" role="menuitem" aria-label="Mon CV - Options">
+            Mon CV <i class="fa fa-chevron-down"></i>
+          </button>
+          <div class="cv-dropdown-content">
+            <a href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem">
+              <i class="fa fa-external-link"></i> Consulter en ligne
+            </a>
+            <a href="/resume/cv-angelo-lima.pdf" download role="menuitem">
+              <i class="fa fa-download"></i> Télécharger PDF
+            </a>
+          </div>
+        </li>
+        {%- for link in site.navbar-links -%}
+      {% endif %}
         {%- if link[1].first %}
           <li class="nav-item dropdown" role="none">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>

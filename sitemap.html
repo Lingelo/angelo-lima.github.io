@@ -69,6 +69,52 @@ permalink: /sitemap/
 </div>
 
 <div class="sitemap-section">
+    <h2>🌍 Version Anglaise / English Version</h2>
+    <div class="language-section">
+        <h3>📖 English Articles</h3>
+        <p>{{ site.posts | where: "lang", "en" | size }} articles available in English</p>
+        <ul class="main-pages">
+            <li><a href="/en/">🏠 Home</a> - Homepage with latest articles</li>
+            <li><a href="/en/aboutme">👨‍💻 About Me</a> - My background and skills</li>
+            <li><a href="/en/tags">🏷️ Tags Index</a> - All articles organized by topics</li>
+        </ul>
+        
+        <h3>🏷️ English Categories</h3>
+        <div class="tags-grid">
+            <div class="tag-category">
+                <h4><a href="/en/tag/ai/">🤖 Artificial Intelligence</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "AI" | size }} articles about AI, LLM and machine learning</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/development/">💻 Development</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Development" | size }} articles about programming and dev tools</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/web/">🌐 Web Technologies</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Web" | size }} articles about frameworks and modern web development</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/tech/">⚡ Tech & Innovation</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Tech" | size }} tech news and trends</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/personal/">🎯 Personal</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Personal" | size }} reflections and experience feedback</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/security/">🔒 Cybersecurity</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Security" | size }} computer security and best practices</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sitemap-section">
     <h2>📄 Pages Principales</h2>
     <ul class="main-pages">
         <li><a href="/">🏠 Accueil</a> - Page d'accueil avec les derniers articles</li>
@@ -81,7 +127,8 @@ permalink: /sitemap/
 <div class="sitemap-section">
     <h2>🔗 Ressources</h2>
     <ul class="resources">
-        <li><a href="/feed.xml">📡 Flux RSS</a> - Abonnez-vous aux nouveaux articles</li>
+        <li><a href="/feed.xml">📡 Flux RSS Français</a> - Abonnez-vous aux nouveaux articles français</li>
+        <li><a href="/en/feed.xml">📡 English RSS Feed</a> - Subscribe to new English articles</li>
         <li><a href="/sitemap.xml">🤖 Sitemap XML</a> - Pour les moteurs de recherche</li>
         <li><a href="https://github.com/lingelo" target="_blank" rel="noopener">💻 GitHub</a> - Mes projets open source</li>
         <li><a href="https://linkedin.com/in/angélo-lima" target="_blank" rel="noopener">💼 LinkedIn</a> - Mon profil professionnel</li>

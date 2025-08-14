@@ -27,10 +27,13 @@ url: "https://angelo-lima.fr"
 navbar-links:
   À propos de moi: "aboutme"
   Tags: "tags"
-  #Resources:
-  #  - Beautiful Jekyll: "https://beautifuljekyll.com"
-  #  - Learn markdown: "https://www.markdowntutorial.com/"
-  #Author's home: "https://deanattali.com"
+  English: "en/"
+
+# English navbar links
+navbar-links-en:
+  About me: "en/aboutme"
+  Tags: "en/tags"
+  Français: "/"
 
 ################
 # --- Logo --- #
@@ -258,7 +261,7 @@ gtag: "G-EQK9L2XD8X"
 
 # Ruby Date Format to show dates of posts
 date_format: "%d/%m/%Y"
-languages: ["fr"]
+languages: ["fr", "en"]
 defaultLang: fr
 locale : "fr-FR"
 

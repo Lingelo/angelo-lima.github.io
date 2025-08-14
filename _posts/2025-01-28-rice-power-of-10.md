@@ -6,6 +6,8 @@ cover-img: /assets/img/rice-nasa.png
 share-img: /assets/img/rice-nasa.png
 tags: [Développement, Web]
 author: Angelo Lima
+lang: fr
+ref: nasa-methodologies
 ---
 
 # Développement web robuste : Appliquer les méthodologies NASA pour des applications critiques

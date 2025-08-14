@@ -6,6 +6,8 @@ cover-img: /assets/img/nvidia-nim.png
 share-img: /assets/img/nvidia-nim.png
 tags: [IA, Développement]
 author: Angelo Lima
+lang: fr
+ref: nvidia-nim
 ---
 
 ## Architecture microservices pour l'inférence IA : révolutionner le déploiement

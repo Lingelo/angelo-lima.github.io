@@ -7,6 +7,8 @@ cover-img: /assets/img/feature-sliced-design.png
 share-img: /assets/img/feature-sliced-design.png
 tags: [Développement, Web]
 author: Angelo Lima
+lang: fr
+ref: feature-sliced-design
 ---
 # Feature-Sliced Design : Une architecture frontend moderne et méthodique
 

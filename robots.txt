@@ -4,27 +4,40 @@ Allow: /
 # Sitemap locations
 Sitemap: https://angelo-lima.fr/sitemap.xml
 Sitemap: https://angelo-lima.fr/feed.xml
+Sitemap: https://angelo-lima.fr/en/feed.xml
 
 # Allow search engines to crawl important resources
 Allow: /assets/
 Allow: /*.css$
 Allow: /*.js$
 Allow: /tag/
+Allow: /en/tag/
 Allow: /page*/
 
 # Prioritize important pages for crawling
 # Main content
 Allow: /
+Allow: /en/
 Allow: /aboutme
+Allow: /en/aboutme
 Allow: /tags
+Allow: /en/tags
 
-# Tag pages (high value content)
+# French tag pages (high value content)
 Allow: /tag/ia/
 Allow: /tag/developpement/
 Allow: /tag/web/
 Allow: /tag/tech/
 Allow: /tag/personnel/
 Allow: /tag/securite/
+
+# English tag pages (high value content)
+Allow: /en/tag/ai/
+Allow: /en/tag/development/
+Allow: /en/tag/web/
+Allow: /en/tag/tech/
+Allow: /en/tag/personal/
+Allow: /en/tag/security/
 
 # Disallow admin-type pages and development files
 Disallow: /404.html

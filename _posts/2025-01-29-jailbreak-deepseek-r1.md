@@ -6,6 +6,8 @@ cover-img: /assets/img/deepseek-jailbreak.png
 share-img: /assets/img/deepseek-jailbreak.png
 tags: [IA, Sécurité]
 author: Angelo Lima
+lang: fr
+ref: llm-jailbreaking
 ---
 
 # Analyse des vulnérabilités de contournement sur DeepSeek R1

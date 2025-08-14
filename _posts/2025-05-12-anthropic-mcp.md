@@ -6,6 +6,8 @@ cover-img: /assets/img/mcp-atlassian-cover.png
 share-img: /assets/img/mcp-atlassian-cover.png
 tags: [IA, Développement]
 author: Angelo Lima
+lang: fr
+ref: anthropic-mcp
 ---
 
 ## Le protocole MCP, c'est quoi ?

@@ -7,6 +7,8 @@ thumbnail-img: /assets/img/thumb-conventional-commits.png
 share-img: /assets/img/conventional-commits.png
 tags: [Développement]
 author: Angelo Lima
+lang: fr
+ref: conventional-commits
 ---
 
 ## Standardisation des messages de commit : un enjeu de lisibilité

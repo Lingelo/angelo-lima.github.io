@@ -6,6 +6,8 @@ description: "OpenAI lance gpt-oss sur Ollama : deux modèles open weight (20B e
 thumbnail-img: "/assets/img/ollama_openai.png"
 tags: [IA, Développement]
 author: Angelo Lima
+lang: fr
+ref: openai-gpt-oss
 ---
 
 # OpenAI gpt-oss sur Ollama : Quand les modèles propriétaires passent en open source

@@ -6,6 +6,8 @@ cover-img: /assets/img/dunning-kruger-cover.png
 share-img: /assets/img/dunning-kruger-cover.png
 tags: [Personnel, Tech]
 author: Angelo Lima
+lang: fr
+ref: dunning-kruger-effect
 ---
 
 # Effet Dunning-Kruger en développement : Analyse cognitive des compétences techniques

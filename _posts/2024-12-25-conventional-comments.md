@@ -6,6 +6,8 @@ cover-img: /assets/img/conventional-comments.png
 share-img: /assets/img/conventional-comments.png
 tags: [Développement]
 author: Angelo Lima
+lang: fr
+ref: conventional-comments
 ---
 
 ## Standardisation des commentaires de revue : optimiser la communication technique

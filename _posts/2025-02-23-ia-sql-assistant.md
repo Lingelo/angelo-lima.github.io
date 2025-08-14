@@ -6,6 +6,8 @@ cover-img: /assets/img/sql-assistant-cover.png
 share-img: /assets/img/sql-assistant-cover.png
 tags: [IA, Développement]
 author: Angelo Lima
+lang: fr
+ref: sql-assistant
 ---
 
 # SQL Assistant IA : Conversion automatique de langage naturel vers SQL

@@ -104,7 +104,11 @@
   <!-- Additional SEO meta tags -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
+  {% if page.lang == 'en' %}
+  <meta name="language" content="English">
+  {% else %}
   <meta name="language" content="French">
+  {% endif %}
   <meta name="revisit-after" content="7 days">
   <meta name="distribution" content="global">
   <meta name="rating" content="general">
@@ -123,6 +127,81 @@
 
   {% if site.rss-description %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - English" href="{{ '/en/feed.xml' | absolute_url }}">
+  {% endif %}
+  
+  <!-- Hreflang tags for multilingual SEO -->
+  {% if page.lang %}
+    {% if page.lang == 'en' %}
+      <!-- Current English page -->
+      <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+      
+      {% if page.date %}
+        <!-- For blog posts: Find corresponding French article by ref metadata -->
+        {% assign fr_found = false %}
+        
+        {% if page.ref %}
+          {% for post in site.posts %}
+            {% if post.lang == 'fr' and post.ref == page.ref %}
+              <link rel="alternate" hreflang="fr" href="{{ post.url | absolute_url }}">
+              <link rel="alternate" hreflang="x-default" href="{{ post.url | absolute_url }}">
+              {% assign fr_found = true %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        
+        {% unless fr_found %}
+          <!-- Fallback to homepage if no French version found -->
+          <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
+          <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+        {% endunless %}
+        
+      {% else %}
+        <!-- For static pages: Map to corresponding French pages -->
+        {% if page.url contains '/en/' %}
+          {% assign fr_url = page.url | remove: '/en' %}
+          {% if fr_url == '/' %}{% assign fr_url = '/' %}{% endif %}
+          <link rel="alternate" hreflang="fr" href="{{ fr_url | absolute_url }}">
+          <link rel="alternate" hreflang="x-default" href="{{ fr_url | absolute_url }}">
+        {% else %}
+          <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
+          <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+        {% endif %}
+      {% endif %}
+      
+    {% else %}
+      <!-- Current French page -->
+      <link rel="alternate" hreflang="fr" href="{{ page.url | absolute_url }}">
+      <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+      
+      {% if page.date %}
+        <!-- For blog posts: Find corresponding English article by ref metadata -->
+        {% if page.ref %}
+          {% for post in site.posts %}
+            {% if post.lang == 'en' and post.ref == page.ref %}
+              <link rel="alternate" hreflang="en" href="{{ post.url | absolute_url }}">
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% else %}
+        <!-- For static pages: Map to corresponding English pages -->
+        {% assign en_url = page.url | prepend: '/en' %}
+        {% if page.url == '/' %}{% assign en_url = '/en/' %}{% endif %}
+        <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+      {% endif %}
+    {% endif %}
+    
+  {% else %}
+    <!-- Default for pages without lang attribute (assume French) -->
+    <link rel="alternate" hreflang="fr" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+    
+    <!-- Add English equivalent -->
+    {% assign en_url = page.url | prepend: '/en' %}
+    {% if page.url == '/' %}{% assign en_url = '/en/' %}{% endif %}
+    <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
   {% endif %}
   
   <!-- DNS prefetch for performance -->
@@ -255,6 +334,9 @@
   {% if favicon_exists == 1 %}
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
   {% endif %}
+
+  <!-- Language switcher -->
+  {% include lang-switcher.html %}
 
   {% if page.head-extra %}
     {% for file in page.head-extra %}

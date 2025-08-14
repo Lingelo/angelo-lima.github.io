@@ -12,12 +12,21 @@ layout: page
 {% assign posts_count = posts | size %}
 
 <div class="posts-section">
+    {% if page.lang == 'en' %}
+    <p class="tag-description">
+        <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> tagged in <strong>{{ tag }}</strong> category.
+    </p>
+
+    <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+    <ul class="posts-list list-unstyled" role="list" aria-label="Articles list about {{ tag }}">
+    {% else %}
     <p class="tag-description">
         <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> classé{% if posts_count > 1 %}s{% endif %} dans la catégorie <strong>{{ tag }}</strong>.
     </p>
 
     <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
     <ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles sur {{ tag }}">
+    {% endif %}
         {% for post in posts %}
         <li class="post-preview" role="listitem">
             {%- capture thumbnail -%}
@@ -34,7 +43,11 @@ layout: page
             {% endcapture %}
             {% assign thumbnail=thumbnail | strip %}
 
+            {% if page.lang == 'en' %}
+            <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Read article: {{ post.title | strip_html }}">
+            {% else %}
             <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
+            {% endif %}
               <!-- Image section at top -->
               {% if thumbnail != "" %}
               <div class="post-image">
