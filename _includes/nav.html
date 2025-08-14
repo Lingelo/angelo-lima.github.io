@@ -27,6 +27,23 @@
           </div>
         </li>
         {%- for link in site.navbar-links-en -%}
+          {%- if link[1].first %}
+            <li class="nav-item dropdown" role="none">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" role="menu">
+                {%- for childlink in link[1] -%}
+                  {%- for linkparts in childlink %}
+                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}" role="menuitem">{{ linkparts[0] }}</a>
+                  {%- endfor -%}
+                {%- endfor %}
+              </div>
+            </li>
+          {% else %}
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="{{ link[1] | relative_url }}" role="menuitem">{{ link[0] }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
       {% else %}
         <li class="nav-item cv-dropdown" role="none">
           <button class="nav-link cv-dropdown-btn" role="menuitem" aria-label="Mon CV - Options">
@@ -42,24 +59,24 @@
           </div>
         </li>
         {%- for link in site.navbar-links -%}
+          {%- if link[1].first %}
+            <li class="nav-item dropdown" role="none">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" role="menu">
+                {%- for childlink in link[1] -%}
+                  {%- for linkparts in childlink %}
+                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}" role="menuitem">{{ linkparts[0] }}</a>
+                  {%- endfor -%}
+                {%- endfor %}
+              </div>
+            </li>
+          {% else %}
+            <li class="nav-item" role="none">
+              <a class="nav-link" href="{{ link[1] | relative_url }}" role="menuitem">{{ link[0] }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
       {% endif %}
-        {%- if link[1].first %}
-          <li class="nav-item dropdown" role="none">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" role="menu">
-              {%- for childlink in link[1] -%}
-                {%- for linkparts in childlink %}
-                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}" role="menuitem">{{ linkparts[0] }}</a>
-                {%- endfor -%}
-              {%- endfor %}
-            </div>
-          </li>
-        {% else %}
-          <li class="nav-item" role="none">
-            <a class="nav-link" href="{{ link[1] | relative_url }}" role="menuitem">{{ link[0] }}</a>
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
       {% if site.post_search %}
         <li class="nav-item" role="none">
           <a class="nav-link" id="nav-search-link" href="#" title="Rechercher" role="menuitem" aria-label="Ouvrir la recherche">
