@@ -87,7 +87,7 @@
                     </span>
                     <meta property="position" content="3">
                 </li>
-            {% elsif page.title != "Home" and page.title != site.title %}
+            {% elsif page.title != "Home" and page.title != site.title and page.title != site.title_en and page.url != "/en/" %}
                 <!-- Autres pages -->
                 <li property="itemListElement" typeof="ListItem" class="active">
                     <span property="item" typeof="WebPage" about="{{ page.url | absolute_url }}">
