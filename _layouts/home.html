@@ -8,8 +8,20 @@ layout: page
   {% comment %}For English: show all posts, JavaScript will handle pagination{% endcomment %}
   {% assign posts = site.posts | where: "lang", "en" %}
 {% else %}
-  {% comment %}For French: use Jekyll's built-in pagination (configured for 6 posts in _config.yml){% endcomment %}
-  {% assign posts = paginator.posts | default: site.posts %}
+  {% comment %}For French: filter to only French posts, maintaining pagination structure{% endcomment %}
+  {% if paginator.posts %}
+    {% comment %}We're on a paginated page - filter paginated posts by language{% endcomment %}
+    {% assign all_fr_posts = site.posts | where: "lang", "fr" %}
+    {% assign posts = all_fr_posts | slice: 0, 6 %}
+    {% comment %}Calculate which posts to show based on current page{% endcomment %}
+    {% if paginator.page %}
+      {% assign offset = paginator.page | minus: 1 | times: 6 %}
+      {% assign posts = all_fr_posts | offset: offset | first: 6 %}
+    {% endif %}
+  {% else %}
+    {% comment %}We're on the main page - show first 6 French posts{% endcomment %}
+    {% assign posts = site.posts | where: "lang", "fr" | first: 6 %}
+  {% endif %}
 {% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
@@ -109,24 +121,40 @@ layout: page
 {% if page.lang == 'en' %}
   {% comment %}JavaScript pagination will be added dynamically{% endcomment %}
 {% else %}
-  {% comment %}Standard Jekyll pagination for French posts{% endcomment %}
-  {% if paginator.total_pages > 1 %}
+  {% comment %}Manual pagination for French posts since we're filtering by language{% endcomment %}
+  {% assign all_fr_posts = site.posts | where: "lang", "fr" %}
+  {% assign total_fr_posts = all_fr_posts.size %}
+  {% assign posts_per_page = 6 %}
+  {% assign total_pages = total_fr_posts | divided_by: posts_per_page %}
+  {% assign remainder = total_fr_posts | modulo: posts_per_page %}
+  {% if remainder > 0 %}
+    {% assign total_pages = total_pages | plus: 1 %}
+  {% endif %}
+  {% assign current_page = paginator.page | default: 1 %}
+  
+  {% if total_pages > 1 %}
   <ul class="pagination main-pager" role="navigation" aria-label="Navigation de pagination">
-    {% if paginator.previous_page %}
-    <li class="page-item previous" role="none">
-      <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
-        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-        <span class="d-none d-sm-inline-block">Articles les plus récents</span>
-      </a>
-    </li>
+    {% if current_page > 1 %}
+      {% assign prev_page = current_page | minus: 1 %}
+      <li class="page-item previous" role="none">
+        {% if prev_page == 1 %}
+          <a class="page-link" href="{{ '/' | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
+        {% else %}
+          <a class="page-link" href="{{ '/page' | append: prev_page | append: '/' | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
+        {% endif %}
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span class="d-none d-sm-inline-block">Articles les plus récents</span>
+        </a>
+      </li>
     {% endif %}
-    {% if paginator.next_page %}
-    <li class="page-item next" role="none">
-      <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
-        <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
-    </li>
+    {% if current_page < total_pages %}
+      {% assign next_page = current_page | plus: 1 %}
+      <li class="page-item next" role="none">
+        <a class="page-link" href="{{ '/page' | append: next_page | append: '/' | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
+          <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </li>
     {% endif %}
   </ul>
   {% endif %}

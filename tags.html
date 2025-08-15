@@ -9,7 +9,7 @@ lang: fr
 {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
 
 {%- for tag in site.tags -%}
-    {%- assign fr_posts = site.tags[tag[0]] | where: 'lang', 'fr' -%}
+    {%- assign fr_posts = tag[1] | where: 'lang', 'fr' -%}
     {%- if fr_posts.size > 0 -%}
         <a href="#{{- tag[0] -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag[0] -}}&nbsp;({{fr_posts.size}})</a>
     {%- endif -%}
@@ -17,7 +17,7 @@ lang: fr
 
 <div id="full-tags-list">
 {%- for tag in site.tags -%}
-    {%- assign fr_posts = site.tags[tag[0]] | where: 'lang', 'fr' -%}
+    {%- assign fr_posts = tag[1] | where: 'lang', 'fr' -%}
     {%- if fr_posts.size > 0 -%}
         <h2 id="{{- tag[0] -}}" class="linked-section">
             <i class="fas fa-tag" aria-hidden="true"></i>

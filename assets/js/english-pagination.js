@@ -14,14 +14,21 @@ class EnglishPagination {
   }
   
   init() {
-    // Only run on English pages
-    if (!document.documentElement.lang || document.documentElement.lang !== 'en') {
+    // Check if this is an English page by URL first
+    const path = window.location.pathname;
+    if (!path.startsWith('/en/') && !path.startsWith('/en') && path !== '/en') {
       return;
     }
     
-    // Check if this is the English home page or a pagination page
-    const path = window.location.pathname;
-    if (!path.startsWith('/en/') && !path.startsWith('/en')) {
+    // Double-check with document language if available
+    const htmlLang = document.documentElement.lang;
+    if (htmlLang && htmlLang !== 'en') {
+      return;
+    }
+    
+    // Check if there are posts to paginate
+    const postElements = document.querySelectorAll('.post-preview');
+    if (postElements.length === 0) {
       return;
     }
     

@@ -8,32 +8,21 @@ lang: en
 
 {% assign date_format = site.date_format | default: "%m/%d/%Y" %}
 
-{%- capture site_tags -%}
-    {%- for tag in site.tags -%}
-        {%- for post in site.tags[tag] -%}
-            {%- if post.lang == 'en' -%}
-                {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
-                {%- break -%}
-            {%- endif -%}
-        {%- endfor -%}
-    {%- endfor -%}
-{%- endcapture -%}
-{%- assign tags_list = site_tags | split:',' | sort | uniq -%}
 
-{%- for tag in tags_list -%}
-    {%- assign en_posts = site.tags[tag] | where: 'lang', 'en' -%}
+{%- for tag in site.tags -%}
+    {%- assign en_posts = tag[1] | where: 'lang', 'en' -%}
     {%- if en_posts.size > 0 -%}
-        <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{en_posts.size}})</a>
+        <a href="#{{- tag[0] -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag[0] -}}&nbsp;({{en_posts.size}})</a>
     {%- endif -%}
 {%- endfor -%}
 
 <div id="full-tags-list">
-{%- for tag in tags_list -%}
-    {%- assign en_posts = site.tags[tag] | where: 'lang', 'en' -%}
+{%- for tag in site.tags -%}
+    {%- assign en_posts = tag[1] | where: 'lang', 'en' -%}
     {%- if en_posts.size > 0 -%}
-        <h2 id="{{- tag -}}" class="linked-section">
+        <h2 id="{{- tag[0] -}}" class="linked-section">
             <i class="fas fa-tag" aria-hidden="true"></i>
-            &nbsp;{{- tag -}}&nbsp;({{en_posts.size}})
+            &nbsp;{{- tag[0] -}}&nbsp;({{en_posts.size}})
         </h2>
         <div class="post-list">
             {%- for post in en_posts -%}
