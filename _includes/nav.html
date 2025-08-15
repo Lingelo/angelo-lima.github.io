@@ -8,7 +8,7 @@
     {% endif %}
   {%- elsif site.title -%}
     {% if page.lang == 'en' %}
-    <a class="navbar-brand" href="{{ '/en/' | absolute_url }}" aria-label="Back to home">{{ site.title }}</a>
+    <a class="navbar-brand" href="{{ '/en/' | absolute_url }}" aria-label="Back to home">{{ site.title_en | default: site.title }}</a>
     {% else %}
     <a class="navbar-brand" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil">{{ site.title }}</a>
     {% endif %}

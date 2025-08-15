@@ -2,8 +2,8 @@
 layout: null
 ---
 [ 
-{% assign french_posts = site.posts | where: "lang", "fr" %}
-{% for post in french_posts %} 
+{% assign english_posts = site.posts | where: "lang", "en" %}
+{% for post in english_posts %} 
 { 
 "title"    : "{% if post.title != "" %}{{ post.title | strip_html | escape }}{% else %}{{ post.excerpt | strip_html | escape | strip }}{%endif%}", 
 "desc"     : "{% if post.title != "" %}{{ post.title | strip_html | escape }}{% else %}{{ post.excerpt | strip_html | escape | strip }}{%endif%}", 
@@ -12,7 +12,7 @@ layout: null
 "date"     : "{{ post.date | date: "%B %e, %Y" | default: "January 1, 1970" }}" 
 }, 
 {% endfor %} 
-{% for page in site.html_pages %}{% if page.title != "{title}" and page.title != "404 - Page not found" and page.lang != "en" %} 
+{% for page in site.html_pages %}{% if page.title != "{title}" and page.title != "404 - Page not found" and page.lang == "en" %} 
 { 
 "title"    : "{% if page.title != "" %}{{ page.title | strip_html | escape }}{% else %}{{ page.excerpt | strip_html | escape | strip }}{% endif %}", 
 "desc"     : "{% if page.title != "" %}{{ page.title | strip_html | escape }}{% else %}{{ page.excerpt | strip_html | escape | strip }}{% endif %}", 
