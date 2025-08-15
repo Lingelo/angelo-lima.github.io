@@ -308,6 +308,9 @@
 
   <!-- Language switcher -->
   {% include lang-switcher.html %}
+  
+  <!-- Automatic language detection -->
+  <script src="{{ '/assets/js/language-detection.js' | relative_url }}" defer></script>
 
   {% if page.head-extra %}
     {% for file in page.head-extra %}
