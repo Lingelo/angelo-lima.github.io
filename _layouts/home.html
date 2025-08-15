@@ -8,14 +8,8 @@ layout: page
   {% comment %}For English: show all posts, JavaScript will handle pagination{% endcomment %}
   {% assign posts = site.posts | where: "lang", "en" %}
 {% else %}
-  {% comment %}For French: filter paginated posts to only French articles{% endcomment %}
-  {% if paginator.posts %}
-    {% comment %}Filter paginated posts by French language{% endcomment %}
-    {% assign posts = paginator.posts | where: "lang", "fr" %}
-  {% else %}
-    {% comment %}Fallback to first 6 French posts{% endcomment %}
-    {% assign posts = site.posts | where: "lang", "fr" | first: 6 %}
-  {% endif %}
+  {% comment %}For French: show all posts, JavaScript will handle pagination{% endcomment %}
+  {% assign posts = site.posts | where: "lang", "fr" %}
 {% endif %}
 
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
@@ -112,44 +106,4 @@ layout: page
   {% endfor %}
 </ul>
 
-{% if page.lang == 'en' %}
-  {% comment %}JavaScript pagination will be added dynamically{% endcomment %}
-{% else %}
-  {% comment %}Manual pagination for French posts since we're filtering by language{% endcomment %}
-  {% assign all_fr_posts = site.posts | where: "lang", "fr" %}
-  {% assign total_fr_posts = all_fr_posts.size %}
-  {% assign posts_per_page = 6 %}
-  {% assign total_pages = total_fr_posts | divided_by: posts_per_page %}
-  {% assign remainder = total_fr_posts | modulo: posts_per_page %}
-  {% if remainder > 0 %}
-    {% assign total_pages = total_pages | plus: 1 %}
-  {% endif %}
-  {% assign current_page = paginator.page | default: 1 %}
-  
-  {% if total_pages > 1 %}
-  <ul class="pagination main-pager" role="navigation" aria-label="Navigation de pagination">
-    {% if current_page > 1 %}
-      {% assign prev_page = current_page | minus: 1 %}
-      <li class="page-item previous" role="none">
-        {% if prev_page == 1 %}
-          <a class="page-link" href="{{ '/' | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
-        {% else %}
-          <a class="page-link" href="{{ '/page' | append: prev_page | append: '/' | absolute_url }}" aria-label="Page précédente - Articles les plus récents">
-        {% endif %}
-          <i class="fas fa-arrow-left" aria-hidden="true"></i>
-          <span class="d-none d-sm-inline-block">Articles les plus récents</span>
-        </a>
-      </li>
-    {% endif %}
-    {% if current_page < total_pages %}
-      {% assign next_page = current_page | plus: 1 %}
-      <li class="page-item next" role="none">
-        <a class="page-link" href="{{ '/page' | append: next_page | append: '/' | absolute_url }}" aria-label="Page suivante - Articles les plus anciens">
-          <span class="d-none d-sm-inline-block">Articles les plus anciens</span>
-          <i class="fas fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      </li>
-    {% endif %}
-  </ul>
-  {% endif %}
-{% endif %}
+{% comment %}JavaScript pagination will be added dynamically for both languages{% endcomment %}

@@ -173,7 +173,7 @@ site-js:
   - "/assets/js/css-loader.js"
   - "/assets/js/hide-empty-tags.js"
   - "/assets/js/image-optimization.js"
-  - "/assets/js/english-pagination.js"
+  - "/assets/js/dynamic-pagination.js"
 
 #################################
 # --- Web Analytics Section --- #

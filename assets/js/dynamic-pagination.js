@@ -1,9 +1,9 @@
 /**
- * Dynamic pagination for English articles
+ * Dynamic pagination for both French and English articles
  * Handles client-side pagination without creating multiple index.html files
  */
 
-class EnglishPagination {
+class DynamicPagination {
   constructor() {
     this.postsPerPage = 6;
     this.currentPage = 1;
@@ -14,17 +14,17 @@ class EnglishPagination {
   }
   
   init() {
-    // Check if this is an English page by URL first
+    // Check if this is a home page (French or English)
     const path = window.location.pathname;
-    if (!path.startsWith('/en/') && !path.startsWith('/en') && path !== '/en') {
+    const isEnglishHome = path.startsWith('/en/') || path.startsWith('/en') || path === '/en';
+    const isFrenchHome = path === '/' || path.startsWith('/page');
+    
+    if (!isEnglishHome && !isFrenchHome) {
       return;
     }
     
-    // Double-check with document language if available
-    const htmlLang = document.documentElement.lang;
-    if (htmlLang && htmlLang !== 'en') {
-      return;
-    }
+    // Determine language
+    this.language = isEnglishHome ? 'en' : 'fr';
     
     // Check if there are posts to paginate
     const postElements = document.querySelectorAll('.post-preview');
@@ -32,21 +32,34 @@ class EnglishPagination {
       return;
     }
     
-    // Extract page number from URL
-    const pageMatch = path.match(/\/en\/page(\d+)\/?$/);
-    if (pageMatch) {
-      this.currentPage = parseInt(pageMatch[1]);
-      // Redirect pagination URLs to main page with hash
-      const newUrl = `/en/#page=${this.currentPage}`;
-      if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
-        window.history.replaceState({}, '', newUrl);
+    // Extract page number from URL for both languages
+    let pageMatch;
+    if (this.language === 'en') {
+      pageMatch = path.match(/\/en\/page(\d+)\/?$/);
+      if (pageMatch) {
+        this.currentPage = parseInt(pageMatch[1]);
+        // Redirect pagination URLs to main page with hash
+        const newUrl = `/en/#page=${this.currentPage}`;
+        if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+          window.history.replaceState({}, '', newUrl);
+        }
       }
     } else {
-      // Check for page parameter in hash
-      const hashMatch = window.location.hash.match(/page=(\d+)/);
-      if (hashMatch) {
-        this.currentPage = parseInt(hashMatch[1]);
+      pageMatch = path.match(/\/page(\d+)\/?$/);
+      if (pageMatch) {
+        this.currentPage = parseInt(pageMatch[1]);
+        // Redirect pagination URLs to main page with hash
+        const newUrl = `/#page=${this.currentPage}`;
+        if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+          window.history.replaceState({}, '', newUrl);
+        }
       }
+    }
+    
+    // Check for page parameter in hash (both languages)
+    const hashMatch = window.location.hash.match(/page=(\d+)/);
+    if (hashMatch) {
+      this.currentPage = parseInt(hashMatch[1]);
     }
     
     this.setupPagination();
@@ -147,11 +160,11 @@ class EnglishPagination {
     this.renderPage();
     this.renderPaginationControls();
     
-    // Scroll to top of posts
-    const postsContainer = document.querySelector('.posts-list');
-    if (postsContainer) {
-      postsContainer.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Scroll to top of page
+    window.scrollTo({ 
+      top: 0, 
+      behavior: 'smooth' 
+    });
   }
   
   handleUrlChanges() {
@@ -175,5 +188,5 @@ class EnglishPagination {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new EnglishPagination();
+  new DynamicPagination();
 });
