@@ -1,0 +1,172 @@
+/**
+ * Dynamic pagination for English articles
+ * Handles client-side pagination without creating multiple index.html files
+ */
+
+class EnglishPagination {
+  constructor() {
+    this.postsPerPage = 6;
+    this.currentPage = 1;
+    this.allPosts = [];
+    this.totalPages = 0;
+    
+    this.init();
+  }
+  
+  init() {
+    // Only run on English pages
+    if (!document.documentElement.lang || document.documentElement.lang !== 'en') {
+      return;
+    }
+    
+    // Check if this is the English home page or a pagination page
+    const path = window.location.pathname;
+    if (!path.startsWith('/en/') && !path.startsWith('/en')) {
+      return;
+    }
+    
+    // Extract page number from URL
+    const pageMatch = path.match(/\/en\/page(\d+)\/?$/);
+    if (pageMatch) {
+      this.currentPage = parseInt(pageMatch[1]);
+      // Redirect pagination URLs to main page with hash
+      const newUrl = `/en/#page=${this.currentPage}`;
+      if (window.location.pathname + window.location.search + window.location.hash !== newUrl) {
+        window.history.replaceState({}, '', newUrl);
+      }
+    } else {
+      // Check for page parameter in hash
+      const hashMatch = window.location.hash.match(/page=(\d+)/);
+      if (hashMatch) {
+        this.currentPage = parseInt(hashMatch[1]);
+      }
+    }
+    
+    this.setupPagination();
+    this.handleUrlChanges();
+  }
+  
+  setupPagination() {
+    // Get all English posts data from the page
+    const postElements = document.querySelectorAll('.post-preview');
+    this.allPosts = Array.from(postElements).map(element => {
+      return {
+        element: element.cloneNode(true),
+        html: element.outerHTML
+      };
+    });
+    
+    this.totalPages = Math.ceil(this.allPosts.length / this.postsPerPage);
+    
+    if (this.totalPages <= 1) {
+      return; // No pagination needed
+    }
+    
+    this.renderPage();
+    this.renderPaginationControls();
+  }
+  
+  renderPage() {
+    const container = document.querySelector('.posts-list');
+    if (!container) return;
+    
+    // Clear current posts
+    container.innerHTML = '';
+    
+    // Calculate offset
+    const startIndex = (this.currentPage - 1) * this.postsPerPage;
+    const endIndex = Math.min(startIndex + this.postsPerPage, this.allPosts.length);
+    
+    // Add posts for current page
+    for (let i = startIndex; i < endIndex; i++) {
+      if (this.allPosts[i]) {
+        container.appendChild(this.allPosts[i].element.cloneNode(true));
+      }
+    }
+  }
+  
+  renderPaginationControls() {
+    // Remove existing pagination
+    const existingPagination = document.querySelector('.pagination.main-pager');
+    if (existingPagination) {
+      existingPagination.remove();
+    }
+    
+    if (this.totalPages <= 1) return;
+    
+    const paginationHtml = `
+      <ul class="pagination main-pager" role="navigation" aria-label="Pagination navigation">
+        ${this.currentPage > 1 ? `
+          <li class="page-item previous" role="none">
+            <a class="page-link" href="#page=${this.currentPage - 1}" aria-label="Previous page - Latest articles" data-page="${this.currentPage - 1}">
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              <span class="d-none d-sm-inline-block">Latest articles</span>
+            </a>
+          </li>
+        ` : ''}
+        
+        ${this.currentPage < this.totalPages ? `
+          <li class="page-item next" role="none">
+            <a class="page-link" href="#page=${this.currentPage + 1}" aria-label="Next page - Older articles" data-page="${this.currentPage + 1}">
+              <span class="d-none d-sm-inline-block">Older articles</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </li>
+        ` : ''}
+      </ul>
+    `;
+    
+    // Insert pagination after posts list
+    const postsContainer = document.querySelector('.posts-list');
+    if (postsContainer) {
+      postsContainer.insertAdjacentHTML('afterend', paginationHtml);
+      
+      // Add click handlers
+      document.querySelectorAll('.pagination .page-link[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const page = parseInt(e.currentTarget.dataset.page);
+          this.goToPage(page);
+        });
+      });
+    }
+  }
+  
+  goToPage(page) {
+    if (page < 1 || page > this.totalPages) return;
+    
+    this.currentPage = page;
+    window.location.hash = `page=${page}`;
+    this.renderPage();
+    this.renderPaginationControls();
+    
+    // Scroll to top of posts
+    const postsContainer = document.querySelector('.posts-list');
+    if (postsContainer) {
+      postsContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  handleUrlChanges() {
+    window.addEventListener('hashchange', () => {
+      const hashMatch = window.location.hash.match(/page=(\d+)/);
+      if (hashMatch) {
+        const page = parseInt(hashMatch[1]);
+        if (page !== this.currentPage) {
+          this.currentPage = page;
+          this.renderPage();
+          this.renderPaginationControls();
+        }
+      } else if (this.currentPage !== 1) {
+        this.currentPage = 1;
+        this.renderPage();
+        this.renderPaginationControls();
+      }
+    });
+  }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  new EnglishPagination();
+});
