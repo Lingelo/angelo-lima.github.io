@@ -134,13 +134,45 @@
   {% if page.lang == 'en' %}
     <!-- English page -->
     <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
-    <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+    {% if page.layout == 'post' and page.ref %}
+      <!-- Find corresponding French article -->
+      {% assign fr_post = site.posts | where: "ref", page.ref | where: "lang", "fr" | first %}
+      {% if fr_post %}
+        <link rel="alternate" hreflang="fr" href="{{ fr_post.url | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ fr_post.url | absolute_url }}">
+      {% else %}
+        <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
+        <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+      {% endif %}
+    {% elsif page.url contains '/tags' %}
+      <link rel="alternate" hreflang="fr" href="{{ '/tags/' | absolute_url }}">
+      <link rel="alternate" hreflang="x-default" href="{{ '/tags/' | absolute_url }}">
+    {% elsif page.url contains '/aboutme' %}
+      <link rel="alternate" hreflang="fr" href="{{ '/aboutme/' | absolute_url }}">
+      <link rel="alternate" hreflang="x-default" href="{{ '/aboutme/' | absolute_url }}">
+    {% else %}
+      <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
+      <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+    {% endif %}
   {% else %}
     <!-- French page (default) -->
     <link rel="alternate" hreflang="fr" href="{{ page.url | absolute_url }}">
     <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
-    <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+    {% if page.layout == 'post' and page.ref %}
+      <!-- Find corresponding English article -->
+      {% assign en_post = site.posts | where: "ref", page.ref | where: "lang", "en" | first %}
+      {% if en_post %}
+        <link rel="alternate" hreflang="en" href="{{ en_post.url | absolute_url }}">
+      {% else %}
+        <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+      {% endif %}
+    {% elsif page.url contains '/tags' %}
+      <link rel="alternate" hreflang="en" href="{{ '/en/tags/' | absolute_url }}">
+    {% elsif page.url contains '/aboutme' %}
+      <link rel="alternate" hreflang="en" href="{{ '/en/aboutme/' | absolute_url }}">
+    {% else %}
+      <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+    {% endif %}
   {% endif %}
   
   <!-- DNS prefetch for performance -->
