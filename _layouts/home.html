@@ -8,15 +8,13 @@ layout: page
   {% comment %}For English: show all posts, JavaScript will handle pagination{% endcomment %}
   {% assign posts = site.posts | where: "lang", "en" %}
 {% else %}
-  {% comment %}For French: filter to only French posts, maintaining pagination structure{% endcomment %}
-  {% assign all_fr_posts = site.posts | where: "lang", "fr" %}
-  {% if paginator.page %}
-    {% comment %}We're on a paginated page - calculate offset and get posts for this page{% endcomment %}
-    {% assign offset = paginator.page | minus: 1 | times: 6 %}
-    {% assign posts = all_fr_posts | offset: offset | first: 6 %}
+  {% comment %}For French: filter paginated posts to only French articles{% endcomment %}
+  {% if paginator.posts %}
+    {% comment %}Filter paginated posts by French language{% endcomment %}
+    {% assign posts = paginator.posts | where: "lang", "fr" %}
   {% else %}
-    {% comment %}We're on the main page - show first 6 French posts{% endcomment %}
-    {% assign posts = all_fr_posts | first: 6 %}
+    {% comment %}Fallback to first 6 French posts{% endcomment %}
+    {% assign posts = site.posts | where: "lang", "fr" | first: 6 %}
   {% endif %}
 {% endif %}
 
