@@ -114,21 +114,35 @@ class DynamicPagination {
     
     if (this.totalPages <= 1) return;
     
+    const labels = this.language === 'fr' ? {
+      navLabel: 'Navigation de pagination',
+      prevLabel: 'Page précédente - Articles les plus récents',
+      nextLabel: 'Page suivante - Articles les plus anciens',
+      prevText: 'Articles les plus récents',
+      nextText: 'Articles les plus anciens'
+    } : {
+      navLabel: 'Pagination navigation',
+      prevLabel: 'Previous page - Latest articles',
+      nextLabel: 'Next page - Older articles',
+      prevText: 'Latest articles',
+      nextText: 'Older articles'
+    };
+
     const paginationHtml = `
-      <ul class="pagination main-pager" role="navigation" aria-label="Pagination navigation">
+      <ul class="pagination main-pager" role="navigation" aria-label="${labels.navLabel}">
         ${this.currentPage > 1 ? `
           <li class="page-item previous" role="none">
-            <a class="page-link" href="#page=${this.currentPage - 1}" aria-label="Previous page - Latest articles" data-page="${this.currentPage - 1}">
+            <a class="page-link" href="#page=${this.currentPage - 1}" aria-label="${labels.prevLabel}" data-page="${this.currentPage - 1}">
               <i class="fas fa-arrow-left" aria-hidden="true"></i>
-              <span class="d-none d-sm-inline-block">Latest articles</span>
+              <span class="d-none d-sm-inline-block">${labels.prevText}</span>
             </a>
           </li>
         ` : ''}
         
         ${this.currentPage < this.totalPages ? `
           <li class="page-item next" role="none">
-            <a class="page-link" href="#page=${this.currentPage + 1}" aria-label="Next page - Older articles" data-page="${this.currentPage + 1}">
-              <span class="d-none d-sm-inline-block">Older articles</span>
+            <a class="page-link" href="#page=${this.currentPage + 1}" aria-label="${labels.nextLabel}" data-page="${this.currentPage + 1}">
+              <span class="d-none d-sm-inline-block">${labels.nextText}</span>
               <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
           </li>
