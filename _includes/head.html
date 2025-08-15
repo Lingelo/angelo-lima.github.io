@@ -248,7 +248,11 @@
 
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
+  {% if page.lang == 'en' %}
+  <meta property="og:locale" content="en_US">
+  {% else %}
   <meta property="og:locale" content="fr_FR">
+  {% endif %}
   {% if page.id %}
   <meta property="og:article:section" content="{{ page.categories.first | default: 'Blog' }}">
   {% if page.tags and page.tags.size > 0 %}
