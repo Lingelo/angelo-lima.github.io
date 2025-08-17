@@ -12,7 +12,8 @@ Allow: /*.css$
 Allow: /*.js$
 Allow: /tag/
 Allow: /en/tag/
-Allow: /page*/
+# Block pagination pages to avoid duplicate content
+Disallow: /page*/
 
 # Prioritize important pages for crawling
 # Main content

@@ -277,7 +277,8 @@ timezone: "Europe/Paris"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 6
+# Pagination disabled - using JavaScript pagination instead
+# paginate: 6
 
 kramdown:
   input: GFM
@@ -314,11 +315,11 @@ exclude:
   - docs/
 
 plugins:
-  - jekyll-paginate
+  # - jekyll-paginate  # Disabled - using JavaScript pagination instead
   # - jekyll-sitemap  # Temporarily disabled - using custom sitemap.xml
 
-# Pagination configuration - only paginate French posts
-paginate_path: "/page:num/"
+# Pagination configuration disabled - using JavaScript pagination instead  
+# paginate_path: "/page:num/"
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

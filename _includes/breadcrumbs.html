@@ -10,15 +10,19 @@
                 <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
             <li property="itemListElement" typeof="ListItem">
                 {% if page.lang == 'en' %}
-                <a property="item" typeof="WebPage" href="{{ '/en/' | relative_url }}" about="{{ '/en/' | absolute_url }}">
-                    <span property="name">Home</span>
+                <span property="item" typeof="WebPage">
+                    <a href="{{ '/en/' | relative_url }}">
+                        <span property="name">Home</span>
+                    </a>
                     <meta property="@id" content="{{ '/en/' | absolute_url }}">
-                </a>
+                </span>
                 {% else %}
-                <a property="item" typeof="WebPage" href="{{ '/' | relative_url }}" about="{{ '/' | absolute_url }}">
-                    <span property="name">Accueil</span>
+                <span property="item" typeof="WebPage">
+                    <a href="{{ '/' | relative_url }}">
+                        <span property="name">Accueil</span>
+                    </a>
                     <meta property="@id" content="{{ '/' | absolute_url }}">
-                </a>
+                </span>
                 {% endif %}
                 <meta property="position" content="1">
             </li>
@@ -50,10 +54,12 @@
                               {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
                             {% endif %}
                         {% endif %}
-                        <a property="item" typeof="WebPage" href="{{ tag_url }}" about="{{ tag_url | absolute_url }}">
-                            <span property="name">{{ page.tags.first }}</span>
+                        <span property="item" typeof="WebPage">
+                            <a href="{{ tag_url }}">
+                                <span property="name">{{ page.tags.first }}</span>
+                            </a>
                             <meta property="@id" content="{{ tag_url | absolute_url }}">
-                        </a>
+                        </span>
                         <meta property="position" content="2">
                     </li>
                 {% endif %}
@@ -68,15 +74,19 @@
                 <!-- Page de tag -->
                 <li property="itemListElement" typeof="ListItem">
                     {% if page.lang == 'en' %}
-                    <a property="item" typeof="WebPage" href="/en/tags/" about="{{ '/en/tags/' | absolute_url }}">
-                        <span property="name">Tags</span>
+                    <span property="item" typeof="WebPage">
+                        <a href="/en/tags/">
+                            <span property="name">Tags</span>
+                        </a>
                         <meta property="@id" content="{{ '/en/tags/' | absolute_url }}">
-                    </a>
+                    </span>
                     {% else %}
-                    <a property="item" typeof="WebPage" href="/tags/" about="{{ '/tags/' | absolute_url }}">
-                        <span property="name">Tags</span>
+                    <span property="item" typeof="WebPage">
+                        <a href="/tags/">
+                            <span property="name">Tags</span>
+                        </a>
                         <meta property="@id" content="{{ '/tags/' | absolute_url }}">
-                    </a>
+                    </span>
                     {% endif %}
                     <meta property="position" content="2">
                 </li>
