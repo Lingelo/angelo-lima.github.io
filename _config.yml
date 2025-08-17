@@ -314,9 +314,11 @@ exclude:
   - screenshot.png
   - docs/
 
-plugins:
-  # - jekyll-paginate  # Disabled - using JavaScript pagination instead
-  # - jekyll-sitemap  # Temporarily disabled - using custom sitemap.xml
+# Plugins disabled - using custom implementations instead
+plugins: []
+# Previously used plugins (now disabled):
+# - jekyll-paginate  # Disabled - using JavaScript pagination instead  
+# - jekyll-sitemap   # Disabled - using custom sitemap.xml
 
 # Pagination configuration disabled - using JavaScript pagination instead  
 # paginate_path: "/page:num/"
