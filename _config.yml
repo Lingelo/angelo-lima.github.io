@@ -182,6 +182,7 @@ site-js:
   - "/assets/js/hide-empty-tags.js"
   - "/assets/js/image-optimization.js"
   - "/assets/js/dynamic-pagination.js"
+  - "/assets/js/canonical-enforcement.js"
 
 #################################
 # --- Web Analytics Section --- #

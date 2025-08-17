@@ -133,13 +133,27 @@
   <!-- Hreflang tags for multilingual SEO -->
   {% if page.lang == 'en' %}
     <!-- English page -->
-    <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+    {% assign en_canonical = page.url | absolute_url %}
+    {% unless en_canonical contains "index.html" %}
+      {% unless en_canonical contains ".html" %}
+        {% unless en_canonical endswith "/" %}
+          {% assign en_canonical = en_canonical | append: "/" %}
+        {% endunless %}
+      {% endunless %}
+    {% else %}
+      {% assign en_canonical = en_canonical | replace: "/index.html", "/" %}
+    {% endunless %}
+    <link rel="alternate" hreflang="en" href="{{ en_canonical }}">
     {% if page.layout == 'post' and page.ref %}
       <!-- Find corresponding French article -->
       {% assign fr_post = site.posts | where: "ref", page.ref | where: "lang", "fr" | first %}
       {% if fr_post %}
-        <link rel="alternate" hreflang="fr" href="{{ fr_post.url | absolute_url }}">
-        <link rel="alternate" hreflang="x-default" href="{{ fr_post.url | absolute_url }}">
+        {% assign fr_canonical = fr_post.url | absolute_url %}
+        {% unless fr_canonical endswith "/" %}
+          {% assign fr_canonical = fr_canonical | append: "/" %}
+        {% endunless %}
+        <link rel="alternate" hreflang="fr" href="{{ fr_canonical }}">
+        <link rel="alternate" hreflang="x-default" href="{{ fr_canonical }}">
       {% else %}
         <link rel="alternate" hreflang="fr" href="{{ '/' | absolute_url }}">
         <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
@@ -156,13 +170,17 @@
     {% endif %}
   {% else %}
     <!-- French page (default) -->
-    <link rel="alternate" hreflang="fr" href="{{ page.url | absolute_url }}">
-    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="fr" href="{{ canonical_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
     {% if page.layout == 'post' and page.ref %}
       <!-- Find corresponding English article -->
       {% assign en_post = site.posts | where: "ref", page.ref | where: "lang", "en" | first %}
       {% if en_post %}
-        <link rel="alternate" hreflang="en" href="{{ en_post.url | absolute_url }}">
+        {% assign en_canonical = en_post.url | absolute_url %}
+        {% unless en_canonical endswith "/" %}
+          {% assign en_canonical = en_canonical | append: "/" %}
+        {% endunless %}
+        <link rel="alternate" hreflang="en" href="{{ en_canonical }}">
       {% else %}
         <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
       {% endif %}
