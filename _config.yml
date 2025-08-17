@@ -21,6 +21,13 @@ description: "Angelo Lima, développeur web full-stack spécialisé en IA. Blog 
 # URL du site pour le SEO
 url: "https://angelo-lima.fr"
 
+# URL canonique (force consistent URLs without www)
+url-canonical: "https://angelo-lima.fr"
+
+# Force trailing slash consistency for SEO
+permalink_defaults:
+  trailing_slash: true
+
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################

@@ -1,0 +1,34 @@
+# Redirections for canonical URL management
+# Force HTTPS and remove www
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove www and redirect to canonical domain
+RewriteCond %{HTTP_HOST} ^www\.angelo-lima\.fr$ [NC]
+RewriteRule ^(.*)$ https://angelo-lima.fr/$1 [L,R=301]
+
+# Force trailing slash for directories (except files with extensions)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !.*\.(css|js|png|jpg|jpeg|gif|ico|svg|webp|woff|woff2)$ [NC]
+RewriteCond %{REQUEST_URI} !.*/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+# Remove index.html from URLs
+RewriteCond %{THE_REQUEST} /index\.html[\s?] [NC]
+RewriteRule ^(.*?)index\.html$ /$1 [R=301,L]
+
+# Cache headers for better performance
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>

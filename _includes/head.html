@@ -267,18 +267,29 @@
   <meta property="og:image" content="{{ img | absolute_url }}">
   {% endif %}
 
+  {% assign canonical_url = page.url | absolute_url %}
+  {% unless canonical_url contains "index.html" %}
+    {% unless canonical_url contains ".html" %}
+      {% unless canonical_url endswith "/" %}
+        {% assign canonical_url = canonical_url | append: "/" %}
+      {% endunless %}
+    {% endunless %}
+  {% else %}
+    {% assign canonical_url = canonical_url | replace: "/index.html", "/" %}
+  {% endunless %}
+  
   {% if page.id %}
   <meta property="og:type" content="article">
   {% if author != "" %}
   <meta property="og:article:author" content="{{ author }}">
   {% endif %}
   <meta property="og:article:published_time" content="{{ page.date | date_to_xmlschema }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
   {% else %}
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
-  <link rel="canonical" href="{{ page.url | absolute_url | strip_index }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="canonical" href="{{ canonical_url }}">
   {% endif %}
 
   {% if img != "" and img != site.avatar %}
