@@ -7,7 +7,6 @@ share-img: /assets/img/web-3-0.png
 tags: [Web, Tech]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-24-web-3-0-blockchain-technical-analysis-decentralized-revolution/
 ref: web-3-0
 ---
 

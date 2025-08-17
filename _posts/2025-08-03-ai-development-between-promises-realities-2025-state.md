@@ -8,7 +8,6 @@ thumbnail-img: "/assets/img/IA-developpeurs-avenir-2025.png"
 tags: [AI, Development]
 author: "Angelo Lima"
 lang: en
-permalink: /en/2025-08-03-ai-development-between-promises-realities-2025-state/
 ref: ai-development
 ---
 

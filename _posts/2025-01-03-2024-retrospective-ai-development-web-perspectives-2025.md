@@ -7,7 +7,6 @@ share-img: /assets/img/bilan-2024-2025.png
 tags: [Personal, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-03-2024-retrospective-ai-development-web-perspectives-2025/
 ref: 2024-retrospective
 ---
 

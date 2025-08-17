@@ -7,7 +7,6 @@ share-img: /assets/img/ia-impact-ecologique.png
 tags: [AI, Tech]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-02-03-ai-ecological-impact-training-vs-inference-environmental-costs/
 ref: ai-ecological-impact
 ---
 

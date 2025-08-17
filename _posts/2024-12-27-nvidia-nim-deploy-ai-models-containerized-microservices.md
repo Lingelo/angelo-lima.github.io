@@ -2,12 +2,12 @@
 layout: post
 title: "NVIDIA NIM: Deploying AI Models in Containerized Microservices"
 subtitle: "Cloud-native architecture for high-performance AI inference in enterprise"
+description: "Comprehensive guide to NVIDIA NIM microservices for enterprise AI deployment. Learn containerized AI inference, cloud-native architecture, and production-scale generative AI integration with standardized APIs and enterprise security."
 cover-img: /assets/img/nvidia-nim.png
 share-img: /assets/img/nvidia-nim.png
 tags: [AI, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2024-12-27-nvidia-nim-deploy-ai-models-containerized-microservices/
 ref: nvidia-nim
 ---
 

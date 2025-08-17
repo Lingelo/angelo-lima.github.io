@@ -7,7 +7,6 @@ share-img: /assets/img/dunning-kruger-cover.png
 tags: [Personal, Tech]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-17-dunning-kruger-effect-development-cognitive-psychology-tech-teams/
 ref: dunning-kruger-effect
 ---
 

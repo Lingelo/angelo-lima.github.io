@@ -7,7 +7,6 @@ share-img: /assets/img/fake-news.png
 tags: [Tech, Web]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-17-meta-abandons-fact-checking-impact-digital-platform-governance/
 ref: meta-fact-checking
 ---
 

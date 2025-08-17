@@ -7,7 +7,6 @@ share-img: /assets/img/sql-assistant-cover.png
 tags: [AI, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-02-23-sql-assistant-ai-natural-language-sql-conversion/
 ref: sql-assistant
 ---
 

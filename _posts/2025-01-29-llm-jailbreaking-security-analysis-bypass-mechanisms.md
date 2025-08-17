@@ -7,7 +7,6 @@ share-img: /assets/img/deepseek-jailbreak.png
 tags: [AI, Security]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-29-llm-jailbreaking-security-analysis-bypass-mechanisms/
 ref: llm-jailbreaking
 ---
 

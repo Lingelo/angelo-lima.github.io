@@ -7,7 +7,6 @@ share-img: /assets/img/mcp-atlassian-cover.png
 tags: [AI, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-05-12-anthropic-mcp-model-context-protocol-llm-integration/
 ref: anthropic-mcp
 ---
 

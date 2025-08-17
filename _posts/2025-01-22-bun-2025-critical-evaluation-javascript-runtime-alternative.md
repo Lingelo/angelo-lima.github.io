@@ -8,7 +8,6 @@ share-img: /assets/img/bun-cover.png
 tags: [Development, Web]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-22-bun-2025-critical-evaluation-javascript-runtime-alternative/
 ref: bun-evaluation
 ---
 

@@ -8,7 +8,6 @@ share-img: /assets/img/feature-sliced-design.png
 tags: [Development, Web]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-14-feature-sliced-design-scalable-frontend-architecture/
 ref: feature-sliced-design
 ---
 

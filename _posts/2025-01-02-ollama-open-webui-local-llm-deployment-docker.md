@@ -9,7 +9,6 @@ share-img: /assets/img/ai-setup.png
 tags: [AI, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-02-ollama-open-webui-local-llm-deployment-docker/
 ref: ollama-open-webui
 ---
 

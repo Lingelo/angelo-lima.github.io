@@ -7,7 +7,6 @@ share-img: /assets/img/json-resume.png
 tags: [Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-10-json-resume-standardized-cv-format-developers-automation/
 ref: json-resume
 ---
 

@@ -7,7 +7,6 @@ share-img: /assets/img/conventional-comments.png
 tags: [Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2024-12-25-conventional-comments-improve-code-reviews-standardization/
 ref: conventional-comments
 ---
 

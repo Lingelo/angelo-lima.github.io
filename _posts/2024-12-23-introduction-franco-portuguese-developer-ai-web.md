@@ -8,7 +8,6 @@ share-img: /assets/img/welcome.png
 tags: [Tech, Personal]
 author: Angelo Lima
 lang: en
-permalink: /en/2024-12-23-introduction-franco-portuguese-developer-ai-web/
 ref: introduction-developer
 ---
 

@@ -7,7 +7,6 @@ thumbnail-img: "/assets/img/ollama_openai.png"
 tags: [AI, Development]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-08-06-openai-gpt-oss-ollama-proprietary-models-open-source-transition/
 ref: openai-gpt-oss
 ---
 

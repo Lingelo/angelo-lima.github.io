@@ -7,7 +7,6 @@ share-img: /assets/img/rice-nasa.png
 tags: [Development, Web]
 author: Angelo Lima
 lang: en
-permalink: /en/2025-01-28-robust-web-development-nasa-methodologies-critical-applications/
 ref: nasa-methodologies
 ---
 

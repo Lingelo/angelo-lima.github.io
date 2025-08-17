@@ -9,7 +9,6 @@ tags: [Development]
 author: Angelo Lima
 lang: en
 ref: conventional-commits
-permalink: /en/2024-12-24-conventional-commits-standardize-git-messages-optimized-collaboration/
 ---
 
 ## Commit Message Standardization: A Readability Challenge
