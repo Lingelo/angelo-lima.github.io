@@ -1,4 +1,50 @@
 <!-- Breadcrumbs for better SEO and UX -->
+<!-- Schema.org BreadcrumbList structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {% if page.lang == 'en' %}"Home"{% else %}"Accueil"{% endif %},
+      "item": "{{ site.url }}{% if page.lang == 'en' %}/en/{% else %}/{% endif %}"
+    }{% if page.layout == "post" and page.tags and page.tags.size > 0 %},
+    {
+      "@type": "ListItem", 
+      "position": 2,
+      "name": "{{ page.tags.first }}",
+      "item": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tag/{% if page.lang == 'en' %}{% if page.tags.first == 'Development' %}development{% elsif page.tags.first == 'Security' %}security{% elsif page.tags.first == 'Personal' %}personal{% elsif page.tags.first == 'AI' %}ai{% else %}{{ page.tags.first | downcase }}{% endif %}{% else %}{% if page.tags.first == 'Développement' %}developpement{% elsif page.tags.first == 'Sécurité' %}securite{% else %}{{ page.tags.first | downcase }}{% endif %}{% endif %}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | strip_html }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% elsif page.url contains "/tag/" %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tags",
+      "item": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tags/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | strip_html }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% elsif page.title != "Home" and page.title != site.title and page.title != site.title_en and page.url != "/en/" %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title | strip_html }}",
+      "item": "{{ page.url | absolute_url }}"
+    }{% endif %}
+  ]
+}
+</script>
+
 {% if page.lang == 'en' %}
 <nav class="breadcrumbs" aria-label="Breadcrumb navigation">
 {% else %}
@@ -7,30 +53,19 @@
     <div class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
         <div class="row">
             <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
-                <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
-            <li property="itemListElement" typeof="ListItem">
+                <ol class="breadcrumb-list">
+            <li>
                 {% if page.lang == 'en' %}
-                <span property="item" typeof="WebPage">
-                    <a href="{{ '/en/' | relative_url }}">
-                        <span property="name">Home</span>
-                    </a>
-                    <meta property="@id" content="{{ '/en/' | absolute_url }}">
-                </span>
+                    <a href="{{ '/en/' | relative_url }}">Home</a>
                 {% else %}
-                <span property="item" typeof="WebPage">
-                    <a href="{{ '/' | relative_url }}">
-                        <span property="name">Accueil</span>
-                    </a>
-                    <meta property="@id" content="{{ '/' | absolute_url }}">
-                </span>
+                    <a href="{{ '/' | relative_url }}">Accueil</a>
                 {% endif %}
-                <meta property="position" content="1">
             </li>
             
             {% if page.layout == "post" %}
                 <!-- Page d'article -->
                 {% if page.tags and page.tags.size > 0 %}
-                    <li property="itemListElement" typeof="ListItem">
+                    <li>
                         {% if page.lang == 'en' %}
                             {% assign tag_url = "/en/tag/" | append: page.tags.first | downcase | append: "/" %}
                             {% if page.tags.first == "Development" %}
@@ -54,68 +89,35 @@
                               {% assign tag_url = "/tag/" | append: page.tags.first | downcase | append: "/" %}
                             {% endif %}
                         {% endif %}
-                        <span property="item" typeof="WebPage">
-                            <a href="{{ tag_url }}">
-                                <span property="name">{{ page.tags.first }}</span>
-                            </a>
-                            <meta property="@id" content="{{ tag_url | absolute_url }}">
-                        </span>
-                        <meta property="position" content="2">
+                        <a href="{{ tag_url }}">{{ page.tags.first }}</a>
                     </li>
                 {% endif %}
-                <li property="itemListElement" typeof="ListItem" class="active">
-                    <span property="item" typeof="WebPage" about="{{ page.url | absolute_url }}">
-                        <span property="name">{{ page.title | strip_html }}</span>
-                        <meta property="@id" content="{{ page.url | absolute_url }}">
-                    </span>
-                    <meta property="position" content="3">
+                <li class="active">
+                    <span>{{ page.title | strip_html }}</span>
                 </li>
             {% elsif page.url contains "/tag/" %}
                 <!-- Page de tag -->
-                <li property="itemListElement" typeof="ListItem">
+                <li>
                     {% if page.lang == 'en' %}
-                    <span property="item" typeof="WebPage">
-                        <a href="/en/tags/">
-                            <span property="name">Tags</span>
-                        </a>
-                        <meta property="@id" content="{{ '/en/tags/' | absolute_url }}">
-                    </span>
+                        <a href="/en/tags/">Tags</a>
                     {% else %}
-                    <span property="item" typeof="WebPage">
-                        <a href="/tags/">
-                            <span property="name">Tags</span>
-                        </a>
-                        <meta property="@id" content="{{ '/tags/' | absolute_url }}">
-                    </span>
+                        <a href="/tags/">Tags</a>
                     {% endif %}
-                    <meta property="position" content="2">
                 </li>
-                <li property="itemListElement" typeof="ListItem" class="active">
-                    <span property="item" typeof="WebPage" about="{{ page.url | absolute_url }}">
-                        <span property="name">{{ page.title | strip_html }}</span>
-                        <meta property="@id" content="{{ page.url | absolute_url }}">
-                    </span>
-                    <meta property="position" content="3">
+                <li class="active">
+                    <span>{{ page.title | strip_html }}</span>
                 </li>
             {% elsif page.title != "Home" and page.title != site.title and page.title != site.title_en and page.url != "/en/" %}
                 <!-- Autres pages -->
-                <li property="itemListElement" typeof="ListItem" class="active">
-                    <span property="item" typeof="WebPage" about="{{ page.url | absolute_url }}">
-                        <span property="name">{{ page.title | strip_html }}</span>
-                        <meta property="@id" content="{{ page.url | absolute_url }}">
-                    </span>
-                    <meta property="position" content="2">
+                <li class="active">
+                    <span>{{ page.title | strip_html }}</span>
                 </li>
             {% endif %}
             
             <!-- Pagination pour la liste des articles -->
             {% if paginator and paginator.page > 1 %}
-                <li property="itemListElement" typeof="ListItem" class="active">
-                    <span property="item" typeof="WebPage" about="{{ page.url | absolute_url }}">
-                        <span property="name">Page {{ paginator.page }}</span>
-                        <meta property="@id" content="{{ page.url | absolute_url }}">
-                    </span>
-                    <meta property="position" content="2">
+                <li class="active">
+                    <span>Page {{ paginator.page }}</span>
                 </li>
             {% endif %}
                 </ol>
