@@ -35,14 +35,30 @@
 
           {% if include.type == "post" %}
             {% if page.author %}
-              Par <strong>{{ page.author | strip_html }}</strong><br>
+              {% if page.lang == 'en' %}
+                By <strong>{{ page.author | strip_html }}</strong><br>
+              {% else %}
+                Par <strong>{{ page.author | strip_html }}</strong><br>
+              {% endif %}
             {% endif%}
-            <span class="post-meta">Posté le {{ page.date | date: date_format }}</span>
-            {% if page.last-updated %}
-              <span class="post-meta">
-                <span class="d-none d-md-inline middot">&middot;</span>
-                Mis à jour le {{ page.last-updated | date: date_format }}
-              </span>
+            {% if page.lang == 'en' %}
+              {% assign date_format = "%B %-d, %Y" %}
+              <span class="post-meta">Posted on {{ page.date | date: date_format }}</span>
+              {% if page.last-updated %}
+                <span class="post-meta">
+                  <span class="d-none d-md-inline middot">&middot;</span>
+                  Updated on {{ page.last-updated | date: date_format }}
+                </span>
+              {% endif %}
+            {% else %}
+              {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
+              <span class="post-meta">Posté le {{ page.date | date: date_format }}</span>
+              {% if page.last-updated %}
+                <span class="post-meta">
+                  <span class="d-none d-md-inline middot">&middot;</span>
+                  Mis à jour le {{ page.last-updated | date: date_format }}
+                </span>
+              {% endif %}
             {% endif %}
             {% if page.readtime %}
               {% include readtime.html %}
