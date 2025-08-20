@@ -183,6 +183,7 @@ site-js:
   - "/assets/js/image-optimization.js"
   - "/assets/js/dynamic-pagination.js"
   - "/assets/js/canonical-enforcement.js"
+  - "/assets/js/sw-register.js"
 
 #################################
 # --- Web Analytics Section --- #

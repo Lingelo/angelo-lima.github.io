@@ -200,10 +200,16 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
   
   <!-- Preconnect for critical resources -->
   <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="//stackpath.bootstrapcdn.com">
+  
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="/assets/css/dark-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/css/dark-theme.css"></noscript>
 
   {% include gtag.html %}
   {% include gtm_head.html %}
@@ -342,6 +348,15 @@
   {% if favicon_exists == 1 %}
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
   {% endif %}
+
+  <!-- PWA Manifest pour les performances mobiles -->
+  <link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
+  
+  <!-- Amélioration pour iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Angelo Lima">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/avatar-icon.png' | relative_url }}">
 
   <!-- Language switcher -->
   {% include lang-switcher.html %}

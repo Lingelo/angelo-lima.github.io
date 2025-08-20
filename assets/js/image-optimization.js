@@ -55,4 +55,25 @@ document.addEventListener('DOMContentLoaded', function() {
         img.loading = 'eager'; // Charger immédiatement les images critiques
         img.fetchpriority = 'high';
     });
+
+    // Support WebP avec fallback automatique
+    function supportsWebP() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1;
+        canvas.height = 1;
+        return canvas.toDataURL('image/webp').startsWith('data:image/webp');
+    }
+
+    if (supportsWebP()) {
+        const images = document.querySelectorAll('img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]');
+        images.forEach(img => {
+            const webpSrc = img.src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+            // Tester si l'image WebP existe
+            const testImg = new Image();
+            testImg.onload = () => {
+                img.src = webpSrc;
+            };
+            testImg.src = webpSrc;
+        });
+    }
 });
