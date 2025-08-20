@@ -68,9 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optimisation WebP avec gestion d'erreurs robuste
     supportsWebP().then(supported => {
         if (supported) {
+            // Exclure les images système qui ne doivent pas être converties
             const images = document.querySelectorAll('img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]');
+            const excludedImages = ['avatar-icon.png', '404-southpark.jpg', 'bgimage.png'];
             images.forEach(img => {
                 const originalSrc = img.src;
+                
+                // Vérifier si l'image est dans la liste d'exclusion
+                const isExcluded = excludedImages.some(excluded => originalSrc.includes(excluded));
+                if (isExcluded) {
+                    return; // Ignorer cette image
+                }
+                
                 const webpSrc = originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
                 
                 // Créer une nouvelle image pour tester l'existence du WebP

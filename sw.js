@@ -1,15 +1,15 @@
 // Service Worker pour Angelo Lima - Performance et Cache
-const CACHE_NAME = 'angelo-lima-v1';
+const CACHE_NAME = 'angelo-lima-v2';
 const OFFLINE_PAGE = '/offline.html';
 
 // Assets critiques à mettre en cache
 const CRITICAL_ASSETS = [
   '/',
+  '/offline.html',
   '/assets/css/dark-theme.css',
   '/assets/js/canonical-enforcement.js',
   '/assets/js/image-optimization.js',
-  '/assets/img/avatar-icon.png',
-  OFFLINE_PAGE
+  '/assets/img/avatar-icon.png'
 ];
 
 // Installation du Service Worker
@@ -17,10 +17,21 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        return cache.addAll(CRITICAL_ASSETS);
+        // Ajouter les assets un par un avec gestion d'erreurs
+        return Promise.allSettled(
+          CRITICAL_ASSETS.map(asset => 
+            cache.add(asset).catch(error => {
+              console.warn(`Failed to cache ${asset}:`, error);
+              return null;
+            })
+          )
+        );
       })
       .then(() => {
         return self.skipWaiting();
+      })
+      .catch(error => {
+        console.error('Service Worker installation failed:', error);
       })
   );
 });
