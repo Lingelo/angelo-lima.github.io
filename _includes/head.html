@@ -136,7 +136,8 @@
     {% assign en_canonical = page.url | absolute_url %}
     {% unless en_canonical contains "index.html" %}
       {% unless en_canonical contains ".html" %}
-        {% unless en_canonical endswith "/" %}
+        {% assign last_char = en_canonical | slice: -1 %}
+        {% unless last_char == "/" %}
           {% assign en_canonical = en_canonical | append: "/" %}
         {% endunless %}
       {% endunless %}
@@ -149,7 +150,8 @@
       {% assign fr_post = site.posts | where: "ref", page.ref | where: "lang", "fr" | first %}
       {% if fr_post %}
         {% assign fr_canonical = fr_post.url | absolute_url %}
-        {% unless fr_canonical endswith "/" %}
+        {% assign last_char = fr_canonical | slice: -1 %}
+        {% unless last_char == "/" %}
           {% assign fr_canonical = fr_canonical | append: "/" %}
         {% endunless %}
         <link rel="alternate" hreflang="fr" href="{{ fr_canonical }}">
@@ -177,7 +179,8 @@
       {% assign en_post = site.posts | where: "ref", page.ref | where: "lang", "en" | first %}
       {% if en_post %}
         {% assign en_canonical = en_post.url | absolute_url %}
-        {% unless en_canonical endswith "/" %}
+        {% assign last_char = en_canonical | slice: -1 %}
+        {% unless last_char == "/" %}
           {% assign en_canonical = en_canonical | append: "/" %}
         {% endunless %}
         <link rel="alternate" hreflang="en" href="{{ en_canonical }}">
@@ -288,7 +291,8 @@
   {% assign canonical_url = page.url | absolute_url %}
   {% unless canonical_url contains "index.html" %}
     {% unless canonical_url contains ".html" %}
-      {% unless canonical_url endswith "/" %}
+      {% assign last_char = canonical_url | slice: -1 %}
+      {% unless last_char == "/" %}
         {% assign canonical_url = canonical_url | append: "/" %}
       {% endunless %}
     {% endunless %}
