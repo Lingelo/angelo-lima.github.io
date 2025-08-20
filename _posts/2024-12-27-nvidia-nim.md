@@ -2,8 +2,8 @@
 layout: post
 title: "NVIDIA NIM : déployer des modèles d'IA en microservices conteneurisés"
 subtitle: "Architecture cloud-native pour l'inférence IA haute performance en entreprise"
-cover-img: /assets/img/nvidia-nim.png
-share-img: /assets/img/nvidia-nim.png
+cover-img: /assets/img/nvidia-nim.webp
+share-img: /assets/img/nvidia-nim.webp
 tags: [IA, Développement]
 author: Angelo Lima
 lang: fr

@@ -2,8 +2,8 @@
 layout: post
 title: "AI Ecological Impact: Training vs Inference Environmental Costs"
 subtitle: "Deciphering artificial intelligence's carbon footprint and exploring sustainable paths"
-cover-img: /assets/img/ia-impact-ecologique.png
-share-img: /assets/img/ia-impact-ecologique.png
+cover-img: /assets/img/ia-impact-ecologique.webp
+share-img: /assets/img/ia-impact-ecologique.webp
 tags: [AI, Tech]
 author: Angelo Lima
 lang: en

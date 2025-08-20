@@ -2,8 +2,8 @@
 layout: post
 title: "2024 Retrospective: AI Evolution, Web Development and Tech Perspectives for 2025"
 subtitle: "Looking back at a year full of personal and professional advances, and a look towards the challenges of 2025"
-cover-img: /assets/img/bilan-2024-2025.png
-share-img: /assets/img/bilan-2024-2025.png
+cover-img: /assets/img/bilan-2024-2025.webp
+share-img: /assets/img/bilan-2024-2025.webp
 tags: [Personal, Development]
 author: Angelo Lima
 lang: en

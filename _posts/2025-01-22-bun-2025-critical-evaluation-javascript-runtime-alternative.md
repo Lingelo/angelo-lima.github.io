@@ -3,8 +3,8 @@ layout: post
 title: "Bun in 2025: Critical Evaluation of an Alternative JavaScript Runtime"
 subtitle: "How Bun can position itself as a strategic tool to simplify and accelerate modern JavaScript workflows in Digital Factories"
 description: "Complete analysis of Bun.js in 2025: performance, ecosystem, enterprise adoption. Alternative to Node.js for JavaScript and TypeScript developers."
-cover-img: /assets/img/bun-cover.png
-share-img: /assets/img/bun-cover.png
+cover-img: /assets/img/bun-cover.webp
+share-img: /assets/img/bun-cover.webp
 tags: [Development, Web]
 author: Angelo Lima
 lang: en

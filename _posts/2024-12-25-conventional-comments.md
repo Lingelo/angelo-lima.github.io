@@ -2,8 +2,8 @@
 layout: post
 title: "Conventional Comments : améliorer les revues de code par la standardisation"
 subtitle: "Parce que les revues de code, c'est mieux quand tout le monde parle la même langue"
-cover-img: /assets/img/conventional-comments.png
-share-img: /assets/img/conventional-comments.png
+cover-img: /assets/img/conventional-comments.webp
+share-img: /assets/img/conventional-comments.webp
 tags: [Développement]
 author: Angelo Lima
 lang: fr

@@ -56,24 +56,41 @@ document.addEventListener('DOMContentLoaded', function() {
         img.fetchpriority = 'high';
     });
 
-    // Support WebP avec fallback automatique
+    // Support WebP avec fallback automatique amélioré
     function supportsWebP() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 1;
-        canvas.height = 1;
-        return canvas.toDataURL('image/webp').startsWith('data:image/webp');
-    }
-
-    if (supportsWebP()) {
-        const images = document.querySelectorAll('img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]');
-        images.forEach(img => {
-            const webpSrc = img.src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-            // Tester si l'image WebP existe
-            const testImg = new Image();
-            testImg.onload = () => {
-                img.src = webpSrc;
-            };
-            testImg.src = webpSrc;
+        return new Promise((resolve) => {
+            const webp = new Image();
+            webp.onload = webp.onerror = () => resolve(webp.height === 2);
+            webp.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
         });
     }
+
+    // Optimisation WebP avec gestion d'erreurs robuste
+    supportsWebP().then(supported => {
+        if (supported) {
+            const images = document.querySelectorAll('img[src$=".png"], img[src$=".jpg"], img[src$=".jpeg"]');
+            images.forEach(img => {
+                const originalSrc = img.src;
+                const webpSrc = originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+                
+                // Créer une nouvelle image pour tester l'existence du WebP
+                const testImg = new Image();
+                
+                testImg.onload = () => {
+                    // WebP disponible, utiliser cette version
+                    img.src = webpSrc;
+                    img.setAttribute('data-original-format', originalSrc.split('.').pop());
+                };
+                
+                testImg.onerror = () => {
+                    // WebP non disponible, garder l'original
+                    console.warn(`WebP not available for: ${originalSrc}`);
+                };
+                
+                testImg.src = webpSrc;
+            });
+        }
+    }).catch(() => {
+        console.log('WebP support detection failed, using original formats');
+    });
 });

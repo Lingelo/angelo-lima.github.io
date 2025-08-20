@@ -2,8 +2,8 @@
 layout: post
 title: "LLM Jailbreaking: Security Analysis of Bypass Mechanisms"
 subtitle: "Techniques, discoveries, and ethics around bypassing censorship in language models"
-cover-img: /assets/img/deepseek-jailbreak.png
-share-img: /assets/img/deepseek-jailbreak.png
+cover-img: /assets/img/deepseek-jailbreak.webp
+share-img: /assets/img/deepseek-jailbreak.webp
 tags: [AI, Security]
 author: Angelo Lima
 lang: en

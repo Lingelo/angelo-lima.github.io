@@ -3,9 +3,9 @@ layout: post
 title: "Ollama and Open WebUI: Local LLM Deployment with Docker"
 subtitle: "Self-hosted architecture for generative AI: configuration, optimization, and use cases"
 description: "Complete guide to install and configure Ollama with Open Web UI. Create your local AI setup with Docker, OpenAI connection, and LLM models like Llama3 for developers."
-cover-img: /assets/img/ai-setup.png
-thumbnail-img: /assets/img/ai-setup.png
-share-img: /assets/img/ai-setup.png
+cover-img: /assets/img/ai-setup.webp
+thumbnail-img: /assets/img/ai-setup.webp
+share-img: /assets/img/ai-setup.webp
 tags: [AI, Development]
 author: Angelo Lima
 lang: en

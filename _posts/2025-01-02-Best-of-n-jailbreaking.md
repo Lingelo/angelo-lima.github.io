@@ -2,8 +2,8 @@
 layout: post
 title: "Best-of-N Jailbreaking : Analyse des vulnérabilités par attaques répétées sur les LLMs"
 subtitle: "Comprendre comment cette méthode exploitant les variations de prompts met à mal nos intelligences artificielles"
-cover-img: /assets/img/bon-llm.png
-share-img: /assets/img/bon-llm.png
+cover-img: /assets/img/bon-llm.webp
+share-img: /assets/img/bon-llm.webp
 tags: [IA, Sécurité]
 author: Angelo Lima
 lang: fr

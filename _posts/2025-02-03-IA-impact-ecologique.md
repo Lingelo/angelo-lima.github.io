@@ -2,8 +2,8 @@
 layout: post
 title: "L’IA et son coût écologique : Entraîner ou utiliser, que pèse vraiment votre modèle ? 🌍"
 subtitle: "Décortiquer l'empreinte carbone de l’intelligence artificielle et explorer des pistes durables"
-cover-img: /assets/img/ia-impact-ecologique.png
-share-img: /assets/img/ia-impact-ecologique.png
+cover-img: /assets/img/ia-impact-ecologique.webp
+share-img: /assets/img/ia-impact-ecologique.webp
 tags: [IA, Tech]
 author: Angelo Lima
 lang: fr

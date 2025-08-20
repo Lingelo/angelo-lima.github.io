@@ -2,8 +2,8 @@
 layout: post
 title: "JSON Resume: Standardized CV Format for Developers and Automation"
 subtitle: "An elegant and flexible open-source format to manage your career"
-cover-img: /assets/img/json-resume.png
-share-img: /assets/img/json-resume.png
+cover-img: /assets/img/json-resume.webp
+share-img: /assets/img/json-resume.webp
 tags: [Development]
 author: Angelo Lima
 lang: en

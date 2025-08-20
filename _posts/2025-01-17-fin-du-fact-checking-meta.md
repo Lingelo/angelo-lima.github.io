@@ -2,8 +2,8 @@
 layout: post  
 title: "Meta abandonne le fact-checking : Impact sur la gouvernance des plateformes numériques"
 subtitle: "Quand la vérité devient une option facultative : Zoom sur Meta, le Texas et ce que cela signifie pour la France et le reste du monde."  
-cover-img: /assets/img/fake-news.png  
-share-img: /assets/img/fake-news.png  
+cover-img: /assets/img/fake-news.webp  
+share-img: /assets/img/fake-news.webp  
 tags: [Tech, Web]  
 author: Angelo Lima
 lang: fr

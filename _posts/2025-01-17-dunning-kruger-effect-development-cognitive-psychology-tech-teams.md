@@ -2,8 +2,8 @@
 layout: post
 title: "Dunning-Kruger Effect in Development: Cognitive Psychology Applied to Tech Teams"
 subtitle: "Decoding a cognitive bias that affects everyone, from tech to daily life"
-cover-img: /assets/img/dunning-kruger-cover.png
-share-img: /assets/img/dunning-kruger-cover.png
+cover-img: /assets/img/dunning-kruger-cover.webp
+share-img: /assets/img/dunning-kruger-cover.webp
 tags: [Personal, Tech]
 author: Angelo Lima
 lang: en

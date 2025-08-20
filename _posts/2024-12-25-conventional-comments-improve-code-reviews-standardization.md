@@ -2,8 +2,8 @@
 layout: post
 title: "Conventional Comments: Improving Code Reviews through Standardization"
 subtitle: "Because code reviews are better when everyone speaks the same language"
-cover-img: /assets/img/conventional-comments.png
-share-img: /assets/img/conventional-comments.png
+cover-img: /assets/img/conventional-comments.webp
+share-img: /assets/img/conventional-comments.webp
 tags: [Development]
 author: Angelo Lima
 lang: en

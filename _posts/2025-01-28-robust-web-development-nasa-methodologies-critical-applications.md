@@ -2,8 +2,8 @@
 layout: post
 title: "Robust Web Development: Applying NASA Methodologies for Critical Applications"
 subtitle: "Between theoretical limitations and minimalist practices, create robust web applications"
-cover-img: /assets/img/rice-nasa.png
-share-img: /assets/img/rice-nasa.png
+cover-img: /assets/img/rice-nasa.webp
+share-img: /assets/img/rice-nasa.webp
 tags: [Development, Web]
 author: Angelo Lima
 lang: en

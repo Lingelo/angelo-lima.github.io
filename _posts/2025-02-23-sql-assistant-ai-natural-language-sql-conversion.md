@@ -2,8 +2,8 @@
 layout: post
 title: "SQL Assistant AI: Natural Language to SQL Automatic Conversion"
 subtitle: "An open-source tool to generate SQL queries in natural language and interact with your database"
-cover-img: /assets/img/sql-assistant-cover.png
-share-img: /assets/img/sql-assistant-cover.png
+cover-img: /assets/img/sql-assistant-cover.webp
+share-img: /assets/img/sql-assistant-cover.webp
 tags: [AI, Development]
 author: Angelo Lima
 lang: en

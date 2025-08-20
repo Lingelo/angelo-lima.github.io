@@ -2,8 +2,8 @@
 layout: post
 title: "Protocole Model Context (MCP) : Révolution dans l'intégration des LLMs avec les systèmes tiers"
 subtitle: "Découvrez comment MCP facilite l'interaction des modèles de langage avec les outils Atlassian et autres systèmes connectés"
-cover-img: /assets/img/mcp-atlassian-cover.png
-share-img: /assets/img/mcp-atlassian-cover.png
+cover-img: /assets/img/mcp-atlassian-cover.webp
+share-img: /assets/img/mcp-atlassian-cover.webp
 tags: [IA, Développement]
 author: Angelo Lima
 lang: fr

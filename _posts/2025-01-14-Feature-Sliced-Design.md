@@ -3,8 +3,8 @@ layout: post
 title: "Feature-Sliced Design : La clé d'une architecture frontend évolutive "
 subtitle: "Une approche moderne pour organiser vos projets frontend complexes"
 description: "Découvrez Feature-Sliced Design (FSD), une architecture frontend moderne pour structurer vos applications React, Vue.js. Guide complet avec exemples et bonnes pratiques."
-cover-img: /assets/img/feature-sliced-design.png
-share-img: /assets/img/feature-sliced-design.png
+cover-img: /assets/img/feature-sliced-design.webp
+share-img: /assets/img/feature-sliced-design.webp
 tags: [Développement, Web]
 author: Angelo Lima
 lang: fr

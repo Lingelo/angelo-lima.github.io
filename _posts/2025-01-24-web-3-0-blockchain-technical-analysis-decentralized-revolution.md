@@ -2,8 +2,8 @@
 layout: post
 title: "Web 3.0 and Blockchain: Technical Analysis of a Decentralized Revolution"
 subtitle: "Web 1.0, Web 2.0, and now Web 3.0?"
-cover-img: /assets/img/web-3-0.png
-share-img: /assets/img/web-3-0.png
+cover-img: /assets/img/web-3-0.webp
+share-img: /assets/img/web-3-0.webp
 tags: [Web, Tech]
 author: Angelo Lima
 lang: en

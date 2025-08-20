@@ -2,8 +2,8 @@
 layout: post
 title: "Jailbreaking des LLMs : Analyse sécuritaire des mécanismes de contournement"
 subtitle: "Techniques, découvertes et éthique autour du contournement des censures dans les modèles de langage"
-cover-img: /assets/img/deepseek-jailbreak.png
-share-img: /assets/img/deepseek-jailbreak.png
+cover-img: /assets/img/deepseek-jailbreak.webp
+share-img: /assets/img/deepseek-jailbreak.webp
 tags: [IA, Sécurité]
 author: Angelo Lima
 lang: fr

@@ -2,9 +2,9 @@
 layout: post
 title: "Conventional Commits: Standardizing Git Messages for Optimized Collaboration"
 subtitle: "Making your Git readable and avoiding driving your team crazy"
-cover-img: /assets/img/conventional-commits.png
-thumbnail-img: /assets/img/thumb-conventional-commits.png
-share-img: /assets/img/conventional-commits.png
+cover-img: /assets/img/conventional-commits.webp
+thumbnail-img: /assets/img/thumb-conventional-commits.webp
+share-img: /assets/img/conventional-commits.webp
 tags: [Development]
 author: Angelo Lima
 lang: en

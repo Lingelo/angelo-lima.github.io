@@ -2,8 +2,8 @@
 layout: post
 title: "Meta Abandons Fact-Checking: Impact on Digital Platform Governance"
 subtitle: "When truth becomes optional: Focus on Meta, Texas, and what it means for France and the rest of the world"
-cover-img: /assets/img/fake-news.png
-share-img: /assets/img/fake-news.png
+cover-img: /assets/img/fake-news.webp
+share-img: /assets/img/fake-news.webp
 tags: [Tech, Web]
 author: Angelo Lima
 lang: en

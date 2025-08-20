@@ -2,9 +2,9 @@
 layout: post
 title: "Introduction: Franco-Portuguese Developer Specialized in AI and Web Development"
 subtitle: "Why I created this blog and what you'll find here"
-cover-img: /assets/img/welcome.png
-thumbnail-img: /assets/img/thumb-welcome.png
-share-img: /assets/img/welcome.png
+cover-img: /assets/img/welcome.webp
+thumbnail-img: /assets/img/thumb-welcome.webp
+share-img: /assets/img/welcome.webp
 tags: [Tech, Personal]
 author: Angelo Lima
 lang: en

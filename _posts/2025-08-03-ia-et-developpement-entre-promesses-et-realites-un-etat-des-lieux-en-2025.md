@@ -3,8 +3,8 @@ layout: post
 title: "IA et Développement : Entre Promesses et Réalités - Un État des Lieux en 2025"
 subtitle: "Analyse critique des outils d'IA pour développeurs : entre révolution promises et réalités du terrain"
 description: "Gemini CLI, Claude Code, Replit : bilan 2025 des outils d'IA pour développeurs. Entre promesses marketing et réalités du terrain, où en sommes-nous vraiment ?"
-cover-img: "/assets/img/IA-developpeurs-avenir-2025.png"
-thumbnail-img: "/assets/img/IA-developpeurs-avenir-2025.png"
+cover-img: "/assets/img/IA-developpeurs-avenir-2025.webp"
+thumbnail-img: "/assets/img/IA-developpeurs-avenir-2025.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: fr
