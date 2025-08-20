@@ -9,37 +9,61 @@
       "@type": "ListItem",
       "position": 1,
       "name": {% if page.lang == 'en' %}"Home"{% else %}"Accueil"{% endif %},
-      "item": "{{ site.url }}{% if page.lang == 'en' %}/en/{% else %}/{% endif %}"
+      "item": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{% if page.lang == 'en' %}/en/{% else %}/{% endif %}",
+        "name": {% if page.lang == 'en' %}"Home"{% else %}"Accueil"{% endif %}
+      }
     }{% if page.layout == "post" and page.tags and page.tags.size > 0 %},
     {
       "@type": "ListItem", 
       "position": 2,
       "name": "{{ page.tags.first }}",
-      "item": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tag/{% if page.lang == 'en' %}{% if page.tags.first == 'Development' %}development{% elsif page.tags.first == 'Security' %}security{% elsif page.tags.first == 'Personal' %}personal{% elsif page.tags.first == 'AI' %}ai{% else %}{{ page.tags.first | downcase }}{% endif %}{% else %}{% if page.tags.first == 'Développement' %}developpement{% elsif page.tags.first == 'Sécurité' %}securite{% else %}{{ page.tags.first | downcase }}{% endif %}{% endif %}/"
+      "item": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tag/{% if page.lang == 'en' %}{% if page.tags.first == 'Development' %}development{% elsif page.tags.first == 'Security' %}security{% elsif page.tags.first == 'Personal' %}personal{% elsif page.tags.first == 'AI' %}ai{% else %}{{ page.tags.first | downcase }}{% endif %}{% else %}{% if page.tags.first == 'Développement' %}developpement{% elsif page.tags.first == 'Sécurité' %}securite{% else %}{{ page.tags.first | downcase }}{% endif %}{% endif %}/",
+        "name": "{{ page.tags.first }}"
+      }
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "{{ page.title | strip_html }}",
-      "item": "{{ page.url | absolute_url }}"
+      "item": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}",
+        "name": "{{ page.title | strip_html }}"
+      }
     }{% elsif page.url contains "/tag/" %},
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Tags",
-      "item": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tags/"
+      "item": {
+        "@type": "WebPage", 
+        "@id": "{{ site.url }}{% if page.lang == 'en' %}/en{% endif %}/tags/",
+        "name": "Tags"
+      }
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "{{ page.title | strip_html }}",
-      "item": "{{ page.url | absolute_url }}"
+      "item": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}",
+        "name": "{{ page.title | strip_html }}"
+      }
     }{% elsif page.title != "Home" and page.title != site.title and page.title != site.title_en and page.url != "/en/" %},
     {
       "@type": "ListItem",
       "position": 2,
       "name": "{{ page.title | strip_html }}",
-      "item": "{{ page.url | absolute_url }}"
+      "item": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}",
+        "name": "{{ page.title | strip_html }}"
+      }
     }{% endif %}
   ]
 }
