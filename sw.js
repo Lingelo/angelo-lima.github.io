@@ -1,11 +1,11 @@
 // Service Worker pour Angelo Lima - Performance et Cache
-const CACHE_NAME = 'angelo-lima-v2';
-const OFFLINE_PAGE = '/offline.html';
+const CACHE_NAME = 'angelo-lima-v3';
+const OFFLINE_PAGE = '/offline/';
 
 // Assets critiques à mettre en cache
 const CRITICAL_ASSETS = [
   '/',
-  '/offline.html',
+  '/offline/',
   '/assets/css/dark-theme.css',
   '/assets/js/canonical-enforcement.js',
   '/assets/js/image-optimization.js',
