@@ -103,6 +103,9 @@ tags: [tag1, tag2]
 - **Critical CSS**: Inline dark theme styles in `_includes/head.html` to prevent white flash
 - **Image Loading**: Lazy loading with proper alt texts
 - **CSS Structure**: Modular approach with responsive breakpoints
+- **Service Worker**: Comprehensive caching strategy for offline support and performance
+- **WebP Images**: Automatic WebP conversion with fallback for better compression
+- **PWA Features**: Manifest and mobile optimization for app-like experience
 
 ## Theme Maintenance
 
@@ -236,3 +239,75 @@ Current SEO-optimized files that auto-update with content:
 - Adding completely new tag categories (requires tag page + SEO file updates)
 - Major site structure changes
 - Custom SEO descriptions for important articles
+
+## Service Worker Management
+
+### Automatic Content Handling
+
+The Service Worker (`sw.js`) is designed to handle new content automatically:
+
+**New Articles (No Action Required)**:
+- Individual articles use "Network First" strategy
+- New posts are automatically cached on first visit
+- Home page updates automatically when new articles are published
+- RSS feed and sitemap update automatically via Jekyll
+
+**Images and Assets**:
+- New images are automatically optimized and cached
+- WebP conversion system handles new images automatically
+- Lazy loading applies to all new images
+
+### When to Update Service Worker
+
+**Cache Version Update Required** when modifying:
+
+1. **Critical Assets** in `CRITICAL_ASSETS` array:
+   ```javascript
+   const CRITICAL_ASSETS = [
+     '/',
+     '/offline/',
+     '/assets/css/dark-theme.css',
+     '/assets/js/canonical-enforcement.js',
+     '/assets/js/image-optimization.js',
+     '/assets/img/avatar-icon.png'
+   ];
+   ```
+
+2. **Major Site Structure Changes**:
+   - New critical pages or layouts
+   - Changes to offline functionality
+   - Modifications to core CSS/JS files
+
+**How to Update Cache Version**:
+```javascript
+// Increment version number in sw.js
+const CACHE_NAME = 'angelo-lima-v4'; // Change v3 to v4, etc.
+```
+
+### Service Worker Features
+
+**Caching Strategies**:
+- **Network First**: HTML pages (ensures fresh content)
+- **Cache First**: Static assets (CSS, JS, images)
+- **Stale While Revalidate**: Background updates for cached assets
+
+**Performance Features**:
+- Offline page support (`/offline/`)
+- Automatic cache cleanup of old versions
+- Intelligent asset prioritization
+- Background updates for stale content
+
+### Content Creation Workflow
+
+✅ **No Service Worker Update Needed**:
+- Adding new blog posts
+- Updating existing articles
+- Adding new images to `/assets/img/`
+- Using existing tags
+- Regular content updates
+
+❌ **Service Worker Update Required**:
+- Modifying `dark-theme.css`
+- Updating core JavaScript files
+- Adding new critical site functionality
+- Changing site structure or navigation
