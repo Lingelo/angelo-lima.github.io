@@ -1,4 +1,4 @@
-// Dean Attali / Beautiful Jekyll 2023
+// Angelo Lima Blog - Custom JavaScript 2024-2025
 
 let BeautifulJekyllJS = {
 
