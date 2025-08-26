@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo LIMA - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #2d3748;
+        }
+        
+        body {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .cv-container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 48px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+        
+        .header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.95;
+        }
+        
+        .contact-item i {
+            width: 16px;
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .highlights-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+            border-left: 4px solid #4f46e5;
+        }
+        
+        .highlights-section h2 {
+            color: #4f46e5;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .highlight-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .section {
+            margin-bottom: 48px;
+        }
+        
+        .section h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #4f46e5, transparent);
+            margin-left: 16px;
+        }
+        
+        .section-icon {
+            color: #4f46e5;
+            font-size: 1.5rem;
+        }
+        
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            text-align: justify;
+            margin-bottom: 24px;
+        }
+        
+        .job {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 32px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .job:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 20px;
+        }
+        
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a202c;
+            line-height: 1.3;
+        }
+        
+        .job-date {
+            font-size: 0.95rem;
+            color: #6b7280;
+            font-weight: 500;
+            white-space: nowrap;
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        
+        .job-company {
+            font-size: 1.1rem;
+            color: #4f46e5;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .job-description {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .job-highlights {
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+        
+        .job-highlights li {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+            padding-left: 24px;
+            color: #374151;
+        }
+        
+        .job-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4f46e5;
+            font-weight: bold;
+        }
+        
+        .technologies {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            border-left: 3px solid #4f46e5;
+        }
+        
+        .technologies-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: #ffffff;
+            color: #374151;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s;
+        }
+        
+        .tech-tag:hover {
+            background: #4f46e5;
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .education-item {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 16px;
+        }
+        
+        .education-degree {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            line-height: 1.3;
+        }
+        
+        .education-year {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 500;
+            background: #f3f4f6;
+            padding: 4px 8px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        
+        .education-school {
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category h3 i {
+            color: #4f46e5;
+        }
+        
+        .skill-list {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #6b7280;
+        }
+        
+        
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .language-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+        
+        .language-level {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .job:hover {
+                transform: none;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+            
+            /* Prevent page breaks within sections */
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .job {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 25px;
+            }
+            
+            .education-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .skill-category {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .highlight-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .highlights-grid {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+            .header {
+                padding: 32px 24px;
+            }
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .main-content {
+                padding: 24px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <div class="header-content">
+                <h1>Angelo LIMA</h1>
+                <div class="subtitle">Techlead Fullstack / Développeur Senior Backend</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>06 32 35 90 94</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:angelomiguellima@gmail.com">angelomiguellima@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://angelo-lima.fr">angelo-lima.fr</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/angélo-lima/">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Lingelo">GitHub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Île-de-France</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="highlights-section">
+                <h2><i class="fas fa-star"></i>Profil & Faits marquants</h2>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="highlight-text">13+ ans d'expérience fullstack</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                        <div class="highlight-text">Engineering Manager 12+ consultants</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-robot"></i></div>
+                        <div class="highlight-text">Expert IA Générative & OpenAI</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-code"></i></div>
+                        <div class="highlight-text">Java/Kotlin & Node.js/TypeScript</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="highlight-text">Développeur augmenté à l'IA</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fas fa-cogs"></i></div>
+                        <div class="highlight-text">Microservices & Architecture</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-user section-icon"></i>À propos</h2>
+                <p class="summary">
+                    <strong>Techlead fullstack passionné</strong> avec plus de 13 ans d'expérience, spécialisé dans les architectures backend modernes et l'IA générative. 
+                    Expert en <strong>Java/Kotlin</strong> et <strong>Node.js/TypeScript</strong>, j'ai managé une équipe de 12 développeurs et mené des projets de modernisation complexes. 
+                    Actuellement focalisé sur l'intégration d'<strong>assistants IA</strong> dans des plateformes e-commerce B2B.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-briefcase section-icon"></i>Expérience professionnelle</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Engineering Manager - Senior Developer - Consultant</div>
+                            <div class="job-company">SFEIR (CDI)</div>
+                        </div>
+                        <div class="job-date">Nov 2013 – Présent</div>
+                    </div>
+                    <div class="job-description">ESN spécialisée dans les technologies modernes - Neuilly-sur-Seine</div>
+                    <ul class="job-highlights">
+                        <li><strong>Engineering Management</strong> : Gestion d'une équipe de plus de 12 consultants fullstack</li>
+                        <li><strong>Développeur augmenté à l'IA</strong> : Utilisation du développement agentique et de l'IA générative pour optimiser la productivité</li>
+                        <li><strong>Recrutement technique</strong> : Conduite d'entretiens techniques et évaluation de candidats</li>
+                        <li><strong>Accompagnement équipes</strong> : Mentoring et montée en compétences des consultants junior/senior</li>
+                        <li><strong>Entretiens annuels</strong> : Suivi de carrière et définition d'objectifs pour l'équipe</li>
+                        <li><strong>Formateur Angular</strong> : Animation de formations certifiées Angular pour clients et consultants</li>
+                        <li><strong>Développement Fullstack</strong> : Missions client en TypeScript, JavaScript, Java, Node.js, Cloud</li>
+                        <li><strong>Méthodologies Agile</strong> : Promotion des pratiques Scrum, XP et Craftsmanship</li>
+                        <li><strong>Veille technologique</strong> : Recherche et adoption de nouvelles technologies pour les missions</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Cloud</span>
+                            <span class="tech-tag">Agile</span>
+                            <span class="tech-tag">Craftsmanship</span>
+                            <span class="tech-tag">Formation</span>
+                            <span class="tech-tag">Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Senior & Référent Technique</div>
+                            <div class="job-company">InVivo Digital Factory (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Jan 2022 – Présent</div>
+                    </div>
+                    <div class="job-description">Développement d'applications e-commerce B2B agricoles et gestion d'équipes techniques</div>
+                    <ul class="job-highlights">
+                        <li><strong>Assistant IA conversationnel</strong> : Développement d'un assistant IA via WhatsApp pour prise de commandes d'agriculteurs sur plateformes e-commerce B2B, utilisant APIs OpenAI avec call functions</li>
+                        <li><strong>Architecture microservices IA</strong> : Mise en place de tools (call functions) OpenAI permettant le branchement automatique aux différents microservices métier</li>
+                        <li><strong>Gestion multi-plateformes</strong> : Administration technique de Aladin.farm, Farmi.com, Espace-client.episens.fr avec composants paramétrables via CMS Contentful</li>
+                        <li><strong>Authentification & Autorisation</strong> : Maintenance et évolution de la configuration Okta Auth0 pour gestion des utilisateurs, rôles et permissions sur toutes les plateformes</li>
+                        <li><strong>Parcours de paiement complet</strong> : Développement du tunnel de paiement et intégration PayPlug (ex Dalenys) pour Aladin.farm, Farmi.com, Jardiland.fr, Gammvert.fr</li>
+                        <li><strong>Migration et optimisation</strong> : Migration complète bases MySQL vers PostgreSQL via PgLoader et génération de rapports de ventes sécurisés pour franchises</li>
+                        <li><strong>Refactoring et qualité</strong> : Purge de 4 ans de dette technique, amélioration data quality, mise en place d'alerting production et tests e2e non-régression</li>
+                        <li><strong>Leadership technique</strong> : Référent technique équipe vis-à-vis organisation InVivo, amélioration pratiques agiles, participation ateliers cadrage et pré-cadrage</li>
+                        <li><strong>Équipe et environnement</strong> : Développeur senior dans équipe de 4 développeurs fullstack avec architecture k9s, Kibana, Grafana</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Hapi</span>
+                            <span class="tech-tag">Sequelize</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                            <span class="tech-tag">Okta Auth0</span>
+                            <span class="tech-tag">Contentful</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">PayPlug API</span>
+                            <span class="tech-tag">Kibana</span>
+                            <span class="tech-tag">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Expert Angular (Mission d'Audit)</div>
+                            <div class="job-company">M6 Publicité (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Déc 2022</div>
+                    </div>
+                    <div class="job-description">Audit technique de l'application My6 de réservation de créneaux publicitaires</div>
+                    <ul class="job-highlights">
+                        <li><strong>Audit qualité complet</strong> : Évaluation approfondie du code Angular 5 et de l'architecture technique de l'application My6</li>
+                        <li><strong>Analyse équipes et processus</strong> : Interviews des équipes de développement et analyse des pratiques DevOps existantes</li>
+                        <li><strong>Évaluation pratiques techniques</strong> : Audit des cérémonies (code review, déploiements), processus Git et qualité logicielle</li>
+                        <li><strong>Livrables structurés</strong> : Production d'un rapport détaillé avec recommandations techniques et mise en place d'un plan d'action priorisé</li>
+                        <li><strong>Architecture microservices</strong> : Analyse de l'écosystème Spring Boot, microservices Spring Cloud et intégrations MongoDB</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">RxJs</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">GitLab</span>
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">Swagger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Tech Lead / Fullstack JAVA/Angular</div>
+                            <div class="job-company">JCDecaux DSI France (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Oct 2020 – Déc 2022</div>
+                    </div>
+                    <div class="job-description">Applications de gestion des mobiliers connectés et projets web éphémères</div>
+                    <ul class="job-highlights">
+                        <li><strong>Projet express COVID</strong> : Réalisation site web mescommerces.jcdecaux.com en 3 jours pour déclaration et géolocalisation commerçants click & collect France</li>
+                        <li><strong>Socle technique Angular</strong> : Mise en place socle front-end Angular 9, Angular Material, ngXS et utilisation API Google Maps (geometry et places)</li>
+                        <li><strong>Application CGx mobiliers connectés</strong> : Développement complet application gestion mobiliers connectés nouvelle génération JCDecaux</li>
+                        <li><strong>Monitoring et IoT</strong> : Système monitoring état des mobiliers et configuration à distance avec envoi données statistiques équipes Business Intelligence</li>
+                        <li><strong>Refonte UX et architecture</strong> : Refonte UX de l'IHM existante avec Angular Material, application design system et refonte modèle base de données vers relationnel</li>
+                        <li><strong>Migration et modernisation</strong> : Refonte code Kotlin vers Java (contrainte DSI), envoi données via file Kafka et indexation sous Elasticsearch</li>
+                        <li><strong>Applications météo</strong> : Création application Spring Boot récupérant et envoyant données météo géolocalisées sur file Kafka</li>
+                        <li><strong>Maintenance Android</strong> : Maintenance application Android et développements sous Kotlin et Java 11</li>
+                        <li><strong>Tech Lead</strong> : Management petite équipe avec participation ateliers cadrage et pré-cadrage avec architectes et Product Owner</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java 11</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Angular 9</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Elasticsearch</span>
+                            <span class="tech-tag">Kafka</span>
+                            <span class="tech-tag">Angular Material</span>
+                            <span class="tech-tag">Google Maps</span>
+                            <span class="tech-tag">Jest</span>
+                            <span class="tech-tag">RxJS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Full Stack Senior</div>
+                            <div class="job-company">Saint Gobain Distribution France</div>
+                        </div>
+                        <div class="job-date">Juin 2017 – Jan 2019</div>
+                    </div>
+                    <div class="job-description">Interface web de vente en agence multi-enseignes (Projet ATLAS)</div>
+                    <ul class="job-highlights">
+                        <li><strong>Microservice de caisse</strong> : Gestion multi-paiement, inventaire, remise en banque</li>
+                        <li><strong>Intégration paiements</strong> : Communication avec terminaux Ingenico</li>
+                        <li><strong>Architecture SOA</strong> : Services REST vers SAP et APIs vers IHM</li>
+                        <li><strong>Qualité logicielle</strong> : Pratique TDD, tests unitaires front/back</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java 8</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Angular 5</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">Spring Cloud</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">TDD</span>
+                            <span class="tech-tag">JUnit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Fullstack Confirmé</div>
+                            <div class="job-company">Bio c' bon (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Nov 2015 – Juin 2017</div>
+                    </div>
+                    <div class="job-description">ERP Bio C' Bon - Applications SaaS (Projet El Mout')</div>
+                    <ul class="job-highlights">
+                        <li><strong>ERP complet</strong> : Gestion référentiel, inventaires, stocks, commandes</li>
+                        <li><strong>Algorithmes métier</strong> : Réapprovisionnement de stock automatisé</li>
+                        <li><strong>Architecture asynchrone</strong> : Traitements avec RabbitMQ</li>
+                        <li><strong>Librairie de composants</strong> : AngularJS réutilisable inter-projets</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">Java 8</span>
+                            <span class="tech-tag">Spring</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">RabbitMQ</span>
+                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Cucumber</span>
+                            <span class="tech-tag">Selenium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Fullstack GWT</div>
+                            <div class="job-company">Generali (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Juin 2014 – Nov 2015</div>
+                    </div>
+                    <div class="job-description">Application d'accueil client pour les intermédiaires Generali</div>
+                    <ul class="job-highlights">
+                        <li><strong>Projet GED ACCUEIL CLIENT</strong> : Application complète de gestion clients, contrats, sinistres et devis pour intermédiaires Generali</li>
+                        <li><strong>Intégration GED</strong> : Conception et développement complet de l'intégration d'une Gestion Électronique de Documents</li>
+                        <li><strong>Applet de scan</strong> : Développement d'une applet Java pour scan de documents directement depuis l'interface web</li>
+                        <li><strong>IHM GWT</strong> : Développement des interfaces utilisateur avec Google Web Toolkit et intégration AJAX</li>
+                        <li><strong>Services web SOAP</strong> : Consommation et production de webservices SOAP pour intégrations métier</li>
+                        <li><strong>Migration versioning</strong> : Passage de SVN vers GIT pour améliorer gestion des versions et collaboration équipe</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java 7</span>
+                            <span class="tech-tag">Spring</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">GWT</span>
+                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Mockito</span>
+                            <span class="tech-tag">PowerMocks</span>
+                            <span class="tech-tag">JBOSS</span>
+                            <span class="tech-tag">Oracle</span>
+                            <span class="tech-tag">Filenet</span>
+                            <span class="tech-tag">Maven</span>
+                            <span class="tech-tag">SVN</span>
+                            <span class="tech-tag">GIT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Java</div>
+                            <div class="job-company">Valeo (Mission SFEIR)</div>
+                        </div>
+                        <div class="job-date">Oct 2013 – Mai 2014</div>
+                    </div>
+                    <div class="job-description">Continuous delivery et applications métiers sur Google AppEngine</div>
+                    <ul class="job-highlights">
+                        <li><strong>Continuous delivery</strong> : Mise en place complète du continuous delivery et correction d'applications métiers sur plateforme Google AppEngine</li>
+                        <li><strong>Usine de développement</strong> : Mise en place d'une usine de développement complète sur Cloudbees avec pipeline automatisé</li>
+                        <li><strong>Développement Frontend</strong> : Développement Front en AngularJS et Bootstrap avec interfaces utilisateur modernes</li>
+                        <li><strong>Backend AppEngine</strong> : Développement Back sur AppEngine utilisant DataStore et Search API de Google Cloud</li>
+                        <li><strong>Méthodes agiles</strong> : Application et promotion des méthodes agiles dans l'équipe de développement</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">AngularJS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java 7</span>
+                            <span class="tech-tag">Google Cloud</span>
+                            <span class="tech-tag">AppEngine</span>
+                            <span class="tech-tag">DataStore</span>
+                            <span class="tech-tag">Search API</span>
+                            <span class="tech-tag">Cloudbees</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Maven</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Développeur Java JEE Junior</div>
+                            <div class="job-company">Informatique CDC</div>
+                        </div>
+                        <div class="job-date">Sep 2012 – Sep 2013</div>
+                    </div>
+                    <div class="job-description">Conception et développement sur applications de packaging et forge logicielle</div>
+                    <ul class="job-highlights">
+                        <li><strong>Projets LA FORGE, PRELIV'</strong> : Conception, développement et évolution technique sur trois applications : packaging, forge logicielle et gestion d'incidents JIRA</li>
+                        <li><strong>Application de packaging</strong> : Conception et développement sur une application de packaging de projets avec workflows automatisés</li>
+                        <li><strong>Forge logicielle LIFERAY</strong> : Évolution technique d'une forge logicielle basée sur le CMS LIFERAY avec portlets personnalisés</li>
+                        <li><strong>Plugin JIRA</strong> : Conception et développement de plugin pour JIRA pour gestion d'incidents et workflow métier</li>
+                        <li><strong>Méthodes Agile</strong> : Application méthode SCRUM et mise en place intégration continue dans l'équipe</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JEE</span>
+                            <span class="tech-tag">Spring</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">GWT</span>
+                            <span class="tech-tag">JCIFS</span>
+                            <span class="tech-tag">JQuery</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Mockito</span>
+                            <span class="tech-tag">PowerMock</span>
+                            <span class="tech-tag">JIRA</span>
+                            <span class="tech-tag">LIFERAY</span>
+                            <span class="tech-tag">SVN</span>
+                            <span class="tech-tag">TOMCAT</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Maven</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Responsable fonctionnel en apprentissage</div>
+                            <div class="job-company">SAGE SAS</div>
+                        </div>
+                        <div class="job-date">Sep 2011 – Sep 2012</div>
+                    </div>
+                    <div class="job-description">Études fonctionnelles sur l'application de gestion de projet SAGE</div>
+                    <ul class="job-highlights">
+                        <li><strong>Projet OURSAGEPLACE.COM</strong> : Études fonctionnelles complètes sur l'application de gestion de projet SAGE avec analyse besoins utilisateurs</li>
+                        <li><strong>Améliorations CMS LIFERAY</strong> : Améliorations techniques et fonctionnelles de la plateforme reposant sur le CMS LIFERAY</li>
+                        <li><strong>Support international</strong> : Support technique à 3000 utilisateurs en anglais avec documentation et formation</li>
+                        <li><strong>Collaboration offshore</strong> : Collaboration avec développeurs offshore (TEMA BUSINESS SYSTEM) pour développements et maintenance</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">LIFERAY</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">JQuery</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">TOMCAT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Ingénieur Études et Développement Java Junior</div>
+                            <div class="job-company">FULLSIX</div>
+                        </div>
+                        <div class="job-date">Mars 2011 – Sep 2011</div>
+                    </div>
+                    <div class="job-description">Application de gestion de projet WebFactory</div>
+                    <ul class="job-highlights">
+                        <li><strong>Projet WEBFACTORY</strong> : Conception et développement complet de l'application de gestion de projet de FULLSIX</li>
+                        <li><strong>Développement JAVA JEE</strong> : Conception et développement en JAVA JEE avec architecture N-tiers</li>
+                        <li><strong>Méthode SCRUM</strong> : Application méthode SCRUM dans l'équipe avec cycles de développement courts</li>
+                        <li><strong>Intégration continue</strong> : Mise en place de l'intégration continue et bonnes pratiques de développement</li>
+                    </ul>
+                    <div class="technologies">
+                        <div class="technologies-label"><i class="fas fa-cog"></i>Technologies</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">JEE</span>
+                            <span class="tech-tag">Spring</span>
+                            <span class="tech-tag">Hibernate</span>
+                            <span class="tech-tag">Stripes</span>
+                            <span class="tech-tag">Struts</span>
+                            <span class="tech-tag">JQuery</span>
+                            <span class="tech-tag">Maven</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">XSL</span>
+                            <span class="tech-tag">XSLT</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">Mockito</span>
+                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Oracle</span>
+                            <span class="tech-tag">Eclipse</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">GIT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-graduation-cap section-icon"></i>Formation</h2>
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-degree">Certification Node.js Service Developer</div>
+                            <div class="education-year">2023</div>
+                        </div>
+                        <div class="education-school">Linux Foundation</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-degree">Master MIAGE (alternance)</div>
+                            <div class="education-year">2013</div>
+                        </div>
+                        <div class="education-school">Université d'Evry Val d'Essonne</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-degree">Licence MIAGE (alternance)</div>
+                            <div class="education-year">2011</div>
+                        </div>
+                        <div class="education-school">Université d'Evry Val d'Essonne</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-degree">DUT Informatique</div>
+                            <div class="education-year">2009</div>
+                        </div>
+                        <div class="education-school">IUT d'Orsay, Université Paris Sud</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-code section-icon"></i>Compétences techniques</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i>Backend & Architecture</h3>
+                        <div class="skill-list">
+                            <strong>Langages :</strong> Java 8/11/17, Kotlin, Node.js, TypeScript, JavaScript ES6+<br>
+                            <strong>Frameworks Java :</strong> Spring Boot, Spring Security, Spring Data JPA, Hibernate, Maven<br>
+                            <strong>Frameworks Node.js :</strong> Hapi.js, Fastify, Express.js, Sequelize, Awilix (DI)<br>
+                            <strong>Architecture :</strong> Microservices, REST APIs, Event-Driven, SOA, Clean Architecture<br>
+                            <strong>API :</strong> REST, GraphQL, OpenAPI/Swagger, WebSocket
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-robot"></i>IA & Innovation</h3>
+                        <div class="skill-list">
+                            <strong>IA Générative :</strong> OpenAI API (GPT-3.5/4), Call Functions, Embeddings<br>
+                            <strong>Frameworks IA :</strong> LangChain, RAG (Retrieval Augmented Generation)<br>
+                            <strong>Plateformes :</strong> Anthropic Claude, MCP (Model Context Protocol)<br>
+                            <strong>Automation :</strong> n8n, Dify, Zapier<br>
+                            <strong>Intégrations :</strong> WhatsApp Business API, Telegram Bot API
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-desktop"></i>Frontend & Mobile</h3>
+                        <div class="skill-list">
+                            <strong>Frameworks :</strong> Angular 5-17, Vue.js 3, React, AngularJS<br>
+                            <strong>Technologies :</strong> TypeScript, RxJS, HTML5, CSS3, Sass/SCSS<br>
+                            <strong>State Management :</strong> NgRx, Vuex, Redux<br>
+                            <strong>UI Libraries :</strong> Angular Material, Bootstrap, Vuetify<br>
+                            <strong>Build Tools :</strong> Webpack, Vite, Angular CLI, Lerna<br>
+                            <strong>Design :</strong> Atomic Design, Component-Driven Development
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i>Data & Infrastructure</h3>
+                        <div class="skill-list">
+                            <strong>SGBD Relationnels :</strong> PostgreSQL, MySQL, Oracle, SQL Server<br>
+                            <strong>NoSQL :</strong> MongoDB, Elasticsearch, Redis<br>
+                            <strong>Message Brokers :</strong> Apache Kafka, RabbitMQ<br>
+                            <strong>Migration :</strong> Liquibase, Flyway, PGLoader<br>
+                            <strong>Search :</strong> Elasticsearch, Solr<br>
+                            <strong>Monitoring :</strong> ELK Stack, Grafana, Kibana, Prometheus
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-cloud"></i>Cloud & DevOps</h3>
+                        <div class="skill-list">
+                            <strong>Conteneurisation :</strong> Docker, Kubernetes, k9s<br>
+                            <strong>CI/CD :</strong> GitLab CI/CD, Jenkins, GitHub Actions<br>
+                            <strong>Cloud :</strong> Google Cloud Platform (AppEngine, DataStore), AWS<br>
+                            <strong>Versioning :</strong> Git, GitLab, GitHub, SVN<br>
+                            <strong>Monitoring :</strong> Sentry, APM, Grafana, Cloudinary<br>
+                            <strong>Auth :</strong> Okta Auth0, OAuth2, JWT, SAML
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-vial"></i>Tests & Qualité</h3>
+                        <div class="skill-list">
+                            <strong>Testing Backend :</strong> JUnit 5, Mockito, PowerMock, TestContainers<br>
+                            <strong>Testing Frontend :</strong> Jest, Karma, Jasmine, Playwright, Cypress<br>
+                            <strong>E2E Testing :</strong> Selenium, Cucumber (BDD)<br>
+                            <strong>Méthodologies :</strong> TDD, BDD, Test Pyramid<br>
+                            <strong>Qualité Code :</strong> SonarQube, ESLint, Code Review, Refactoring<br>
+                            <strong>Performance :</strong> Profiling, Load Testing, Optimization
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-users-cog"></i>Management & Leadership</h3>
+                        <div class="skill-list">
+                            <strong>Management :</strong> Engineering Manager (12+ consultants), Tech Lead<br>
+                            <strong>Recrutement :</strong> Entretiens techniques, évaluation candidats<br>
+                            <strong>Formation :</strong> Formateur Angular, mentoring développeurs<br>
+                            <strong>Méthodologies :</strong> Agile Scrum, XP, Kanban, Craftsmanship<br>
+                            <strong>Outils :</strong> Jira, Confluence, Slack, MS Teams<br>
+                            <strong>Leadership :</strong> Accompagnement carrière, définition objectifs
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-payment-credit-card"></i>Intégrations & APIs</h3>
+                        <div class="skill-list">
+                            <strong>Paiement :</strong> PayPlug (ex Dalenys), Stripe, Ingenico<br>
+                            <strong>CMS :</strong> Contentful, Liferay, WordPress<br>
+                            <strong>Maps :</strong> Google Maps API (Geometry, Places)<br>
+                            <strong>Social :</strong> WhatsApp Business API, LinkedIn API<br>
+                            <strong>ERP :</strong> SAP, Oracle, Microsoft Dynamics<br>
+                            <strong>Communication :</strong> Slack API, Teams API, Email APIs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section">
+                <h2><i class="fas fa-language section-icon"></i>Langues</h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">🇫🇷 Français</div>
+                        <div class="language-level">Langue maternelle</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">🇬🇧 Anglais</div>
+                        <div class="language-level">Intermédiaire</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">🇵🇹 Portugais</div>
+                        <div class="language-level">Courant</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

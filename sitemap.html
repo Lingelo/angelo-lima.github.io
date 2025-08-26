@@ -1,0 +1,309 @@
+---
+layout: page
+title: "Plan du Site"
+subtitle: "Navigation complète du blog Angelo Lima"
+description: "Plan complet du site angelo-lima.fr : articles, pages de tags, navigation et toutes les ressources disponibles."
+permalink: /sitemap/
+---
+
+<div class="sitemap-section">
+    <h2>📖 Articles du Blog</h2>
+    <p>{{ site.posts.size }} articles publiés, classés par date de publication :</p>
+    
+    <div class="posts-by-year">
+        {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+        {% for year in posts_by_year %}
+            <h3>{{ year.name }}</h3>
+            <ul class="post-list">
+                {% for post in year.items %}
+                <li>
+                    <a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a>
+                    <span class="post-date">{{ post.date | date: "%d/%m" }}</span>
+                    {% if post.tags and post.tags.size > 0 %}
+                        <span class="post-tags-mini">
+                            {% for tag in post.tags limit:2 %}
+                                <span class="tag-mini">{{ tag }}</span>
+                            {% endfor %}
+                        </span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="sitemap-section">
+    <h2>🏷️ Articles par Catégories</h2>
+    <div class="tags-grid">
+        <div class="tag-category">
+            <h3><a href="/tag/ia/">🤖 Intelligence Artificielle</a></h3>
+            <p>{{ site.posts | where: "tags", "IA" | size }} articles sur l'IA, LLM et machine learning</p>
+        </div>
+        
+        <div class="tag-category">
+            <h3><a href="/tag/developpement/">💻 Développement</a></h3>
+            <p>{{ site.posts | where: "tags", "Développement" | size }} articles sur la programmation et outils dev</p>
+        </div>
+        
+        <div class="tag-category">
+            <h3><a href="/tag/web/">🌐 Technologies Web</a></h3>
+            <p>Articles sur les frameworks et développement web moderne</p>
+        </div>
+        
+        <div class="tag-category">
+            <h3><a href="/tag/tech/">⚡ Tech & Innovation</a></h3>
+            <p>Actualités technologiques et tendances</p>
+        </div>
+        
+        <div class="tag-category">
+            <h3><a href="/tag/personnel/">🎯 Personnel</a></h3>
+            <p>Réflexions et retours d'expérience</p>
+        </div>
+        
+        <div class="tag-category">
+            <h3><a href="/tag/securite/">🔒 Cybersécurité</a></h3>
+            <p>Sécurité informatique et bonnes pratiques</p>
+        </div>
+    </div>
+</div>
+
+<div class="sitemap-section">
+    <h2>🌍 Version Anglaise / English Version</h2>
+    <div class="language-section">
+        <h3>📖 English Articles</h3>
+        <p>{{ site.posts | where: "lang", "en" | size }} articles available in English</p>
+        <ul class="main-pages">
+            <li><a href="/en/">🏠 Home</a> - Homepage with latest articles</li>
+            <li><a href="/en/aboutme">👨‍💻 About Me</a> - My background and skills</li>
+            <li><a href="/en/tags">🏷️ Tags Index</a> - All articles organized by topics</li>
+        </ul>
+        
+        <h3>🏷️ English Categories</h3>
+        <div class="tags-grid">
+            <div class="tag-category">
+                <h4><a href="/en/tag/ai/">🤖 Artificial Intelligence</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "AI" | size }} articles about AI, LLM and machine learning</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/development/">💻 Development</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Development" | size }} articles about programming and dev tools</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/web/">🌐 Web Technologies</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Web" | size }} articles about frameworks and modern web development</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/tech/">⚡ Tech & Innovation</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Tech" | size }} tech news and trends</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/personal/">🎯 Personal</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Personal" | size }} reflections and experience feedback</p>
+            </div>
+            
+            <div class="tag-category">
+                <h4><a href="/en/tag/security/">🔒 Cybersecurity</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Security" | size }} computer security and best practices</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sitemap-section">
+    <h2>📄 Pages Principales</h2>
+    <ul class="main-pages">
+        <li><a href="/">🏠 Accueil</a> - Page d'accueil avec les derniers articles</li>
+        <li><a href="/aboutme">👨‍💻 À propos de moi</a> - Mon parcours et mes compétences</li>
+        <li><a href="/tags">🏷️ Index des Tags</a> - Tous les articles organisés par thématique</li>
+        <li><a href="/sitemap/">🗺️ Plan du Site</a> - Cette page</li>
+    </ul>
+</div>
+
+<div class="sitemap-section">
+    <h2>🔗 Ressources</h2>
+    <ul class="resources">
+        <li><a href="/feed.xml">📡 Flux RSS Français</a> - Abonnez-vous aux nouveaux articles français</li>
+        <li><a href="/en/feed.xml">📡 English RSS Feed</a> - Subscribe to new English articles</li>
+        <li><a href="/sitemap.xml">🤖 Sitemap XML</a> - Pour les moteurs de recherche</li>
+        <li><a href="https://github.com/lingelo" target="_blank" rel="noopener">💻 GitHub</a> - Mes projets open source</li>
+        <li><a href="https://linkedin.com/in/angélo-lima" target="_blank" rel="noopener">💼 LinkedIn</a> - Mon profil professionnel</li>
+    </ul>
+</div>
+
+<div class="sitemap-section">
+    <h2>📊 Statistiques</h2>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <strong>{{ site.posts.size }}</strong>
+            <span>Articles publiés</span>
+        </div>
+        <div class="stat-item">
+            <strong>6</strong>
+            <span>Catégories</span>
+        </div>
+        <div class="stat-item">
+            <strong>{{ site.time | date: "%Y" }}</strong>
+            <span>Année de création</span>
+        </div>
+    </div>
+</div>
+
+<style>
+.sitemap-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-col-dark, #333);
+}
+
+.sitemap-section:last-child {
+    border-bottom: none;
+}
+
+.posts-by-year h3 {
+    color: var(--link-col-dark, #edb926);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.post-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-list a {
+    flex: 1;
+    color: var(--text-col-dark, #f5f5f5);
+    text-decoration: none;
+}
+
+.post-list a:hover {
+    color: var(--link-col-dark, #edb926);
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-left: 1rem;
+    min-width: 40px;
+}
+
+.post-tags-mini {
+    margin-left: 1rem;
+}
+
+.tag-mini {
+    background: var(--link-col-dark, #edb926);
+    color: #0a0a0a;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    margin-left: 4px;
+}
+
+.tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.tag-category {
+    background: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tag-category h3 a {
+    color: var(--link-col-dark, #edb926);
+    text-decoration: none;
+}
+
+.tag-category h3 a:hover {
+    text-decoration: underline;
+}
+
+.tag-category p {
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+.main-pages, .resources {
+    list-style: none;
+    padding-left: 0;
+}
+
+.main-pages li, .resources li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-pages li:last-child, .resources li:last-child {
+    border-bottom: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--link-col-dark, #edb926);
+    margin-bottom: 0.5rem;
+}
+
+.stat-item span {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .tags-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .post-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .post-date {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+    
+    .post-tags-mini {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+</style>

@@ -1,0 +1,99 @@
+---
+layout: page
+---
+
+{% assign tag = page.tag %}
+{% assign posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.tags contains tag %}
+    {% assign posts = posts | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign posts_count = posts | size %}
+
+<div class="posts-section">
+    {% if page.lang == 'en' %}
+    <p class="tag-description">
+        <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> tagged in <strong>{{ tag }}</strong> category.
+    </p>
+
+    <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+    <ul class="posts-list list-unstyled" role="list" aria-label="Articles list about {{ tag }}">
+    {% else %}
+    <p class="tag-description">
+        <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> classé{% if posts_count > 1 %}s{% endif %} dans la catégorie <strong>{{ tag }}</strong>.
+    </p>
+
+    <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+    <ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles sur {{ tag }}">
+    {% endif %}
+        {% for post in posts %}
+        <li class="post-preview" role="listitem">
+            {%- capture thumbnail -%}
+              {% if post.thumbnail-img %}
+                {{ post.thumbnail-img }}
+              {% elsif post.cover-img %}
+                {% if post.cover-img.first %}
+                  {{ post.cover-img[0].first.first }}
+                {% else %}
+                  {{ post.cover-img }}
+                {% endif %}
+              {% else %}
+              {% endif %}
+            {% endcapture %}
+            {% assign thumbnail=thumbnail | strip %}
+
+            {% if page.lang == 'en' %}
+            <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Read article: {{ post.title | strip_html }}">
+            {% else %}
+            <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
+            {% endif %}
+              <!-- Image section at top -->
+              {% if thumbnail != "" %}
+              <div class="post-image">
+                <img src="{{ thumbnail | absolute_url }}" alt="Image de couverture pour l'article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
+              </div>
+              {% endif %}
+
+              <!-- Content section below image -->
+              <div class="post-content">
+                <h2 class="post-title" id="post-title-{{ forloop.index }}">{{ post.title | strip_html }}</h2>
+                {% if post.subtitle %}
+                  <h3 class="post-subtitle" aria-describedby="post-title-{{ forloop.index }}">{{ post.subtitle | strip_html }}</h3>
+                {% endif %}
+
+                <p class="post-meta" aria-label="Informations sur l'article">
+                  {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
+                  {% if post.author %}Par <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
+                </p>
+
+                <div class="post-entry" aria-label="Extrait de l'article">
+                  {% if post.description %}
+                    {{ post.description }}
+                  {% else %}
+                    {% assign excerpt_length = site.excerpt_length | default: 50 %}
+                    {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+                  {% endif %}
+                </div>
+
+                <div class="blog-tags" role="list" aria-label="Tags de l'article">
+                  {% for tag_item in post.tags %}
+                    {% assign clean_tag = tag_item | strip %}
+                    {% if clean_tag != "" %}
+                    <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<nav class="navigation" role="navigation">
+    <div class="nav-links">
+        <a href="/tags/" class="nav-link">← Tous les tags</a>
+        <a href="/" class="nav-link">Accueil</a>
+    </div>
+</nav>

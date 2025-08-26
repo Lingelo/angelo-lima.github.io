@@ -1,0 +1,109 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% if page.lang == 'en' %}
+  {% comment %}For English: show all posts, JavaScript will handle pagination{% endcomment %}
+  {% assign posts = site.posts | where: "lang", "en" %}
+{% else %}
+  {% comment %}For French: show all posts, JavaScript will handle pagination{% endcomment %}
+  {% assign posts = site.posts | where: "lang", "fr" %}
+{% endif %}
+
+<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+{% if page.lang == 'en' %}
+<ul class="posts-list list-unstyled" role="list" aria-label="Blog articles list">
+{% else %}
+<ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles de blog">
+{% endif %}
+  {% for post in posts %}
+  <li class="post-preview" role="listitem">
+    {%- capture thumbnail -%}
+      {% if post.thumbnail-img %}
+        {{ post.thumbnail-img }}
+      {% elsif post.cover-img %}
+        {% if post.cover-img.first %}
+          {{ post.cover-img[0].first.first }}
+        {% else %}
+          {{ post.cover-img }}
+        {% endif %}
+      {% else %}
+      {% endif %}
+    {% endcapture %}
+    {% assign thumbnail=thumbnail | strip %}
+
+    {% if page.lang == 'en' %}
+    <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Read article: {{ post.title | strip_html }}">
+    {% else %}
+    <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
+    {% endif %}
+      <!-- Image section at top -->
+      {% if thumbnail != "" %}
+      <div class="post-image">
+        {% if page.lang == 'en' %}
+        <img src="{{ thumbnail | absolute_url }}" alt="Cover image for article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
+        {% else %}
+        <img src="{{ thumbnail | absolute_url }}" alt="Image de couverture pour l'article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <!-- Content section below image -->
+      <div class="post-content">
+        <h2 class="post-title" id="post-title-{{ forloop.index }}">{{ post.title | strip_html }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle" aria-describedby="post-title-{{ forloop.index }}">{{ post.subtitle | strip_html }}</h3>
+        {% endif %}
+
+        {% if page.lang == 'en' %}
+        <p class="post-meta" aria-label="Article information">
+          {% assign date_format = "%B %-d, %Y" %}
+          {% if post.author %}By <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
+        {% else %}
+        <p class="post-meta" aria-label="Informations sur l'article">
+          {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
+          {% if post.author %}Par <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
+        {% endif %}
+        </p>
+
+        {% unless site.feed_show_excerpt == false %}
+        {% if page.lang == 'en' %}
+        <div class="post-entry" aria-label="Article excerpt">
+        {% else %}
+        <div class="post-entry" aria-label="Extrait de l'article">
+        {% endif %}
+          {% assign excerpt_length = site.excerpt_length | default: 50 %}
+          {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
+        </div>
+        {% endunless %}
+
+        {% if site.feed_show_tags != false and post.tags.size > 0 %}
+        {% if page.lang == 'en' %}
+        <div class="blog-tags" role="list" aria-label="Article tags">
+          {% for tag in post.tags %}
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            <a href="{{ '/en/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="blog-tags" role="list" aria-label="Tags de l'article">
+          {% for tag in post.tags %}
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endif %}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% comment %}JavaScript pagination will be added dynamically for both languages{% endcomment %}

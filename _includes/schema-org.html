@@ -1,0 +1,110 @@
+{% if page.id %}
+<!-- Schema.org structured data for article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | strip_html | xml_escape }}",
+  {% if page.subtitle %}
+  "description": "{{ page.subtitle | strip_html | xml_escape }}",
+  {% endif %}
+  "image": {
+    "@type": "ImageObject",
+    {% if page.share-img %}
+    "url": "{{ page.share-img | absolute_url }}",
+    {% elsif page.cover-img %}
+    "url": "{{ page.cover-img | absolute_url }}",
+    {% else %}
+    "url": "{{ site.avatar | absolute_url }}",
+    {% endif %}
+    "height": 630,
+    "width": 1200
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.author | strip_html }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | strip_html }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.avatar | absolute_url }}",
+      "width": 400,
+      "height": 400
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  {% if page.tags and page.tags.size > 0 %}
+  "keywords": [
+    {% for tag in page.tags %}
+    "{{ tag }}"{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "articleSection": "{{ page.categories.first | default: 'Blog' }}",
+  "wordCount": {{ page.content | strip_html | number_of_words }},
+  "articleBody": "{{ page.content | strip_html | xml_escape | truncatewords: 50 }}"
+}
+</script>
+{% else %}
+<!-- Schema.org structured data for website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title | strip_html }}",
+  "description": "{{ site.description | strip_html | xml_escape }}",
+  "url": "{{ site.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author | strip_html }}",
+    "url": "{{ site.url }}/aboutme"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | strip_html }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.avatar | absolute_url }}",
+      "width": 400,
+      "height": 400
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org for organization/person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author | strip_html }}",
+  "jobTitle": "Développeur Web Full Stack",
+  "description": "{{ site.description | strip_html | xml_escape }}",
+  "url": "{{ site.url }}",
+  "image": "{{ site.avatar | absolute_url }}",
+  "sameAs": [
+    {% if site.social-network-links.github %}
+    "https://github.com/{{ site.social-network-links.github }}",
+    {% endif %}
+    {% if site.social-network-links.linkedin %}
+    "https://linkedin.com/in/{{ site.social-network-links.linkedin }}",
+    {% endif %}
+    {% if site.social-network-links.email %}
+    "mailto:{{ site.social-network-links.email }}"
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}

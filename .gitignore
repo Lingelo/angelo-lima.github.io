@@ -1,0 +1,18 @@
+# project
+_site
+.sass-cache
+.vagrant
+
+# general
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+Gemfile.lock
+
+# Bundle local install
+.bundle/
+vendor/
+
+beautiful-jekyll-theme-*.gem
+.idea

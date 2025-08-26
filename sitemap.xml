@@ -1,0 +1,143 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Pages -->
+  {% for page in site.pages %}
+    {% unless page.sitemap == false or page.url contains '/404' %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: '/index.html' }}</loc>
+      {% if page.last_modified_at %}
+      <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% elsif page.date %}
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    {% endunless %}
+  {% endfor %}
+
+  <!-- Posts -->
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+      {% if post.cover-img or post.share-img %}
+      <image:image>
+        <image:loc>{{ site.url }}{{ post.cover-img | default: post.share-img }}</image:loc>
+        <image:title>{{ post.title | xml_escape }}</image:title>
+        {% if post.subtitle %}
+        <image:caption>{{ post.subtitle | xml_escape }}</image:caption>
+        {% endif %}
+      </image:image>
+      {% endif %}
+    </url>
+  {% endfor %}
+
+  <!-- Tags index pages -->
+  <url>
+    <loc>{{ site.url }}/tags</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tags</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- French tag pages -->
+  <url>
+    <loc>{{ site.url }}/tag/ia/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/tag/developpement/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/tag/web/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/tag/tech/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/tag/personnel/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/tag/securite/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- English tag pages -->
+  <url>
+    <loc>{{ site.url }}/en/tag/ai/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tag/development/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tag/web/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tag/tech/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tag/personal/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/tag/security/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pagination pages removed - using JavaScript pagination instead -->
+</urlset>

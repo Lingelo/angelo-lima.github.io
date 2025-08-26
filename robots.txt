@@ -1,0 +1,56 @@
+User-agent: *
+Allow: /
+
+# Sitemap locations
+Sitemap: https://angelo-lima.fr/sitemap.xml
+Sitemap: https://angelo-lima.fr/feed.xml
+Sitemap: https://angelo-lima.fr/en/feed.xml
+
+# Allow search engines to crawl important resources
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /tag/
+Allow: /en/tag/
+# Block pagination pages to avoid duplicate content
+Disallow: /page*/
+
+# Prioritize important pages for crawling
+# Main content
+Allow: /
+Allow: /en/
+Allow: /aboutme
+Allow: /en/aboutme
+Allow: /tags
+Allow: /en/tags
+
+# French tag pages (high value content)
+Allow: /tag/ia/
+Allow: /tag/developpement/
+Allow: /tag/web/
+Allow: /tag/tech/
+Allow: /tag/personnel/
+Allow: /tag/securite/
+
+# English tag pages (high value content)
+Allow: /en/tag/ai/
+Allow: /en/tag/development/
+Allow: /en/tag/web/
+Allow: /en/tag/tech/
+Allow: /en/tag/personal/
+Allow: /en/tag/security/
+
+# Disallow admin-type pages and development files
+Disallow: /404.html
+Disallow: /CHANGELOG.md
+Disallow: /Gemfile
+Disallow: /README.md
+Disallow: /docs/
+Disallow: /.git/
+Disallow: /_site/
+
+# Crawl delay (helps prevent overload)
+Crawl-delay: 1
+
+# Cache directive for better performance
+Cache-delay: 86400

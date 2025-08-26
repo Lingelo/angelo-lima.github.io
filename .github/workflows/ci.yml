@@ -1,0 +1,49 @@
+name: Beautiful Jekyll CI
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    name: Build Jekyll
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true # Cache gems automatically
+          
+      - name: Install dependencies
+        run: bundle install && bundle exec appraisal install
+        
+      - name: Setup Pages
+        id: configure-pages
+        uses: actions/configure-pages@v5
+        if: github.ref == 'refs/heads/master' # Only for production builds
+        
+      - name: Setup CI config
+        run: |
+          echo "---" > _config_ci.yml
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+        if: github.ref == 'refs/heads/master'
+        
+      - name: Build site (production)
+        if: github.ref == 'refs/heads/master'
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec appraisal jekyll build --future --config _config_ci.yml,_config.yml
+        
+      - name: Build site (development)
+        if: github.ref != 'refs/heads/master'
+        env:
+          JEKYLL_ENV: development
+        run: bundle exec appraisal jekyll build --future
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/master' # Only upload for production

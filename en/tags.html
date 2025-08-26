@@ -1,0 +1,39 @@
+---
+layout: page
+title: 'Articles by Tags'
+subtitle: 'Explore articles by theme'
+description: 'Complete index of blog articles organized by tags: AI, Development, Web, Tech, Personal, Security. Easily find topics that interest you.'
+lang: en
+---
+
+{% assign date_format = site.date_format | default: "%m/%d/%Y" %}
+
+
+{%- for tag in site.tags -%}
+    {%- assign en_posts = tag[1] | where: 'lang', 'en' -%}
+    {%- if en_posts.size > 0 -%}
+        <a href="#{{- tag[0] -}}" class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{- tag[0] -}}&nbsp;({{en_posts.size}})</a>
+    {%- endif -%}
+{%- endfor -%}
+
+<div id="full-tags-list">
+{%- for tag in site.tags -%}
+    {%- assign en_posts = tag[1] | where: 'lang', 'en' -%}
+    {%- if en_posts.size > 0 -%}
+        <h2 id="{{- tag[0] -}}" class="linked-section">
+            <i class="fas fa-tag" aria-hidden="true"></i>
+            &nbsp;{{- tag[0] -}}&nbsp;({{en_posts.size}})
+        </h2>
+        <div class="post-list">
+            {%- for post in en_posts -%}
+                <div class="tag-entry">
+                    <a href="{{ post.url | relative_url }}">{{- post.title | strip_html -}}</a>
+                    <div class="entry-date">
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: "%m/%d/%Y" -}}</time>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+    {%- endif -%}
+{%- endfor -%}
+</div>

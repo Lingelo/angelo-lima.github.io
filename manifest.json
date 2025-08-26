@@ -1,0 +1,19 @@
+{
+  "name": "Angelo Lima - Dev Web & IA",
+  "short_name": "Angelo Lima",
+  "description": "Angelo Lima, développeur web full-stack spécialisé en IA. Blog tech français avec tutoriels développement, analyses d'outils IA (Claude, ChatGPT), et réflexions sur l'innovation digitale moderne.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#0a0a0a",
+  "theme_color": "#edb926",
+  "icons": [
+    {
+      "src": "/assets/img/avatar-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["technology", "development", "ai"],
+  "lang": "fr-FR",
+  "orientation": "portrait-primary"
+}
