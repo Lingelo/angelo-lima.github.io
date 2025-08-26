@@ -208,8 +208,8 @@
   <link rel="preconnect" href="//stackpath.bootstrapcdn.com">
   
   <!-- Preload critical CSS -->
-  <link rel="preload" href="/assets/css/dark-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/assets/css/dark-theme.css"></noscript>
+  <link rel="preload" href="{{ '/assets/css/dark-theme.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/dark-theme.css' | relative_url }}"></noscript>
 
   {% include gtag.html %}
   {% include gtm_head.html %}

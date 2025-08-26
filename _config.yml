@@ -20,6 +20,7 @@ description: "Angelo Lima, développeur web full-stack spécialisé en IA. Blog 
 
 # URL du site pour le SEO
 url: "https://angelo-lima.fr"
+baseurl: ""  # Empty because it's a custom domain, not a GitHub Pages subdirectory
 
 # URL canonique (force consistent URLs without www)
 url-canonical: "https://angelo-lima.fr"
