@@ -24,12 +24,13 @@ jobs:
       - name: Setup Pages
         id: configure-pages
         uses: actions/configure-pages@v5
+        continue-on-error: true
         if: github.ref == 'refs/heads/master' # Only for production builds
         
       - name: Setup CI config
         run: |
           echo "---" > _config_ci.yml
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+          echo "baseurl: ${{ steps.configure-pages.outputs.base_path || '' }}" >> _config_ci.yml
         if: github.ref == 'refs/heads/master'
         
       - name: Build site (production)
