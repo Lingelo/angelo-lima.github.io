@@ -1,4 +1,4 @@
-name: Beautiful Jekyll CI
+name: Angelo Lima Blog CI
 on: 
   push:
     branches: [ master ]
