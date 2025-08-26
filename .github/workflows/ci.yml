@@ -19,9 +19,9 @@ jobs:
           bundler-cache: true # Cache gems automatically
           
       - name: Install dependencies
-        run: bundle install && bundle exec appraisal install
+        run: bundle install
         
       - name: Build site (test only)
         env:
           JEKYLL_ENV: development
-        run: bundle exec appraisal jekyll build --future
+        run: bundle exec jekyll build
