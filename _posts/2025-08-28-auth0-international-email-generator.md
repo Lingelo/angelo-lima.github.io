@@ -1,21 +1,22 @@
 ---
 layout: post
 title: "Auth0 International Email Generator : CLI pour templates multilingues"
-subtitle: "Un outil TypeScript pour générer des emails Auth0 dans plusieurs langues"
+subtitle: "Outil TypeScript pour générer automatiquement des emails Auth0 internationalisation i18n"
+description: "CLI TypeScript pour créer des templates d'emails Auth0 multilingues avec validation automatique, fallback linguistique et intégration CI/CD. Solution complète pour l'internationalisation des emails d'authentification."
 cover-img: /assets/img/auth0-international-email.webp
 share-img: /assets/img/auth0-international-email.webp
-tags: [Développement, Web, Sécurité]
+tags: [Développement, Web, Sécurité, Auth0, TypeScript, i18n]
 author: Angelo Lima
 lang: fr
 ref: auth0-international-email
 categories: fr
 ---
 
-## Le problème des emails Auth0 multilingues
+## Internationalisation des emails Auth0 : le défi des templates multilingues
 
-Si tu as déjà dû gérer des emails Auth0 dans plusieurs langues, tu sais que c'est galère. Entre les traductions, la validation des templates HTML et la gestion des différents environnements, c'est vite le bordel.
+La gestion des **emails Auth0 multilingues** et l'**internationalisation des templates d'authentification** représentent un défi majeur pour les développeurs. Entre la **traduction des emails**, la **validation des templates HTML**, la **gestion des fallbacks linguistiques** et l'intégration dans différents environnements, les projets i18n deviennent rapidement complexes.
 
-J'ai créé [Auth0 International Email Generator](https://github.com/Lingelo/auth0-international-email)¹ pour résoudre ce problème. C'est un CLI TypeScript qui génère automatiquement tes templates d'emails multilingues avec toute la config nécessaire.
+Pour résoudre ces problématiques d'**internationalisation Auth0**, j'ai développé l'[Auth0 International Email Generator](https://github.com/Lingelo/auth0-international-email)¹. Cet **outil CLI TypeScript** automatise la **génération de templates d'emails multilingues** avec validation intégrée, système de fallback et configuration complète pour l'**authentification internationale**.
 
 ---
 
@@ -35,37 +36,47 @@ yarn install
 yarn init
 ```
 
-### Configuration des langues
+### Configuration multilingue et internationalisation i18n
 
-Le fichier `config.json` gère tout :
+La **configuration internationalisée** dans `config.json` gère tous les aspects de l'**i18n pour Auth0** :
 
 ```json
 {
-  "supportedLanguages": ["en", "fr", "es"],
+  "supportedLanguages": ["en", "fr", "es", "de", "pt"],
   "defaultLanguage": "en",
+  "fallbackStrategy": "cascade",
   "templates": {
     "welcome_email": {
       "fromAddress": "hello@monapp.com",
-      "subjectKey": "welcome.subject"
+      "subjectKey": "welcome.subject",
+      "i18nEnabled": true
+    },
+    "password_reset": {
+      "fromAddress": "security@monapp.com",
+      "subjectKey": "password.reset.subject"
     }
   }
 }
 ```
 
-Si une traduction manque, ça fallback automatiquement sur la langue par défaut. Fini les emails cassés !
+Si une **traduction email Auth0** manque, le système de **fallback linguistique intelligent** bascule automatiquement sur la langue par défaut. Plus d'**emails d'authentification cassés** en production !
 
 ---
 
 ## Génération et validation automatique
 
-### Templates Liquid sécurisés
+### Templates Liquid sécurisés pour l'internationalisation
 
-Le générateur utilise **Liquid** (comme Shopify) pour les templates. C'est sécurisé par design, pas de `eval()` ou autres trucs dangereux :
+Le **générateur de templates Auth0** utilise **Liquid** (moteur de template Shopify) pour créer des **emails internationalisés sécurisés**. Cette approche évite les vulnérabilités comme `eval()` :
 
 ```liquid
 <h1>{{ localizeMessage("welcome.title") }}</h1>
 <p>{{ localizeMessage("welcome.message", user.name) }}</p>
+<p>{{ localizeMessage("welcome.cta") }}</p>
+<footer>{{ localizeMessage("footer.company") }}</footer>
 ```
+
+Chaque **template d'email multilingue** bénéficie de l'**internationalisation automatique** avec gestion des variables utilisateur.
 
 ### Triple validation
 
@@ -248,13 +259,21 @@ Plus de copy-paste manuel d'emails dans Auth0. Plus d'oublis de traductions. Plu
 
 ---
 
-## Conclusion
+## Conclusion : Maîtrisez l'internationalisation de vos emails Auth0
 
-Si tu galères avec les emails Auth0 multilingues, cet outil peut te sauver la vie. C'est simple à utiliser, robuste et ça s'intègre bien dans un workflow de dev moderne.
+L'**Auth0 International Email Generator** révolutionne la **gestion des emails d'authentification multilingues**. Cette solution **TypeScript + CLI + Liquid** simplifie drastiquement l'**internationalisation des templates Auth0** tout en garantissant sécurité et maintenabilité.
 
-L'approche TypeScript + CLI + templates Liquid rend le tout maintenable et évite les erreurs classiques qu'on voit souvent avec les emails d'auth.
+Pour les équipes confrontées aux défis de l'**i18n Auth0**, cet **outil d'internationalisation** offre :
 
-Ça prend 10 minutes à setup et tu gagnes des heures sur chaque nouveau template ou nouvelle langue.
+- **Génération automatique** de templates multilingues
+- **Validation intégrée** des traductions et de la syntaxe
+- **Intégration CI/CD** pour un workflow professionnel
+- **Fallback linguistique** intelligent pour éviter les erreurs
+
+Investissement : **10 minutes de setup**  
+Gain : **Heures économisées** sur chaque nouveau template ou langue ajoutée
+
+Une solution indispensable pour tout projet nécessitant une **authentification internationale robuste**.
 
 ---
 
