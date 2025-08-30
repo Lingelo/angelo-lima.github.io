@@ -139,18 +139,29 @@ void main(void) {
 
 L'IA **comprend le contexte GameBoy** et génère du code C idiomatique, avec les bonnes bibliothèques et optimisations mémoire.
 
-### Limitations Actuelles et Contributions
+### Limitations Actuelles et Évolution
 
-GBTS est un projet **en développement actif** avec certaines limitations :
+GBTS est un projet **en développement actif** avec certaines limitations importantes à considérer :
 
-- **Support limité des bibliothèques** TypeScript complexes
-- **APIs spécialisées** GameBoy pas encore toutes couvertes
-- **Optimisations avancées** en cours d'implémentation
+**Limitations Techniques :**
+- **Projets complexes** : La transpilation peut échouer sur des architectures TypeScript très avancées
+- **APIs externes** : L'utilisation d'APIs web ou Node.js n'est pas supportée (GameBoy n'a pas d'accès réseau)
+- **Bibliothèques tierces** : Support limité des packages npm complexes
+- **Types avancés** : Certains types TypeScript sophistiqués peuvent poser problème
 
-Les **Pull Requests sont les bienvenues** ! La communauté peut contribuer en :
-- Ajoutant le support de nouvelles APIs GameBoy
-- Améliorant les patterns de transpilation
-- Optimisant la génération de code C
+**Contraintes d'Usage :**
+- **Dépendance IA** : Nécessite une connexion internet et des crédits API
+- **Coûts** : Les projets volumineux peuvent générer des frais d'API significatifs
+- **Performance** : La transpilation peut être lente sur de gros projets
+
+**Évolution du Projet :**
+GBTS est destiné à évoluer significativement. Les **Pull Requests sont vivement encouragées** ! Domaines de contribution prioritaires :
+
+- **Extension du support API** GameBoy (son, graphiques, contrôleurs)
+- **Amélioration des patterns** de transpilation complexes
+- **Optimisation des coûts** et du cache intelligent
+- **Support d'écosystèmes** TypeScript plus larges
+- **Documentation** et exemples pratiques
 
 ## Révolution du Workflow de Développement
 

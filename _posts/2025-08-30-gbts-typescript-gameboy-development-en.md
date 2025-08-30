@@ -139,18 +139,29 @@ void main(void) {
 
 The AI **understands GameBoy context** and generates idiomatic C code with proper libraries and memory optimizations.
 
-### Current Limitations and Contributions
+### Current Limitations and Evolution
 
-GBTS is an **actively developed project** with some limitations:
+GBTS is an **actively developed project** with important limitations to consider:
 
-- **Limited support for complex** TypeScript libraries
-- **Specialized GameBoy APIs** not all covered yet
-- **Advanced optimizations** under development
+**Technical Limitations:**
+- **Complex projects**: Transpilation may fail on very advanced TypeScript architectures
+- **External APIs**: Web or Node.js API usage is not supported (GameBoy has no network access)
+- **Third-party libraries**: Limited support for complex npm packages
+- **Advanced types**: Some sophisticated TypeScript types may cause issues
 
-**Pull Requests are welcome!** The community can contribute by:
-- Adding support for new GameBoy APIs
-- Improving transpilation patterns
-- Optimizing C code generation
+**Usage Constraints:**
+- **AI dependency**: Requires internet connection and API credits
+- **Costs**: Large projects may generate significant API fees
+- **Performance**: Transpilation can be slow on big projects
+
+**Project Evolution:**
+GBTS is designed to evolve significantly. **Pull Requests are highly encouraged!** Priority contribution areas:
+
+- **GameBoy API extension** (audio, graphics, controllers)
+- **Complex transpilation patterns** improvement
+- **Cost optimization** and intelligent caching
+- **Broader TypeScript ecosystem** support
+- **Documentation** and practical examples
 
 ## Development Workflow Revolution
 
