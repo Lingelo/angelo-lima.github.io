@@ -28,7 +28,7 @@ Claude Code est l'interface en ligne de commande officielle d'Anthropic pour int
 
 ### Prérequis
 
-- Node.js 18+ installé
+- Node.js 18+ installé (ou [Bun](/fr/bun-sh/) comme alternative)
 - Un compte Anthropic (API ou claude.ai)
 
 ### Installation via npm
@@ -62,7 +62,7 @@ Application e-commerce en Next.js 14 avec TypeScript strict.
 ## Conventions
 - Utiliser les Server Components par défaut
 - Tests avec Vitest
-- Commits conventionnels (feat:, fix:, etc.)
+- [Commits conventionnels](/fr/conventional-commits/) (feat:, fix:, etc.)
 
 ## Commandes utiles
 - `npm run dev` : Serveur de développement
@@ -172,7 +172,7 @@ claude
 
 ## Ce qui vous attend demain
 
-Dans le **Jour 2**, nous découvrirons la **syntaxe secrète de Claude Code** : les raccourcis `#@/!` qui font la différence entre un utilisateur basique et un power user.
+Dans le **[Jour 2](/fr/claude-code-syntaxe-secrete/)**, nous découvrirons la **syntaxe secrète de Claude Code** : les raccourcis `#@/!` qui font la différence entre un utilisateur basique et un power user.
 
 ---
 

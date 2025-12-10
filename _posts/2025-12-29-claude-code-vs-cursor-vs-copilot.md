@@ -14,6 +14,8 @@ categories: fr
 
 Le marché des assistants IA pour développeurs explose. Claude Code, Cursor et GitHub Copilot sont les trois solutions majeures. Lequel choisir ? Comparons objectivement.
 
+> Pour un contexte plus large sur l'état de l'IA en développement, voir mon article [IA et développement en 2025](/fr/ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025/). Et si vous envisagez des alternatives locales, consultez [OpenAI GPT OSS vs Ollama](/fr/openai-gpt-oss-ollama-modeles-proprietaires-open-source/).
+
 ## Vue d'ensemble
 
 | Critère | Claude Code | Cursor | GitHub Copilot |
