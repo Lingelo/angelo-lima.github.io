@@ -14,6 +14,8 @@ categories: fr
 
 Claude Code est puissant, mais il consomme des tokens. Comprendre la facturation permet d'optimiser vos coûts. Voyons comment surveiller et maîtriser votre budget.
 
+> Au-delà du coût financier, n'oubliez pas l'[impact écologique de l'IA](/fr/IA-impact-ecologique/) - chaque token a une empreinte carbone.
+
 ## Le modèle de tarification
 
 ### Tarifs par modèle (décembre 2024)

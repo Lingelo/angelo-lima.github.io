@@ -14,6 +14,8 @@ categories: en
 
 Claude Code has access to your file system and can execute bash commands. It's powerful, but requires safeguards. Today, we'll see how to secure your environment.
 
+> For deeper context on AI security challenges, see my articles on [LLM jailbreaking](/en/llm-jailbreaking-security-analysis-bypass-mechanisms/) and [robust development practices inspired by NASA](/en/robust-web-development-nasa-methodologies-critical-applications/).
+
 ## The Default Permission Model
 
 By default, Claude Code operates in **strict read-only** mode:

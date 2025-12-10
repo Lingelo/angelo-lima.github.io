@@ -73,7 +73,7 @@ Claude automatically loads the file content into context.
 > @explorer find all REST endpoints in the application
 ```
 
-Built-in subagents:
+Built-in subagents (see [Day 9](/en/claude-code-subagents/) for details):
 - `@explorer`: Quick search (Haiku model, read-only)
 - `@planner`: Planning before implementation
 
@@ -110,7 +110,7 @@ Slash commands are predefined or custom commands.
 
 ### Creating Your Own Slash Commands
 
-Create a file in `.claude/commands/`:
+Create a file in `.claude/commands/` (see [Day 8](/en/claude-code-custom-slash-commands/) for more):
 
 ```markdown
 <!-- .claude/commands/review.md -->
@@ -264,7 +264,7 @@ If tests fail, suggest corrections.
 
 ## What's Coming Tomorrow
 
-In **Day 3**, we'll discover **the Explore → Plan → Code → Test workflow**, the methodology that distinguishes senior developers from juniors when using Claude Code.
+In **[Day 3](/en/claude-code-workflow-explore-plan-code-test/)**, we'll discover **the Explore → Plan → Code → Test workflow**, the methodology that distinguishes senior developers from juniors when using Claude Code.
 
 ---
 

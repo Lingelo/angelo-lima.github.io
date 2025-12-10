@@ -16,6 +16,8 @@ Pour conclure cette série, quoi de mieux qu'une étude de cas concrète ? Voici
 
 > Pour découvrir le projet en détail, lisez mon article dédié : [Prelude of the Chambered Reborn : Renaissance d'un classique de Notch](/fr/prelude-of-the-chambered-reborn/)
 
+> Voir aussi mon autre projet de jeu rétro en TypeScript : [GBTS - Un émulateur GameBoy](/fr/gbts-typescript-gameboy/)
+
 ## Le projet
 
 ### Contexte

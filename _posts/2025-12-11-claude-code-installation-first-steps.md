@@ -28,7 +28,7 @@ Claude Code is Anthropic's official command-line interface for interacting with 
 
 ### Prerequisites
 
-- Node.js 18+ installed
+- Node.js 18+ installed (or [Bun](/en/bun-2025-critical-evaluation-javascript-runtime-alternative/) as an alternative)
 - An Anthropic account (API or claude.ai)
 
 ### Installation via npm
@@ -62,7 +62,7 @@ E-commerce application in Next.js 14 with strict TypeScript.
 ## Conventions
 - Use Server Components by default
 - Tests with Vitest
-- Conventional commits (feat:, fix:, etc.)
+- [Conventional commits](/en/conventional-commits-standardize-git-messages-optimized-collaboration/) (feat:, fix:, etc.)
 
 ## Useful Commands
 - `npm run dev`: Development server
@@ -172,7 +172,7 @@ claude
 
 ## What's Coming Tomorrow
 
-In **Day 2**, we'll discover **Claude Code's secret syntax**: the `#@/!` shortcuts that make the difference between a basic user and a power user.
+In **[Day 2](/en/claude-code-secret-syntax/)**, we'll discover **Claude Code's secret syntax**: the `#@/!` shortcuts that make the difference between a basic user and a power user.
 
 ---
 
