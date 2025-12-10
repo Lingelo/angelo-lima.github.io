@@ -14,7 +14,9 @@ categories: en
 
 To conclude this series, what better than a concrete case study? Here's how I used Claude Code to recreate **Prelude of the Chambered**, Notch's game (Minecraft creator), with a modern stack.
 
-> To discover the project in detail, read my dedicated article: [Prelude of the Chambered Reborn: Renaissance of a Notch classic](/en/prelude-of-the-chambered-reborn/)
+> To discover the project in detail, read my dedicated article: [Prelude of the Chambered Reborn: Renaissance of a Notch classic](/en/prelude-of-the-chambered-reborn-typescript-web-port/)
+
+> Also see my other retro game project in TypeScript: [GBTS - A GameBoy Emulator](/en/gbts-typescript-gameboy-development/)
 
 ## The Project
 

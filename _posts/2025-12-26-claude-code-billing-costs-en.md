@@ -14,6 +14,8 @@ categories: en
 
 Claude Code is powerful, but it consumes tokens. Understanding billing helps optimize your costs. Let's see how to monitor and master your budget.
 
+> Beyond financial cost, don't forget the [ecological impact of AI](/en/ai-ecological-impact-training-vs-inference-environmental-costs/) - every token has a carbon footprint.
+
 ## The Pricing Model
 
 ### Rates by Model (December 2024)

@@ -48,7 +48,7 @@ This is **"vibe coding"**: you vaguely describe what you want and hope it works.
 > @explorer How does authentication currently work in this project?
 ```
 
-The `@explorer` subagent uses the **Haiku** model (fast and economical) in **read-only** mode. It cannot modify files, only read and analyze.
+The `@explorer` subagent uses the **Haiku** model (fast and economical) in **read-only** mode. It cannot modify files, only read and analyze. For more on subagents, see [Day 9](/en/claude-code-subagents/).
 
 ### Typical Explore Phase Questions
 
@@ -129,6 +129,8 @@ Claude Code offers different "thinking" levels:
 - **Complexity estimation**
 
 ### Enable Extended Thinking by Default
+
+Extended thinking consumes more tokens - see [Day 16](/en/claude-code-billing-costs/) for cost optimization tips.
 
 Environment variable:
 ```bash
@@ -292,7 +294,7 @@ Use **OFF** for:
 
 ## What's Coming Tomorrow
 
-In **Day 4**, we'll see **prompt engineering techniques specific to Claude Code** to get even better results.
+In **[Day 4](/en/claude-code-prompt-engineering/)**, we'll see **prompt engineering techniques specific to Claude Code** to get even better results.
 
 ---
 
