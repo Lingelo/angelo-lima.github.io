@@ -3,7 +3,7 @@ layout: post
 title: "Permissions et sécurité dans Claude Code"
 subtitle: "Jour 7 - Protéger vos fichiers sensibles et contrôler les actions"
 description: "Maîtrisez le système de permissions de Claude Code : allow/ask/deny, protection des secrets, modes de permission et bonnes pratiques de sécurité."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement, Sécurité]
 author: "Angelo Lima"

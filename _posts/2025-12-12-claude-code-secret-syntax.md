@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Secret Syntax: #@/!"
 subtitle: "Day 2 - The shortcuts 95% of developers don't know"
 description: "Master Claude Code's #@/! shortcuts to multiply your productivity. Context activation, mentions, slash commands, and shell escape explained."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

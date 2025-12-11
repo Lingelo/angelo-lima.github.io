@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Troubleshooting"
 subtitle: "Day 17 - Solving common problems"
 description: "Complete Claude Code troubleshooting guide: common errors, connection issues, context limits, and practical solutions."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

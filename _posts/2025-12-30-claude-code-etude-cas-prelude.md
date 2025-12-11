@@ -3,7 +3,7 @@ layout: post
 title: "Étude de cas : Prelude of the Chambered Reborn"
 subtitle: "Jour 20 - Un projet complet avec Claude Code"
 description: "Étude de cas complète : comment j'ai utilisé Claude Code pour recréer le jeu Prelude of the Chambered de Notch, du premier commit au déploiement."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

@@ -3,7 +3,7 @@ layout: post
 title: "Status line et personnalisation du terminal"
 subtitle: "Jour 18 - Configurer l'affichage de Claude Code"
 description: "Personnalisez Claude Code : status line, mode vim, thèmes de terminal, raccourcis clavier et configuration avancée de l'interface."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

@@ -3,7 +3,7 @@ layout: post
 title: "Prompt Engineering for Claude Code"
 subtitle: "Day 4 - Techniques to get exactly what you want"
 description: "Advanced prompt engineering techniques for Claude Code. Structure your requests, provide the right context, and avoid common mistakes."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

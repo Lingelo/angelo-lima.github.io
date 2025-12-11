@@ -3,7 +3,7 @@ layout: post
 title: "MCP: Connecting Claude Code to Your Tools"
 subtitle: "Day 13 - Integrate GitHub, Jira, databases, and more"
 description: "Complete MCP guide in Claude Code: server installation, configuration, OAuth authentication, and practical integrations with your tools."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

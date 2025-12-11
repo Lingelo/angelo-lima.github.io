@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Billing and Cost Optimization"
 subtitle: "Day 16 - Understanding and mastering your consumption"
 description: "Master Claude Code billing: pricing model, /cost command, Max subscriptions, token optimization, and budget best practices."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

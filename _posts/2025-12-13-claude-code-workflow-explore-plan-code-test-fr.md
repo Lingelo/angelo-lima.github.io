@@ -3,7 +3,7 @@ layout: post
 title: "Le workflow Explore → Plan → Code → Test"
 subtitle: "Jour 3 - La méthodologie qui distingue les développeurs seniors"
 description: "Maîtrisez le workflow Explore, Plan, Code, Test de Claude Code. Extended thinking, plan mode et méthodologie pour éviter le syndrome du code 'presque correct'."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

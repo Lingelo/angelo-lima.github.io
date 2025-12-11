@@ -3,7 +3,7 @@ layout: post
 title: "Creating Custom Slash Commands"
 subtitle: "Day 8 - Automate your recurring workflows"
 description: "Learn to create custom slash commands in Claude Code to automate repetitive tasks and standardize team workflows."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"

@@ -3,7 +3,7 @@ layout: post
 title: "Facturation et optimisation des coûts Claude Code"
 subtitle: "Jour 16 - Comprendre et maîtriser votre consommation"
 description: "Maîtrisez la facturation Claude Code : modèle de prix, commande /cost, abonnements Max, optimisation des tokens et bonnes pratiques budgétaires."
-thumbnail-img: "/assets/img/claude-code-series.webp"
+thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
