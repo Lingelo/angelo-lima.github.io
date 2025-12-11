@@ -284,6 +284,7 @@ locale : "fr-FR"
 
 # Output options (more information on Jekyll's site)
 timezone: "Europe/Paris"
+future: true  # Show posts regardless of date (avoids timezone issues with GitHub Pages)
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title/
