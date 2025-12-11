@@ -33,17 +33,11 @@ Improves internal linking and user engagement
       <div class="related-posts-grid">
     {% endif %}
     
-        <article class="related-post-card">
+        <article class="related-post-card{% unless post.thumbnail-img or post.cover-img %} no-image{% endunless %}">
           {% assign post_image = post.thumbnail-img | default: post.cover-img %}
           {% if post_image %}
           <div class="related-post-image">
             <img src="{{ post_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-          </div>
-          {% else %}
-          <div class="related-post-image related-post-no-image">
-            <div class="related-post-placeholder">
-              <i class="fas fa-file-alt"></i>
-            </div>
           </div>
           {% endif %}
           
@@ -121,18 +115,9 @@ Improves internal linking and user engagement
   object-fit: cover;
 }
 
-.related-post-no-image {
-  background: linear-gradient(135deg, var(--navbar-col-dark, #2a2a2a), var(--navbar-border-col-dark, #333));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-}
-
-.related-post-placeholder {
-  color: var(--footer-text-col-dark, #888);
-  font-size: 2em;
-  opacity: 0.6;
+/* Cards without images - no extra spacing */
+.related-post-card.no-image .related-post-content {
+  padding-top: 1rem;
 }
 
 .related-post-content {
