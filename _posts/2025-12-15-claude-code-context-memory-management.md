@@ -4,7 +4,7 @@ title: "Context and Memory Management in Claude Code"
 subtitle: "Day 5 - Optimize long sessions and preserve your preferences"
 description: "Master context management in Claude Code: hierarchical memory, /compact, checkpoints, and best practices for extended sessions."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

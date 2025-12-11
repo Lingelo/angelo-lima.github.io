@@ -4,7 +4,7 @@ title: "Claude Code in VS Code and JetBrains"
 subtitle: "Day 14 - The graphical experience in your favorite IDEs"
 description: "Integrate Claude Code into VS Code and JetBrains: installation, configuration, features, and comparison with the terminal experience."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

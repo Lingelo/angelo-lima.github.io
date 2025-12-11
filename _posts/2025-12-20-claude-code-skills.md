@@ -4,7 +4,7 @@ title: "Skills: Model-Invoked Automation"
 subtitle: "Day 10 - Capabilities Claude activates automatically"
 description: "Master Claude Code Skills: intelligent automation, custom skill creation, difference from slash commands, and best practices."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

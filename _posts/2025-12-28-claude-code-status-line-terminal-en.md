@@ -4,7 +4,7 @@ title: "Status Line and Terminal Customization"
 subtitle: "Day 18 - Configure Claude Code display"
 description: "Customize Claude Code: status line, vim mode, terminal themes, keyboard shortcuts, and advanced interface configuration."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

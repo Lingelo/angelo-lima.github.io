@@ -4,7 +4,7 @@ title: "Claude Code : Installation et premiers pas"
 subtitle: "Jour 1 - Découvrez l'assistant IA qui va transformer votre façon de coder"
 description: "Guide complet pour installer Claude Code, configurer votre environnement et maîtriser les commandes essentielles. Premier article d'une série de 20 jours pour devenir expert."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: fr

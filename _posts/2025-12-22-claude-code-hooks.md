@@ -4,7 +4,7 @@ title: "Hooks: Automating Event Reactions"
 subtitle: "Day 12 - Trigger automatic actions in Claude Code"
 description: "Master Claude Code hooks: 9 event types, configuration, use cases for security, formatting, and automation."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

@@ -4,7 +4,7 @@ title: "CI/CD and Headless Mode with Claude Code"
 subtitle: "Day 15 - Automate your pipelines with AI"
 description: "Integrate Claude Code into your CI/CD pipelines: headless mode, GitHub Actions, automatic code generation, and production best practices."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

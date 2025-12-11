@@ -4,7 +4,7 @@ title: "Subagents: Delegating Intelligently"
 subtitle: "Day 9 - Create specialized agents for complex tasks"
 description: "Master Claude Code subagents: built-in agents, custom agent creation, context isolation, and efficient task delegation."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

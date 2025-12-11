@@ -4,7 +4,7 @@ title: "Gestion du contexte et mémoire dans Claude Code"
 subtitle: "Jour 5 - Optimiser les longues sessions et préserver vos préférences"
 description: "Maîtrisez la gestion du contexte dans Claude Code : mémoire hiérarchique, /compact, checkpoints et bonnes pratiques pour les sessions prolongées."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: fr

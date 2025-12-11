@@ -4,7 +4,7 @@ title: "Claude Code vs Cursor vs GitHub Copilot"
 subtitle: "Day 19 - Comparison of AI assistants for developers"
 description: "Detailed comparison of Claude Code, Cursor and GitHub Copilot: features, pricing, use cases and recommendations to choose the right tool."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en

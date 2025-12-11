@@ -4,7 +4,7 @@ title: "La syntaxe secrète de Claude Code : #@/!"
 subtitle: "Jour 2 - Les raccourcis que 95% des développeurs ignorent"
 description: "Maîtrisez les raccourcis #@/! de Claude Code pour décupler votre productivité. Context activation, mentions, slash commands et shell escape expliqués."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: fr

@@ -4,7 +4,7 @@ title: "Troubleshooting Claude Code"
 subtitle: "Jour 17 - Résoudre les problèmes courants"
 description: "Guide complet de dépannage Claude Code : erreurs fréquentes, problèmes de connexion, limites de contexte et solutions pratiques."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: fr

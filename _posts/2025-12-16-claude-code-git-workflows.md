@@ -4,7 +4,7 @@ title: "Git Workflows: Commits, PRs, and Checkpoints"
 subtitle: "Day 6 - Collaborate effectively with Claude Code and Git"
 description: "Master Git workflows with Claude Code: automatic commits with attribution, PR creation, checkpoints, and team collaboration."
 thumbnail-img: "/assets/img/claude-code-series.webp"
-cover-img: "/assets/img/claude-code-series.webp"
+cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
 author: "Angelo Lima"
 lang: en
