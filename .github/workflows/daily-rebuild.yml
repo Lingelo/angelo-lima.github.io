@@ -4,6 +4,8 @@ on:
   schedule:
     # Rebuild every day at 00:05 Paris time (23:05 UTC in winter, 22:05 UTC in summer)
     - cron: '5 23 * * *'
+    # Backup rebuild at 00:30 Paris time in case the first one fails
+    - cron: '30 23 * * *'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
