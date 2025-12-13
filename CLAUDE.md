@@ -326,9 +326,11 @@ Les articles peuvent être datés dans le futur (ex: `2025-12-25-mon-article.md`
 
 ### Déclencheurs (3 niveaux de fiabilité)
 
-1. **Service externe** (cron-job.org) → 00:00 Paris - le plus fiable
-2. **GitHub cron** → 00:05 Paris - backup
-3. **GitHub cron** → 00:30 Paris - second backup
+1. **Service externe** (cron-job.org) → 04:00 UTC (05:00 Paris hiver / 06:00 Paris été) - le plus fiable
+2. **GitHub cron** → 04:05 UTC - backup
+3. **GitHub cron** → 04:30 UTC - second backup
+
+> ⚠️ **Important** : Les jobs tournent à 04:00 UTC pour avoir une bonne marge après minuit UTC. Jekyll utilise l'heure UTC du serveur pour déterminer si un article est dans le futur.
 
 ### Configuration du Service Externe (Recommandé)
 
@@ -342,7 +344,7 @@ Les crons GitHub Actions ne sont pas fiables à 100%. Pour garantir la publicati
    ```
    URL: https://api.github.com/repos/Lingelo/angelo-lima.github.io/dispatches
    Méthode: POST
-   Schedule: 0 0 * * * (minuit)
+   Schedule: 0 4 * * * (04:00 UTC)
    Headers:
      Authorization: Bearer <GITHUB_TOKEN>
      Accept: application/vnd.github.v3+json
