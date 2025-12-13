@@ -1,10 +1,8 @@
-{% if site.gtag %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.gtag }}');
-</script>
-{% endif %}
+{% comment %}
+  Google Analytics (gtag.js) is now loaded conditionally via cookie-consent.html
+  to comply with RGPD/GDPR regulations.
+
+  The tracking script will only be loaded after the user explicitly accepts cookies.
+
+  Configuration: site.gtag in _config.yml (currently: {{ site.gtag }})
+{% endcomment %}
