@@ -123,9 +123,36 @@ Fichier `_config.yml` contient :
 ## 🔄 Déploiement
 
 ### GitHub Actions
-Deux workflows automatisés :
+Trois workflows automatisés :
 - **CI** (`.github/workflows/ci.yml`) : Tests de build
-- **Deploy** (`.github/workflows/deploy.yml`) : Déploiement Pages
+- **Deploy** (`.github/workflows/deploy.yml`) : Déploiement sur push
+- **Daily Rebuild** (`.github/workflows/daily-rebuild.yml`) : Publication des articles programmés
+
+### Publication Automatique des Articles Programmés
+
+Les articles peuvent être datés dans le futur (ex: `2025-12-25-mon-article.md`). Jekyll ne les publie qu'à partir de leur date. Le workflow **Daily Rebuild** reconstruit le site automatiquement chaque nuit pour publier les nouveaux articles.
+
+**Déclencheurs (3 niveaux de fiabilité)** :
+1. **Service externe** (cron-job.org) → 00:00 Paris - le plus fiable
+2. **GitHub cron** → 00:05 Paris - backup
+3. **GitHub cron** → 00:30 Paris - second backup
+
+**Configuration du service externe (recommandé)** :
+
+1. Créer un token GitHub : `Settings > Developer settings > Personal access tokens`
+   - Scope : `repo` (Full control)
+
+2. Configurer cron-job.org :
+   ```
+   URL: https://api.github.com/repos/Lingelo/angelo-lima.github.io/dispatches
+   Méthode: POST
+   Schedule: 0 0 * * * (minuit)
+   Headers:
+     Authorization: Bearer <GITHUB_TOKEN>
+     Accept: application/vnd.github.v3+json
+     Content-Type: application/json
+   Body: {"event_type": "daily-rebuild"}
+   ```
 
 ### Processus de Déploiement
 1. Push sur `master`

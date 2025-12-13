@@ -318,6 +318,50 @@ const CACHE_NAME = 'angelo-lima-v4'; // Change v3 to v4, etc.
 - Adding new critical site functionality
 - Changing site structure or navigation
 
+## Publication Automatique des Articles Programmés
+
+### Fonctionnement
+
+Les articles peuvent être datés dans le futur (ex: `2025-12-25-mon-article.md`). Jekyll ne les publie qu'à partir de leur date. Le workflow **Daily Rebuild** (`.github/workflows/daily-rebuild.yml`) reconstruit le site automatiquement chaque nuit.
+
+### Déclencheurs (3 niveaux de fiabilité)
+
+1. **Service externe** (cron-job.org) → 00:00 Paris - le plus fiable
+2. **GitHub cron** → 00:05 Paris - backup
+3. **GitHub cron** → 00:30 Paris - second backup
+
+### Configuration du Service Externe (Recommandé)
+
+Les crons GitHub Actions ne sont pas fiables à 100%. Pour garantir la publication :
+
+1. **Créer un token GitHub** :
+   - `Settings > Developer settings > Personal access tokens`
+   - Scope : `repo` (Full control)
+
+2. **Configurer cron-job.org** :
+   ```
+   URL: https://api.github.com/repos/Lingelo/angelo-lima.github.io/dispatches
+   Méthode: POST
+   Schedule: 0 0 * * * (minuit)
+   Headers:
+     Authorization: Bearer <GITHUB_TOKEN>
+     Accept: application/vnd.github.v3+json
+     Content-Type: application/json
+   Body: {"event_type": "daily-rebuild"}
+   ```
+
+### Déclenchement Manuel
+
+Si un article programmé n'est pas publié :
+
+```bash
+# Via commit vide
+git commit --allow-empty -m "chore: trigger rebuild" && git push
+
+# Ou via GitHub CLI
+gh workflow run daily-rebuild.yml
+```
+
 ## Bilingual Content Management
 
 ### URL Structure and SEO
