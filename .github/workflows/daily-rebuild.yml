@@ -2,10 +2,10 @@ name: Daily Rebuild for Scheduled Posts
 
 on:
   schedule:
-    # Rebuild every day at 00:05 Paris time (23:05 UTC in winter, 22:05 UTC in summer)
-    - cron: '5 23 * * *'
-    # Backup rebuild at 00:30 Paris time in case the first one fails
-    - cron: '30 23 * * *'
+    # Rebuild every day at 04:05 UTC (05:05 Paris winter / 06:05 Paris summer)
+    - cron: '5 4 * * *'
+    # Backup rebuild at 04:30 UTC
+    - cron: '30 4 * * *'
   repository_dispatch:
     types: [daily-rebuild]
   workflow_dispatch: # Allow manual trigger
