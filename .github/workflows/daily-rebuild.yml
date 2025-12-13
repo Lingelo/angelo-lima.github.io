@@ -6,6 +6,8 @@ on:
     - cron: '5 23 * * *'
     # Backup rebuild at 00:30 Paris time in case the first one fails
     - cron: '30 23 * * *'
+  repository_dispatch:
+    types: [daily-rebuild]
   workflow_dispatch: # Allow manual trigger
 
 permissions:
