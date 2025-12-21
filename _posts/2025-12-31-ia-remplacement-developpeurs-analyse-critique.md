@@ -14,7 +14,7 @@ categories: fr
 
 La panique est palpable sur les réseaux sociaux. Chaque nouvelle démo d'un modèle d'IA générative déclenche une vague de prédictions catastrophistes : "C'est la fin des développeurs", "L'AGI arrive dans 2 ans", "Une équipe de 6 développeurs remplacée par un seul avec l'IA". Ces affirmations méritent une analyse rigoureuse, loin de l'hystérie collective.
 
-Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques, les analyses de chercheurs comme Tim Dettmers (Ai2) sur les limites physiques du hardware, et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) sur le sujet.
+Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques, les analyses de chercheurs comme Tim Dettmers (Ai2) sur les limites physiques du hardware, et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) — développeur français et créateur de contenu tech suivi par plus de 100 000 abonnés — sur le sujet.
 
 ## Le Piège des Démos "Impressionnantes"
 
@@ -76,14 +76,16 @@ Ces capacités restent hors de portée des modèles actuels, malgré leurs impre
 
 Selon une [analyse de 80,000 Hours](https://80000hours.org/2025/03/when-do-experts-expect-agi-to-arrive/) compilant les prédictions d'experts, les estimations varient considérablement :
 
-| Source | Prédiction |
-|--------|------------|
-| Sam Altman (OpenAI) | 2025 - machines pensant comme des humains |
-| Dario Amodei (Anthropic) | 2026 - IA "puissante" |
-| Demis Hassabis (DeepMind) | 5-10 ans |
-| Andrej Karpathy (ex-OpenAI) | ~10 ans, sceptique sur les "sur-prédictions" |
-| Sondages chercheurs IA | ~2040 |
-| Metaculus (agrégation forecasts) | 25% de chance d'ici 2027, 50% d'ici 2031 |
+| Expert | Rôle | Prédiction AGI |
+|--------|------|----------------|
+| **Sam Altman** | PDG d'OpenAI | 2025 - machines pensant comme des humains |
+| **Dario Amodei** | PDG d'Anthropic, ancien VP OpenAI | 2026 - IA "puissante" |
+| **Demis Hassabis** | PDG de DeepMind, Prix Nobel de Chimie 2024 | 5-10 ans |
+| **Andrej Karpathy** | Ex-directeur IA Tesla, cofondateur OpenAI | ~10 ans, sceptique sur les "sur-prédictions" |
+| Sondages chercheurs IA | Communauté académique | ~2040 |
+| Metaculus | Plateforme de prédiction collaborative | 25% chance d'ici 2027, 50% d'ici 2031 |
+
+On remarque que les prédictions les plus optimistes proviennent systématiquement des dirigeants d'entreprises ayant un intérêt financier direct dans le discours AGI, tandis que la communauté académique reste plus mesurée.
 
 Comme le note [AIMultiple](https://research.aimultiple.com/artificial-general-intelligence-singularity-timing/), en quatre ans seulement, l'estimation moyenne sur Metaculus pour l'arrivée de l'AGI est passée de 50 ans à 5 ans. Cette volatilité reflète davantage l'emballement médiatique que des avancées techniques mesurables.
 
