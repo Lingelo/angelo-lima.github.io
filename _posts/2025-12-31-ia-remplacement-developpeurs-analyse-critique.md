@@ -168,7 +168,7 @@ Les recherches utilisant le framework [ZebraLogic](https://arxiv.org/abs/2502.01
 
 ### Le Mur Économique et Énergétique
 
-Selon [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) et les recherches récentes :
+Selon [Dr. Adnan Masood](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3), architecte solutions IA et chercheur, et les recherches récentes :
 
 - **Limites physiques** : nous approchons des limites de performance par puce alors que la loi de Moore ralentit
 - **Coûts astronomiques** : plus de 100 millions de dollars pour entraîner GPT-4
@@ -298,10 +298,6 @@ Pour 2026, mon conseil reste le même : **apprenez à utiliser ces outils**, mai
 
 ---
 
-*Dernière mise à jour : 31 décembre 2025*
-
----
-
 ## Sources
 
 1. [Melvynx - L'IA va-t-elle remplacer les développeurs ?](https://www.youtube.com/watch?v=4-QICRWv8jY) - YouTube
@@ -343,3 +339,5 @@ Pour 2026, mon conseil reste le même : **apprenez à utiliser ces outils**, mai
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
 
 20. [L'IA superintelligente est un fantasme de la Silicon Valley - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com
+
+21. [Is there a Wall? - Dr. Adnan Masood](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) - Dr. Adnan Masood (architecte solutions IA)
