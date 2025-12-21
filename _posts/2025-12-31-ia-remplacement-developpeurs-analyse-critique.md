@@ -14,7 +14,7 @@ categories: fr
 
 La panique est palpable sur les réseaux sociaux. Chaque nouvelle démo d'un modèle d'IA générative déclenche une vague de prédictions catastrophistes : "C'est la fin des développeurs", "L'AGI arrive dans 2 ans", "Une équipe de 6 développeurs remplacée par un seul avec l'IA". Ces affirmations méritent une analyse rigoureuse, loin de l'hystérie collective.
 
-Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) sur le sujet.
+Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques, les analyses de chercheurs comme Tim Dettmers (Ai2) sur les limites physiques du hardware, et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) — développeur français et créateur de contenu tech suivi par plus de 100 000 abonnés — sur le sujet.
 
 ## Le Piège des Démos "Impressionnantes"
 
@@ -76,16 +76,31 @@ Ces capacités restent hors de portée des modèles actuels, malgré leurs impre
 
 Selon une [analyse de 80,000 Hours](https://80000hours.org/2025/03/when-do-experts-expect-agi-to-arrive/) compilant les prédictions d'experts, les estimations varient considérablement :
 
-| Source | Prédiction |
-|--------|------------|
-| Sam Altman (OpenAI) | 2025 - machines pensant comme des humains |
-| Dario Amodei (Anthropic) | 2026 - IA "puissante" |
-| Demis Hassabis (DeepMind) | 5-10 ans |
-| Andrej Karpathy (ex-OpenAI) | ~10 ans, sceptique sur les "sur-prédictions" |
-| Sondages chercheurs IA | ~2040 |
-| Metaculus (agrégation forecasts) | 25% de chance d'ici 2027, 50% d'ici 2031 |
+| Expert | Rôle | Prédiction AGI |
+|--------|------|----------------|
+| **Sam Altman** | PDG d'OpenAI | 2025 - machines pensant comme des humains |
+| **Dario Amodei** | PDG d'Anthropic, ancien VP OpenAI | 2026 - IA "puissante" |
+| **Demis Hassabis** | PDG de DeepMind, Prix Nobel de Chimie 2024 | 5-10 ans |
+| **Andrej Karpathy** | Ex-directeur IA Tesla, cofondateur OpenAI | ~10 ans, sceptique sur les "sur-prédictions" |
+| Sondages chercheurs IA | Communauté académique | ~2040 |
+| Metaculus | Plateforme de prédiction collaborative | 25% chance d'ici 2027, 50% d'ici 2031 |
+
+On remarque que les prédictions les plus optimistes proviennent systématiquement des dirigeants d'entreprises ayant un intérêt financier direct dans le discours AGI, tandis que la communauté académique reste plus mesurée.
 
 Comme le note [AIMultiple](https://research.aimultiple.com/artificial-general-intelligence-singularity-timing/), en quatre ans seulement, l'estimation moyenne sur Metaculus pour l'arrivée de l'AGI est passée de 50 ans à 5 ans. Cette volatilité reflète davantage l'emballement médiatique que des avancées techniques mesurables.
+
+### L'Histoire des Prédictions Échouées
+
+Cette volatilité n'est pas nouvelle. L'histoire de l'IA est jalonnée de prédictions audacieuses qui ne se sont jamais réalisées :
+
+| Année | Expert | Prédiction | Réalité |
+|-------|--------|------------|---------|
+| **1965** | Herbert Simon, Prix Nobel d'économie | "Dans 20 ans, les machines seront capables de faire tout travail qu'un homme peut faire" | Toujours pas le cas 60 ans plus tard |
+| **1970** | Marvin Minsky, pionnier de l'IA (MIT) | "Dans 3 à 8 ans, nous aurons une machine avec l'intelligence générale d'un être humain" | Premier "hiver de l'IA" dans les années suivantes |
+| **1997** | Ray Kurzweil, futurologue | "L'AGI arrivera en 2029" | Prédiction régulièrement repoussée |
+| **2015** | Elon Musk | "L'IA dépassera l'humain d'ici 5 ans" | 10 ans plus tard, toujours pas d'AGI |
+
+Ce pattern récurrent — des experts confiants repoussant perpétuellement leurs prédictions — devrait inciter à la prudence face aux annonces actuelles.
 
 ### L'Intérêt Financier du Discours AGI
 
@@ -100,6 +115,12 @@ Les chiffres financiers d'OpenAI éclairent le discours marketing autour de l'AG
 Pour justifier des investissements massifs et des valorisations astronomiques, les entreprises d'IA doivent vendre une vision grandiose : l'AGI qui transformera le monde. Annoncer "l'IA s'améliore progressivement sur certaines tâches" ne suffit pas à lever des milliards.
 
 Cette dynamique rappelle l'analyse que j'avais proposée dans mon article sur [les déclarations de Sam Altman concernant la bulle IA](/fr/sam-altman-bulle-ia-marches-analyse/), où le PDG d'OpenAI lui-même reconnaissait l'existence d'une bulle spéculative.
+
+### L'AGI comme « Fantasme de la Silicon Valley »
+
+[Tim Dettmers](https://intelligence-artificielle.developpez.com/actu/378435/), chercheur chez Ai2 (Allen Institute for AI) et reconnu pour ses travaux sur l'optimisation des modèles de langage et la quantification (notamment le format QLoRA largement utilisé pour le fine-tuning efficace), apporte un contrepoids académique aux prédictions optimistes de la Silicon Valley. Il qualifie sans détour l'IA superintelligente de « fantasme » et la poursuite de l'AGI de « chimère ».
+
+Son argument central : l'AGI véritable devrait accomplir des tâches physiques complexes, ce qui nécessite des robots avancés économiquement viables — une réalité loin d'être atteinte. Cette vision contraste avec l'approche pragmatique chinoise, qui privilégie les applications utiles actuelles plutôt qu'une course vers une intelligence artificielle générale hypothétique.
 
 ## La Stagnation Technique des Modèles
 
@@ -156,11 +177,26 @@ Selon [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) et 
 
 J'avais analysé cette problématique énergétique dans mon article sur [l'impact écologique de l'IA](/fr/IA-impact-ecologique/).
 
+### Les Limites Physiques du Hardware
+
+Tim Dettmers apporte un éclairage technique sur les contraintes matérielles incontournables. Son constat est sans appel : « Il nous reste peut-être un ou deux ans pour la mise à l'échelle avant que de nouvelles améliorations ne deviennent physiquement impossibles. »
+
+Les chiffres sont éloquents :
+
+| Génération GPU | Performances | Contrepartie |
+|----------------|--------------|--------------|
+| Ampere → Hopper | ×3 | Puissance ×1.7 |
+| Hopper → Blackwell | ×2.5 | Surface puce ×2, puissance ×1.7 |
+
+Selon Dettmers, les GPU ont atteint leur rendement maximal vers 2018. Depuis, ce ne sont que des « fonctionnalités ponctuelles qui s'épuisent rapidement ». Maintenir un progrès similaire « nécessite une augmentation exponentielle des coûts en calcul, en énergie et en infrastructure ». Auparavant, la croissance exponentielle du matériel compensait ces besoins — ce n'est plus le cas.
+
 ## L'État Réel du Marché de l'Emploi
 
 ### Les Données du Bureau of Labor Statistics
 
 Contrairement au discours catastrophiste, le [Bureau of Labor Statistics américain](https://www.bls.gov/opub/ted/2025/ai-impacts-in-bls-employment-projections.htm) projette une **croissance de 17.9%** de l'emploi des développeurs logiciels entre 2023 et 2033, soit bien supérieure à la moyenne de 4% pour toutes les professions.
+
+Ces projections s'alignent avec l'estimation de Tim Dettmers selon laquelle **seulement 11% des emplois sont actuellement remplaçables par l'IA** — bien loin des prédictions apocalyptiques relayées sur les réseaux sociaux.
 
 ### Explosion des Postes IA
 
@@ -199,6 +235,21 @@ Un graphique d'Indeed montrant une chute des offres d'emploi tech aux États-Uni
 
 **Ce que cela signifie réellement** : la "chute" actuelle ramène simplement le marché au niveau de février 2020, juste avant le pic anormal lié à la pandémie de Covid-19. Le marché de l'emploi tech de 2020 était considéré comme robuste et sain.
 
+## Mon Expérience : Plus d'un An de Développement Augmenté
+
+En tant que développeur pratiquant le **développement augmenté par l'IA depuis plus d'un an**, mon expérience quotidienne confirme les conclusions des études citées. J'ai condensé cette pratique dans une [série de 20 articles sur Claude Code](/fr/claude-code-installation-premiers-pas/), avec un projet concret documenté : recréer un jeu complet en TypeScript.
+
+**Ce que plus d'un an de pratique m'a appris :**
+
+- **L'IA excelle** sur les tâches répétitives, le scaffolding, la génération de tests et la documentation
+- **L'IA échoue** sur les décisions d'architecture, les edge cases métier et l'optimisation fine
+- **Le workflow structuré** (Explore → Plan → Code → Test) transforme un outil hasardeux en partenaire efficace
+- **La supervision reste indispensable** : chaque génération nécessite relecture et validation
+
+Comme je le résume dans [l'étude de cas finale](/fr/claude-code-etude-cas-prelude/) : *"Claude Code n'est pas un remplacement du développeur, mais un **multiplicateur de productivité**."*
+
+Le coût de mon projet exemple (120$ pour 5000 lignes de code) illustre bien le rapport qualité-prix — mais aussi la nécessité d'une expertise humaine pour guider, valider et corriger l'IA à chaque étape.
+
 ## Conclusion : L'IA comme Outil, Pas comme Remplaçant
 
 Les données récentes dessinent un portrait nuancé loin des prédictions alarmistes :
@@ -208,14 +259,46 @@ Les données récentes dessinent un portrait nuancé loin des prédictions alarm
 - Le Chain of Thought est un "mirage fragile" qui s'effondre hors des cas d'entraînement
 - Le marché de l'emploi développeur croît de 17.9% sur 10 ans
 - OpenAI perd des milliards, alimentant un discours AGI financièrement motivé
+- Les GPU ont atteint leur rendement maximal vers 2018 et les limites physiques du hardware se rapprochent
+- Seulement 11% des emplois sont actuellement remplaçables par l'IA
 
 **Ce que cela implique :**
 - Les outils d'IA sont utiles mais ne remplacent pas l'expertise humaine
-- La supervision reste indispensable pour du code de qualité production
+- Le paradigme **"human-in-the-loop"** (humain dans la boucle) reste indispensable pour du code de qualité production
 - Le métier évolue vers plus d'architecture et moins de "code boilerplate"
 - Les développeurs maîtrisant l'IA auront un avantage compétitif
 
-Le discours sur le remplacement imminent des développeurs relève davantage du marketing et de l'effet de mode que d'une analyse technique rigoureuse. La sagesse recommande d'adopter ces technologies en gardant un esprit critique, de continuer à développer ses compétences fondamentales, et de ne pas céder à la panique alimentée par des démos trompeuses et des projections financièrement motivées.
+Le concept de *human-in-the-loop* n'est pas une limitation temporaire en attendant des IA plus avancées — c'est une **nécessité structurelle**. Même les systèmes d'IA les plus sophistiqués nécessitent une supervision humaine pour les décisions critiques, la validation contextuelle et la responsabilité finale. Les développeurs deviennent des **orchestrateurs** qui guident, corrigent et valident le travail de l'IA.
+
+Comme le souligne Tim Dettmers, chercheur chez Ai2, l'AGI reste un « fantasme de la Silicon Valley » — une chimère qui contraste avec l'approche pragmatique privilégiant les applications utiles actuelles. Le discours sur le remplacement imminent des développeurs relève davantage du marketing et de l'effet de mode que d'une analyse technique rigoureuse. La sagesse recommande d'adopter ces technologies en gardant un esprit critique, de continuer à développer ses compétences fondamentales, et de ne pas céder à la panique alimentée par des démos trompeuses et des projections financièrement motivées.
+
+---
+
+## À Retenir
+
+> **Les 4 chiffres clés de cet article :**
+> - **-19%** : L'IA ralentit les développeurs expérimentés (étude METR)
+> - **11%** : Part des emplois actuellement remplaçables par l'IA (Dettmers)
+> - **+17.9%** : Croissance projetée de l'emploi développeur 2023-2033 (BLS)
+> - **2018** : Année où les GPU ont atteint leur rendement maximal
+
+---
+
+## Bilan de Fin d'Année
+
+Alors que 2025 touche à sa fin, le paysage de l'IA dans le développement logiciel se clarifie. Loin des prophéties apocalyptiques du début d'année, nous disposons désormais de données concrètes pour évaluer l'impact réel de ces technologies.
+
+L'année 2025 aura été celle de la **démystification** : les études rigoureuses ont révélé les limites des outils d'IA, les pertes financières colossales des géants du secteur ont exposé la fragilité du modèle économique, et les développeurs sur le terrain ont appris à distinguer le battage médiatique de la réalité quotidienne.
+
+Pour 2026, mon conseil reste le même : **apprenez à utiliser ces outils**, mais ne cessez jamais de développer vos compétences fondamentales. L'IA est un excellent assistant — pas un remplaçant.
+
+**Bonne année 2026 à tous les développeurs !** Que cette nouvelle année vous apporte des projets passionnants, des bugs rapidement résolus, et la sérénité face aux prédictions alarmistes qui ne manqueront pas de fleurir.
+
+*Et vous, quelle a été votre expérience avec l'IA en 2025 ? Partagez vos retours dans les commentaires ou sur les réseaux sociaux.*
+
+---
+
+*Dernière mise à jour : 31 décembre 2025*
 
 ---
 
@@ -258,3 +341,5 @@ Le discours sur le remplacement imminent des développeurs relève davantage du 
 18. [GPT-4](https://en.wikipedia.org/wiki/GPT-4) - Wikipedia
 
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
+
+20. [L'IA superintelligente est un fantasme de la Silicon Valley - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com

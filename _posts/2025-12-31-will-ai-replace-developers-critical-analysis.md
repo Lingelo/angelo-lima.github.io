@@ -14,7 +14,7 @@ categories: en
 
 Panic is palpable on social media. Every new demo of a generative AI model triggers a wave of catastrophic predictions: "It's the end for developers", "AGI is coming in 2 years", "A team of 6 developers replaced by just one with AI". These claims deserve rigorous analysis, far from the collective hysteria.
 
-This article offers a methodical deconstruction of the dominant narrative about AI and developer replacement, drawing on recent scientific studies, economic data, and a [relevant video analysis by Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) on the subject.
+This article offers a methodical deconstruction of the dominant narrative about AI and developer replacement, drawing on recent scientific studies, economic data, analyses from researchers like Tim Dettmers (Ai2) on hardware physical limits, and a [relevant video analysis by Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) — a French developer and tech content creator with over 100,000 subscribers — on the subject.
 
 ## The Trap of "Impressive" Demos
 
@@ -76,16 +76,31 @@ These capabilities remain out of reach for current models, despite their impress
 
 According to an [analysis by 80,000 Hours](https://80000hours.org/2025/03/when-do-experts-expect-agi-to-arrive/) compiling expert predictions, estimates vary considerably:
 
-| Source | Prediction |
-|--------|------------|
-| Sam Altman (OpenAI) | 2025 - machines thinking like humans |
-| Dario Amodei (Anthropic) | 2026 - "powerful" AI |
-| Demis Hassabis (DeepMind) | 5-10 years |
-| Andrej Karpathy (ex-OpenAI) | ~10 years, skeptical of "over-predictions" |
-| AI researcher surveys | ~2040 |
-| Metaculus (forecast aggregation) | 25% chance by 2027, 50% by 2031 |
+| Expert | Role | AGI Prediction |
+|--------|------|----------------|
+| **Sam Altman** | OpenAI CEO | 2025 - machines thinking like humans |
+| **Dario Amodei** | Anthropic CEO, former OpenAI VP | 2026 - "powerful" AI |
+| **Demis Hassabis** | DeepMind CEO, 2024 Nobel Prize in Chemistry | 5-10 years |
+| **Andrej Karpathy** | Ex-Tesla AI Director, OpenAI co-founder | ~10 years, skeptical of "over-predictions" |
+| AI researcher surveys | Academic community | ~2040 |
+| Metaculus | Collaborative prediction platform | 25% chance by 2027, 50% by 2031 |
+
+Notably, the most optimistic predictions consistently come from executives at companies with a direct financial interest in the AGI narrative, while the academic community remains more measured.
 
 As [AIMultiple](https://research.aimultiple.com/artificial-general-intelligence-singularity-timing/) notes, in just four years, the average Metaculus estimate for AGI arrival has dropped from 50 years to 5 years. This volatility reflects media hype more than measurable technical advances.
+
+### The History of Failed Predictions
+
+This volatility is nothing new. AI history is littered with bold predictions that never materialized:
+
+| Year | Expert | Prediction | Reality |
+|------|--------|------------|---------|
+| **1965** | Herbert Simon, Nobel Prize in Economics | "Within 20 years, machines will be capable of doing any work a man can do" | Still not the case 60 years later |
+| **1970** | Marvin Minsky, AI pioneer (MIT) | "In 3 to 8 years, we will have a machine with the general intelligence of a human being" | First "AI winter" followed in subsequent years |
+| **1997** | Ray Kurzweil, futurologist | "AGI will arrive by 2029" | Prediction regularly pushed back |
+| **2015** | Elon Musk | "AI will surpass humans within 5 years" | 10 years later, still no AGI |
+
+This recurring pattern — confident experts perpetually pushing back their predictions — should encourage caution toward current announcements.
 
 ### The Financial Interest Behind AGI Discourse
 
@@ -100,6 +115,12 @@ OpenAI's financial figures illuminate the marketing narrative around AGI. Accord
 To justify massive investments and astronomical valuations, AI companies must sell a grand vision: AGI that will transform the world. Announcing "AI is gradually improving on certain tasks" isn't enough to raise billions.
 
 This dynamic echoes the analysis I proposed in my article on [Sam Altman's statements about the AI bubble](/en/sam-altman-ai-bubble-markets-analysis/), where OpenAI's CEO himself acknowledged the existence of a speculative bubble.
+
+### AGI as a "Silicon Valley Fantasy"
+
+[Tim Dettmers](https://intelligence-artificielle.developpez.com/actu/378435/), researcher at Ai2 (Allen Institute for AI) and recognized for his work on language model optimization and quantization (notably the QLoRA format widely used for efficient fine-tuning), provides an academic counterweight to Silicon Valley's optimistic predictions. He bluntly describes superintelligent AI as a "fantasy" and the pursuit of AGI as a "chimera."
+
+His central argument: true AGI would need to accomplish complex physical tasks, which requires economically viable advanced robots — a reality far from being achieved. This vision contrasts with China's pragmatic approach, which prioritizes useful current applications rather than racing toward a hypothetical artificial general intelligence.
 
 ## Technical Stagnation of Models
 
@@ -156,11 +177,26 @@ According to [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85
 
 I analyzed this energy issue in my article on [AI's ecological impact](/en/ai-ecological-impact-training-vs-inference-environmental-costs/).
 
+### The Physical Limits of Hardware
+
+Tim Dettmers provides technical insight into unavoidable hardware constraints. His assessment is stark: "We may have one or two years left for scaling before further improvements become physically impossible."
+
+The numbers are telling:
+
+| GPU Generation | Performance | Trade-off |
+|----------------|-------------|-----------|
+| Ampere → Hopper | ×3 | Power ×1.7 |
+| Hopper → Blackwell | ×2.5 | Die size ×2, power ×1.7 |
+
+According to Dettmers, GPUs reached their maximum efficiency around 2018. Since then, they've only added "one-off features that are quickly exhausted." Maintaining similar progress "requires an exponential increase in computation, energy, and infrastructure costs." Previously, exponential hardware growth compensated for these needs — that's no longer the case.
+
 ## The Real State of the Job Market
 
 ### Bureau of Labor Statistics Data
 
 Contrary to catastrophist narrative, the [U.S. Bureau of Labor Statistics](https://www.bls.gov/opub/ted/2025/ai-impacts-in-bls-employment-projections.htm) projects **17.9% growth** in software developer employment between 2023 and 2033, well above the 4% average for all occupations.
+
+These projections align with Tim Dettmers' estimate that **only 11% of jobs are currently replaceable by AI** — far from the apocalyptic predictions circulating on social media.
 
 ### Explosion of AI Positions
 
@@ -199,6 +235,21 @@ A graph from Indeed showing a drop in tech job postings in the United States reg
 
 **What it actually means**: the current "drop" simply brings the market back to February 2020 levels, just before the abnormal Covid-19 pandemic spike. The 2020 tech job market was considered robust and healthy.
 
+## My Experience: Over a Year of Augmented Development
+
+As a developer who has been practicing **AI-augmented development for over a year**, my daily experience confirms the conclusions of the studies cited. I condensed this practice into a [20-article series on Claude Code](/en/claude-code-getting-started/), with a documented concrete project: recreating a complete game in TypeScript.
+
+**What over a year of practice taught me:**
+
+- **AI excels** at repetitive tasks, scaffolding, test generation, and documentation
+- **AI fails** at architecture decisions, business edge cases, and fine-tuning optimization
+- **Structured workflow** (Explore → Plan → Code → Test) transforms a hit-or-miss tool into an effective partner
+- **Supervision remains essential**: every generation requires review and validation
+
+As I summarize in [the final case study](/en/claude-code-case-study-prelude/): *"Claude Code is not a developer replacement, but a **productivity multiplier**."*
+
+My example project cost ($120 for 5000 lines of code) illustrates the value proposition — but also the necessity of human expertise to guide, validate, and correct AI at every step.
+
 ## Conclusion: AI as a Tool, Not a Replacement
 
 Recent data paints a nuanced picture far from alarmist predictions:
@@ -208,14 +259,46 @@ Recent data paints a nuanced picture far from alarmist predictions:
 - Chain of Thought is a "brittle mirage" that collapses outside training cases
 - The developer job market is growing 17.9% over 10 years
 - OpenAI is losing billions, fueling a financially motivated AGI narrative
+- GPUs reached maximum efficiency around 2018 and hardware physical limits are approaching
+- Only 11% of jobs are currently replaceable by AI
 
 **What this implies:**
 - AI tools are useful but don't replace human expertise
-- Supervision remains essential for production-quality code
+- The **"human-in-the-loop"** paradigm remains essential for production-quality code
 - The profession is evolving toward more architecture and less "boilerplate code"
 - Developers mastering AI will have a competitive advantage
 
-The narrative about imminent developer replacement stems more from marketing and trend-following than from rigorous technical analysis. Wisdom recommends adopting these technologies while maintaining critical thinking, continuing to develop fundamental skills, and not succumbing to panic fueled by misleading demos and financially motivated projections.
+The *human-in-the-loop* concept is not a temporary limitation while waiting for more advanced AI — it's a **structural necessity**. Even the most sophisticated AI systems require human oversight for critical decisions, contextual validation, and final accountability. Developers are becoming **orchestrators** who guide, correct, and validate the AI's work.
+
+As Tim Dettmers, researcher at Ai2, emphasizes, AGI remains a "Silicon Valley fantasy" — a chimera that contrasts with the pragmatic approach of prioritizing useful current applications. The narrative about imminent developer replacement stems more from marketing and trend-following than from rigorous technical analysis. Wisdom recommends adopting these technologies while maintaining critical thinking, continuing to develop fundamental skills, and not succumbing to panic fueled by misleading demos and financially motivated projections.
+
+---
+
+## Key Takeaways
+
+> **The 4 key figures from this article:**
+> - **-19%**: AI slows down experienced developers (METR study)
+> - **11%**: Share of jobs currently replaceable by AI (Dettmers)
+> - **+17.9%**: Projected developer employment growth 2023-2033 (BLS)
+> - **2018**: Year when GPUs reached maximum efficiency
+
+---
+
+## Year-End Review
+
+As 2025 draws to a close, the landscape of AI in software development is becoming clearer. Far from the apocalyptic prophecies of early in the year, we now have concrete data to assess the real impact of these technologies.
+
+2025 will have been the year of **demystification**: rigorous studies revealed the limitations of AI tools, the colossal financial losses of industry giants exposed the fragility of their business model, and developers on the ground learned to distinguish media hype from daily reality.
+
+For 2026, my advice remains the same: **learn to use these tools**, but never stop developing your fundamental skills. AI is an excellent assistant — not a replacement.
+
+**Happy New Year 2026 to all developers!** May this new year bring you exciting projects, quickly resolved bugs, and serenity in the face of the alarmist predictions that will undoubtedly continue to flourish.
+
+*What was your experience with AI in 2025? Share your thoughts in the comments or on social media.*
+
+---
+
+*Last updated: December 31, 2025*
 
 ---
 
@@ -258,3 +341,5 @@ The narrative about imminent developer replacement stems more from marketing and
 18. [GPT-4](https://en.wikipedia.org/wiki/GPT-4) - Wikipedia
 
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
+
+20. [Superintelligent AI is a Silicon Valley Fantasy - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com
