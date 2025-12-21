@@ -235,11 +235,11 @@ A graph from Indeed showing a drop in tech job postings in the United States reg
 
 **What it actually means**: the current "drop" simply brings the market back to February 2020 levels, just before the abnormal Covid-19 pandemic spike. The 2020 tech job market was considered robust and healthy.
 
-## My Experience: 20 Days with Claude Code
+## My Experience: Over a Year of Augmented Development
 
-As a developer using AI tools daily, my experience confirms the conclusions of the studies cited. I documented [my Claude Code practice over 20 days](/en/claude-code-getting-started/), with a concrete project: recreating a complete game in TypeScript.
+As a developer who has been practicing **AI-augmented development for over a year**, my daily experience confirms the conclusions of the studies cited. I condensed this practice into a [20-article series on Claude Code](/en/claude-code-getting-started/), with a documented concrete project: recreating a complete game in TypeScript.
 
-**What I observed:**
+**What over a year of practice taught me:**
 
 - **AI excels** at repetitive tasks, scaffolding, test generation, and documentation
 - **AI fails** at architecture decisions, business edge cases, and fine-tuning optimization
@@ -248,7 +248,7 @@ As a developer using AI tools daily, my experience confirms the conclusions of t
 
 As I summarize in [the final case study](/en/claude-code-case-study-prelude/): *"Claude Code is not a developer replacement, but a **productivity multiplier**."*
 
-My project cost ($120 for 5000 lines of code over 20 days) illustrates the value proposition — but also the necessity of human expertise to guide, validate, and correct AI at every step.
+My example project cost ($120 for 5000 lines of code) illustrates the value proposition — but also the necessity of human expertise to guide, validate, and correct AI at every step.
 
 ## Conclusion: AI as a Tool, Not a Replacement
 

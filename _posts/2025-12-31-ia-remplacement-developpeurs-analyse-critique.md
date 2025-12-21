@@ -235,11 +235,11 @@ Un graphique d'Indeed montrant une chute des offres d'emploi tech aux États-Uni
 
 **Ce que cela signifie réellement** : la "chute" actuelle ramène simplement le marché au niveau de février 2020, juste avant le pic anormal lié à la pandémie de Covid-19. Le marché de l'emploi tech de 2020 était considéré comme robuste et sain.
 
-## Mon Expérience : 20 Jours avec Claude Code
+## Mon Expérience : Plus d'un An de Développement Augmenté
 
-En tant que développeur utilisant quotidiennement les outils d'IA, mon expérience confirme les conclusions des études citées. J'ai documenté [ma pratique de Claude Code sur 20 jours](/fr/claude-code-installation-premiers-pas/), avec un projet concret : recréer un jeu complet en TypeScript.
+En tant que développeur pratiquant le **développement augmenté par l'IA depuis plus d'un an**, mon expérience quotidienne confirme les conclusions des études citées. J'ai condensé cette pratique dans une [série de 20 articles sur Claude Code](/fr/claude-code-installation-premiers-pas/), avec un projet concret documenté : recréer un jeu complet en TypeScript.
 
-**Ce que j'ai observé :**
+**Ce que plus d'un an de pratique m'a appris :**
 
 - **L'IA excelle** sur les tâches répétitives, le scaffolding, la génération de tests et la documentation
 - **L'IA échoue** sur les décisions d'architecture, les edge cases métier et l'optimisation fine
@@ -248,7 +248,7 @@ En tant que développeur utilisant quotidiennement les outils d'IA, mon expérie
 
 Comme je le résume dans [l'étude de cas finale](/fr/claude-code-etude-cas-prelude/) : *"Claude Code n'est pas un remplacement du développeur, mais un **multiplicateur de productivité**."*
 
-Le coût de mon projet (120$ pour 5000 lignes de code en 20 jours) illustre bien le rapport qualité-prix — mais aussi la nécessité d'une expertise humaine pour guider, valider et corriger l'IA à chaque étape.
+Le coût de mon projet exemple (120$ pour 5000 lignes de code) illustre bien le rapport qualité-prix — mais aussi la nécessité d'une expertise humaine pour guider, valider et corriger l'IA à chaque étape.
 
 ## Conclusion : L'IA comme Outil, Pas comme Remplaçant
 
