@@ -168,7 +168,7 @@ Research using the [ZebraLogic](https://arxiv.org/abs/2502.01100) framework reve
 
 ### The Economic and Energy Wall
 
-According to [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) and recent research:
+According to [Dr. Adnan Masood](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3), AI solutions architect and researcher, and recent research:
 
 - **Physical limits**: we're approaching per-chip performance limits as Moore's Law slows
 - **Astronomical costs**: over $100 million to train GPT-4
@@ -343,3 +343,5 @@ For 2026, my advice remains the same: **learn to use these tools**, but never st
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
 
 20. [Superintelligent AI is a Silicon Valley Fantasy - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com
+
+21. [Is there a Wall? - Dr. Adnan Masood](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) - Dr. Adnan Masood (AI solutions architect)
