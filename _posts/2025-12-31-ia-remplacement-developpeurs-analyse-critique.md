@@ -89,6 +89,19 @@ On remarque que les prédictions les plus optimistes proviennent systématiqueme
 
 Comme le note [AIMultiple](https://research.aimultiple.com/artificial-general-intelligence-singularity-timing/), en quatre ans seulement, l'estimation moyenne sur Metaculus pour l'arrivée de l'AGI est passée de 50 ans à 5 ans. Cette volatilité reflète davantage l'emballement médiatique que des avancées techniques mesurables.
 
+### L'Histoire des Prédictions Échouées
+
+Cette volatilité n'est pas nouvelle. L'histoire de l'IA est jalonnée de prédictions audacieuses qui ne se sont jamais réalisées :
+
+| Année | Expert | Prédiction | Réalité |
+|-------|--------|------------|---------|
+| **1965** | Herbert Simon, Prix Nobel d'économie | "Dans 20 ans, les machines seront capables de faire tout travail qu'un homme peut faire" | Toujours pas le cas 60 ans plus tard |
+| **1970** | Marvin Minsky, pionnier de l'IA (MIT) | "Dans 3 à 8 ans, nous aurons une machine avec l'intelligence générale d'un être humain" | Premier "hiver de l'IA" dans les années suivantes |
+| **1997** | Ray Kurzweil, futurologue | "L'AGI arrivera en 2029" | Prédiction régulièrement repoussée |
+| **2015** | Elon Musk | "L'IA dépassera l'humain d'ici 5 ans" | 10 ans plus tard, toujours pas d'AGI |
+
+Ce pattern récurrent — des experts confiants repoussant perpétuellement leurs prédictions — devrait inciter à la prudence face aux annonces actuelles.
+
 ### L'Intérêt Financier du Discours AGI
 
 Les chiffres financiers d'OpenAI éclairent le discours marketing autour de l'AGI. Selon [CNBC](https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html) et [LessWrong](https://www.lesswrong.com/posts/CCQsQnCMWhJcCFY9x/openai-lost-usd5-billion-in-2024-and-its-losses-are) :
@@ -222,6 +235,21 @@ Un graphique d'Indeed montrant une chute des offres d'emploi tech aux États-Uni
 
 **Ce que cela signifie réellement** : la "chute" actuelle ramène simplement le marché au niveau de février 2020, juste avant le pic anormal lié à la pandémie de Covid-19. Le marché de l'emploi tech de 2020 était considéré comme robuste et sain.
 
+## Mon Expérience : 20 Jours avec Claude Code
+
+En tant que développeur utilisant quotidiennement les outils d'IA, mon expérience confirme les conclusions des études citées. J'ai documenté [ma pratique de Claude Code sur 20 jours](/fr/claude-code-installation-premiers-pas/), avec un projet concret : recréer un jeu complet en TypeScript.
+
+**Ce que j'ai observé :**
+
+- **L'IA excelle** sur les tâches répétitives, le scaffolding, la génération de tests et la documentation
+- **L'IA échoue** sur les décisions d'architecture, les edge cases métier et l'optimisation fine
+- **Le workflow structuré** (Explore → Plan → Code → Test) transforme un outil hasardeux en partenaire efficace
+- **La supervision reste indispensable** : chaque génération nécessite relecture et validation
+
+Comme je le résume dans [l'étude de cas finale](/fr/claude-code-etude-cas-prelude/) : *"Claude Code n'est pas un remplacement du développeur, mais un **multiplicateur de productivité**."*
+
+Le coût de mon projet (120$ pour 5000 lignes de code en 20 jours) illustre bien le rapport qualité-prix — mais aussi la nécessité d'une expertise humaine pour guider, valider et corriger l'IA à chaque étape.
+
 ## Conclusion : L'IA comme Outil, Pas comme Remplaçant
 
 Les données récentes dessinent un portrait nuancé loin des prédictions alarmistes :
@@ -236,11 +264,41 @@ Les données récentes dessinent un portrait nuancé loin des prédictions alarm
 
 **Ce que cela implique :**
 - Les outils d'IA sont utiles mais ne remplacent pas l'expertise humaine
-- La supervision reste indispensable pour du code de qualité production
+- Le paradigme **"human-in-the-loop"** (humain dans la boucle) reste indispensable pour du code de qualité production
 - Le métier évolue vers plus d'architecture et moins de "code boilerplate"
 - Les développeurs maîtrisant l'IA auront un avantage compétitif
 
+Le concept de *human-in-the-loop* n'est pas une limitation temporaire en attendant des IA plus avancées — c'est une **nécessité structurelle**. Même les systèmes d'IA les plus sophistiqués nécessitent une supervision humaine pour les décisions critiques, la validation contextuelle et la responsabilité finale. Les développeurs deviennent des **orchestrateurs** qui guident, corrigent et valident le travail de l'IA.
+
 Comme le souligne Tim Dettmers, chercheur chez Ai2, l'AGI reste un « fantasme de la Silicon Valley » — une chimère qui contraste avec l'approche pragmatique privilégiant les applications utiles actuelles. Le discours sur le remplacement imminent des développeurs relève davantage du marketing et de l'effet de mode que d'une analyse technique rigoureuse. La sagesse recommande d'adopter ces technologies en gardant un esprit critique, de continuer à développer ses compétences fondamentales, et de ne pas céder à la panique alimentée par des démos trompeuses et des projections financièrement motivées.
+
+---
+
+## À Retenir
+
+> **Les 4 chiffres clés de cet article :**
+> - **-19%** : L'IA ralentit les développeurs expérimentés (étude METR)
+> - **11%** : Part des emplois actuellement remplaçables par l'IA (Dettmers)
+> - **+17.9%** : Croissance projetée de l'emploi développeur 2023-2033 (BLS)
+> - **2018** : Année où les GPU ont atteint leur rendement maximal
+
+---
+
+## Bilan de Fin d'Année
+
+Alors que 2025 touche à sa fin, le paysage de l'IA dans le développement logiciel se clarifie. Loin des prophéties apocalyptiques du début d'année, nous disposons désormais de données concrètes pour évaluer l'impact réel de ces technologies.
+
+L'année 2025 aura été celle de la **démystification** : les études rigoureuses ont révélé les limites des outils d'IA, les pertes financières colossales des géants du secteur ont exposé la fragilité du modèle économique, et les développeurs sur le terrain ont appris à distinguer le battage médiatique de la réalité quotidienne.
+
+Pour 2026, mon conseil reste le même : **apprenez à utiliser ces outils**, mais ne cessez jamais de développer vos compétences fondamentales. L'IA est un excellent assistant — pas un remplaçant.
+
+**Bonne année 2026 à tous les développeurs !** Que cette nouvelle année vous apporte des projets passionnants, des bugs rapidement résolus, et la sérénité face aux prédictions alarmistes qui ne manqueront pas de fleurir.
+
+*Et vous, quelle a été votre expérience avec l'IA en 2025 ? Partagez vos retours dans les commentaires ou sur les réseaux sociaux.*
+
+---
+
+*Dernière mise à jour : 31 décembre 2025*
 
 ---
 

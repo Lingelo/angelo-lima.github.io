@@ -89,6 +89,19 @@ Notably, the most optimistic predictions consistently come from executives at co
 
 As [AIMultiple](https://research.aimultiple.com/artificial-general-intelligence-singularity-timing/) notes, in just four years, the average Metaculus estimate for AGI arrival has dropped from 50 years to 5 years. This volatility reflects media hype more than measurable technical advances.
 
+### The History of Failed Predictions
+
+This volatility is nothing new. AI history is littered with bold predictions that never materialized:
+
+| Year | Expert | Prediction | Reality |
+|------|--------|------------|---------|
+| **1965** | Herbert Simon, Nobel Prize in Economics | "Within 20 years, machines will be capable of doing any work a man can do" | Still not the case 60 years later |
+| **1970** | Marvin Minsky, AI pioneer (MIT) | "In 3 to 8 years, we will have a machine with the general intelligence of a human being" | First "AI winter" followed in subsequent years |
+| **1997** | Ray Kurzweil, futurologist | "AGI will arrive by 2029" | Prediction regularly pushed back |
+| **2015** | Elon Musk | "AI will surpass humans within 5 years" | 10 years later, still no AGI |
+
+This recurring pattern — confident experts perpetually pushing back their predictions — should encourage caution toward current announcements.
+
 ### The Financial Interest Behind AGI Discourse
 
 OpenAI's financial figures illuminate the marketing narrative around AGI. According to [CNBC](https://www.cnbc.com/2024/09/27/openai-sees-5-billion-loss-this-year-on-3point7-billion-in-revenue.html) and [LessWrong](https://www.lesswrong.com/posts/CCQsQnCMWhJcCFY9x/openai-lost-usd5-billion-in-2024-and-its-losses-are):
@@ -222,6 +235,21 @@ A graph from Indeed showing a drop in tech job postings in the United States reg
 
 **What it actually means**: the current "drop" simply brings the market back to February 2020 levels, just before the abnormal Covid-19 pandemic spike. The 2020 tech job market was considered robust and healthy.
 
+## My Experience: 20 Days with Claude Code
+
+As a developer using AI tools daily, my experience confirms the conclusions of the studies cited. I documented [my Claude Code practice over 20 days](/en/claude-code-getting-started/), with a concrete project: recreating a complete game in TypeScript.
+
+**What I observed:**
+
+- **AI excels** at repetitive tasks, scaffolding, test generation, and documentation
+- **AI fails** at architecture decisions, business edge cases, and fine-tuning optimization
+- **Structured workflow** (Explore → Plan → Code → Test) transforms a hit-or-miss tool into an effective partner
+- **Supervision remains essential**: every generation requires review and validation
+
+As I summarize in [the final case study](/en/claude-code-case-study-prelude/): *"Claude Code is not a developer replacement, but a **productivity multiplier**."*
+
+My project cost ($120 for 5000 lines of code over 20 days) illustrates the value proposition — but also the necessity of human expertise to guide, validate, and correct AI at every step.
+
 ## Conclusion: AI as a Tool, Not a Replacement
 
 Recent data paints a nuanced picture far from alarmist predictions:
@@ -236,11 +264,41 @@ Recent data paints a nuanced picture far from alarmist predictions:
 
 **What this implies:**
 - AI tools are useful but don't replace human expertise
-- Supervision remains essential for production-quality code
+- The **"human-in-the-loop"** paradigm remains essential for production-quality code
 - The profession is evolving toward more architecture and less "boilerplate code"
 - Developers mastering AI will have a competitive advantage
 
+The *human-in-the-loop* concept is not a temporary limitation while waiting for more advanced AI — it's a **structural necessity**. Even the most sophisticated AI systems require human oversight for critical decisions, contextual validation, and final accountability. Developers are becoming **orchestrators** who guide, correct, and validate the AI's work.
+
 As Tim Dettmers, researcher at Ai2, emphasizes, AGI remains a "Silicon Valley fantasy" — a chimera that contrasts with the pragmatic approach of prioritizing useful current applications. The narrative about imminent developer replacement stems more from marketing and trend-following than from rigorous technical analysis. Wisdom recommends adopting these technologies while maintaining critical thinking, continuing to develop fundamental skills, and not succumbing to panic fueled by misleading demos and financially motivated projections.
+
+---
+
+## Key Takeaways
+
+> **The 4 key figures from this article:**
+> - **-19%**: AI slows down experienced developers (METR study)
+> - **11%**: Share of jobs currently replaceable by AI (Dettmers)
+> - **+17.9%**: Projected developer employment growth 2023-2033 (BLS)
+> - **2018**: Year when GPUs reached maximum efficiency
+
+---
+
+## Year-End Review
+
+As 2025 draws to a close, the landscape of AI in software development is becoming clearer. Far from the apocalyptic prophecies of early in the year, we now have concrete data to assess the real impact of these technologies.
+
+2025 will have been the year of **demystification**: rigorous studies revealed the limitations of AI tools, the colossal financial losses of industry giants exposed the fragility of their business model, and developers on the ground learned to distinguish media hype from daily reality.
+
+For 2026, my advice remains the same: **learn to use these tools**, but never stop developing your fundamental skills. AI is an excellent assistant — not a replacement.
+
+**Happy New Year 2026 to all developers!** May this new year bring you exciting projects, quickly resolved bugs, and serenity in the face of the alarmist predictions that will undoubtedly continue to flourish.
+
+*What was your experience with AI in 2025? Share your thoughts in the comments or on social media.*
+
+---
+
+*Last updated: December 31, 2025*
 
 ---
 
