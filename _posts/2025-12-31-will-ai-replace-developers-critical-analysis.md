@@ -101,6 +101,12 @@ To justify massive investments and astronomical valuations, AI companies must se
 
 This dynamic echoes the analysis I proposed in my article on [Sam Altman's statements about the AI bubble](/en/sam-altman-ai-bubble-markets-analysis/), where OpenAI's CEO himself acknowledged the existence of a speculative bubble.
 
+### AGI as a "Silicon Valley Fantasy"
+
+[Tim Dettmers](https://intelligence-artificielle.developpez.com/actu/378435/), researcher at Ai2 (Allen Institute for AI) and recognized for his work on language model optimization and quantization (notably the QLoRA format widely used for efficient fine-tuning), provides an academic counterweight to Silicon Valley's optimistic predictions. He bluntly describes superintelligent AI as a "fantasy" and the pursuit of AGI as a "chimera."
+
+His central argument: true AGI would need to accomplish complex physical tasks, which requires economically viable advanced robots — a reality far from being achieved. This vision contrasts with China's pragmatic approach, which prioritizes useful current applications rather than racing toward a hypothetical artificial general intelligence.
+
 ## Technical Stagnation of Models
 
 ### No Architectural Revolution Since the Transformer
@@ -156,11 +162,26 @@ According to [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85
 
 I analyzed this energy issue in my article on [AI's ecological impact](/en/ai-ecological-impact-training-vs-inference-environmental-costs/).
 
+### The Physical Limits of Hardware
+
+Tim Dettmers provides technical insight into unavoidable hardware constraints. His assessment is stark: "We may have one or two years left for scaling before further improvements become physically impossible."
+
+The numbers are telling:
+
+| GPU Generation | Performance | Trade-off |
+|----------------|-------------|-----------|
+| Ampere → Hopper | ×3 | Power ×1.7 |
+| Hopper → Blackwell | ×2.5 | Die size ×2, power ×1.7 |
+
+According to Dettmers, GPUs reached their maximum efficiency around 2018. Since then, they've only added "one-off features that are quickly exhausted." Maintaining similar progress "requires an exponential increase in computation, energy, and infrastructure costs." Previously, exponential hardware growth compensated for these needs — that's no longer the case.
+
 ## The Real State of the Job Market
 
 ### Bureau of Labor Statistics Data
 
 Contrary to catastrophist narrative, the [U.S. Bureau of Labor Statistics](https://www.bls.gov/opub/ted/2025/ai-impacts-in-bls-employment-projections.htm) projects **17.9% growth** in software developer employment between 2023 and 2033, well above the 4% average for all occupations.
+
+These projections align with Tim Dettmers' estimate that **only 11% of jobs are currently replaceable by AI** — far from the apocalyptic predictions circulating on social media.
 
 ### Explosion of AI Positions
 
@@ -258,3 +279,5 @@ The narrative about imminent developer replacement stems more from marketing and
 18. [GPT-4](https://en.wikipedia.org/wiki/GPT-4) - Wikipedia
 
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
+
+20. [Superintelligent AI is a Silicon Valley Fantasy - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com

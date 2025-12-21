@@ -101,6 +101,12 @@ Pour justifier des investissements massifs et des valorisations astronomiques, l
 
 Cette dynamique rappelle l'analyse que j'avais proposée dans mon article sur [les déclarations de Sam Altman concernant la bulle IA](/fr/sam-altman-bulle-ia-marches-analyse/), où le PDG d'OpenAI lui-même reconnaissait l'existence d'une bulle spéculative.
 
+### L'AGI comme « Fantasme de la Silicon Valley »
+
+[Tim Dettmers](https://intelligence-artificielle.developpez.com/actu/378435/), chercheur chez Ai2 (Allen Institute for AI) et reconnu pour ses travaux sur l'optimisation des modèles de langage et la quantification (notamment le format QLoRA largement utilisé pour le fine-tuning efficace), apporte un contrepoids académique aux prédictions optimistes de la Silicon Valley. Il qualifie sans détour l'IA superintelligente de « fantasme » et la poursuite de l'AGI de « chimère ».
+
+Son argument central : l'AGI véritable devrait accomplir des tâches physiques complexes, ce qui nécessite des robots avancés économiquement viables — une réalité loin d'être atteinte. Cette vision contraste avec l'approche pragmatique chinoise, qui privilégie les applications utiles actuelles plutôt qu'une course vers une intelligence artificielle générale hypothétique.
+
 ## La Stagnation Technique des Modèles
 
 ### Pas de Révolution Architecturale Depuis le Transformer
@@ -156,11 +162,26 @@ Selon [Medium](https://medium.com/@adnanmasood/is-there-a-wall-34d02dfd85f3) et 
 
 J'avais analysé cette problématique énergétique dans mon article sur [l'impact écologique de l'IA](/fr/IA-impact-ecologique/).
 
+### Les Limites Physiques du Hardware
+
+Tim Dettmers apporte un éclairage technique sur les contraintes matérielles incontournables. Son constat est sans appel : « Il nous reste peut-être un ou deux ans pour la mise à l'échelle avant que de nouvelles améliorations ne deviennent physiquement impossibles. »
+
+Les chiffres sont éloquents :
+
+| Génération GPU | Performances | Contrepartie |
+|----------------|--------------|--------------|
+| Ampere → Hopper | ×3 | Puissance ×1.7 |
+| Hopper → Blackwell | ×2.5 | Surface puce ×2, puissance ×1.7 |
+
+Selon Dettmers, les GPU ont atteint leur rendement maximal vers 2018. Depuis, ce ne sont que des « fonctionnalités ponctuelles qui s'épuisent rapidement ». Maintenir un progrès similaire « nécessite une augmentation exponentielle des coûts en calcul, en énergie et en infrastructure ». Auparavant, la croissance exponentielle du matériel compensait ces besoins — ce n'est plus le cas.
+
 ## L'État Réel du Marché de l'Emploi
 
 ### Les Données du Bureau of Labor Statistics
 
 Contrairement au discours catastrophiste, le [Bureau of Labor Statistics américain](https://www.bls.gov/opub/ted/2025/ai-impacts-in-bls-employment-projections.htm) projette une **croissance de 17.9%** de l'emploi des développeurs logiciels entre 2023 et 2033, soit bien supérieure à la moyenne de 4% pour toutes les professions.
+
+Ces projections s'alignent avec l'estimation de Tim Dettmers selon laquelle **seulement 11% des emplois sont actuellement remplaçables par l'IA** — bien loin des prédictions apocalyptiques relayées sur les réseaux sociaux.
 
 ### Explosion des Postes IA
 
@@ -258,3 +279,5 @@ Le discours sur le remplacement imminent des développeurs relève davantage du 
 18. [GPT-4](https://en.wikipedia.org/wiki/GPT-4) - Wikipedia
 
 19. [What is chain of thought (CoT) prompting?](https://www.ibm.com/think/topics/chain-of-thoughts) - IBM
+
+20. [L'IA superintelligente est un fantasme de la Silicon Valley - Tim Dettmers (Ai2)](https://intelligence-artificielle.developpez.com/actu/378435/) - Developpez.com
