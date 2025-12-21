@@ -298,10 +298,6 @@ For 2026, my advice remains the same: **learn to use these tools**, but never st
 
 ---
 
-*Last updated: December 31, 2025*
-
----
-
 ## Sources
 
 1. [Melvynx - Will AI replace developers?](https://www.youtube.com/watch?v=4-QICRWv8jY) - YouTube

@@ -298,10 +298,6 @@ Pour 2026, mon conseil reste le même : **apprenez à utiliser ces outils**, mai
 
 ---
 
-*Dernière mise à jour : 31 décembre 2025*
-
----
-
 ## Sources
 
 1. [Melvynx - L'IA va-t-elle remplacer les développeurs ?](https://www.youtube.com/watch?v=4-QICRWv8jY) - YouTube
