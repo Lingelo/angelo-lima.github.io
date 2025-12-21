@@ -14,7 +14,7 @@ categories: fr
 
 La panique est palpable sur les réseaux sociaux. Chaque nouvelle démo d'un modèle d'IA générative déclenche une vague de prédictions catastrophistes : "C'est la fin des développeurs", "L'AGI arrive dans 2 ans", "Une équipe de 6 développeurs remplacée par un seul avec l'IA". Ces affirmations méritent une analyse rigoureuse, loin de l'hystérie collective.
 
-Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) sur le sujet.
+Cet article propose une déconstruction méthodique du discours dominant sur l'IA et le remplacement des développeurs, s'appuyant sur des études scientifiques récentes, des données économiques, les analyses de chercheurs comme Tim Dettmers (Ai2) sur les limites physiques du hardware, et une [analyse vidéo pertinente de Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) sur le sujet.
 
 ## Le Piège des Démos "Impressionnantes"
 
@@ -229,6 +229,8 @@ Les données récentes dessinent un portrait nuancé loin des prédictions alarm
 - Le Chain of Thought est un "mirage fragile" qui s'effondre hors des cas d'entraînement
 - Le marché de l'emploi développeur croît de 17.9% sur 10 ans
 - OpenAI perd des milliards, alimentant un discours AGI financièrement motivé
+- Les GPU ont atteint leur rendement maximal vers 2018 et les limites physiques du hardware se rapprochent
+- Seulement 11% des emplois sont actuellement remplaçables par l'IA
 
 **Ce que cela implique :**
 - Les outils d'IA sont utiles mais ne remplacent pas l'expertise humaine
@@ -236,7 +238,7 @@ Les données récentes dessinent un portrait nuancé loin des prédictions alarm
 - Le métier évolue vers plus d'architecture et moins de "code boilerplate"
 - Les développeurs maîtrisant l'IA auront un avantage compétitif
 
-Le discours sur le remplacement imminent des développeurs relève davantage du marketing et de l'effet de mode que d'une analyse technique rigoureuse. La sagesse recommande d'adopter ces technologies en gardant un esprit critique, de continuer à développer ses compétences fondamentales, et de ne pas céder à la panique alimentée par des démos trompeuses et des projections financièrement motivées.
+Comme le souligne Tim Dettmers, chercheur chez Ai2, l'AGI reste un « fantasme de la Silicon Valley » — une chimère qui contraste avec l'approche pragmatique privilégiant les applications utiles actuelles. Le discours sur le remplacement imminent des développeurs relève davantage du marketing et de l'effet de mode que d'une analyse technique rigoureuse. La sagesse recommande d'adopter ces technologies en gardant un esprit critique, de continuer à développer ses compétences fondamentales, et de ne pas céder à la panique alimentée par des démos trompeuses et des projections financièrement motivées.
 
 ---
 

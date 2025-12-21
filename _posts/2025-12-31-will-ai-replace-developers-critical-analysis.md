@@ -14,7 +14,7 @@ categories: en
 
 Panic is palpable on social media. Every new demo of a generative AI model triggers a wave of catastrophic predictions: "It's the end for developers", "AGI is coming in 2 years", "A team of 6 developers replaced by just one with AI". These claims deserve rigorous analysis, far from the collective hysteria.
 
-This article offers a methodical deconstruction of the dominant narrative about AI and developer replacement, drawing on recent scientific studies, economic data, and a [relevant video analysis by Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) on the subject.
+This article offers a methodical deconstruction of the dominant narrative about AI and developer replacement, drawing on recent scientific studies, economic data, analyses from researchers like Tim Dettmers (Ai2) on hardware physical limits, and a [relevant video analysis by Melvynx](https://www.youtube.com/watch?v=4-QICRWv8jY) on the subject.
 
 ## The Trap of "Impressive" Demos
 
@@ -229,6 +229,8 @@ Recent data paints a nuanced picture far from alarmist predictions:
 - Chain of Thought is a "brittle mirage" that collapses outside training cases
 - The developer job market is growing 17.9% over 10 years
 - OpenAI is losing billions, fueling a financially motivated AGI narrative
+- GPUs reached maximum efficiency around 2018 and hardware physical limits are approaching
+- Only 11% of jobs are currently replaceable by AI
 
 **What this implies:**
 - AI tools are useful but don't replace human expertise
@@ -236,7 +238,7 @@ Recent data paints a nuanced picture far from alarmist predictions:
 - The profession is evolving toward more architecture and less "boilerplate code"
 - Developers mastering AI will have a competitive advantage
 
-The narrative about imminent developer replacement stems more from marketing and trend-following than from rigorous technical analysis. Wisdom recommends adopting these technologies while maintaining critical thinking, continuing to develop fundamental skills, and not succumbing to panic fueled by misleading demos and financially motivated projections.
+As Tim Dettmers, researcher at Ai2, emphasizes, AGI remains a "Silicon Valley fantasy" — a chimera that contrasts with the pragmatic approach of prioritizing useful current applications. The narrative about imminent developer replacement stems more from marketing and trend-following than from rigorous technical analysis. Wisdom recommends adopting these technologies while maintaining critical thinking, continuing to develop fundamental skills, and not succumbing to panic fueled by misleading demos and financially motivated projections.
 
 ---
 
