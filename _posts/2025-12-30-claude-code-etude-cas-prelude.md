@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Étude de cas : Prelude of the Chambered Reborn"
-subtitle: "Jour 20 - Un projet complet avec Claude Code"
-description: "Étude de cas complète : comment j'ai utilisé Claude Code pour recréer le jeu Prelude of the Chambered de Notch, du premier commit au déploiement."
+subtitle: "Jour 20 - Comment j'ai converti un jeu Java en TypeScript en une soirée"
+description: "Retour d'expérience réel : comment j'ai utilisé Claude Code pour convertir le jeu Prelude of the Chambered de Notch (Java) en TypeScript en une seule soirée."
 thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
@@ -12,30 +12,33 @@ ref: claude-code-day-20
 categories: fr
 ---
 
-Pour conclure cette série, quoi de mieux qu'une étude de cas concrète ? Voici comment j'ai utilisé Claude Code pour recréer **Prelude of the Chambered**, le jeu de Notch (créateur de Minecraft), avec une stack moderne.
+Pour conclure cette série, quoi de mieux qu'un retour d'expérience concret ? Voici comment j'ai utilisé Claude Code pour convertir **Prelude of the Chambered**, le jeu de Notch (créateur de Minecraft), de Java vers TypeScript — **en une seule soirée**.
 
 > Pour découvrir le projet en détail, lisez mon article dédié : [Prelude of the Chambered Reborn : Renaissance d'un classique de Notch](/fr/prelude-of-the-chambered-reborn/)
 
 > Voir aussi mon autre projet de jeu rétro en TypeScript : [GBTS - Un émulateur GameBoy](/fr/gbts-typescript-gameboy/)
 
-## Le projet
+## Le défi
 
-### Contexte
+### Le projet original
 
-**Prelude of the Chambered** est un dungeon crawler créé par Notch en 48h lors d'une game jam en 2011. Le code original est en Java, avec un moteur de rendu raycasting fait maison.
+**Prelude of the Chambered** est un dungeon crawler créé par Notch en 48h lors de la Ludum Dare 21 en 2011. Le code original est en Java, avec un moteur de rendu **raycasting software** fait maison — environ 5 000 lignes de code Java réparties sur une quarantaine de fichiers.
 
-### Objectif
+### Mon objectif
 
-Recréer le jeu avec :
-- TypeScript
-- Three.js pour le rendu 3D
-- Architecture moderne (modules ES6)
-- Tests automatisés
-- Documentation complète
+Porter le jeu vers le web moderne avec :
+- TypeScript au lieu de Java
+- Canvas 2D API (rendu software, comme l'original)
+- Vite pour le build
+- Déployable sur n'importe quel navigateur
 
-## Phase 1 : Exploration (Jours 1-2)
+Le défi : conserver le moteur de raycasting original et son rendu pixel par pixel, sans passer par WebGL ou une bibliothèque 3D.
 
-### Analyser le code original
+**Sans Claude Code**, j'aurais estimé ce projet à plusieurs semaines de travail. Avec Claude Code, je me suis lancé un soir après le dîner en me disant "on verra bien jusqu'où on va".
+
+## Une soirée, un jeu complet
+
+### Exploration du code Java
 
 ```
 claude
@@ -44,282 +47,137 @@ claude
 > Identifie les composants principaux et leurs responsabilités.
 ```
 
-Claude a identifié :
+En quelques secondes, Claude a cartographié l'ensemble du projet :
 - **Art.java** : Gestion des textures et sprites
 - **Game.java** : Boucle de jeu principale
-- **Level.java** : Structure du niveau
-- **Entity.java** : Système d'entités (joueur, ennemis)
-- **Screen.java** : Rendu raycasting
+- **Level.java** : Chargement des niveaux via des images PNG
+- **Screen.java** : Moteur de raycasting software
+- **Entity.java** : Système d'entités
 
-### Planifier la migration
+### Conversion du moteur de rendu
 
-```
-> ultrathink. Propose une architecture TypeScript moderne
-> pour recréer ce jeu avec Three.js
-```
-
-Claude a proposé :
-```
-src/
-├── core/
-│   ├── Game.ts         # Boucle de jeu
-│   ├── Renderer.ts     # Three.js wrapper
-│   └── Input.ts        # Gestion des contrôles
-├── world/
-│   ├── Level.ts        # Structure du niveau
-│   ├── Tile.ts         # Types de tuiles
-│   └── Loader.ts       # Chargement des niveaux
-├── entities/
-│   ├── Entity.ts       # Classe de base
-│   ├── Player.ts       # Joueur
-│   └── enemies/        # Différents ennemis
-├── graphics/
-│   ├── TextureManager.ts
-│   └── SpriteSheet.ts
-└── utils/
-    └── Math.ts
-```
-
-## Phase 2 : Setup (Jour 3)
-
-### Initialiser le projet
+Le cœur du projet : adapter le moteur de raycasting Java vers TypeScript/Canvas 2D.
 
 ```
-> Initialise un projet TypeScript avec Vite, Three.js,
-> et configure ESLint + Prettier selon les conventions.
-```
-
-Claude a créé :
-- `package.json` avec les dépendances
-- `tsconfig.json` configuré pour le strict mode
-- `vite.config.ts` avec les plugins nécessaires
-- `.eslintrc.js` et `.prettierrc`
-
-### CLAUDE.md du projet
-
-```
-> Crée un CLAUDE.md qui documente l'architecture et les conventions.
-```
-
-```markdown
-# CLAUDE.md - Prelude Reborn
-
-## Architecture
-Ce projet est un remake de Prelude of the Chambered avec Three.js.
-
-## Conventions
-- TypeScript strict
-- Composants ES6 modules
-- Tests avec Vitest
-- Naming: PascalCase classes, camelCase fonctions
-
-## Fichiers clés
-- src/core/Game.ts : Point d'entrée principal
-- src/world/Level.ts : Gestion du niveau
-- src/entities/Player.ts : Logique joueur
-```
-
-## Phase 3 : Core Engine (Jours 4-7)
-
-### Système de rendu
-
-```
-> Implémente le Renderer.ts qui wraps Three.js
-> pour afficher une scène first-person style dungeon crawler.
-```
-
-Claude a créé :
-- Caméra perspective avec contrôles FPS
-- Système de grille pour les murs
-- Gestion des textures avec Three.js TextureLoader
-
-### Boucle de jeu
-
-```
-> Implémente la boucle de jeu avec:
-> - Update à 60 FPS
-> - Delta time pour la physique
-> - States (menu, playing, paused)
-```
-
-### Chargement des niveaux
-
-```
-> Analyse @java-src/Level.java et @java-src/Art.java
-> pour comprendre le format des niveaux.
-> Puis implémente le Level.ts compatible.
+> Analyse @java-src/Screen.java et @java-src/Bitmap.java
+> Implémente l'équivalent en TypeScript avec Canvas 2D API.
+> Conserve le rendu software pixel par pixel.
 ```
 
 Claude a :
-1. Analysé le format bitmap des niveaux originaux
-2. Créé un parser pour les fichiers PNG
-3. Implémenté la génération de la géométrie 3D
+1. Compris le système de rendu par bitmap de Notch
+2. Adapté les calculs de raycasting pour TypeScript
+3. Créé une classe Bitmap compatible avec le Canvas 2D
+4. Préservé le rendu software sans GPU
 
-## Phase 4 : Gameplay (Jours 8-12)
+### Le système de niveaux bitmap
 
-### Système d'entités
-
-```
-> Implémente le système d'entités inspiré de @java-src/Entity.java
-> avec:
-> - Entity base class
-> - Collision detection
-> - Update/Render cycle
-```
-
-### Joueur et contrôles
+L'architecture géniale de Notch : chaque niveau est une image PNG où chaque couleur de pixel définit un élément du jeu.
 
 ```
-> Implémente le Player.ts avec:
-> - Mouvement WASD
-> - Rotation souris
-> - Interaction E
-> - Santé et dégâts
+> Analyse comment Level.java charge les niveaux depuis des images.
+> Implémente la même logique en TypeScript.
 ```
 
-### Ennemis
+Claude a parfaitement reproduit le système :
+- Blanc = mur
+- Bleu = eau
+- Magenta = échelle
+- Rouge = ennemis (avec variations selon la nuance)
+- Canal alpha = IDs pour lier switches et portes
+
+### Les entités et le gameplay
 
 ```
 > Analyse les ennemis dans @java-src/entities/
-> et implémente-les progressivement.
-> Commence par le plus simple.
+> et implémente-les en TypeScript avec le même comportement.
 ```
 
-Claude a procédé méthodiquement :
-1. **Bat** (chauve-souris) : Mouvement aléatoire
-2. **Ghost** : Poursuite du joueur
-3. **Ogre** : Patrouille + attaque
-4. **Boss** : Combinaison de patterns
+Claude a converti méthodiquement chaque ennemi :
+- **Bat** : Mouvement aléatoire
+- **Ogre** : Patrouille + attaque
+- **Ghost** : Traverse les murs
+- **Eye** : Attaque à distance
+- Plus les variantes boss
 
-### Combat
+### Intégration et debug
 
-```
-> Implémente le système de combat:
-> - Attaque joueur (clic gauche)
-> - Dégâts aux ennemis
-> - Dégâts au joueur
-> - Effets visuels (flash rouge)
-```
+Quelques ajustements ont été nécessaires :
+- Fine-tuning des collisions
+- Adaptation de `Thread.sleep()` vers `requestAnimationFrame`
+- Gestion des inputs (Java AWT → événements DOM)
 
-## Phase 5 : Polish (Jours 13-16)
-
-### Audio
+### Déploiement
 
 ```
-> Ajoute le système audio avec Web Audio API:
-> - Musique de fond
-> - Sons d'effets
-> - Contrôle du volume
+> Configure Vite pour builder le projet et GitHub Actions pour déployer.
 ```
 
-### UI
-
-```
-> Implémente l'interface utilisateur:
-> - Barre de vie
-> - Inventaire
-> - Messages à l'écran
-> - Menu pause
-```
-
-### Optimisation
-
-```
-> Profite le rendu et optimise:
-> - Frustum culling
-> - LOD pour les entités distantes
-> - Texture atlasing
-```
-
-## Phase 6 : Tests et déploiement (Jours 17-20)
-
-### Tests automatisés
-
-```
-> Génère des tests Vitest pour:
-> - Level loading
-> - Collision detection
-> - Entity behavior
-> - Game state management
-```
-
-Claude a généré des tests couvrant :
-- Chargement correct des niveaux
-- Détection de collision avec les murs
-- Comportement des ennemis
-- Transitions d'états du jeu
-
-### CI/CD
-
-```
-> Configure GitHub Actions pour:
-> - Lint + Type check
-> - Tests
-> - Build
-> - Deploy sur GitHub Pages
-```
-
-### Documentation
-
-```
-> Génère la documentation du projet:
-> - README complet
-> - JSDoc pour les classes principales
-> - Guide de contribution
-```
+Et voilà. Projet déployé, jouable dans le navigateur.
 
 ## Résultats
 
-### Métriques du projet
+### Ce qui a été accompli en une soirée
 
-| Métrique | Valeur |
-|----------|--------|
-| Lignes de code | ~5,000 |
-| Fichiers TypeScript | 45 |
-| Couverture tests | 78% |
-| Temps total | ~20 jours |
-| Coût Claude Code | ~$120 |
+| Élément | Résultat |
+|---------|----------|
+| Lignes de code converties | ~5 000 |
+| Fichiers TypeScript créés | ~40 |
+| Temps total | Une soirée |
+| Jeu fonctionnel | Oui |
 
-### Ce que Claude a fait automatiquement
+### La stack finale
 
-- ✅ Analyse du code Java original
-- ✅ Proposition d'architecture
-- ✅ Scaffolding du projet
-- ✅ Implémentation des systèmes core
-- ✅ Conversion des algorithmes Java → TypeScript
-- ✅ Génération des tests
-- ✅ Configuration CI/CD
-- ✅ Documentation
+- **TypeScript** : Typage strict
+- **Canvas 2D API** : Rendu software, pas de WebGL
+- **Vite** : Build ultra-rapide avec HMR
+- **GitHub Actions** : Déploiement automatique
 
-### Ce que j'ai fait manuellement
+### Ce que Claude a fait
 
-- 🎨 Choix artistiques (couleurs, textures)
-- 🔧 Fine-tuning du gameplay (vitesse, dégâts)
-- 🐛 Debug de certains edge cases
-- ✍️ Revue de code et validation
+- Analyse complète du code Java original
+- Conversion du moteur de raycasting
+- Adaptation du système de niveaux bitmap
+- Conversion de toutes les entités
+- Configuration du build et déploiement
+- Debug des problèmes rencontrés
 
-## Leçons apprises
+### Ce que j'ai fait
 
-### Ce qui a bien fonctionné
+- Direction du projet (quoi faire, dans quel ordre)
+- Validation des choix de Claude
+- Fine-tuning du gameplay
+- Identification des bugs à corriger
+- Revue finale du code
 
-1. **CLAUDE.md détaillé** : Plus le contexte est riche, meilleures sont les réponses
-2. **Workflow EPCT** : Explore → Plan → Code → Test à chaque feature
-3. **Références @ précises** : `@java-src/Entity.java` plutôt que "le fichier Entity"
-4. **ultrathink pour la conception** : Architecture solide dès le départ
+## Pourquoi ça a marché
 
-### Ce qui a nécessité des ajustements
+### 1. Code source complet disponible
 
-1. **Three.js spécifique** : Claude connaît Three.js mais pas toutes les subtilités
-2. **Performances** : Les premières implémentations n'étaient pas optimisées
-3. **Edge cases** : Les cas limites nécessitaient des prompts spécifiques
+J'avais le code Java original. Claude pouvait analyser l'existant plutôt que deviner.
 
-### Conseils pour vos projets
+### 2. Références précises
 
-1. **Commencez par le contexte** : Un bon CLAUDE.md fait toute la différence
-2. **Itérez en petites étapes** : Feature par feature, pas tout d'un coup
-3. **Utilisez ultrathink** : Pour la conception et les problèmes complexes
-4. **Testez souvent** : Claude peut générer les tests, utilisez-les
-5. **Commitez régulièrement** : Les checkpoints Git sont votre filet de sécurité
+`@java-src/Screen.java` plutôt que "le fichier de rendu" — Claude savait exactement quoi analyser.
+
+### 3. Architecture fidèle
+
+Plutôt que réinventer avec une lib 3D moderne, on a conservé l'approche originale : raycasting software sur Canvas 2D. Moins de décisions à prendre = conversion plus rapide.
+
+### 4. Itérations rapides
+
+Composant par composant, chaque étape validée avant la suivante.
+
+## Ce que ça change
+
+Sans Claude Code, ce projet aurait pris **plusieurs semaines** :
+- Comprendre le moteur de raycasting : 2-3 jours
+- Adapter les calculs Java → TypeScript : 1 semaine
+- Débugger les différences de comportement : plusieurs jours
+
+Avec Claude Code : **une soirée**.
+
+Ce n'est pas que Claude code plus vite — c'est qu'il élimine le temps de "compréhension" et de "traduction mentale" entre les langages.
 
 ## Conclusion de la série
 
@@ -346,10 +204,10 @@ En 20 jours, nous avons couvert :
 19. **Comparatif des outils**
 20. **Cette étude de cas**
 
-Claude Code est un outil puissant qui, bien utilisé, transforme la façon dont nous développons. Ce n'est pas un remplacement du développeur, mais un **multiplicateur de productivité**.
+Claude Code est un outil puissant qui, bien utilisé, transforme la façon dont nous développons. Ce n'est pas un remplacement du développeur — c'est un **multiplicateur de productivité** qui peut comprimer des semaines de travail en quelques heures.
 
 Maintenant, c'est à vous de jouer !
 
 ---
 
-*Merci d'avoir suivi cette série "Maîtriser Claude Code en 20 jours". [Découvrez le projet Prelude Reborn](/fr/prelude-of-the-chambered-reborn/)*
+*Merci d'avoir suivi cette série "Maîtriser Claude Code en 20 jours". [Découvrez le projet Prelude Reborn](/fr/prelude-of-the-chambered-reborn/) — [Jouer maintenant](https://lingelo.github.io/prelude-of-the-chambered-reborn/)*

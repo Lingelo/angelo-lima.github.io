@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Case Study: Prelude of the Chambered Reborn"
-subtitle: "Day 20 - A complete project with Claude Code"
-description: "Complete case study: how I used Claude Code to recreate Notch's game Prelude of the Chambered, from first commit to deployment."
+subtitle: "Day 20 - How I converted a Java game to TypeScript in one evening"
+description: "Real experience report: how I used Claude Code to convert Notch's game Prelude of the Chambered (Java) to TypeScript in a single evening."
 thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
@@ -12,30 +12,33 @@ ref: claude-code-day-20
 categories: en
 ---
 
-To conclude this series, what better than a concrete case study? Here's how I used Claude Code to recreate **Prelude of the Chambered**, Notch's game (Minecraft creator), with a modern stack.
+To conclude this series, what better than a concrete experience report? Here's how I used Claude Code to convert **Prelude of the Chambered**, Notch's game (Minecraft creator), from Java to TypeScript — **in a single evening**.
 
 > To discover the project in detail, read my dedicated article: [Prelude of the Chambered Reborn: Renaissance of a Notch classic](/en/prelude-of-the-chambered-reborn-typescript-web-port/)
 
 > Also see my other retro game project in TypeScript: [GBTS - A GameBoy Emulator](/en/gbts-typescript-gameboy-development/)
 
-## The Project
+## The Challenge
 
-### Context
+### The Original Project
 
-**Prelude of the Chambered** is a dungeon crawler created by Notch in 48h during a game jam in 2011. The original code is in Java, with a homemade raycasting rendering engine.
+**Prelude of the Chambered** is a dungeon crawler created by Notch in 48h during Ludum Dare 21 in 2011. The original code is in Java, with a homemade **software raycasting** rendering engine — about 5,000 lines of Java code spread across forty files.
 
-### Objective
+### My Goal
 
-Recreate the game with:
-- TypeScript
-- Three.js for 3D rendering
-- Modern architecture (ES6 modules)
-- Automated tests
-- Complete documentation
+Port the game to the modern web with:
+- TypeScript instead of Java
+- Canvas 2D API (software rendering, like the original)
+- Vite for building
+- Deployable on any browser
 
-## Phase 1: Exploration (Days 1-2)
+The challenge: preserve the original raycasting engine and its pixel-by-pixel rendering, without using WebGL or a 3D library.
 
-### Analyzing the original code
+**Without Claude Code**, I would have estimated this project at several weeks of work. With Claude Code, I started one evening after dinner thinking "let's see how far we get".
+
+## One Evening, One Complete Game
+
+### Exploring the Java Code
 
 ```
 claude
@@ -44,282 +47,137 @@ claude
 > Identify the main components and their responsibilities.
 ```
 
-Claude identified:
+In seconds, Claude mapped out the entire project:
 - **Art.java**: Texture and sprite management
 - **Game.java**: Main game loop
-- **Level.java**: Level structure
-- **Entity.java**: Entity system (player, enemies)
-- **Screen.java**: Raycasting rendering
+- **Level.java**: Level loading via PNG images
+- **Screen.java**: Software raycasting engine
+- **Entity.java**: Entity system
 
-### Planning the migration
+### Converting the Rendering Engine
 
-```
-> ultrathink. Propose a modern TypeScript architecture
-> to recreate this game with Three.js
-```
-
-Claude proposed:
-```
-src/
-├── core/
-│   ├── Game.ts         # Game loop
-│   ├── Renderer.ts     # Three.js wrapper
-│   └── Input.ts        # Controls management
-├── world/
-│   ├── Level.ts        # Level structure
-│   ├── Tile.ts         # Tile types
-│   └── Loader.ts       # Level loading
-├── entities/
-│   ├── Entity.ts       # Base class
-│   ├── Player.ts       # Player
-│   └── enemies/        # Different enemies
-├── graphics/
-│   ├── TextureManager.ts
-│   └── SpriteSheet.ts
-└── utils/
-    └── Math.ts
-```
-
-## Phase 2: Setup (Day 3)
-
-### Initialize the project
+The heart of the project: adapting the Java raycasting engine to TypeScript/Canvas 2D.
 
 ```
-> Initialize a TypeScript project with Vite, Three.js,
-> and configure ESLint + Prettier according to conventions.
-```
-
-Claude created:
-- `package.json` with dependencies
-- `tsconfig.json` configured for strict mode
-- `vite.config.ts` with necessary plugins
-- `.eslintrc.js` and `.prettierrc`
-
-### Project CLAUDE.md
-
-```
-> Create a CLAUDE.md that documents the architecture and conventions.
-```
-
-```markdown
-# CLAUDE.md - Prelude Reborn
-
-## Architecture
-This project is a remake of Prelude of the Chambered with Three.js.
-
-## Conventions
-- Strict TypeScript
-- ES6 modules components
-- Tests with Vitest
-- Naming: PascalCase classes, camelCase functions
-
-## Key files
-- src/core/Game.ts: Main entry point
-- src/world/Level.ts: Level management
-- src/entities/Player.ts: Player logic
-```
-
-## Phase 3: Core Engine (Days 4-7)
-
-### Rendering system
-
-```
-> Implement the Renderer.ts that wraps Three.js
-> to display a first-person dungeon crawler style scene.
-```
-
-Claude created:
-- Perspective camera with FPS controls
-- Grid system for walls
-- Texture management with Three.js TextureLoader
-
-### Game loop
-
-```
-> Implement the game loop with:
-> - Update at 60 FPS
-> - Delta time for physics
-> - States (menu, playing, paused)
-```
-
-### Level loading
-
-```
-> Analyze @java-src/Level.java and @java-src/Art.java
-> to understand the level format.
-> Then implement compatible Level.ts.
+> Analyze @java-src/Screen.java and @java-src/Bitmap.java
+> Implement the equivalent in TypeScript with Canvas 2D API.
+> Preserve the pixel-by-pixel software rendering.
 ```
 
 Claude:
-1. Analyzed the original bitmap level format
-2. Created a parser for PNG files
-3. Implemented 3D geometry generation
+1. Understood Notch's bitmap rendering system
+2. Adapted raycasting calculations for TypeScript
+3. Created a Bitmap class compatible with Canvas 2D
+4. Preserved software rendering without GPU
 
-## Phase 4: Gameplay (Days 8-12)
+### The Bitmap Level System
 
-### Entity system
-
-```
-> Implement the entity system inspired by @java-src/Entity.java
-> with:
-> - Entity base class
-> - Collision detection
-> - Update/Render cycle
-```
-
-### Player and controls
+Notch's brilliant architecture: each level is a PNG image where every pixel color defines a game element.
 
 ```
-> Implement Player.ts with:
-> - WASD movement
-> - Mouse rotation
-> - E interaction
-> - Health and damage
+> Analyze how Level.java loads levels from images.
+> Implement the same logic in TypeScript.
 ```
 
-### Enemies
+Claude perfectly reproduced the system:
+- White = wall
+- Blue = water
+- Magenta = ladder
+- Red = enemies (with variations based on shade)
+- Alpha channel = IDs to link switches and doors
+
+### Entities and Gameplay
 
 ```
 > Analyze enemies in @java-src/entities/
-> and implement them progressively.
-> Start with the simplest one.
+> and implement them in TypeScript with the same behavior.
 ```
 
-Claude proceeded methodically:
-1. **Bat**: Random movement
-2. **Ghost**: Player pursuit
-3. **Ogre**: Patrol + attack
-4. **Boss**: Pattern combination
+Claude methodically converted each enemy:
+- **Bat**: Random movement
+- **Ogre**: Patrol + attack
+- **Ghost**: Goes through walls
+- **Eye**: Ranged attack
+- Plus boss variants
 
-### Combat
+### Integration and Debug
 
-```
-> Implement the combat system:
-> - Player attack (left click)
-> - Damage to enemies
-> - Damage to player
-> - Visual effects (red flash)
-```
+Some adjustments were necessary:
+- Collision fine-tuning
+- Adapting `Thread.sleep()` to `requestAnimationFrame`
+- Input handling (Java AWT → DOM events)
 
-## Phase 5: Polish (Days 13-16)
-
-### Audio
+### Deployment
 
 ```
-> Add the audio system with Web Audio API:
-> - Background music
-> - Sound effects
-> - Volume control
+> Configure Vite to build the project and GitHub Actions to deploy.
 ```
 
-### UI
-
-```
-> Implement the user interface:
-> - Health bar
-> - Inventory
-> - On-screen messages
-> - Pause menu
-```
-
-### Optimization
-
-```
-> Profile the rendering and optimize:
-> - Frustum culling
-> - LOD for distant entities
-> - Texture atlasing
-```
-
-## Phase 6: Testing and deployment (Days 17-20)
-
-### Automated tests
-
-```
-> Generate Vitest tests for:
-> - Level loading
-> - Collision detection
-> - Entity behavior
-> - Game state management
-```
-
-Claude generated tests covering:
-- Correct level loading
-- Wall collision detection
-- Enemy behavior
-- Game state transitions
-
-### CI/CD
-
-```
-> Configure GitHub Actions for:
-> - Lint + Type check
-> - Tests
-> - Build
-> - Deploy to GitHub Pages
-```
-
-### Documentation
-
-```
-> Generate project documentation:
-> - Complete README
-> - JSDoc for main classes
-> - Contribution guide
-```
+And there you go. Project deployed, playable in the browser.
 
 ## Results
 
-### Project metrics
+### What Was Accomplished in One Evening
 
-| Metric | Value |
-|--------|-------|
-| Lines of code | ~5,000 |
-| TypeScript files | 45 |
-| Test coverage | 78% |
-| Total time | ~20 days |
-| Claude Code cost | ~$120 |
+| Element | Result |
+|---------|--------|
+| Lines of code converted | ~5,000 |
+| TypeScript files created | ~40 |
+| Total time | One evening |
+| Working game | Yes |
 
-### What Claude did automatically
+### The Final Stack
 
-- ✅ Analysis of original Java code
-- ✅ Architecture proposal
-- ✅ Project scaffolding
-- ✅ Core systems implementation
-- ✅ Java → TypeScript algorithm conversion
-- ✅ Test generation
-- ✅ CI/CD configuration
-- ✅ Documentation
+- **TypeScript**: Strict typing
+- **Canvas 2D API**: Software rendering, no WebGL
+- **Vite**: Ultra-fast build with HMR
+- **GitHub Actions**: Automatic deployment
 
-### What I did manually
+### What Claude Did
 
-- 🎨 Artistic choices (colors, textures)
-- 🔧 Gameplay fine-tuning (speed, damage)
-- 🐛 Debugging certain edge cases
-- ✍️ Code review and validation
+- Complete analysis of original Java code
+- Raycasting engine conversion
+- Bitmap level system adaptation
+- Conversion of all entities
+- Build and deployment configuration
+- Debugging encountered problems
 
-## Lessons Learned
+### What I Did
 
-### What worked well
+- Project direction (what to do, in what order)
+- Validating Claude's choices
+- Gameplay fine-tuning
+- Identifying bugs to fix
+- Final code review
 
-1. **Detailed CLAUDE.md**: The richer the context, the better the responses
-2. **EPCT Workflow**: Explore → Plan → Code → Test for each feature
-3. **Precise @ references**: `@java-src/Entity.java` rather than "the Entity file"
-4. **ultrathink for design**: Solid architecture from the start
+## Why It Worked
 
-### What needed adjustments
+### 1. Complete Source Code Available
 
-1. **Three.js specific**: Claude knows Three.js but not all subtleties
-2. **Performance**: First implementations weren't optimized
-3. **Edge cases**: Edge cases required specific prompts
+I had the original Java code. Claude could analyze the existing code rather than guess.
 
-### Tips for your projects
+### 2. Precise References
 
-1. **Start with context**: A good CLAUDE.md makes all the difference
-2. **Iterate in small steps**: Feature by feature, not all at once
-3. **Use ultrathink**: For design and complex problems
-4. **Test often**: Claude can generate tests, use them
-5. **Commit regularly**: Git checkpoints are your safety net
+`@java-src/Screen.java` rather than "the rendering file" — Claude knew exactly what to analyze.
+
+### 3. Faithful Architecture
+
+Rather than reinventing with a modern 3D lib, we preserved the original approach: software raycasting on Canvas 2D. Fewer decisions to make = faster conversion.
+
+### 4. Fast Iterations
+
+Component by component, each step validated before the next.
+
+## What This Changes
+
+Without Claude Code, this project would have taken **several weeks**:
+- Understanding the raycasting engine: 2-3 days
+- Adapting Java → TypeScript calculations: 1 week
+- Debugging behavior differences: several days
+
+With Claude Code: **one evening**.
+
+It's not that Claude codes faster — it's that it eliminates the "understanding" and "mental translation" time between languages.
 
 ## Series Conclusion
 
@@ -346,10 +204,10 @@ In 20 days, we covered:
 19. **Tool comparison**
 20. **This case study**
 
-Claude Code is a powerful tool that, when used well, transforms how we develop. It's not a developer replacement, but a **productivity multiplier**.
+Claude Code is a powerful tool that, when used well, transforms how we develop. It's not a developer replacement — it's a **productivity multiplier** that can compress weeks of work into a few hours.
 
 Now it's your turn!
 
 ---
 
-*Thank you for following this "Master Claude Code in 20 Days" series. [Discover the Prelude Reborn project](/en/prelude-of-the-chambered-reborn/)*
+*Thank you for following this "Master Claude Code in 20 Days" series. [Discover the Prelude Reborn project](/en/prelude-of-the-chambered-reborn-typescript-web-port/) — [Play now](https://lingelo.github.io/prelude-of-the-chambered-reborn/)*
