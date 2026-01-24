@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Claude Code + Ollama : Utiliser des LLMs Locaux"
-subtitle: "Faites tourner Claude Code sur vos propres modèles open-source"
-description: "Guide complet pour connecter Claude Code à Ollama et utiliser des modèles open-source locaux comme qwen3-coder, glm-4.7 ou gpt-oss. Configuration, prérequis et avantages."
+title: "Ollama supporte maintenant Claude Code"
+subtitle: "Utilisez Claude Code avec des modèles locaux grâce à la nouvelle API Anthropic d'Ollama"
+description: "Ollama v0.14 ajoute le support de l'API Anthropic Messages. Découvrez comment configurer Claude Code pour utiliser des LLMs locaux comme qwen3-coder ou gpt-oss, sans dépendre du cloud."
 thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Développement]
