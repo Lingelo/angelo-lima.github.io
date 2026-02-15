@@ -146,22 +146,18 @@ Malgré les critiques sur la mémoire, reste le meilleur choix pour desktop cros
 | RAM | 16 Go |
 | Stockage | 10 Go |
 
-### Téléchargement
+### Téléchargement du DMG
 
-```bash
-# Option 1 : DMG
-# → github.com/Lingelo/Sourdine/releases
+**[Télécharger Sourdine v0.1.1-beta](https://github.com/Lingelo/Sourdine/releases/download/v0.1.1-beta/Sourdine.dmg)**
 
-# Option 2 : Build depuis sources
-git clone https://github.com/Lingelo/Sourdine.git
-cd Sourdine
-npm install
-npm run download-model       # STT (~640 Mo)
-npm run download-llm-model   # LLM (~4.4 Go)
-npm run dev
-```
+1. Ouvrir le DMG et glisser Sourdine dans Applications
+2. Exécuter cette commande (app non signée) :
+   ```bash
+   xattr -cr /Applications/Sourdine.app
+   ```
+3. Lancer Sourdine — L'assistant téléchargera les modèles IA (~5 Go)
 
-> **Note** : L'app n'est pas signée. Exécutez `xattr -cr /Applications/Sourdine.app` après installation.
+> **Beta** : Cette version est en développement actif. Vos retours sont les bienvenus via [GitHub Issues](https://github.com/Lingelo/Sourdine/issues).
 
 ## Roadmap
 
