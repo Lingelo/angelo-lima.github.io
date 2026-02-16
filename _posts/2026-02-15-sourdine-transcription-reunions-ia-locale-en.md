@@ -71,6 +71,8 @@ Mistral 7B analyzes the transcription to extract:
 
 You can also ask questions: *"What did Pierre say about the budget?"*
 
+All meetings are indexed via **SQLite FTS5** (full-text search) and can be exported as **Markdown** or **plain text**.
+
 ## Technical Architecture
 
 ```
@@ -139,16 +141,16 @@ Despite criticism about memory usage, still the best choice for cross-platform d
 
 ### Requirements
 
-| Component | Minimum |
-|-----------|---------|
-| macOS | 14.2 (Sonoma) |
-| Processor | Apple Silicon (M1+) |
-| RAM | 16 GB |
-| Storage | 10 GB |
+| Component | Minimum | Recommended |
+|-----------|---------|-------------|
+| macOS | 14.2 (Sonoma) | 15+ (Sequoia) |
+| Processor | Apple Silicon (M1) | M2/M3/M4 |
+| RAM | 16 GB | 32 GB |
+| Storage | 10 GB | 20 GB |
 
 ### Download the DMG
 
-**[Download Sourdine v0.1.1-beta](https://github.com/Lingelo/Sourdine/releases/download/v0.1.1-beta/Sourdine.dmg)**
+**[Download Sourdine v0.2.1-beta](https://github.com/Lingelo/Sourdine/releases/download/v0.2.1-beta/Sourdine.dmg)**
 
 1. Open the DMG and drag Sourdine to Applications
 2. Run this command (app is not signed):
@@ -156,17 +158,9 @@ Despite criticism about memory usage, still the best choice for cross-platform d
    xattr -cr /Applications/Sourdine.app
    ```
 3. Launch Sourdine — The wizard will download AI models (~5 GB)
+4. Grant **Microphone** and **Screen Recording** permissions on first launch
 
 > **Beta**: This version is under active development. Feedback is welcome via [GitHub Issues](https://github.com/Lingelo/Sourdine/issues).
-
-## Roadmap
-
-| Feature | Status |
-|---------|--------|
-| Speaker diarization | Planned |
-| Multi-language support | Planned |
-| Calendar integration | Planned |
-| Cloud sync (E2E encrypted) | Under consideration |
 
 ## Conclusion
 

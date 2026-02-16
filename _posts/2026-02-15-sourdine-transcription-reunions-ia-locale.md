@@ -71,6 +71,8 @@ Mistral 7B analyse la transcription pour extraire :
 
 Vous pouvez aussi poser des questions : *"Qu'est-ce que Pierre a dit à propos du budget ?"*
 
+Toutes les réunions sont indexées via **SQLite FTS5** (recherche full-text) et exportables en **Markdown** ou **texte brut**.
+
 ## Architecture Technique
 
 ```
@@ -139,16 +141,16 @@ Malgré les critiques sur la mémoire, reste le meilleur choix pour desktop cros
 
 ### Prérequis
 
-| Composant | Minimum |
-|-----------|---------|
-| macOS | 14.2 (Sonoma) |
-| Processeur | Apple Silicon (M1+) |
-| RAM | 16 Go |
-| Stockage | 10 Go |
+| Composant | Minimum | Recommandé |
+|-----------|---------|------------|
+| macOS | 14.2 (Sonoma) | 15+ (Sequoia) |
+| Processeur | Apple Silicon (M1) | M2/M3/M4 |
+| RAM | 16 Go | 32 Go |
+| Stockage | 10 Go | 20 Go |
 
 ### Téléchargement du DMG
 
-**[Télécharger Sourdine v0.1.1-beta](https://github.com/Lingelo/Sourdine/releases/download/v0.1.1-beta/Sourdine.dmg)**
+**[Télécharger Sourdine v0.2.1-beta](https://github.com/Lingelo/Sourdine/releases/download/v0.2.1-beta/Sourdine.dmg)**
 
 1. Ouvrir le DMG et glisser Sourdine dans Applications
 2. Exécuter cette commande (app non signée) :
@@ -156,17 +158,9 @@ Malgré les critiques sur la mémoire, reste le meilleur choix pour desktop cros
    xattr -cr /Applications/Sourdine.app
    ```
 3. Lancer Sourdine — L'assistant téléchargera les modèles IA (~5 Go)
+4. Accorder les permissions **Microphone** et **Enregistrement d'écran** au premier lancement
 
 > **Beta** : Cette version est en développement actif. Vos retours sont les bienvenus via [GitHub Issues](https://github.com/Lingelo/Sourdine/issues).
-
-## Roadmap
-
-| Fonctionnalité | Statut |
-|----------------|--------|
-| Speaker diarization | Prévu |
-| Support multi-langue | Prévu |
-| Intégration calendrier | Prévu |
-| Sync cloud (chiffré E2E) | À étudier |
 
 ## Conclusion
 
