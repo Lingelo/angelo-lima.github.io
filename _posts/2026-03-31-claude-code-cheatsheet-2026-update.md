@@ -86,18 +86,6 @@ Skills gained `context: fork`, `paths:`, and `effort:` options. Subagents gained
 
 One of the most useful sections: a complete guide showing how to create **every type of extension** — slash commands, skills, subagents, rules, hooks, and MCP servers — each with a full frontmatter example and a decision guide for "where should this go?"
 
-## How I Built This
-
-Single HTML file + standalone dark CSS, exported to PNG via Playwright:
-
-```bash
-git clone https://github.com/angelolima/claude-code-cheatsheet
-npm install
-npm run build:reddit    # builds both EN and FR
-```
-
-The build script uses `page.screenshot({ fullPage: true })` with a 1400px viewport at 2x DPR.
-
 ---
 
-*This cheatsheet is part of a larger project that also produces a [Complete Guide PDF](https://github.com/angelolima/claude-code-cheatsheet) covering all 16 Claude Code features in depth.*
+If you spot an error or a missing feature, feel free to reach out — I'll keep this cheatsheet updated as Claude Code evolves.

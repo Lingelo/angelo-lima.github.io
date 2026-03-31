@@ -86,18 +86,6 @@ Les Skills ont gagné les options `context: fork`, `paths:`, et `effort:`. Les S
 
 Une des sections les plus utiles : un guide complet montrant comment créer **chaque type d'extension** — commandes slash, skills, sous-agents, rules, hooks et serveurs MCP — chacun avec un exemple de frontmatter complet et un guide de décision "où placer quoi ?".
 
-## Comment j'ai construit ça
-
-Fichier HTML unique + CSS standalone dark theme, exporté en PNG via Playwright :
-
-```bash
-git clone https://github.com/angelolima/claude-code-cheatsheet
-npm install
-npm run build:reddit    # build les versions EN et FR
-```
-
-Le script utilise `page.screenshot({ fullPage: true })` avec un viewport de 1400px à 2x DPR.
-
 ---
 
-*Cette cheatsheet fait partie d'un projet plus large qui produit aussi un [Guide Complet en PDF](https://github.com/angelolima/claude-code-cheatsheet) couvrant les 16 features de Claude Code en profondeur.*
+Si vous repérez une erreur ou une feature manquante, n'hésitez pas à me contacter — je maintiendrai cette cheatsheet à jour au fil des évolutions de Claude Code.
