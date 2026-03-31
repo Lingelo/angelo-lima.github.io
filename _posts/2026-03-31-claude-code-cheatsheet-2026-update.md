@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Claude Code Cheat Sheet 2026: What Changed Since the Reddit Original"
-subtitle: "A visual diff of every feature added since the popular December 2025 cheatsheet"
-description: "Updated Claude Code cheatsheet for March 2026 with all new features: MCP Computer Use, /schedule, /voice, hook handlers, dontAsk mode, skill frontmatter, and more. Free downloadable PNG."
+title: "Claude Code Cheat Sheet 2026: Every Command, Shortcut & Feature in One Place"
+subtitle: "An exhaustive, up-to-date reference for Claude Code v2.x — March 2026"
+description: "The most complete Claude Code cheatsheet for March 2026: 55+ slash commands, 55+ CLI flags, 25 hook events, 6 permission modes, MCP Computer Use, and a full extension creation guide. Available in EN and FR."
 thumbnail-img: "/assets/img/claude-code.webp"
 cover-img: "/assets/img/claude-code.webp"
 tags: [IA, Development, Claude Code]
@@ -12,143 +12,92 @@ ref: claude-code-cheatsheet-2026
 categories: en
 ---
 
-In December 2025, a Claude Code cheat sheet went viral on [r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/). It was well-structured, visually clean, and covered the essentials. But Claude Code has evolved significantly since then. After a careful visual comparison, I found the original covers roughly **65-70% of current features**.
+Claude Code evolves fast. Most cheatsheets available online are already missing features that shipped in early 2026. I built an **exhaustive, visual reference** covering everything in Claude Code v2.x as of March 2026 — and I'm sharing it for free.
 
-This article documents every meaningful addition since that cheatsheet, and provides an **updated version** you can use as a reference.
+## The Cheatsheet
 
-## The Updated Cheatsheet
+Available in both English and French:
 
-**[View the interactive HTML version](/assets/data/claude-code-cheatsheet-2026.html)** (dark theme, same visual style as the original).
+- **[English — Interactive HTML](/assets/data/claude-code-cheatsheet-2026-en.html)**
+- **[French — Interactive HTML](/assets/data/claude-code-cheatsheet-2026.html)**
 
-You can also download the [full-resolution PNG](/assets/img/claude-code-cheatsheet-2026.png) (2800px wide, ~4MB).
+You can also download the high-res PNGs: [English](/assets/img/claude-code-cheatsheet-2026-en.png) | [French](/assets/img/claude-code-cheatsheet-2026.png) (~4MB each, 2800px wide).
 
-Items marked with a green **NEW** badge are additions since the December 2025 original.
+Items marked with a green **NEW** badge are features added since late 2025.
 
-## What's Actually New
+## What's Covered
 
-I compared every section against the original image. Here's the precise diff.
+This isn't a "top 20 commands" summary. It's the full reference:
+
+| Section | Coverage |
+|---------|----------|
+| Keyboard Shortcuts | ~30 shortcuts + prefixes + confirmation dialogs |
+| Slash Commands | **55+ commands** in 7 categories |
+| CLI Flags | **55+ flags** in 8 categories + subcommands |
+| The Big 5 (Extension System) | CLAUDE.md, Rules, Commands, Skills, Subagents, MCP, Plugins |
+| Permission Modes | All **6 modes** with permission syntax |
+| Hooks | All **25 lifecycle events** + 4 handler types + `if` field |
+| Input Superpowers | @mentions, !shell, images, pipes, worktrees, background |
+| Configuration | 5-level hierarchy, config commands, key env vars |
+| File Structure Map | Project-level + global-level complete tree |
+| Rewind & Checkpoints | All options + context management strategies |
+| Pro Workflow | Plan→Execute loop, prompting techniques, advanced patterns |
+| Customize Claude Code | **How to create each extension type** with full frontmatter |
+| Quick Reference | Most-used combos, models & effort levels |
+
+## Recent Additions Worth Knowing
+
+### MCP Computer Use
+
+Launched March 23, 2026. Claude can now **see and control your desktop**: take screenshots, click, type, scroll, and drag across macOS applications.
+
+- **27 tools** including `screenshot`, `left_click`, `type`, `key`, `scroll`, `zoom`, `computer_batch`
+- **Security**: `request_access` must be called first. Compositor-level filtering — only allowed apps are visible in screenshots
+- **Performance**: `computer_batch` executes a sequence of actions in a single tool call
+- Available on **Pro and Max plans**, macOS only for now
 
 ### New Slash Commands
 
 | Command | What it does |
 |---------|-------------|
-| `/schedule` | Schedule remote agents on a cron. Claude runs tasks on claude.ai while you sleep |
-| `/desktop` | Hand off the current session to the Claude Desktop app |
+| `/schedule` | Schedule remote agents on a cron |
+| `/desktop` | Hand off session to the Desktop app |
 | `/voice` | Voice dictation input |
-| `/diff` | Interactive diff viewer for changes made during the session |
-| `/security-review` | Scan recent changes for vulnerabilities |
-
-Commands like `/insights`, `/teleport`, `/btw`, `/fast`, and `/loop` were **already in the original** (some with a NEW badge at the time).
+| `/diff` | Interactive diff viewer |
+| `/security-review` | Scan changes for vulnerabilities |
 
 ### New CLI Flags
 
 | Flag | What it does |
 |------|-------------|
-| `--tmux` | Open a worktree in a dedicated tmux pane |
-| `--from-pr 42` | Resume work from a GitHub pull request |
-| `--fork-session` | Fork the current session while keeping full context |
+| `--tmux` | Worktree in a dedicated tmux pane |
+| `--from-pr 42` | Resume from a GitHub PR |
+| `--fork-session` | Fork session keeping full context |
 
-Flags like `--effort`, `--remote`, `--bare`, `--max-budget-usd`, `--json-schema`, and `--fallback-model` were already documented in the original.
+### Hooks: 25 Events, 4 Handler Types
 
-### New Keyboard Shortcuts
+The hook system now supports **25 lifecycle events** (up from ~8) and **4 handler types**: `command`, `http`, `prompt`, `agent`. New events include `SubagentStart/Stop`, `TaskCreated/Completed`, `TeammateIdle`, `PostCompact`, `ConfigChange`, `FileChanged`, and more.
 
-| Shortcut | What it does |
-|----------|-------------|
-| `Option+P` / `Alt+P` | Quick model switch (sonnet/opus/haiku) |
-| `Option+T` / `Alt+T` | Toggle extended thinking on/off |
-| `?` | Show all available shortcuts |
+### Skills & Subagents Frontmatter
 
-### Hooks: From 1 Handler Type to 4
+Skills gained `context: fork`, `paths:`, and `effort:` options. Subagents gained `isolation: worktree` and `memory: project/user/local` for persistent knowledge.
 
-The original cheatsheet listed hook events (PreToolUse, PostToolUse, etc.) and showed the `command` handler type. Since then, three new handler types have been added:
+### "Customize Claude Code" Card
 
-| Handler | Use case |
-|---------|----------|
-| `command` | Execute a shell command (original) |
-| `http` | Call a webhook URL |
-| `prompt` | Inject text into Claude's context |
-| `agent` | Delegate to a subagent |
-
-There's also a new event: `SubagentStop`, which fires when a subagent completes its task.
-
-### Permission Mode: dontAsk
-
-The original showed Default, Auto-Accept, and Plan modes. The `dontAsk` mode is new: it **denies everything** except tools explicitly pre-approved in your settings. Useful for strict CI/CD environments.
-
-### Skills Frontmatter Expansion
-
-Skills (`.claude/skills/name/SKILL.md`) gained three new frontmatter options:
-
-| Field | Effect |
-|-------|--------|
-| `context: fork` | Run the skill in an isolated subagent context |
-| `paths: "*.ts"` | Only activate for matching file types |
-| `effort: high` | Force extended thinking for this skill |
-
-### Subagent Enhancements
-
-| Feature | What it enables |
-|---------|----------------|
-| `isolation: worktree` | Run the agent in a separate git worktree |
-| `memory: project` | Persistent memory scoped to user/project/local |
-
-### MCP Computer Use
-
-The biggest addition, launched March 23, 2026. Claude can now **see and control your desktop**: take screenshots, click, type, scroll, and drag across macOS applications.
-
-Key facts:
-- **27 tools** including `screenshot`, `left_click`, `type`, `key`, `scroll`, `zoom`, `computer_batch`
-- **Security model**: `request_access` must be called first. Only apps in the allowlist are visible in screenshots (compositor-level filtering)
-- **Performance**: `computer_batch` executes a sequence of actions in a single tool call
-- Available on **Pro and Max plans**, macOS only for now
-
-This is an MCP server built into Claude Code/Cowork, not a separate installation. Enable it in Settings > General > Computer Use.
-
-### "Customize Claude Code" Section
-
-The original cheatsheet had a "Create Custom Commands" card covering only slash commands. The updated version replaces it with a comprehensive **"Customize Claude Code"** card that shows how to create **every type of extension**, each with a complete frontmatter example:
-
-- **Slash command** (`.claude/commands/`) — you invoke it
-- **Skill** (`.claude/skills/`) — Claude invokes it automatically
-- **Subagent** (`.claude/agents/`) — parallel specialist with its own context
-- **Rule** (`.claude/rules/`) — conditional instructions scoped by file glob
-- **Hook** (`settings.json`) — deterministic automation on lifecycle events
-- **MCP Server** (`.mcp.json`) — external tool integration
-
-Plus a decision guide: "where should this go?" for each use case.
-
-## What Was Already There
-
-For accuracy, here's what was **already in the December 2025 original** that I initially miscategorized as new:
-
-- `/insights` (had its own NEW badge in the original)
-- `/teleport`, `/btw`, `/fast`, `/loop`
-- `Ctrl+B` (background tasks), `Ctrl+V` (paste images)
-- `--effort`, `--remote`, `--bare`, `--max-budget-usd`
-- Mode `auto` (AI permission classifier)
-- Agent Teams, worktrees, multi-directory support
-- All 8 hook events (PreToolUse through Notification)
+One of the most useful sections: a complete guide showing how to create **every type of extension** — slash commands, skills, subagents, rules, hooks, and MCP servers — each with a full frontmatter example and a decision guide for "where should this go?"
 
 ## How I Built This
 
-The cheatsheet is a single HTML file with standalone CSS (dark theme), exported to PNG via Playwright:
+Single HTML file + standalone dark CSS, exported to PNG via Playwright:
 
 ```bash
-# Clone and build
 git clone https://github.com/angelolima/claude-code-cheatsheet
 npm install
-npm run build:reddit-fr
+npm run build:reddit    # builds both EN and FR
 ```
 
-The build script uses `page.screenshot({ fullPage: true })` with a 1400px viewport at 2x DPR, producing a 2800px-wide retina PNG.
-
-## Get the Cheatsheet
-
-- **[Interactive HTML](/assets/data/claude-code-cheatsheet-2026.html)** - best for browsing
-- **[High-res PNG](/assets/img/claude-code-cheatsheet-2026.png)** - best for sharing or printing
-
-The content is in French, but all technical terms remain in English.
+The build script uses `page.screenshot({ fullPage: true })` with a 1400px viewport at 2x DPR.
 
 ---
 
-*This cheatsheet was built as part of a larger project that also produces a [Complete Guide PDF](https://github.com/angelolima/claude-code-cheatsheet) covering all 16 Claude Code features in depth.*
+*This cheatsheet is part of a larger project that also produces a [Complete Guide PDF](https://github.com/angelolima/claude-code-cheatsheet) covering all 16 Claude Code features in depth.*
