@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Cheat Sheet — Mise à jour mars 2026</title>
+  <link rel="stylesheet" href="cheatsheet-reddit.css">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<div class="header">
+  <h1>Claude Code Cheat Sheet</h1>
+  <div class="subtitle">Tout ce qu'il faut au m&ecirc;me endroit &mdash; Commandes, Raccourcis, Features &amp; Tips</div>
+  <span class="version-badge">v2.x &mdash; Mars 2026</span>
+</div>
+
+<!-- ============================================================
+     ROW 1 : Raccourcis | Commandes Slash | CLI Flags  (3 cols)
+     ============================================================ -->
+<div class="row row-3">
+
+  <!-- 1. Raccourcis Clavier -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x2328;</span> Raccourcis Clavier</div>
+
+    <h3>Essentiels</h3>
+    <div class="shortcut-grid">
+      <span class="key"><code>Enter</code></span><span class="desc">Envoyer le message / valider</span>
+      <span class="key"><code>Esc</code></span><span class="desc">Annuler la saisie en cours</span>
+      <span class="key"><code>Esc Esc</code></span><span class="desc">Menu rewind / r&eacute;sum&eacute;</span>
+      <span class="key"><code>Ctrl+C</code></span><span class="desc">Annuler l'input ou la g&eacute;n&eacute;ration</span>
+      <span class="key"><code>Ctrl+D</code></span><span class="desc">Quitter Claude Code</span>
+      <span class="key"><code>Shift+Tab</code></span><span class="desc">Cycler les modes de permission</span>
+      <span class="key"><code>Ctrl+B</code></span><span class="desc">Mettre la t&acirc;che en arri&egrave;re-plan</span>
+    </div>
+
+    <h3>Navigation &amp; Affichage</h3>
+    <div class="shortcut-grid">
+      <span class="key"><code>Ctrl+R</code></span><span class="desc">Recherche dans l'historique</span>
+      <span class="key"><code>Ctrl+L</code></span><span class="desc">Effacer l'&eacute;cran (garde la conversation)</span>
+      <span class="key"><code>Ctrl+O</code></span><span class="desc">Ouvrir/fermer le transcript verbose</span>
+      <span class="key"><code>Ctrl+T</code></span><span class="desc">Afficher/masquer la liste des t&acirc;ches</span>
+      <span class="key"><code>Ctrl+S</code></span><span class="desc">Stash le prompt en cours</span>
+      <span class="key"><code>&#x2191;/&#x2193;</code></span><span class="desc">Naviguer l'historique des commandes</span>
+      <span class="key"><code>&#x2190;/&#x2192;</code></span><span class="desc">Cycler les onglets / footer</span>
+    </div>
+
+    <h3>&Eacute;dition &amp; Mod&egrave;le</h3>
+    <div class="shortcut-grid">
+      <span class="key"><code>\ + Enter</code></span><span class="desc">Saisie multi-ligne</span>
+      <span class="key"><code>Ctrl+G</code></span><span class="desc">Ouvrir dans un &eacute;diteur externe</span>
+      <span class="key"><code>Ctrl+V</code></span><span class="desc">Coller image (screenshots, diagrammes)</span>
+      <span class="key"><code>Ctrl+K</code></span><span class="desc">Supprimer jusqu'&agrave; la fin de ligne</span>
+      <span class="key"><code>Ctrl+U</code></span><span class="desc">Supprimer du curseur au d&eacute;but</span>
+      <span class="key"><code>Ctrl+Y</code></span><span class="desc">Coller le texte supprim&eacute;</span>
+      <span class="key"><code>Ctrl+_</code></span><span class="desc">Undo derni&egrave;re action</span>
+      <span class="key"><code>Alt+B / Alt+F</code></span><span class="desc">Reculer / avancer d'un mot</span>
+      <span class="key"><code>Option+P</code></span><span class="desc">S&eacute;lecteur de mod&egrave;le <span class="badge badge-new">NEW</span></span>
+      <span class="key"><code>Option+T</code></span><span class="desc">Toggle r&eacute;flexion &eacute;tendue <span class="badge badge-new">NEW</span></span>
+      <span class="key"><code>Alt+O</code></span><span class="desc">Toggle fast mode <span class="badge badge-new">NEW</span></span>
+      <span class="key"><code>?</code></span><span class="desc">Afficher tous les raccourcis <span class="badge badge-new">NEW</span></span>
+      <span class="key"><code>Space</code> (maintenu)</span><span class="desc">Push-to-talk (si /voice activ&eacute;)</span>
+      <span class="key"><code>Alt+Y</code></span><span class="desc">Cycler l'historique de paste (apr&egrave;s Ctrl+Y)</span>
+      <span class="key"><code>Ctrl+J</code></span><span class="desc">Newline (s&eacute;quence de contr&ocirc;le)</span>
+      <span class="key"><code>Option+Enter</code></span><span class="desc">Newline (macOS)</span>
+      <span class="key"><code>Ctrl+X Ctrl+K</code></span><span class="desc">Kill tous les agents en arri&egrave;re-plan (&times;2 pour confirmer)</span>
+      <span class="key"><code>Ctrl+X Ctrl+E</code></span><span class="desc">Ouvrir dans l'&eacute;diteur externe (alias Ctrl+G)</span>
+    </div>
+
+    <h3>Pr&eacute;fixes rapides</h3>
+    <div class="shortcut-grid">
+      <span class="key"><code>/</code></span><span class="desc">Commande slash ou skill</span>
+      <span class="key"><code>!</code></span><span class="desc">Mode Bash &mdash; ex&eacute;cuter une commande shell</span>
+      <span class="key"><code>@</code></span><span class="desc">Autocomplete fichier/dossier/agent</span>
+    </div>
+
+    <h3>Dialogues de confirmation</h3>
+    <div class="shortcut-grid">
+      <span class="key"><code>Y / Enter</code></span><span class="desc">Confirmer</span>
+      <span class="key"><code>N / Esc</code></span><span class="desc">Refuser</span>
+      <span class="key"><code>Ctrl+E</code></span><span class="desc">Toggle explication de permission</span>
+      <span class="key"><code>Ctrl+D</code></span><span class="desc">Toggle debug info de permission</span>
+    </div>
+
+    <div class="tip"><strong>Tip :</strong> <code>/terminal-setup</code> pour Shift+Enter. <code>/keybindings</code> pour personnaliser. Contextes : Global, Chat, Confirmation, Transcript, etc. (17 contextes).</div>
+  </div>
+
+  <!-- 2. Commandes Slash -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x26A1;</span> Commandes Slash</div>
+
+    <h3>Session &amp; Contexte</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/clear</code></td><td>R&eacute;initialiser la conversation <small>(alias: /reset, /new)</small></td></tr>
+        <tr><td><code>/compact [focus]</code></td><td>Compacter avec focus optionnel</td></tr>
+        <tr><td><code>/resume [session]</code></td><td>Reprendre par ID ou nom <small>(alias: /continue)</small></td></tr>
+        <tr><td><code>/rewind</code></td><td>Revenir &agrave; un checkpoint <small>(alias: /checkpoint)</small></td></tr>
+        <tr><td><code>/rename [name]</code></td><td>Renommer la session</td></tr>
+        <tr><td><code>/branch [name]</code></td><td>Brancher la conversation <small>(alias: /fork)</small></td></tr>
+        <tr><td><code>/export [file]</code></td><td>Exporter la conversation en texte</td></tr>
+        <tr><td><code>/copy [N]</code></td><td>Copier la r&eacute;ponse N dans le clipboard</td></tr>
+        <tr><td><code>/cost</code></td><td>Afficher les co&ucirc;ts et tokens</td></tr>
+        <tr><td><code>/context</code></td><td>Grille color&eacute;e de consommation du contexte</td></tr>
+        <tr><td><code>/tasks</code></td><td>Lister et g&eacute;rer les t&acirc;ches en arri&egrave;re-plan</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Mod&egrave;le &amp; Configuration</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/model [name]</code></td><td>Changer de mod&egrave;le (sonnet, opus, haiku)</td></tr>
+        <tr><td><code>/effort [level]</code></td><td>low / medium / high / max / auto</td></tr>
+        <tr><td><code>/fast [on|off]</code></td><td>Toggle mode sortie rapide</td></tr>
+        <tr><td><code>/config</code></td><td>Panneau de configuration <small>(alias: /settings)</small></td></tr>
+        <tr><td><code>/permissions</code></td><td>G&eacute;rer les permissions <small>(alias: /allowed-tools)</small></td></tr>
+        <tr><td><code>/mcp</code></td><td>G&eacute;rer les serveurs MCP &amp; OAuth</td></tr>
+        <tr><td><code>/hooks</code></td><td>Voir les hooks configur&eacute;s</td></tr>
+        <tr><td><code>/theme</code></td><td>Changer le th&egrave;me (light, dark, daltonized, ANSI)</td></tr>
+        <tr><td><code>/color [color]</code></td><td>Couleur de la barre de prompt</td></tr>
+        <tr><td><code>/sandbox</code></td><td>Toggle mode sandbox</td></tr>
+        <tr><td><code>/vim</code></td><td>Toggle mode vim / normal</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Projet &amp; Analyse</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/init</code></td><td>Cr&eacute;er CLAUDE.md pour le projet</td></tr>
+        <tr><td><code>/memory</code></td><td>&Eacute;diter CLAUDE.md &amp; m&eacute;moire, toggle auto-memory</td></tr>
+        <tr><td><code>/add-dir &lt;path&gt;</code></td><td>Ajouter un r&eacute;pertoire de travail</td></tr>
+        <tr><td><code>/diff</code></td><td>Diff interactif des changements <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>/review</code></td><td>Code review (d&eacute;pr&eacute;ci&eacute; &rarr; plugin code-review)</td></tr>
+        <tr><td><code>/security-review</code></td><td>Scanner les vuln&eacute;rabilit&eacute;s <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>/insights</code></td><td>Rapport HTML d'analyse d'utilisation</td></tr>
+        <tr><td><code>/stats</code></td><td>Visualiser usage quotidien, streaks, pr&eacute;f&eacute;rences</td></tr>
+        <tr><td><code>/pr-comments [PR]</code></td><td>Commentaires de PR GitHub</td></tr>
+        <tr><td><code>/plan [desc]</code></td><td>Entrer en mode plan avec description optionnelle</td></tr>
+        <tr><td><code>/simplify</code></td><td>Analyser le code pour reuse, qualit&eacute;, efficacit&eacute;</td></tr>
+        <tr><td><code>/batch [task]</code></td><td>Changements parall&egrave;les dans les worktrees</td></tr>
+        <tr><td><code>/debug [desc]</code></td><td>Troubleshooting de session</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Extensions &amp; Plugins</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/plugin</code></td><td>G&eacute;rer les plugins Claude Code</td></tr>
+        <tr><td><code>/reload-plugins</code></td><td>Recharger tous les plugins actifs</td></tr>
+        <tr><td><code>/agents</code></td><td>G&eacute;rer les sous-agents</td></tr>
+        <tr><td><code>/skills</code></td><td>Lister les skills disponibles</td></tr>
+        <tr><td><code>/chrome</code></td><td>Configurer Claude in Chrome</td></tr>
+        <tr><td><code>/ide</code></td><td>G&eacute;rer les int&eacute;grations IDE</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Avanc&eacute; &amp; Remote</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/loop [interval]</code></td><td>R&eacute;p&eacute;ter un prompt &agrave; intervalle</td></tr>
+        <tr><td><code>/schedule</code></td><td>T&acirc;ches planifi&eacute;es sur le cloud <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>/btw</code></td><td>Question rapide sans outils ni historique</td></tr>
+        <tr><td><code>/voice</code></td><td>Dict&eacute;e vocale push-to-talk <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>/teleport</code></td><td>Reprendre une session web en local</td></tr>
+        <tr><td><code>/desktop</code></td><td>Transf&eacute;rer vers l'app Desktop <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>/remote-control</code></td><td>Rendre la session accessible depuis claude.ai</td></tr>
+        <tr><td><code>/remote-env</code></td><td>Configurer l'environnement remote par d&eacute;faut</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Syst&egrave;me &amp; Compte</h3>
+    <table>
+      <tbody>
+        <tr><td><code>/help</code></td><td>Aide et r&eacute;f&eacute;rence des commandes</td></tr>
+        <tr><td><code>/doctor</code></td><td>V&eacute;rifier l'installation et l'auth</td></tr>
+        <tr><td><code>/status</code></td><td>Version et infos du compte</td></tr>
+        <tr><td><code>/usage</code></td><td>Limites du plan et rate limits</td></tr>
+        <tr><td><code>/extra-usage</code></td><td>Configurer l'usage suppl&eacute;mentaire</td></tr>
+        <tr><td><code>/feedback</code></td><td>Soumettre un rapport <small>(alias: /bug)</small></td></tr>
+        <tr><td><code>/release-notes</code></td><td>Voir le changelog complet</td></tr>
+        <tr><td><code>/login / /logout</code></td><td>Connexion / D&eacute;connexion</td></tr>
+        <tr><td><code>/upgrade</code></td><td>Passer au plan sup&eacute;rieur</td></tr>
+        <tr><td><code>/privacy-settings</code></td><td>Param&egrave;tres de confidentialit&eacute;</td></tr>
+        <tr><td><code>/keybindings</code></td><td>Ouvrir le fichier de raccourcis</td></tr>
+        <tr><td><code>/terminal-setup</code></td><td>Configurer les keybindings terminal</td></tr>
+        <tr><td><code>/statusline</code></td><td>Configurer la status line</td></tr>
+        <tr><td><code>/install-github-app</code></td><td>Installer l'app GitHub Actions</td></tr>
+        <tr><td><code>/install-slack-app</code></td><td>Installer l'app Slack via OAuth</td></tr>
+        <tr><td><code>/exit</code></td><td>Quitter <small>(alias: /quit)</small></td></tr>
+        <tr><td><code>/mobile</code></td><td>QR code pour l'app mobile <small>(alias: /ios, /android)</small></td></tr>
+        <tr><td><code>/passes</code></td><td>Partager une semaine gratuite de Claude Code</td></tr>
+        <tr><td><code>/stickers</code></td><td>Commander des stickers Claude Code</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. CLI Launch Flags -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F680;</span> CLI Launch Flags</div>
+
+    <h3>D&eacute;marrage de session</h3>
+    <table>
+      <tbody>
+        <tr><td><code>claude</code></td><td>Session interactive</td></tr>
+        <tr><td><code>claude "query"</code></td><td>D&eacute;marrer avec un prompt initial</td></tr>
+        <tr><td><code>claude -p "query"</code></td><td>Mode print &mdash; r&eacute;sultat et exit</td></tr>
+        <tr><td><code>claude -c</code></td><td>Reprendre la derni&egrave;re conversation</td></tr>
+        <tr><td><code>claude -r "id"</code></td><td>Reprendre par nom ou ID</td></tr>
+        <tr><td><code>claude -n "name"</code></td><td>Nommer la session</td></tr>
+        <tr><td><code>claude -w branch</code></td><td>Git worktree isol&eacute;</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Mod&egrave;le &amp; Raisonnement</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--model sonnet</code></td><td>Choisir le mod&egrave;le</td></tr>
+        <tr><td><code>--model opus[1m]</code></td><td>Opus + contexte 1M</td></tr>
+        <tr><td><code>--effort high</code></td><td>Niveau de r&eacute;flexion (low/medium/high/max/auto)</td></tr>
+        <tr><td><code>--fallback-model</code></td><td>Mod&egrave;le de secours si surcharge</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Contexte &amp; R&eacute;pertoires</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--add-dir ../path</code></td><td>R&eacute;pertoires suppl&eacute;mentaires</td></tr>
+        <tr><td><code>--bare</code></td><td>Skip hooks, plugins, MCP, CLAUDE.md</td></tr>
+        <tr><td><code>--verbose</code></td><td>D&eacute;tail de chaque tour</td></tr>
+        <tr><td><code>--debug "api,hooks"</code></td><td>Debug par cat&eacute;gories</td></tr>
+        <tr><td><code>--chrome / --no-chrome</code></td><td>Activer/d&eacute;sactiver Chrome</td></tr>
+        <tr><td><code>--ide</code></td><td>Auto-connect IDE au d&eacute;marrage</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Permissions</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--permission-mode plan</code></td><td>Mode lecture seule</td></tr>
+        <tr><td><code>--permission-mode auto</code></td><td>IA classifie les permissions</td></tr>
+        <tr><td><code>--allowedTools</code></td><td>Outils auto-approuv&eacute;s</td></tr>
+        <tr><td><code>--disallowedTools</code></td><td>Outils retir&eacute;s du contexte</td></tr>
+        <tr><td><code>--tools</code></td><td>Restreindre les outils built-in</td></tr>
+        <tr><td><code>--enable-auto-mode</code></td><td>D&eacute;bloquer Auto dans Shift+Tab</td></tr>
+        <tr><td><code>--permission-prompt-tool</code></td><td>MCP tool pour les permissions (headless)</td></tr>
+        <tr><td><code>--dangerously-skip-permissions</code></td><td>&Eacute;quivalent de bypassPermissions</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sortie &amp; Formats</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--output-format json</code></td><td>Sortie JSON structur&eacute;e</td></tr>
+        <tr><td><code>--output-format stream-json</code></td><td>Streaming JSON en temps r&eacute;el</td></tr>
+        <tr><td><code>--input-format</code></td><td>Format d'entr&eacute;e (text, stream-json)</td></tr>
+        <tr><td><code>--include-partial-messages</code></td><td>Inclure les events de streaming partiel</td></tr>
+        <tr><td><code>--json-schema '{}'</code></td><td>Forcer un sch&eacute;ma de sortie</td></tr>
+        <tr><td><code>--max-turns 5</code></td><td>Limiter les tours agentiques</td></tr>
+        <tr><td><code>--max-budget-usd 2</code></td><td>Limite de d&eacute;penses</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Prompt syst&egrave;me</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--system-prompt "text"</code></td><td>Remplacer le prompt syst&egrave;me</td></tr>
+        <tr><td><code>--system-prompt-file</code></td><td>Charger depuis un fichier</td></tr>
+        <tr><td><code>--append-system-prompt</code></td><td>Ajouter du texte au prompt</td></tr>
+        <tr><td><code>--append-system-prompt-file</code></td><td>Ajouter depuis un fichier</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Avanc&eacute; &amp; Remote</h3>
+    <table>
+      <tbody>
+        <tr><td><code>--remote "task"</code></td><td>Session distante sur claude.ai</td></tr>
+        <tr><td><code>--remote-control</code></td><td>Activer le contr&ocirc;le &agrave; distance</td></tr>
+        <tr><td><code>--tmux</code></td><td>Worktree + panneau tmux <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>--teammate-mode</code></td><td>Agent teams : auto/in-process/tmux</td></tr>
+        <tr><td><code>--agent name</code></td><td>Ex&eacute;cuter en tant qu'agent</td></tr>
+        <tr><td><code>--agents</code></td><td>D&eacute;finir des agents via JSON</td></tr>
+        <tr><td><code>--from-pr 42</code></td><td>Reprendre depuis une PR <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>--fork-session</code></td><td>Forker en gardant le contexte <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>--teleport</code></td><td>Reprendre une session web</td></tr>
+        <tr><td><code>--mcp-config</code></td><td>Charger des serveurs MCP</td></tr>
+        <tr><td><code>--strict-mcp-config</code></td><td>N'utiliser QUE ces serveurs MCP</td></tr>
+        <tr><td><code>--plugin-dir</code></td><td>Charger des plugins depuis un dossier</td></tr>
+        <tr><td><code>--settings</code></td><td>Fichier settings JSON custom</td></tr>
+        <tr><td><code>--init / --init-only</code></td><td>Lancer les hooks d'init (et exit)</td></tr>
+        <tr><td><code>--maintenance</code></td><td>Lancer les hooks de maintenance et exit</td></tr>
+        <tr><td><code>--disable-slash-commands</code></td><td>D&eacute;sactiver skills et commandes</td></tr>
+        <tr><td><code>--no-session-persistence</code></td><td>D&eacute;sactiver la persistance (print)</td></tr>
+        <tr><td><code>--session-id</code></td><td>UUID de session sp&eacute;cifique</td></tr>
+        <tr><td><code>--agents</code></td><td>D&eacute;finir des agents dynamiques via JSON</td></tr>
+        <tr><td><code>--channels</code></td><td>Notifications MCP &agrave; &eacute;couter (research preview)</td></tr>
+        <tr><td><code>--setting-sources</code></td><td>Sources de settings &agrave; charger (user, project, local)</td></tr>
+        <tr><td><code>--betas</code></td><td>Beta headers pour les requ&ecirc;tes API</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sous-commandes CLI</h3>
+    <table>
+      <tbody>
+        <tr><td><code>claude update</code></td><td>Mettre &agrave; jour</td></tr>
+        <tr><td><code>claude auth login</code></td><td>Connexion (--email, --sso, --console)</td></tr>
+        <tr><td><code>claude auth status</code></td><td>Statut d'auth (JSON ou --text)</td></tr>
+        <tr><td><code>claude agents</code></td><td>Lister les agents configur&eacute;s</td></tr>
+        <tr><td><code>claude mcp</code></td><td>G&eacute;rer les serveurs MCP</td></tr>
+        <tr><td><code>claude plugin</code></td><td>G&eacute;rer les plugins</td></tr>
+        <tr><td><code>claude auto-mode defaults</code></td><td>R&egrave;gles auto-mode par d&eacute;faut</td></tr>
+        <tr><td><code>claude auto-mode config</code></td><td>Config effective avec settings</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ROW 2 : The Big 5 (2/3) | Permission Modes (1/3)
+     ============================================================ -->
+<div class="row row-2-1">
+
+  <!-- 4. The Big 5 -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F50C;</span> The Big 5 &mdash; Syst&egrave;me d'Extension de Claude Code</div>
+
+    <div class="inner-2col">
+      <div>
+        <h3>1. CLAUDE.md &mdash; Prompt syst&egrave;me</h3>
+        <table>
+          <tbody>
+            <tr><td><code>Manag&eacute;</code></td><td>Politique d'entreprise, priorit&eacute; max</td></tr>
+            <tr><td><code>Projet</code></td><td><code>./CLAUDE.md</code> ou <code>./.claude/CLAUDE.md</code></td></tr>
+            <tr><td><code>Utilisateur</code></td><td><code>~/.claude/CLAUDE.md</code></td></tr>
+          </tbody>
+        </table>
+        <p><strong>Imports :</strong> <code>@docs/standards.md</code> (max 5 niveaux)</p>
+        <p><strong>Taille :</strong> Garder &lt; 200 lignes, <code>@path</code> pour d&eacute;couper</p>
+
+        <h3>2. Rules &mdash; R&egrave;gles scop&eacute;es</h3>
+        <p>Fichiers dans <code>.claude/rules/*.md</code>, activ&eacute;s par glob :</p>
+        <div class="code-block"><span class="prop">paths</span>: [<span class="str">"src/**/*.tsx"</span>]
+MUST use TanStack Query.
+SHOULD prefer named exports.</div>
+        <p>Placement bas&eacute; sur le consommateur. <code>MUST</code>/<code>SHOULD</code>/<code>MAY</code></p>
+
+        <h3>3. Custom Commands &mdash; Raccourcis</h3>
+        <p>Cr&eacute;er dans <code>.claude/commands/name.md</code> &rarr; <code>/name</code></p>
+        <p><code>$ARGUMENTS</code>, <code>$0</code>, <code>$1</code> pour les arguments</p>
+        <p>Context live : <code>!</code><code>`git diff`</code> (ex&eacute;cut&eacute; avant le prompt)</p>
+      </div>
+
+      <div>
+        <h3>4. Skills &mdash; Workflows complexes</h3>
+        <p>R&eacute;pertoire <code>.claude/skills/name/SKILL.md</code></p>
+        <table>
+          <tbody>
+            <tr><td><code>description</code></td><td>D&eacute;clencheur auto-d&eacute;couverte (250 car.)</td></tr>
+            <tr><td><code>context: fork</code></td><td>Sous-agent isol&eacute; <span class="badge badge-new">NEW</span></td></tr>
+            <tr><td><code>paths: "*.ts"</code></td><td>Activer par type de fichier <span class="badge badge-new">NEW</span></td></tr>
+            <tr><td><code>effort: high</code></td><td>Forcer la r&eacute;flexion &eacute;tendue <span class="badge badge-new">NEW</span></td></tr>
+            <tr><td><code>user-invocable</code></td><td>true = /command, false = Claude only</td></tr>
+          </tbody>
+        </table>
+        <p>Divulgation progressive : SKILL.md &lt; 500 lignes, <code>[ref](references/)</code></p>
+
+        <h3>5. Sous-agents &mdash; Sp&eacute;cialistes parall&egrave;les</h3>
+        <p>Cr&eacute;er dans <code>.claude/agents/name.md</code></p>
+        <table>
+          <tbody>
+            <tr><td><code>model</code></td><td>Mod&egrave;le (h&eacute;rit&eacute; par d&eacute;faut)</td></tr>
+            <tr><td><code>tools</code></td><td>Restreindre les outils</td></tr>
+            <tr><td><code>isolation: worktree</code></td><td>Git worktree s&eacute;par&eacute; <span class="badge badge-new">NEW</span></td></tr>
+            <tr><td><code>memory: project</code></td><td>M&eacute;moire persistante <span class="badge badge-new">NEW</span></td></tr>
+            <tr><td><code>permissionMode</code></td><td>Mode de permission d&eacute;di&eacute;</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Invoquer :</strong> <code>@"name (agent)"</code> | <code>--agent name</code></p>
+        <p><strong>Builtin :</strong> Explore (Haiku), Plan, general-purpose</p>
+
+        <h3>6. MCP + Plugins</h3>
+        <p><strong>MCP :</strong> Int&eacute;grations via <code>.mcp.json</code>. Outils : <code>mcp__server__tool</code></p>
+        <div class="code-block"><span class="cm"># Ajouter / Lister / Supprimer</span>
+claude mcp add playwright -- npx @playwright/mcp
+claude mcp list
+claude mcp remove playwright
+<span class="cm"># Import depuis Claude Desktop</span>
+claude mcp add-from-claude-desktop
+<span class="cm"># Debug</span>
+claude --mcp-debug</div>
+        <p><strong>Transports :</strong> <code>stdio</code> | <code>http</code> | <code>sse</code> | <code>ws</code></p>
+        <p><strong>Plugins :</strong> Ensembles de skills + agents + hooks + MCP</p>
+        <p><code>/plugin install name@marketplace</code></p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:14px">&#x1F5A5; MCP Computer Use <span class="badge badge-new">NEW</span></h3>
+    <p>Serveur MCP int&eacute;gr&eacute; &mdash; Claude <strong>voit et contr&ocirc;le votre bureau</strong> : screenshots, clics, saisie, scroll sur les apps macOS. Activ&eacute; dans Settings &gt; General &gt; Computer Use. Pro/Max uniquement.</p>
+    <div class="inner-2col">
+      <div>
+        <p><strong>S&eacute;curit&eacute; :</strong> <code>request_access</code> obligatoire. Allowlist par app. Screenshots filtr&eacute;s au compositing &mdash; seules les apps autoris&eacute;es sont visibles. <code>systemKeyCombos</code> grant s&eacute;par&eacute;.</p>
+      </div>
+      <div>
+        <p><strong>27 outils :</strong> <code>screenshot</code>, <code>left_click</code>, <code>type</code>, <code>key</code>, <code>scroll</code>, <code>zoom</code>, <code>computer_batch</code> (s&eacute;quence en 1 appel), <code>open_application</code>, <code>mouse_move</code>, <code>double_click</code>, <code>right_click</code>, <code>left_click_drag</code>, <code>read/write_clipboard</code>, <code>wait</code>, <code>switch_display</code>, etc.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>O&ugrave; placer quoi ?</strong> Commandes = <strong>vous</strong> invoquez &nbsp;|&nbsp; Skills = <strong>Claude</strong> invoque &nbsp;|&nbsp; Agents = contexte s&eacute;par&eacute; &nbsp;|&nbsp; MCP = int&eacute;grations externes &nbsp;|&nbsp; Computer Use = contr&ocirc;le du bureau</div>
+  </div>
+
+  <!-- 5. Modes de Permission -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F6E1;</span> Modes de Permission</div>
+
+    <table>
+      <thead><tr><th>Mode</th><th>Comportement</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge badge-cmd">Default</span></td><td>Demande permission pour chaque outil</td></tr>
+        <tr><td><span class="badge badge-green">acceptEdits</span></td><td>Auto-approuve les &eacute;ditions, demande pour Bash</td></tr>
+        <tr><td><span class="badge badge-orange">Plan</span></td><td>Lecture seule. Explore &amp; comprend. N'&eacute;crit rien.</td></tr>
+        <tr><td><span class="badge badge-flag">Auto</span></td><td>IA classifie (safe/risky). Team/Enterprise + Sonnet/Opus 4.6</td></tr>
+        <tr><td><span class="badge badge-pink">dontAsk</span></td><td>Skip les prompts, ignore les outils non-approuv&eacute;s <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><span class="badge badge-shortcut">bypass</span></td><td>Skip toutes les v&eacute;rifications (containers uniquement)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="mode-flow">
+      <span class="mode-pill default">Normal</span>
+      <span class="mode-arrow">&rarr;</span>
+      <span class="mode-pill auto-accept">Auto-Accept</span>
+      <span class="mode-arrow">&rarr;</span>
+      <span class="mode-pill plan">Plan</span>
+    </div>
+    <p style="text-align:center;font-size:11px;color:var(--text-muted)"><code>Shift+Tab</code> pour cycler. <code>--enable-auto-mode</code> pour d&eacute;bloquer Auto.</p>
+
+    <hr>
+
+    <p><strong>Pro workflow :</strong> Plan Mode pour explorer &rarr; Normal pour impl&eacute;menter &rarr; Rewind si besoin.</p>
+
+    <hr>
+
+    <h3>Pr&eacute;-approuver des outils</h3>
+    <div class="code-block"><span class="cm">// .claude/settings.json</span>
+<span class="str">"allow"</span>: [<span class="str">"Read"</span>, <span class="str">"Bash(git *)"</span>, <span class="str">"Bash(npm run *)"</span>]
+<span class="str">"deny"</span>: [<span class="str">"Bash(rm -rf *)"</span>]</div>
+    <p><strong>Ordre :</strong> <code>deny</code> &rarr; <code>ask</code> &rarr; <code>allow</code> (premier match gagne)</p>
+    <p><strong>Syntaxe :</strong> <code>Bash(npm run *)</code>, <code>Read(/src/**)</code>, <code>WebFetch(domain:x.com)</code>, <code>mcp__server__*</code></p>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ROW 3 : Hooks | Input Superpowers | Configuration  (3 cols)
+     ============================================================ -->
+<div class="row row-3">
+
+  <!-- 6. Hooks -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F517;</span> Hooks &mdash; Automatisation</div>
+
+    <h3>&Eacute;v&eacute;nements (25)</h3>
+    <table>
+      <thead><tr><th>&Eacute;v&eacute;nement</th><th>Quand</th></tr></thead>
+      <tbody>
+        <tr><td><code>SessionStart</code></td><td>D&eacute;but / reprise de session</td></tr>
+        <tr><td><code>SessionEnd</code></td><td>Fin de session</td></tr>
+        <tr><td><code>UserPromptSubmit</code></td><td>Avant que Claude traite le message</td></tr>
+        <tr><td><code>PreToolUse</code></td><td>Avant un outil &mdash; peut bloquer (exit 2)</td></tr>
+        <tr><td><code>PostToolUse</code></td><td>Apr&egrave;s un outil r&eacute;ussi</td></tr>
+        <tr><td><code>PostToolUseFailure</code></td><td>Apr&egrave;s un outil &eacute;chou&eacute;</td></tr>
+        <tr><td><code>PermissionRequest</code></td><td>Quand un dialogue de permission appara&icirc;t</td></tr>
+        <tr><td><code>Stop</code></td><td>Claude finit sa r&eacute;ponse</td></tr>
+        <tr><td><code>StopFailure</code></td><td>Tour termin&eacute; par erreur API</td></tr>
+        <tr><td><code>SubagentStart</code></td><td>Un sous-agent d&eacute;marre <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>SubagentStop</code></td><td>Un sous-agent termine <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><code>TeammateIdle</code></td><td>Un co&eacute;quipier va devenir inactif</td></tr>
+        <tr><td><code>TaskCreated</code></td><td>T&acirc;che cr&eacute;&eacute;e</td></tr>
+        <tr><td><code>TaskCompleted</code></td><td>T&acirc;che termin&eacute;e</td></tr>
+        <tr><td><code>PreCompact</code></td><td>Avant la compaction</td></tr>
+        <tr><td><code>PostCompact</code></td><td>Apr&egrave;s la compaction</td></tr>
+        <tr><td><code>Notification</code></td><td>Claude envoie une notification</td></tr>
+        <tr><td><code>InstructionsLoaded</code></td><td>CLAUDE.md ou rules charg&eacute;</td></tr>
+        <tr><td><code>ConfigChange</code></td><td>Un fichier de config change</td></tr>
+        <tr><td><code>FileChanged</code></td><td>Un fichier surveill&eacute; change</td></tr>
+        <tr><td><code>CwdChanged</code></td><td>Le r&eacute;pertoire de travail change</td></tr>
+        <tr><td><code>WorktreeCreate</code></td><td>Cr&eacute;ation d'un worktree</td></tr>
+        <tr><td><code>WorktreeRemove</code></td><td>Suppression d'un worktree</td></tr>
+        <tr><td><code>Elicitation</code></td><td>Serveur MCP demande un input</td></tr>
+        <tr><td><code>ElicitationResult</code></td><td>R&eacute;ponse &agrave; une elicitation MCP</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4 types de handlers <span class="badge badge-new">NEW</span></h3>
+    <table>
+      <tbody>
+        <tr><td><code>command</code></td><td>Shell command</td></tr>
+        <tr><td><code>http</code></td><td>POST vers un endpoint</td></tr>
+        <tr><td><code>prompt</code></td><td>LLM single-turn (Haiku)</td></tr>
+        <tr><td><code>agent</code></td><td>Sous-agent multi-turn</td></tr>
+      </tbody>
+    </table>
+
+    <div class="code-block"><span class="cm">// Auto-format apr&egrave;s &eacute;criture</span>
+<span class="str">"PostToolUse"</span>: [{
+  <span class="str">"matcher"</span>: <span class="str">"Write|Edit"</span>,
+  <span class="prop">"if"</span>: <span class="str">"Edit(*.ts)"</span>,
+  <span class="str">"hooks"</span>: [{
+    <span class="str">"type"</span>: <span class="str">"command"</span>,
+    <span class="str">"command"</span>: <span class="str">"npx prettier --write $CLAUDE_FILE_PATHS"</span>
+  }]
+}]</div>
+    <p><strong>Codes :</strong> <code>0</code> = succ&egrave;s, <code>2</code> = blocage (stderr &rarr; Claude), autre = erreur</p>
+    <p><strong>Champ <code>if</code> :</strong> Filtre par nom ET arguments d'outil. Ex: <code>Bash(git *)</code>, <code>Edit(*.ts)</code></p>
+    <p><strong>Env vars :</strong> <code>$CLAUDE_PROJECT_DIR</code>, <code>$CLAUDE_FILE_PATHS</code>, <code>$CLAUDE_TOOL_INPUT</code></p>
+  </div>
+
+  <!-- 7. Input Superpowers -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x2728;</span> Input Superpowers</div>
+
+    <table>
+      <thead><tr><th>Syntaxe</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td><code>@file</code></td><td>R&eacute;f&eacute;rencer fichiers &amp; dossiers dans le contexte</td></tr>
+        <tr><td><code>@"agent"</code></td><td>Mentionner un sous-agent sp&eacute;cifique</td></tr>
+        <tr><td><code>!command</code></td><td>Ex&eacute;cuter un shell. Ex: <code>! git status</code></td></tr>
+        <tr><td><code>Ctrl+V</code></td><td>Coller screenshots, diagrammes, images</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pipe Input</h3>
+    <div class="code-block"><span class="cm"># Analyser des logs</span>
+cat error.log | claude -p <span class="str">"find root cause"</span>
+
+<span class="cm"># Review de PR</span>
+gh pr diff 42 | claude -p <span class="str">"security review"</span>
+
+<span class="cm"># Commit message</span>
+git diff --staged | claude -p <span class="str">"conventional commit msg"</span>
+
+<span class="cm"># Traduire</span>
+cat README.md | claude -p <span class="str">"translate to Spanish"</span></div>
+
+    <h3>Multi-r&eacute;pertoires &amp; Worktrees</h3>
+    <div class="code-block"><span class="cm"># Ajouter des r&eacute;pertoires</span>
+claude <span class="flag">--add-dir</span> ../lib <span class="flag">--add-dir</span> ../shared
+
+<span class="cm"># Worktree isol&eacute;</span>
+claude <span class="flag">-w</span> feature <span class="cm"># branche git isol&eacute;e</span>
+
+<span class="cm"># Worktree + tmux</span>
+claude <span class="flag">-w</span> feature <span class="flag">--tmux</span></div>
+
+    <h3>Background &amp; Remote</h3>
+    <p><code>Ctrl+B</code> pour envoyer en arri&egrave;re-plan. Claude continue pendant que vous travaillez.</p>
+    <p><code>--remote "task"</code> pour lancer un agent sur claude.ai.</p>
+    <p><code>/remote-control</code> pour rendre la session accessible &agrave; distance.</p>
+  </div>
+
+  <!-- 8. Configuration -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x2699;</span> Configuration</div>
+
+    <h3>Hi&eacute;rarchie (priorit&eacute; d&eacute;croissante)</h3>
+    <table>
+      <tbody>
+        <tr><td><span class="badge badge-pink">Enterprise</span></td><td><code>/etc/claude-code/managed-settings.json</code></td></tr>
+        <tr><td><span class="badge badge-flag">CLI Args</span></td><td>Flags pass&eacute;s au lancement</td></tr>
+        <tr><td><span class="badge badge-orange">Local</span></td><td><code>.claude/settings.local.json</code> (gitignored)</td></tr>
+        <tr><td><span class="badge badge-cmd">Projet</span></td><td><code>.claude/settings.json</code> (commit&eacute;)</td></tr>
+        <tr><td><span class="badge badge-green">User</span></td><td><code>~/.claude/settings.json</code> (global)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Commandes config</h3>
+    <div class="shortcut-grid">
+      <code>config list</code><span class="desc">Afficher tous les settings</span>
+      <code>config get key</code><span class="desc">Voir une valeur</span>
+      <code>config set key val</code><span class="desc">D&eacute;finir une valeur</span>
+      <code>config add key val</code><span class="desc">Ajouter &agrave; un tableau</span>
+      <code>config remove key val</code><span class="desc">Retirer d'un tableau</span>
+    </div>
+
+    <hr>
+
+    <h3>Variables d'environnement cl&eacute;s</h3>
+    <table>
+      <tbody>
+        <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Cl&eacute; API (override l'abo)</td></tr>
+        <tr><td><code>ANTHROPIC_MODEL</code></td><td>Mod&egrave;le par d&eacute;faut</td></tr>
+        <tr><td><code>CLAUDE_CODE_EFFORT_LEVEL</code></td><td>Niveau d'effort</td></tr>
+        <tr><td><code>CLAUDE_CODE_USE_BEDROCK</code></td><td>Utiliser Amazon Bedrock</td></tr>
+        <tr><td><code>CLAUDE_CODE_USE_VERTEX</code></td><td>Utiliser Google Vertex AI</td></tr>
+        <tr><td><code>CLAUDE_CODE_DISABLE_1M_CONTEXT</code></td><td>D&eacute;sactiver 1M context</td></tr>
+        <tr><td><code>CLAUDE_CODE_DISABLE_AUTO_MEMORY</code></td><td>D&eacute;sactiver auto memory</td></tr>
+        <tr><td><code>DISABLE_TELEMETRY</code></td><td>Opt-out t&eacute;l&eacute;m&eacute;trie</td></tr>
+        <tr><td><code>DISABLE_AUTOUPDATER</code></td><td>D&eacute;sactiver les MAJ auto</td></tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Permissions avanc&eacute;es</h3>
+    <div class="code-block"><span class="cm">// .claude/settings.json</span>
+{
+  <span class="prop">"permissions"</span>: {
+    <span class="prop">"allow"</span>: [<span class="str">"Read"</span>, <span class="str">"Bash(git *)"</span>],
+    <span class="prop">"deny"</span>: [<span class="str">"Bash(rm -rf *)"</span>]
+  },
+  <span class="prop">"allowedMcpServers"</span>: [<span class="str">"playwright"</span>],
+  <span class="prop">"deniedMcpServers"</span>: [<span class="str">"untrusted"</span>]
+}</div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ROW 4 : File Structure Map | Rewind & Checkpoints  (2 cols)
+     ============================================================ -->
+<div class="row row-2">
+
+  <!-- 9. File Structure Map -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F4C1;</span> File Structure Map</div>
+
+    <div class="inner-2col">
+      <div>
+        <h3>Niveau projet (<code>.claude/</code>)</h3>
+        <div class="file-tree">
+<span class="dir">CLAUDE.md</span> <span class="comment">&mdash; M&eacute;moire projet, conventions</span>
+<span class="dir">settings.json</span> <span class="comment">&mdash; Settings partag&eacute;s (git)</span>
+<span class="dir">settings.local.json</span> <span class="comment">&mdash; Settings perso (gitignored)</span>
+<span class="dir">commands/</span> <span class="comment">&mdash; Commandes slash du projet</span>
+<span class="dir">skills/</span> <span class="comment">&mdash; Skills (SKILL.md + references/)</span>
+<span class="dir">agents/</span> <span class="comment">&mdash; Sous-agents du projet</span>
+<span class="dir">rules/</span> <span class="comment">&mdash; R&egrave;gles scop&eacute;es par fichier</span>
+<span class="dir">.mcp.json</span> <span class="comment">&mdash; Config MCP projet (committable)</span>
+        </div>
+      </div>
+      <div>
+        <h3>Niveau global (<code>~/.claude/</code>)</h3>
+        <div class="file-tree">
+<span class="dir">CLAUDE.md</span> <span class="comment">&mdash; S'applique &agrave; TOUS les projets</span>
+<span class="dir">settings.json</span> <span class="comment">&mdash; Settings globaux</span>
+<span class="dir">commands/</span> <span class="comment">&mdash; Commandes personnelles</span>
+<span class="dir">skills/</span> <span class="comment">&mdash; Skills personnels</span>
+<span class="dir">agents/</span> <span class="comment">&mdash; Agents personnels</span>
+<span class="dir">rules/</span> <span class="comment">&mdash; R&egrave;gles globales</span>
+<span class="dir">keybindings.json</span> <span class="comment">&mdash; Raccourcis personnalis&eacute;s</span>
+<span class="dir">~/.claude.json</span> <span class="comment">&mdash; Config MCP utilisateur</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Rewind & Checkpoints -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x23EA;</span> Rewind &amp; Checkpoints</div>
+
+    <div class="shortcut-grid">
+      <span class="key"><code>Esc Esc</code></span><span class="desc">Ouvrir le menu rewind n'importe quand</span>
+      <span class="key"><code>/rewind</code></span><span class="desc">M&ecirc;me fonction via commande</span>
+    </div>
+
+    <h3>Options de rewind</h3>
+    <table>
+      <thead><tr><th>Option</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Conversation</strong></td><td>Revenir dans le chat. Le code reste.</td></tr>
+        <tr><td><strong>Code</strong></td><td>Restaurer les fichiers. La conversation reste.</td></tr>
+        <tr><td><strong>Full Rewind</strong></td><td>Restaurer conversation ET code.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warning"><strong>Limites :</strong> Les effets secondaires (Bash, fichiers supprim&eacute;s, paquets install&eacute;s) ne peuvent PAS &ecirc;tre annul&eacute;s. Les checkpoints ne trackent que les &eacute;ditions de fichiers par Claude. Utilisez Git.</div>
+
+    <hr>
+
+    <h3>Gestion du contexte</h3>
+    <p><strong>Budget au d&eacute;marrage ~6K tokens :</strong> prompt syst&egrave;me, m&eacute;moire, env, MCP, CLAUDE.md, rules, descriptions de skills.</p>
+    <p><strong>Compaction :</strong> Auto &agrave; ~95% de capacit&eacute;. <code>/compact</code> pour lancer manuellement. CLAUDE.md relu depuis le disque.</p>
+    <p><strong>Workflow &laquo; Document &amp; Clear &raquo; :</strong> Sauvegarder la progression &rarr; <code>/clear</code> &rarr; Repartir. Claude lit le r&eacute;sum&eacute;.</p>
+    <p><strong>&Eacute;conomiser :</strong> Rules scop&eacute;es, sous-agents pour le verbeux, <code>--bare</code>, <code>opus[1m]</code> pour les grands codebases.</p>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ROW 5 : Pro Workflow | Cr&eacute;er des Commandes Custom  (2 cols)
+     ============================================================ -->
+<div class="row row-2">
+
+  <!-- 11. Pro Workflow -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F3AF;</span> Pro Workflow &mdash; Tirer le maximum de Claude Code</div>
+
+    <div class="inner-2col">
+      <div>
+        <h3>D&eacute;marrer un projet</h3>
+        <div class="shortcut-grid">
+          <span class="key">1.</span><span class="desc"><code>cd project &amp;&amp; claude</code></span>
+          <span class="key">2.</span><span class="desc"><code>/init</code> pour g&eacute;n&eacute;rer CLAUDE.md</span>
+          <span class="key">3.</span><span class="desc">&Eacute;diter CLAUDE.md &rarr; conventions &amp; commandes</span>
+          <span class="key">4.</span><span class="desc">Coder !</span>
+        </div>
+
+        <h3>Boucle Plan &rarr; Execute</h3>
+        <p><code>Shift+Tab &times; 2</code> &rarr; Plan Mode &rarr; D&eacute;crire la t&acirc;che</p>
+        <p>Valider &rarr; <code>Shift+Tab</code> &rarr; Normal &rarr; "impl&eacute;mente le plan"</p>
+
+        <h3>G&eacute;rer le contexte</h3>
+        <div class="shortcut-grid">
+          <code>/compact</code><span class="desc">Le contexte grossit ? Compacter</span>
+          <code>/clear</code><span class="desc">T&acirc;ches non li&eacute;es ? R&eacute;initialiser</span>
+          <code>opus[1m]</code><span class="desc">Grands codebases ? Contexte 1M</span>
+          <code>--bare</code><span class="desc">Questions rapides ? Skip le startup</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Techniques de prompting</h3>
+        <div class="shortcut-grid">
+          <span class="key"><strong>Pr&eacute;cis</strong></span><span class="desc"><code>cat error.log | claude -p "root cause"</code></span>
+          <span class="key"><strong>V&eacute;rifiable</strong></span><span class="desc">"Apr&egrave;s le fix, lance <code>npm test</code>"</span>
+          <span class="key"><strong>Progressif</strong></span><span class="desc">D&eacute;couper en &eacute;tapes, valider chacune</span>
+          <span class="key"><strong>Corrigez t&ocirc;t</strong></span><span class="desc"><code>Ctrl+C</code> si mauvaise direction</span>
+        </div>
+
+        <h3>Patterns avanc&eacute;s</h3>
+        <table>
+          <tbody>
+            <tr><td><strong>Worktrees</strong></td><td><code>claude -w feat --tmux</code></td></tr>
+            <tr><td><strong>Multi-dirs</strong></td><td><code>--add-dir ../lib</code></td></tr>
+            <tr><td><strong>Background</strong></td><td><code>Ctrl+B</code></td></tr>
+            <tr><td><strong>Agent Teams</strong></td><td>Plusieurs Claude en parall&egrave;le</td></tr>
+            <tr><td><strong>Remote</strong></td><td><code>--remote "task"</code></td></tr>
+            <tr><td><strong>Loop</strong></td><td><code>/loop 5m /test</code></td></tr>
+            <tr><td><strong>Schedule</strong></td><td><code>/schedule</code> pour du cron</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Headless / CI</h3>
+        <div class="code-block">claude -p <span class="flag">--max-budget-usd 2</span> \
+  <span class="flag">--max-turns 5</span> <span class="str">"fix failing test"</span></div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Boucle d'apprentissage :</strong> Claude fait une erreur &rarr; vous corrigez &rarr; promouvez en r&egrave;gle MUST &rarr; Claude ne r&eacute;p&egrave;te jamais. C'est le <em>compound learning</em>.</div>
+  </div>
+
+  <!-- 12. Personnaliser Claude Code — Guide de cr&eacute;ation -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F4DD;</span> Personnaliser Claude Code &mdash; Cr&eacute;er vos extensions</div>
+
+    <h3>&#x1F4CB; Commande slash &mdash; <code>.claude/commands/name.md</code></h3>
+    <div class="code-block"><span class="cm">---</span>
+<span class="prop">description</span>: Review staged changes
+<span class="prop">allowed-tools</span>: Read, Bash(git *)
+<span class="prop">model</span>: sonnet
+<span class="prop">disable-model-invocation</span>: <span class="val">true</span>
+<span class="prop">argument-hint</span>: <span class="str">"[focus area]"</span>
+<span class="cm">---</span>
+Diff: <span class="kw">!</span><span class="str">`git diff --staged`</span>
+Review: <span class="val">$ARGUMENTS</span> | <span class="val">$1</span>, <span class="val">$2</span> positionnels</div>
+    <p><strong>Vous</strong> l'invoquez : <code>/name</code>. Perso : <code>~/.claude/commands/</code></p>
+
+    <h3>&#x1F9E0; Skill &mdash; <code>.claude/skills/name/SKILL.md</code></h3>
+    <div class="code-block"><span class="cm">---</span>
+<span class="prop">name</span>: deploy
+<span class="prop">description</span>: <span class="str">"Deploy to production (250 car. max)"</span>
+<span class="prop">context</span>: fork          <span class="cm"># sous-agent isol&eacute;</span>
+<span class="prop">paths</span>: <span class="str">"src/**/*.ts"</span>    <span class="cm"># activer par glob</span>
+<span class="prop">effort</span>: high           <span class="cm"># forcer la r&eacute;flexion</span>
+<span class="prop">user-invocable</span>: <span class="val">true</span>  <span class="cm"># false = Claude only</span>
+<span class="cm">---</span>
+Instructions... + <span class="kw">[ref](references/guide.md)</span></div>
+    <p><strong>Claude</strong> d&eacute;cide quand l'invoquer (auto-d&eacute;couverte via description).</p>
+
+    <h3>&#x1F916; Sous-agent &mdash; <code>.claude/agents/name.md</code></h3>
+    <div class="code-block"><span class="cm">---</span>
+<span class="prop">name</span>: security-reviewer
+<span class="prop">description</span>: <span class="str">"Audit code for vulnerabilities"</span>
+<span class="prop">model</span>: sonnet
+<span class="prop">tools</span>: Read, Grep, Glob
+<span class="prop">memory</span>: project        <span class="cm"># user / project / local</span>
+<span class="prop">isolation</span>: worktree    <span class="cm"># git worktree s&eacute;par&eacute;</span>
+<span class="prop">permissionMode</span>: plan
+<span class="cm">---</span>
+You are a security specialist...</div>
+    <p>Invoquer : <code>@"name (agent)"</code> | <code>--agent name</code> | langage naturel</p>
+
+    <h3>&#x1F4D0; Rule &mdash; <code>.claude/rules/name.md</code></h3>
+    <div class="code-block"><span class="cm">---</span>
+<span class="prop">paths</span>: [<span class="str">"src/**/*.tsx"</span>, <span class="str">"src/**/*.ts"</span>]
+<span class="cm">---</span>
+MUST use TanStack Query for data fetching.
+SHOULD prefer named exports over default.
+MAY use inline styles for one-off components.</div>
+    <p>Charg&eacute;e auto quand Claude touche un fichier correspondant au glob.</p>
+
+    <h3>&#x1F517; Hook &mdash; <code>.claude/settings.json</code></h3>
+    <div class="code-block"><span class="str">"hooks"</span>: {
+  <span class="str">"PostToolUse"</span>: [{
+    <span class="str">"matcher"</span>: <span class="str">"Write|Edit"</span>,
+    <span class="prop">"if"</span>: <span class="str">"Edit(*.ts)"</span>,
+    <span class="str">"hooks"</span>: [{
+      <span class="str">"type"</span>: <span class="str">"command"</span>,
+      <span class="str">"command"</span>: <span class="str">"npx prettier --write $FILE"</span>
+    }]
+  }]
+}</div>
+    <p>D&eacute;terministe &mdash; s'ex&eacute;cute toujours (contrairement &agrave; CLAUDE.md ~80%).</p>
+
+    <h3>&#x1F50C; MCP Server &mdash; <code>.mcp.json</code></h3>
+    <div class="code-block"><span class="cm"># Ajouter via CLI</span>
+claude mcp add playwright -- npx @playwright/mcp
+<span class="cm"># Ou dans .mcp.json</span>
+{ <span class="str">"mcpServers"</span>: { <span class="str">"pg"</span>: {
+  <span class="str">"type"</span>: <span class="str">"stdio"</span>,
+  <span class="str">"command"</span>: <span class="str">"npx"</span>,
+  <span class="str">"args"</span>: [<span class="str">"@mcp/server-postgres"</span>]
+}}}</div>
+
+    <div class="tip"><strong>O&ugrave; placer quoi ?</strong> Chaque conversation &rarr; <code>CLAUDE.md</code> | Scop&eacute; par fichier &rarr; <code>rules/</code> | D&eacute;terministe &rarr; <code>hooks</code> | Workflow r&eacute;utilisable &rarr; <code>commands/</code> | Complexe + refs &rarr; <code>skills/</code> | T&acirc;che parall&egrave;le &rarr; <code>agents/</code> | Outil externe &rarr; <code>MCP</code></div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     ROW 6 : Quick Reference  (full width)
+     ============================================================ -->
+<div class="row row-1">
+
+  <!-- 13. Quick Reference -->
+  <div class="card">
+    <div class="card-title"><span class="icon">&#x1F4A1;</span> Quick Reference &mdash; Combos les plus utilis&eacute;s</div>
+
+    <div class="combos-grid">
+      <div class="combo-group">
+        <h4>Commandes de base</h4>
+        <div class="combo-item"><code>claude</code><span>Session interactive</span></div>
+        <div class="combo-item"><code>claude -c</code><span>Reprendre la derni&egrave;re</span></div>
+        <div class="combo-item"><code>claude -p "query"</code><span>Mode non-interactif</span></div>
+        <div class="combo-item"><code>claude -r "name"</code><span>Session nomm&eacute;e</span></div>
+        <div class="combo-item"><code>claude --model opus</code><span>Utiliser Opus</span></div>
+        <div class="combo-item"><code>/clear</code><span>Repartir de z&eacute;ro</span></div>
+        <div class="combo-item"><code>/compact</code><span>Lib&eacute;rer du contexte</span></div>
+      </div>
+
+      <div class="combo-group">
+        <h4>Mod&egrave;les &amp; Effort</h4>
+        <div class="combo-item"><code>sonnet</code><span>Rapide &amp; &eacute;quilibr&eacute; (d&eacute;faut)</span></div>
+        <div class="combo-item"><code>opus</code><span>Raisonnement complexe</span></div>
+        <div class="combo-item"><code>opus[1m]</code><span>Opus + contexte 1M tokens</span></div>
+        <div class="combo-item"><code>haiku</code><span>Ultra-rapide, exploration</span></div>
+        <div class="combo-item"><code>--effort low</code><span>Questions simples</span></div>
+        <div class="combo-item"><code>--effort max</code><span>Probl&egrave;mes complexes (Opus)</span></div>
+        <div class="combo-item"><code>"ultrathink"</code><span>Effort max ponctuel</span></div>
+      </div>
+
+      <div class="combo-group">
+        <h4>Power Moves</h4>
+        <div class="combo-item"><code>Esc Esc</code><span>Rewind &mdash; annuler</span></div>
+        <div class="combo-item"><code>Shift+Tab &times;2</code><span>Plan Mode &mdash; lecture seule</span></div>
+        <div class="combo-item"><code>Ctrl+B</code><span>T&acirc;che en arri&egrave;re-plan</span></div>
+        <div class="combo-item"><code>--remote "task"</code><span>Agent distant</span></div>
+        <div class="combo-item"><code>-w feat --tmux</code><span>Worktree + tmux</span></div>
+        <div class="combo-item"><code>/loop 5m /test</code><span>R&eacute;p&eacute;ter tous les 5 min</span></div>
+        <div class="combo-item"><code>/insights</code><span>Analyser votre utilisation</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
