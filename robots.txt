@@ -31,6 +31,7 @@ Allow: /tag/web/
 Allow: /tag/tech/
 Allow: /tag/personnel/
 Allow: /tag/securite/
+Allow: /tag/claude-code/
 
 # English tag pages (high value content)
 Allow: /en/tag/ai/
@@ -39,6 +40,7 @@ Allow: /en/tag/web/
 Allow: /en/tag/tech/
 Allow: /en/tag/personal/
 Allow: /en/tag/security/
+Allow: /en/tag/claude-code/
 
 # Disallow admin-type pages and development files
 Disallow: /404.html
