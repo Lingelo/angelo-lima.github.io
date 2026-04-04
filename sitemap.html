@@ -65,6 +65,11 @@ permalink: /sitemap/
             <h3><a href="/tag/securite/">🔒 Cybersécurité</a></h3>
             <p>Sécurité informatique et bonnes pratiques</p>
         </div>
+
+        <div class="tag-category">
+            <h3><a href="/tag/claude-code/">🤖 Claude Code</a></h3>
+            <p>{{ site.posts | where: "tags", "Claude Code" | size }} articles sur Claude Code et le développement assisté par IA</p>
+        </div>
     </div>
 </div>
 
@@ -109,6 +114,11 @@ permalink: /sitemap/
             <div class="tag-category">
                 <h4><a href="/en/tag/security/">🔒 Cybersecurity</a></h4>
                 <p>{{ site.posts | where: "lang", "en" | where: "tags", "Security" | size }} computer security and best practices</p>
+            </div>
+
+            <div class="tag-category">
+                <h4><a href="/en/tag/claude-code/">🤖 Claude Code</a></h4>
+                <p>{{ site.posts | where: "lang", "en" | where: "tags", "Claude Code" | size }} articles about Claude Code and AI-assisted development</p>
             </div>
         </div>
     </div>
