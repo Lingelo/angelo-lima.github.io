@@ -3,8 +3,8 @@ layout: post
 title: "Understanding, measuring and controlling LLM hallucinations"
 subtitle: "Notes from Aygalic Jara's talk at Devoxx France 2026"
 description: "A write-up of Aygalic Jara's talk (SCIAM / LISN) at Devoxx France 2026: why LLMs hallucinate, how to measure it, and practical strategies to keep it under control in production."
-thumbnail-img: "/assets/img/bon-llm.webp"
-cover-img: "/assets/img/bon-llm.webp"
+thumbnail-img: "/assets/img/hallucinations-llm-devoxx-2026.png"
+cover-img: "/assets/img/hallucinations-llm-devoxx-2026.png"
 tags: [IA, Development, Tech]
 author: "Angelo Lima"
 lang: en
