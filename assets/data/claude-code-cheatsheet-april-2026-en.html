@@ -110,7 +110,7 @@
         <tr><td><code>/branch [name]</code></td><td>Branch the conversation <small>(alias: /fork)</small></td></tr>
         <tr><td><code>/export [file]</code></td><td>Export conversation as text</td></tr>
         <tr><td><code>/copy [N]</code></td><td>Copy response N to clipboard</td></tr>
-        <tr><td><code>/cost</code></td><td>Show costs and tokens</td></tr>
+        <tr><td><code>/cost</code></td><td>Costs + tokens + per-model &amp; cache-hit breakdown (subscribers) <span class="badge badge-new">NEW</span></td></tr>
         <tr><td><code>/context</code></td><td>Color-coded context consumption grid</td></tr>
         <tr><td><code>/tasks</code></td><td>List and manage background tasks</td></tr>
       </tbody>
@@ -125,13 +125,14 @@
         <tr><td><code>/focus</code></td><td>Condensed view: last prompt + tool summary + response <span class="badge badge-new">NEW</span></td></tr>
         <tr><td><code>/tui</code></td><td>Flicker-free fullscreen rendering (alt-screen) <span class="badge badge-new">NEW</span></td></tr>
         <tr><td><code>/config</code></td><td>Config panel (includes Editor mode, replaces /vim) <small>(alias: /settings)</small></td></tr>
-        <tr><td><code>/permissions</code></td><td>Manage permissions <small>(alias: /allowed-tools)</small></td></tr>
+        <tr><td><code>/permissions</code></td><td>Manage perms + Recent tab (retry with <code>r</code>) <span class="badge badge-new">NEW</span> <small>(alias: /allowed-tools)</small></td></tr>
         <tr><td><code>/mcp</code></td><td>Manage MCP servers &amp; OAuth</td></tr>
         <tr><td><code>/hooks</code></td><td>View configured hooks</td></tr>
         <tr><td><code>/theme</code></td><td>Change theme + custom JSON editor (~/.claude/themes/)</td></tr>
         <tr><td><code>/color [color]</code></td><td>Prompt bar color</td></tr>
         <tr><td><code>/sandbox</code></td><td>Toggle sandbox mode</td></tr>
         <tr><td><code>/vim</code></td><td><em>Removed in v2.1.92</em> &rarr; <code>/config</code> &rarr; Editor mode <span class="badge badge-removed">REMOVED</span></td></tr>
+        <tr><td><code>/tag</code></td><td><em>Removed in v2.1.92</em> &rarr; AI-generated session titles <span class="badge badge-removed">REMOVED</span></td></tr>
       </tbody>
     </table>
 
@@ -600,6 +601,20 @@ claude <span class="flag">-w</span> feature <span class="flag">--tmux</span></di
     <p><code>Ctrl+B</code> to send to background. Claude continues while you work.</p>
     <p><code>--remote "task"</code> to launch an agent on claude.ai.</p>
     <p><code>/remote-control</code> to make the session remotely accessible.</p>
+
+    <h3>Built-in Agent Tools</h3>
+    <p>What Claude can call (used in <code>allowedTools</code>, <code>if</code>, hooks):</p>
+    <table>
+      <tbody>
+        <tr><td><strong>Filesystem</strong></td><td><code>Read</code>, <code>Write</code>, <code>Edit</code>, <code>NotebookEdit</code>, <code>Glob</code>, <code>Grep</code></td></tr>
+        <tr><td><strong>Shell</strong></td><td><code>Bash</code>, <code>BashOutput</code>, <code>KillBash</code> (+ <code>PowerShell</code> opt-in)</td></tr>
+        <tr><td><strong>Web</strong></td><td><code>WebSearch</code>, <code>WebFetch</code></td></tr>
+        <tr><td><strong>Agents &amp; Skills</strong></td><td><code>Agent</code> (Task), <code>Skill</code>, <code>ToolSearch</code>, <code>Monitor</code> <span class="badge badge-new">NEW</span></td></tr>
+        <tr><td><strong>Session / Meta</strong></td><td><code>TodoWrite</code>, <code>AskUserQuestion</code>, <code>ExitPlanMode</code>, <code>PushNotification</code></td></tr>
+        <tr><td><strong>MCP</strong></td><td><code>mcp__&lt;server&gt;__&lt;tool&gt;</code> (auto-prefixed)</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Restrict:</strong> <code>--tools Read,Edit,Bash(git *)</code> &middot; <strong>Disallow:</strong> <code>--disallowedTools Bash</code></p>
   </div>
 
   <!-- 8. Configuration -->
@@ -768,6 +783,7 @@ claude <span class="flag">-w</span> feature <span class="flag">--tmux</span></di
     <p><strong>Save tokens:</strong> Scoped rules, sub-agents for verbose tasks, <code>--bare</code>, <code>context: fork</code> on skills, <code>opus[1m]</code> (native on Opus 4.7).</p>
     <p><strong>Prompt caching:</strong> <code>ENABLE_PROMPT_CACHING_1H</code> (1h TTL) &mdash; <code>/context</code> shows cache hits (fixed % on Opus 4.7 in April). <span class="badge badge-new">NEW</span></p>
     <p><strong>/resume:</strong> ~67% faster on large sessions (40MB+) since April. <span class="badge badge-new">NEW</span></p>
+    <p><strong>Write tool:</strong> +60% speedup in April 2026. <strong>MCP startup</strong> noticeably quicker. <span class="badge badge-new">NEW</span></p>
   </div>
 
 </div>
