@@ -1,0 +1,526 @@
+/* ============================================================
+   Claude Code Cheatsheet — Site Theme (angelo-lima.fr)
+   Palette alignée avec le blog : fond #0a0a0a, doré #edb926
+   Claude Code v2.1.101 — Avril 2026
+   ============================================================ */
+
+/* --- Fonts --- */
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* --- CSS Variables — Site Dark Theme --- */
+:root {
+  --bg-page: #0a0a0a;
+  --bg-card: #14141a;
+  --bg-card-hover: #1f1f28;
+  --bg-code: #0a0a0a;
+  --bg-table-header: #1a1a22;
+  --bg-table-alt: #14141a;
+  --bg-badge: rgba(255,255,255,0.06);
+
+  --border: #2a2a2a;
+  --border-subtle: #1f1f1f;
+
+  --text: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --text-muted: #6a6a6a;
+
+  /* Primary accent = site gold */
+  --accent-gold: #edb926;
+  --accent-gold-hover: #d4a521;
+
+  /* Secondary accents (toned-down for gold-first palette) */
+  --accent-red: #e74c3c;
+  --accent-orange: #e67e22;
+  --accent-yellow: #edb926;
+  --accent-green: #27ae60;
+  --accent-teal: #16a085;
+  --accent-blue: #5aa0e8;
+  --accent-purple: #a78bfa;
+  --accent-pink: #f472b6;
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+  --card-padding: 20px;
+  --gap: 16px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg-page);
+  width: 1400px;
+  margin: 0 auto;
+  padding: 40px 32px 48px;
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.header .subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.header .version-badge {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #0a0a0a;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Grid Rows --- */
+.row {
+  display: grid;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.row-2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.row-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.row-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.row-1 {
+  grid-template-columns: 1fr;
+}
+
+/* --- Cards --- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  overflow: hidden;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title .icon {
+  font-size: 16px;
+}
+
+/* --- Typography --- */
+h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+h3:first-of-type {
+  margin-top: 0;
+}
+
+p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* --- Tables --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+thead th {
+  background: var(--bg-table-header);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+  padding: 6px 10px;
+}
+
+thead th:first-child {
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+thead th:last-child {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+tbody td {
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+  color: var(--text);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--bg-table-alt);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Inline Code --- */
+code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: rgba(237,185,38,0.08);
+  color: var(--accent-gold);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Code Blocks --- */
+.code-block {
+  background: var(--bg-code);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Syntax highlights */
+.code-block .kw { color: var(--accent-purple); }
+.code-block .str { color: var(--accent-green); }
+.code-block .cm { color: var(--text-muted); }
+.code-block .prop { color: var(--accent-gold); }
+.code-block .val { color: var(--accent-blue); }
+.code-block .fn { color: var(--accent-pink); }
+.code-block .op { color: var(--text-secondary); }
+.code-block .flag { color: var(--accent-purple); }
+
+/* --- Badges / Tags --- */
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-right: 4px;
+  margin-bottom: 3px;
+}
+
+.badge-cmd {
+  background: rgba(90,160,232,0.15);
+  color: var(--accent-blue);
+}
+
+.badge-shortcut {
+  background: rgba(237,185,38,0.15);
+  color: var(--accent-gold);
+}
+
+.badge-flag {
+  background: rgba(167,139,250,0.15);
+  color: var(--accent-purple);
+}
+
+.badge-green {
+  background: rgba(39,174,96,0.15);
+  color: var(--accent-green);
+}
+
+.badge-orange {
+  background: rgba(230,126,34,0.15);
+  color: var(--accent-orange);
+}
+
+.badge-pink {
+  background: rgba(244,114,182,0.15);
+  color: var(--accent-pink);
+}
+
+.badge-gold {
+  background: rgba(237,185,38,0.15);
+  color: var(--accent-gold);
+}
+
+.badge-new {
+  background: var(--accent-gold);
+  color: #0a0a0a;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1px 6px;
+  vertical-align: middle;
+}
+
+.badge-removed {
+  background: var(--accent-red);
+  color: #0a0a0a;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1px 6px;
+  vertical-align: middle;
+}
+
+/* --- Callouts --- */
+.tip {
+  background: rgba(237,185,38,0.08);
+  border-left: 3px solid var(--accent-gold);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.tip strong {
+  color: var(--accent-gold);
+}
+
+.warning {
+  background: rgba(231,76,60,0.08);
+  border-left: 3px solid var(--accent-red);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.warning strong {
+  color: var(--accent-red);
+}
+
+/* --- Shortcut Table (compact 2-col within card) --- */
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.shortcut-grid .key {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+  padding: 3px 0;
+  white-space: nowrap;
+}
+
+.shortcut-grid .desc {
+  color: var(--text-secondary);
+  padding: 3px 0;
+}
+
+/* --- Permission mode diagram --- */
+.mode-flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.mode-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.mode-pill.default { background: rgba(90,160,232,0.15); color: var(--accent-blue); }
+.mode-pill.auto-accept { background: rgba(39,174,96,0.15); color: var(--accent-green); }
+.mode-pill.plan { background: rgba(230,126,34,0.15); color: var(--accent-orange); }
+.mode-pill.auto { background: rgba(237,185,38,0.18); color: var(--accent-gold); }
+.mode-pill.dontask { background: rgba(231,76,60,0.15); color: var(--accent-red); }
+
+.mode-arrow {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* --- File tree --- */
+.file-tree {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.file-tree .dir { color: var(--accent-gold); font-weight: 600; }
+.file-tree .file { color: var(--text-secondary); }
+.file-tree .comment { color: var(--text-muted); }
+
+/* --- Two-column within a card --- */
+.inner-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* --- Lists --- */
+ul, ol {
+  padding-left: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+li {
+  margin-bottom: 2px;
+}
+
+li code {
+  font-size: 10px;
+}
+
+/* --- Separator --- */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 12px 0;
+}
+
+/* --- Quick-ref combos grid --- */
+.combos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.combo-group h4 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 6px;
+}
+
+.combo-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 4px;
+  align-items: baseline;
+}
+
+.combo-item code {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.combo-item span {
+  color: var(--text-secondary);
+}
+
+/* --- Model / Effort pill for Row 5 --- */
+.effort-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  margin-right: 4px;
+  margin-bottom: 3px;
+}
+
+.effort-pill.low    { background: rgba(176,176,176,0.15); color: var(--text-secondary); }
+.effort-pill.medium { background: rgba(90,160,232,0.15);  color: var(--accent-blue); }
+.effort-pill.high   { background: rgba(39,174,96,0.15);   color: var(--accent-green); }
+.effort-pill.xhigh  { background: rgba(237,185,38,0.18);  color: var(--accent-gold); }
+.effort-pill.max    { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+.effort-pill.auto   { background: rgba(230,126,34,0.15);  color: var(--accent-orange); }
