@@ -3,8 +3,8 @@ layout: post
 title: "Souveraineté IA, trillion d'euros et État vassal : ce qu'a dit Arthur Mensch à l'Assemblée nationale"
 subtitle: "Décryptage critique de l'audition du PDG de Mistral AI devant la commission d'enquête sur les vulnérabilités numériques"
 description: "Analyse de l'audition d'Arthur Mensch, PDG de Mistral AI, le 12 mai 2026 devant la commission d'enquête de l'Assemblée nationale sur la souveraineté numérique. Tokens, déficit commercial, AI Act, commande publique : ce qu'il dit, ce qu'il omet."
-thumbnail-img: "/assets/img/mensch-assemblee-nationale-2026.png"
-cover-img: "/assets/img/mensch-assemblee-nationale-2026.png"
+thumbnail-img: "/assets/img/mensch-assemblee-nationale-2026.webp"
+cover-img: "/assets/img/mensch-assemblee-nationale-2026.webp"
 tags: [IA, Tech, Personnel]
 author: "Angelo Lima"
 lang: fr

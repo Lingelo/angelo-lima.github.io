@@ -3,8 +3,8 @@ layout: post
 title: "AI sovereignty, a trillion euros and 'vassal state': what Arthur Mensch told the French National Assembly"
 subtitle: "A critical read of Mistral AI CEO's hearing before the inquiry commission on digital vulnerabilities"
 description: "Analysis of Arthur Mensch's hearing before the French National Assembly inquiry commission on May 12, 2026. Tokens, trade deficit, AI Act, public procurement: what the Mistral AI CEO said, and what he left out."
-thumbnail-img: "/assets/img/mensch-assemblee-nationale-2026.png"
-cover-img: "/assets/img/mensch-assemblee-nationale-2026.png"
+thumbnail-img: "/assets/img/mensch-assemblee-nationale-2026.webp"
+cover-img: "/assets/img/mensch-assemblee-nationale-2026.webp"
 tags: [IA, Tech, Personal]
 author: "Angelo Lima"
 lang: en
