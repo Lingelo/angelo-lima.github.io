@@ -103,42 +103,113 @@ my-second-brain/
 - The **`CLAUDE.md`** file acts as the schema. It describes how the brain should be structured: naming conventions, page format, linking rules. It's the contract the agent follows.
 - **Obsidian** plugs in on top of the `wiki/` folder: it turns markdown backlinks into a visually navigable knowledge graph.
 
-### The initialization prompt: `CLAUDE.md`
+The four slash commands (`/ingest`, `/lint`, `/query`, `/save`) orchestrate the whole system. What they contain exactly and how to create them: that's what the tutorial below covers.
 
-Without it, the agent has no contract to follow and will compile however it likes. This file is what gives the brain its shape.
+---
 
-```markdown
-# My Second Brain
+## The real rhythm: a week with this system
 
-## Role
-You are the agent responsible for building and maintaining this personal wiki.
-You read raw sources and compile them into structured articles.
-You do not invent: everything you write must be traceable to a source.
+The genuine difference from any other note-taking tool is that **you stop thinking about organization in real time**. The mental effort of "where do I file this?" disappears entirely. That's not a small thing: it's precisely that effort that makes us abandon every note system after three weeks.
 
-## Folder structure
-- `raw/` : raw sources to ingest (never modify them)
-- `wiki/` : articles you write and maintain
-- `wiki/index.md` : table of contents for the whole wiki (always up to date)
-- `log.md` : dated history of all your operations
+In practice, the rhythm settles naturally into two modes.
 
-## Wiki article format
-Each article in `wiki/` must:
-- Start with an H1 title and a definition paragraph (2-3 sentences max)
-- Use backlinks [[PageName]] to link related concepts
-- List its sources at the bottom (title, author, date if available)
-- Be encyclopedic: preserve detail, restructure the form
+**Continuously**: you collect without filtering. An interesting article → copied to `raw/`. A conference transcript → dropped in `raw/`. Notes scribbled after a meeting → in `raw/`. The folder is a sandbox, not a library. Nothing needs to be clean to land there.
 
-## Writing rules
-- Compile, don't summarize: rewrite for coherence, not to shorten
-- Resolve contradictions between sources explicitly in the text
-- Create a dedicated page for every significant concept, person or tool
-- Keep `index.md` up to date after every ingestion
-- Log every operation in `log.md` with the date and a short summary
+[Obsidian Clipper](https://obsidian.md/clipper), Obsidian's official browser extension, takes this a step further. One click from Chrome or Firefox converts any web page into a formatted `.md` file and saves it directly to your `raw/` folder. The article you're reading online lands in the drop box with no copy-pasting, no reformatting.
+
+**In batches**: once a week (or when `raw/` starts to pile up), you run `/ingest`. What used to take an hour of manual filing (reading, categorizing, linking, deduplicating) happens without you. You review the output, fix what looks off, and you're done. `/lint` runs alongside when the wiki has grown: it hands you a report of inconsistencies, you arbitrate in five minutes.
+
+What changes over time: after a few months, you have a dense corpus that answers your questions using your own sources. `/query` doesn't search vectors: it reasons over text that *you* collected, compiled into *your* ontology. The difference from a generic ChatGPT is real and tangible.
+
+The whole thing is git-versionable. Your second brain becomes a repository: auditable, diffable, restorable. A far cry from the black hole that a Notion workspace becomes.
+
+---
+
+## Where it actually breaks
+
+It holds on paper. A few months of practice surface frictions the config files don't show.
+
+**What's genuinely strong:**
+- **Organizing effort drops to zero.** That's *the* point. The historical drag on every note-taking system (filing) disappears.
+- **Open format, zero lock-in.** Markdown, folders, git. No SaaS that shuts down with your data inside.
+- **Readable and auditable.** Unlike a vector database, you can *read* your brain. You see what the LLM wrote, and fix it if needed.
+- **Compute cost is paid once**, at compile time, not on every query.
+
+**The limits, which you have to face head-on:**
+- **You delegate the writing to an LLM.** Where there's an LLM, there's a risk of hallucination or clumsy rephrasing. The `/lint` pass helps, but it doesn't replace a critical read. (I covered this in more depth in my article on [LLM hallucinations](/en/llm-hallucinations-devoxx-2026-en/).)
+- **It holds up thanks to the context window.** The elegant "the whole wiki fits in context" model erodes once the brain exceeds a certain size. At very large scale, you drift back toward retrieval strategies, and RAG makes sense again.
+- **Discipline is still required.** Not for organizing, but for *feeding* regularly and *linting*. A brain you stop feeding stays a dead brain.
+- **The enterprise reality check.** Access control, compliance, real-time freshness, massive volume: at that level, the LLM wiki alone isn't enough. It's a tool for personal and small-team use, not an enterprise knowledge management platform.
+
+Once that scope is accepted, what interests me more than the tool itself is what this pattern reveals about how we work with AI.
+
+---
+
+## What this reveals about augmented work
+
+What strikes me is that this pattern isn't isolated. It's the same idea I was digging into in my article on [AI work philosophies](/en/sdd-compound-engineering-bmad-philosophies-en/): **capitalizing on accumulation**.
+
+*Compound engineering* says each development cycle should enrich the next, through a documented learning loop. Karpathy's LLM wiki says exactly the same thing, but for personal knowledge: every ingested source, every saved answer makes the brain denser, and therefore the next query richer. It's a virtuous loop where the AI doesn't just *consume* your knowledge, it *builds* it.
+
+There's also an echo of the [entropy](/en/entropy-human-machine/) I wrote about elsewhere. A note-taking system left to itself drifts toward disorder. That's the natural slope. What the LLM wiki brings is a *delegated* expenditure of energy: it's the LLM that fights the entropy of your information, that files, deduplicates, links. You no longer pay the cost of order. You outsource it.
+
+Karpathy may be right: *there is room for an incredible new product*. But until that product arrives, the Obsidian + Claude Code combo lets you touch the idea right now, with three folders and four commands.
+
+---
+
+## Tutorial: build and use the brain
+
+You don't create these files by hand: you give Claude Code Karpathy's source text and a short delegation prompt. The tool that will run the brain also builds its foundations.
+
+**Prerequisites**: [Claude Code](/en/claude-code-installation-first-steps/) installed, an empty folder.
+
+**1. Create the folder and open Claude Code inside it:**
+
+```bash
+mkdir my-second-brain && cd my-second-brain
+claude
 ```
 
-### The four commands: full content
+**2. Copy Karpathy's original gist**
 
-Claude Code slash commands are simple markdown files in `.claude/commands/`. Their content becomes the prompt executed when you type the command.
+Go to the gist he published in April 2026 and copy the full content:
+
+👉 **[gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)**
+
+This text describes the full pattern: raw/wiki/schema structure, ingest/lint/query workflows, the role of the log and the index. It's the conceptual contract that Claude will implement.
+
+**3. Paste the gist into Claude Code, followed by this delegation prompt:**
+
+```
+Based on the concept described above, initialize a second brain
+in the current folder.
+
+Create:
+- raw/ (empty, for raw sources)
+- wiki/ with an empty index.md
+- empty log.md
+- CLAUDE.md that captures this contract as rules for the agent
+- .claude/commands/ with the four commands /ingest, /lint, /query
+  and /save, whose content faithfully implements the concept described
+
+Confirm the creation of each file.
+```
+
+Claude Code reads Karpathy's concept, understands the expected structure, and creates the files. Here's what it generates:
+
+```
+my-second-brain/
+├── raw/
+├── wiki/
+│   └── index.md
+├── log.md
+├── CLAUDE.md
+└── .claude/commands/
+    ├── ingest.md
+    ├── lint.md
+    ├── query.md
+    └── save.md
+```
 
 **`.claude/commands/ingest.md`** (compilation):
 
@@ -197,103 +268,7 @@ Turn the content above into a new wiki page:
 5. Add an entry to `log.md`
 ```
 
-The `$ARGUMENTS` in `query.md` and `save.md` is Claude Code's syntax for capturing what you type after the command. `/query why doesn't RAG scale for personal use?` injects the question into the prompt.
-
-This `/ingest` / `/lint` split is deliberate: ingestion grows the brain, linting keeps it healthy. The two run independently. Karpathy himself insists on this periodic validation pass as a *"health check"*: without it, a growing wiki eventually accumulates silent inconsistencies.
-
-The mechanics are clear. What's harder to see in the command files is how this system fits into a real work rhythm, and what it actually changes about your relationship to information.
-
----
-
-## The real rhythm: a week with this system
-
-The genuine difference from any other note-taking tool is that **you stop thinking about organization in real time**. The mental effort of "where do I file this?" disappears entirely. That's not a small thing: it's precisely that effort that makes us abandon every note system after three weeks.
-
-In practice, the rhythm settles naturally into two modes.
-
-**Continuously**: you collect without filtering. An interesting article → copied to `raw/`. A conference transcript → dropped in `raw/`. Notes scribbled after a meeting → in `raw/`. The folder is a sandbox, not a library. Nothing needs to be clean to land there.
-
-[Obsidian Clipper](https://obsidian.md/clipper), Obsidian's official browser extension, takes this a step further. One click from Chrome or Firefox converts any web page into a formatted `.md` file and saves it directly to your `raw/` folder. The article you're reading online lands in the drop box with no copy-pasting, no reformatting.
-
-**In batches**: once a week (or when `raw/` starts to pile up), you run `/ingest`. What used to take an hour of manual filing (reading, categorizing, linking, deduplicating) happens without you. You review the output, fix what looks off, and you're done. `/lint` runs alongside when the wiki has grown: it hands you a report of inconsistencies, you arbitrate in five minutes.
-
-What changes over time: after a few months, you have a dense corpus that answers your questions using your own sources. `/query` doesn't search vectors: it reasons over text that *you* collected, compiled into *your* ontology. The difference from a generic ChatGPT is real and tangible.
-
-The whole thing is git-versionable. Your second brain becomes a repository: auditable, diffable, restorable. A far cry from the black hole that a Notion workspace becomes.
-
----
-
-## Where it actually breaks
-
-It holds on paper. A few months of practice surface frictions the config files don't show.
-
-**What's genuinely strong:**
-- **Organizing effort drops to zero.** That's *the* point. The historical drag on every note-taking system (filing) disappears.
-- **Open format, zero lock-in.** Markdown, folders, git. No SaaS that shuts down with your data inside.
-- **Readable and auditable.** Unlike a vector database, you can *read* your brain. You see what the LLM wrote, and fix it if needed.
-- **Compute cost is paid once**, at compile time, not on every query.
-
-**The limits, which you have to face head-on:**
-- **You delegate the writing to an LLM.** Where there's an LLM, there's a risk of hallucination or clumsy rephrasing. The `/lint` pass helps, but it doesn't replace a critical read. (I covered this in more depth in my article on [LLM hallucinations](/en/llm-hallucinations-devoxx-2026-en/).)
-- **It holds up thanks to the context window.** The elegant "the whole wiki fits in context" model erodes once the brain exceeds a certain size. At very large scale, you drift back toward retrieval strategies, and RAG makes sense again.
-- **Discipline is still required.** Not for organizing, but for *feeding* regularly and *linting*. A brain you stop feeding stays a dead brain.
-- **The enterprise reality check.** Access control, compliance, real-time freshness, massive volume: at that level, the LLM wiki alone isn't enough. It's a tool for personal and small-team use, not an enterprise knowledge management platform.
-
-Once that scope is accepted, what interests me more than the tool itself is what this pattern reveals about how we work with AI.
-
----
-
-## What this reveals about augmented work
-
-What strikes me is that this pattern isn't isolated. It's the same idea I was digging into in my article on [AI work philosophies](/en/sdd-compound-engineering-bmad-philosophies-en/): **capitalizing on accumulation**.
-
-*Compound engineering* says each development cycle should enrich the next, through a documented learning loop. Karpathy's LLM wiki says exactly the same thing, but for personal knowledge: every ingested source, every saved answer makes the brain denser, and therefore the next query richer. It's a virtuous loop where the AI doesn't just *consume* your knowledge, it *builds* it.
-
-There's also an echo of the [entropy](/en/entropy-human-machine/) I wrote about elsewhere. A note-taking system left to itself drifts toward disorder. That's the natural slope. What the LLM wiki brings is a *delegated* expenditure of energy: it's the LLM that fights the entropy of your information, that files, deduplicates, links. You no longer pay the cost of order. You outsource it.
-
-Karpathy may be right: *there is room for an incredible new product*. But until that product arrives, the Obsidian + Claude Code combo lets you touch the idea right now, with three folders and four commands.
-
----
-
-## Building the brain: two pieces, not one big prompt
-
-The previous section shows what each file contains. But you don't create them by hand: you give Claude Code Karpathy's source text and a short delegation prompt. That's where the principle folds back on itself: the tool that will run the brain also builds its foundations.
-
-**Prerequisites**: [Claude Code](/en/claude-code-installation-first-steps/) installed, an empty folder.
-
-**1. Create the folder and open Claude Code inside it:**
-
-```bash
-mkdir my-second-brain && cd my-second-brain
-claude
-```
-
-**2. Copy Karpathy's original gist**
-
-Go to the gist he published in April 2026 and copy the full content:
-
-👉 **[gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)**
-
-This text describes the full pattern: raw/wiki/schema structure, ingest/lint/query workflows, the role of the log and the index. It's the conceptual contract that Claude will implement.
-
-**3. Paste the gist into Claude Code, followed by this delegation prompt:**
-
-```
-Based on the concept described above, initialize a second brain
-in the current folder.
-
-Create:
-- raw/ (empty, for raw sources)
-- wiki/ with an empty index.md
-- empty log.md
-- CLAUDE.md that captures this contract as rules for the agent
-- .claude/commands/ with the four commands /ingest, /lint, /query
-  and /save, whose content faithfully implements the concept described
-
-Confirm the creation of each file.
-```
-
-Claude Code reads Karpathy's concept, understands the expected structure, and creates the files. You specified nothing by hand: you delegated the interpretation.
+The `$ARGUMENTS` in `query.md` and `save.md` captures what you type after the command. `/query why doesn't RAG scale for personal use?` injects the question into the prompt. The `/ingest` / `/lint` split is deliberate: one grows the brain, the other keeps it healthy.
 
 **4. Open `wiki/` as a vault in [Obsidian](https://obsidian.md/).**
 
