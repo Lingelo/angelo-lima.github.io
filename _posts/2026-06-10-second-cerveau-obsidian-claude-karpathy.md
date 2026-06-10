@@ -43,7 +43,7 @@ La métaphore du compilateur est volontaire. De même qu'un compilateur transfor
 
 ### Ce que ça donne à l'échelle
 
-Karpathy rapporte un chiffre qui force le respect : sur un seul de ses sujets de recherche, son wiki avait atteint **~100 articles et 400 000 mots** — plus long que la plupart des thèses de doctorat — **sans qu'il en écrive une seule ligne directement**. Le LLM rédige, relie, catégorise, et vérifie la cohérence. L'humain ne fait qu'alimenter et interroger.
+Karpathy avance un chiffre : sur un seul de ses sujets de recherche, son wiki avait atteint **~100 articles et 400 000 mots** (plus long que la plupart des thèses de doctorat) **sans qu'il en écrive une seule ligne directement**. Le LLM rédige, relie, catégorise, et vérifie la cohérence. L'humain ne fait qu'alimenter et interroger.
 
 Sa propre conclusion, lâchée sur X : *« I think there is room here for an incredible new product. »*
 

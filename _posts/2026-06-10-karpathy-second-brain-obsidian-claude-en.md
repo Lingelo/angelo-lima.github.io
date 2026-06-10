@@ -42,7 +42,7 @@ The compiler metaphor is deliberate. Just as a compiler turns heterogeneous sour
 
 ### What it looks like at scale
 
-Karpathy puts a number on it: on a single research topic, his wiki reached **~100 articles and 400,000 words** — longer than most PhD dissertations — **without him writing a single line directly**. The LLM does the writing, the linking, the categorizing, and the consistency checking. The human only feeds and queries.
+Karpathy puts a number on it: on a single research topic, his wiki reached **~100 articles and 400,000 words** (longer than most PhD dissertations) **without him writing a single line directly**. The LLM does the writing, the linking, the categorizing, and the consistency checking. The human only feeds and queries.
 
 His own conclusion, dropped on X: *"I think there is room here for an incredible new product."*
 
