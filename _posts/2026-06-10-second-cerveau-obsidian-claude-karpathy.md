@@ -89,6 +89,10 @@ mon-second-cerveau/
 ├── CLAUDE.md         ← le "schéma" : règles d'organisation du cerveau
 └── .claude/
     └── commands/     ← les slash commands personnalisées
+        ├── ingest.md
+        ├── lint.md
+        ├── query.md
+        └── save.md
 ```
 
 - Le dossier **`raw/`** est votre boîte de dépôt. Vous y jetez tout, sans organisation.
@@ -96,18 +100,103 @@ mon-second-cerveau/
 - Le fichier **`CLAUDE.md`** joue le rôle de schéma. Il décrit comment le cerveau doit être structuré — conventions de nommage, format des pages, règles de liaison. C'est le contrat que l'agent suit.
 - **Obsidian** vient se brancher par-dessus le dossier `wiki/` : il transforme les backlinks markdown en un graphe de connaissances navigable visuellement.
 
-### Les quatre commandes qui font tourner le cerveau
+### Le prompt d'initialisation : `CLAUDE.md`
 
-Tout le workflow tient dans quatre slash commands à lancer depuis Claude Code :
+C'est le fichier le plus important. Il définit les règles que l'agent suit à chaque opération — sans lui, le cerveau n'a pas de forme.
 
-| Commande | Rôle |
-|---|---|
-| **`/ingest`** | Lit les sources du dossier `raw/` et les **compile** dans le wiki : crée ou enrichit les articles, tisse les backlinks, met à jour l'index. C'est le cœur du système. |
-| **`/lint`** | Passe le wiki au peigne fin : détecte les **contradictions** entre articles, les **pages orphelines**, les concepts cités sans page dédiée, les entrées d'index périmées. Le contrôle santé. |
-| **`/query`** | Interroge le wiki en langage naturel pour répondre à une question, en s'appuyant sur le savoir déjà compilé. |
-| **`/save`** | Archive une réponse intéressante comme nouvelle page synthétisée du wiki. La connaissance produite à la volée est capitalisée. |
+```markdown
+# Mon Second Cerveau
 
-Cette séparation `/ingest` / `/lint` est élégante : l'ingestion fait grossir le cerveau, le linting le maintient en bonne santé. Les deux tournent indépendamment. Karpathy lui-même insiste sur cette passe de validation périodique comme un *« health check »* — sans elle, un wiki qui grossit finit par accumuler des incohérences silencieuses.
+## Rôle
+Tu es l'agent responsable de la construction et de la maintenance de ce wiki
+personnel. Tu lis des sources brutes et les compiles en articles structurés.
+Tu n'inventes pas : tout ce que tu écris doit être traçable à une source.
+
+## Structure des dossiers
+- `raw/` : sources brutes à ingérer (ne jamais les modifier)
+- `wiki/` : articles que tu écris et maintiens
+- `wiki/index.md` : sommaire de tout le wiki (toujours à jour)
+- `log.md` : historique daté de toutes tes opérations
+
+## Format des articles wiki
+Chaque article dans `wiki/` doit :
+- Commencer par un titre H1 et un paragraphe de définition (2-3 phrases max)
+- Utiliser des backlinks [[NomDePage]] vers les concepts liés
+- Lister ses sources en bas de page (titre, auteur, date si disponible)
+- Être encyclopédique : conserver le détail, restructurer la forme
+
+## Règles d'écriture
+- Compiler, pas résumer : reformuler pour la cohérence, pas pour raccourcir
+- Résoudre les contradictions entre sources explicitement dans le texte
+- Créer une page dédiée pour chaque concept, personne ou outil significatif
+- Maintenir `index.md` à jour après chaque ingestion
+- Logger chaque opération dans `log.md` avec la date et un résumé
+```
+
+### Les quatre commandes : contenu complet
+
+Les slash commands de Claude Code sont de simples fichiers markdown dans `.claude/commands/`. Leur contenu devient le prompt exécuté quand vous tapez la commande.
+
+**`.claude/commands/ingest.md`** — la compilation :
+
+```markdown
+Lis tous les fichiers présents dans le dossier `raw/` (ignore `raw/processed/`).
+
+Pour chaque source :
+1. Identifie les concepts, personnes, outils et idées clés
+2. Pour chaque élément significatif : crée ou enrichis la page correspondante dans `wiki/`
+3. Tisse les backlinks [[NomDePage]] entre pages liées
+4. Si deux sources se contredisent, note la contradiction dans l'article concerné
+5. Déplace les fichiers traités dans `raw/processed/`
+
+Une fois toutes les sources traitées :
+- Mets à jour `wiki/index.md` avec les nouvelles pages et les pages modifiées
+- Ajoute une entrée dans `log.md` : date, nombre de fichiers ingérés, pages créées/modifiées
+```
+
+**`.claude/commands/lint.md`** — le contrôle santé :
+
+```markdown
+Passe en revue l'intégralité du dossier `wiki/` et produis un rapport structuré.
+
+Vérifie :
+1. **Contradictions** : passages qui se contredisent entre deux articles différents
+2. **Pages orphelines** : articles sans aucun backlink entrant depuis une autre page
+3. **Liens cassés** : backlinks [[NomDePage]] qui pointent vers une page inexistante
+4. **Index périmé** : entrées dans `index.md` manquantes ou pointant vers des pages supprimées
+5. **Concepts sans page** : termes récurrents dans plusieurs articles qui mériteraient leur propre page
+
+Pour chaque problème : indique le fichier concerné, décris le problème, propose une correction.
+Demande confirmation avant d'appliquer les corrections.
+```
+
+**`.claude/commands/query.md`** — l'interrogation :
+
+```markdown
+$ARGUMENTS
+
+Réponds à la question ci-dessus en t'appuyant sur le contenu du dossier `wiki/`.
+Cite les pages sources entre parenthèses pour chaque information.
+Si la réponse n'est pas dans le wiki, dis-le clairement — ne complète pas avec tes
+connaissances générales sans le signaler explicitement.
+```
+
+**`.claude/commands/save.md`** — la capitalisation :
+
+```markdown
+$ARGUMENTS
+
+Transforme le contenu ci-dessus en une nouvelle page du wiki :
+1. Détermine un titre court et précis
+2. Écris la page au format encyclopédique (H1, résumé, sections, backlinks [[]])
+3. Crée le fichier dans `wiki/` avec les backlinks vers les pages existantes pertinentes
+4. Mets à jour `wiki/index.md`
+5. Ajoute une entrée dans `log.md`
+```
+
+Le `$ARGUMENTS` dans `query.md` et `save.md` est la syntaxe Claude Code pour capturer ce que vous tapez après la commande. `/query pourquoi le RAG ne scale pas pour un usage perso ?` injecte la question dans le prompt.
+
+Cette séparation `/ingest` / `/lint` est délibérée : l'ingestion fait grossir le cerveau, le linting le maintient en bonne santé. Les deux tournent indépendamment. Karpathy lui-même insiste sur cette passe de validation périodique comme un *« health check »* — sans elle, un wiki qui grossit finit par accumuler des incohérences silencieuses.
 
 ---
 

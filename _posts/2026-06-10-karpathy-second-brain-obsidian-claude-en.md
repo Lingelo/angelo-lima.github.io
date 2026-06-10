@@ -88,6 +88,10 @@ my-second-brain/
 ├── CLAUDE.md         ← the "schema": brain organization rules
 └── .claude/
     └── commands/     ← the custom slash commands
+        ├── ingest.md
+        ├── lint.md
+        ├── query.md
+        └── save.md
 ```
 
 - The **`raw/`** folder is your drop box. You throw everything in, no organization.
@@ -95,18 +99,103 @@ my-second-brain/
 - The **`CLAUDE.md`** file acts as the schema. It describes how the brain should be structured — naming conventions, page format, linking rules. It's the contract the agent follows.
 - **Obsidian** plugs in on top of the `wiki/` folder: it turns markdown backlinks into a visually navigable knowledge graph.
 
-### The four commands that run the brain
+### The initialization prompt: `CLAUDE.md`
 
-The whole workflow fits in four slash commands run from Claude Code:
+This is the most important file. It defines the rules the agent follows on every operation — without it, the brain has no shape.
 
-| Command | Role |
-|---|---|
-| **`/ingest`** | Reads the sources in `raw/` and **compiles** them into the wiki: creates or enriches articles, weaves backlinks, updates the index. The heart of the system. |
-| **`/lint`** | Combs through the wiki: detects **contradictions** between articles, **orphan pages**, concepts cited without a dedicated page, stale index entries. The health check. |
-| **`/query`** | Queries the wiki in natural language to answer a question, leaning on the already-compiled knowledge. |
-| **`/save`** | Archives an interesting answer as a new synthesized wiki page. Knowledge produced on the fly gets capitalized. |
+```markdown
+# My Second Brain
 
-This `/ingest` / `/lint` split is elegant: ingestion grows the brain, linting keeps it healthy. The two run independently. Karpathy himself insists on this periodic validation pass as a *"health check"* — without it, a growing wiki eventually accumulates silent inconsistencies.
+## Role
+You are the agent responsible for building and maintaining this personal wiki.
+You read raw sources and compile them into structured articles.
+You do not invent: everything you write must be traceable to a source.
+
+## Folder structure
+- `raw/` : raw sources to ingest (never modify them)
+- `wiki/` : articles you write and maintain
+- `wiki/index.md` : table of contents for the whole wiki (always up to date)
+- `log.md` : dated history of all your operations
+
+## Wiki article format
+Each article in `wiki/` must:
+- Start with an H1 title and a definition paragraph (2-3 sentences max)
+- Use backlinks [[PageName]] to link related concepts
+- List its sources at the bottom (title, author, date if available)
+- Be encyclopedic: preserve detail, restructure the form
+
+## Writing rules
+- Compile, don't summarize: rewrite for coherence, not to shorten
+- Resolve contradictions between sources explicitly in the text
+- Create a dedicated page for every significant concept, person or tool
+- Keep `index.md` up to date after every ingestion
+- Log every operation in `log.md` with the date and a short summary
+```
+
+### The four commands: full content
+
+Claude Code slash commands are simple markdown files in `.claude/commands/`. Their content becomes the prompt executed when you type the command.
+
+**`.claude/commands/ingest.md`** — compilation:
+
+```markdown
+Read all files in the `raw/` folder (ignore `raw/processed/`).
+
+For each source:
+1. Identify the key concepts, people, tools and ideas
+2. For each significant element: create or enrich the corresponding page in `wiki/`
+3. Weave [[PageName]] backlinks between related pages
+4. If two sources contradict each other, note the contradiction in the relevant article
+5. Move processed files to `raw/processed/`
+
+Once all sources are processed:
+- Update `wiki/index.md` with new and modified pages
+- Add an entry to `log.md`: date, number of files ingested, pages created/modified
+```
+
+**`.claude/commands/lint.md`** — health check:
+
+```markdown
+Review the entire `wiki/` folder and produce a structured report.
+
+Check for:
+1. **Contradictions**: passages that conflict between two different articles
+2. **Orphan pages**: articles with no incoming backlinks from any other page
+3. **Broken links**: [[PageName]] backlinks pointing to a non-existent page
+4. **Stale index**: entries in `index.md` that are missing or point to deleted pages
+5. **Concepts without pages**: recurring terms across multiple articles that deserve their own page
+
+For each problem: indicate the file, describe the issue, propose a fix.
+Ask for confirmation before applying any corrections.
+```
+
+**`.claude/commands/query.md`** — querying:
+
+```markdown
+$ARGUMENTS
+
+Answer the question above using the content of the `wiki/` folder.
+Cite source pages in parentheses for each piece of information.
+If the answer is not in the wiki, say so clearly — do not fill in from your general
+knowledge without explicitly flagging it.
+```
+
+**`.claude/commands/save.md`** — capitalizing:
+
+```markdown
+$ARGUMENTS
+
+Turn the content above into a new wiki page:
+1. Determine a short, precise title
+2. Write the page in encyclopedic format (H1, summary, sections, [[]] backlinks)
+3. Create the file in `wiki/` with backlinks to relevant existing pages
+4. Update `wiki/index.md`
+5. Add an entry to `log.md`
+```
+
+The `$ARGUMENTS` in `query.md` and `save.md` is Claude Code's syntax for capturing what you type after the command. `/query why doesn't RAG scale for personal use?` injects the question into the prompt.
+
+This `/ingest` / `/lint` split is deliberate: ingestion grows the brain, linting keeps it healthy. The two run independently. Karpathy himself insists on this periodic validation pass as a *"health check"* — without it, a growing wiki eventually accumulates silent inconsistencies.
 
 ---
 
