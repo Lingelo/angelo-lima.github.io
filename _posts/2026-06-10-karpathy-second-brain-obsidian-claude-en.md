@@ -251,14 +251,118 @@ Karpathy may be right: *there is room for an incredible new product*. But until 
 
 ---
 
-## Getting started
+## Building the brain with one command
 
-If you want to try it:
+Everything above describes the files. But you don't create them by hand — you delegate the construction to Claude Code itself with an initialization prompt. That's where the principle folds back on itself: the tool that will run the brain also builds its structure.
 
-1. Create the `raw/` + `wiki/` + `CLAUDE.md` structure in a new folder.
-2. Install [Claude Code](/en/claude-code-installation-first-steps/) if you haven't already.
-3. Open the `wiki/` folder as a vault in [Obsidian](https://obsidian.md/).
-4. Drop a few sources into `raw/`, run `/ingest`, and watch your brain write itself.
+**Prerequisites**: [Claude Code](/en/claude-code-installation-first-steps/) installed, an empty folder.
+
+**1. Create the folder and open Claude Code inside it:**
+
+```bash
+mkdir my-second-brain && cd my-second-brain
+claude
+```
+
+**2. Paste this initialization prompt into Claude Code:**
+
+```
+Initialize a second brain in the current folder.
+
+Create the following structure:
+
+1. Folder `raw/` (empty)
+2. Folder `wiki/` with a `wiki/index.md` file:
+
+# Index
+
+<!-- Auto-updated by /ingest -->
+
+3. Empty `log.md` file
+4. `CLAUDE.md` file with this content:
+
+# My Second Brain
+
+## Role
+You are the agent responsible for building and maintaining this personal wiki.
+You read raw sources and compile them into structured articles.
+You do not invent: everything you write must be traceable to a source.
+
+## Folder structure
+- `raw/` : raw sources to ingest (never modify them)
+- `wiki/` : articles you write and maintain
+- `wiki/index.md` : table of contents for the whole wiki (always up to date)
+- `log.md` : dated history of all your operations
+
+## Wiki article format
+Each article in `wiki/` must:
+- Start with an H1 title and a definition paragraph (2-3 sentences max)
+- Use backlinks [[PageName]] to link related concepts
+- List its sources at the bottom (title, author, date if available)
+- Be encyclopedic: preserve detail, restructure the form
+
+## Writing rules
+- Compile, don't summarize: rewrite for coherence, not to shorten
+- Resolve contradictions between sources explicitly in the text
+- Create a dedicated page for every significant concept, person or tool
+- Keep `index.md` up to date after every ingestion
+- Log every operation in `log.md` with the date and a short summary
+
+5. Folder `.claude/commands/` with these four files:
+
+`.claude/commands/ingest.md`:
+Read all files in the `raw/` folder (ignore `raw/processed/`).
+
+For each source:
+1. Identify the key concepts, people, tools and ideas
+2. For each significant element: create or enrich the corresponding page in `wiki/`
+3. Weave [[PageName]] backlinks between related pages
+4. If two sources contradict each other, note the contradiction in the relevant article
+5. Move processed files to `raw/processed/`
+
+Once all sources are processed:
+- Update `wiki/index.md` with new and modified pages
+- Add an entry to `log.md`: date, number of files ingested, pages created/modified
+
+`.claude/commands/lint.md`:
+Review the entire `wiki/` folder and produce a structured report.
+
+Check for:
+1. Contradictions: passages that conflict between two different articles
+2. Orphan pages: articles with no incoming backlinks from any other page
+3. Broken links: [[PageName]] backlinks pointing to a non-existent page
+4. Stale index: entries in index.md that are missing or point to deleted pages
+5. Concepts without pages: recurring terms across multiple articles that deserve their own page
+
+For each problem: indicate the file, describe the issue, propose a fix.
+Ask for confirmation before applying any corrections.
+
+`.claude/commands/query.md`:
+$ARGUMENTS
+
+Answer the question above using the content of the `wiki/` folder.
+Cite source pages in parentheses for each piece of information.
+If the answer is not in the wiki, say so clearly — do not fill in from your general
+knowledge without explicitly flagging it.
+
+`.claude/commands/save.md`:
+$ARGUMENTS
+
+Turn the content above into a new wiki page:
+1. Determine a short, precise title
+2. Write the page in encyclopedic format (H1, summary, sections, [[]] backlinks)
+3. Create the file in `wiki/` with backlinks to relevant existing pages
+4. Update `wiki/index.md`
+5. Add an entry to `log.md`
+
+Confirm the creation of each file and folder.
+```
+
+Claude Code creates the entire structure. You haven't written a single file by hand.
+
+**3. Open `wiki/` as a vault in [Obsidian](https://obsidian.md/).**
+
+**4. Drop one or two files into `raw/` and run `/ingest`.**
 
 The hard part won't be technical. It'll be resisting the urge to reorganize everything by hand. That's precisely what Karpathy is asking you to stop doing.
 
