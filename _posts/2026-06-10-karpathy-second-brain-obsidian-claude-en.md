@@ -42,7 +42,7 @@ The compiler metaphor is deliberate. Just as a compiler turns heterogeneous sour
 
 ### What it looks like at scale
 
-Karpathy reports a number that commands respect: on a single one of his research topics, his wiki had reached **~100 articles and 400,000 words** — longer than most PhD dissertations — **without him writing a single line directly**. The LLM does the writing, the linking, the categorizing, and the consistency checking. The human only feeds and queries.
+Karpathy puts a number on it: on a single research topic, his wiki reached **~100 articles and 400,000 words** — longer than most PhD dissertations — **without him writing a single line directly**. The LLM does the writing, the linking, the categorizing, and the consistency checking. The human only feeds and queries.
 
 His own conclusion, dropped on X: *"I think there is room here for an incredible new product."*
 
@@ -67,7 +67,7 @@ The argument holds up once you lay it flat:
 | **Human-readable** | No (opaque vectors) | Yes (it's just text) |
 | **State between sessions** | Stateless | Persistent and versionable (git) |
 
-The deep intuition: RAG does the **same sorting work on every question**, over raw data that's never cleaned. The LLM wiki does that work **once**, at compile time, and produces a clean, condensed artifact that fits inside the context window of modern long-context models. For a personal-scale knowledge base — a few hundred articles — RAG becomes an over-engineered machine you simply no longer need.
+The deep intuition: RAG does the **same sorting work on every question**, over raw data that's never cleaned. The LLM wiki does that work **once**, at compile time, and produces a clean, condensed artifact that fits inside the context window of modern long-context models. For a personal-scale knowledge base (a few hundred articles), RAG becomes an over-engineered machine you simply no longer need.
 
 > ⚠️ **Important caveat**: this reasoning holds for *personal* use. At enterprise scale — millions of documents, granular access control, real-time freshness constraints — RAG keeps all its relevance. The LLM wiki isn't a religion; it's the right tool for the right scale.
 
@@ -105,7 +105,7 @@ my-second-brain/
 
 ### The initialization prompt: `CLAUDE.md`
 
-This is the most important file. It defines the rules the agent follows on every operation — without it, the brain has no shape.
+Without it, the agent has no contract to follow and will compile however it likes. This file is what gives the brain its shape.
 
 ```markdown
 # My Second Brain
@@ -221,9 +221,7 @@ The whole thing is git-versionable. Your second brain becomes a repository: audi
 
 ---
 
-## Strengths, limits and blind spot
-
-Let's be clear-eyed — no approach is magic.
+## Where it actually breaks
 
 **What's genuinely strong:**
 - **Organizing effort drops to zero.** That's *the* point. The historical drag on every note-taking system — filing — disappears.
@@ -237,7 +235,7 @@ Let's be clear-eyed — no approach is magic.
 - **Discipline is still required.** Not for organizing, but for *feeding* regularly and *linting*. A brain you stop feeding stays a dead brain.
 - **The enterprise reality check.** Access control, compliance, real-time freshness, massive volume: at that level, the LLM wiki alone isn't enough. It's a tool for personal and small-team use, not an enterprise knowledge management platform.
 
-These limits don't sink the concept — they define its scope. And once that scope is accepted, what interests me more than the tool itself is what this pattern reveals about how we work with AI.
+Once that scope is accepted, what interests me more than the tool itself is what this pattern reveals about how we work with AI.
 
 ---
 
