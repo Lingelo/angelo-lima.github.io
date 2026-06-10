@@ -68,7 +68,7 @@ L'argument est solide une fois qu'on le pose à plat :
 | **Lisible par un humain** | Non (vecteurs opaques) | Oui (c'est juste du texte) |
 | **État entre sessions** | Stateless | Persistant et versionnable (git) |
 
-L'intuition profonde : le RAG fait le **même travail de tri à chaque question**, sur de la donnée brute jamais nettoyée. Le LLM wiki fait ce travail **une seule fois**, au moment de la compilation, et produit un artefact propre, condensé, qui tient dans la fenêtre de contexte des modèles longs modernes. Pour une base de connaissances à l'échelle personnelle — quelques centaines d'articles — le RAG devient une usine à gaz dont on n'a tout simplement plus besoin.
+L'intuition profonde : le RAG fait le **même travail de tri à chaque question**, sur de la donnée brute jamais nettoyée. Le LLM wiki fait ce travail **une seule fois**, au moment de la compilation, et produit un artefact propre, condensé, qui tient dans la fenêtre de contexte des modèles longs modernes. Pour une base de connaissances à l'échelle personnelle (quelques centaines d'articles), le RAG devient une usine à gaz dont on n'a tout simplement plus besoin.
 
 > ⚠️ **Nuance importante** : ce raisonnement vaut pour un usage *personnel*. À l'échelle entreprise — des millions de documents, du contrôle d'accès granulaire, des contraintes de fraîcheur en temps réel — le RAG garde toute sa pertinence. Le LLM wiki n'est pas une religion, c'est le bon outil pour la bonne échelle.
 
@@ -106,7 +106,7 @@ mon-second-cerveau/
 
 ### Le prompt d'initialisation : `CLAUDE.md`
 
-C'est le fichier le plus important. Il définit les règles que l'agent suit à chaque opération — sans lui, le cerveau n'a pas de forme.
+Sans lui, l'agent n'a aucun contrat à suivre et compilera n'importe comment. C'est ce fichier qui fixe la forme du cerveau.
 
 ```markdown
 # Mon Second Cerveau
@@ -222,9 +222,9 @@ Le tout est versionnable avec git. Votre second cerveau devient un dépôt : aud
 
 ---
 
-## Ce que ce rythme ne dit pas
+## Où ça coince vraiment
 
-Le tableau est séduisant. Mais quelques mois avec ce système apprennent aussi ses vraies limites — celles qui n'apparaissent pas dans la description des commandes.
+Ça tient sur le papier. Mais quelques mois avec ce système font apparaître des frictions que les commandes ne documentent pas.
 
 **Ce qui est vraiment fort :**
 - **L'effort d'organisation tombe à zéro.** C'est *le* point. Le frein historique de tout système de notes — le rangement — disparaît.
@@ -238,7 +238,7 @@ Le tableau est séduisant. Mais quelques mois avec ce système apprennent aussi 
 - **La discipline reste nécessaire.** Pas pour organiser, mais pour *alimenter* régulièrement et *linter*. Un cerveau qu'on ne nourrit plus reste un cerveau mort.
 - **Le reality check entreprise.** Contrôle d'accès, conformité, fraîcheur temps réel, volumétrie massive : à ce niveau, le LLM wiki seul ne suffit pas. C'est un outil d'usage personnel et d'équipe restreinte, pas une plateforme de knowledge management d'entreprise.
 
-Ces limites ne font pas tomber le concept — elles en précisent le périmètre. Et une fois ce périmètre accepté, il reste quelque chose qui m'intéresse plus que l'outil lui-même : ce que ce pattern révèle sur la façon dont on travaille avec l'IA.
+Et une fois ce périmètre accepté, ce qui m'intéresse davantage que l'outil lui-même, c'est ce que ce pattern révèle sur la façon dont on travaille avec l'IA.
 
 ---
 
