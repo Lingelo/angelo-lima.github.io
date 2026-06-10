@@ -251,9 +251,9 @@ Karpathy may be right: *there is room for an incredible new product*. But until 
 
 ---
 
-## Building the brain with one command
+## Building the brain: two pieces, not one big prompt
 
-Everything above describes the files. But you don't create them by hand — you delegate the construction to Claude Code itself with an initialization prompt. That's where the principle folds back on itself: the tool that will run the brain also builds its structure.
+The previous section shows what each file contains. But you don't create them by hand — you give Claude Code Karpathy's source text and a short delegation prompt. That's where the principle folds back on itself: the tool that will run the brain also builds its foundations.
 
 **Prerequisites**: [Claude Code](/en/claude-code-installation-first-steps/) installed, an empty folder.
 
@@ -264,108 +264,38 @@ mkdir my-second-brain && cd my-second-brain
 claude
 ```
 
-**2. Paste this initialization prompt into Claude Code:**
+**2. Copy Karpathy's original gist**
+
+Go to the gist he published in April 2026 and copy the full content:
+
+👉 **[gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)**
+
+This text describes the full pattern: raw/wiki/schema structure, ingest/lint/query workflows, the role of the log and the index. It's the conceptual contract that Claude will implement.
+
+**3. Paste the gist into Claude Code, followed by this delegation prompt:**
 
 ```
-Initialize a second brain in the current folder.
+Based on the concept described above, initialize a second brain
+in the current folder.
 
-Create the following structure:
+Create:
+- raw/ (empty, for raw sources)
+- wiki/ with an empty index.md
+- empty log.md
+- CLAUDE.md that captures this contract as rules for the agent
+- .claude/commands/ with the four commands /ingest, /lint, /query
+  and /save, whose content faithfully implements the concept described
 
-1. Folder `raw/` (empty)
-2. Folder `wiki/` with a `wiki/index.md` file:
-
-# Index
-
-<!-- Auto-updated by /ingest -->
-
-3. Empty `log.md` file
-4. `CLAUDE.md` file with this content:
-
-# My Second Brain
-
-## Role
-You are the agent responsible for building and maintaining this personal wiki.
-You read raw sources and compile them into structured articles.
-You do not invent: everything you write must be traceable to a source.
-
-## Folder structure
-- `raw/` : raw sources to ingest (never modify them)
-- `wiki/` : articles you write and maintain
-- `wiki/index.md` : table of contents for the whole wiki (always up to date)
-- `log.md` : dated history of all your operations
-
-## Wiki article format
-Each article in `wiki/` must:
-- Start with an H1 title and a definition paragraph (2-3 sentences max)
-- Use backlinks [[PageName]] to link related concepts
-- List its sources at the bottom (title, author, date if available)
-- Be encyclopedic: preserve detail, restructure the form
-
-## Writing rules
-- Compile, don't summarize: rewrite for coherence, not to shorten
-- Resolve contradictions between sources explicitly in the text
-- Create a dedicated page for every significant concept, person or tool
-- Keep `index.md` up to date after every ingestion
-- Log every operation in `log.md` with the date and a short summary
-
-5. Folder `.claude/commands/` with these four files:
-
-`.claude/commands/ingest.md`:
-Read all files in the `raw/` folder (ignore `raw/processed/`).
-
-For each source:
-1. Identify the key concepts, people, tools and ideas
-2. For each significant element: create or enrich the corresponding page in `wiki/`
-3. Weave [[PageName]] backlinks between related pages
-4. If two sources contradict each other, note the contradiction in the relevant article
-5. Move processed files to `raw/processed/`
-
-Once all sources are processed:
-- Update `wiki/index.md` with new and modified pages
-- Add an entry to `log.md`: date, number of files ingested, pages created/modified
-
-`.claude/commands/lint.md`:
-Review the entire `wiki/` folder and produce a structured report.
-
-Check for:
-1. Contradictions: passages that conflict between two different articles
-2. Orphan pages: articles with no incoming backlinks from any other page
-3. Broken links: [[PageName]] backlinks pointing to a non-existent page
-4. Stale index: entries in index.md that are missing or point to deleted pages
-5. Concepts without pages: recurring terms across multiple articles that deserve their own page
-
-For each problem: indicate the file, describe the issue, propose a fix.
-Ask for confirmation before applying any corrections.
-
-`.claude/commands/query.md`:
-$ARGUMENTS
-
-Answer the question above using the content of the `wiki/` folder.
-Cite source pages in parentheses for each piece of information.
-If the answer is not in the wiki, say so clearly — do not fill in from your general
-knowledge without explicitly flagging it.
-
-`.claude/commands/save.md`:
-$ARGUMENTS
-
-Turn the content above into a new wiki page:
-1. Determine a short, precise title
-2. Write the page in encyclopedic format (H1, summary, sections, [[]] backlinks)
-3. Create the file in `wiki/` with backlinks to relevant existing pages
-4. Update `wiki/index.md`
-5. Add an entry to `log.md`
-
-Confirm the creation of each file and folder.
+Confirm the creation of each file.
 ```
 
-Claude Code creates the entire structure. You haven't written a single file by hand.
+Claude Code reads Karpathy's concept, understands the expected structure, and creates the files. You specified nothing by hand — you delegated the interpretation.
 
-**3. Open `wiki/` as a vault in [Obsidian](https://obsidian.md/).**
+**4. Open `wiki/` as a vault in [Obsidian](https://obsidian.md/).**
 
-**4. Drop one or two files into `raw/` and run `/ingest`.**
+**5. Drop a file into `raw/` and run `/ingest`.**
 
 The hard part won't be technical. It'll be resisting the urge to reorganize everything by hand. That's precisely what Karpathy is asking you to stop doing.
-
 ---
 
 *This article extends my reflections on AI-augmented work. See also my [Claude Code series](/en/claude-code-installation-first-steps/) and my article on [human–machine entropy](/en/entropy-human-machine/).*

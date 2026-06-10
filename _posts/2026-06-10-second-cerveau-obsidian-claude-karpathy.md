@@ -254,9 +254,9 @@ Karpathy a peut-être raison : *there is room for an incredible new product*. Ma
 
 ---
 
-## Créer le cerveau en une commande
+## Créer le cerveau : deux éléments, pas un gros prompt
 
-Tout ce qui précède décrit les fichiers. Mais on ne les crée pas à la main — on délègue la construction à Claude Code lui-même avec un prompt d'initialisation. C'est là que le principe se referme sur lui-même : l'outil qui va faire tourner le cerveau en construit aussi la structure.
+La section précédente montre le contenu de chaque fichier. Mais on ne les crée pas à la main — on donne à Claude Code le texte source de Karpathy, et un court prompt de délégation. C'est là que le principe se referme : l'outil qui fera tourner le cerveau en construit aussi les fondations.
 
 **Prérequis** : [Claude Code](/fr/claude-code-installation-premiers-pas/) installé, un dossier vide.
 
@@ -267,108 +267,38 @@ mkdir mon-second-cerveau && cd mon-second-cerveau
 claude
 ```
 
-**2. Collez ce prompt d'initialisation dans Claude Code :**
+**2. Copiez le gist original de Karpathy**
+
+Allez sur le gist qu'il a publié en avril 2026 et copiez le contenu intégral :
+
+👉 **[gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)**
+
+Ce texte décrit le pattern complet : structure raw/wiki/schema, les workflows ingest/lint/query, le rôle du log et de l'index. C'est le contrat conceptuel que Claude va implémenter.
+
+**3. Collez le gist dans Claude Code, suivi de ce prompt de délégation :**
 
 ```
-Initialise un second cerveau dans le dossier courant.
+Sur la base du concept décrit ci-dessus, initialise un second cerveau
+dans le dossier courant.
 
-Crée la structure suivante :
+Crée :
+- raw/ (vide, pour les sources brutes)
+- wiki/ avec un index.md vide
+- log.md vide
+- CLAUDE.md qui capture ce contrat comme règles pour l'agent
+- .claude/commands/ avec les quatre commandes /ingest, /lint, /query
+  et /save, dont le contenu implémente fidèlement le concept décrit
 
-1. Dossier `raw/` (vide)
-2. Dossier `wiki/` avec un fichier `wiki/index.md` :
-
-# Index
-
-<!-- Mis à jour automatiquement par /ingest -->
-
-3. Fichier `log.md` vide
-4. Fichier `CLAUDE.md` avec ce contenu :
-
-# Mon Second Cerveau
-
-## Rôle
-Tu es l'agent responsable de la construction et de la maintenance de ce wiki
-personnel. Tu lis des sources brutes et les compiles en articles structurés.
-Tu n'inventes pas : tout ce que tu écris doit être traçable à une source.
-
-## Structure des dossiers
-- `raw/` : sources brutes à ingérer (ne jamais les modifier)
-- `wiki/` : articles que tu écris et maintiens
-- `wiki/index.md` : sommaire de tout le wiki (toujours à jour)
-- `log.md` : historique daté de toutes tes opérations
-
-## Format des articles wiki
-Chaque article dans `wiki/` doit :
-- Commencer par un titre H1 et un paragraphe de définition (2-3 phrases max)
-- Utiliser des backlinks [[NomDePage]] vers les concepts liés
-- Lister ses sources en bas de page (titre, auteur, date si disponible)
-- Être encyclopédique : conserver le détail, restructurer la forme
-
-## Règles d'écriture
-- Compiler, pas résumer : reformuler pour la cohérence, pas pour raccourcir
-- Résoudre les contradictions entre sources explicitement dans le texte
-- Créer une page dédiée pour chaque concept, personne ou outil significatif
-- Maintenir `index.md` à jour après chaque ingestion
-- Logger chaque opération dans `log.md` avec la date et un résumé
-
-5. Dossier `.claude/commands/` avec ces quatre fichiers :
-
-`.claude/commands/ingest.md` :
-Lis tous les fichiers présents dans le dossier `raw/` (ignore `raw/processed/`).
-
-Pour chaque source :
-1. Identifie les concepts, personnes, outils et idées clés
-2. Pour chaque élément significatif : crée ou enrichis la page correspondante dans `wiki/`
-3. Tisse les backlinks [[NomDePage]] entre pages liées
-4. Si deux sources se contredisent, note la contradiction dans l'article concerné
-5. Déplace les fichiers traités dans `raw/processed/`
-
-Une fois toutes les sources traitées :
-- Mets à jour `wiki/index.md` avec les nouvelles pages et les pages modifiées
-- Ajoute une entrée dans `log.md` : date, nombre de fichiers ingérés, pages créées/modifiées
-
-`.claude/commands/lint.md` :
-Passe en revue l'intégralité du dossier `wiki/` et produis un rapport structuré.
-
-Vérifie :
-1. Contradictions : passages qui se contredisent entre deux articles différents
-2. Pages orphelines : articles sans aucun backlink entrant depuis une autre page
-3. Liens cassés : backlinks [[NomDePage]] qui pointent vers une page inexistante
-4. Index périmé : entrées dans index.md manquantes ou pointant vers des pages supprimées
-5. Concepts sans page : termes récurrents dans plusieurs articles qui mériteraient leur propre page
-
-Pour chaque problème : indique le fichier concerné, décris le problème, propose une correction.
-Demande confirmation avant d'appliquer les corrections.
-
-`.claude/commands/query.md` :
-$ARGUMENTS
-
-Réponds à la question ci-dessus en t'appuyant sur le contenu du dossier `wiki/`.
-Cite les pages sources entre parenthèses pour chaque information.
-Si la réponse n'est pas dans le wiki, dis-le clairement — ne complète pas avec tes
-connaissances générales sans le signaler explicitement.
-
-`.claude/commands/save.md` :
-$ARGUMENTS
-
-Transforme le contenu ci-dessus en une nouvelle page du wiki :
-1. Détermine un titre court et précis
-2. Écris la page au format encyclopédique (H1, résumé, sections, backlinks [[]])
-3. Crée le fichier dans `wiki/` avec les backlinks vers les pages existantes pertinentes
-4. Mets à jour `wiki/index.md`
-5. Ajoute une entrée dans `log.md`
-
-Confirme la création de chaque fichier et dossier.
+Confirme la création de chaque fichier.
 ```
 
-Claude Code crée toute la structure. Vous n'avez écrit aucun fichier à la main.
+Claude Code lit le concept de Karpathy, comprend la structure attendue, et crée les fichiers. Vous n'avez rien spécifié à la main — vous avez délégué l'interprétation.
 
-**3. Ouvrez `wiki/` comme vault dans [Obsidian](https://obsidian.md/).**
+**4. Ouvrez `wiki/` comme vault dans [Obsidian](https://obsidian.md/).**
 
-**4. Déposez un ou deux fichiers dans `raw/` et lancez `/ingest`.**
+**5. Déposez un fichier dans `raw/` et lancez `/ingest`.**
 
 Le plus dur ne sera pas technique. Ce sera de résister à l'envie de tout réorganiser à la main. C'est précisément ce que Karpathy vous demande d'arrêter de faire.
-
 ---
 
 *Cet article prolonge mes réflexions sur le travail augmenté par l'IA. Voir aussi ma [série sur Claude Code](/fr/claude-code-installation-premiers-pas/) et mon article sur [l'entropie homme-machine](/fr/entropie-homme-machine/).*
