@@ -46,6 +46,8 @@ Karpathy reports a number that commands respect: on a single one of his research
 
 His own conclusion, dropped on X: *"I think there is room here for an incredible new product."*
 
+What he doesn't say explicitly, but what follows directly from the reasoning: if the compiled wiki is a clean, readable artifact, why would you need retrieval infrastructure to query it? That question leads straight to the uncomfortable comparison.
+
 ---
 
 ## Why it buries RAG (for personal use)
@@ -68,6 +70,8 @@ The argument holds up once you lay it flat:
 The deep intuition: RAG does the **same sorting work on every question**, over raw data that's never cleaned. The LLM wiki does that work **once**, at compile time, and produces a clean, condensed artifact that fits inside the context window of modern long-context models. For a personal-scale knowledge base — a few hundred articles — RAG becomes an over-engineered machine you simply no longer need.
 
 > ⚠️ **Important caveat**: this reasoning holds for *personal* use. At enterprise scale — millions of documents, granular access control, real-time freshness constraints — RAG keeps all its relevance. The LLM wiki isn't a religion; it's the right tool for the right scale.
+
+The concept is clear. What remains is the question that always follows: if it's this simple, why hasn't anyone packaged it properly? Karpathy himself runs on homemade scripts. Here's how to replace those scripts with something more solid.
 
 ---
 
@@ -197,21 +201,21 @@ The `$ARGUMENTS` in `query.md` and `save.md` is Claude Code's syntax for capturi
 
 This `/ingest` / `/lint` split is deliberate: ingestion grows the brain, linting keeps it healthy. The two run independently. Karpathy himself insists on this periodic validation pass as a *"health check"* — without it, a growing wiki eventually accumulates silent inconsistencies.
 
+The mechanics are clear. What's harder to see in the command files is how this system fits into a real work rhythm — and what it actually changes about your relationship to information.
+
 ---
 
-## The workflow, in practice
+## The real rhythm: a week with this system
 
-A typical session looks like this:
+The genuine difference from any other note-taking tool is that **you stop thinking about organization in real time**. The mental effort of "where do I file this?" disappears entirely. That's not a small thing — it's precisely that effort that makes us abandon every note system after three weeks.
 
-1. **You accumulate.** During the week, you dump into `raw/` anything that interests you: a copy-pasted article, a YouTube transcript, your meeting notes, an X thread. Zero organizing effort.
+In practice, the rhythm settles naturally into two modes.
 
-2. **You compile.** You run `/ingest`. The agent reads everything, identifies recurring concepts, creates missing pages, enriches existing ones, and links it all together. Your mess becomes a structured wiki.
+**Continuously**: you collect without filtering. An interesting article → copied to `raw/`. A conference transcript → dropped in `raw/`. Notes scribbled after a meeting → in `raw/`. The folder is a sandbox, not a library. Nothing needs to be clean to land there.
 
-3. **You clean.** Now and then, `/lint`. The agent flags that your note on "transformers" contradicts your note on "attention," or that you mention "RLHF" across ten articles without ever giving it a page. You arbitrate.
+**In batches**: once a week (or when `raw/` starts to pile up), you run `/ingest`. What used to take an hour of manual filing — reading, categorizing, linking, deduplicating — happens without you. You review the output, fix what looks off, and you're done. `/lint` runs alongside when the wiki has grown: it hands you a report of inconsistencies, you arbitrate in five minutes.
 
-4. **You query.** When you need something, `/query`. You don't dig through your files — you ask. And the answer leans on already-digested knowledge, not raw material.
-
-5. **You capitalize.** A particularly good answer? `/save`. It becomes a wiki page. The brain learns from its own answers.
+What changes over time: after a few months, you have a dense corpus that answers your questions using your own sources. `/query` doesn't search vectors — it reasons over text that *you* collected, compiled into *your* ontology. The difference from a generic ChatGPT is real and tangible.
 
 The whole thing is git-versionable. Your second brain becomes a repository: auditable, diffable, restorable. A far cry from the black hole that a Notion workspace becomes.
 
@@ -233,9 +237,11 @@ Let's be clear-eyed — no approach is magic.
 - **Discipline is still required.** Not for organizing, but for *feeding* regularly and *linting*. A brain you stop feeding stays a dead brain.
 - **The enterprise reality check.** Access control, compliance, real-time freshness, massive volume: at that level, the LLM wiki alone isn't enough. It's a tool for personal and small-team use, not an enterprise knowledge management platform.
 
+These limits don't sink the concept — they define its scope. And once that scope is accepted, what interests me more than the tool itself is what this pattern reveals about how we work with AI.
+
 ---
 
-## My take: it's compound engineering applied to knowledge
+## What this reveals about augmented work
 
 What strikes me is that this pattern isn't isolated. It's the same idea I was digging into in my article on [AI work philosophies](/en/sdd-compound-engineering-bmad-philosophies-en/): **capitalizing on accumulation**.
 

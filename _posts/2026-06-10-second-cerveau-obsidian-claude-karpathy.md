@@ -47,6 +47,8 @@ Karpathy rapporte un chiffre qui force le respect : sur un seul de ses sujets de
 
 Sa propre conclusion, lâchée sur X : *« I think there is room here for an incredible new product. »*
 
+Ce qu'il ne dit pas explicitement, mais qui découle directement du raisonnement : si le wiki compilé est un artefact propre et lisible, pourquoi aurait-on besoin d'une infrastructure de retrieval pour l'interroger ? La question mène directement au sujet qui fâche.
+
 ---
 
 ## Pourquoi ça enterre le RAG (pour un usage personnel)
@@ -69,6 +71,8 @@ L'argument est solide une fois qu'on le pose à plat :
 L'intuition profonde : le RAG fait le **même travail de tri à chaque question**, sur de la donnée brute jamais nettoyée. Le LLM wiki fait ce travail **une seule fois**, au moment de la compilation, et produit un artefact propre, condensé, qui tient dans la fenêtre de contexte des modèles longs modernes. Pour une base de connaissances à l'échelle personnelle — quelques centaines d'articles — le RAG devient une usine à gaz dont on n'a tout simplement plus besoin.
 
 > ⚠️ **Nuance importante** : ce raisonnement vaut pour un usage *personnel*. À l'échelle entreprise — des millions de documents, du contrôle d'accès granulaire, des contraintes de fraîcheur en temps réel — le RAG garde toute sa pertinence. Le LLM wiki n'est pas une religion, c'est le bon outil pour la bonne échelle.
+
+Le concept est posé. Reste la question qui dérange toujours : si c'est si simple, pourquoi est-ce que personne ne l'a empaqueté proprement ? Karpathy lui-même tourne sur des scripts maison. Voici comment remplacer ces scripts par quelque chose de plus solide.
 
 ---
 
@@ -198,29 +202,29 @@ Le `$ARGUMENTS` dans `query.md` et `save.md` est la syntaxe Claude Code pour cap
 
 Cette séparation `/ingest` / `/lint` est délibérée : l'ingestion fait grossir le cerveau, le linting le maintient en bonne santé. Les deux tournent indépendamment. Karpathy lui-même insiste sur cette passe de validation périodique comme un *« health check »* — sans elle, un wiki qui grossit finit par accumuler des incohérences silencieuses.
 
+Voilà pour la mécanique. Ce qui est moins évident à voir dans les fichiers de commandes, c'est comment ce système s'intègre dans un rythme de travail réel — et ce qu'il change concrètement à votre rapport à l'information.
+
 ---
 
-## Le workflow, en pratique
+## Le rythme réel : une semaine avec ce système
 
-Une session type ressemble à ça :
+La vraie différence avec n'importe quel autre outil de notes, c'est que **vous arrêtez de penser à l'organisation en temps réel**. L'effort mental de « où est-ce que je range ça ? » disparaît complètement. Ce n'est pas anodin — c'est précisément cet effort qui fait qu'on abandonne tous les systèmes de notes au bout de trois semaines.
 
-1. **Vous accumulez.** Pendant la semaine, vous balancez dans `raw/` tout ce qui vous intéresse : un article copié-collé, une transcription YouTube, vos notes de réunion, un thread X. Zéro effort d'organisation.
+En pratique, le rythme s'installe naturellement en deux temps.
 
-2. **Vous compilez.** Vous lancez `/ingest`. L'agent lit tout, identifie les concepts récurrents, crée les pages manquantes, enrichit les pages existantes, et relie le tout. Votre fouillis devient un wiki structuré.
+**En continu** : vous collectez sans filtrer. Un article intéressant → copié dans `raw/`. Une transcription de conférence → déposée dans `raw/`. Des notes griffonnées après une réunion → dans `raw/`. Le dossier est un bac à sable, pas une bibliothèque. Rien n'a besoin d'être propre pour y atterrir.
 
-3. **Vous nettoyez.** De temps en temps, `/lint`. L'agent vous signale que votre note sur « les transformers » contredit votre note sur « l'attention », ou que vous mentionnez « RLHF » dans dix articles sans jamais lui avoir dédié une page. Vous arbitrez.
+**En batch** : une fois par semaine (ou quand le dossier `raw/` commence à peser), vous lancez `/ingest`. Ce qui prenait une heure de rangement manuel — lire, catégoriser, relier, déduper — se passe sans vous. Vous relisez le résultat, vous corrigez ce qui cloche, et c'est fait. `/lint` tourne en parallèle quand le wiki a grossi : il vous rend un rapport des incohérences, vous les arbitrez en cinq minutes.
 
-4. **Vous interrogez.** Quand vous avez besoin de quelque chose, `/query`. Vous ne fouillez pas dans vos fichiers — vous demandez. Et la réponse s'appuie sur du savoir déjà digéré, pas sur du brut.
-
-5. **Vous capitalisez.** Une réponse particulièrement bonne ? `/save`. Elle devient une page du wiki. Le cerveau apprend de ses propres réponses.
+Ce que ça change dans la durée : au bout de quelques mois, vous avez un corpus dense qui répond à vos questions avec vos propres sources. `/query` ne cherche pas dans des vecteurs — il raisonne sur du texte que *vous* avez collecté, compilé dans *votre* ontologie. La différence avec un ChatGPT généraliste est réelle et se sent.
 
 Le tout est versionnable avec git. Votre second cerveau devient un dépôt : auditable, diffable, restaurable. Loin du trou noir qu'est un espace Notion.
 
 ---
 
-## Forces, limites et angle mort
+## Ce que ce rythme ne dit pas
 
-Soyons lucides — aucune approche n'est magique.
+Le tableau est séduisant. Mais quelques mois avec ce système apprennent aussi ses vraies limites — celles qui n'apparaissent pas dans la description des commandes.
 
 **Ce qui est vraiment fort :**
 - **L'effort d'organisation tombe à zéro.** C'est *le* point. Le frein historique de tout système de notes — le rangement — disparaît.
@@ -234,9 +238,11 @@ Soyons lucides — aucune approche n'est magique.
 - **La discipline reste nécessaire.** Pas pour organiser, mais pour *alimenter* régulièrement et *linter*. Un cerveau qu'on ne nourrit plus reste un cerveau mort.
 - **Le reality check entreprise.** Contrôle d'accès, conformité, fraîcheur temps réel, volumétrie massive : à ce niveau, le LLM wiki seul ne suffit pas. C'est un outil d'usage personnel et d'équipe restreinte, pas une plateforme de knowledge management d'entreprise.
 
+Ces limites ne font pas tomber le concept — elles en précisent le périmètre. Et une fois ce périmètre accepté, il reste quelque chose qui m'intéresse plus que l'outil lui-même : ce que ce pattern révèle sur la façon dont on travaille avec l'IA.
+
 ---
 
-## Mon avis : c'est du compound engineering appliqué au savoir
+## Ce que ça révèle sur le travail augmenté
 
 Ce qui me frappe, c'est que ce pattern n'est pas isolé. C'est la même idée que celle que je creusais dans mon article sur [les philosophies de travail avec l'IA](/fr/sdd-compound-engineering-bmad-philosophies-ia/) : **capitaliser sur l'accumulation**.
 
