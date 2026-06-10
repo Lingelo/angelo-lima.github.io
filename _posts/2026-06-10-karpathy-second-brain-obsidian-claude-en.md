@@ -2,7 +2,7 @@
 layout: post
 title: "Karpathy's Second Brain: A Wiki the AI Writes For You"
 subtitle: "How to turn Obsidian + Claude into a knowledge base that compiles, links and fixes itself — no RAG, no vector database"
-description: "Andrej Karpathy's LLM wiki concept, explained and put into practice with Obsidian and Claude Code. Compilation over summarization, zero RAG, and a concrete open-source solution to build your second brain."
+description: "Andrej Karpathy's LLM wiki concept, explained and put into practice with Obsidian and Claude Code. Compilation over summarization, zero RAG, and how to implement it yourself with three folders and four commands."
 thumbnail-img: "/assets/img/second-cerveau-obsidian.webp"
 share-img: "/assets/img/second-cerveau-obsidian.webp"
 tags: [IA, Claude Code, Development]
@@ -16,7 +16,7 @@ We all run a degraded version of the same dream: one single place that would hol
 
 In early 2026, Andrej Karpathy — OpenAI co-founder, former Tesla AI director — shared a deceptively simple idea on X to solve this: what if we stopped writing the knowledge base ourselves, and handed it **entirely** to an LLM?
 
-He calls it the **LLM wiki**, or *second brain*. This article breaks the concept down, explains why it buries RAG for personal use, and puts it into practice with an open-source solution that marries Obsidian and Claude Code.
+He calls it the **LLM wiki**, or *second brain*. This article breaks the concept down, explains why it buries RAG for personal use, and shows how to implement it with Obsidian and Claude Code.
 
 ---
 
@@ -73,9 +73,7 @@ The deep intuition: RAG does the **same sorting work on every question**, over r
 
 ## From idea to system: Obsidian + Claude Code
 
-Karpathy's idea is a *pattern*, not a product. He admits to running *"hacky Python scripts"* to orchestrate the LLM, plus Obsidian as a visualization layer. It's up to each person to implement it.
-
-That's where the solution I explored comes in: the open-source repo [**Un-second-cerveau-Obsidian-Claude**](https://github.com/BenBktech/Un-second-cerveau-Obsidian-Claude) by Ben BK. It takes Karpathy's raw concept and turns it into something immediately usable, leaning on **Claude Code** as the orchestration engine rather than homemade scripts.
+Karpathy's idea is a *pattern*, not a product. He admits to running *"hacky Python scripts"* to orchestrate the LLM, plus Obsidian as a visualization layer. The good news: with Claude Code, no scripts needed. Custom slash commands handle all the orchestration from the terminal, directly inside the wiki folder.
 
 ### The three-layer architecture
 
@@ -164,7 +162,7 @@ Karpathy may be right: *there is room for an incredible new product*. But until 
 
 If you want to try it:
 
-1. Clone the [Un-second-cerveau-Obsidian-Claude](https://github.com/BenBktech/Un-second-cerveau-Obsidian-Claude) repo (or recreate the `raw/` + `wiki/` + `CLAUDE.md` structure).
+1. Create the `raw/` + `wiki/` + `CLAUDE.md` structure in a new folder.
 2. Install [Claude Code](/en/claude-code-installation-first-steps/) if you haven't already.
 3. Open the `wiki/` folder as a vault in [Obsidian](https://obsidian.md/).
 4. Drop a few sources into `raw/`, run `/ingest`, and watch your brain write itself.
@@ -177,7 +175,6 @@ The hard part won't be technical. It'll be resisting the urge to reorganize ever
 
 ### Sources and further reading
 
-- [Un-second-cerveau-Obsidian-Claude — Ben BK (GitHub)](https://github.com/BenBktech/Un-second-cerveau-Obsidian-Claude)
 - [Karpathy's Instructions for Building an AI-Driven Second Brain — Techstrong.ai](https://techstrong.ai/features/karpathys-instructions-for-building-an-ai-driven-second-brain/)
 - [Karpathy shares 'LLM Knowledge Base' architecture that bypasses RAG — VentureBeat](https://venturebeat.com/data/karpathy-shares-llm-knowledge-base-architecture-that-bypasses-rag-with-an)
 - [What Is Andrej Karpathy's LLM Wiki? — MindStudio](https://www.mindstudio.ai/blog/andrej-karpathy-llm-wiki-knowledge-base-claude-code)
