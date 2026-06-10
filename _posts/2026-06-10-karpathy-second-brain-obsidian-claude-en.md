@@ -213,6 +213,8 @@ In practice, the rhythm settles naturally into two modes.
 
 **Continuously**: you collect without filtering. An interesting article → copied to `raw/`. A conference transcript → dropped in `raw/`. Notes scribbled after a meeting → in `raw/`. The folder is a sandbox, not a library. Nothing needs to be clean to land there.
 
+[Obsidian Clipper](https://obsidian.md/clipper), Obsidian's official browser extension, takes this a step further. One click from Chrome or Firefox converts any web page into a formatted `.md` file and saves it directly to your `raw/` folder. The article you're reading online lands in the drop box with no copy-pasting, no reformatting.
+
 **In batches**: once a week (or when `raw/` starts to pile up), you run `/ingest`. What used to take an hour of manual filing (reading, categorizing, linking, deduplicating) happens without you. You review the output, fix what looks off, and you're done. `/lint` runs alongside when the wiki has grown: it hands you a report of inconsistencies, you arbitrate in five minutes.
 
 What changes over time: after a few months, you have a dense corpus that answers your questions using your own sources. `/query` doesn't search vectors: it reasons over text that *you* collected, compiled into *your* ontology. The difference from a generic ChatGPT is real and tangible.
@@ -222,6 +224,8 @@ The whole thing is git-versionable. Your second brain becomes a repository: audi
 ---
 
 ## Where it actually breaks
+
+It holds on paper. A few months of practice surface frictions the config files don't show.
 
 **What's genuinely strong:**
 - **Organizing effort drops to zero.** That's *the* point. The historical drag on every note-taking system (filing) disappears.

@@ -214,6 +214,8 @@ En pratique, le rythme s'installe naturellement en deux temps.
 
 **En continu** : vous collectez sans filtrer. Un article intéressant → copié dans `raw/`. Une transcription de conférence → déposée dans `raw/`. Des notes griffonnées après une réunion → dans `raw/`. Le dossier est un bac à sable, pas une bibliothèque. Rien n'a besoin d'être propre pour y atterrir.
 
+[Obsidian Clipper](https://obsidian.md/clipper), l'extension navigateur officielle d'Obsidian, simplifie ce geste au maximum. En un clic depuis Chrome ou Firefox, elle convertit n'importe quelle page web en `.md` formaté et l'enregistre directement dans `raw/`. L'article que vous lisez en ligne atterrit dans la boîte de dépôt sans copier-coller ni reformatage.
+
 **En batch** : une fois par semaine (ou quand le dossier `raw/` commence à peser), vous lancez `/ingest`. Ce qui prenait une heure de rangement manuel (lire, catégoriser, relier, déduper) se passe sans vous. Vous relisez le résultat, vous corrigez ce qui cloche, et c'est fait. `/lint` tourne en parallèle quand le wiki a grossi : il vous rend un rapport des incohérences, vous les arbitrez en cinq minutes.
 
 Ce que ça change dans la durée : au bout de quelques mois, vous avez un corpus dense qui répond à vos questions avec vos propres sources. `/query` ne cherche pas dans des vecteurs : il raisonne sur du texte que *vous* avez collecté, compilé dans *votre* ontologie. La différence avec un ChatGPT généraliste est réelle et se sent.
