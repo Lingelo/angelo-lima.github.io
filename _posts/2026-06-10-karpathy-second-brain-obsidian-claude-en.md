@@ -3,8 +3,8 @@ layout: post
 title: "Karpathy's Second Brain: A Wiki the AI Writes For You"
 subtitle: "How to turn Obsidian + Claude into a knowledge base that compiles, links and fixes itself — no RAG, no vector database"
 description: "Andrej Karpathy's LLM wiki concept, explained and put into practice with Obsidian and Claude Code. Compilation over summarization, zero RAG, and how to implement it yourself with three folders and four commands."
-thumbnail-img: "/assets/img/second-cerveau-obsidian.webp"
-share-img: "/assets/img/second-cerveau-obsidian.webp"
+thumbnail-img: "/assets/img/second-cerveau-obsidian.png"
+share-img: "/assets/img/second-cerveau-obsidian.png"
 tags: [IA, Claude Code, Development]
 author: "Angelo Lima"
 lang: en

@@ -3,8 +3,8 @@ layout: post
 title: "Le second cerveau selon Karpathy : un wiki que l'IA écrit à votre place"
 subtitle: "Comment transformer Obsidian + Claude en base de connaissances qui se compile, se relie et se corrige toute seule — sans RAG, sans base vectorielle"
 description: "Le concept de LLM wiki d'Andrej Karpathy expliqué et mis en pratique avec Obsidian et Claude Code. Compilation plutôt que résumé, zéro RAG, et comment l'implémenter vous-même avec trois dossiers et quatre commandes."
-thumbnail-img: "/assets/img/second-cerveau-obsidian.webp"
-share-img: "/assets/img/second-cerveau-obsidian.webp"
+thumbnail-img: "/assets/img/second-cerveau-obsidian.png"
+share-img: "/assets/img/second-cerveau-obsidian.png"
 tags: [IA, Claude Code, Développement]
 author: "Angelo Lima"
 lang: fr
