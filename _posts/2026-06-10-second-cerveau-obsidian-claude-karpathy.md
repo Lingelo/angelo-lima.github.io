@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Le second cerveau selon Karpathy : un wiki que l'IA écrit à votre place"
-subtitle: "Comment transformer Obsidian + Claude en base de connaissances qui se compile, se relie et se corrige toute seule — sans RAG, sans base vectorielle"
+subtitle: "Comment transformer Obsidian + Claude en base de connaissances qui se compile, se relie et se corrige toute seule, sans RAG, sans base vectorielle"
 description: "Le concept de LLM wiki d'Andrej Karpathy expliqué et mis en pratique avec Obsidian et Claude Code. Compilation plutôt que résumé, zéro RAG, et comment l'implémenter vous-même avec trois dossiers et quatre commandes."
 thumbnail-img: "/assets/img/second-cerveau-obsidian.png"
 share-img: "/assets/img/second-cerveau-obsidian.png"
@@ -12,9 +12,9 @@ ref: second-brain-karpathy
 categories: fr
 ---
 
-On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser** — et c'est précisément là que l'effort humain s'effondre.
+On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser** : c'est précisément là que l'effort humain s'effondre.
 
-Début 2026, Andrej Karpathy — cofondateur d'OpenAI, ex-directeur IA de Tesla — a partagé sur X une idée simple et redoutablement efficace pour résoudre ce problème : et si on arrêtait d'écrire la base de connaissances soi-même, pour la laisser **entièrement** à un LLM ?
+Début 2026, Andrej Karpathy (cofondateur d'OpenAI, ex-directeur IA de Tesla) a partagé sur X une idée simple et redoutablement efficace pour résoudre ce problème : et si on arrêtait d'écrire la base de connaissances soi-même, pour la laisser **entièrement** à un LLM ?
 
 C'est ce qu'il appelle le **LLM wiki**, ou *second cerveau*. Cet article décortique le concept, explique pourquoi il enterre l'approche RAG pour un usage personnel, et montre comment l'implémenter avec Obsidian et Claude Code.
 
@@ -27,9 +27,9 @@ La phrase qui résume tout, c'est la sienne :
 > *"You rarely ever write or edit the wiki manually, it's the domain of the LLM."*
 > *(Vous n'écrivez ou ne modifiez quasiment jamais le wiki à la main, c'est le domaine du LLM.)*
 
-Le retournement est total. Dans la vision classique du « second cerveau » — celle popularisée par Tiago Forte et sa méthode [PARA](https://fortelabs.com/blog/para/) — **c'est vous** qui prenez les notes, qui les rangez, qui les reliez. L'IA n'intervient qu'à la fin, pour répondre à des questions sur un corpus que vous avez patiemment construit.
+Le retournement est total. Dans la vision classique du « second cerveau » (celle popularisée par Tiago Forte et sa méthode [PARA](https://fortelabs.com/blog/para/)), **c'est vous** qui prenez les notes, qui les rangez, qui les reliez. L'IA n'intervient qu'à la fin, pour répondre à des questions sur un corpus que vous avez patiemment construit.
 
-Karpathy inverse la chaîne. Vous ne faites plus qu'une chose : **collecter de la matière brute**. Des articles, des papiers de recherche, des notes de lecture, des transcriptions de podcasts, des bouts de conversation — tout ce qui vous traverse. Vous jetez ça dans un dossier, et vous dites au LLM : *« compile »*.
+Karpathy inverse la chaîne. Vous ne faites plus qu'une chose : **collecter de la matière brute**. Des articles, des papiers de recherche, des notes de lecture, des transcriptions de podcasts, des bouts de conversation : tout ce qui vous traverse. Vous jetez ça dans un dossier, et vous dites au LLM : *« compile »*.
 
 ### Compilation ≠ résumé
 
@@ -37,7 +37,7 @@ C'est la distinction centrale, et elle est plus subtile qu'elle n'en a l'air.
 
 Un **résumé** compresse : il jette du détail pour produire une version plus courte. Vous perdez de l'information à chaque passage.
 
-Une **compilation**, au sens de Karpathy, *restructure* sans appauvrir. Le LLM lit chaque source, en extrait les concepts, les personnes, les idées clés, puis les réécrit dans un format homogène — des articles façon encyclopédie, reliés entre eux par des backlinks, dédupliqués, et débarrassés des contradictions entre sources. Le détail est préservé : c'est la **forme** qui devient cohérente.
+Une **compilation**, au sens de Karpathy, *restructure* sans appauvrir. Le LLM lit chaque source, en extrait les concepts, les personnes, les idées clés, puis les réécrit dans un format homogène : des articles façon encyclopédie, reliés entre eux par des backlinks, dédupliqués, et débarrassés des contradictions entre sources. Le détail est préservé : c'est la **forme** qui devient cohérente.
 
 La métaphore du compilateur est volontaire. De même qu'un compilateur transforme du code source hétérogène en un binaire structuré et exécutable, le LLM transforme un fouillis de sources en une ontologie navigable.
 
@@ -70,7 +70,7 @@ L'argument est solide une fois qu'on le pose à plat :
 
 L'intuition profonde : le RAG fait le **même travail de tri à chaque question**, sur de la donnée brute jamais nettoyée. Le LLM wiki fait ce travail **une seule fois**, au moment de la compilation, et produit un artefact propre, condensé, qui tient dans la fenêtre de contexte des modèles longs modernes. Pour une base de connaissances à l'échelle personnelle (quelques centaines d'articles), le RAG devient une usine à gaz dont on n'a tout simplement plus besoin.
 
-> ⚠️ **Nuance importante** : ce raisonnement vaut pour un usage *personnel*. À l'échelle entreprise — des millions de documents, du contrôle d'accès granulaire, des contraintes de fraîcheur en temps réel — le RAG garde toute sa pertinence. Le LLM wiki n'est pas une religion, c'est le bon outil pour la bonne échelle.
+> ⚠️ **Nuance importante** : ce raisonnement vaut pour un usage *personnel*. À l'échelle entreprise (des millions de documents, du contrôle d'accès granulaire, des contraintes de fraîcheur en temps réel), le RAG garde toute sa pertinence. Le LLM wiki n'est pas une religion, c'est le bon outil pour la bonne échelle.
 
 Le concept est posé. Reste la question qui dérange toujours : si c'est si simple, pourquoi est-ce que personne ne l'a empaqueté proprement ? Karpathy lui-même tourne sur des scripts maison. Voici comment remplacer ces scripts par quelque chose de plus solide.
 
@@ -101,7 +101,7 @@ mon-second-cerveau/
 
 - Le dossier **`raw/`** est votre boîte de dépôt. Vous y jetez tout, sans organisation.
 - Le dossier **`wiki/`** est la sortie du LLM : des articles encyclopédiques reliés entre eux, plus un `index.md` qui résume l'ensemble d'un coup d'œil.
-- Le fichier **`CLAUDE.md`** joue le rôle de schéma. Il décrit comment le cerveau doit être structuré — conventions de nommage, format des pages, règles de liaison. C'est le contrat que l'agent suit.
+- Le fichier **`CLAUDE.md`** joue le rôle de schéma. Il décrit comment le cerveau doit être structuré : conventions de nommage, format des pages, règles de liaison. C'est le contrat que l'agent suit.
 - **Obsidian** vient se brancher par-dessus le dossier `wiki/` : il transforme les backlinks markdown en un graphe de connaissances navigable visuellement.
 
 ### Le prompt d'initialisation : `CLAUDE.md`
@@ -141,7 +141,7 @@ Chaque article dans `wiki/` doit :
 
 Les slash commands de Claude Code sont de simples fichiers markdown dans `.claude/commands/`. Leur contenu devient le prompt exécuté quand vous tapez la commande.
 
-**`.claude/commands/ingest.md`** — la compilation :
+**`.claude/commands/ingest.md`** (la compilation) :
 
 ```markdown
 Lis tous les fichiers présents dans le dossier `raw/` (ignore `raw/processed/`).
@@ -158,7 +158,7 @@ Une fois toutes les sources traitées :
 - Ajoute une entrée dans `log.md` : date, nombre de fichiers ingérés, pages créées/modifiées
 ```
 
-**`.claude/commands/lint.md`** — le contrôle santé :
+**`.claude/commands/lint.md`** (le contrôle santé) :
 
 ```markdown
 Passe en revue l'intégralité du dossier `wiki/` et produis un rapport structuré.
@@ -174,18 +174,18 @@ Pour chaque problème : indique le fichier concerné, décris le problème, prop
 Demande confirmation avant d'appliquer les corrections.
 ```
 
-**`.claude/commands/query.md`** — l'interrogation :
+**`.claude/commands/query.md`** (l'interrogation) :
 
 ```markdown
 $ARGUMENTS
 
 Réponds à la question ci-dessus en t'appuyant sur le contenu du dossier `wiki/`.
 Cite les pages sources entre parenthèses pour chaque information.
-Si la réponse n'est pas dans le wiki, dis-le clairement — ne complète pas avec tes
+Si la réponse n'est pas dans le wiki, dis-le clairement : ne complète pas avec tes
 connaissances générales sans le signaler explicitement.
 ```
 
-**`.claude/commands/save.md`** — la capitalisation :
+**`.claude/commands/save.md`** (la capitalisation) :
 
 ```markdown
 $ARGUMENTS
@@ -200,23 +200,25 @@ Transforme le contenu ci-dessus en une nouvelle page du wiki :
 
 Le `$ARGUMENTS` dans `query.md` et `save.md` est la syntaxe Claude Code pour capturer ce que vous tapez après la commande. `/query pourquoi le RAG ne scale pas pour un usage perso ?` injecte la question dans le prompt.
 
-Cette séparation `/ingest` / `/lint` est délibérée : l'ingestion fait grossir le cerveau, le linting le maintient en bonne santé. Les deux tournent indépendamment. Karpathy lui-même insiste sur cette passe de validation périodique comme un *« health check »* — sans elle, un wiki qui grossit finit par accumuler des incohérences silencieuses.
+Cette séparation `/ingest` / `/lint` est délibérée : l'ingestion fait grossir le cerveau, le linting le maintient en bonne santé. Les deux tournent indépendamment. Karpathy lui-même insiste sur cette passe de validation périodique comme un *« health check »* : sans elle, un wiki qui grossit finit par accumuler des incohérences silencieuses.
 
-Voilà pour la mécanique. Ce qui est moins évident à voir dans les fichiers de commandes, c'est comment ce système s'intègre dans un rythme de travail réel — et ce qu'il change concrètement à votre rapport à l'information.
+Voilà pour la mécanique. Ce qui est moins évident à voir dans les fichiers de commandes, c'est comment ce système s'intègre dans un rythme de travail réel, et ce qu'il change concrètement à votre rapport à l'information.
 
 ---
 
 ## Le rythme réel : une semaine avec ce système
 
-La vraie différence avec n'importe quel autre outil de notes, c'est que **vous arrêtez de penser à l'organisation en temps réel**. L'effort mental de « où est-ce que je range ça ? » disparaît complètement. Ce n'est pas anodin — c'est précisément cet effort qui fait qu'on abandonne tous les systèmes de notes au bout de trois semaines.
+La vraie différence avec n'importe quel autre outil de notes, c'est que **vous arrêtez de penser à l'organisation en temps réel**. L'effort mental de « où est-ce que je range ça ? » disparaît complètement. Ce n'est pas anodin : c'est précisément cet effort qui fait qu'on abandonne tous les systèmes de notes au bout de trois semaines.
 
 En pratique, le rythme s'installe naturellement en deux temps.
 
 **En continu** : vous collectez sans filtrer. Un article intéressant → copié dans `raw/`. Une transcription de conférence → déposée dans `raw/`. Des notes griffonnées après une réunion → dans `raw/`. Le dossier est un bac à sable, pas une bibliothèque. Rien n'a besoin d'être propre pour y atterrir.
 
-**En batch** : une fois par semaine (ou quand le dossier `raw/` commence à peser), vous lancez `/ingest`. Ce qui prenait une heure de rangement manuel — lire, catégoriser, relier, déduper — se passe sans vous. Vous relisez le résultat, vous corrigez ce qui cloche, et c'est fait. `/lint` tourne en parallèle quand le wiki a grossi : il vous rend un rapport des incohérences, vous les arbitrez en cinq minutes.
+[Obsidian Clipper](https://obsidian.md/clipper), l'extension navigateur officielle d'Obsidian, simplifie ce geste au maximum. En un clic depuis Chrome ou Firefox, elle convertit n'importe quelle page web en `.md` formaté et l'enregistre directement dans `raw/`. L'article que vous lisez en ligne atterrit dans la boîte de dépôt sans copier-coller ni reformatage.
 
-Ce que ça change dans la durée : au bout de quelques mois, vous avez un corpus dense qui répond à vos questions avec vos propres sources. `/query` ne cherche pas dans des vecteurs — il raisonne sur du texte que *vous* avez collecté, compilé dans *votre* ontologie. La différence avec un ChatGPT généraliste est réelle et se sent.
+**En batch** : une fois par semaine (ou quand le dossier `raw/` commence à peser), vous lancez `/ingest`. Ce qui prenait une heure de rangement manuel (lire, catégoriser, relier, déduper) se passe sans vous. Vous relisez le résultat, vous corrigez ce qui cloche, et c'est fait. `/lint` tourne en parallèle quand le wiki a grossi : il vous rend un rapport des incohérences, vous les arbitrez en cinq minutes.
+
+Ce que ça change dans la durée : au bout de quelques mois, vous avez un corpus dense qui répond à vos questions avec vos propres sources. `/query` ne cherche pas dans des vecteurs : il raisonne sur du texte que *vous* avez collecté, compilé dans *votre* ontologie. La différence avec un ChatGPT généraliste est réelle et se sent.
 
 Le tout est versionnable avec git. Votre second cerveau devient un dépôt : auditable, diffable, restaurable. Loin du trou noir qu'est un espace Notion.
 
@@ -227,14 +229,14 @@ Le tout est versionnable avec git. Votre second cerveau devient un dépôt : aud
 Ça tient sur le papier. Mais quelques mois avec ce système font apparaître des frictions que les commandes ne documentent pas.
 
 **Ce qui est vraiment fort :**
-- **L'effort d'organisation tombe à zéro.** C'est *le* point. Le frein historique de tout système de notes — le rangement — disparaît.
+- **L'effort d'organisation tombe à zéro.** C'est *le* point. Le frein historique de tout système de notes (le rangement) disparaît.
 - **Format ouvert, zéro lock-in.** Du markdown, des dossiers, du git. Pas de SaaS qui ferme boutique avec vos données dedans.
 - **Lisible et auditable.** Contrairement à une base vectorielle, vous pouvez *lire* votre cerveau. Vous voyez ce que le LLM a écrit, et le corriger si besoin.
 - **Le coût computationnel est payé une fois**, à la compilation, pas à chaque requête.
 
 **Les limites, qu'il faut regarder en face :**
 - **Vous déléguez la rédaction à un LLM.** Qui dit LLM dit risque d'hallucination ou de reformulation maladroite. La passe `/lint` aide, mais ne remplace pas une relecture critique. (J'en ai parlé plus en détail dans mon article sur [les hallucinations des LLM](/fr/hallucinations-llm-devoxx-2026/).)
-- **Ça tient grâce à la fenêtre de contexte.** Le modèle élégant « tout le wiki tient dans le contexte » s'effrite quand le cerveau dépasse une certaine taille. À très grande échelle, on revient vers des stratégies de retrieval — et le RAG reprend du sens.
+- **Ça tient grâce à la fenêtre de contexte.** Le modèle élégant « tout le wiki tient dans le contexte » s'effrite quand le cerveau dépasse une certaine taille. À très grande échelle, on revient vers des stratégies de retrieval, et le RAG reprend du sens.
 - **La discipline reste nécessaire.** Pas pour organiser, mais pour *alimenter* régulièrement et *linter*. Un cerveau qu'on ne nourrit plus reste un cerveau mort.
 - **Le reality check entreprise.** Contrôle d'accès, conformité, fraîcheur temps réel, volumétrie massive : à ce niveau, le LLM wiki seul ne suffit pas. C'est un outil d'usage personnel et d'équipe restreinte, pas une plateforme de knowledge management d'entreprise.
 
@@ -246,25 +248,59 @@ Et une fois ce périmètre accepté, ce qui m'intéresse davantage que l'outil l
 
 Ce qui me frappe, c'est que ce pattern n'est pas isolé. C'est la même idée que celle que je creusais dans mon article sur [les philosophies de travail avec l'IA](/fr/sdd-compound-engineering-bmad-philosophies-ia/) : **capitaliser sur l'accumulation**.
 
-Le *compound engineering* dit que chaque cycle de développement doit enrichir le suivant, via une boucle d'apprentissage documentée. Le LLM wiki de Karpathy dit exactement la même chose, mais pour la connaissance personnelle : chaque source ingérée, chaque réponse sauvegardée rend le cerveau plus dense, et donc la prochaine requête plus riche. C'est une boucle vertueuse où l'IA ne fait pas que *consommer* votre savoir — elle le *construit*.
+Le *compound engineering* dit que chaque cycle de développement doit enrichir le suivant, via une boucle d'apprentissage documentée. Le LLM wiki de Karpathy dit exactement la même chose, mais pour la connaissance personnelle : chaque source ingérée, chaque réponse sauvegardée rend le cerveau plus dense, et donc la prochaine requête plus riche. C'est une boucle vertueuse où l'IA ne fait pas que *consommer* votre savoir, elle le *construit*.
 
-Il y a aussi un écho à l'[entropie](/fr/entropie-homme-machine/) dont je parlais ailleurs. Un système de notes laissé à lui-même dérive vers le désordre — c'est la pente naturelle. Ce qu'apporte le LLM wiki, c'est une dépense d'énergie *déléguée* : c'est le LLM qui lutte contre l'entropie de votre information, qui range, déduplique, relie. Vous ne payez plus le coût de l'ordre. Vous le sous-traitez.
+Il y a aussi un écho à l'[entropie](/fr/entropie-homme-machine/) dont je parlais ailleurs. Un système de notes laissé à lui-même dérive vers le désordre. C'est la pente naturelle. Ce qu'apporte le LLM wiki, c'est une dépense d'énergie *déléguée* : c'est le LLM qui lutte contre l'entropie de votre information, qui range, déduplique, relie. Vous ne payez plus le coût de l'ordre. Vous le sous-traitez.
 
 Karpathy a peut-être raison : *there is room for an incredible new product*. Mais en attendant ce produit, le combo Obsidian + Claude Code permet de toucher l'idée dès maintenant, avec trois dossiers et quatre commandes.
 
 ---
 
-## Pour démarrer
+## Créer le cerveau : deux éléments, pas un gros prompt
 
-Si vous voulez tester :
+La section précédente montre le contenu de chaque fichier. Mais on ne les crée pas à la main : on donne à Claude Code le texte source de Karpathy, et un court prompt de délégation. C'est là que le principe se referme : l'outil qui fera tourner le cerveau en construit aussi les fondations.
 
-1. Créez la structure `raw/` + `wiki/` + `CLAUDE.md` dans un nouveau dossier.
-2. Installez [Claude Code](/fr/claude-code-installation-premiers-pas/) si ce n'est pas déjà fait.
-3. Ouvrez le dossier `wiki/` comme vault dans [Obsidian](https://obsidian.md/).
-4. Jetez quelques sources dans `raw/`, lancez `/ingest`, et regardez votre cerveau s'écrire tout seul.
+**Prérequis** : [Claude Code](/fr/claude-code-installation-premiers-pas/) installé, un dossier vide.
+
+**1. Créez le dossier et ouvrez Claude Code dedans :**
+
+```bash
+mkdir mon-second-cerveau && cd mon-second-cerveau
+claude
+```
+
+**2. Copiez le gist original de Karpathy**
+
+Allez sur le gist qu'il a publié en avril 2026 et copiez le contenu intégral :
+
+👉 **[gist.github.com/karpathy/442a6bf555914893e9891c11519de94f](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)**
+
+Ce texte décrit le pattern complet : structure raw/wiki/schema, les workflows ingest/lint/query, le rôle du log et de l'index. C'est le contrat conceptuel que Claude va implémenter.
+
+**3. Collez le gist dans Claude Code, suivi de ce prompt de délégation :**
+
+```
+Sur la base du concept décrit ci-dessus, initialise un second cerveau
+dans le dossier courant.
+
+Crée :
+- raw/ (vide, pour les sources brutes)
+- wiki/ avec un index.md vide
+- log.md vide
+- CLAUDE.md qui capture ce contrat comme règles pour l'agent
+- .claude/commands/ avec les quatre commandes /ingest, /lint, /query
+  et /save, dont le contenu implémente fidèlement le concept décrit
+
+Confirme la création de chaque fichier.
+```
+
+Claude Code lit le concept de Karpathy, comprend la structure attendue, et crée les fichiers. Vous n'avez rien spécifié à la main : vous avez délégué l'interprétation.
+
+**4. Ouvrez `wiki/` comme vault dans [Obsidian](https://obsidian.md/).**
+
+**5. Déposez un fichier dans `raw/` et lancez `/ingest`.**
 
 Le plus dur ne sera pas technique. Ce sera de résister à l'envie de tout réorganiser à la main. C'est précisément ce que Karpathy vous demande d'arrêter de faire.
-
 ---
 
 *Cet article prolonge mes réflexions sur le travail augmenté par l'IA. Voir aussi ma [série sur Claude Code](/fr/claude-code-installation-premiers-pas/) et mon article sur [l'entropie homme-machine](/fr/entropie-homme-machine/).*
