@@ -28,7 +28,7 @@ The sentence that captures it all is his own:
 
 The reversal is total. In the classic "second brain" vision (the one popularized by Tiago Forte and his [PARA](https://fortelabs.com/blog/para/) method), **you** take the notes, file them, link them. The AI only steps in at the end, to answer questions about a corpus you patiently built.
 
-Karpathy flips the chain. You now do exactly one thing: **collect raw material**. Articles, research papers, reading notes, podcast transcripts, snippets of conversation, anything that crosses your path. You dump it in a folder, and tell the LLM: *"compile."*
+Karpathy flips the chain. You now do exactly one thing: **collect raw material**. Articles, research papers, reading notes, podcast transcripts, snippets of conversation: anything that crosses your path. You dump it in a folder, and tell the LLM: *"compile."*
 
 ### Compilation ≠ summarization
 

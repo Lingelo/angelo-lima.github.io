@@ -12,7 +12,7 @@ ref: second-brain-karpathy
 categories: fr
 ---
 
-On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser**. C'est précisément là que l'effort humain s'effondre.
+On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser** : c'est précisément là que l'effort humain s'effondre.
 
 Début 2026, Andrej Karpathy (cofondateur d'OpenAI, ex-directeur IA de Tesla) a partagé sur X une idée simple et redoutablement efficace pour résoudre ce problème : et si on arrêtait d'écrire la base de connaissances soi-même, pour la laisser **entièrement** à un LLM ?
 
@@ -29,7 +29,7 @@ La phrase qui résume tout, c'est la sienne :
 
 Le retournement est total. Dans la vision classique du « second cerveau » (celle popularisée par Tiago Forte et sa méthode [PARA](https://fortelabs.com/blog/para/)), **c'est vous** qui prenez les notes, qui les rangez, qui les reliez. L'IA n'intervient qu'à la fin, pour répondre à des questions sur un corpus que vous avez patiemment construit.
 
-Karpathy inverse la chaîne. Vous ne faites plus qu'une chose : **collecter de la matière brute**. Des articles, des papiers de recherche, des notes de lecture, des transcriptions de podcasts, des bouts de conversation, tout ce qui vous traverse. Vous jetez ça dans un dossier, et vous dites au LLM : *« compile »*.
+Karpathy inverse la chaîne. Vous ne faites plus qu'une chose : **collecter de la matière brute**. Des articles, des papiers de recherche, des notes de lecture, des transcriptions de podcasts, des bouts de conversation : tout ce qui vous traverse. Vous jetez ça dans un dossier, et vous dites au LLM : *« compile »*.
 
 ### Compilation ≠ résumé
 
@@ -248,7 +248,7 @@ Ce qui me frappe, c'est que ce pattern n'est pas isolé. C'est la même idée qu
 
 Le *compound engineering* dit que chaque cycle de développement doit enrichir le suivant, via une boucle d'apprentissage documentée. Le LLM wiki de Karpathy dit exactement la même chose, mais pour la connaissance personnelle : chaque source ingérée, chaque réponse sauvegardée rend le cerveau plus dense, et donc la prochaine requête plus riche. C'est une boucle vertueuse où l'IA ne fait pas que *consommer* votre savoir, elle le *construit*.
 
-Il y a aussi un écho à l'[entropie](/fr/entropie-homme-machine/) dont je parlais ailleurs. Un système de notes laissé à lui-même dérive vers le désordre, c'est la pente naturelle. Ce qu'apporte le LLM wiki, c'est une dépense d'énergie *déléguée* : c'est le LLM qui lutte contre l'entropie de votre information, qui range, déduplique, relie. Vous ne payez plus le coût de l'ordre. Vous le sous-traitez.
+Il y a aussi un écho à l'[entropie](/fr/entropie-homme-machine/) dont je parlais ailleurs. Un système de notes laissé à lui-même dérive vers le désordre. C'est la pente naturelle. Ce qu'apporte le LLM wiki, c'est une dépense d'énergie *déléguée* : c'est le LLM qui lutte contre l'entropie de votre information, qui range, déduplique, relie. Vous ne payez plus le coût de l'ordre. Vous le sous-traitez.
 
 Karpathy a peut-être raison : *there is room for an incredible new product*. Mais en attendant ce produit, le combo Obsidian + Claude Code permet de toucher l'idée dès maintenant, avec trois dossiers et quatre commandes.
 
