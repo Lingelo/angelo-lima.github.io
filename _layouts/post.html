@@ -2,114 +2,182 @@
 layout: base
 ---
 
-{% include header.html type="post" %}
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
 
-{% include breadcrumbs.html %}
-
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
-
-      {% if page.gh-repo %}
-        {% assign gh_split =  page.gh-repo | split:'/'  %}
-        {% assign gh_user =  gh_split[0]  %}
-        {% assign gh_repo =  gh_split[1]  %}
-
-        <div id="header-gh-btns">
-          {% if page.gh-badge.size > 0 %}
-            {% for badge in page.gh-badge %}
-              {% case badge %}
-                {% when 'star'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'watch'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'fork'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'follow'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
-              {% endcase %}
-            {% endfor %}
-          {% endif %}
-        </div>
-      {% endif %}
-
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <div class="blog-post">
-        {{ content }}
-      </div>
-
-      {% if page.tags.size > 0 %}
-        <div class="blog-tags">
-          {% if page.lang == 'en' %}
-          <span>Tags:</span>
-          {% for tag in page.tags %}
-            {% assign clean_tag = tag | strip %}
-            {% if clean_tag != "" %}
-            <a href="{{ '/en/tags' | relative_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
-            {% endif %}
-          {% endfor %}
-          {% else %}
-          <span>Tags:</span>
-          {% for tag in page.tags %}
-            {% assign clean_tag = tag | strip %}
-            {% if clean_tag != "" %}
-            <a href="{{ '/tags' | relative_url }}#{{- clean_tag -}}" class="tag-link">{{- clean_tag -}}</a>
-            {% endif %}
-          {% endfor %}
-          {% endif %}
-        </div>
-      {% endif %}
-
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if page.social-share %}
-        {% include social-share.html %}
-      {% endif %}
-
-      {% include related-posts.html %}
-
-      <ul class="pagination blog-pager">
-        {% if page.previous.url %}
-        <li class="page-item previous">
-          <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
-            {% if page.lang == 'en' %}
-              <i class="fas fa-arrow-left" alt="Previous article"></i>
-              <span class="d-none d-sm-inline-block">Previous article</span>
-            {% else %}
-              <i class="fas fa-arrow-left" alt="Article précédent"></i>
-              <span class="d-none d-sm-inline-block">Article précédent</span>
-            {% endif %}
+<main class="post-main">
+  <!-- Article Header -->
+  <header class="post-header">
+    <div class="post-header-container">
+      <div class="post-header-content">
+        <!-- Breadcrumb / Back -->
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="{{ '/' | absolute_url }}" class="breadcrumb-link label-caps">
+            ← Blog
           </a>
-        </li>
+          {% if page.categories[0] %}
+          <span class="breadcrumb-sep">/</span>
+          <span class="label-caps">{{ page.categories[0] | upcase }}</span>
+          {% endif %}
+        </nav>
+        <h1 class="post-title">{{ page.title | strip_html }}</h1>
+        {% if page.subtitle %}
+        <p class="post-subtitle-text">{{ page.subtitle | strip_html }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Hero Image -->
+    {%- capture cover -%}
+      {%- if page.cover-img -%}{{ page.cover-img }}
+      {%- elsif page.thumbnail-img -%}{{ page.thumbnail-img }}
+      {%- endif -%}
+    {%- endcapture -%}
+    {% assign cover = cover | strip %}
+    {% if cover != "" %}
+    <div class="post-hero-img-wrap">
+      <img src="{{ cover | absolute_url }}" alt="{{ page.title | strip_html }}" class="post-hero-img" loading="eager">
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Article Layout: Sidebar + Content -->
+  <div class="article-layout">
+    <div class="article-layout-inner">
+      <!-- Left Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-meta">
+          {% if page.lang == 'en' %}
+          <div class="sidebar-meta-item">
+            <span class="sidebar-label label-caps">Published</span>
+            <span class="sidebar-value">{{ page.date | date: "%b %d, %Y" }}</span>
+          </div>
+          {% else %}
+          <div class="sidebar-meta-item">
+            <span class="sidebar-label label-caps">Publié le</span>
+            <span class="sidebar-value">{{ page.date | date: "%d %b %Y" }}</span>
+          </div>
+          {% endif %}
+
+          {% if page.readtime %}
+          <div class="sidebar-meta-item">
+            <span class="sidebar-label label-caps">{% if page.lang == 'en' %}Read Time{% else %}Temps de lecture{% endif %}</span>
+            {% include readtime.html %}
+          </div>
+          {% endif %}
+
+          {% if page.tags.size > 0 %}
+          <div class="sidebar-meta-item">
+            <span class="sidebar-label label-caps">{% if page.lang == 'en' %}Topics{% else %}Sujets{% endif %}</span>
+            <div class="sidebar-tags">
+              {% for tag in page.tags %}
+                {% assign clean_tag = tag | strip %}
+                {% if clean_tag != "" %}
+                <span class="sidebar-tag chip-bullet label-caps">{{ clean_tag }}</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="sidebar-share">
+            <span class="sidebar-label label-caps">{% if page.lang == 'en' %}Share{% else %}Partager{% endif %}</span>
+            {% if page.social-share %}{% include social-share.html %}{% endif %}
+          </div>
+        </div>
+      </aside>
+
+      <!-- Article Content -->
+      <article class="article-content">
+        <!-- Language notice -->
+        {% if page.ref %}
+          {% if page.lang == 'en' %}
+            {% assign fr_post = site.posts | where: "ref", page.ref | where: "lang", "fr" | first %}
+            {% if fr_post %}
+            <div class="lang-notice">
+              <span class="lang-notice-text label-caps">Disponible en <a href="{{ fr_post.url | relative_url }}" class="lang-notice-link">français</a></span>
+            </div>
+            {% endif %}
+          {% else %}
+            {% assign en_post = site.posts | where: "ref", page.ref | where: "lang", "en" | first %}
+            {% if en_post %}
+            <div class="lang-notice">
+              <span class="lang-notice-text label-caps">Available in <a href="{{ en_post.url | relative_url }}" class="lang-notice-link">English</a></span>
+            </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        <!-- Mobile Meta -->
+        <div class="mobile-post-meta">
+          <span class="label-caps mobile-meta-date">
+            {% if page.lang == 'en' %}{{ page.date | date: "%b %d, %Y" }}{% else %}{{ page.date | date: "%d %b %Y" }}{% endif %}
+          </span>
+          {% for tag in page.tags limit: 1 %}
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            <span class="chip-bullet label-caps mobile-meta-tag">{{ clean_tag }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {{ content }}
+
+        <!-- Post tags -->
+        {% if page.tags.size > 0 %}
+        <div class="post-tags-footer">
+          {% if page.lang == 'en' %}<span class="label-caps post-tags-label">Tags:</span>{% else %}<span class="label-caps post-tags-label">Tags :</span>{% endif %}
+          {% for tag in page.tags %}
+            {% assign clean_tag = tag | strip %}
+            {% if clean_tag != "" %}
+            {% if page.lang == 'en' %}
+            <a href="{{ '/en/tags' | relative_url }}#{{- clean_tag -}}" class="post-tag-link chip-bullet label-caps">{{- clean_tag -}}</a>
+            {% else %}
+            <a href="{{ '/tags' | relative_url }}#{{- clean_tag -}}" class="post-tag-link chip-bullet label-caps">{{- clean_tag -}}</a>
+            {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+    </div>
+  </div>
+
+  <!-- Related Posts -->
+  <div class="related-posts-wrapper">
+    <div class="article-layout-inner">
+      {% include related-posts.html %}
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="post-pagination-wrapper">
+    <div class="article-layout-inner">
+      <nav class="post-pagination" aria-label="Post navigation">
+        {% if page.previous.url %}
+        <a class="post-pagination-prev" href="{{ page.previous.url | relative_url }}">
+          <span class="label-caps">← {% if page.lang == 'en' %}Previous{% else %}Précédent{% endif %}</span>
+          <span class="pagination-title">{{ page.previous.title | strip_html | truncatewords: 8 }}</span>
+        </a>
         {% endif %}
         {% if page.next.url %}
-        <li class="page-item next">
-          <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
-            {% if page.lang == 'en' %}
-              <span class="d-none d-sm-inline-block">Next article</span>
-              <i class="fas fa-arrow-right" alt="Next article"></i>
-            {% else %}
-              <span class="d-none d-sm-inline-block">Article suivant</span>
-              <i class="fas fa-arrow-right" alt="Article suivant"></i>
-            {% endif %}
-          </a>
-        </li>
+        <a class="post-pagination-next" href="{{ page.next.url | relative_url }}">
+          <span class="label-caps">{% if page.lang == 'en' %}Next{% else %}Suivant{% endif %} →</span>
+          <span class="pagination-title">{{ page.next.title | strip_html | truncatewords: 8 }}</span>
+        </a>
         {% endif %}
-      </ul>
-      {% include comments.html %}
+      </nav>
     </div>
   </div>
 </main>
+
+<script>
+// Reading progress bar
+window.addEventListener('scroll', function() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+  var el = document.getElementById('reading-progress');
+  if (el) el.style.width = scrolled + '%';
+});
+</script>
