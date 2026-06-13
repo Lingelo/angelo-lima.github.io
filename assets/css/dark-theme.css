@@ -1184,8 +1184,17 @@ tbody td code {
   border-top: 1px solid var(--color-surface-variant);
 }
 
+/* The related-posts section sits inside .article-layout-inner (a sidebar|content grid).
+   Force it to span the full grid width so the cards aren't crammed into the 249px sidebar. */
+.related-posts,
 .related-posts-section {
+  grid-column: 1 / -1;
   margin-top: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
 }
 
 .related-posts-section h3,
@@ -1197,17 +1206,9 @@ tbody td code {
   margin-bottom: 2rem;
 }
 
-.related-posts {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-}
-
 .related-posts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--gutter);
 }
 
@@ -1327,6 +1328,7 @@ tbody td code {
 }
 
 .post-pagination {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
