@@ -205,6 +205,77 @@ pre code {
   font-size: inherit;
 }
 
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+thead {
+  border-bottom: 2px solid var(--color-primary-dim);
+}
+
+thead th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary-dim);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: var(--color-surface-low);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-outline-variant);
+  transition: background 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: var(--color-surface-low);
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  color: var(--color-secondary);
+  vertical-align: top;
+}
+
+tbody td strong {
+  color: var(--color-on-surface);
+}
+
+tbody td code {
+  font-size: 0.85em;
+  background: var(--color-surface-high);
+  padding: 0.15em 0.4em;
+  color: var(--color-primary);
+}
+
+/* Responsive table wrapper */
+.article-content table,
+.page-content table,
+.blog-post table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-surface-variant) transparent;
+}
+
 /* Label/caps utility */
 .label-caps {
   font-family: var(--font-mono);
