@@ -150,20 +150,39 @@ layout: base
     </div>
   </div>
 
-  <!-- Pagination -->
+  <!-- Pagination — filtered by language so EN articles never appear under FR (and vice versa).
+       site.posts is sorted date desc, so iterating forward goes from newest to oldest.
+       prev_post = the post just before current in that order (more recent → "Précédent")
+       next_post = the post just after current (older → "Suivant") -->
+  {% assign posts_in_lang = site.posts | where: "lang", page.lang %}
+  {% assign current_found = false %}
+  {% assign next_captured = false %}
+  {% assign prev_post = nil %}
+  {% assign next_post = nil %}
+  {% for post in posts_in_lang %}
+    {% if current_found and next_captured == false %}
+      {% assign next_post = post %}
+      {% assign next_captured = true %}
+    {% elsif post.url == page.url %}
+      {% assign current_found = true %}
+    {% elsif current_found == false %}
+      {% assign prev_post = post %}
+    {% endif %}
+  {% endfor %}
+
   <div class="post-pagination-wrapper">
     <div class="article-layout-inner">
       <nav class="post-pagination" aria-label="Post navigation">
-        {% if page.previous.url %}
-        <a class="post-pagination-prev" href="{{ page.previous.url | relative_url }}">
+        {% if prev_post %}
+        <a class="post-pagination-prev" href="{{ prev_post.url | relative_url }}">
           <span class="label-caps">← {% if page.lang == 'en' %}Previous{% else %}Précédent{% endif %}</span>
-          <span class="pagination-title">{{ page.previous.title | strip_html | truncatewords: 8 }}</span>
+          <span class="pagination-title">{{ prev_post.title | strip_html | truncatewords: 8 }}</span>
         </a>
         {% endif %}
-        {% if page.next.url %}
-        <a class="post-pagination-next" href="{{ page.next.url | relative_url }}">
+        {% if next_post %}
+        <a class="post-pagination-next" href="{{ next_post.url | relative_url }}">
           <span class="label-caps">{% if page.lang == 'en' %}Next{% else %}Suivant{% endif %} →</span>
-          <span class="pagination-title">{{ page.next.title | strip_html | truncatewords: 8 }}</span>
+          <span class="pagination-title">{{ next_post.title | strip_html | truncatewords: 8 }}</span>
         </a>
         {% endif %}
       </nav>
