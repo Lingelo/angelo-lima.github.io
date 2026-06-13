@@ -175,17 +175,23 @@ class DynamicPagination {
   
   goToPage(page) {
     if (page < 1 || page > this.totalPages) return;
-    
+
     this.currentPage = page;
     window.location.hash = `page=${page}`;
     this.renderPage();
     this.renderPaginationControls();
-    
-    // Scroll to top of page
-    window.scrollTo({ 
-      top: 0, 
-      behavior: 'smooth' 
-    });
+
+    // Scroll to the posts list, not the top — hero and featured article never change between pages
+    const target = document.querySelector('.posts-list')
+      || document.querySelector('.section-title')
+      || document.querySelector('main');
+    if (target) {
+      const navOffset = document.querySelector('.site-nav')?.offsetHeight || 0;
+      const y = target.getBoundingClientRect().top + window.scrollY - navOffset - 16;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
   
   handleUrlChanges() {
