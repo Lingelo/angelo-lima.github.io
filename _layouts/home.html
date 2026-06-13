@@ -88,7 +88,7 @@ layout: base
     </div>
 
     <ul class="posts-list" role="list">
-      {% for post in posts limit: 6 %}
+      {% for post in posts %}
       {% unless forloop.first %}
       <li class="post-preview" role="listitem">
         {%- capture thumbnail -%}

@@ -33,7 +33,7 @@ Improves internal linking and user engagement
       <div class="related-posts-grid">
     {% endif %}
 
-        <article class="related-post-card{% unless post.thumbnail-img or post.cover-img %} no-image{% endunless %}">
+        <a href="{{ post.url | relative_url }}" class="related-post-card{% unless post.thumbnail-img or post.cover-img %} no-image{% endunless %}">
           {% assign post_image = post.thumbnail-img | default: post.cover-img %}
           {% if post_image %}
           <div class="related-post-image">
@@ -42,7 +42,7 @@ Improves internal linking and user engagement
           {% endif %}
 
           <div class="related-post-content">
-            <h4><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h4>
+            <h4>{{ post.title }}</h4>
             {% if post.subtitle %}
             <p class="related-post-subtitle">{{ post.subtitle }}</p>
             {% endif %}
@@ -60,7 +60,7 @@ Improves internal linking and user engagement
               </div>
             </div>
           </div>
-        </article>
+        </a>
 
     {% if maxRelatedCounter == maxRelated %}
       </div>

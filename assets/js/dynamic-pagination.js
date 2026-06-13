@@ -106,61 +106,68 @@ class DynamicPagination {
   }
   
   renderPaginationControls() {
-    // Remove existing pagination
     const existingPagination = document.querySelector('.pagination.main-pager');
-    if (existingPagination) {
-      existingPagination.remove();
-    }
-    
+    if (existingPagination) existingPagination.remove();
+
     if (this.totalPages <= 1) return;
-    
-    const labels = this.language === 'fr' ? {
-      navLabel: 'Navigation de pagination',
-      prevLabel: 'Page précédente - Articles les plus récents',
-      nextLabel: 'Page suivante - Articles les plus anciens',
-      prevText: 'Articles les plus récents',
-      nextText: 'Articles les plus anciens'
-    } : {
-      navLabel: 'Pagination navigation',
-      prevLabel: 'Previous page - Latest articles',
-      nextLabel: 'Next page - Older articles',
-      prevText: 'Latest articles',
-      nextText: 'Older articles'
+
+    const prevLabel = this.language === 'fr' ? 'Page précédente' : 'Previous page';
+    const nextLabel = this.language === 'fr' ? 'Page suivante' : 'Next page';
+
+    // Build page number items with a sliding window of max 5 pages
+    const buildPageNumbers = () => {
+      let pages = '';
+      const maxVisible = 5;
+      let start = Math.max(1, this.currentPage - Math.floor(maxVisible / 2));
+      let end = Math.min(this.totalPages, start + maxVisible - 1);
+      if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
+
+      if (start > 1) {
+        pages += `<li class="page-item" role="none"><a class="page-link" href="#page=1" data-page="1" aria-label="Page 1">1</a></li>`;
+        if (start > 2) pages += `<li class="page-item page-ellipsis" role="none"><span class="page-link">…</span></li>`;
+      }
+
+      for (let i = start; i <= end; i++) {
+        if (i === this.currentPage) {
+          pages += `<li class="page-item page-item-active" role="none"><span class="page-link" aria-current="page">${i}</span></li>`;
+        } else {
+          pages += `<li class="page-item" role="none"><a class="page-link" href="#page=${i}" data-page="${i}" aria-label="Page ${i}">${i}</a></li>`;
+        }
+      }
+
+      if (end < this.totalPages) {
+        if (end < this.totalPages - 1) pages += `<li class="page-item page-ellipsis" role="none"><span class="page-link">…</span></li>`;
+        pages += `<li class="page-item" role="none"><a class="page-link" href="#page=${this.totalPages}" data-page="${this.totalPages}" aria-label="Page ${this.totalPages}">${this.totalPages}</a></li>`;
+      }
+
+      return pages;
     };
 
     const paginationHtml = `
-      <ul class="pagination main-pager" role="navigation" aria-label="${labels.navLabel}">
-        ${this.currentPage > 1 ? `
-          <li class="page-item previous" role="none">
-            <a class="page-link" href="#page=${this.currentPage - 1}" aria-label="${labels.prevLabel}" data-page="${this.currentPage - 1}">
-              <i class="fas fa-arrow-left" aria-hidden="true"></i>
-              <span class="d-none d-sm-inline-block">${labels.prevText}</span>
-            </a>
+      <nav class="pagination main-pager" role="navigation" aria-label="Pagination">
+        <ul class="pagination-list">
+          <li class="page-item page-item-prev" role="none">
+            ${this.currentPage > 1
+              ? `<a class="page-link" href="#page=${this.currentPage - 1}" data-page="${this.currentPage - 1}" aria-label="${prevLabel}">←</a>`
+              : `<span class="page-link page-link-disabled">←</span>`}
           </li>
-        ` : ''}
-        
-        ${this.currentPage < this.totalPages ? `
-          <li class="page-item next" role="none">
-            <a class="page-link" href="#page=${this.currentPage + 1}" aria-label="${labels.nextLabel}" data-page="${this.currentPage + 1}">
-              <span class="d-none d-sm-inline-block">${labels.nextText}</span>
-              <i class="fas fa-arrow-right" aria-hidden="true"></i>
-            </a>
+          ${buildPageNumbers()}
+          <li class="page-item page-item-next" role="none">
+            ${this.currentPage < this.totalPages
+              ? `<a class="page-link" href="#page=${this.currentPage + 1}" data-page="${this.currentPage + 1}" aria-label="${nextLabel}">→</a>`
+              : `<span class="page-link page-link-disabled">→</span>`}
           </li>
-        ` : ''}
-      </ul>
+        </ul>
+      </nav>
     `;
-    
-    // Insert pagination after posts list
+
     const postsContainer = document.querySelector('.posts-list');
     if (postsContainer) {
       postsContainer.insertAdjacentHTML('afterend', paginationHtml);
-      
-      // Add click handlers
       document.querySelectorAll('.pagination .page-link[data-page]').forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
-          const page = parseInt(e.currentTarget.dataset.page);
-          this.goToPage(page);
+          this.goToPage(parseInt(e.currentTarget.dataset.page));
         });
       });
     }
