@@ -177,14 +177,17 @@ class DynamicPagination {
     if (page < 1 || page > this.totalPages) return;
 
     this.currentPage = page;
-    window.location.hash = `page=${page}`;
+    // Use history.replaceState instead of location.hash to avoid the browser's native scroll-to-top
+    // jump when the hash target (#page=N) doesn't exist as an element.
+    history.replaceState(null, '', `#page=${page}`);
     this.renderPage();
     this.renderPaginationControls();
 
-    // Scroll to the posts list, not the top — hero and featured article never change between pages
-    const target = document.querySelector('.posts-list')
+    // Scroll to the "Publications Récentes / Voir les Archives" header row.
+    // Hero and featured article never change between pages — no point bringing them back into view.
+    const target = document.querySelector('.recent-posts-header')
       || document.querySelector('.section-title')
-      || document.querySelector('main');
+      || document.querySelector('.posts-list');
     if (target) {
       const navOffset = document.querySelector('.site-nav')?.offsetHeight || 0;
       const y = target.getBoundingClientRect().top + window.scrollY - navOffset - 16;
