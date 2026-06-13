@@ -1184,8 +1184,17 @@ tbody td code {
   border-top: 1px solid var(--color-surface-variant);
 }
 
+/* The related-posts section sits inside .article-layout-inner (a sidebar|content grid).
+   Force it to span the full grid width so the cards aren't crammed into the 249px sidebar. */
+.related-posts,
 .related-posts-section {
+  grid-column: 1 / -1;
   margin-top: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
 }
 
 .related-posts-section h3,
@@ -1197,17 +1206,9 @@ tbody td code {
   margin-bottom: 2rem;
 }
 
-.related-posts {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-}
-
 .related-posts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--gutter);
 }
 
@@ -1327,6 +1328,7 @@ tbody td code {
 }
 
 .post-pagination {
+  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -1977,6 +1979,46 @@ tbody td code {
     --stack-xl: 4rem;
     --stack-lg: 3rem;
     --stack-md: 2rem;
+  }
+
+  /* Prevent horizontal page scroll on mobile.
+     Long URLs in <a>/<code> and wide <table>/<pre> were spilling past the viewport. */
+  html, body {
+    overflow-x: clip;
+  }
+
+  .article-content a,
+  .post-content a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .article-content code,
+  .post-content code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* But preserve formatting inside <pre> — scroll horizontally instead of breaking lines */
+  .article-content pre code,
+  .post-content pre code {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .article-content pre,
+  .post-content pre,
+  .article-content .highlight,
+  .post-content .highlight {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Wide tables should scroll within their column, not push the page wider */
+  .article-content table,
+  .post-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .site-nav-inner {
