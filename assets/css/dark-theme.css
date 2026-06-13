@@ -387,8 +387,9 @@ pre code {
   justify-content: center;
 }
 
-.mobile-menu-btn .material-symbols-outlined {
-  font-size: 24px;
+.mobile-menu-btn .hamburger-icon {
+  font-size: 20px;
+  line-height: 1;
 }
 
 /* Mobile dropdown menu */
@@ -1140,6 +1141,7 @@ pre code {
 }
 
 .related-post-card {
+  display: block;
   border-bottom: 1px solid var(--color-surface-variant);
   padding-bottom: 1.5rem;
   background: none;
@@ -1149,12 +1151,16 @@ pre code {
   border-right: none;
   overflow: visible;
   transition: border-bottom-color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .related-post-card:hover {
   transform: none;
   box-shadow: none;
   border-bottom-color: var(--color-primary);
+  color: inherit;
+  text-decoration: none;
 }
 
 .related-post-image img {
