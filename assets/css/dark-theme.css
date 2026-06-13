@@ -1981,6 +1981,46 @@ tbody td code {
     --stack-md: 2rem;
   }
 
+  /* Prevent horizontal page scroll on mobile.
+     Long URLs in <a>/<code> and wide <table>/<pre> were spilling past the viewport. */
+  html, body {
+    overflow-x: clip;
+  }
+
+  .article-content a,
+  .post-content a {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .article-content code,
+  .post-content code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* But preserve formatting inside <pre> — scroll horizontally instead of breaking lines */
+  .article-content pre code,
+  .post-content pre code {
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .article-content pre,
+  .post-content pre,
+  .article-content .highlight,
+  .post-content .highlight {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Wide tables should scroll within their column, not push the page wider */
+  .article-content table,
+  .post-content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   .site-nav-inner {
     padding: 0 var(--margin-mobile);
     height: 64px;
