@@ -2,49 +2,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-  <!-- Prevent white flash on page load with inline dark theme -->
+  <!-- Prevent white flash on page load - Obsidian Editorial -->
   <style>
-    /* Critical dark theme styles loaded immediately - Korben-inspired */
     html, body {
-      background-color: #0a0a0a !important;
-      color: #f5f5f5 !important;
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* Navbar quick fix */
-    .navbar, nav {
-      background-color: transparent !important;
-      color: #f5f5f5 !important;
-    }
-    
-    /* Main content areas */
-    main, .main-content, .container {
-      background-color: #0a0a0a !important;
-      color: #f5f5f5 !important;
-    }
-    
-    /* Post previews */
-    .post-preview {
-      background-color: #1a1a1a !important;
-      color: #f5f5f5 !important;
-    }
-    
-    /* Links */
-    a {
-      color: #edb926 !important;
-    }
-    
-    a:hover {
-      color: #d4a521 !important;
-    }
-    
-    /* Code blocks quick fix */
-    pre, code {
-      background-color: #1e1e1e !important;
-      color: #f8f8f2 !important;
+      background-color: #131313 !important;
+      color: #e5e2e1 !important;
+      margin: 0; padding: 0;
     }
   </style>
+
+  <!-- Editorial Fonts: Playfair Display + Geist + JetBrains Mono + Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
 
 
   {% capture pagetitle %}
@@ -200,12 +171,6 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="//www.google-analytics.com">
-  <link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
-  
-  <!-- Preconnect for critical resources -->
-  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="//stackpath.bootstrapcdn.com">
   
   <!-- Preload critical CSS -->
   <link rel="preload" href="{{ '/assets/css/dark-theme.css' | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">

@@ -1,99 +1,93 @@
 ---
-layout: page
+layout: base
 ---
 
 {% assign tag = page.tag %}
-{% assign posts = "" | split: "" %}
-{% for post in site.posts %}
+{% assign all_posts = site.posts %}
+{% assign tag_posts = "" | split: "" %}
+{% for post in all_posts %}
   {% if post.tags contains tag %}
-    {% assign posts = posts | push: post %}
+    {% assign tag_posts = tag_posts | push: post %}
   {% endif %}
 {% endfor %}
-{% assign posts_count = posts | size %}
+{% assign posts_count = tag_posts | size %}
 
-<div class="posts-section">
-    {% if page.lang == 'en' %}
-    <p class="tag-description">
-        <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> tagged in <strong>{{ tag }}</strong> category.
-    </p>
-
-    <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-    <ul class="posts-list list-unstyled" role="list" aria-label="Articles list about {{ tag }}">
-    {% else %}
-    <p class="tag-description">
-        <strong>{{ posts_count }} article{% if posts_count > 1 %}s{% endif %}</strong> classé{% if posts_count > 1 %}s{% endif %} dans la catégorie <strong>{{ tag }}</strong>.
-    </p>
-
-    <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-    <ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles sur {{ tag }}">
+<!-- Get all unique tags for the taxonomy -->
+{% assign all_tags = "" | split: "" %}
+{% for post in site.posts %}
+  {% for t in post.tags %}
+    {% assign clean_t = t | strip %}
+    {% if clean_t != "" %}
+      {% unless all_tags contains clean_t %}
+        {% assign all_tags = all_tags | push: clean_t %}
+      {% endunless %}
     {% endif %}
-        {% for post in posts %}
-        <li class="post-preview" role="listitem">
-            {%- capture thumbnail -%}
-              {% if post.thumbnail-img %}
-                {{ post.thumbnail-img }}
-              {% elsif post.cover-img %}
-                {% if post.cover-img.first %}
-                  {{ post.cover-img[0].first.first }}
-                {% else %}
-                  {{ post.cover-img }}
-                {% endif %}
+  {% endfor %}
+{% endfor %}
+{% assign all_tags = all_tags | sort %}
+
+<main class="tags-page">
+  <div class="tags-container">
+    <!-- Page Title -->
+    <div class="tags-header">
+      <h1 class="tags-page-title">{% if page.lang == 'en' %}Exploration{% else %}Exploration{% endif %}</h1>
+    </div>
+
+    <!-- Taxonomy Grid -->
+    <div class="taxonomy-section">
+      <div class="taxonomy-header">
+        <span class="label-caps taxonomy-label">{% if page.lang == 'en' %}Taxonomy / Taxonomie{% else %}Taxonomie{% endif %}</span>
+        <span class="label-caps taxonomy-count">{{ all_tags | size | prepend: '00' | slice: -3, 3 }}</span>
+      </div>
+      <div class="taxonomy-grid">
+        {% for t in all_tags %}
+        {% assign clean_t = t | strip %}
+        {% if clean_t != "" %}
+        <a href="{% if page.lang == 'en' %}{{ '/en/tag/' | relative_url }}{% else %}{{ '/tag/' | relative_url }}{% endif %}{{ clean_t | slugify }}/"
+           class="taxonomy-tag {% if clean_t == tag %}taxonomy-tag-active{% endif %}">
+          {{ clean_t }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Filtered Articles -->
+    <div class="filtered-articles">
+      <div class="filtered-header">
+        <span class="label-caps filtered-label">
+          {% if page.lang == 'en' %}Filtered / Filtré :{% else %}Filtré :{% endif %}
+          <span class="filtered-tag-name">{{ tag | upcase }}</span>
+        </span>
+        <span class="label-caps filtered-count">{{ posts_count }} {% if page.lang == 'en' %}Entries{% else %}Entrées{% endif %}</span>
+      </div>
+
+      <ul class="tag-articles-list" role="list">
+        {% for post in tag_posts %}
+        <li class="tag-article-item" role="listitem">
+          <a href="{{ post.url | absolute_url }}" class="tag-article-link">
+            <div class="tag-article-date">
+              <span class="tag-article-bullet label-caps">-</span>
+              {% if page.lang == 'en' %}
+              <span class="label-caps tag-article-date-text">{{ post.date | date: "%b %d, %Y" | upcase }}</span>
               {% else %}
+              <span class="label-caps tag-article-date-text">{{ post.date | date: "%d %b %Y" | upcase }}</span>
               {% endif %}
-            {% endcapture %}
-            {% assign thumbnail=thumbnail | strip %}
-
-            {% if page.lang == 'en' %}
-            <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Read article: {{ post.title | strip_html }}">
-            {% else %}
-            <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
-            {% endif %}
-              <!-- Image section at top -->
-              {% if thumbnail != "" %}
-              <div class="post-image">
-                <img src="{{ thumbnail | absolute_url }}" alt="Image de couverture pour l'article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
-              </div>
-              {% endif %}
-
-              <!-- Content section below image -->
-              <div class="post-content">
-                <h2 class="post-title" id="post-title-{{ forloop.index }}">{{ post.title | strip_html }}</h2>
-                {% if post.subtitle %}
-                  <h3 class="post-subtitle" aria-describedby="post-title-{{ forloop.index }}">{{ post.subtitle | strip_html }}</h3>
-                {% endif %}
-
-                <p class="post-meta" aria-label="Informations sur l'article">
-                  {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
-                  {% if post.author %}Par <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
-                </p>
-
-                <div class="post-entry" aria-label="Extrait de l'article">
-                  {% if post.description %}
-                    {{ post.description }}
-                  {% else %}
-                    {% assign excerpt_length = site.excerpt_length | default: 50 %}
-                    {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
-                  {% endif %}
-                </div>
-
-                <div class="blog-tags" role="list" aria-label="Tags de l'article">
-                  {% for tag_item in post.tags %}
-                    {% assign clean_tag = tag_item | strip %}
-                    {% if clean_tag != "" %}
-                    <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
-                    {% endif %}
-                  {% endfor %}
-                </div>
-              </div>
-            </a>
+            </div>
+            <h3 class="tag-article-title">{{ post.title | strip_html }}</h3>
+          </a>
         </li>
         {% endfor %}
-    </ul>
-</div>
-
-<nav class="navigation" role="navigation">
-    <div class="nav-links">
-        <a href="/tags/" class="nav-link">← Tous les tags</a>
-        <a href="/" class="nav-link">Accueil</a>
+      </ul>
     </div>
-</nav>
+
+    <!-- Back nav -->
+    <nav class="tags-nav" aria-label="Navigation tags">
+      {% if page.lang == 'en' %}
+      <a href="{{ '/en/tags/' | absolute_url }}" class="tags-back-link label-caps">← All Tags</a>
+      {% else %}
+      <a href="{{ '/tags/' | absolute_url }}" class="tags-back-link label-caps">← Tous les tags</a>
+      {% endif %}
+    </nav>
+  </div>
+</main>

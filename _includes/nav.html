@@ -1,107 +1,81 @@
-<nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}" role="navigation" aria-label="Navigation principale">
-
-  {%- if site.title-img -%}
+<nav class="site-nav" role="navigation" aria-label="Navigation principale">
+  <div class="site-nav-inner">
+    <!-- Brand -->
     {% if page.lang == 'en' %}
-    <a class="navbar-brand navbar-brand-logo" href="{{ '/en/' | absolute_url }}" aria-label="Back to home"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    <a class="site-nav-brand" href="{{ '/en/' | absolute_url }}" aria-label="Back to home">{{ site.title_en | default: site.title }}</a>
     {% else %}
-    <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
+    <a class="site-nav-brand" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil">{{ site.title }}</a>
     {% endif %}
-  {%- elsif site.title -%}
-    {% if page.lang == 'en' %}
-    <a class="navbar-brand" href="{{ '/en/' | absolute_url }}" aria-label="Back to home">{{ site.title_en | default: site.title }}</a>
-    {% else %}
-    <a class="navbar-brand" href="{{ '/' | absolute_url }}" aria-label="Retour à l'accueil">{{ site.title }}</a>
-    {% endif %}
-  {%- endif -%}
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="main-navbar">
-    <ul class="navbar-nav ml-auto" role="menubar">
-      {% if page.lang == 'en' %}
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem">My CV</a>
-        </li>
-        {%- for link in site.navbar-links-en -%}
-          {%- if link[1].first %}
-            <li class="nav-item dropdown" role="none">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" role="menu">
-                {%- for childlink in link[1] -%}
-                  {%- for linkparts in childlink %}
-                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}" role="menuitem">{{ linkparts[0] }}</a>
-                  {%- endfor -%}
-                {%- endfor %}
-              </div>
-            </li>
-          {% else %}
-            <li class="nav-item" role="none">
-              <a class="nav-link" href="{{ link[1] | relative_url }}" role="menuitem">{{ link[0] }}</a>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      {% else %}
-        <li class="nav-item" role="none">
-          <a class="nav-link" href="/resume/cv-angelo-lima.html" target="_blank" role="menuitem">Mon CV</a>
-        </li>
-        {%- for link in site.navbar-links -%}
-          {%- if link[1].first %}
-            <li class="nav-item dropdown" role="none">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{ link[0] }} - sous-menu">{{ link[0] }}</a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" role="menu">
-                {%- for childlink in link[1] -%}
-                  {%- for linkparts in childlink %}
-                    <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}" role="menuitem">{{ linkparts[0] }}</a>
-                  {%- endfor -%}
-                {%- endfor %}
-              </div>
-            </li>
-          {% else %}
-            <li class="nav-item" role="none">
-              <a class="nav-link" href="{{ link[1] | relative_url }}" role="menuitem">{{ link[0] }}</a>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
+    <!-- Desktop Nav Links -->
+    <div class="site-nav-links" role="menubar">
+      {% comment %}Determine active states{% endcomment %}
+      {% assign is_blog = false %}
+      {% assign is_about = false %}
+      {% assign is_tags = false %}
+      {% if page.url == '/' or page.url == '/en/' or page.layout == 'post' or page.layout == 'home' %}
+        {% assign is_blog = true %}
       {% endif %}
-      {% if site.post_search %}
-        <li class="nav-item" role="none">
-          {% if page.lang == 'en' %}
-          <a class="nav-link" id="nav-search-link" href="#" title="Search" role="menuitem" aria-label="Open search">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Search articles 🔎</span>
-          </a>
-          {% else %}
-          <a class="nav-link" id="nav-search-link" href="#" title="Rechercher" role="menuitem" aria-label="Ouvrir la recherche">
-            <span id="nav-search-icon" class="fa fa-search"></span>
-            <span id="nav-search-text">Rechercher un article 🔎</span>
-          </a>
-          {% endif %}
-        </li>
-      {%- endif -%}
-      <li class="nav-item" role="none">
+      {% if page.url contains '/aboutme' %}
+        {% assign is_about = true %}
+      {% endif %}
+      {% if page.url contains '/tags' or page.url contains '/tag/' %}
+        {% assign is_tags = true %}
+      {% endif %}
+
+      {% if page.lang == 'en' %}
+      <a class="nav-link {% if is_blog %}nav-link-active{% endif %}" href="{{ '/en/' | absolute_url }}" role="menuitem">Blog</a>
+      <a class="nav-link {% if is_about %}nav-link-active{% endif %}" href="{{ '/en/aboutme/' | absolute_url }}" role="menuitem">About</a>
+      <a class="nav-link {% if is_tags %}nav-link-active{% endif %}" href="{{ '/en/tags/' | absolute_url }}" role="menuitem">Archive</a>
+      <a class="nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener" role="menuitem">Resume</a>
+      {% else %}
+      <a class="nav-link {% if is_blog %}nav-link-active{% endif %}" href="{{ '/' | absolute_url }}" role="menuitem">Blog</a>
+      <a class="nav-link {% if is_about %}nav-link-active{% endif %}" href="{{ '/aboutme/' | absolute_url }}" role="menuitem">À propos</a>
+      <a class="nav-link {% if is_tags %}nav-link-active{% endif %}" href="{{ '/tags/' | absolute_url }}" role="menuitem">Archive</a>
+      <a class="nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener" role="menuitem">Mon CV</a>
+      {% endif %}
+    </div>
+
+    <!-- Actions: Language Switcher + Mobile Menu -->
+    <div class="site-nav-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switcher" aria-label="Language switcher">
         {% include smart-lang-switcher.html %}
-      </li>
-    </ul>
+      </div>
+      <!-- Mobile Hamburger -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
   </div>
 
-  {% if site.navbar-extra %}
-    {% for file in site.navbar-extra %}
-      {% include {{ file }} %}
-    {% endfor %}
-  {% endif %}
-
-  {% if site.avatar and page.show-avatar != false %}
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        <a href="{{ '/' | absolute_url }}" aria-label="Photo de profil - Retour à l'accueil">
-          <img alt="Photo de profil d'Angelo Lima" class="avatar-img" src="{{ site.avatar | relative_url }}" />
-        </a>
-      </div>
-    </div>
-  {% endif %}
-
+  <!-- Mobile Menu Dropdown -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    {% if page.lang == 'en' %}
+    <a class="mobile-nav-link" href="{{ '/en/' | absolute_url }}">Blog</a>
+    <a class="mobile-nav-link" href="{{ '/en/aboutme/' | absolute_url }}">About</a>
+    <a class="mobile-nav-link" href="{{ '/en/tags/' | absolute_url }}">Archive</a>
+    <a class="mobile-nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener">Resume</a>
+    {% else %}
+    <a class="mobile-nav-link" href="{{ '/' | absolute_url }}">Blog</a>
+    <a class="mobile-nav-link" href="{{ '/aboutme/' | absolute_url }}">À propos</a>
+    <a class="mobile-nav-link" href="{{ '/tags/' | absolute_url }}">Archive</a>
+    <a class="mobile-nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener">Mon CV</a>
+    {% endif %}
+  </div>
 </nav>
 
-{% include search.html %}
+<!-- Mobile menu JS -->
+<script>
+(function() {
+  var btn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      menu.setAttribute('aria-hidden', !isOpen);
+    });
+  }
+})();
+</script>

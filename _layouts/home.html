@@ -1,109 +1,130 @@
 ---
-layout: page
+layout: base
 ---
 
 {{ content }}
 
 {% if page.lang == 'en' %}
-  {% comment %}For English: show all posts, JavaScript will handle pagination{% endcomment %}
   {% assign posts = site.posts | where: "lang", "en" %}
 {% else %}
-  {% comment %}For French: show all posts, JavaScript will handle pagination{% endcomment %}
   {% assign posts = site.posts | where: "lang", "fr" %}
 {% endif %}
 
-<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
-{% if page.lang == 'en' %}
-<ul class="posts-list list-unstyled" role="list" aria-label="Blog articles list">
-{% else %}
-<ul class="posts-list list-unstyled" role="list" aria-label="Liste des articles de blog">
+{% assign featured_post = posts | first %}
+
+<!-- Hero Section -->
+<section class="home-hero">
+  <div class="home-container">
+    <div class="home-hero-content">
+      <h1 class="home-hero-title">
+        {% if page.lang == 'en' %}
+        Angélo Lima — <span class="home-hero-accent">Web Dev</span> &amp; AI
+        {% else %}
+        Angélo Lima — <span class="home-hero-accent">Web Dev</span> &amp; IA
+        {% endif %}
+      </h1>
+      <p class="home-hero-subtitle">
+        {% if page.lang == 'en' %}
+        Tech blog exploring web development and artificial intelligence. Exploring the intersection of modern frameworks, LLMs, and robust engineering.
+        {% else %}
+        Blog tech sur le développement web et l'intelligence artificielle. Explorer l'intersection des frameworks modernes, des LLMs et de l'ingénierie logicielle.
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Post -->
+{% if featured_post %}
+<section class="featured-post-section">
+  <div class="home-container">
+    <div class="featured-post-grid">
+      <!-- Content side -->
+      <div class="featured-post-content">
+        <div class="featured-label">
+          <span class="label-caps chip-bullet">{% if page.lang == 'en' %}Featured Essay{% else %}Article Vedette{% endif %}</span>
+        </div>
+        <h2 class="featured-post-title">{{ featured_post.title | strip_html }}</h2>
+        {% if featured_post.subtitle %}
+        <p class="featured-post-subtitle">{{ featured_post.subtitle | strip_html }}</p>
+        {% else %}
+        <p class="featured-post-excerpt">{{ featured_post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+        <a href="{{ featured_post.url | absolute_url }}" class="featured-post-btn">
+          {% if page.lang == 'en' %}Read Essay{% else %}Lire l'article{% endif %}
+        </a>
+      </div>
+      <!-- Image side -->
+      <div class="featured-post-image-wrap">
+        {%- capture thumbnail -%}
+          {% if featured_post.thumbnail-img %}{{ featured_post.thumbnail-img }}
+          {% elsif featured_post.cover-img %}{{ featured_post.cover-img }}
+          {% endif %}
+        {%- endcapture -%}
+        {% assign thumbnail = thumbnail | strip %}
+        {% if thumbnail != "" %}
+        <a href="{{ featured_post.url | absolute_url }}">
+          <img src="{{ thumbnail | absolute_url }}" alt="{{ featured_post.title | strip_html }}" class="featured-post-img" loading="lazy">
+        </a>
+        {% else %}
+        <div class="featured-post-img-placeholder"></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="home-container">
+  <hr class="section-divider">
+</div>
 {% endif %}
-  {% for post in posts %}
-  <li class="post-preview" role="listitem">
-    {%- capture thumbnail -%}
-      {% if post.thumbnail-img %}
-        {{ post.thumbnail-img }}
-      {% elsif post.cover-img %}
-        {% if post.cover-img.first %}
-          {{ post.cover-img[0].first.first }}
-        {% else %}
-          {{ post.cover-img }}
-        {% endif %}
-      {% else %}
-      {% endif %}
-    {% endcapture %}
-    {% assign thumbnail=thumbnail | strip %}
 
-    {% if page.lang == 'en' %}
-    <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Read article: {{ post.title | strip_html }}">
-    {% else %}
-    <a href="{{ post.url | absolute_url }}" class="article-link" aria-label="Lire l'article: {{ post.title | strip_html }}">
-    {% endif %}
-      <!-- Image section at top -->
-      {% if thumbnail != "" %}
-      <div class="post-image">
-        {% if page.lang == 'en' %}
-        <img src="{{ thumbnail | absolute_url }}" alt="Cover image for article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
-        {% else %}
-        <img src="{{ thumbnail | absolute_url }}" alt="Image de couverture pour l'article {{ post.title | strip_html }}" loading="lazy" width="300" height="200">
-        {% endif %}
-      </div>
-      {% endif %}
+<!-- Recent Articles -->
+<section class="recent-posts-section">
+  <div class="home-container">
+    <div class="recent-posts-header">
+      <h3 class="section-title">{% if page.lang == 'en' %}Recent Publications{% else %}Publications Récentes{% endif %}</h3>
+      <a href="{% if page.lang == 'en' %}{{ '/en/tags/' | absolute_url }}{% else %}{{ '/tags/' | absolute_url }}{% endif %}" class="view-all-link">{% if page.lang == 'en' %}View All Archive{% else %}Voir les Archives{% endif %}</a>
+    </div>
 
-      <!-- Content section below image -->
-      <div class="post-content">
-        <h2 class="post-title" id="post-title-{{ forloop.index }}">{{ post.title | strip_html }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle" aria-describedby="post-title-{{ forloop.index }}">{{ post.subtitle | strip_html }}</h3>
-        {% endif %}
+    <ul class="posts-list" role="list">
+      {% for post in posts limit: 6 %}
+      {% unless forloop.first %}
+      <li class="post-preview" role="listitem">
+        {%- capture thumbnail -%}
+          {% if post.thumbnail-img %}{{ post.thumbnail-img }}
+          {% elsif post.cover-img %}{{ post.cover-img }}
+          {% endif %}
+        {%- endcapture -%}
+        {% assign thumbnail = thumbnail | strip %}
 
-        {% if page.lang == 'en' %}
-        <p class="post-meta" aria-label="Article information">
-          {% assign date_format = "%B %-d, %Y" %}
-          {% if post.author %}By <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
-        {% else %}
-        <p class="post-meta" aria-label="Informations sur l'article">
-          {% assign date_format = site.date_format | default: "%d/%m/%Y" %}
-          {% if post.author %}Par <strong>{{ post.author | strip_html }}</strong> • {% endif %}{{ post.date | date: date_format }}
-        {% endif %}
-        </p>
-
-        {% unless site.feed_show_excerpt == false %}
-        {% if page.lang == 'en' %}
-        <div class="post-entry" aria-label="Article excerpt">
-        {% else %}
-        <div class="post-entry" aria-label="Extrait de l'article">
-        {% endif %}
-          {% assign excerpt_length = site.excerpt_length | default: 50 %}
-          {{ post.excerpt | strip_html | truncatewords: excerpt_length }}
-        </div>
-        {% endunless %}
-
-        {% if site.feed_show_tags != false and post.tags.size > 0 %}
-        {% if page.lang == 'en' %}
-        <div class="blog-tags" role="list" aria-label="Article tags">
-          {% for tag in post.tags %}
-            {% assign clean_tag = tag | strip %}
-            {% if clean_tag != "" %}
-            <a href="{{ '/en/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-        {% else %}
-        <div class="blog-tags" role="list" aria-label="Tags de l'article">
-          {% for tag in post.tags %}
-            {% assign clean_tag = tag | strip %}
-            {% if clean_tag != "" %}
-            <a href="{{ '/tags' | absolute_url }}#{{- clean_tag -}}" class="tag-link" role="listitem" aria-label="Tag: {{ clean_tag }}">{{- clean_tag -}}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-        {% endif %}
-        {% endif %}
-      </div>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-
-{% comment %}JavaScript pagination will be added dynamically for both languages{% endcomment %}
+        <a href="{{ post.url | absolute_url }}" class="post-card-link">
+          {% if thumbnail != "" %}
+          <div class="post-image-wrap">
+            <img src="{{ thumbnail | absolute_url }}" alt="{{ post.title | strip_html }}" class="post-card-img" loading="lazy" width="300" height="200">
+          </div>
+          {% endif %}
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              {% if post.tags.size > 0 %}
+              {% assign clean_tag = post.tags[0] | strip %}
+              {% if clean_tag != "" %}
+              <span class="post-card-tag label-caps chip-bullet">{{ clean_tag }}</span>
+              {% endif %}
+              {% endif %}
+              {% if page.lang == 'en' %}
+              <span class="post-card-date label-caps">{{ post.date | date: "%b %d, %Y" }}</span>
+              {% else %}
+              <span class="post-card-date label-caps">{{ post.date | date: "%d %b %Y" }}</span>
+              {% endif %}
+            </div>
+            <h2 class="post-card-title">{{ post.title | strip_html }}</h2>
+            <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          </div>
+        </a>
+      </li>
+      {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
