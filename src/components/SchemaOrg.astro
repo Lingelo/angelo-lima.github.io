@@ -1,0 +1,80 @@
+---
+import { SITE } from '../site';
+
+interface Props {
+  type: 'article' | 'website';
+  title?: string;
+  description?: string;
+  canonical: string; // absolute
+  image?: string; // absolute
+  datePublished?: string;
+  dateModified?: string;
+  author?: string;
+  tags?: string[];
+  section?: string;
+  wordCount?: number;
+  articleBody?: string;
+}
+
+const p = Astro.props as Props;
+const avatar = new URL(SITE.avatar, Astro.site).href;
+
+let json: Record<string, unknown>;
+
+if (p.type === 'article') {
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: p.title,
+    ...(p.description ? { description: p.description } : {}),
+    image: { '@type': 'ImageObject', url: p.image ?? avatar, height: 630, width: 1200 },
+    author: { '@type': 'Person', name: p.author ?? SITE.authorShort },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.title,
+      logo: { '@type': 'ImageObject', url: avatar, width: 400, height: 400 },
+    },
+    datePublished: p.datePublished,
+    dateModified: p.dateModified ?? p.datePublished,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': p.canonical },
+    ...(p.tags && p.tags.length ? { keywords: p.tags } : {}),
+    articleSection: p.section ?? 'Blog',
+    ...(p.wordCount ? { wordCount: p.wordCount } : {}),
+    ...(p.articleBody ? { articleBody: p.articleBody } : {}),
+  };
+} else {
+  json = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.title,
+    description: SITE.descriptionFr,
+    url: SITE.url,
+    author: { '@type': 'Person', name: SITE.author, url: `${SITE.url}/aboutme` },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.title,
+      logo: { '@type': 'ImageObject', url: avatar, width: 400, height: 400 },
+    },
+  };
+}
+
+const person =
+  p.type === 'website'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: SITE.author,
+        jobTitle: 'Développeur Web Full Stack',
+        description: SITE.descriptionFr,
+        url: SITE.url,
+        image: avatar,
+        sameAs: [
+          `https://github.com/${SITE.github}`,
+          `https://linkedin.com/in/${SITE.linkedin}`,
+          `mailto:${SITE.email}`,
+        ],
+      }
+    : null;
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(json)} />
+{person && <script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />}

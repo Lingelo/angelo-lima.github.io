@@ -1,0 +1,30 @@
+---
+interface Props { title: string; url: string }
+const { title, url } = Astro.props as Props;
+const t = encodeURIComponent(title);
+const u = encodeURIComponent(url);
+---
+<section id="social-share-section">
+  <span class="sr-only">Share: </span>
+  <a href={`https://twitter.com/intent/tweet?text=${t}&url=${u}`} class="social-share-link" title="Share on X (Twitter)">
+    <span class="fa-stack fa-lg" aria-hidden="true">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="sr-only">X (Twitter)</span>
+  </a>
+  <a href={`https://www.facebook.com/sharer/sharer.php?u=${u}`} class="social-share-link" title="Share on Facebook">
+    <span class="fa-stack fa-lg" aria-hidden="true">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="sr-only">Facebook</span>
+  </a>
+  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${u}`} class="social-share-link" title="Share on LinkedIn">
+    <span class="fa-stack fa-lg" aria-hidden="true">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+    </span>
+    <span class="sr-only">LinkedIn</span>
+  </a>
+</section>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Home from '../components/Home.astro';
+import { SITE } from '../site';
+import { getPosts } from '../lib/posts';
+
+const posts = await getPosts('fr');
+---
+<BaseLayout
+  lang="fr"
+  title="Angélo Lima"
+  description={SITE.descriptionFr}
+  canonical="/"
+  type="website"
+  active="blog"
+  altUrl="/en/"
+  alternates={[
+    { hreflang: 'fr', href: '/' },
+    { hreflang: 'x-default', href: '/' },
+    { hreflang: 'en', href: '/en/' },
+  ]}
+>
+  <Home lang="fr" posts={posts} currentPage={1} />
+</BaseLayout>

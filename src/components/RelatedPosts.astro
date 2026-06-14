@@ -1,0 +1,40 @@
+---
+import { I18N, type Lang } from '../site';
+import { postUrl, formatDate, isoDate, type Post } from '../lib/posts';
+
+interface Props { lang: Lang; posts: Post[]; currentTags: string[] }
+const { lang, posts, currentTags } = Astro.props as Props;
+const t = I18N[lang];
+const tagSet = new Set(currentTags);
+---
+{posts.length > 0 && (
+  <section class="related-posts related-posts-section">
+    <h3>{t.related}</h3>
+    <div class="related-posts-grid">
+      {posts.map((post) => {
+        const img = post.data.thumbnail ?? post.data.cover;
+        return (
+          <a href={postUrl(post)} class={`related-post-card${img ? '' : ' no-image'}`}>
+            {img && (
+              <div class="related-post-image">
+                <img src={img} alt={post.data.title} loading="lazy" />
+              </div>
+            )}
+            <div class="related-post-content">
+              <h4>{post.data.title}</h4>
+              {post.data.subtitle && <p class="related-post-subtitle">{post.data.subtitle}</p>}
+              <div class="related-post-meta">
+                <time datetime={isoDate(post.data.date)}>{formatDate(post.data.date, lang)}</time>
+                <div class="related-post-tags">
+                  {post.data.tags.slice(0, 2).map((tag) => (
+                    <span class={tagSet.has(tag) ? 'related-tag-match' : 'related-tag'}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+)}

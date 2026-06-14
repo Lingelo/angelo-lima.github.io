@@ -1,0 +1,73 @@
+---
+import { SITE, I18N, type Lang } from '../site';
+import Search from './Search.astro';
+
+interface Props {
+  lang: Lang;
+  active?: 'blog' | 'about' | 'tags' | null;
+  altUrl: string; // same page in the other language
+}
+const { lang, active = null, altUrl } = Astro.props as Props;
+const t = I18N[lang];
+const home = lang === 'en' ? '/en/' : '/';
+const aboutUrl = lang === 'en' ? '/en/aboutme/' : '/aboutme/';
+const tagsUrl = lang === 'en' ? '/en/tags/' : '/tags/';
+const brand = lang === 'en' ? SITE.titleEn : SITE.title;
+---
+<nav class="site-nav" role="navigation" aria-label="Navigation">
+  <div class="site-nav-inner">
+    <a class="site-nav-brand" href={home} aria-label={lang === 'en' ? 'Back to home' : "Retour à l'accueil"}>{brand}</a>
+
+    <div class="site-nav-links" role="menubar">
+      <a class={`nav-link ${active === 'blog' ? 'nav-link-active' : ''}`} href={home} role="menuitem">{t.blog}</a>
+      <a class={`nav-link ${active === 'about' ? 'nav-link-active' : ''}`} href={aboutUrl} role="menuitem">{t.about}</a>
+      <a class={`nav-link ${active === 'tags' ? 'nav-link-active' : ''}`} href={tagsUrl} role="menuitem">{t.archive}</a>
+      <a class="nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener" role="menuitem">{t.resume}</a>
+    </div>
+
+    <div class="site-nav-actions">
+      <Search lang={lang} />
+      <div class="lang-switcher" aria-label="Language switcher">
+        <div class="lang-toggle">
+          {lang === 'en' ? (
+            <>
+              <a href={altUrl} class="lang-toggle-item" title="Lire en français">FR</a>
+              <span class="lang-toggle-sep">|</span>
+              <span class="lang-toggle-item lang-toggle-active">EN</span>
+            </>
+          ) : (
+            <>
+              <span class="lang-toggle-item lang-toggle-active">FR</span>
+              <span class="lang-toggle-sep">|</span>
+              <a href={altUrl} class="lang-toggle-item" title="Read in English">EN</a>
+            </>
+          )}
+        </div>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-icon">&#9776;</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a class="mobile-nav-link" href={home}>{t.blog}</a>
+    <a class="mobile-nav-link" href={aboutUrl}>{t.about}</a>
+    <a class="mobile-nav-link" href={tagsUrl}>{t.archive}</a>
+    <a class="mobile-nav-link" href="/resume/cv-angelo-lima.html" target="_blank" rel="noopener">{t.resume}</a>
+  </div>
+</nav>
+
+<script is:inline>
+  (function () {
+    var btn = document.getElementById('mobile-menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+        menu.setAttribute('aria-hidden', !isOpen);
+      });
+    }
+  })();
+</script>

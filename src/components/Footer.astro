@@ -1,0 +1,20 @@
+---
+import { SITE, type Lang } from '../site';
+interface Props { lang: Lang }
+const { lang } = Astro.props as Props;
+const year = new Date().getUTCFullYear();
+---
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <div class="footer-brand">
+      <span class="footer-brand-name">{SITE.title}</span>
+      <span class="footer-copyright">© {year} {SITE.author}</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href={`https://linkedin.com/in/${SITE.linkedin}`} class="footer-link" rel="noopener" target="_blank">LinkedIn</a>
+      <a href={`https://github.com/${SITE.github}`} class="footer-link" rel="noopener" target="_blank">GitHub</a>
+      <a href={lang === 'en' ? '/en/feed.xml' : '/feed.xml'} class="footer-link">RSS</a>
+      <a href="#" class="footer-link footer-link-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
+    </nav>
+  </div>
+</footer>

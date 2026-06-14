@@ -1,0 +1,42 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { Alternate } from '../components/Head.astro';
+import type { Lang } from '../site';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  subtitle?: string;
+  description: string;
+  canonical: string;
+  active?: 'blog' | 'about' | 'tags' | null;
+  altUrl: string;
+  alternates?: Alternate[];
+  breadcrumb?: { name: string; url: string }[];
+}
+const { lang, title, subtitle, description, canonical, active = null, altUrl, alternates, breadcrumb } =
+  Astro.props as Props;
+---
+<BaseLayout
+  lang={lang}
+  title={title}
+  description={description}
+  canonical={canonical}
+  type="website"
+  active={active}
+  altUrl={altUrl}
+  alternates={alternates}
+  breadcrumb={breadcrumb}
+>
+  <main class="page-main">
+    <div class="page-container">
+      <header class="page-header">
+        <h1 class="page-title">{title}</h1>
+        {subtitle && <p class="page-subtitle">{subtitle}</p>}
+      </header>
+      <div class="page-content">
+        <slot />
+      </div>
+    </div>
+  </main>
+</BaseLayout>
