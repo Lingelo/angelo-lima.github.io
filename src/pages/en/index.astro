@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Home from '../../components/Home.astro';
+import { SITE } from '../../site';
+import { getPosts } from '../../lib/posts';
+
+const posts = await getPosts('en');
+---
+<BaseLayout
+  lang="en"
+  title={SITE.titleEn}
+  description={SITE.descriptionEn}
+  canonical="/en/"
+  type="website"
+  active="blog"
+  altUrl="/"
+  alternates={[
+    { hreflang: 'en', href: '/en/' },
+    { hreflang: 'fr', href: '/' },
+    { hreflang: 'x-default', href: '/' },
+  ]}
+>
+  <Home lang="en" posts={posts} currentPage={1} />
+</BaseLayout>

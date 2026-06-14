@@ -1,0 +1,874 @@
+[
+  {
+    "file": "2024-12-23-introduction-franco-portuguese-developer-ai-web.md",
+    "lang": "en",
+    "slug": "introduction-franco-portuguese-developer-ai-web",
+    "url": "/en/introduction-franco-portuguese-developer-ai-web/",
+    "alias": "/en/2024-12-23-introduction-franco-portuguese-developer-ai-web/",
+    "ref": "introduction-developer"
+  },
+  {
+    "file": "2024-12-24-conventional-commits-standardize-git-messages-optimized-collaboration.md",
+    "lang": "en",
+    "slug": "conventional-commits-standardize-git-messages-optimized-collaboration",
+    "url": "/en/conventional-commits-standardize-git-messages-optimized-collaboration/",
+    "alias": "/en/2024-12-24-conventional-commits-standardize-git-messages-optimized-collaboration/",
+    "ref": "conventional-commits"
+  },
+  {
+    "file": "2024-12-24-conventional-commits.md",
+    "lang": "fr",
+    "slug": "conventional-commits",
+    "url": "/fr/conventional-commits/",
+    "alias": "/2024-12-24-conventional-commits/",
+    "ref": "conventional-commits"
+  },
+  {
+    "file": "2024-12-25-conventional-comments-improve-code-reviews-standardization.md",
+    "lang": "en",
+    "slug": "conventional-comments-improve-code-reviews-standardization",
+    "url": "/en/conventional-comments-improve-code-reviews-standardization/",
+    "alias": "/en/2024-12-25-conventional-comments-improve-code-reviews-standardization/",
+    "ref": "conventional-comments"
+  },
+  {
+    "file": "2024-12-25-conventional-comments.md",
+    "lang": "fr",
+    "slug": "conventional-comments",
+    "url": "/fr/conventional-comments/",
+    "alias": "/2024-12-25-conventional-comments/",
+    "ref": "conventional-comments"
+  },
+  {
+    "file": "2024-12-27-nvidia-nim-deploy-ai-models-containerized-microservices.md",
+    "lang": "en",
+    "slug": "nvidia-nim-deploy-ai-models-containerized-microservices",
+    "url": "/en/nvidia-nim-deploy-ai-models-containerized-microservices/",
+    "alias": "/en/2024-12-27-nvidia-nim-deploy-ai-models-containerized-microservices/",
+    "ref": "nvidia-nim"
+  },
+  {
+    "file": "2024-12-27-nvidia-nim.md",
+    "lang": "fr",
+    "slug": "nvidia-nim",
+    "url": "/fr/nvidia-nim/",
+    "alias": "/2024-12-27-nvidia-nim/",
+    "ref": "nvidia-nim"
+  },
+  {
+    "file": "2025-01-02-Best-of-n-jailbreaking.md",
+    "lang": "fr",
+    "slug": "Best-of-n-jailbreaking",
+    "url": "/fr/Best-of-n-jailbreaking/",
+    "alias": "/2025-01-02-Best-of-n-jailbreaking/",
+    "ref": "best-of-n-jailbreaking"
+  },
+  {
+    "file": "2025-01-02-best-of-n-jailbreaking-vulnerability-analysis-repeated-attacks-llms.md",
+    "lang": "en",
+    "slug": "best-of-n-jailbreaking-vulnerability-analysis-repeated-attacks-llms",
+    "url": "/en/best-of-n-jailbreaking-vulnerability-analysis-repeated-attacks-llms/",
+    "alias": "/en/2025-01-02-best-of-n-jailbreaking-vulnerability-analysis-repeated-attacks-llms/",
+    "ref": "best-of-n-jailbreaking"
+  },
+  {
+    "file": "2025-01-02-ollama-open-web-ui.md",
+    "lang": "fr",
+    "slug": "ollama-open-web-ui",
+    "url": "/fr/ollama-open-web-ui/",
+    "alias": "/2025-01-02-ollama-open-web-ui/",
+    "ref": "ollama-open-webui"
+  },
+  {
+    "file": "2025-01-02-ollama-open-webui-local-llm-deployment-docker.md",
+    "lang": "en",
+    "slug": "ollama-open-webui-local-llm-deployment-docker",
+    "url": "/en/ollama-open-webui-local-llm-deployment-docker/",
+    "alias": "/en/2025-01-02-ollama-open-webui-local-llm-deployment-docker/",
+    "ref": "ollama-open-webui"
+  },
+  {
+    "file": "2025-01-03-2024-retrospective-ai-development-web-perspectives-2025.md",
+    "lang": "en",
+    "slug": "2024-retrospective-ai-development-web-perspectives-2025",
+    "url": "/en/2024-retrospective-ai-development-web-perspectives-2025/",
+    "alias": "/en/2025-01-03-2024-retrospective-ai-development-web-perspectives-2025/",
+    "ref": "2024-retrospective"
+  },
+  {
+    "file": "2025-01-03-welcome-2025-goodbye-2024.md",
+    "lang": "fr",
+    "slug": "welcome-2025-goodbye-2024",
+    "url": "/fr/welcome-2025-goodbye-2024/",
+    "alias": "/2025-01-03-welcome-2025-goodbye-2024/",
+    "ref": "2024-retrospective"
+  },
+  {
+    "file": "2025-01-10-json-resume-standardized-cv-format-developers-automation.md",
+    "lang": "en",
+    "slug": "json-resume-standardized-cv-format-developers-automation",
+    "url": "/en/json-resume-standardized-cv-format-developers-automation/",
+    "alias": "/en/2025-01-10-json-resume-standardized-cv-format-developers-automation/",
+    "ref": "json-resume"
+  },
+  {
+    "file": "2025-01-10-resume-json.md",
+    "lang": "fr",
+    "slug": "resume-json",
+    "url": "/fr/resume-json/",
+    "alias": "/2025-01-10-resume-json/",
+    "ref": "json-resume"
+  },
+  {
+    "file": "2025-01-14-Feature-Sliced-Design.md",
+    "lang": "fr",
+    "slug": "Feature-Sliced-Design",
+    "url": "/fr/Feature-Sliced-Design/",
+    "alias": "/2025-01-14-Feature-Sliced-Design/",
+    "ref": "feature-sliced-design"
+  },
+  {
+    "file": "2025-01-14-feature-sliced-design-scalable-frontend-architecture.md",
+    "lang": "en",
+    "slug": "feature-sliced-design-scalable-frontend-architecture",
+    "url": "/en/feature-sliced-design-scalable-frontend-architecture/",
+    "alias": "/en/2025-01-14-feature-sliced-design-scalable-frontend-architecture/",
+    "ref": "feature-sliced-design"
+  },
+  {
+    "file": "2025-01-17-dunning-kruger-effect-development-cognitive-psychology-tech-teams.md",
+    "lang": "en",
+    "slug": "dunning-kruger-effect-development-cognitive-psychology-tech-teams",
+    "url": "/en/dunning-kruger-effect-development-cognitive-psychology-tech-teams/",
+    "alias": "/en/2025-01-17-dunning-kruger-effect-development-cognitive-psychology-tech-teams/",
+    "ref": "dunning-kruger-effect"
+  },
+  {
+    "file": "2025-01-17-effet-dunning-kruger.md",
+    "lang": "fr",
+    "slug": "effet-dunning-kruger",
+    "url": "/fr/effet-dunning-kruger/",
+    "alias": "/2025-01-17-effet-dunning-kruger/",
+    "ref": "dunning-kruger-effect"
+  },
+  {
+    "file": "2025-01-17-fin-du-fact-checking-meta.md",
+    "lang": "fr",
+    "slug": "fin-du-fact-checking-meta",
+    "url": "/fr/fin-du-fact-checking-meta/",
+    "alias": "/2025-01-17-fin-du-fact-checking-meta/",
+    "ref": "meta-fact-checking"
+  },
+  {
+    "file": "2025-01-17-meta-abandons-fact-checking-impact-digital-platform-governance.md",
+    "lang": "en",
+    "slug": "meta-abandons-fact-checking-impact-digital-platform-governance",
+    "url": "/en/meta-abandons-fact-checking-impact-digital-platform-governance/",
+    "alias": "/en/2025-01-17-meta-abandons-fact-checking-impact-digital-platform-governance/",
+    "ref": "meta-fact-checking"
+  },
+  {
+    "file": "2025-01-22-bun-2025-critical-evaluation-javascript-runtime-alternative.md",
+    "lang": "en",
+    "slug": "bun-2025-critical-evaluation-javascript-runtime-alternative",
+    "url": "/en/bun-2025-critical-evaluation-javascript-runtime-alternative/",
+    "alias": "/en/2025-01-22-bun-2025-critical-evaluation-javascript-runtime-alternative/",
+    "ref": "bun-evaluation"
+  },
+  {
+    "file": "2025-01-22-bun-sh.md",
+    "lang": "fr",
+    "slug": "bun-sh",
+    "url": "/fr/bun-sh/",
+    "alias": "/2025-01-22-bun-sh/",
+    "ref": "bun-evaluation"
+  },
+  {
+    "file": "2025-01-24-web-3-0-blockchain-technical-analysis-decentralized-revolution.md",
+    "lang": "en",
+    "slug": "web-3-0-blockchain-technical-analysis-decentralized-revolution",
+    "url": "/en/web-3-0-blockchain-technical-analysis-decentralized-revolution/",
+    "alias": "/en/2025-01-24-web-3-0-blockchain-technical-analysis-decentralized-revolution/",
+    "ref": "web-3-0"
+  },
+  {
+    "file": "2025-01-24-web-3-0.md",
+    "lang": "fr",
+    "slug": "web-3-0",
+    "url": "/fr/web-3-0/",
+    "alias": "/2025-01-24-web-3-0/",
+    "ref": "web-3-0"
+  },
+  {
+    "file": "2025-01-28-rice-power-of-10.md",
+    "lang": "fr",
+    "slug": "rice-power-of-10",
+    "url": "/fr/rice-power-of-10/",
+    "alias": "/2025-01-28-rice-power-of-10/",
+    "ref": "nasa-methodologies"
+  },
+  {
+    "file": "2025-01-28-robust-web-development-nasa-methodologies-critical-applications.md",
+    "lang": "en",
+    "slug": "robust-web-development-nasa-methodologies-critical-applications",
+    "url": "/en/robust-web-development-nasa-methodologies-critical-applications/",
+    "alias": "/en/2025-01-28-robust-web-development-nasa-methodologies-critical-applications/",
+    "ref": "nasa-methodologies"
+  },
+  {
+    "file": "2025-01-29-jailbreak-deepseek-r1.md",
+    "lang": "fr",
+    "slug": "jailbreak-deepseek-r1",
+    "url": "/fr/jailbreak-deepseek-r1/",
+    "alias": "/2025-01-29-jailbreak-deepseek-r1/",
+    "ref": "llm-jailbreaking"
+  },
+  {
+    "file": "2025-01-29-llm-jailbreaking-security-analysis-bypass-mechanisms.md",
+    "lang": "en",
+    "slug": "llm-jailbreaking-security-analysis-bypass-mechanisms",
+    "url": "/en/llm-jailbreaking-security-analysis-bypass-mechanisms/",
+    "alias": "/en/2025-01-29-llm-jailbreaking-security-analysis-bypass-mechanisms/",
+    "ref": "llm-jailbreaking"
+  },
+  {
+    "file": "2025-02-03-IA-impact-ecologique.md",
+    "lang": "fr",
+    "slug": "IA-impact-ecologique",
+    "url": "/fr/IA-impact-ecologique/",
+    "alias": "/2025-02-03-IA-impact-ecologique/",
+    "ref": "ai-ecological-impact"
+  },
+  {
+    "file": "2025-02-03-ai-ecological-impact-training-vs-inference-environmental-costs.md",
+    "lang": "en",
+    "slug": "ai-ecological-impact-training-vs-inference-environmental-costs",
+    "url": "/en/ai-ecological-impact-training-vs-inference-environmental-costs/",
+    "alias": "/en/2025-02-03-ai-ecological-impact-training-vs-inference-environmental-costs/",
+    "ref": "ai-ecological-impact"
+  },
+  {
+    "file": "2025-02-23-ia-sql-assistant.md",
+    "lang": "fr",
+    "slug": "ia-sql-assistant",
+    "url": "/fr/ia-sql-assistant/",
+    "alias": "/2025-02-23-ia-sql-assistant/",
+    "ref": "sql-assistant"
+  },
+  {
+    "file": "2025-02-23-sql-assistant-ai-natural-language-sql-conversion.md",
+    "lang": "en",
+    "slug": "sql-assistant-ai-natural-language-sql-conversion",
+    "url": "/en/sql-assistant-ai-natural-language-sql-conversion/",
+    "alias": "/en/2025-02-23-sql-assistant-ai-natural-language-sql-conversion/",
+    "ref": "sql-assistant"
+  },
+  {
+    "file": "2025-05-12-anthropic-mcp-model-context-protocol-llm-integration.md",
+    "lang": "en",
+    "slug": "anthropic-mcp-model-context-protocol-llm-integration",
+    "url": "/en/anthropic-mcp-model-context-protocol-llm-integration/",
+    "alias": "/en/2025-05-12-anthropic-mcp-model-context-protocol-llm-integration/",
+    "ref": "anthropic-mcp"
+  },
+  {
+    "file": "2025-05-12-anthropic-mcp.md",
+    "lang": "fr",
+    "slug": "anthropic-mcp",
+    "url": "/fr/anthropic-mcp/",
+    "alias": "/2025-05-12-anthropic-mcp/",
+    "ref": "anthropic-mcp"
+  },
+  {
+    "file": "2025-08-03-ai-development-between-promises-realities-2025-state.md",
+    "lang": "en",
+    "slug": "ai-development-between-promises-realities-2025-state",
+    "url": "/en/ai-development-between-promises-realities-2025-state/",
+    "alias": "/en/2025-08-03-ai-development-between-promises-realities-2025-state/",
+    "ref": "ai-development"
+  },
+  {
+    "file": "2025-08-03-ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025.md",
+    "lang": "fr",
+    "slug": "ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025",
+    "url": "/fr/ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025/",
+    "alias": "/2025-08-03-ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025/",
+    "ref": "ai-development"
+  },
+  {
+    "file": "2025-08-06-openai-gpt-oss-ollama-modeles-propriétaires-open-source.md",
+    "lang": "fr",
+    "slug": "openai-gpt-oss-ollama-modeles-propriétaires-open-source",
+    "url": "/fr/openai-gpt-oss-ollama-modeles-propriétaires-open-source/",
+    "alias": "/2025-08-06-openai-gpt-oss-ollama-modeles-propriétaires-open-source/",
+    "ref": "openai-gpt-oss"
+  },
+  {
+    "file": "2025-08-06-openai-gpt-oss-ollama-proprietary-models-open-source-transition.md",
+    "lang": "en",
+    "slug": "openai-gpt-oss-ollama-proprietary-models-open-source-transition",
+    "url": "/en/openai-gpt-oss-ollama-proprietary-models-open-source-transition/",
+    "alias": "/en/2025-08-06-openai-gpt-oss-ollama-proprietary-models-open-source-transition/",
+    "ref": "openai-gpt-oss"
+  },
+  {
+    "file": "2025-08-21-sam-altman-ai-bubble-markets-analysis.md",
+    "lang": "en",
+    "slug": "sam-altman-ai-bubble-markets-analysis",
+    "url": "/en/sam-altman-ai-bubble-markets-analysis/",
+    "alias": "/en/2025-08-21-sam-altman-ai-bubble-markets-analysis/",
+    "ref": "sam-altman-ai-bubble"
+  },
+  {
+    "file": "2025-08-21-sam-altman-bulle-ia-marches-analyse.md",
+    "lang": "fr",
+    "slug": "sam-altman-bulle-ia-marches-analyse",
+    "url": "/fr/sam-altman-bulle-ia-marches-analyse/",
+    "alias": "/2025-08-21-sam-altman-bulle-ia-marches-analyse/",
+    "ref": "sam-altman-ai-bubble"
+  },
+  {
+    "file": "2025-08-28-auth0-international-email-generator-cli-modern-templates.md",
+    "lang": "en",
+    "slug": "auth0-international-email-generator-cli-modern-templates",
+    "url": "/en/auth0-international-email-generator-cli-modern-templates/",
+    "alias": "/en/2025-08-28-auth0-international-email-generator-cli-modern-templates/",
+    "ref": "auth0-international-email"
+  },
+  {
+    "file": "2025-08-28-auth0-international-email-generator.md",
+    "lang": "fr",
+    "slug": "auth0-international-email-generator",
+    "url": "/fr/auth0-international-email-generator/",
+    "alias": "/2025-08-28-auth0-international-email-generator/",
+    "ref": "auth0-international-email"
+  },
+  {
+    "file": "2025-08-30-gbts-typescript-gameboy-development.md",
+    "lang": "fr",
+    "slug": "gbts-typescript-gameboy-development",
+    "url": "/fr/gbts-typescript-gameboy-development/",
+    "alias": "/2025-08-30-gbts-typescript-gameboy-development/",
+    "ref": "gbts-typescript-gameboy"
+  },
+  {
+    "file": "2025-08-30-gbts-typescript-gameboy.md",
+    "lang": "en",
+    "slug": "gbts-typescript-gameboy",
+    "url": "/en/gbts-typescript-gameboy/",
+    "alias": "/en/2025-08-30-gbts-typescript-gameboy/",
+    "ref": "gbts-typescript-gameboy"
+  },
+  {
+    "file": "2025-11-29-prelude-of-the-chambered-reborn-typescript-web-port.md",
+    "lang": "en",
+    "slug": "prelude-of-the-chambered-reborn-typescript-web-port",
+    "url": "/en/prelude-of-the-chambered-reborn-typescript-web-port/",
+    "alias": "/en/2025-11-29-prelude-of-the-chambered-reborn-typescript-web-port/",
+    "ref": "prelude-of-the-chambered-reborn"
+  },
+  {
+    "file": "2025-11-29-prelude-of-the-chambered-reborn.md",
+    "lang": "fr",
+    "slug": "prelude-of-the-chambered-reborn",
+    "url": "/fr/prelude-of-the-chambered-reborn/",
+    "alias": "/2025-11-29-prelude-of-the-chambered-reborn/",
+    "ref": "prelude-of-the-chambered-reborn"
+  },
+  {
+    "file": "2025-12-11-claude-code-installation-first-steps.md",
+    "lang": "en",
+    "slug": "claude-code-installation-first-steps",
+    "url": "/en/claude-code-installation-first-steps/",
+    "alias": "/en/2025-12-11-claude-code-installation-first-steps/",
+    "ref": "claude-code-day-1"
+  },
+  {
+    "file": "2025-12-11-claude-code-installation-premiers-pas.md",
+    "lang": "fr",
+    "slug": "claude-code-installation-premiers-pas",
+    "url": "/fr/claude-code-installation-premiers-pas/",
+    "alias": "/2025-12-11-claude-code-installation-premiers-pas/",
+    "ref": "claude-code-day-1"
+  },
+  {
+    "file": "2025-12-12-claude-code-secret-syntax.md",
+    "lang": "en",
+    "slug": "claude-code-secret-syntax",
+    "url": "/en/claude-code-secret-syntax/",
+    "alias": "/en/2025-12-12-claude-code-secret-syntax/",
+    "ref": "claude-code-day-2"
+  },
+  {
+    "file": "2025-12-12-claude-code-syntaxe-secrete.md",
+    "lang": "fr",
+    "slug": "claude-code-syntaxe-secrete",
+    "url": "/fr/claude-code-syntaxe-secrete/",
+    "alias": "/2025-12-12-claude-code-syntaxe-secrete/",
+    "ref": "claude-code-day-2"
+  },
+  {
+    "file": "2025-12-13-claude-code-workflow-explore-plan-code-test-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-workflow-explore-plan-code-test-fr",
+    "url": "/fr/claude-code-workflow-explore-plan-code-test-fr/",
+    "alias": "/2025-12-13-claude-code-workflow-explore-plan-code-test-fr/",
+    "ref": "claude-code-day-3"
+  },
+  {
+    "file": "2025-12-13-claude-code-workflow-explore-plan-code-test.md",
+    "lang": "en",
+    "slug": "claude-code-workflow-explore-plan-code-test",
+    "url": "/en/claude-code-workflow-explore-plan-code-test/",
+    "alias": "/en/2025-12-13-claude-code-workflow-explore-plan-code-test/",
+    "ref": "claude-code-day-3"
+  },
+  {
+    "file": "2025-12-14-claude-code-prompt-engineering-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-prompt-engineering-fr",
+    "url": "/fr/claude-code-prompt-engineering-fr/",
+    "alias": "/2025-12-14-claude-code-prompt-engineering-fr/",
+    "ref": "claude-code-day-4"
+  },
+  {
+    "file": "2025-12-14-claude-code-prompt-engineering.md",
+    "lang": "en",
+    "slug": "claude-code-prompt-engineering",
+    "url": "/en/claude-code-prompt-engineering/",
+    "alias": "/en/2025-12-14-claude-code-prompt-engineering/",
+    "ref": "claude-code-day-4"
+  },
+  {
+    "file": "2025-12-15-claude-code-context-memory-management.md",
+    "lang": "en",
+    "slug": "claude-code-context-memory-management",
+    "url": "/en/claude-code-context-memory-management/",
+    "alias": "/en/2025-12-15-claude-code-context-memory-management/",
+    "ref": "claude-code-day-5"
+  },
+  {
+    "file": "2025-12-15-claude-code-gestion-contexte-memoire.md",
+    "lang": "fr",
+    "slug": "claude-code-gestion-contexte-memoire",
+    "url": "/fr/claude-code-gestion-contexte-memoire/",
+    "alias": "/2025-12-15-claude-code-gestion-contexte-memoire/",
+    "ref": "claude-code-day-5"
+  },
+  {
+    "file": "2025-12-16-claude-code-git-workflows-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-git-workflows-fr",
+    "url": "/fr/claude-code-git-workflows-fr/",
+    "alias": "/2025-12-16-claude-code-git-workflows-fr/",
+    "ref": "claude-code-day-6"
+  },
+  {
+    "file": "2025-12-16-claude-code-git-workflows.md",
+    "lang": "en",
+    "slug": "claude-code-git-workflows",
+    "url": "/en/claude-code-git-workflows/",
+    "alias": "/en/2025-12-16-claude-code-git-workflows/",
+    "ref": "claude-code-day-6"
+  },
+  {
+    "file": "2025-12-17-claude-code-permissions-securite.md",
+    "lang": "fr",
+    "slug": "claude-code-permissions-securite",
+    "url": "/fr/claude-code-permissions-securite/",
+    "alias": "/2025-12-17-claude-code-permissions-securite/",
+    "ref": "claude-code-day-7"
+  },
+  {
+    "file": "2025-12-17-claude-code-permissions-security.md",
+    "lang": "en",
+    "slug": "claude-code-permissions-security",
+    "url": "/en/claude-code-permissions-security/",
+    "alias": "/en/2025-12-17-claude-code-permissions-security/",
+    "ref": "claude-code-day-7"
+  },
+  {
+    "file": "2025-12-18-claude-code-custom-slash-commands.md",
+    "lang": "en",
+    "slug": "claude-code-custom-slash-commands",
+    "url": "/en/claude-code-custom-slash-commands/",
+    "alias": "/en/2025-12-18-claude-code-custom-slash-commands/",
+    "ref": "claude-code-day-8"
+  },
+  {
+    "file": "2025-12-18-claude-code-slash-commands-personnalisees.md",
+    "lang": "fr",
+    "slug": "claude-code-slash-commands-personnalisees",
+    "url": "/fr/claude-code-slash-commands-personnalisees/",
+    "alias": "/2025-12-18-claude-code-slash-commands-personnalisees/",
+    "ref": "claude-code-day-8"
+  },
+  {
+    "file": "2025-12-19-claude-code-subagents-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-subagents-fr",
+    "url": "/fr/claude-code-subagents-fr/",
+    "alias": "/2025-12-19-claude-code-subagents-fr/",
+    "ref": "claude-code-day-9"
+  },
+  {
+    "file": "2025-12-19-claude-code-subagents.md",
+    "lang": "en",
+    "slug": "claude-code-subagents",
+    "url": "/en/claude-code-subagents/",
+    "alias": "/en/2025-12-19-claude-code-subagents/",
+    "ref": "claude-code-day-9"
+  },
+  {
+    "file": "2025-12-20-claude-code-skills-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-skills-fr",
+    "url": "/fr/claude-code-skills-fr/",
+    "alias": "/2025-12-20-claude-code-skills-fr/",
+    "ref": "claude-code-day-10"
+  },
+  {
+    "file": "2025-12-20-claude-code-skills.md",
+    "lang": "en",
+    "slug": "claude-code-skills",
+    "url": "/en/claude-code-skills/",
+    "alias": "/en/2025-12-20-claude-code-skills/",
+    "ref": "claude-code-day-10"
+  },
+  {
+    "file": "2025-12-21-claude-code-plugins-marketplace-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-plugins-marketplace-fr",
+    "url": "/fr/claude-code-plugins-marketplace-fr/",
+    "alias": "/2025-12-21-claude-code-plugins-marketplace-fr/",
+    "ref": "claude-code-day-11"
+  },
+  {
+    "file": "2025-12-21-claude-code-plugins-marketplace.md",
+    "lang": "en",
+    "slug": "claude-code-plugins-marketplace",
+    "url": "/en/claude-code-plugins-marketplace/",
+    "alias": "/en/2025-12-21-claude-code-plugins-marketplace/",
+    "ref": "claude-code-day-11"
+  },
+  {
+    "file": "2025-12-22-claude-code-hooks-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-hooks-fr",
+    "url": "/fr/claude-code-hooks-fr/",
+    "alias": "/2025-12-22-claude-code-hooks-fr/",
+    "ref": "claude-code-day-12"
+  },
+  {
+    "file": "2025-12-22-claude-code-hooks.md",
+    "lang": "en",
+    "slug": "claude-code-hooks",
+    "url": "/en/claude-code-hooks/",
+    "alias": "/en/2025-12-22-claude-code-hooks/",
+    "ref": "claude-code-day-12"
+  },
+  {
+    "file": "2025-12-23-claude-code-mcp-integration-fr.md",
+    "lang": "fr",
+    "slug": "claude-code-mcp-integration-fr",
+    "url": "/fr/claude-code-mcp-integration-fr/",
+    "alias": "/2025-12-23-claude-code-mcp-integration-fr/",
+    "ref": "claude-code-day-13"
+  },
+  {
+    "file": "2025-12-23-claude-code-mcp-integration.md",
+    "lang": "en",
+    "slug": "claude-code-mcp-integration",
+    "url": "/en/claude-code-mcp-integration/",
+    "alias": "/en/2025-12-23-claude-code-mcp-integration/",
+    "ref": "claude-code-day-13"
+  },
+  {
+    "file": "2025-12-24-claude-code-vscode-jetbrains-en.md",
+    "lang": "en",
+    "slug": "claude-code-vscode-jetbrains-en",
+    "url": "/en/claude-code-vscode-jetbrains-en/",
+    "alias": "/en/2025-12-24-claude-code-vscode-jetbrains-en/",
+    "ref": "claude-code-day-14"
+  },
+  {
+    "file": "2025-12-24-claude-code-vscode-jetbrains.md",
+    "lang": "fr",
+    "slug": "claude-code-vscode-jetbrains",
+    "url": "/fr/claude-code-vscode-jetbrains/",
+    "alias": "/2025-12-24-claude-code-vscode-jetbrains/",
+    "ref": "claude-code-day-14"
+  },
+  {
+    "file": "2025-12-25-claude-code-cicd-headless-en.md",
+    "lang": "en",
+    "slug": "claude-code-cicd-headless-en",
+    "url": "/en/claude-code-cicd-headless-en/",
+    "alias": "/en/2025-12-25-claude-code-cicd-headless-en/",
+    "ref": "claude-code-day-15"
+  },
+  {
+    "file": "2025-12-25-claude-code-cicd-headless.md",
+    "lang": "fr",
+    "slug": "claude-code-cicd-headless",
+    "url": "/fr/claude-code-cicd-headless/",
+    "alias": "/2025-12-25-claude-code-cicd-headless/",
+    "ref": "claude-code-day-15"
+  },
+  {
+    "file": "2025-12-26-claude-code-billing-costs-en.md",
+    "lang": "en",
+    "slug": "claude-code-billing-costs-en",
+    "url": "/en/claude-code-billing-costs-en/",
+    "alias": "/en/2025-12-26-claude-code-billing-costs-en/",
+    "ref": "claude-code-day-16"
+  },
+  {
+    "file": "2025-12-26-claude-code-facturation-couts.md",
+    "lang": "fr",
+    "slug": "claude-code-facturation-couts",
+    "url": "/fr/claude-code-facturation-couts/",
+    "alias": "/2025-12-26-claude-code-facturation-couts/",
+    "ref": "claude-code-day-16"
+  },
+  {
+    "file": "2025-12-27-claude-code-troubleshooting-en.md",
+    "lang": "en",
+    "slug": "claude-code-troubleshooting-en",
+    "url": "/en/claude-code-troubleshooting-en/",
+    "alias": "/en/2025-12-27-claude-code-troubleshooting-en/",
+    "ref": "claude-code-day-17"
+  },
+  {
+    "file": "2025-12-27-claude-code-troubleshooting.md",
+    "lang": "fr",
+    "slug": "claude-code-troubleshooting",
+    "url": "/fr/claude-code-troubleshooting/",
+    "alias": "/2025-12-27-claude-code-troubleshooting/",
+    "ref": "claude-code-day-17"
+  },
+  {
+    "file": "2025-12-28-claude-code-status-line-terminal-en.md",
+    "lang": "en",
+    "slug": "claude-code-status-line-terminal-en",
+    "url": "/en/claude-code-status-line-terminal-en/",
+    "alias": "/en/2025-12-28-claude-code-status-line-terminal-en/",
+    "ref": "claude-code-day-18"
+  },
+  {
+    "file": "2025-12-28-claude-code-status-line-terminal.md",
+    "lang": "fr",
+    "slug": "claude-code-status-line-terminal",
+    "url": "/fr/claude-code-status-line-terminal/",
+    "alias": "/2025-12-28-claude-code-status-line-terminal/",
+    "ref": "claude-code-day-18"
+  },
+  {
+    "file": "2025-12-29-claude-code-vs-cursor-vs-copilot-en.md",
+    "lang": "en",
+    "slug": "claude-code-vs-cursor-vs-copilot-en",
+    "url": "/en/claude-code-vs-cursor-vs-copilot-en/",
+    "alias": "/en/2025-12-29-claude-code-vs-cursor-vs-copilot-en/",
+    "ref": "claude-code-day-19"
+  },
+  {
+    "file": "2025-12-29-claude-code-vs-cursor-vs-copilot.md",
+    "lang": "fr",
+    "slug": "claude-code-vs-cursor-vs-copilot",
+    "url": "/fr/claude-code-vs-cursor-vs-copilot/",
+    "alias": "/2025-12-29-claude-code-vs-cursor-vs-copilot/",
+    "ref": "claude-code-day-19"
+  },
+  {
+    "file": "2025-12-30-claude-code-case-study-prelude-en.md",
+    "lang": "en",
+    "slug": "claude-code-case-study-prelude-en",
+    "url": "/en/claude-code-case-study-prelude-en/",
+    "alias": "/en/2025-12-30-claude-code-case-study-prelude-en/",
+    "ref": "claude-code-day-20"
+  },
+  {
+    "file": "2025-12-30-claude-code-etude-cas-prelude.md",
+    "lang": "fr",
+    "slug": "claude-code-etude-cas-prelude",
+    "url": "/fr/claude-code-etude-cas-prelude/",
+    "alias": "/2025-12-30-claude-code-etude-cas-prelude/",
+    "ref": "claude-code-day-20"
+  },
+  {
+    "file": "2025-12-31-ia-remplacement-developpeurs-analyse-critique.md",
+    "lang": "fr",
+    "slug": "ia-remplacement-developpeurs-analyse-critique",
+    "url": "/fr/ia-remplacement-developpeurs-analyse-critique/",
+    "alias": "/2025-12-31-ia-remplacement-developpeurs-analyse-critique/",
+    "ref": "ai-replacing-developers-analysis"
+  },
+  {
+    "file": "2025-12-31-will-ai-replace-developers-critical-analysis.md",
+    "lang": "en",
+    "slug": "will-ai-replace-developers-critical-analysis",
+    "url": "/en/will-ai-replace-developers-critical-analysis/",
+    "alias": "/en/2025-12-31-will-ai-replace-developers-critical-analysis/",
+    "ref": "ai-replacing-developers-analysis"
+  },
+  {
+    "file": "2026-01-23-claude-code-ollama-local-llm-en.md",
+    "lang": "en",
+    "slug": "claude-code-ollama-local-llm-en",
+    "url": "/en/claude-code-ollama-local-llm-en/",
+    "alias": "/en/2026-01-23-claude-code-ollama-local-llm-en/",
+    "ref": "claude-code-ollama"
+  },
+  {
+    "file": "2026-01-23-claude-code-ollama-local-llm.md",
+    "lang": "fr",
+    "slug": "claude-code-ollama-local-llm",
+    "url": "/fr/claude-code-ollama-local-llm/",
+    "alias": "/2026-01-23-claude-code-ollama-local-llm/",
+    "ref": "claude-code-ollama"
+  },
+  {
+    "file": "2026-02-08-entropie-homme-machine.md",
+    "lang": "fr",
+    "slug": "entropie-homme-machine",
+    "url": "/fr/entropie-homme-machine/",
+    "alias": "/2026-02-08-entropie-homme-machine/",
+    "ref": "entropy-human-machine"
+  },
+  {
+    "file": "2026-02-08-entropy-human-machine.md",
+    "lang": "en",
+    "slug": "entropy-human-machine",
+    "url": "/en/entropy-human-machine/",
+    "alias": "/en/2026-02-08-entropy-human-machine/",
+    "ref": "entropy-human-machine"
+  },
+  {
+    "file": "2026-02-15-sourdine-transcription-reunions-ia-locale-en.md",
+    "lang": "en",
+    "slug": "sourdine-transcription-reunions-ia-locale-en",
+    "url": "/en/sourdine-transcription-reunions-ia-locale-en/",
+    "alias": "/en/2026-02-15-sourdine-transcription-reunions-ia-locale-en/",
+    "ref": "sourdine-local-ai-transcription"
+  },
+  {
+    "file": "2026-02-15-sourdine-transcription-reunions-ia-locale.md",
+    "lang": "fr",
+    "slug": "sourdine-transcription-reunions-ia-locale",
+    "url": "/fr/sourdine-transcription-reunions-ia-locale/",
+    "alias": "/2026-02-15-sourdine-transcription-reunions-ia-locale/",
+    "ref": "sourdine-local-ai-transcription"
+  },
+  {
+    "file": "2026-03-05-claude-code-insights-command.md",
+    "lang": "en",
+    "slug": "claude-code-insights-command",
+    "url": "/en/claude-code-insights-command/",
+    "alias": "/en/2026-03-05-claude-code-insights-command/",
+    "ref": "claude-code-insights"
+  },
+  {
+    "file": "2026-03-05-claude-code-insights-commande.md",
+    "lang": "fr",
+    "slug": "claude-code-insights-commande",
+    "url": "/fr/claude-code-insights-commande/",
+    "alias": "/2026-03-05-claude-code-insights-commande/",
+    "ref": "claude-code-insights"
+  },
+  {
+    "file": "2026-03-31-claude-code-cheatsheet-2026-mise-a-jour.md",
+    "lang": "fr",
+    "slug": "claude-code-cheatsheet-2026-mise-a-jour",
+    "url": "/fr/claude-code-cheatsheet-2026-mise-a-jour/",
+    "alias": "/2026-03-31-claude-code-cheatsheet-2026-mise-a-jour/",
+    "ref": "claude-code-cheatsheet-2026"
+  },
+  {
+    "file": "2026-03-31-claude-code-cheatsheet-2026-update.md",
+    "lang": "en",
+    "slug": "claude-code-cheatsheet-2026-update",
+    "url": "/en/claude-code-cheatsheet-2026-update/",
+    "alias": "/en/2026-03-31-claude-code-cheatsheet-2026-update/",
+    "ref": "claude-code-cheatsheet-2026"
+  },
+  {
+    "file": "2026-04-04-sdd-compound-engineering-bmad-philosophies-en.md",
+    "lang": "en",
+    "slug": "sdd-compound-engineering-bmad-philosophies-en",
+    "url": "/en/sdd-compound-engineering-bmad-philosophies-en/",
+    "alias": "/en/2026-04-04-sdd-compound-engineering-bmad-philosophies-en/",
+    "ref": "ai-development-philosophies"
+  },
+  {
+    "file": "2026-04-04-sdd-compound-engineering-bmad-philosophies-ia.md",
+    "lang": "fr",
+    "slug": "sdd-compound-engineering-bmad-philosophies-ia",
+    "url": "/fr/sdd-compound-engineering-bmad-philosophies-ia/",
+    "alias": "/2026-04-04-sdd-compound-engineering-bmad-philosophies-ia/",
+    "ref": "ai-development-philosophies"
+  },
+  {
+    "file": "2026-04-23-hallucinations-llm-devoxx-2026.md",
+    "lang": "fr",
+    "slug": "hallucinations-llm-devoxx-2026",
+    "url": "/fr/hallucinations-llm-devoxx-2026/",
+    "alias": "/2026-04-23-hallucinations-llm-devoxx-2026/",
+    "ref": "llm-hallucinations-devoxx-2026"
+  },
+  {
+    "file": "2026-04-23-llm-hallucinations-devoxx-2026-en.md",
+    "lang": "en",
+    "slug": "llm-hallucinations-devoxx-2026-en",
+    "url": "/en/llm-hallucinations-devoxx-2026-en/",
+    "alias": "/en/2026-04-23-llm-hallucinations-devoxx-2026-en/",
+    "ref": "llm-hallucinations-devoxx-2026"
+  },
+  {
+    "file": "2026-04-24-claude-code-cheatsheet-april-2026-update.md",
+    "lang": "en",
+    "slug": "claude-code-cheatsheet-april-2026-update",
+    "url": "/en/claude-code-cheatsheet-april-2026-update/",
+    "alias": "/en/2026-04-24-claude-code-cheatsheet-april-2026-update/",
+    "ref": "claude-code-cheatsheet-avril-2026"
+  },
+  {
+    "file": "2026-04-24-claude-code-cheatsheet-avril-2026-mise-a-jour.md",
+    "lang": "fr",
+    "slug": "claude-code-cheatsheet-avril-2026-mise-a-jour",
+    "url": "/fr/claude-code-cheatsheet-avril-2026-mise-a-jour/",
+    "alias": "/2026-04-24-claude-code-cheatsheet-avril-2026-mise-a-jour/",
+    "ref": "claude-code-cheatsheet-avril-2026"
+  },
+  {
+    "file": "2026-05-15-arthur-mensch-mistral-ai-audition-assemblee-nationale.md",
+    "lang": "fr",
+    "slug": "arthur-mensch-mistral-ai-audition-assemblee-nationale",
+    "url": "/fr/arthur-mensch-mistral-ai-audition-assemblee-nationale/",
+    "alias": "/2026-05-15-arthur-mensch-mistral-ai-audition-assemblee-nationale/",
+    "ref": "mensch-assemblee-nationale-2026"
+  },
+  {
+    "file": "2026-05-15-arthur-mensch-mistral-ai-national-assembly-hearing-en.md",
+    "lang": "en",
+    "slug": "arthur-mensch-mistral-ai-national-assembly-hearing-en",
+    "url": "/en/arthur-mensch-mistral-ai-national-assembly-hearing-en/",
+    "alias": "/en/2026-05-15-arthur-mensch-mistral-ai-national-assembly-hearing-en/",
+    "ref": "mensch-assemblee-nationale-2026"
+  },
+  {
+    "file": "2026-06-10-karpathy-second-brain-obsidian-claude-en.md",
+    "lang": "en",
+    "slug": "karpathy-second-brain-obsidian-claude-en",
+    "url": "/en/karpathy-second-brain-obsidian-claude-en/",
+    "alias": "/en/2026-06-10-karpathy-second-brain-obsidian-claude-en/",
+    "ref": "second-brain-karpathy"
+  },
+  {
+    "file": "2026-06-10-second-cerveau-obsidian-claude-karpathy.md",
+    "lang": "fr",
+    "slug": "second-cerveau-obsidian-claude-karpathy",
+    "url": "/fr/second-cerveau-obsidian-claude-karpathy/",
+    "alias": "/2026-06-10-second-cerveau-obsidian-claude-karpathy/",
+    "ref": "second-brain-karpathy"
+  }
+]

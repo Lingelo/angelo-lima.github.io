@@ -1,27 +1,30 @@
 name: Angelo Lima Blog CI
-on: 
+on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
   build:
-    name: Build Jekyll
+    name: Build Astro
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: '3.3'
-          bundler-cache: true # Cache gems automatically
-          
+          node-version: 22
+          cache: npm
+
       - name: Install dependencies
-        run: bundle install
-        
+        run: npm ci
+
+      - name: Type-check (astro check)
+        run: npm run check
+
       - name: Build site (test only)
         env:
-          JEKYLL_ENV: development
-        run: bundle exec jekyll build
+          TZ: Europe/Paris
+        run: npm run build

@@ -1,0 +1,156 @@
+---
+import { SITE, type Lang } from '../site';
+import SchemaOrg from './SchemaOrg.astro';
+
+export interface Alternate {
+  hreflang: string;
+  href: string; // path or absolute
+}
+
+interface Props {
+  lang: Lang;
+  title: string; // final <title> text
+  description: string;
+  canonical: string; // path, e.g. /fr/slug/
+  type?: 'article' | 'website';
+  image?: string; // path
+  alternates?: Alternate[];
+  article?: {
+    datePublished: string;
+    dateModified?: string;
+    author?: string;
+    tags?: string[];
+    section?: string;
+    wordCount?: number;
+    articleBody?: string;
+  };
+}
+
+const {
+  lang,
+  title,
+  description,
+  canonical,
+  type = 'website',
+  image,
+  alternates = [],
+  article,
+} = Astro.props as Props;
+
+const abs = (path: string) => new URL(path, Astro.site).href;
+const canonicalUrl = abs(canonical);
+const imageUrl = image ? abs(image) : undefined;
+const isArticle = type === 'article';
+const twitterCard = imageUrl && image !== SITE.avatar ? 'summary_large_image' : 'summary';
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- Prevent white flash on first paint -->
+<style>
+  html, body {
+    background-color: #131313 !important;
+    color: #e5e2e1 !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  }
+  a { color: #f2ca50; }
+</style>
+
+<!-- Self-hosted editorial fonts (no cross-origin FOUT). Preload the body + main-heading
+     latin subsets, then load all @font-face declarations render-blocking. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/gyByhwUxId8gMEwcGFWNOITd.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2" />
+<link rel="stylesheet" href="/assets/css/fonts.css" />
+
+<title>{title}</title>
+<meta name="author" content={article?.author ?? SITE.author} />
+<meta name="description" content={description} />
+<meta name="theme-color" content={SITE.mobileThemeColor} />
+<meta name="keywords" content={SITE.keywords} />
+
+<!-- SEO -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow" />
+<meta name="language" content={lang === 'en' ? 'English' : 'French'} />
+<meta name="revisit-after" content="7 days" />
+<meta name="distribution" content="global" />
+<meta name="rating" content="general" />
+<meta name="format-detection" content="telephone=no" />
+{isArticle && article && (
+  <>
+    <meta name="article:author" content={article.author ?? SITE.author} />
+    <meta name="article:published_time" content={article.datePublished} />
+    <meta name="article:modified_time" content={article.dateModified ?? article.datePublished} />
+    {article.tags?.map((t) => <meta name="article:tag" content={t} />)}
+  </>
+)}
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href={abs('/sitemap.xml')} />
+<link rel="alternate" type="application/rss+xml" title={SITE.title} href={abs('/feed.xml')} />
+<link rel="alternate" type="application/rss+xml" title={`${SITE.title} - English`} href={abs('/en/feed.xml')} />
+
+<!-- Hreflang -->
+{alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={abs(a.href)} />)}
+
+<!-- DNS prefetch -->
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+<!-- Theme CSS, render-blocking on purpose: avoids the flash of unstyled content
+     (default blue links / system fonts) that the async preload pattern caused. -->
+<link rel="stylesheet" href="/assets/css/dark-theme.css" />
+
+<!-- Open Graph -->
+<meta property="og:site_name" content={SITE.title} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:locale" content={lang === 'en' ? 'en_US' : 'fr_FR'} />
+<meta property="og:type" content={isArticle ? 'article' : 'website'} />
+<meta property="og:url" content={canonicalUrl} />
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+{isArticle && article && (
+  <>
+    <meta property="og:article:section" content={article.section ?? 'Blog'} />
+    {article.tags?.map((t) => <meta property="og:article:tag" content={t} />)}
+    <meta property="og:article:author" content={article.author ?? SITE.author} />
+    <meta property="og:article:published_time" content={article.datePublished} />
+    <meta property="og:article:modified_time" content={article.dateModified ?? article.datePublished} />
+  </>
+)}
+
+<!-- Twitter -->
+<meta name="twitter:card" content={twitterCard} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
+<link rel="canonical" href={canonicalUrl} />
+
+<SchemaOrg
+  type={type}
+  title={title}
+  description={description}
+  canonical={canonicalUrl}
+  image={imageUrl}
+  datePublished={article?.datePublished}
+  dateModified={article?.dateModified}
+  author={article?.author}
+  tags={article?.tags}
+  section={article?.section}
+  wordCount={article?.wordCount}
+  articleBody={article?.articleBody}
+/>
+
+<!-- Favicon + PWA -->
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Angelo Lima" />
+<link rel="apple-touch-icon" href="/assets/img/avatar-icon.png" />
+
+<!-- Automatic language detection -->
+<script src="/assets/js/language-detection.js" defer></script>

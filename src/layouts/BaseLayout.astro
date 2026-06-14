@@ -1,0 +1,87 @@
+---
+import { SITE, type Lang } from '../site';
+import Head from '../components/Head.astro';
+import type { Alternate } from '../components/Head.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import BreadcrumbSchema from '../components/BreadcrumbSchema.astro';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  canonical: string;
+  type?: 'article' | 'website';
+  image?: string;
+  alternates?: Alternate[];
+  article?: {
+    datePublished: string;
+    dateModified?: string;
+    author?: string;
+    tags?: string[];
+    section?: string;
+    wordCount?: number;
+    articleBody?: string;
+  };
+  active?: 'blog' | 'about' | 'tags' | null;
+  altUrl: string;
+  breadcrumb?: { name: string; url: string }[];
+}
+
+const props = Astro.props as Props;
+const { lang, active = null, altUrl, breadcrumb } = props;
+// site-js from _config.yml (minus dynamic-pagination.js — replaced by native pagination,
+// and minus css-loader.js — removed upstream as dead code).
+const siteJs = [
+  '/assets/js/angelo-lima-blog.js',
+  '/assets/js/hide-empty-tags.js',
+  '/assets/js/image-optimization.js',
+  '/assets/js/canonical-enforcement.js',
+  '/assets/js/sw-register.js',
+];
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <Head
+      lang={lang}
+      title={props.title}
+      description={props.description}
+      canonical={props.canonical}
+      type={props.type}
+      image={props.image}
+      alternates={props.alternates}
+      article={props.article}
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    {breadcrumb && breadcrumb.length > 0 && <BreadcrumbSchema items={breadcrumb} />}
+  </head>
+  <body>
+    <Nav lang={lang} active={active} altUrl={altUrl} />
+
+    <slot />
+
+    <Footer lang={lang} />
+
+    {siteJs.map((src) => <script src={src} is:inline></script>)}
+
+    <!-- Mobile title optimization: short brand on small screens, full title on desktop -->
+    <script is:inline define:vars={{ fullTitle: SITE.title }}>
+      (function () {
+        function update() {
+          var el = document.querySelector('.site-nav-brand');
+          if (!el) return;
+          el.innerHTML = window.innerWidth <= 768 ? 'Angelo Lima' : fullTitle;
+        }
+        document.addEventListener('DOMContentLoaded', update);
+        window.addEventListener('resize', function () {
+          clearTimeout(window.titleResizeTimeout);
+          window.titleResizeTimeout = setTimeout(update, 100);
+        });
+      })();
+    </script>
+
+    <CookieConsent lang={lang} />
+  </body>
+</html>

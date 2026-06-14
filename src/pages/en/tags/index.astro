@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { getTagGroups } from '../../../lib/tags';
+import { postUrl, formatDate, isoDate } from '../../../lib/posts';
+
+const groups = await getTagGroups('en');
+const description =
+  'Complete index of blog articles organized by tags: AI, Development, Web, Tech, Personal, Security. Easily find topics that interest you.';
+---
+<PageLayout
+  lang="en"
+  title="Articles by Tags"
+  subtitle="Explore articles by theme"
+  description={description}
+  canonical="/en/tags/"
+  active="tags"
+  altUrl="/tags/"
+  breadcrumb={[{ name: 'Home', url: '/en/' }, { name: 'Tags', url: '/en/tags/' }]}
+  alternates={[
+    { hreflang: 'en', href: '/en/tags/' },
+    { hreflang: 'fr', href: '/tags/' },
+    { hreflang: 'x-default', href: '/tags/' },
+  ]}
+>
+  {groups.map((g) => (
+    <a href={`#${g.tag}`} class="btn btn-primary tag-btn"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{g.tag}&nbsp;({g.posts.length})</a>
+  ))}
+
+  <div id="full-tags-list">
+    {groups.map((g) => (
+      <>
+        <h2 id={g.tag} class="linked-section"><i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{g.tag}&nbsp;({g.posts.length})</h2>
+        <div class="post-list">
+          {g.posts.map((post) => (
+            <div class="tag-entry">
+              <a href={postUrl(post)}>{post.data.title}</a>
+              <div class="entry-date">
+                <time datetime={isoDate(post.data.date)}>{formatDate(post.data.date, 'en')}</time>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    ))}
+  </div>
+</PageLayout>

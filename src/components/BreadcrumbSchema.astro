@@ -1,0 +1,24 @@
+---
+// Emits BreadcrumbList JSON-LD (helps search & generative engines understand page hierarchy).
+interface Crumb {
+  name: string;
+  url: string; // path or absolute
+}
+interface Props {
+  items: Crumb[];
+}
+const { items } = Astro.props as Props;
+const abs = (p: string) => new URL(p, Astro.site).href;
+
+const json = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: { '@type': 'WebPage', '@id': abs(c.url), name: c.name },
+  })),
+};
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(json)} />

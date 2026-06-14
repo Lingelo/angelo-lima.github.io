@@ -1,0 +1,185 @@
+---
+import type { Lang } from '../site';
+interface Props { lang: Lang }
+const { lang } = Astro.props as Props;
+const corpusUrl = lang === 'en' ? '/assets/data/searchcorpus-en.json' : '/assets/data/searchcorpus.json';
+const placeholder = lang === 'en' ? 'Search articles…' : 'Rechercher un article…';
+const noResults = lang === 'en' ? 'No results found' : 'Aucun résultat trouvé';
+const label = lang === 'en' ? 'Search' : 'Rechercher';
+---
+<button class="nav-search-btn" id="nav-search-open" aria-label={label} title={label}>
+  <i class="fas fa-search" aria-hidden="true"></i>
+</button>
+
+<div id="search-overlay" class="search-overlay" hidden>
+  <div class="search-box" role="dialog" aria-modal="true" aria-label={label}>
+    <div class="search-input-row">
+      <i class="fas fa-search search-input-icon" aria-hidden="true"></i>
+      <input type="text" id="search-input" class="search-input" placeholder={placeholder} autocomplete="off" />
+      <button class="search-close" id="search-close" aria-label="Close">✕</button>
+    </div>
+    <ul id="search-results" class="search-results" role="list"></ul>
+  </div>
+</div>
+
+<script is:inline define:vars={{ corpusUrl, noResults }}>
+  (function () {
+    var openBtn = document.getElementById('nav-search-open');
+    var overlay = document.getElementById('search-overlay');
+    var input = document.getElementById('search-input');
+    var results = document.getElementById('search-results');
+    var closeBtn = document.getElementById('search-close');
+    var corpus = null, loading = false;
+
+    function load() {
+      if (corpus || loading) return Promise.resolve();
+      loading = true;
+      return fetch(corpusUrl).then(function (r) { return r.json(); })
+        .then(function (d) { corpus = d; }).catch(function () { corpus = []; });
+    }
+    function open() {
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      load();
+      setTimeout(function () { input.focus(); }, 30);
+    }
+    function close() {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+      input.value = '';
+      results.innerHTML = '';
+    }
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
+    }
+    function render(q) {
+      if (!corpus) return;
+      q = q.trim().toLowerCase();
+      if (!q) { results.innerHTML = ''; return; }
+      var terms = q.split(/\s+/);
+      var matches = corpus.filter(function (item) {
+        var hay = (item.title + ' ' + item.category + ' ' + item.desc + ' ' + item.content).toLowerCase();
+        return terms.every(function (t) { return hay.indexOf(t) !== -1; });
+      }).slice(0, 12);
+      if (!matches.length) { results.innerHTML = '<li class="search-no-results">' + noResults + '</li>'; return; }
+      results.innerHTML = matches.map(function (m) {
+        return '<li class="search-result"><a href="' + m.url + '">' +
+          '<span class="search-result-title">' + esc(m.title) + '</span>' +
+          (m.category ? '<span class="search-result-cat label-caps">' + esc(m.category) + '</span>' : '') +
+          '</a></li>';
+      }).join('');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', open);
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    if (input) input.addEventListener('input', function () { render(input.value); });
+    if (overlay) overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay && !overlay.hidden) close();
+    });
+  })();
+</script>
+
+<!-- is:global because search results are injected via innerHTML (JS) and would not
+     receive Astro's scoped data-attribute, so scoped selectors wouldn't match them. -->
+<style is:global>
+  .nav-search-btn {
+    background: none;
+    border: none;
+    color: var(--color-on-surface-variant, #d0c5af);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.35rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-search-btn:hover { color: var(--color-primary, #f2ca50); }
+
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 10000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8vh 1rem 1rem;
+  }
+  .search-overlay[hidden] { display: none; }
+
+  .search-box {
+    background-color: var(--color-bg, #131313);
+    border: 1px solid var(--color-surface-variant, #353534);
+    border-radius: 0;
+    width: 100%;
+    max-width: 640px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  .search-input-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--color-surface-high, #2a2a2a);
+  }
+  .search-input-icon { color: var(--color-primary, #f2ca50); font-size: 1rem; }
+  .search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--color-on-surface, #e5e2e1);
+    font-family: inherit;
+    font-size: 1.1rem;
+  }
+  .search-input::placeholder { color: var(--color-outline, #99907c); }
+  .search-close {
+    background: none;
+    border: none;
+    color: var(--color-secondary, #c6c6c7);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.25rem;
+  }
+  .search-close:hover { color: var(--color-on-surface, #f5f5f5); }
+
+  .search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  .search-result a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.85rem 1.25rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-surface-low, #1c1b1b);
+    transition: background-color 0.15s ease;
+  }
+  .search-result a:hover { background-color: var(--color-surface-low, #1c1b1b); }
+  .search-result-title {
+    color: var(--color-on-surface, #e5e2e1);
+    font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .search-result a:hover .search-result-title { color: var(--color-primary, #f2ca50); }
+  .search-result-cat {
+    color: var(--color-primary, #f2ca50);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+  .search-no-results { color: var(--color-secondary, #c6c6c7); padding: 1.25rem; text-align: center; }
+</style>

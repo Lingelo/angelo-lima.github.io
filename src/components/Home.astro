@@ -1,0 +1,107 @@
+---
+import { SITE, I18N, type Lang } from '../site';
+import { postUrl, formatDate, excerpt, type Post } from '../lib/posts';
+import Pagination from './Pagination.astro';
+
+interface Props {
+  lang: Lang;
+  posts: Post[]; // full sorted list (newest first) for this language
+  currentPage: number; // 1-based
+}
+const { lang, posts, currentPage } = Astro.props as Props;
+const t = I18N[lang];
+const perPage = SITE.postsPerPage;
+
+const featured = posts[0];
+const rest = posts.slice(1);
+const totalPages = Math.max(1, Math.ceil(rest.length / perPage));
+const pagePosts = rest.slice((currentPage - 1) * perPage, currentPage * perPage);
+
+const heroTitle =
+  lang === 'en'
+    ? 'Angélo Lima — Web Dev & AI'
+    : 'Angélo Lima — Web Dev & IA';
+const heroSubtitle =
+  lang === 'en'
+    ? 'Tech blog exploring web development and artificial intelligence. Exploring the intersection of modern frameworks, LLMs, and robust engineering.'
+    : "Blog tech sur le développement web et l'intelligence artificielle. Explorer l'intersection des frameworks modernes, des LLMs et de l'ingénierie logicielle.";
+const featuredImg = featured?.data.thumbnail ?? featured?.data.cover;
+---
+<section class="home-hero">
+  <div class="home-container">
+    <div class="home-hero-content">
+      <h1 class="home-hero-title" set:html={heroTitle.replace('Web Dev', '<span class="home-hero-accent">Web Dev</span>')} />
+      <p class="home-hero-subtitle">{heroSubtitle}</p>
+    </div>
+  </div>
+</section>
+
+{featured && (
+  <section class="featured-post-section">
+    <div class="home-container">
+      <div class="featured-post-grid">
+        <div class="featured-post-content">
+          <div class="featured-label">
+            <span class="label-caps chip-bullet">{t.featured}</span>
+          </div>
+          <h2 class="featured-post-title">{featured.data.title}</h2>
+          {featured.data.subtitle ? (
+            <p class="featured-post-subtitle">{featured.data.subtitle}</p>
+          ) : (
+            <p class="featured-post-excerpt">{excerpt(featured, 30)}</p>
+          )}
+          <a href={postUrl(featured)} class="featured-post-btn">{t.readEssay}</a>
+        </div>
+        <div class="featured-post-image-wrap">
+          {featuredImg ? (
+            <a href={postUrl(featured)}>
+              <img src={featuredImg} alt={featured.data.title} class="featured-post-img" loading="lazy" />
+            </a>
+          ) : (
+            <div class="featured-post-img-placeholder"></div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="home-container"><hr class="section-divider" /></div>
+)}
+
+<section class="recent-posts-section">
+  <div class="home-container">
+    <div class="recent-posts-header" id="recent" style="scroll-margin-top: 6rem;">
+      <h3 class="section-title">{t.recent}</h3>
+      <a href={lang === 'en' ? '/en/tags/' : '/tags/'} class="view-all-link">{t.viewAll}</a>
+    </div>
+
+    <ul class="posts-list" role="list">
+      {pagePosts.map((post) => {
+        const img = post.data.thumbnail ?? post.data.cover;
+        return (
+          <li class="post-preview" role="listitem">
+            <a href={postUrl(post)} class="post-card-link">
+              {img && (
+                <div class="post-image-wrap">
+                  <img src={img} alt={post.data.title} class="post-card-img" loading="lazy" width="300" height="200" />
+                </div>
+              )}
+              <div class="post-card-body">
+                <div class="post-card-meta">
+                  {post.data.tags[0] && (
+                    <span class="post-card-tag label-caps chip-bullet">{post.data.tags[0]}</span>
+                  )}
+                  <span class="post-card-date label-caps">{formatDate(post.data.date, lang)}</span>
+                </div>
+                <h2 class="post-card-title">{post.data.title}</h2>
+                <p class="post-card-excerpt">{excerpt(post, 25)}</p>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <Pagination lang={lang} currentPage={currentPage} totalPages={totalPages} />
+  </div>
+</section>

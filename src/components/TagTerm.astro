@@ -1,0 +1,64 @@
+---
+import { tagUrl, type Lang } from '../site';
+import { postUrl, formatDate, type Post } from '../lib/posts';
+import type { TagGroup } from '../lib/tags';
+
+interface Props {
+  lang: Lang;
+  tag: string; // current tag label
+  allGroups: TagGroup[];
+  posts: Post[]; // current tag's posts
+}
+const { lang, tag, allGroups, posts } = Astro.props as Props;
+const count = String(allGroups.length).padStart(3, '0');
+const tagsHome = lang === 'en' ? '/en/tags/' : '/tags/';
+---
+<main class="tags-page">
+  <div class="tags-container">
+    <div class="tags-header">
+      <h1 class="tags-page-title">Exploration</h1>
+    </div>
+
+    <div class="taxonomy-section">
+      <div class="taxonomy-header">
+        <span class="label-caps taxonomy-label">{lang === 'en' ? 'Taxonomy / Taxonomie' : 'Taxonomie'}</span>
+        <span class="label-caps taxonomy-count">{count}</span>
+      </div>
+      <div class="taxonomy-grid">
+        {allGroups.map((g) => (
+          <a href={tagUrl(lang, g.tag)} class={`taxonomy-tag ${g.tag === tag ? 'taxonomy-tag-active' : ''}`}>
+            {g.tag}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="filtered-articles">
+      <div class="filtered-header">
+        <span class="label-caps filtered-label">
+          {lang === 'en' ? 'Filtered / Filtré :' : 'Filtré :'}
+          <span class="filtered-tag-name">{tag.toUpperCase()}</span>
+        </span>
+        <span class="label-caps filtered-count">{posts.length} {lang === 'en' ? 'Entries' : 'Entrées'}</span>
+      </div>
+
+      <ul class="tag-articles-list" role="list">
+        {posts.map((post) => (
+          <li class="tag-article-item" role="listitem">
+            <a href={postUrl(post)} class="tag-article-link">
+              <div class="tag-article-date">
+                <span class="tag-article-bullet label-caps">-</span>
+                <span class="label-caps tag-article-date-text">{formatDate(post.data.date, lang).toUpperCase()}</span>
+              </div>
+              <h3 class="tag-article-title">{post.data.title}</h3>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <nav class="tags-nav" aria-label="Navigation tags">
+      <a href={tagsHome} class="tags-back-link label-caps">{lang === 'en' ? '← All Tags' : '← Tous les tags'}</a>
+    </nav>
+  </div>
+</main>

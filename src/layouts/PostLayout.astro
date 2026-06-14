@@ -1,0 +1,204 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SocialShare from '../components/SocialShare.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import type { Alternate } from '../components/Head.astro';
+import { I18N, homeUrl, tagUrl } from '../site';
+import {
+  postUrl,
+  formatDate,
+  isoDate,
+  readingTime,
+  excerpt,
+  stripMarkdown,
+  type Post,
+} from '../lib/posts';
+
+interface Props {
+  post: Post;
+  prev?: Post;
+  next?: Post;
+  related: Post[];
+  translation?: Post;
+}
+const { post, prev, next, related, translation } = Astro.props as Props;
+const { lang } = post.data;
+const t = I18N[lang];
+const canonical = postUrl(post);
+const image = post.data.shareImg ?? post.data.cover ?? post.data.thumbnail;
+const cover = post.data.cover ?? post.data.thumbnail;
+const description = post.data.description ?? post.data.subtitle ?? excerpt(post, 50);
+const minutes = readingTime(post.body ?? '');
+const transUrl = translation ? postUrl(translation) : undefined;
+
+// hreflang alternates, mirroring the original head.html logic.
+const alternates: Alternate[] =
+  lang === 'fr'
+    ? [
+        { hreflang: 'fr', href: canonical },
+        { hreflang: 'x-default', href: canonical },
+        { hreflang: 'en', href: transUrl ?? '/en/' },
+      ]
+    : [
+        { hreflang: 'en', href: canonical },
+        { hreflang: 'fr', href: transUrl ?? '/' },
+        { hreflang: 'x-default', href: transUrl ?? '/' },
+      ];
+
+const article = {
+  datePublished: isoDate(post.data.date),
+  dateModified: post.data.lastUpdated ? isoDate(post.data.lastUpdated) : undefined,
+  author: post.data.author,
+  tags: post.data.tags,
+  wordCount: stripMarkdown(post.body ?? '').split(/\s+/).filter(Boolean).length,
+  articleBody: stripMarkdown(post.body ?? '').split(/\s+/).slice(0, 50).join(' '),
+};
+
+const altUrl = transUrl ?? homeUrl(lang === 'fr' ? 'en' : 'fr');
+const tagsAnchor = lang === 'en' ? '/en/tags' : '/tags';
+
+// BreadcrumbList: Accueil → premier tag → article
+const breadcrumb = [
+  { name: t.home, url: homeUrl(lang) },
+  ...(post.data.tags[0] ? [{ name: post.data.tags[0], url: tagUrl(lang, post.data.tags[0]) }] : []),
+  { name: post.data.title, url: canonical },
+];
+---
+<BaseLayout
+  lang={lang}
+  title={post.data.title}
+  description={description}
+  canonical={canonical}
+  type="article"
+  image={image}
+  alternates={alternates}
+  article={article}
+  active="blog"
+  altUrl={altUrl}
+  breadcrumb={breadcrumb}
+>
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <main class="post-main">
+    <header class="post-header">
+      <div class="post-header-container">
+        <div class="post-header-content">
+          <nav class="post-breadcrumb" aria-label="Breadcrumb">
+            <a href={homeUrl(lang)} class="breadcrumb-link label-caps">← Blog</a>
+            <span class="breadcrumb-sep">/</span>
+            <span class="label-caps">{lang.toUpperCase()}</span>
+          </nav>
+          <h1 class="post-title">{post.data.title}</h1>
+          {post.data.subtitle && <p class="post-subtitle-text">{post.data.subtitle}</p>}
+        </div>
+      </div>
+
+      {cover && (
+        <div class="post-hero-img-wrap">
+          <img src={cover} alt={post.data.title} class="post-hero-img" loading="eager" />
+        </div>
+      )}
+    </header>
+
+    <div class="article-layout">
+      <div class="article-layout-inner">
+        <aside class="article-sidebar">
+          <div class="sidebar-meta">
+            <div class="sidebar-meta-item">
+              <span class="sidebar-label label-caps">{t.published}</span>
+              <span class="sidebar-value">{formatDate(post.data.date, lang)}</span>
+            </div>
+
+            <div class="sidebar-meta-item">
+              <span class="sidebar-label label-caps">{t.readTime}</span>
+              <span class="post-meta">{minutes} {t.minuteRead}</span>
+            </div>
+
+            {post.data.tags.length > 0 && (
+              <div class="sidebar-meta-item">
+                <span class="sidebar-label label-caps">{t.topics}</span>
+                <div class="sidebar-tags">
+                  {post.data.tags.map((tag) => (
+                    <span class="sidebar-tag chip-bullet label-caps">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div class="sidebar-share">
+              <span class="sidebar-label label-caps">{t.share}</span>
+              <SocialShare title={post.data.title} url={new URL(canonical, Astro.site).href} />
+            </div>
+          </div>
+        </aside>
+
+        <article class="article-content">
+          {translation && (
+            <div class="lang-notice">
+              <span class="lang-notice-text label-caps">
+                {lang === 'en' ? (
+                  <>Disponible en <a href={transUrl} class="lang-notice-link">français</a></>
+                ) : (
+                  <>Available in <a href={transUrl} class="lang-notice-link">English</a></>
+                )}
+              </span>
+            </div>
+          )}
+
+          <div class="mobile-post-meta">
+            <span class="label-caps mobile-meta-date">{formatDate(post.data.date, lang)}</span>
+            {post.data.tags[0] && (
+              <span class="chip-bullet label-caps mobile-meta-tag">{post.data.tags[0]}</span>
+            )}
+          </div>
+
+          <slot />
+
+          {post.data.tags.length > 0 && (
+            <div class="post-tags-footer">
+              <span class="label-caps post-tags-label">{lang === 'en' ? 'Tags:' : 'Tags :'}</span>
+              {post.data.tags.map((tag) => (
+                <a href={`${tagsAnchor}#${tag}`} class="post-tag-link chip-bullet label-caps">{tag}</a>
+              ))}
+            </div>
+          )}
+        </article>
+      </div>
+    </div>
+
+    <div class="related-posts-wrapper">
+      <div class="article-layout-inner">
+        <RelatedPosts lang={lang} posts={related} currentTags={post.data.tags} />
+      </div>
+    </div>
+
+    <div class="post-pagination-wrapper">
+      <div class="article-layout-inner">
+        <nav class="post-pagination" aria-label="Post navigation">
+          {prev && (
+            <a class="post-pagination-prev" href={postUrl(prev)}>
+              <span class="label-caps">← {t.previous}</span>
+              <span class="pagination-title">{prev.data.title}</span>
+            </a>
+          )}
+          {next && (
+            <a class="post-pagination-next" href={postUrl(next)}>
+              <span class="label-caps">{t.next} →</span>
+              <span class="pagination-title">{next.data.title}</span>
+            </a>
+          )}
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline>
+    window.addEventListener('scroll', function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      var el = document.getElementById('reading-progress');
+      if (el) el.style.width = scrolled + '%';
+    });
+  </script>
+</BaseLayout>

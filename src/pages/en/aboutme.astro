@@ -1,0 +1,83 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE } from '../../site';
+const description =
+  'Angelo Lima, full-stack web developer based in France since 2013. Specialized in AI, JavaScript, and tech innovations. French technical blog with tutorials, AI tool analysis (Claude, ChatGPT) and modern development insights.';
+---
+<PageLayout
+  lang="en"
+  title="About me"
+  subtitle="Full-stack web developer specialized in AI and modern architectures"
+  description={description}
+  canonical="/en/aboutme/"
+  active="about"
+  altUrl="/aboutme/"
+  breadcrumb={[{ name: 'Home', url: '/en/' }, { name: 'About me', url: '/en/aboutme/' }]}
+  alternates={[
+    { hreflang: 'en', href: '/en/aboutme/' },
+    { hreflang: 'fr', href: '/aboutme/' },
+    { hreflang: 'x-default', href: '/aboutme/' },
+  ]}
+>
+  <h2>Professional Background</h2>
+  <p>I am <strong>Angelo Lima</strong>, Franco-Portuguese full-stack web developer with over a decade of experience in the technology ecosystem. My journey began in 2013 after comprehensive training in software development.</p>
+  <p>My practice focuses on modern web solution architecture, artificial intelligence integration, and developing productive tools for technical teams.</p>
+
+  <h2>My Technical Expertise 💻</h2>
+  <ul>
+    <li><strong>Languages</strong>: JavaScript, TypeScript, Python, PHP</li>
+    <li><strong>Frameworks</strong>: React, Vue.js, Angular, Node.js, Nest.js</li>
+    <li><strong>Databases</strong>: PostgreSQL, MySQL, MongoDB</li>
+    <li><strong>Cloud &amp; DevOps</strong>: Docker, AWS, CI/CD</li>
+    <li><strong>Specializations</strong>: Web architecture, REST APIs, Artificial Intelligence</li>
+  </ul>
+
+  <h2>What You'll Find on This Blog 📝</h2>
+  <p>This blog offers in-depth technical analysis of trends and innovations in the industry:</p>
+
+  <h3>Artificial Intelligence</h3>
+  <ul>
+    <li>Technical analysis of language models (LLM)</li>
+    <li>Critical evaluation of AI tools (Ollama, OpenAI, Claude)</li>
+    <li>Practical implementations and use cases</li>
+  </ul>
+
+  <h3>Web Development</h3>
+  <ul>
+    <li>Modern architectures and advanced patterns</li>
+    <li>Framework and emerging technology evaluation</li>
+    <li>Development methodologies and best practices</li>
+  </ul>
+
+  <h3>Technological Innovation</h3>
+  <ul>
+    <li>Industry trend analysis</li>
+    <li>Critical evaluation of new technologies</li>
+    <li>Impact of innovations on development practices</li>
+  </ul>
+
+  <h3>Professional Insights</h3>
+  <ul>
+    <li>Experience feedback on complex projects</li>
+    <li>Technical skill evolution</li>
+    <li>Technology ecosystem perspectives</li>
+  </ul>
+
+  <h2>Technical Projects</h2>
+  <ul>
+    <li><strong><a href="https://github.com/Lingelo/sql-assistant">SQL Assistant</a></strong>: Open-source tool to convert natural language to SQL queries</li>
+    <li><strong><a href="https://github.com/Lingelo/mcp-atlassian">MCP Atlassian</a></strong>: JIRA/Confluence integration with language models</li>
+    <li><strong>PostgreSQL Migration</strong>: Tools and guides for migrating from MySQL to PostgreSQL</li>
+  </ul>
+
+  <h2>Contact &amp; Networks 📫</h2>
+  <ul>
+    <li><strong>GitHub</strong>: <a href="https://github.com/lingelo">Lingelo</a></li>
+    <li><strong>LinkedIn</strong>: <a href="https://linkedin.com/in/angélo-lima">Angelo Lima</a></li>
+    <li><strong>Email</strong>: {SITE.email}</li>
+    <li><strong>CV</strong>: <a href="/resume/cv-angelo-lima.html" target="_blank">View online</a> <i class="fa fa-external-link"></i> | <a href="/resume/cv-angelo-lima.pdf" download>Download PDF</a> <i class="fa fa-download"></i></li>
+  </ul>
+
+  <p>This platform serves as a space for analysis and technical expertise sharing, focused on the evolution of web technologies and artificial intelligence.</p>
+  <p>For any technical discussion or professional collaboration, feel free to contact me through the channels mentioned above.</p>
+</PageLayout>

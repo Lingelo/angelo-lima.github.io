@@ -1,0 +1,69 @@
+---
+import { homeUrl, type Lang } from '../site';
+
+interface Props {
+  lang: Lang;
+  currentPage: number;
+  totalPages: number;
+}
+const { lang, currentPage, totalPages } = Astro.props as Props;
+
+const prevLabel = lang === 'fr' ? 'Page précédente' : 'Previous page';
+const nextLabel = lang === 'fr' ? 'Page suivante' : 'Next page';
+
+// All pagination links land on the "Publications Récentes" row (#recent), not the very top.
+const pageHref = (n: number) =>
+  (n === 1 ? homeUrl(lang) : lang === 'en' ? `/en/page/${n}/` : `/page/${n}/`) + '#recent';
+
+// Sliding window of max 5 pages, mirroring the old dynamic-pagination.js.
+const maxVisible = 5;
+let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+let end = Math.min(totalPages, start + maxVisible - 1);
+if (end - start < maxVisible - 1) start = Math.max(1, end - maxVisible + 1);
+
+const middle: number[] = [];
+for (let i = start; i <= end; i++) middle.push(i);
+---
+{totalPages > 1 && (
+  <nav class="pagination main-pager" role="navigation" aria-label="Pagination">
+    <ul class="pagination-list">
+      <li class="page-item page-item-prev" role="none">
+        {currentPage > 1 ? (
+          <a class="page-link" href={pageHref(currentPage - 1)} aria-label={prevLabel}>←</a>
+        ) : (
+          <span class="page-link page-link-disabled">←</span>
+        )}
+      </li>
+
+      {start > 1 && (
+        <>
+          <li class="page-item" role="none"><a class="page-link" href={pageHref(1)} aria-label="Page 1">1</a></li>
+          {start > 2 && <li class="page-item page-ellipsis" role="none"><span class="page-link">…</span></li>}
+        </>
+      )}
+
+      {middle.map((i) =>
+        i === currentPage ? (
+          <li class="page-item page-item-active" role="none"><span class="page-link" aria-current="page">{i}</span></li>
+        ) : (
+          <li class="page-item" role="none"><a class="page-link" href={pageHref(i)} aria-label={`Page ${i}`}>{i}</a></li>
+        ),
+      )}
+
+      {end < totalPages && (
+        <>
+          {end < totalPages - 1 && <li class="page-item page-ellipsis" role="none"><span class="page-link">…</span></li>}
+          <li class="page-item" role="none"><a class="page-link" href={pageHref(totalPages)} aria-label={`Page ${totalPages}`}>{totalPages}</a></li>
+        </>
+      )}
+
+      <li class="page-item page-item-next" role="none">
+        {currentPage < totalPages ? (
+          <a class="page-link" href={pageHref(currentPage + 1)} aria-label={nextLabel}>→</a>
+        ) : (
+          <span class="page-link page-link-disabled">→</span>
+        )}
+      </li>
+    </ul>
+  </nav>
+)}

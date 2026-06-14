@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TagTerm from '../../components/TagTerm.astro';
+import { getTagGroups, type TagGroup } from '../../lib/tags';
+import { TAG_META } from '../../lib/tag-meta';
+
+export const getStaticPaths = (async () => {
+  const groups = await getTagGroups('fr');
+  return groups.map((g) => ({ params: { tag: g.slug }, props: { group: g, groups } }));
+}) satisfies GetStaticPaths;
+
+const { group, groups } = Astro.props as { group: TagGroup; groups: TagGroup[] };
+const meta = TAG_META[`fr:${group.slug}`] ?? {
+  title: `Articles sur ${group.tag}`,
+  subtitle: '',
+  description: `Tous les articles sur ${group.tag}.`,
+};
+const canonical = `/tag/${group.slug}/`;
+---
+<BaseLayout
+  lang="fr"
+  title={meta.title}
+  description={meta.description}
+  canonical={canonical}
+  type="website"
+  active="tags"
+  altUrl="/en/tags/"
+  breadcrumb={[
+    { name: 'Accueil', url: '/' },
+    { name: 'Tags', url: '/tags/' },
+    { name: group.tag, url: canonical },
+  ]}
+  alternates={[{ hreflang: 'fr', href: canonical }, { hreflang: 'x-default', href: canonical }]}
+>
+  <TagTerm lang="fr" tag={group.tag} allGroups={groups} posts={group.posts} />
+</BaseLayout>
