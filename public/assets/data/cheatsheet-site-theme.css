@@ -518,9 +518,13 @@ hr {
   margin-bottom: 3px;
 }
 
-.effort-pill.low    { background: rgba(176,176,176,0.15); color: var(--text-secondary); }
-.effort-pill.medium { background: rgba(90,160,232,0.15);  color: var(--accent-blue); }
-.effort-pill.high   { background: rgba(39,174,96,0.15);   color: var(--accent-green); }
-.effort-pill.xhigh  { background: rgba(237,185,38,0.18);  color: var(--accent-gold); }
-.effort-pill.max    { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
-.effort-pill.auto   { background: rgba(230,126,34,0.15);  color: var(--accent-orange); }
+.effort-pill.low      { background: rgba(176,176,176,0.15); color: var(--text-secondary); }
+.effort-pill.medium   { background: rgba(90,160,232,0.15);  color: var(--accent-blue); }
+.effort-pill.high     { background: rgba(39,174,96,0.15);   color: var(--accent-green); }
+.effort-pill.xhigh    { background: rgba(237,185,38,0.18);  color: var(--accent-gold); }
+.effort-pill.max      { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+.effort-pill.auto     { background: rgba(230,126,34,0.15);  color: var(--accent-orange); }
+.effort-pill.ultracode{ background: rgba(244,114,182,0.15); color: var(--accent-pink); }
+
+/* --- Auto mode pill (dontAsk reuse) --- */
+.mode-pill.dontask { background: rgba(231,76,60,0.15); color: var(--accent-red); }
