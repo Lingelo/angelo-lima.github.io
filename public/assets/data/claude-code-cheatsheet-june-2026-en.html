@@ -17,6 +17,10 @@
   <span class="version-badge">v2.1.170 — June 2026</span>
 </div>
 
+<div class="global-warning">
+  <strong>⚠ Fable 5 &amp; Mythos 5 — suspended since June 12, 2026.</strong> A US government directive required Anthropic to disable both models globally, four days after their launch. All other models (Opus 4.8, Sonnet 4.6, Haiku 4.5…) remain fully available. Fable 5 entries in this cheatsheet are preserved for reference; no restoration timeline has been communicated.
+</div>
+
 <!-- ============================================================
      ROW 1 : Shortcuts | Slash Commands | CLI Flags  (3 cols)
      ============================================================ -->
@@ -797,16 +801,17 @@ claude <span class="flag">-w</span> feature <span class="flag">--tmux</span> <sp
     <table>
       <thead><tr><th>Model</th><th>ID / alias</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td><strong>Fable 5</strong></td><td><code>fable</code></td><td>Mythos-class, 1M ctx, 128K out, $10/$50 <span class="badge badge-new">NEW</span></td></tr>
+        <tr style="opacity:0.55"><td><strong>Fable 5</strong> <span class="badge-suspended">SUSPENDED</span></td><td><code>fable</code></td><td>Mythos-class, 1M ctx, 128K out, $10/$50 <span class="badge badge-new">NEW</span> — <em>disabled June 12 (US gov. order)</em></td></tr>
         <tr><td><strong>Opus 4.8</strong></td><td><code>claude-opus-4-8</code></td><td>Default Max/API, 1M ctx <span class="badge badge-new">NEW</span></td></tr>
         <tr><td><strong>Opus 4.7</strong></td><td><code>claude-opus-4-7</code></td><td>Default on AWS, xhigh by default</td></tr>
         <tr><td><strong>Sonnet 4.6</strong></td><td><code>claude-sonnet-4-6</code></td><td>Default Pro / Team Standard</td></tr>
         <tr><td><strong>Haiku 4.5</strong></td><td><code>claude-haiku-4-5</code></td><td>Ultra-fast, classifier, background</td></tr>
       </tbody>
     </table>
-    <p><strong>Aliases:</strong> <code>best</code> (Fable if available, else Opus), <code>fable</code>, <code>opus</code>, <code>sonnet</code>, <code>haiku</code>, <code>opus[1m]</code>, <code>opusplan</code>, <code>default</code>.</p>
+    <p><strong>Aliases:</strong> <code>best</code> (Fable if available, else Opus), <code>fable</code>, <code>opus</code>, <code>sonnet</code>, <code>haiku</code>, <code>opus[1m]</code>, <code>opusplan</code>, <code>default</code>. The <code>best</code> alias now resolves to Opus 4.8 while Fable 5 is suspended.</p>
 
-    <h3>Fable 5 — automatic fallback <span class="badge badge-new">NEW</span></h3>
+    <h3>Fable 5 — automatic fallback <span class="badge badge-new">NEW</span> <span class="badge-suspended">SUSPENDED</span></h3>
+    <div class="warning"><strong>⚠ Fable 5 suspended:</strong> Disabled globally on June 12, 2026 by US government order. The fallback mechanism below is documented for reference and will apply again if/when access is restored.</div>
     <p>Safety classifiers (cybersecurity, biology): a flagged request reroutes to Opus (4.8 on the API, 4.7 on AWS) with a notice. Thinking <strong>always on</strong>, can't be disabled. <code>/config</code> &rarr; "ask before switching" to decide each time.</p>
 
     <h3>Effort Levels</h3>

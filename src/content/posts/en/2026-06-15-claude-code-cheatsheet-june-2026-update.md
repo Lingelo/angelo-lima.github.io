@@ -16,6 +16,10 @@ thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2026-06-15-claude-code-cheatsheet-june-2026-update/"
 ---
+**⚠ Update (June 12, 2026):** Fable 5 and Mythos 5 were suspended globally by US government order four days after their launch. All other models remain available. Fable 5 entries in the cheat sheet are preserved for reference, marked as suspended.
+
+---
+
 I republished a Claude Code cheatsheet at the end of April. Seven weeks later it has aged a lot: between v2.1.101 and v2.1.170, Anthropic shipped roughly sixty releases. **Two new models** landed (Opus 4.8 on May 28, then Fable 5 on June 9), the **Agent View** arrived, **dynamic workflows** now orchestrate hundreds of subagents, and a handful of new commands (`/goal`, `/cd`, `/workflows`, `/ultrareview`, `/reload-skills`…) showed up.
 
 So I republished a June 2026 edition — **same visual architecture** as the March and April versions, rewritten to match every addition, using **the blog palette** (dark background, gold accent).
