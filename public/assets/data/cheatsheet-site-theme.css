@@ -352,6 +352,34 @@ code {
   vertical-align: middle;
 }
 
+.badge-suspended {
+  background: rgba(231,76,60,0.25);
+  color: #e74c3c;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.global-warning {
+  background: rgba(231,76,60,0.08);
+  border: 1px solid rgba(231,76,60,0.35);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin: 0 0 18px 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.global-warning strong {
+  color: #e74c3c;
+}
+
 /* --- Callouts --- */
 .tip {
   background: rgba(237,185,38,0.08);
@@ -518,9 +546,13 @@ hr {
   margin-bottom: 3px;
 }
 
-.effort-pill.low    { background: rgba(176,176,176,0.15); color: var(--text-secondary); }
-.effort-pill.medium { background: rgba(90,160,232,0.15);  color: var(--accent-blue); }
-.effort-pill.high   { background: rgba(39,174,96,0.15);   color: var(--accent-green); }
-.effort-pill.xhigh  { background: rgba(237,185,38,0.18);  color: var(--accent-gold); }
-.effort-pill.max    { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
-.effort-pill.auto   { background: rgba(230,126,34,0.15);  color: var(--accent-orange); }
+.effort-pill.low      { background: rgba(176,176,176,0.15); color: var(--text-secondary); }
+.effort-pill.medium   { background: rgba(90,160,232,0.15);  color: var(--accent-blue); }
+.effort-pill.high     { background: rgba(39,174,96,0.15);   color: var(--accent-green); }
+.effort-pill.xhigh    { background: rgba(237,185,38,0.18);  color: var(--accent-gold); }
+.effort-pill.max      { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+.effort-pill.auto     { background: rgba(230,126,34,0.15);  color: var(--accent-orange); }
+.effort-pill.ultracode{ background: rgba(244,114,182,0.15); color: var(--accent-pink); }
+
+/* --- Auto mode pill (dontAsk reuse) --- */
+.mode-pill.dontask { background: rgba(231,76,60,0.15); color: var(--accent-red); }
