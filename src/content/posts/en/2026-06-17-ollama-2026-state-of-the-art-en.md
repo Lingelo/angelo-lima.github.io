@@ -2,7 +2,7 @@
 title: "Ollama in 2026: From Local Runner to AI Platform"
 subtitle: "Models, API, cloud, agents — eighteen months on from the first article"
 description: "A full overview of Ollama in June 2026: v0.30.8, 200+ models, Anthropic Messages API compatibility, hybrid cloud with :cloud suffix, Claude Code / Hermes / OpenClaw integrations, and the ollama launch command."
-date: 2026-06-17T12:00:00.000Z
+date: 2026-06-17T00:00:00.000Z
 lang: en
 translationKey: "ollama-2026-state-of-the-art"
 slug: "ollama-2026-state-of-the-art-en"
