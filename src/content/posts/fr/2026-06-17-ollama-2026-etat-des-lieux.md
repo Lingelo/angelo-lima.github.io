@@ -29,6 +29,38 @@ La v0.19 avait introduit le moteur MLX sur Apple Silicon. La v0.6 de novembre 20
 
 ---
 
+## Installer et lancer un premier modèle
+
+Sur macOS et Linux, une commande suffit :
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Sur Windows, un installeur est disponible sur [ollama.com](https://ollama.com). Le daemon démarre automatiquement au lancement du système.
+
+Ensuite :
+
+```bash
+ollama pull qwen3.6:27b          # télécharge le modèle (~17 Go à Q4)
+ollama run qwen3.6:27b           # ouvre un chat interactif dans le terminal
+```
+
+Une session basique :
+
+```
+>>> Résume en trois lignes comment fonctionne le PagedAttention de vLLM
+PagedAttention découpe la mémoire KV-cache en blocs de taille fixe,
+alloués dynamiquement à chaque requête. Cela évite la fragmentation
+et permet de servir plusieurs requêtes en parallèle sans gaspiller de VRAM.
+
+>>> /bye
+```
+
+Si vous préférez une interface web, [Open WebUI](/fr/ollama-open-web-ui/) se connecte à Ollama en une ligne Docker et donne accès à tous les modèles locaux et cloud depuis un navigateur.
+
+---
+
 ## Les modèles
 
 La bibliothèque dépasse 200 entrées. Ce qui compte vraiment en juin 2026 :
