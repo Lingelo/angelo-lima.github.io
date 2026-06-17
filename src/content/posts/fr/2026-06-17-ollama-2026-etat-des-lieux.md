@@ -23,7 +23,7 @@ En janvier 2025, j'avais écrit [un guide de déploiement Ollama + Open WebUI](/
 
 ## Ce qu'Ollama est devenu
 
-La définition « outil pour faire tourner des LLM en local » tient toujours, mais couvre de moins en moins le produit réel. Depuis 2026, Ollama est aussi un proxy cloud : certains modèles tournent sur vos GPU, d'autres sont routés vers l'infrastructure Ollama, et dans les deux cas l'API est identique. Même commandes, même client Python, même port.
+La définition « outil pour faire tourner des LLM en local » tient toujours, mais couvre de moins en moins le produit réel. Depuis 2026, Ollama est aussi un proxy cloud : certains modèles tournent sur vos GPU, d'autres sont routés vers l'infrastructure Ollama. Dans les deux cas, l'API est strictement identique — même commandes, même port.
 
 La v0.19 avait introduit le moteur MLX sur Apple Silicon. La v0.6 de novembre 2025 a revu le scheduler multi-GPU et réduit les crashs OOM sur les configs avec plusieurs cartes. En juin 2026, le gros ajout c'est `ollama launch` : une commande unique qui démarre un coding agent complet, variables d'environnement configurées, modèle téléchargé si absent.
 
@@ -140,7 +140,7 @@ Tier gratuit pour usage personnel, tier payant pour les rate limits plus élevé
 ollama launch claude-code --model qwen3.6:27b
 ```
 
-En interne, ça pose les trois variables nécessaires et démarre Claude Code pointé sur votre GPU :
+En interne, ça configure les variables d'environnement et démarre Claude Code avec Ollama comme backend :
 
 ```bash
 export ANTHROPIC_BASE_URL="http://localhost:11434"
@@ -148,7 +148,7 @@ export ANTHROPIC_AUTH_TOKEN="ollama"
 export ANTHROPIC_API_KEY=""
 ```
 
-Deux restrictions à garder en tête. La prompt caching n'existe pas sur les modèles locaux : chaque requête retraite tout le contexte depuis zéro, ce qui renchérit la latence sur les sessions longues. Et Claude Code fonctionne mal sous 32k tokens de contexte ; il faut configurer explicitement :
+La prompt caching n'existe pas sur les modèles locaux : chaque requête retraite tout le contexte depuis zéro, ce qui renchérit la latence sur les sessions longues. Et Claude Code fonctionne mal sous 32k tokens de contexte ; il faut configurer explicitement :
 
 ```bash
 export OLLAMA_CONTEXT_LENGTH=32768

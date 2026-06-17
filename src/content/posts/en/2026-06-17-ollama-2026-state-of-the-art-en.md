@@ -23,7 +23,7 @@ Back in January 2025 I wrote [a deployment guide for Ollama + Open WebUI](/en/ol
 
 ## What Ollama Has Become
 
-The definition "tool for running LLMs locally" still holds, but covers less and less of the actual product. Since 2026, Ollama is also a cloud proxy: some models run on your GPU, others are routed to Ollama's own infrastructure, and in both cases the API is identical. Same commands, same Python client, same port.
+The definition "tool for running LLMs locally" still holds, but covers less and less of the actual product. Since 2026, Ollama is also a cloud proxy: some models run on your GPU, others are routed to Ollama's own infrastructure. In both cases the API is strictly identical — same commands, same port.
 
 v0.19 introduced the MLX engine on Apple Silicon. The v0.6 release in November 2025 reworked the multi-GPU scheduler and reduced OOM crashes on multi-card setups. The big addition in June 2026 is `ollama launch`: a single command that starts a full coding agent with environment variables configured and the model downloaded if missing.
 
@@ -140,7 +140,7 @@ Free tier for personal use, paid tier for higher rate limits.
 ollama launch claude-code --model qwen3.6:27b
 ```
 
-Under the hood, it sets the three required variables and starts Claude Code pointed at your GPU:
+Under the hood, it sets the required environment variables and starts Claude Code with Ollama as the backend:
 
 ```bash
 export ANTHROPIC_BASE_URL="http://localhost:11434"
@@ -148,7 +148,7 @@ export ANTHROPIC_AUTH_TOKEN="ollama"
 export ANTHROPIC_API_KEY=""
 ```
 
-Two hard limits to keep in mind. Prompt caching doesn't exist on local models: every request reprocesses the full context from scratch, which inflates latency on long sessions. And Claude Code performs poorly below 32k tokens of context; set it explicitly:
+Prompt caching doesn't exist on local models: every request reprocesses the full context from scratch, which inflates latency on long sessions. And Claude Code performs poorly below 32k tokens of context; set it explicitly:
 
 ```bash
 export OLLAMA_CONTEXT_LENGTH=32768
