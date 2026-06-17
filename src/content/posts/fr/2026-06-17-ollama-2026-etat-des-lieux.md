@@ -11,8 +11,8 @@ tags:
   - "Développement"
   - "Tech"
 author: "Angelo Lima"
-thumbnail: "/assets/img/ollama_openai.webp"
-shareImg: "/assets/img/ollama_openai.webp"
+thumbnail: "/assets/img/ollama-2026-cover.png"
+shareImg: "/assets/img/ollama-2026-cover.png"
 aliases:
   - "/2026-06-17-ollama-2026-etat-des-lieux/"
 ---
