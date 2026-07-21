@@ -63,6 +63,22 @@ const breadcrumb = [
   ...(post.data.tags[0] ? [{ name: post.data.tags[0], url: tagUrl(lang, post.data.tags[0]) }] : []),
   { name: post.data.title, url: canonical },
 ];
+
+// Optional FAQ → visible section + FAQPage structured data (GEO/SEO).
+const faq = post.data.faq;
+const faqHeading = lang === 'en' ? 'Frequently asked questions' : 'Questions fréquentes';
+const faqJsonLd =
+  faq && faq.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
 ---
 <BaseLayout
   lang={lang}
@@ -154,6 +170,20 @@ const breadcrumb = [
 
           <slot />
 
+          {faq && faq.length > 0 && (
+            <section class="post-faq" aria-labelledby="faq-heading">
+              <h2 id="faq-heading">{faqHeading}</h2>
+              <dl class="post-faq-list">
+                {faq.map((item) => (
+                  <div class="post-faq-item">
+                    <dt class="post-faq-q">{item.q}</dt>
+                    <dd class="post-faq-a">{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
+
           {post.data.tags.length > 0 && (
             <div class="post-tags-footer">
               <span class="label-caps post-tags-label">{lang === 'en' ? 'Tags:' : 'Tags :'}</span>
@@ -192,6 +222,8 @@ const breadcrumb = [
     </div>
   </main>
 
+  {faqJsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />}
+
   <script is:inline>
     window.addEventListener('scroll', function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -201,4 +233,27 @@ const breadcrumb = [
       if (el) el.style.width = scrolled + '%';
     });
   </script>
+
+  <style>
+    .post-faq {
+      margin: 3rem 0 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(237, 185, 38, 0.2);
+    }
+    .post-faq h2 {
+      margin-bottom: 1.5rem;
+    }
+    .post-faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .post-faq-q {
+      font-weight: 600;
+      color: var(--accent, #edb926);
+      margin-bottom: 0.4rem;
+    }
+    .post-faq-a {
+      margin: 0;
+      line-height: 1.7;
+    }
+  </style>
 </BaseLayout>

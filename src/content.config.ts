@@ -26,6 +26,9 @@ const posts = defineCollection({
     // Old Jekyll URLs that must 301-style redirect here.
     aliases: z.array(z.string()).default([]),
     mathjax: z.boolean().optional(),
+    // Optional FAQ (GEO/SEO): rendered as a visible section + FAQPage JSON-LD.
+    // Keep answers short and self-contained so answer engines can quote them.
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 });
 

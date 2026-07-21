@@ -1,7 +1,7 @@
 ---
 title: "Portugal Built Its Own AI. I Wanted to Know If It Really Spoke Portuguese to Me."
 subtitle: "Amália: 9 billion parameters, €5.5 million, sixty researchers. A case study for understanding what 'AI sovereignty' means once you drop the speeches and look at the actual model."
-description: "Amália, the first large language model built for European Portuguese, launched on 1 July 2026. A first-hand account and an accessible breakdown: what's inside, what it's worth, and why it matters for the whole of Europe."
+description: "Amália, the first large language model for European Portuguese, launched 1 July 2026. What's inside, what it's worth, and why it matters for all of Europe."
 date: 2026-07-21T12:00:00.000Z
 lang: en
 translationKey: "amalia-portuguese-ai"
@@ -15,12 +15,31 @@ thumbnail: "/assets/img/amalia-ia-portugal.png"
 shareImg: "/assets/img/amalia-ia-portugal.png"
 aliases:
   - "/en/2026-07-21-amalia-portuguese-ai-sovereignty-en/"
+faq:
+  - q: "What is Amália?"
+    a: "Amália is the first large language model (LLM) built for European Portuguese, unveiled on 1 July 2026 in Lisbon. It's an open-source, 9-billion-parameter foundation model derived from the European model EuroLLM, not a consumer app like ChatGPT."
+  - q: "Is Amália free and open source?"
+    a: "Yes. Amália is released under the Apache 2.0 license: anyone can download, modify and use it, including commercially, without asking permission. Its weights are available on Hugging Face."
+  - q: "Is Amália a ChatGPT competitor?"
+    a: "No. Amália is a foundation model (an 'engine'), not a conversational application. It's a building block that companies, public agencies or universities can use to build their own tools, whereas ChatGPT is a finished consumer product."
+  - q: "Can you run Amália on your own computer?"
+    a: "Yes. Compressed versions exist for Ollama and LM Studio. The Mac-optimized version runs at around 55 tokens per second in 6 GB of memory, which fits on an entry-level MacBook."
+  - q: "Does Amália speak European or Brazilian Portuguese?"
+    a: "Amália is specifically built for European Portuguese, whereas most international models answer in Brazilian Portuguese. The team even created a dedicated test to measure the model's tendency to drift toward Brazilian."
 ---
 There's something people who grew up between two languages know well: the moment a tool makes you feel that one of the two counts for less than the other. The spell-checker that underlines your last name in red. The form that rejects accents. And, for the past three years, the chatbot you speak to in Portuguese that answers you in flawless Portuguese… from Brazil.
 
 It's not a big deal. It's never a big deal. It's just a small reminder, repeated a thousand times, that your grandparents' language is treated as a variant of something else.
 
 So when Portugal unveiled **Amália** on 1 July 2026 in Lisbon, its first large AI model, named after the fado singer Amália Rodrigues, I wanted to look under the hood. Not to applaud, not to tear it down. To understand what's actually inside, and what it says about the rest of Europe.
+
+> **In brief**
+>
+> - **What:** Amália, the first large language model (LLM) for European Portuguese, unveiled on 1 July 2026 in Lisbon.
+> - **Size & license:** 9 billion parameters, open Apache 2.0 license, weights on Hugging Face.
+> - **What it actually is:** a foundation model (an "engine"), not a Portuguese ChatGPT. Derived from the European model EuroLLM.
+> - **How good it is:** beats comparable models on most Portuguese benchmarks, but trails Qwen 3-8B on the toughest test.
+> - **Why it matters:** a precedent for linguistic sovereignty for Europe's under-resourced languages, at €5.5 million and sixty researchers.
 
 ## First, what are we talking about
 
@@ -84,7 +103,7 @@ What makes Amália interesting is that it isn't an exception. All of Europe has 
 
 **The national models.** This is Amália's family. Switzerland has **Apertus** (8 and 70 billion parameters, remarkable on Swiss German and Romansh), Italy has **Minerva**, Slovenia **GaMS**, the Netherlands **GPT-NL**, Germany **PhariaAI**.
 
-**The private sector.** Mistral, the only European truly playing in the big leagues.
+**The private sector.** [Mistral](/en/arthur-mensch-mistral-ai-national-assembly-hearing-en/), the only European truly playing in the big leagues.
 
 These three families aren't aiming at the same thing, and that's where the misunderstandings come from. Mistral aims for market performance. EuroLLM aims for shared infrastructure. Amália aims for the cultural survival of a language of ten million speakers in a digital world that, left to itself, doesn't see it.
 
@@ -132,6 +151,7 @@ Amália is a step in that direction. A 9-billion-parameter step, with a fado sin
 - **The official site**: [amaliallm.pt](https://amaliallm.pt/).
 - **Sovereignty seen from France**: [what Arthur Mensch told the National Assembly](/en/arthur-mensch-mistral-ai-national-assembly-hearing-en/).
 - **Running a model at home**: [Ollama in 2026](/en/ollama-2026-state-of-the-art-en/).
+- **The real cost of large models**: [the ecological impact of AI, training versus inference](/en/ai-ecological-impact-training-vs-inference-environmental-costs/).
 
 ---
 

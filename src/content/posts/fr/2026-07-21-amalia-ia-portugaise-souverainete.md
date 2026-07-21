@@ -1,7 +1,7 @@
 ---
 title: "Le Portugal a fait son IA. J'ai voulu savoir si elle me parlait vraiment portugais."
 subtitle: "Amália, 9 milliards de paramètres, 5,5 millions d'euros, soixante chercheurs. Un cas d'école pour comprendre ce que veut dire « souveraineté IA » quand on arrête les discours et qu'on regarde le modèle."
-description: "Amália, le premier grand modèle de langue conçu pour le portugais du Portugal, est sorti le 1er juillet 2026. Récit et décryptage accessible : ce qu'il y a dedans, ce que ça vaut, et pourquoi ça compte pour toute l'Europe."
+description: "Amália, premier grand modèle de langue pour le portugais du Portugal, est sorti le 1er juillet 2026. Ce qu'il y a dedans, ce que ça vaut, pourquoi ça compte."
 date: 2026-07-21T12:00:00.000Z
 lang: fr
 translationKey: "amalia-portuguese-ai"
@@ -15,12 +15,31 @@ thumbnail: "/assets/img/amalia-ia-portugal.png"
 shareImg: "/assets/img/amalia-ia-portugal.png"
 aliases:
   - "/2026-07-21-amalia-ia-portugaise-souverainete/"
+faq:
+  - q: "Qu'est-ce qu'Amália ?"
+    a: "Amália est le premier grand modèle de langue (LLM) conçu pour le portugais du Portugal, présenté le 1er juillet 2026 à Lisbonne. C'est un modèle de fondation open source de 9 milliards de paramètres, dérivé du modèle européen EuroLLM, et non une application grand public comme ChatGPT."
+  - q: "Amália est-il gratuit et open source ?"
+    a: "Oui. Amália est publié sous licence Apache 2.0 : tout le monde peut le télécharger, le modifier et l'utiliser, y compris commercialement, sans demander de permission. Ses poids sont disponibles sur Hugging Face."
+  - q: "Amália est-il un concurrent de ChatGPT ?"
+    a: "Non. Amália est un modèle de fondation (un « moteur »), pas une application conversationnelle. C'est une brique que des entreprises, des administrations ou des universités peuvent utiliser pour construire leurs propres outils, là où ChatGPT est un produit fini destiné au grand public."
+  - q: "Peut-on faire tourner Amália sur son ordinateur ?"
+    a: "Oui. Des versions compressées existent pour Ollama et LM Studio. La version optimisée pour Mac tourne à environ 55 mots par seconde dans 6 Go de mémoire, ce qui passe sur un MacBook d'entrée de gamme."
+  - q: "Amália parle-t-il le portugais du Portugal ou du Brésil ?"
+    a: "Amália est spécifiquement conçu pour le portugais du Portugal (portugais européen), là où la plupart des modèles internationaux répondent en portugais du Brésil. L'équipe a même créé un test dédié pour mesurer la tendance du modèle à dériver vers le brésilien."
 ---
 Il y a une chose que les gens qui ont grandi entre deux langues connaissent bien : le moment où un outil vous fait sentir que l'une des deux compte moins que l'autre. Le correcteur orthographique qui souligne votre nom de famille en rouge. Le formulaire qui refuse les accents. Et, depuis trois ans, le chatbot à qui vous parlez en portugais et qui vous répond dans un portugais impeccable… du Brésil.
 
 Ce n'est pas grave. Ce n'est jamais grave. C'est juste un petit rappel, mille fois répété, que la langue de vos grands-parents est traitée comme une variante d'autre chose.
 
 Alors quand le Portugal a présenté **Amália** le 1er juillet 2026 à Lisbonne, son premier grand modèle d'intelligence artificielle, nommé d'après la fadiste Amália Rodrigues, j'ai eu envie d'aller voir sous le capot. Pas pour applaudir, pas pour démolir. Pour comprendre ce qu'il y a réellement dedans, et ce que ça dit du reste de l'Europe.
+
+> **L'essentiel**
+>
+> - **Quoi** : Amália, premier grand modèle de langue (LLM) pour le portugais du Portugal, présenté le 1er juillet 2026 à Lisbonne.
+> - **Taille et licence** : 9 milliards de paramètres, licence libre Apache 2.0, poids sur Hugging Face.
+> - **Ce que c'est vraiment** : un modèle de fondation (un « moteur »), pas un ChatGPT portugais. Dérivé du modèle européen EuroLLM.
+> - **Ce que ça vaut** : bat les modèles comparables sur la plupart des tests de portugais, mais reste derrière Qwen 3-8B sur le test le plus exigeant.
+> - **Pourquoi ça compte** : un précédent de souveraineté linguistique pour les langues européennes « peu dotées », pour 5,5 millions d'euros et soixante chercheurs.
 
 ## D'abord, de quoi on parle
 
@@ -84,7 +103,7 @@ Ce qui rend Amália intéressant, c'est qu'il n'est pas une exception. Toute l'E
 
 **Les modèles nationaux.** C'est la famille d'Amália. La Suisse a **Apertus** (8 et 70 milliards de paramètres, remarquable sur le suisse allemand et le romanche), l'Italie a **Minerva**, la Slovénie **GaMS**, les Pays-Bas **GPT-NL**, l'Allemagne **PhariaAI**.
 
-**Le privé.** Mistral, seul Européen à jouer vraiment dans la cour des grands.
+**Le privé.** [Mistral](/fr/arthur-mensch-mistral-ai-audition-assemblee-nationale/), seul Européen à jouer vraiment dans la cour des grands.
 
 Ces trois familles ne visent pas la même chose, et c'est là que naissent les malentendus. Mistral vise la performance de marché. EuroLLM vise l'infrastructure partagée. Amália vise la survie culturelle d'une langue de dix millions de locuteurs dans un monde numérique qui, spontanément, ne la voit pas.
 
@@ -132,6 +151,7 @@ Amália est un pas dans cette direction. Un pas de 9 milliards de paramètres, e
 - **Le site officiel** : [amaliallm.pt](https://amaliallm.pt/).
 - **La souveraineté vue de France** : [ce qu'a dit Arthur Mensch à l'Assemblée nationale](/fr/arthur-mensch-mistral-ai-audition-assemblee-nationale/).
 - **Faire tourner un modèle chez soi** : [Ollama en 2026](/fr/ollama-2026-etat-des-lieux/).
+- **Le vrai coût des grands modèles** : [l'impact écologique de l'IA, entraînement contre inférence](/fr/IA-impact-ecologique/).
 
 ---
 
