@@ -68,6 +68,7 @@ Fields:
 - `slug` (string, required) — the URL segment after the language prefix (e.g. `amalia-ia-portugaise-souverainete` → `/fr/amalia-ia-portugaise-souverainete/`)
 - `aliases` (string array, default `[]`) — documents legacy URLs; see "Redirects" below
 - `mathjax` (boolean, optional)
+- `faq` (array of `{ q, a }`, optional) — GEO/SEO. When present, `PostLayout` renders a visible FAQ section **and** emits `FAQPage` JSON-LD. Keep answers short and self-contained so answer engines can quote them.
 
 ### Routing & URLs
 - **Articles**: `/<lang>/<slug>/` via `src/pages/[lang]/[slug].astro` (the canonical URL is built in `postUrl()` in `src/lib/posts.ts`).
@@ -185,6 +186,7 @@ git commit --allow-empty -m "chore: trigger rebuild" && git push
 
 ## Content Guidelines
 
+- **Creating a full article?** Use the `create-article` skill (`.claude/skills/create-article/`). It encodes the end-to-end workflow — bilingual pairing, schema-correct frontmatter, standardized tags, internal linking, SEO/GEO (short description, "L'essentiel" key-facts box, `faq:` block), a deslopify pass, and build validation. Its `references/seo-geo.md` holds the detailed SEO/GEO rules.
 - Reuse existing tags; keep the tag set small and standardized.
 - Write meaningful `subtitle` and `description` for important articles (better cards + SEO).
 - Thumbnails ~300×200 for consistent grid appearance; cover images full-width for the hero.
