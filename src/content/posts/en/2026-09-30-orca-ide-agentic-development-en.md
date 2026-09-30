@@ -1,6 +1,6 @@
 ---
 title: "I went looking for an IDE built for coding agents. I stayed with Orca."
-subtitle: "IntelliJ, VS Code, Zed: none of them was designed to run several agents at once. Six weeks with Orca, one worktree per session, scheduled tasks and a home-made plugin to keep an eye on the bill."
+subtitle: "IntelliJ and VS Code weren't designed to drive agents. Zed was, but I was missing everything around the editing. Six weeks with Orca, one worktree per session, scheduled tasks and a home-made plugin to keep an eye on the bill."
 description: "Hands-on with Orca, the open-source IDE for coding agents: one git worktree per session, an agent dashboard, scheduled automations, skills and plugins."
 date: 2026-09-30T06:00:00.000Z
 lang: en
@@ -24,12 +24,16 @@ faq:
     a: "Yes. Orca runs any command-line agent in a terminal: Claude Code, Codex, OpenCode, Cursor CLI, GitHub Copilot CLI, Gemini and more. You can even run several different agents on the same task, each in its own worktree."
   - q: "Why does Orca use git worktrees?"
     a: "A git worktree is a second working directory attached to the same repository, on a different branch. By giving each session its own worktree, Orca stops two agents from editing the same files at the same time: each works in its own folder, and changes are merged later through a pull request."
+  - q: "What is the difference between Orca and Zed?"
+    a: "Zed is a fast code editor built for agents: it integrates Claude Code and others through the Agent Client Protocol (ACP) and, since its 1.0 release (April 2026), runs parallel agents in git worktrees. Orca is an environment built around orchestration: it runs any terminal agent and adds scheduled automations, a CLI agents can drive, and a plugin system."
   - q: "Can Orca run recurring scheduled tasks?"
     a: "Yes. Orca automations launch an agent with a given prompt on a schedule (hourly, daily, weekdays, weekly, a cron expression or an RRULE), against a specific repository or worktree. They can be created from the UI or with the orca automations create command."
 ---
-For years, my IDE was a settled question. IntelliJ at work, VS Code for everything else, Zed when I wanted speed. Then agents showed up, and the question reopened without warning.
+For years, my IDE was a settled question. IntelliJ at work, VS Code for everything else. Then agents showed up, and the question reopened without warning.
 
-My days had changed. I write less code in a file and spend more time launching tasks, reading diffs, and answering an agent that is waiting for my go-ahead while another one works away in its corner. None of those three tools was built for that. You bolt on a Claude Code plugin, a chat panel, an integrated terminal, and you end up juggling windows, branches and forgotten `git stash` entries.
+My days had changed. I write less code in a file and spend more time launching tasks, reading diffs, and answering an agent that is waiting for my go-ahead while another one works away in its corner. IntelliJ and VS Code weren't built for that. You bolt on a Claude Code plugin, a chat panel, an integrated terminal, and you end up juggling windows, branches and forgotten `git stash` entries.
+
+Zed is a different story. It was designed for the agentic era: the Agent Client Protocol (ACP) to plug Claude Code, Codex or Gemini CLI straight into the editor, and since its 1.0 release in late April 2026, parallel agents each isolated in a worktree. It was the closest to what I was after. What I was missing sat around the editing: tasks that run without me on a schedule, a tool the agent itself can drive from the command line, and an easy way to extend it.
 
 I tried quite a few things. Since mid-August I've been on **Orca**, and for the first time in a long while I don't feel like looking elsewhere.
 
@@ -53,7 +57,7 @@ What Orca isn't: an agent. It has no model of its own. It orchestrates the ones 
 
 If I had to keep just one thing, it would be this.
 
-A git worktree, for those who've never needed one, is a second working folder attached to the same repository but on another branch. Same history, separate files. I mentioned them in [the article on Claude Code and Git workflows](/en/claude-code-git-workflows/) as a trick for advanced users. Orca turns them into the foundation: every new session creates its worktree, its branch, its terminal.
+A git worktree, for those who've never needed one, is a second working folder attached to the same repository but on another branch. Same history, separate files. I mentioned them in [the article on Claude Code and Git workflows](/en/claude-code-git-workflows/) as a trick for advanced users. Orca has made them its foundation since the first commit: every new session creates its worktree, its branch, its terminal. Zed adopted the same approach for its parallel agents, which says a lot about the idea. In Orca it applies to any command-line agent and to several repositories at once.
 
 The effect on how I work was immediate. Before, running two agents on the same project meant risking both editing the same file, or one reading code the other had half rewritten. So I didn't. I serialised. One task, wait, review, next.
 
@@ -73,7 +77,7 @@ There's also a mobile app (iOS and Android) to follow agents and nudge them from
 
 ## Claude Code, Codex, or whatever you like
 
-Orca doesn't impose an agent. It runs whatever works in a terminal: Claude Code, Codex, OpenCode, Cursor CLI, GitHub Copilot CLI, Gemini, and a long list of others. You can even send the same prompt to several different agents, each in its own worktree, and compare the results.
+Orca doesn't impose an agent. It runs whatever works in a terminal: Claude Code, Codex, OpenCode, Cursor CLI, GitHub Copilot CLI, Gemini, and a long list of others. You can even send the same prompt to several different agents, each in its own worktree, and compare the results. Zed also lets you switch agents through ACP; Orca only needs a terminal, so an agent requires no specific integration to run in it.
 
 That matters to me. I've spent enough time comparing tools ([Claude Code, Cursor and Copilot](/en/claude-code-vs-cursor-vs-copilot-en/), among others) to know none of them is final. I don't want my working environment to depend on a single vendor. With Orca, if another agent does better on some kind of task tomorrow, I add it in a tab. My habits, shortcuts and worktrees stay the same.
 
@@ -143,6 +147,6 @@ I won't pretend it's all perfect.
 
 What changed, deep down, is the shape of my workstation. It's no longer organised around an open file. It's organised around tasks in progress, each in its own box, with someone (something) working on it while I do something else.
 
-IntelliJ, VS Code and Zed remain excellent editors, designed around someone who writes code. Orca starts from someone who puts agents to work and reviews what they produce. That's what I do most of the time now, and that's why I stayed.
+IntelliJ and VS Code remain excellent editors, designed around someone who writes code. Zed has made the move to agents, and made it well. Orca starts directly from someone who puts agents to work, schedules them, watches them and reviews what they produce. That's what I do most of the time now, and that's why I stayed.
 
 If you want to try it: it's free, installs in a few minutes from [onorca.dev](https://www.onorca.dev/), and your current agents work in it as they are. Start with two parallel sessions on a project you know well. You'll quickly see whether it clicks.
