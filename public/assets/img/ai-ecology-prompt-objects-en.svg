@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="466" viewBox="0 0 760 466" role="img" aria-labelledby="t d">
+<title id="t">A text prompt uses 2,000 times less energy than 20 min of air frying</title>
+<desc id="d">Usage energy in Wh, log scale: each vertical line = ×10. Sources: Google (0.24 Wh) and Arbor (33 Wh) · objects: typical orders of magnitude</desc>
+<defs><style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:13px;fill:#f5f5f5}
+.t{font-size:19px;font-weight:700;fill:#f5f5f5}.s{fill:#b5b5b5}.g{fill:#edb926}
+</style></defs>
+<rect width="760" height="466" rx="14" fill="#111111"/>
+<text x="20.0" y="32.0" class="t">A text prompt uses 2,000 times less energy than 20 min of air frying</text>
+<text x="20.0" y="56.0" class="s">Usage energy in Wh, log scale: each vertical line = ×10</text>
+<text x="20.0" y="78.0" class="g">In gold: AI uses. Object values are typical orders of magnitude.</text>
+<line x1="270.0" x2="270.0" y1="94" y2="406" stroke="#2a2a2a"/>
+<text x="270.0" y="422.0" class="s" text-anchor="middle" font-size="11">0.1 Wh</text>
+<line x1="347.5" x2="347.5" y1="94" y2="406" stroke="#2a2a2a"/>
+<text x="347.5" y="422.0" class="s" text-anchor="middle" font-size="11">1 Wh</text>
+<line x1="425.0" x2="425.0" y1="94" y2="406" stroke="#2a2a2a"/>
+<text x="425.0" y="422.0" class="s" text-anchor="middle" font-size="11">10 Wh</text>
+<line x1="502.5" x2="502.5" y1="94" y2="406" stroke="#2a2a2a"/>
+<text x="502.5" y="422.0" class="s" text-anchor="middle" font-size="11">100 Wh</text>
+<line x1="580.0" x2="580.0" y1="94" y2="406" stroke="#2a2a2a"/>
+<text x="580.0" y="422.0" class="s" text-anchor="middle" font-size="11">1,000 Wh</text>
+<text x="260.0" y="118.0" text-anchor="end">Text prompt (Gemini)</text>
+<rect x="270" y="106" width="29.5" height="18" rx="2" fill="#edb926"/>
+<text x="307.5" y="119.0" class="s">0.24 Wh · baseline</text>
+<text x="260.0" y="152.0" text-anchor="end">Thermometer battery, lifetime</text>
+<rect x="270" y="140" width="65.5" height="18" rx="2" fill="#5a5a5a"/>
+<text x="343.5" y="153.0" class="s">0.7 Wh · ≈ 3 prompts</text>
+<text x="260.0" y="186.0" text-anchor="end">LED bulb, 1 h</text>
+<rect x="270" y="174" width="155.0" height="18" rx="2" fill="#5a5a5a"/>
+<text x="433.0" y="187.0" class="s">10 Wh · ≈ 42 prompts</text>
+<text x="260.0" y="220.0" text-anchor="end">Smartphone charge</text>
+<rect x="270" y="208" width="168.6" height="18" rx="2" fill="#5a5a5a"/>
+<text x="446.6" y="221.0" class="s">15 Wh · ≈ 62 prompts</text>
+<text x="260.0" y="254.0" text-anchor="end">Long reasoning prompt</text>
+<rect x="270" y="242" width="195.2" height="18" rx="2" fill="#edb926"/>
+<text x="473.2" y="255.0" class="s">33 Wh · ≈ 138 prompts</text>
+<text x="260.0" y="288.0" text-anchor="end">Kettle, 1 L</text>
+<rect x="270" y="276" width="232.5" height="18" rx="2" fill="#5a5a5a"/>
+<text x="510.5" y="289.0" class="s">100 Wh · ≈ 417 prompts</text>
+<text x="260.0" y="322.0" text-anchor="end">Compact EV, 1 km</text>
+<rect x="270" y="310" width="250.4" height="18" rx="2" fill="#5a5a5a"/>
+<text x="528.4" y="323.0" class="s">170 Wh · ≈ 708 prompts</text>
+<text x="260.0" y="356.0" text-anchor="end">Large electric SUV, 1 km</text>
+<rect x="270" y="344" width="263.3" height="18" rx="2" fill="#5a5a5a"/>
+<text x="541.3" y="357.0" class="s">250 Wh · ≈ 1,042 prompts</text>
+<text x="260.0" y="390.0" text-anchor="end">Air fryer, 20 min</text>
+<rect x="270" y="378" width="286.7" height="18" rx="2" fill="#5a5a5a"/>
+<text x="564.7" y="391.0" class="s">500 Wh · ≈ 2,083 prompts</text>
+<text x="20.0" y="450.0" class="s" font-size="11">Sources: Google (0.24 Wh) and Arbor (33 Wh) · objects: typical orders of magnitude</text>
+</svg>

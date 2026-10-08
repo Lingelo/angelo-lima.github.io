@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="304" viewBox="0 0 760 304" role="img" aria-labelledby="t d">
+<title id="t">La fabrication du GPU concentre l’essentiel de plusieurs impacts</title>
+<desc id="d">Part de la fabrication dans l’impact sur tout le cycle de vie d’un GPU Nvidia A100. Toxicité humaine (cancer): 94 %; Eutrophisation de l’eau douce: 81 %; Épuisement minerais et métaux: 71 %. Source : analyse de cycle de vie « More than Carbon », GPU Nvidia A100 (arXiv, 2025)</desc>
+<defs><style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:13px;fill:#f5f5f5}
+.t{font-size:19px;font-weight:700;fill:#f5f5f5}.s{fill:#b5b5b5}.g{fill:#edb926}
+</style></defs>
+<rect width="760" height="304" rx="14" fill="#111111"/>
+<text x="20.0" y="32.0" class="t">La fabrication du GPU concentre l’essentiel de plusieurs impacts</text>
+<text x="20.0" y="56.0" class="s">Part de la fabrication dans l’impact sur tout le cycle de vie d’un GPU Nvidia A100</text>
+<text x="20.0" y="80.0" class="g">Doré : fabrication de la puce</text>
+<text x="250.0" y="80.0" class="s">Gris : autres phases (usage, transport, fin de vie)</text>
+<text x="238.0" y="131.0" text-anchor="end">Toxicité humaine (cancer)</text>
+<rect x="250" y="116" width="441.8" height="22" fill="#edb926"/>
+<rect x="691.8" y="116" width="28.2" height="22" fill="#5a5a5a"/>
+<text x="250.0" y="110.0" class="g" font-weight="700">94 %</text>
+<text x="238.0" y="187.0" text-anchor="end">Eutrophisation de l’eau douce</text>
+<rect x="250" y="172" width="380.7" height="22" fill="#edb926"/>
+<rect x="630.7" y="172" width="89.3" height="22" fill="#5a5a5a"/>
+<text x="250.0" y="166.0" class="g" font-weight="700">81 %</text>
+<text x="238.0" y="243.0" text-anchor="end">Épuisement minerais et métaux</text>
+<rect x="250" y="228" width="333.7" height="22" fill="#edb926"/>
+<rect x="583.7" y="228" width="136.3" height="22" fill="#5a5a5a"/>
+<text x="250.0" y="222.0" class="g" font-weight="700">71 %</text>
+<text x="20.0" y="288.0" class="s" font-size="11">Source : analyse de cycle de vie « More than Carbon », GPU Nvidia A100 (arXiv, 2025)</text>
+</svg>
