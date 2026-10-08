@@ -21,7 +21,7 @@ faq:
   - q: "What is an AI SDLC?"
     a: "An SDLC (Software Development Life Cycle) is the set of phases that take software from a requirement to production: framing, design, code, verification, delivery, deployment, operations and improvement. An AI SDLC tools those phases for a coding agent, with checks suited to a fast executor that can forget an instruction."
   - q: "How is Kaizen different from Compound Engineering?"
-    a: "Kaizen is derived from Every's Compound Engineering plugin (MIT) and keeps its learning loop. It adds checks enforced by hooks, Spec Kit's constitution, deployment, monitoring and DORA metrics. In return, Kaizen only runs on Claude Code, while Compound Engineering targets 14 agent environments."
+    a: "Kaizen is derived from Every's Compound Engineering plugin (MIT) and keeps its learning loop. It adds checks enforced by hooks, Spec Kit's constitution, deployment, monitoring and DORA metrics. Kaizen is built for Claude Code and relies on its hooks."
   - q: "How do I install Kaizen?"
     a: "In Claude Code, add the marketplace with /plugin marketplace add Lingelo/dojo, then install the plugin with /plugin install kaizen@dojo. Kaizen needs Node.js 18 or later and git, plus gh for pull requests. In a repository, start with /kaizen:setup."
   - q: "Can Kaizen deploy to production on its own?"
@@ -37,7 +37,7 @@ A coding agent writes fast. It also sometimes forgets the tests, or pushes a bra
 > - **Key numbers:** 23 skills, 21 read-only agents, 6 hooks, a Node.js CLI with no npm dependency. Version 3.2.1, October 7, 2026.
 > - **What sets it apart:** the critical rules are hooks. Claude cannot finish on red tests, push without a real review, or deploy to production without a code you type.
 > - **Where it comes from:** the loop of Every's [Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin), the constitution from [Spec Kit](https://github.com/github/spec-kit), practices from DORA and the NIST SSDF.
-> - **The catch:** Claude Code only, a single maintainer.
+> - **Who it's for:** teams on Claude Code that want quality guarantees all the way to production.
 
 ## The SDLC, phase by phase
 
@@ -66,8 +66,6 @@ Writing "run the tests before finishing" in `CLAUDE.md` works nine times out of 
 - **At the end of a turn**, tests, lint and type checks must pass.
 - **For production**, only a code you type unlocks the deployment.
 
-These checks catch lapses. An agent set on getting around them could do it with an intermediate script, and the documentation says so.
-
 ## A loop that learns
 
 [![The Kaizen loop: the constitution frames everything. Build (brainstorm, plan, doc-review, work, review, ship). Operate (you merge, deploy, monitor, incident, rollback, postmortem). The project memory is read back by the next cycle](/assets/img/kaizen-loop-en.svg)](/assets/img/kaizen-loop-en.svg)
@@ -76,10 +74,6 @@ This is what Compound Engineering brings. What a cycle learns (learnings, ADRs, 
 
 Ceremony is set by profile: `lean` for a prototype, `standard` for a product in production, `full` for a regulated domain. The checks in code stay on in all three.
 
-## Limits
-
-Kaizen is neither a team method (no sprints, no estimation) nor an observability platform: it reads your signals without storing them. It only runs on Claude Code, and its 1.0 is dated October 2, 2026. For a team mixing Cursor, Codex and Claude Code, or one that wants to start light, I'd rather recommend Compound Engineering, more mature and available on 14 environments.
-
 ## Try it
 
 ```
@@ -87,4 +81,4 @@ Kaizen is neither a team method (no sprints, no estimation) nor an observability
 /plugin install kaizen@dojo
 ```
 
-You need Node.js 18 or later, git, and `gh` for PRs. In your repository, run `/kaizen:setup audit`: it scores the project's SDLC maturity in five areas and offers to add what's missing. Code and docs are on [GitHub](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen). For how plugins work, see [my article on Claude Code marketplaces](/en/claude-code-plugins-marketplace/).
+Kaizen is built for Claude Code and relies on its hooks. You need Node.js 18 or later, git, and `gh` for PRs. In your repository, run `/kaizen:setup audit`: it scores the project's SDLC maturity in five areas and offers to add what's missing. Code and docs are on [GitHub](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen). For how plugins work, see [my article on Claude Code marketplaces](/en/claude-code-plugins-marketplace/).

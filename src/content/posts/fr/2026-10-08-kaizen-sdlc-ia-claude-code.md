@@ -21,7 +21,7 @@ faq:
   - q: "Qu'est-ce qu'un SDLC IA ?"
     a: "Un SDLC (Software Development Life Cycle) est l'ensemble des phases qui mènent un logiciel du besoin à la production : cadrage, conception, code, vérification, livraison, déploiement, exploitation et amélioration. Un SDLC IA outille ces phases pour un agent de code, avec des contrôles adaptés à un exécutant rapide qui peut oublier une consigne."
   - q: "Quelle différence entre Kaizen et Compound Engineering ?"
-    a: "Kaizen dérive du plugin Compound Engineering d'Every (MIT), dont il reprend la boucle d'apprentissage. Il y ajoute des contrôles appliqués par des hooks, la constitution de Spec Kit, le déploiement, le monitoring et les métriques DORA. En contrepartie, Kaizen ne fonctionne qu'avec Claude Code, alors que Compound Engineering cible 14 environnements d'agents."
+    a: "Kaizen dérive du plugin Compound Engineering d'Every (MIT), dont il reprend la boucle d'apprentissage. Il y ajoute des contrôles appliqués par des hooks, la constitution de Spec Kit, le déploiement, le monitoring et les métriques DORA. Kaizen est conçu pour Claude Code, dont il exploite les hooks."
   - q: "Comment installer Kaizen ?"
     a: "Dans Claude Code, ajouter la marketplace avec /plugin marketplace add Lingelo/dojo, puis installer le plugin avec /plugin install kaizen@dojo. Kaizen demande Node.js 18 ou plus et git, plus gh pour les pull requests. Dans un dépôt, on commence par /kaizen:setup."
   - q: "Kaizen peut-il déployer en production tout seul ?"
@@ -37,7 +37,7 @@ Un agent de code écrit vite. Il lui arrive aussi d'oublier les tests ou de pous
 > - **Chiffres clés** : 23 skills, 21 agents en lecture seule, 6 hooks, une CLI Node.js sans dépendance npm. Version 3.2.1 du 7 octobre 2026.
 > - **Ce qui le distingue** : les règles critiques sont des hooks. Claude ne peut pas finir sur des tests rouges, pousser sans revue réelle, ni déployer en production sans un code que vous tapez.
 > - **D'où il vient** : la boucle du [Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin) d'Every, la constitution de [Spec Kit](https://github.com/github/spec-kit), les pratiques de DORA et du NIST SSDF.
-> - **La limite** : Claude Code uniquement, un seul mainteneur.
+> - **Pour qui** : les équipes sur Claude Code qui veulent des garanties de qualité jusqu'à la production.
 
 ## Le SDLC, phase par phase
 
@@ -66,8 +66,6 @@ Perdu en route ? `/kaizen:help` regarde où en est le dépôt et donne la procha
 - **En fin de tour**, tests, lint et typage doivent passer.
 - **Pour la production**, seul un code que vous tapez débloque le déploiement.
 
-Ces contrôles rattrapent les oublis. Un agent décidé à les contourner y arriverait avec un script intermédiaire, et la documentation le dit.
-
 ## Une boucle qui apprend
 
 [![La boucle Kaizen : la constitution encadre tout. Construire (brainstorm, plan, doc-review, work, review, ship). Exploiter (vous mergez, deploy, monitor, incident, rollback, post-mortem). La mémoire du projet est relue au cycle suivant](/assets/img/kaizen-boucle-fr.svg)](/assets/img/kaizen-boucle-fr.svg)
@@ -76,10 +74,6 @@ C'est l'apport du Compound Engineering. Ce qu'un cycle apprend (learnings, ADR, 
 
 La cérémonie se règle par profil : `lean` pour un prototype, `standard` pour un produit en production, `full` pour un domaine réglementé. Les contrôles en code restent actifs dans les trois.
 
-## Les limites
-
-Kaizen n'est ni une méthode d'équipe (pas de sprints, pas d'estimation) ni une plateforme d'observabilité : il lit vos signaux sans les stocker. Il ne tourne que sur Claude Code, et sa 1.0 date du 2 octobre 2026. Pour une équipe qui mélange Cursor, Codex et Claude Code, ou qui veut démarrer léger, je recommande plutôt Compound Engineering, plus mûr et disponible sur 14 environnements.
-
 ## L'essayer
 
 ```
@@ -87,4 +81,4 @@ Kaizen n'est ni une méthode d'équipe (pas de sprints, pas d'estimation) ni une
 /plugin install kaizen@dojo
 ```
 
-Il faut Node.js 18 ou plus, git, et `gh` pour les PR. Dans votre dépôt, lancez `/kaizen:setup audit` : il note la maturité SDLC du projet sur cinq axes et propose d'ajouter ce qui manque. Le code et la doc sont sur [GitHub](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen). Pour le fonctionnement des plugins, voir [mon article sur les marketplaces Claude Code](/fr/claude-code-plugins-marketplace-fr/).
+Kaizen est conçu pour Claude Code, dont il exploite les hooks. Il faut Node.js 18 ou plus, git, et `gh` pour les PR. Dans votre dépôt, lancez `/kaizen:setup audit` : il note la maturité SDLC du projet sur cinq axes et propose d'ajouter ce qui manque. Le code et la doc sont sur [GitHub](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen). Pour le fonctionnement des plugins, voir [mon article sur les marketplaces Claude Code](/fr/claude-code-plugins-marketplace-fr/).
