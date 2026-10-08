@@ -55,7 +55,7 @@ The push hook needs a closer look. Recording a review requires evidence: the log
 
 ## The loop, from principle to production
 
-![The Kaizen loop: the constitution band, the build row from ideate to learn, the operate row from merge to postmortem, and the project memory read back by the next cycle](/assets/img/kaizen-loop.svg)
+[![The Kaizen loop: the constitution frames everything. Build (brainstorm, plan, doc-review, work, review, ship). Operate (you merge, deploy, monitor, incident, rollback, postmortem). The project memory is read back by the next cycle](/assets/img/kaizen-loop-en.svg)](/assets/img/kaizen-loop-en.svg)
 
 The cycle reads as two rows.
 

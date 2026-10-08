@@ -55,7 +55,7 @@ Le hook de push demande un mot de plus. L'enregistrement de la revue exige une p
 
 ## La boucle, du principe à la production
 
-![La boucle Kaizen : la constitution en bande, la ligne de construction de ideate à learn, la ligne d'exploitation du merge au post-mortem, et la mémoire du projet relue au cycle suivant](/assets/img/kaizen-loop.svg)
+[![La boucle Kaizen : la constitution encadre tout. Construire (brainstorm, plan, doc-review, work, review, ship). Exploiter (vous mergez, deploy, monitor, incident, rollback, post-mortem). La mémoire du projet est relue au cycle suivant](/assets/img/kaizen-boucle-fr.svg)](/assets/img/kaizen-boucle-fr.svg)
 
 Le cycle se lit en deux lignes.
 
