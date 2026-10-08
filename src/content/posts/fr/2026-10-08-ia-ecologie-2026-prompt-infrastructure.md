@@ -1,6 +1,6 @@
 ---
 title: "IA et écologie en 2026 : le prompt est léger, l'infrastructure est lourde"
-subtitle: "Un prompt consomme 0,24 Wh. Les data centers, eux, pourraient consommer autant que le Japon en 2030. Les deux chiffres sont vrais, et c'est tout le problème."
+subtitle: "Un prompt consomme 0,24 Wh. Les data centers, eux, pourraient consommer autant que le Japon en 2030. Les chiffres d'octobre 2026, sans catastrophisme ni greenwashing."
 description: "Un prompt consomme 0,24 Wh, mais les data centers doubleront leur électricité et leur eau d'ici 2030. Les chiffres 2026 et ce que les devs peuvent faire."
 date: 2026-10-08T00:30:00.000Z
 lang: fr
@@ -31,7 +31,7 @@ faq:
 
 En 2025, j'ai écrit [un article sur le coût écologique de l'IA](/fr/IA-impact-ecologique/). La question qui structurait le débat à l'époque : qu'est-ce qui pèse le plus, entraîner un modèle ou l'utiliser ?
 
-Un an et demi plus tard, cette question est largement tranchée. Et le débat a changé de terrain. On ne se dispute plus vraiment sur le coût d'un prompt : les géants de l'IA ont fini par publier des mesures. On se dispute sur le volume total, sur l'eau, sur le matériel, et sur ce que les agents vont faire de tout ça.
+Un an et demi plus tard, cette question est largement tranchée. Le coût d'un prompt ne fait plus vraiment débat depuis que les géants de l'IA ont publié des mesures. On se dispute maintenant sur le volume total, sur l'eau, sur le matériel, et sur ce que les agents vont faire de tout ça.
 
 Alors, dire que l'IA est un fardeau écologique, c'est vrai ou c'est faux ? J'ai repris les chiffres disponibles en octobre 2026 pour y répondre.
 
@@ -45,7 +45,7 @@ Alors, dire que l'IA est un fardeau écologique, c'est vrai ou c'est faux ? J'ai
 
 ## Le prompt, un poids plume
 
-Un prompt texte standard consomme aujourd'hui entre 0,24 et 0,34 Wh. C'est la première grande nouveauté depuis 2025 : on n'en est plus aux estimations, on a des mesures.
+Un prompt texte standard consomme aujourd'hui entre 0,24 et 0,34 Wh. C'est la première grande nouveauté depuis 2025 : ces chiffres sont mesurés.
 
 - **Google** a instrumenté son infrastructure pendant un an. La requête texte médiane dans Gemini consomme 0,24 Wh, émet 0,03 g de CO₂e et utilise 0,26 mL d'eau ([source](https://www.alphaxiv.org/abs/2508.15734.md)). Sur la même période, Google annonce une baisse de 33 fois de l'énergie par prompt.
 - **OpenAI** annonce environ 0,34 Wh pour une requête moyenne dans ChatGPT.
@@ -53,7 +53,7 @@ Un prompt texte standard consomme aujourd'hui entre 0,24 et 0,34 Wh. C'est la pr
 
 Ces chiffres font s'effondrer les comparaisons choc qui circulaient il y a deux ans, du type « une bouteille d'eau par requête ». Une étude de 2023 estimait 10 à 50 mL d'eau par prompt pour GPT-3, soit 40 à 200 fois plus que la mesure de Google ([source](https://www.deeplearning.ai/the-batch/google-study-directly-measures-electricity-water-use-and-greenhouse-emissions-of-its-models)).
 
-Il faut quand même les lire avec prudence. Google donne une médiane et non une moyenne, ne précise ni la longueur ni la complexité des prompts, et son périmètre ne couvre que l'application Gemini. Les chiffres de Google et d'OpenAI ne sont pas directement comparables ([source](https://towardsdatascience.com/?p=606934)). Ils donnent un ordre de grandeur, pas une vérité à la décimale.
+Il faut quand même les lire avec prudence. Google donne une médiane et non une moyenne, ne précise ni la longueur ni la complexité des prompts, et son périmètre ne couvre que l'application Gemini. Les chiffres de Google et d'OpenAI ne sont pas directement comparables ([source](https://towardsdatascience.com/?p=606934)). Ce sont des ordres de grandeur, à lire comme tels.
 
 ## Un prompt face aux objets du quotidien
 
@@ -71,7 +71,7 @@ Trois réserves empêchent d'en tirer une conclusion trop rapide :
 
 En 2025, la demande électrique des data centers a augmenté de 17 %, contre 3 % pour la demande électrique mondiale. Sur la même période, l'énergie par tâche d'IA a été divisée par près de dix chaque année ([source](https://www.seforall.org/news/three-numbers-that-define-ais-energy-decade)).
 
-C'est un paradoxe de Jevons presque parfait. Quand une ressource devient moins chère à utiliser, on l'utilise tellement plus que la consommation totale augmente. Plus d'utilisateurs, plus d'usages, et des usages plus lourds : agents, vidéo, modèles de raisonnement.
+C'est un paradoxe de Jevons presque parfait. Quand une ressource devient moins chère à utiliser, on l'utilise tellement plus que la consommation totale augmente. Il y a plus d'utilisateurs, et chacun s'en sert pour des tâches plus lourdes, comme les agents ou les modèles de raisonnement.
 
 Les projections vont toutes dans le même sens, celui d'un doublement d'ici la fin de la décennie ([ONU](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm), [Gartner](https://www.corrierecomunicazioni.it/?p=344937)).
 
@@ -83,7 +83,7 @@ L'impact est aussi très concentré. Les data centers représentent déjà plus 
 
 ## Au-delà du carbone : l'eau, le matériel, les déchets
 
-Le carbone n'est qu'une partie de l'impact, et probablement pas la plus préoccupante. Kaveh Madani, auteur principal du rapport onusien de juin 2026, le résume bien : le débat traite encore l'IA comme un logiciel, alors que c'est une infrastructure physique faite de centrales, de puces, de minerais, de terres et d'eau ([source](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm)).
+Le carbone n'est qu'une partie de l'impact, et probablement pas la plus préoccupante. Kaveh Madani, auteur principal du rapport onusien de juin 2026, le dit sans détour : le débat traite encore l'IA comme un logiciel, alors que c'est une infrastructure physique faite de centrales, de puces, de minerais, de terres et d'eau ([source](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm)).
 
 [![Data centers dans le monde : l'eau consommée passe de 4 500 à 9 300 milliards de litres entre 2025 et 2030, les émissions de CO₂ de 189 à 399 millions de tonnes.](/assets/img/ia-ecologie-eau-co2-fr.svg)](/assets/img/ia-ecologie-eau-co2-fr.svg)
 
@@ -103,7 +103,7 @@ Le débat entraînement contre inférence de mon article de 2025 est tranché : 
 
 Et l'usage change de nature. Un long prompt de raisonnement avancé peut dépasser 33 Wh, soit plus de 130 fois un prompt texte standard ([source](https://www.arbor.eco/blog/ai-environmental-impact)). Un agent de code qui enchaîne des dizaines d'appels, relit des fichiers, lance des tests et recommence, c'est encore une autre échelle.
 
-C'est là que le discours « le coût par token baisse » devient trompeur. Le coût par token baisse, oui. Mais le nombre de tokens par tâche explose. Je le vois au quotidien en travaillant sur une plateforme agentique : la question pertinente n'est plus « combien coûte un prompt », mais « combien coûte une tâche terminée ». C'est la même logique que pour [la facture de Claude Code](/fr/claude-code-facturation-couts/) : ce qui compte, c'est le total de la session.
+C'est là que le discours « le coût par token baisse » devient trompeur. Le coût par token baisse, oui. Mais le nombre de tokens par tâche explose. Je le vois au quotidien en travaillant sur une plateforme agentique : le chiffre que je suis, c'est le coût d'une tâche terminée. Un prompt isolé ne dit presque rien. J'avais fait le même constat sur [la facture de Claude Code](/fr/claude-code-facturation-couts/), où c'est la session entière qui coûte.
 
 ## Alors, fardeau écologique : vrai ou faux ?
 
@@ -114,11 +114,11 @@ C'est là que le discours « le coût par token baisse » devient trompeur. Le c
 - **Surtout vrai au niveau local.** L'eau, la saturation des réseaux et l'opposition des riverains se jouent là où les data centers s'installent.
 - **Sous-estimé côté matériel.** La fabrication des puces et les déchets électroniques restent les grands absents des chiffres par prompt.
 
-L'ONU résume bien la position nuancée : l'IA ne va pas épuiser l'eau ou l'électricité à l'échelle mondiale, mais une expansion mal planifiée peut entrer en collision avec des ressources déjà sous tension à certains endroits ([source](https://english.aaj.tv/news/amp/330459838)).
+La formule de l'ONU me paraît la plus juste : l'IA ne va pas épuiser l'eau ou l'électricité à l'échelle mondiale, mais une expansion mal planifiée peut entrer en collision avec des ressources déjà sous tension à certains endroits ([source](https://english.aaj.tv/news/amp/330459838)).
 
 ## Ce qu'on peut faire, côté dev et équipes
 
-Le levier principal n'est pas l'abstinence, c'est le dimensionnement. L'analyse de Mistral montre que l'impact suit à peu près la taille du modèle : un modèle dix fois plus gros coûte environ dix fois plus pour le même nombre de tokens ([source](https://www.eesel.ai/blog/energy-ai)).
+Le levier qui compte le plus, c'est le dimensionnement. L'analyse de Mistral montre que l'impact suit à peu près la taille du modèle : un modèle dix fois plus gros coûte environ dix fois plus pour le même nombre de tokens ([source](https://www.eesel.ai/blog/energy-ai)).
 
 1. **Router vers le bon modèle.** Un petit modèle pour classer, résumer ou extraire, éventuellement [en local avec Ollama](/fr/ollama-2026-etat-des-lieux/). Le gros modèle de raisonnement seulement quand la tâche le justifie.
 2. **Mesurer par tâche, pas par prompt.** Suivre les tokens consommés par tâche terminée, surtout pour les agents.
@@ -126,7 +126,7 @@ Le levier principal n'est pas l'abstinence, c'est le dimensionnement. L'analyse 
 4. **Choisir où tourne le calcul.** Une région cloud à l'électricité décarbonée et peu exposée au stress hydrique change réellement le bilan.
 5. **Se demander si l'IA est nécessaire.** C'est la première question du référentiel AFNOR de l'IA frugale ([source](https://www.banquedesterritoires.fr/12-territoires-selectionnes-pour-concevoir-lia-frugale-au-service-de-la-transition-ecologique)). Une regex reste moins chère qu'un LLM.
 
-Un prompt ne pèse rien. Une architecture agentique mal dimensionnée, déployée à des milliers d'utilisateurs, pèse beaucoup. C'est là que se joue notre responsabilité d'ingénieurs.
+Un prompt ne pèse rien. Une architecture agentique mal dimensionnée, déployée à des milliers d'utilisateurs, pèse beaucoup. Et cette architecture, ce sont des équipes comme la mienne qui la conçoivent.
 
 ## Sources
 

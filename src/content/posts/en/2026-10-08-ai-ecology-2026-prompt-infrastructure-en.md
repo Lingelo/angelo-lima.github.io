@@ -1,6 +1,6 @@
 ---
 title: "AI and ecology in 2026: the prompt is light, the infrastructure is heavy"
-subtitle: "A prompt uses 0.24 Wh. Data centers could use as much electricity as Japan by 2030. Both numbers are true, and that is the whole problem."
+subtitle: "A prompt uses 0.24 Wh. Data centers could use as much electricity as Japan by 2030. The October 2026 numbers, without doom or greenwashing."
 description: "A prompt uses 0.24 Wh, yet data centers will double their electricity and water use by 2030. The October 2026 numbers, and what developers can do."
 date: 2026-10-08T00:30:00.000Z
 lang: en
@@ -31,7 +31,7 @@ faq:
 
 In 2025 I wrote [a post on the ecological cost of AI](/en/ai-ecological-impact-training-vs-inference-environmental-costs/). The question that framed the debate back then: what weighs more, training a model or using it?
 
-A year and a half later, that question is largely settled. And the debate has moved. Nobody really argues about the cost of a single prompt anymore: the big AI companies finally published measurements. The argument is now about total volume, about water, about hardware, and about what agents are going to do with all of it.
+A year and a half later, that question is largely settled. The cost of a single prompt stopped being contentious once the big AI companies published measurements. The argument is now about total volume, about water, about hardware, and about what agents are going to do with all of it.
 
 So is AI an environmental burden, true or false? I went through the numbers available in October 2026 to find out.
 
@@ -45,7 +45,7 @@ So is AI an environmental burden, true or false? I went through the numbers avai
 
 ## The prompt, a featherweight
 
-A standard text prompt now uses between 0.24 and 0.34 Wh. That is the first big change since 2025: we are no longer guessing, we have measurements.
+A standard text prompt now uses between 0.24 and 0.34 Wh. That is the first big change since 2025: these figures are measured.
 
 - **Google** instrumented its infrastructure for a year. The median text request in Gemini uses 0.24 Wh, emits 0.03 g of CO₂e and consumes 0.26 mL of water ([source](https://www.alphaxiv.org/abs/2508.15734.md)). Over the same period Google reports a 33-fold drop in energy per prompt.
 - **OpenAI** reports about 0.34 Wh for an average ChatGPT request.
@@ -53,7 +53,7 @@ A standard text prompt now uses between 0.24 and 0.34 Wh. That is the first big 
 
 These figures demolish the shock comparisons that were going around two years ago, like "a bottle of water per request". A 2023 study estimated 10 to 50 mL of water per prompt for GPT-3, 40 to 200 times more than Google's measurement ([source](https://www.deeplearning.ai/the-batch/google-study-directly-measures-electricity-water-use-and-greenhouse-emissions-of-its-models)).
 
-They still need to be read carefully. Google gives a median rather than a mean, says nothing about prompt length or complexity, and only covers the Gemini app. Google's and OpenAI's numbers are not directly comparable ([source](https://towardsdatascience.com/?p=606934)). They give an order of magnitude, not a truth to the decimal point.
+They still need to be read carefully. Google gives a median rather than a mean, says nothing about prompt length or complexity, and only covers the Gemini app. Google's and OpenAI's numbers are not directly comparable ([source](https://towardsdatascience.com/?p=606934)). They are orders of magnitude and should be read as such.
 
 ## A prompt next to everyday objects
 
@@ -71,7 +71,7 @@ Three caveats keep this from being the end of the story:
 
 In 2025, data center electricity demand grew by 17%, against 3% for global electricity demand. Over the same period, energy per AI task dropped nearly tenfold each year ([source](https://www.seforall.org/news/three-numbers-that-define-ais-energy-decade)).
 
-This is an almost textbook Jevons paradox. When a resource gets cheaper to use, we use so much more of it that total consumption rises. More users, more uses, and heavier uses: agents, video, reasoning models.
+This is an almost perfect Jevons paradox. When a resource gets cheaper to use, we use so much more of it that total consumption rises. There are more users, and each of them runs heavier tasks, like agents or reasoning models.
 
 The projections all point the same way, towards a doubling by the end of the decade ([UN](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm), [Gartner](https://www.corrierecomunicazioni.it/?p=344937)).
 
@@ -83,7 +83,7 @@ The impact is also highly concentrated. Data centers already account for more th
 
 ## Beyond carbon: water, hardware, waste
 
-Carbon is only part of the impact, and probably not the most worrying part. Kaveh Madani, lead author of the June 2026 UN report, puts it well: the debate still treats AI as software, when it is a physical infrastructure made of power plants, chips, minerals, land and water ([source](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm)).
+Carbon is only part of the impact, and probably not the most worrying part. Kaveh Madani, lead author of the June 2026 UN report, says it plainly: the debate still treats AI as software, when it is a physical infrastructure made of power plants, chips, minerals, land and water ([source](https://insurancejournal.com/magazines/mag-features/2026/06/22/874414.htm)).
 
 [![Data centers worldwide: water consumption rises from 4,500 to 9,300 billion litres between 2025 and 2030, CO₂ emissions from 189 to 399 million tonnes.](/assets/img/ai-ecology-water-co2-en.svg)](/assets/img/ai-ecology-water-co2-en.svg)
 
@@ -103,7 +103,7 @@ The training versus inference debate from my 2025 post is settled: more than 80%
 
 And usage is changing shape. A long advanced reasoning prompt can exceed 33 Wh, more than 130 times a standard text prompt ([source](https://www.arbor.eco/blog/ai-environmental-impact)). A coding agent that chains dozens of calls, rereads files, runs tests and starts over is another scale entirely.
 
-This is where the "cost per token is falling" line becomes misleading. Cost per token is falling, sure. But the number of tokens per task is exploding. I see it every day working on an agentic platform: the useful question is no longer "how much does a prompt cost" but "how much does a finished task cost". Same logic as [the Claude Code bill](/en/claude-code-billing-costs-en/): what matters is the total for the session.
+This is where the "cost per token is falling" line becomes misleading. Cost per token is falling, yes. But the number of tokens per task is exploding. I see it every day working on an agentic platform: the number I track is the cost of a finished task. A single prompt tells you almost nothing. I reached the same conclusion with [the Claude Code bill](/en/claude-code-billing-costs-en/), where the whole session is what costs money.
 
 ## So, environmental burden: true or false?
 
@@ -114,11 +114,11 @@ This is where the "cost per token is falling" line becomes misleading. Cost per 
 - **Especially true at the local level.** Water, grid saturation and pushback from residents all play out where data centers are built.
 - **Underestimated on the hardware side.** Chip manufacturing and e-waste remain the big absentees from per-prompt figures.
 
-The UN sums up the nuanced position well: AI will not exhaust water or electricity globally, but poorly planned expansion can collide with resources that are already under strain in specific places ([source](https://english.aaj.tv/news/amp/330459838)).
+The UN's wording seems the most accurate to me: AI will not exhaust water or electricity globally, but poorly planned expansion can collide with resources that are already under strain in specific places ([source](https://english.aaj.tv/news/amp/330459838)).
 
 ## What developers and teams can do
 
-The main lever is sizing, not abstinence. Mistral's analysis shows that impact roughly tracks model size: a model ten times larger costs about ten times more for the same number of tokens ([source](https://www.eesel.ai/blog/energy-ai)).
+The lever that matters most is sizing. Mistral's analysis shows that impact roughly tracks model size: a model ten times larger costs about ten times more for the same number of tokens ([source](https://www.eesel.ai/blog/energy-ai)).
 
 1. **Route to the right model.** A small model to classify, summarise or extract, possibly [running locally with Ollama](/en/ollama-2026-state-of-the-art-en/). The big reasoning model only when the task calls for it.
 2. **Measure per task, not per prompt.** Track tokens consumed per completed task, especially for agents.
@@ -126,7 +126,7 @@ The main lever is sizing, not abstinence. Mistral's analysis shows that impact r
 4. **Choose where the compute runs.** A cloud region with low-carbon electricity and little water stress genuinely changes the footprint.
 5. **Ask whether AI is needed at all.** It is the first question in the AFNOR frugal AI framework ([source](https://www.banquedesterritoires.fr/12-territoires-selectionnes-pour-concevoir-lia-frugale-au-service-de-la-transition-ecologique)). A regex is still cheaper than an LLM.
 
-A prompt weighs nothing. A poorly sized agentic architecture, deployed to thousands of users, weighs a lot. That is where our responsibility as engineers lies.
+A prompt weighs nothing. A poorly sized agentic architecture, deployed to thousands of users, weighs a lot. And that architecture is designed by teams like mine.
 
 ## Sources
 
