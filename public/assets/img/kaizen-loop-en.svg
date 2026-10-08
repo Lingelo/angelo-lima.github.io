@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="760" viewBox="0 0 760 760" role="img" aria-labelledby="t d">
+<title id="t">The Kaizen loop</title>
+<desc id="d">The constitution frames everything. Build: brainstorm, plan, doc-review, work, review, ship. Operate: you merge, deploy, monitor, incident, rollback, postmortem. Learnings, ADRs and postmortems go to the project memory, read back by the next cycle.</desc>
+<defs><marker id="a-edb926" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#edb926"/></marker><marker id="a-ef8a80" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ef8a80"/></marker><marker id="a-6fcf97" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6fcf97"/></marker><marker id="a-b5b5b5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b5b5b5"/></marker><style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.t{font-size:26px;font-weight:700;fill:#f5f5f5}
+.l{font-size:19px;font-weight:650;fill:#f5f5f5;text-anchor:middle}
+.s{font-size:15px;fill:#b5b5b5;text-anchor:middle}
+.st{font-size:16px;fill:#b5b5b5}
+.sec{font-size:14px;font-weight:700;letter-spacing:.12em;fill:#edb926}
+.n{font-size:14px;font-weight:600}
+</style></defs>
+<rect width="760" height="760" rx="14" fill="#111111"/>
+<text x="60" y="44" class="t">The Kaizen loop</text>
+<text x="60" y="70" class="st">Each cycle writes what it learns where the next one will read it.</text>
+<rect x="60" y="90" width="640" height="66" rx="10" fill="#1f1a08" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="119" class="l">CONSTITUTION.md</text>
+<text x="380" y="141" class="s">checkable principles, enforced on the plan, the doc-review and the diff</text>
+<text x="60" y="196" class="sec">BUILD</text>
+<rect x="60" y="210" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="160" y="239" class="l">brainstorm</text>
+<text x="160" y="261" class="s">the what</text>
+<rect x="280" y="210" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="239" class="l">plan</text>
+<text x="380" y="261" class="s">the how</text>
+<rect x="500" y="210" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="600" y="239" class="l">doc-review</text>
+<text x="600" y="261" class="s">before any code</text>
+<rect x="500" y="316" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="600" y="345" class="l">work</text>
+<text x="600" y="367" class="s">test first</text>
+<rect x="280" y="316" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="345" class="l">review</text>
+<text x="380" y="367" class="s">multi-agent</text>
+<rect x="60" y="316" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="160" y="345" class="l">ship</text>
+<text x="160" y="367" class="s">a readable PR</text>
+<text x="60" y="432" class="sec">OPERATE</text>
+<rect x="60" y="446" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#8ab4f8" stroke-width="2"/>
+<text x="160" y="475" class="l">you merge</text>
+<text x="160" y="497" class="s">never Kaizen</text>
+<rect x="280" y="446" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="475" class="l">deploy</text>
+<text x="380" y="497" class="s">your commands</text>
+<rect x="500" y="446" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="600" y="475" class="l">monitor</text>
+<text x="600" y="497" class="s">plan thresholds</text>
+<rect x="500" y="552" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#ef8a80" stroke-width="2"/>
+<text x="600" y="581" class="l">incident</text>
+<text x="600" y="603" class="s">dated git tag</text>
+<rect x="280" y="552" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="581" class="l">rollback</text>
+<text x="380" y="603" class="s">no approval needed</text>
+<rect x="60" y="552" width="200" height="66" rx="10" fill="#1b1b1b" stroke="#edb926" stroke-width="2"/>
+<text x="160" y="581" class="l">postmortem</text>
+<text x="160" y="603" class="s">blameless</text>
+<rect x="60" y="662" width="640" height="66" rx="10" fill="#1f1a08" stroke="#edb926" stroke-width="2"/>
+<text x="380" y="691" class="l">Project memory</text>
+<text x="380" y="713" class="s">docs/learnings/ · docs/adr/ · docs/postmortems/</text>
+<polyline points="260,243 276,243" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="480,243 496,243" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="600,276 600,312" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="500,349 484,349" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="280,349 264,349" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="160,382 160,442" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="260,479 276,479" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="480,479 496,479" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="600,512 600,548" fill="none" stroke="#ef8a80" stroke-width="2.2" marker-end="url(#a-ef8a80)"/>
+<text x="610" y="534" class="n" text-anchor="start" fill="#ef8a80">threshold breached</text>
+<polyline points="500,585 484,585" fill="none" stroke="#ef8a80" stroke-width="2.2" marker-end="url(#a-ef8a80)"/>
+<polyline points="280,585 264,585" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="160,618 160,658" fill="none" stroke="#edb926" stroke-width="2.2" marker-end="url(#a-edb926)"/>
+<polyline points="380,382 380,400 728,400 728,695 704,695" fill="none" stroke="#b5b5b5" stroke-width="2.2" marker-end="url(#a-b5b5b5)"/>
+<text x="722" y="392" class="n" text-anchor="end" fill="#b5b5b5">learn</text>
+<polyline points="60,695 30,695 30,243 56,243" fill="none" stroke="#6fcf97" stroke-width="2.2" marker-end="url(#a-6fcf97)"/>
+<text x="22" y="440" class="n" fill="#6fcf97" transform="rotate(-90 22 440)" text-anchor="middle">read back by the next cycle</text>
+</svg>
