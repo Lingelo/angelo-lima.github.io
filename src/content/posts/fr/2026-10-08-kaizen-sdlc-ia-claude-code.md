@@ -1,6 +1,6 @@
 ---
 title: "Kaizen : j'ai fini par écrire le SDLC que je cherchais pour Claude Code"
-subtitle: "En avril, je me demandais si quelqu'un combinait spécification et Compound Engineering. Six mois plus tard, la réponse tient dans un plugin : une constitution, une boucle d'apprentissage et des garde-fous écrits en code, du plan jusqu'à la production."
+subtitle: "En avril, je me demandais si quelqu'un combinait spécification et Compound Engineering. Six mois plus tard, la réponse tient dans un plugin : une constitution vérifiable et des garde-fous écrits en code, du plan jusqu'à la production."
 description: "Kaizen, plugin Claude Code open source : constitution, plan, revue multi-agents, déploiement surveillé et DORA, avec des hooks qui bloquent."
 date: 2026-10-08T00:00:00.000Z
 lang: fr
@@ -29,7 +29,7 @@ faq:
 ---
 En avril, j'ai publié une [cartographie des philosophies de travail avec l'IA](/fr/sdd-compound-engineering-bmad-philosophies-ia/) : Spec-Driven Development, Compound Engineering, BMAD. Ma conclusion tenait en une question. Existe-t-il un outil qui combine nativement la rigueur d'une spécification et la boucle d'apprentissage du Compound Engineering ? Je n'en avais pas trouvé. J'avais écrit « c'est peut-être un espace à inventer ».
 
-Je l'ai inventé, pour mon propre usage d'abord. Il s'appelle **Kaizen**, c'est un plugin pour Claude Code, il est open source, et il vient de passer en version 3.2.1.
+Je l'ai écrit. Il s'appelle **Kaizen**, c'est un plugin pour Claude Code, il est open source, et il vient de passer en version 3.2.1.
 
 > **L'essentiel**
 >
@@ -41,19 +41,17 @@ Je l'ai inventé, pour mon propre usage d'abord. Il s'appelle **Kaizen**, c'est 
 
 ## Pourquoi une instruction ne suffit pas
 
-Tout le monde a vécu la scène. On écrit dans `CLAUDE.md` « lance les tests avant de terminer ». Claude les lance neuf fois sur dix. La dixième, la session est longue, le contexte a été compacté, et il annonce fièrement que « tout est en place » sur une suite rouge.
+Si vous utilisez Claude Code depuis quelques mois, vous connaissez la scène. On écrit dans `CLAUDE.md` « lance les tests avant de terminer ». Claude les lance neuf fois sur dix. La dixième, la session est longue, le contexte a été compacté, et il annonce fièrement que « tout est en place » sur une suite rouge.
 
-C'est le point de départ de Kaizen. Une règle qu'on veut vraiment voir respectée ne doit pas vivre dans un prompt. Elle doit vivre dans un [hook](/fr/claude-code-hooks-fr/), là où Claude Code exécute du code à chaque appel d'outil et peut refuser l'action. Kaizen en déclare six :
+Kaizen part de là. Une règle que je veux voir respectée à chaque fois, je la mets dans un [hook](/fr/claude-code-hooks-fr/) : Claude Code exécute ce code à chaque appel d'outil, et le hook peut refuser l'action. Kaizen en déclare six :
 
-- un **hook `Stop`** qui, pendant `/kaizen:work` et `/kaizen:autopilot`, relance tests, lint et typage avant de laisser Claude terminer son tour. Rouge, il bloque, trois fois au plus, puis laisse passer en exigeant que l'échec soit signalé ;
-- un **hook `PreToolUse` sur `git commit`** qui scanne ce qui part (une trentaine de types de clés et de jetons) et refuse aussi `--no-verify` ;
-- un **hook `PreToolUse` sur `git push`** qui refuse la branche tant que `/kaizen:review` n'a pas enregistré l'arbre poussé ;
-- deux hooks `PostToolUse` qui observent, dont un qui note chaque reviewer réellement lancé ;
-- un hook `UserPromptSubmit` qui reconnaît les codes de confirmation que **vous** tapez.
+- un hook `Stop` qui, pendant `/kaizen:work` et `/kaizen:autopilot`, relance tests, lint et typage avant de laisser Claude terminer son tour. Si c'est rouge, il bloque. Au bout de trois blocages il laisse passer, à condition que l'échec soit signalé.
+- un hook `PreToolUse` sur `git commit` qui scanne ce qui part (une trentaine de types de clés et de jetons) et refuse aussi `--no-verify`.
+- un hook `PreToolUse` sur `git push` qui refuse la branche tant que `/kaizen:review` n'a pas enregistré l'arbre poussé.
+- deux hooks `PostToolUse` qui observent, dont un qui note chaque reviewer réellement lancé.
+- un hook `UserPromptSubmit` qui reconnaît les codes de confirmation que vous tapez.
 
-Le hook de push est celui dont je suis le plus content. L'enregistrement de la revue exige une preuve : le journal des agents reviewers effectivement exécutés, écrit par un autre hook. Claude ne peut donc pas déclarer une revue qui n'a pas eu lieu. S'il faut vraiment passer outre, seule une personne peut le faire, en tapant `kaizen waive <code>` dans la conversation, et la dérogation apparaît dans la description de la PR.
-
-Ces garde-fous protègent contre l'oubli. Contre un agent malveillant, un script intermédiaire suffit à les contourner, et la documentation le dit noir sur blanc.
+Le hook de push demande un mot de plus. L'enregistrement de la revue exige une preuve : le journal des agents reviewers effectivement exécutés, écrit par un autre hook. Claude ne peut donc pas déclarer une revue qui n'a pas eu lieu. S'il faut vraiment passer outre, seule une personne peut le faire, en tapant `kaizen waive <code>` dans la conversation, et la dérogation apparaît dans la description de la PR.
 
 ## La boucle, du principe à la production
 
@@ -63,7 +61,7 @@ Le cycle se lit en deux lignes.
 
 **Construire.** `/kaizen:brainstorm` fixe le *quoi* par un dialogue, une question à la fois, et numérote les exigences (R1, R2…) et les exemples d'acceptation (AE1…). Ce qui reste flou est marqué `[NEEDS CLARIFICATION]` au lieu d'être deviné. `/kaizen:plan` décide le *comment* : décisions justifiées, menaces STRIDE, plan de rollout et de rollback, unités regroupées en tranches de la taille d'une PR. Un `plan check` déterministe vérifie que chaque exigence est couverte par une unité, puis `/kaizen:doc-review` envoie de deux à six reviewers sur le plan avant la première ligne de code. `/kaizen:work` exécute unité par unité, test d'abord, un commit par unité.
 
-**Exploiter.** `/kaizen:review` choisit ses reviewers selon le diff (sécurité, performance, migrations de données, contrat d'API…). `/kaizen:ship` ouvre une PR avec un guide de lecture pour le relecteur, `/kaizen:watch-pr` la mène jusqu'à « prête » en traitant les commentaires et la CI, sans jamais merger. Ensuite viennent `/kaizen:deploy` et `/kaizen:monitor`, la partie qu'aucun autre outil de cette famille ne couvre.
+**Exploiter.** `/kaizen:review` choisit ses reviewers selon le diff (sécurité, performance, migrations de données, contrat d'API…). `/kaizen:ship` ouvre une PR avec un guide de lecture pour le relecteur, `/kaizen:watch-pr` la mène jusqu'à « prête » en traitant les commentaires et la CI, sans jamais merger. Ensuite viennent `/kaizen:deploy` et `/kaizen:monitor`. Spec Kit, Kiro, BMAD et Compound Engineering s'arrêtent avant.
 
 Et tout ce qui a été appris retourne dans le dépôt : `docs/learnings/`, `docs/adr/`, `docs/postmortems/`. Un agent, `learnings-researcher`, les relit à chaque plan, chaque revue et chaque session de debug. C'est l'idée centrale du Compound Engineering : chaque cycle rend le suivant plus facile.
 
@@ -79,16 +77,16 @@ Kaizen ne connaît pas votre infrastructure et ne prétend pas la deviner. `depl
 
 Pour un environnement protégé, `deploy request` génère un code de six caractères valable 30 minutes. Tant que vous ne tapez pas `kaizen deploy 7C1E0B` vous-même, rien ne part, et le hook refuse la commande brute si Claude essaie de la lancer directement. Après le déploiement, `monitor watch` surveille les signaux que le plan a déclarés, avec leurs seuils (un taux d'erreur au-dessus de 1 %, par exemple). Deux mesures rouges consécutives, et c'est l'incident puis le rollback.
 
-Chaque déploiement, rollback, incident et résolution devient un **tag git annoté** daté. Les métriques DORA de `/kaizen:metrics` (fréquence, délai jusqu'à la production, taux d'échec, temps de restauration) sont donc calculées sur des événements réels plutôt que reconstituées de mémoire. Et `/kaizen:postmortem` construit sa chronologie à partir des mêmes tags.
+Chaque déploiement, rollback, incident et résolution devient un tag git annoté et daté. `/kaizen:metrics` calcule les métriques DORA (fréquence, délai jusqu'à la production, taux d'échec, temps de restauration) à partir de ces tags. Et `/kaizen:postmortem` construit sa chronologie à partir des mêmes tags.
 
-La version 3.2.1 corrige d'ailleurs un défaut que j'aurais dû voir plus tôt. Une métrique dont la commande plante ne prouve pas que le service est tombé, seulement que l'outil de mesure est cassé. Kaizen la classe désormais comme **aveugle** : pas de rollback, pas d'incident, donc pas de faux échec dans les chiffres DORA. Un health-check HTTP injoignable, lui, reste une panne.
+La version 3.2.1 corrige un défaut de ce mécanisme. Quand la commande qui mesure une métrique plante, c'est l'outil de mesure qui est cassé, et le service va peut-être très bien. Kaizen classe désormais ce signal comme **aveugle** : pas de rollback, pas d'incident, donc pas de faux échec dans les chiffres DORA. Un health-check HTTP injoignable, lui, reste une panne.
 
 ## Proportionner la cérémonie
 
 Le reproche classique fait à ce genre d'outil, c'est la lourdeur. Pour un script interne, six reviewers sur un plan, c'est absurde. Kaizen a trois profils :
 
-- `lean` pour un prototype ou un outil interne ;
-- `standard` pour un produit en production ;
+- `lean` pour un prototype ou un outil interne,
+- `standard` pour un produit en production,
 - `full` pour les domaines réglementés ou critiques.
 
 Le profil règle la taille du plan, le nombre de reviewers et les modèles utilisés. Il ne touche jamais aux contrôles déterministes : le scan de secrets et la revue avant push restent actifs en `lean`. Chaque agent a aussi un rôle, et chaque rôle un modèle selon le profil : la recherche tourne sur un modèle économe, les reviewers critiques (sécurité, migrations, adversarial) sur le plus puissant.
@@ -101,10 +99,10 @@ La page de positionnement du dépôt liste quatre limites, et je préfère les r
 
 - **Ce n'est pas une méthode d'équipe.** Ni sprints, ni estimation, ni coordination entre équipes.
 - **Ce n'est pas une plateforme d'observabilité.** Kaizen lit vos signaux et reçoit vos alertes (Alertmanager, PagerDuty, Datadog), il ne stocke rien et ne fait pas d'astreinte.
-- **Les garde-fous visent l'oubli**, pas la malveillance.
+- **Les garde-fous se contournent.** Ils rattrapent les oublis d'un agent. Un agent qui voudrait passer outre y arriverait avec un script intermédiaire.
 - **Claude Code uniquement.** Les garanties reposent sur ses hooks. Un autre agent recevrait les instructions des skills sans les contrôles.
 
-Et il est jeune : la 1.0 date du 2 octobre 2026. Le Compound Engineering d'Every compte environ 25 000 étoiles, tourne sur 14 environnements d'agents et a une communauté derrière lui. Si votre équipe mélange Cursor, Codex et Claude Code, ou veut démarrer léger, c'est lui que je recommande. Kaizen s'adresse à une équipe déjà sur Claude Code qui veut des garanties jusqu'à la production.
+Et il est jeune : la 1.0 date du 2 octobre 2026. Le Compound Engineering d'Every compte environ 25 000 étoiles, et tourne sur 14 environnements d'agents. Si votre équipe mélange Cursor, Codex et Claude Code, ou veut démarrer léger, c'est lui que je recommande. Kaizen s'adresse à une équipe déjà sur Claude Code qui veut des garanties jusqu'à la production.
 
 ## Comment c'est testé
 
@@ -121,4 +119,4 @@ Il faut Node.js 18 ou plus, git, et `gh` pour les pull requests. Dans votre dép
 
 Le code est sur [GitHub, dans le dépôt dojo](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen), avec une documentation par skill et une [vidéo de présentation de 80 secondes](https://github.com/Lingelo/dojo/blob/main/media/kaizen/kaizen-presentation.mp4). Si vous débutez avec les plugins, mon article sur [les plugins et marketplaces Claude Code](/fr/claude-code-plugins-marketplace-fr/) explique le mécanisme.
 
-*Kaizen* veut dire amélioration continue. Les modèles changent tous les trimestres. Ce qu'un dépôt apprend d'un cycle à l'autre, constitution, learnings, post-mortems, il le garde.
+*Kaizen* veut dire amélioration continue, et le nom engage. Si, après quelques semaines, `/kaizen:metrics` affiche zéro learning appliqué sur votre dépôt, le plugin ne tient pas sa promesse. Dans ce cas, ouvrez une issue : ça m'intéresse.

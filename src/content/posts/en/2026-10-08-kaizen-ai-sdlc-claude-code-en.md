@@ -1,6 +1,6 @@
 ---
 title: "Kaizen: I ended up writing the SDLC I was looking for in Claude Code"
-subtitle: "In April I wondered whether anyone combined specification with Compound Engineering. Six months later the answer fits in a plugin: a constitution, a learning loop and guardrails written as code, from the plan to production."
+subtitle: "In April I wondered whether anyone combined specification with Compound Engineering. Six months later the answer fits in a plugin: a checkable constitution and guardrails written as code, from the plan to production."
 description: "Kaizen, an open source Claude Code plugin: constitution, plan, multi-agent review, watched deployment and DORA, with hooks that actually block."
 date: 2026-10-08T00:00:00.000Z
 lang: en
@@ -29,7 +29,7 @@ faq:
 ---
 In April I published a [map of the ways of working with AI](/en/sdd-compound-engineering-bmad-philosophies-en/): Spec-Driven Development, Compound Engineering, BMAD. My conclusion was a question. Is there a tool that natively combines the rigor of a specification with the learning loop of Compound Engineering? I hadn't found one. I wrote "maybe it's a space to invent".
 
-So I built it, for my own use first. It's called **Kaizen**, it's a Claude Code plugin, it's open source, and it just reached version 3.2.1.
+So I wrote it. It's called **Kaizen**, it's a Claude Code plugin, it's open source, and it just reached version 3.2.1.
 
 > **In brief**
 >
@@ -41,19 +41,17 @@ So I built it, for my own use first. It's called **Kaizen**, it's a Claude Code 
 
 ## Why an instruction isn't enough
 
-Everyone has seen it. You write "run the tests before finishing" in `CLAUDE.md`. Claude runs them nine times out of ten. The tenth time the session is long, the context was compacted, and it proudly announces that "everything is in place" over a red suite.
+If you've used Claude Code for a few months, you know the scene. You write "run the tests before finishing" in `CLAUDE.md`. Claude runs them nine times out of ten. The tenth time the session is long, the context was compacted, and it proudly announces that "everything is in place" over a red suite.
 
-That's where Kaizen starts. A rule you really want followed shouldn't live in a prompt. It should live in a [hook](/en/claude-code-hooks/), where Claude Code runs code on every tool call and can refuse the action. Kaizen registers six:
+Kaizen starts there. When I want a rule followed every time, I put it in a [hook](/en/claude-code-hooks/): Claude Code runs that code on every tool call, and the hook can refuse the action. Kaizen registers six:
 
-- a **`Stop` hook** that, during `/kaizen:work` and `/kaizen:autopilot`, runs tests, lint and type checks before letting Claude end its turn. If they're red it blocks, three times at most, then lets through while requiring the failure to be reported;
-- a **`PreToolUse` hook on `git commit`** that scans what's going out (about thirty kinds of keys and tokens) and also refuses `--no-verify`;
-- a **`PreToolUse` hook on `git push`** that refuses the branch until `/kaizen:review` has recorded the pushed tree;
-- two `PostToolUse` hooks that observe, one of them logging every reviewer actually launched;
-- a `UserPromptSubmit` hook that recognizes the confirmation codes **you** type.
+- a `Stop` hook that, during `/kaizen:work` and `/kaizen:autopilot`, runs tests, lint and type checks before letting Claude end its turn. If they're red, it blocks. After three blocks it lets through, provided the failure is reported.
+- a `PreToolUse` hook on `git commit` that scans what's going out (about thirty kinds of keys and tokens) and also refuses `--no-verify`.
+- a `PreToolUse` hook on `git push` that refuses the branch until `/kaizen:review` has recorded the pushed tree.
+- two `PostToolUse` hooks that observe, one of them logging every reviewer actually launched.
+- a `UserPromptSubmit` hook that recognizes the confirmation codes you type.
 
-The push hook is the one I'm proudest of. Recording a review requires evidence: the log of reviewer agents that really ran, written by another hook. So Claude can't declare a review that never happened. If you really must bypass it, only a person can, by typing `kaizen waive <code>` in the conversation, and the waiver shows up in the PR description.
-
-These guardrails protect against forgetfulness. Against a malicious agent, an intermediate script is enough to get around them, and the documentation says so plainly.
+The push hook needs a closer look. Recording a review requires evidence: the log of reviewer agents that really ran, written by another hook. So Claude can't declare a review that never happened. If you really must bypass it, only a person can, by typing `kaizen waive <code>` in the conversation, and the waiver shows up in the PR description.
 
 ## The loop, from principle to production
 
@@ -63,7 +61,7 @@ The cycle reads as two rows.
 
 **Build.** `/kaizen:brainstorm` settles the *what* through a dialogue, one question at a time, and numbers the requirements (R1, R2…) and acceptance examples (AE1…). Anything unclear is marked `[NEEDS CLARIFICATION]` rather than guessed. `/kaizen:plan` decides the *how*: justified decisions, STRIDE threats, a rollout and rollback plan, units grouped into PR-sized slices. A deterministic `plan check` verifies that every requirement is covered by a unit, then `/kaizen:doc-review` sends two to six reviewers at the plan before the first line of code. `/kaizen:work` executes unit by unit, test first, one commit per unit.
 
-**Operate.** `/kaizen:review` picks its reviewers from the diff (security, performance, data migrations, API contracts…). `/kaizen:ship` opens a PR with a reading guide for the reviewer, and `/kaizen:watch-pr` drives it to "ready" by handling comments and CI, without ever merging. Then come `/kaizen:deploy` and `/kaizen:monitor`, the part no other tool in this family covers.
+**Operate.** `/kaizen:review` picks its reviewers from the diff (security, performance, data migrations, API contracts…). `/kaizen:ship` opens a PR with a reading guide for the reviewer, and `/kaizen:watch-pr` drives it to "ready" by handling comments and CI, without ever merging. Then come `/kaizen:deploy` and `/kaizen:monitor`. Spec Kit, Kiro, BMAD and Compound Engineering all stop before that point.
 
 Everything learned goes back into the repository: `docs/learnings/`, `docs/adr/`, `docs/postmortems/`. An agent, `learnings-researcher`, reads them back at every plan, every review and every debugging session. That's the core idea of Compound Engineering: each cycle makes the next one easier.
 
@@ -79,16 +77,16 @@ Kaizen doesn't know your infrastructure and doesn't pretend to guess it. `deploy
 
 For a protected environment, `deploy request` generates a six-character code valid for 30 minutes. Until you type `kaizen deploy 7C1E0B` yourself, nothing goes out, and the hook refuses the raw command if Claude tries to run it directly. After the deployment, `monitor watch` watches the signals the plan declared, with their thresholds (an error rate above 1 %, for example). Two consecutive red samples and it's an incident, then a rollback.
 
-Every deployment, rollback, incident and resolution becomes a dated, **annotated git tag**. The DORA metrics in `/kaizen:metrics` (frequency, lead time to production, failure rate, time to restore) are computed from real events instead of being reconstructed from memory. And `/kaizen:postmortem` builds its timeline from the same tags.
+Every deployment, rollback, incident and resolution becomes a dated, annotated git tag. `/kaizen:metrics` computes the DORA metrics (frequency, lead time to production, failure rate, time to restore) from those tags. And `/kaizen:postmortem` builds its timeline from the same tags.
 
-Version 3.2.1 fixes a flaw I should have spotted earlier. A metric whose command crashes doesn't prove the service is down, only that the measuring tool is broken. Kaizen now classifies it as **blind**: no rollback, no incident, so no fake failure in the DORA numbers. An unreachable HTTP health-check still counts as an outage.
+Version 3.2.1 fixes a flaw in this mechanism. When the command that measures a metric crashes, the measuring tool is broken, and the service may be perfectly fine. Kaizen now classifies that signal as **blind**: no rollback, no incident, so no fake failure in the DORA numbers. An unreachable HTTP health-check still counts as an outage.
 
 ## Scaling the ceremony
 
 The usual complaint about this kind of tool is weight. Six reviewers on a plan for an internal script is absurd. Kaizen has three profiles:
 
-- `lean` for a prototype or an internal tool;
-- `standard` for a product in production;
+- `lean` for a prototype or an internal tool,
+- `standard` for a product in production,
 - `full` for regulated or critical domains.
 
 The profile sets the plan size, the number of reviewers and the models used. It never touches the deterministic checks: the secret scan and the review before push stay on in `lean`. Every agent also has a role, and every role a model per profile: research runs on a frugal model, critical reviewers (security, migrations, adversarial) on the strongest one.
@@ -101,10 +99,10 @@ The repository's positioning page lists four limits, and I'd rather repeat them 
 
 - **It's not a team method.** No sprints, no estimation, no cross-team coordination.
 - **It's not an observability platform.** Kaizen reads your signals and receives your alerts (Alertmanager, PagerDuty, Datadog); it stores nothing and does no on-call.
-- **The guardrails target forgetfulness**, not malice.
+- **The guardrails can be bypassed.** They catch an agent's lapses. An agent set on getting around them could do it with an intermediate script.
 - **Claude Code only.** The guarantees rest on its hooks. Another agent would get the skills' instructions without the checks.
 
-It's also young: 1.0 is dated October 2, 2026. Every's Compound Engineering has about 25,000 stars, runs on 14 agent environments and has a community behind it. If your team mixes Cursor, Codex and Claude Code, or wants to start light, that's the one I'd recommend. Kaizen is for a team already on Claude Code that wants guarantees all the way to production.
+It's also young: 1.0 is dated October 2, 2026. Every's Compound Engineering has about 25,000 stars, and runs on 14 agent environments. If your team mixes Cursor, Codex and Claude Code, or wants to start light, that's the one I'd recommend. Kaizen is for a team already on Claude Code that wants guarantees all the way to production.
 
 ## How it's tested
 
@@ -121,4 +119,4 @@ You need Node.js 18 or later, git, and `gh` for pull requests. In your repositor
 
 The code is on [GitHub, in the dojo repository](https://github.com/Lingelo/dojo/tree/main/plugins/kaizen), with documentation per skill and an [80-second presentation video](https://github.com/Lingelo/dojo/blob/main/media/kaizen/kaizen-presentation.mp4). If you're new to plugins, my article on [Claude Code plugins and marketplaces](/en/claude-code-plugins-marketplace/) explains how they work.
 
-*Kaizen* means continuous improvement. Models change every quarter. What a repository learns from one cycle to the next, its constitution, learnings and postmortems, it keeps.
+*Kaizen* means continuous improvement, and the name is a commitment. If after a few weeks `/kaizen:metrics` shows zero learnings applied in your repository, the plugin isn't keeping its promise. Open an issue if that happens: I want to know.
