@@ -8,6 +8,7 @@ export const SITE = {
   email: 'angelomiguellima@gmail.com',
   github: 'lingelo',
   linkedin: 'angélo-lima',
+  kofi: 'https://ko-fi.com/angelolima',
   gtag: 'G-EQK9L2XD8X',
   avatar: '/assets/img/avatar-icon.png',
   mobileThemeColor: '#0a0a0a',
@@ -49,6 +50,11 @@ export const I18N = {
     cookieAccept: 'Accepter',
     cookieRefuse: 'Refuser',
     langName: 'Français',
+    supportTitle: 'Cet article t’a été utile ?',
+    supportText:
+      'Le blog est sans pub ni paywall. Si tu veux soutenir mon travail, tu peux m’offrir un café sur Ko-fi.',
+    supportCta: 'M’offrir un café',
+    supportFooter: 'Soutenir',
   },
   en: {
     blog: 'Blog',
@@ -76,6 +82,11 @@ export const I18N = {
     cookieAccept: 'Accept',
     cookieRefuse: 'Refuse',
     langName: 'English',
+    supportTitle: 'Found this article useful?',
+    supportText:
+      'This blog has no ads and no paywall. If you’d like to support my work, you can buy me a coffee on Ko-fi.',
+    supportCta: 'Buy me a coffee',
+    supportFooter: 'Support',
   },
 } as const;
 

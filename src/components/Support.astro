@@ -1,0 +1,13 @@
+---
+import { SITE, I18N, type Lang } from '../site';
+interface Props { lang: Lang }
+const { lang } = Astro.props as Props;
+const t = I18N[lang];
+---
+<aside class="post-support" aria-labelledby="post-support-title">
+  <div class="post-support-body">
+    <p id="post-support-title" class="post-support-title">{t.supportTitle}</p>
+    <p class="post-support-text">{t.supportText}</p>
+  </div>
+  <a href={SITE.kofi} class="post-support-cta label-caps" rel="noopener" target="_blank">☕ {t.supportCta}</a>
+</aside>
