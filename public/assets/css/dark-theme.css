@@ -552,6 +552,22 @@ tbody td code {
   color: var(--color-outline);
 }
 
+.footer-links .footer-link-support {
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  background-color: rgba(242, 202, 80, 0.12);
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-links .footer-link-support:hover,
+.footer-links .footer-link-support:focus-visible {
+  background-color: var(--color-primary);
+  color: #131313;
+}
+
 /* ============================================================
    READING PROGRESS BAR
    ============================================================ */
