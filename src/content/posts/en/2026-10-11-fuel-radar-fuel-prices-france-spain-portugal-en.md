@@ -26,13 +26,16 @@ faq:
 ---
 On October 11, 2026, the median price of a liter of diesel was €2.34 in France, €2.22 in Portugal and €1.92 in Spain. On a 50-liter tank, the Spanish border is worth about twenty euros. And within the same city, two stations can be tens of cents apart.
 
-France, Spain and Portugal all publish their station prices as open data, each in its own format. Nobody was putting them together on a single map. **[Fuel Radar](https://lingelo.github.io/fuel-radar/)** is the app I wrote to do that: a fuel price map for all three countries, free, with no ads and no account.
+Fuel prices are rising too much. In France, the national average for diesel went from €1.65 a liter on January 1, 2026 to €2.32 on October 10: 41% more in nine months, and 25% for SP95-E10. I can't do anything about the increase, so I wanted to help in my own way, with what I know how to do: a free tool to find the cheapest station near you.
+
+France, Spain and Portugal all publish their station prices as open data, each in its own format. Nobody was putting them together on a single map. **[Fuel Radar](https://lingelo.github.io/fuel-radar/)** does: a fuel price map for all three countries, free, with no ads and no account.
 
 > **In brief**
 >
 > - **What:** Fuel Radar is a web app (PWA) that compares fuel prices in France, Spain and Portugal, on a map and in a list sorted by price or distance.
 > - **Key numbers:** 23,667 stations on October 11, 2026 (9,253 in France, 11,345 in Spain, 3,069 in Portugal), prices refreshed every 2 hours, 4 languages.
 > - **Scale:** that day, median diesel was €2.34/L in France, €2.22 in Portugal and €1.92 in Spain (prices under a week old, Fuel Radar data).
+> - **Why:** in France, diesel rose 41% between January 1 and October 10, 2026 (national average from €1.65 to €2.32 a liter).
 > - **Sources:** prix-carburants.gouv.fr, Spain's Ministerio para la Transición Ecológica and Portugal's DGEG, plus OpenStreetMap for brands.
 > - **Architecture:** no server. GitHub Actions downloads the data and turns it into static JSON files served by GitHub Pages.
 > - **Model:** free, ad-free, no account, public source code. A native Android app is in testing.

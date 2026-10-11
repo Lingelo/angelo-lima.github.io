@@ -24,15 +24,18 @@ faq:
   - q: "Fuel Radar utilise-t-il ma position ?"
     a: "Seulement si tu l'autorises, pour centrer la carte autour de toi. Fuel Radar ne stocke ni ne partage la position, ne demande pas de compte et n'utilise pas de traceur publicitaire. Les favoris et les filtres restent dans le navigateur."
 ---
-Le 11 octobre 2026, le litre de gazole coûtait en prix médian 2,34 € en France, 2,22 € au Portugal et 1,92 € en Espagne. Sur un plein de 50 litres, la frontière espagnole vaut donc une vingtaine d'euros. Et dans une même ville, deux stations peuvent afficher plusieurs dizaines de centimes d'écart. La France, l'Espagne et le Portugal publient tous les trois les prix de leurs stations en données ouvertes, chacun dans son format. Personne ne les réunissait sur une seule carte.
+Le 11 octobre 2026, le litre de gazole coûtait en prix médian 2,34 € en France, 2,22 € au Portugal et 1,92 € en Espagne. Sur un plein de 50 litres, la frontière espagnole vaut donc une vingtaine d'euros. Et dans une même ville, deux stations peuvent afficher plusieurs dizaines de centimes d'écart.
 
-**[Fuel Radar](https://lingelo.github.io/fuel-radar/)** est l'application que j'ai écrite pour ça : une carte des prix des carburants pour les trois pays, gratuite, sans pub et sans compte.
+Le prix des carburants augmente trop. En France, la moyenne nationale du gazole est passée de 1,65 € le litre au 1er janvier 2026 à 2,32 € le 10 octobre : 41 % de plus en neuf mois, et 25 % pour le SP95-E10. Je ne peux rien contre la hausse, alors j'ai voulu aider à ma façon, avec ce que je sais faire : un outil gratuit pour trouver la station la moins chère autour de soi.
+
+La France, l'Espagne et le Portugal publient tous les trois les prix de leurs stations en données ouvertes, chacun dans son format. Personne ne les réunissait sur une seule carte. **[Fuel Radar](https://lingelo.github.io/fuel-radar/)** le fait : une carte des prix des carburants pour les trois pays, gratuite, sans pub et sans compte.
 
 > **L'essentiel**
 >
 > - **Quoi** : Fuel Radar est une application web (PWA) qui compare le prix des carburants en France, en Espagne et au Portugal, sur une carte et dans une liste triée par prix ou par distance.
 > - **Chiffres clés** : 23 667 stations au 11 octobre 2026 (9 253 en France, 11 345 en Espagne, 3 069 au Portugal), des prix rafraîchis toutes les 2 heures, 4 langues.
 > - **Ordre de grandeur** : ce jour-là, le gazole médian était à 2,34 €/L en France, 2,22 € au Portugal et 1,92 € en Espagne (prix de moins d'une semaine, données Fuel Radar).
+> - **Pourquoi** : en France, le gazole a pris 41 % entre le 1er janvier et le 10 octobre 2026 (moyenne nationale de 1,65 € à 2,32 € le litre).
 > - **Sources** : prix-carburants.gouv.fr, le Ministerio para la Transición Ecológica et la DGEG, plus OpenStreetMap pour les marques.
 > - **Architecture** : aucun serveur. GitHub Actions télécharge les données et les transforme en fichiers JSON statiques, servis par GitHub Pages.
 > - **Modèle** : gratuit, sans publicité, sans compte, code source public. Une app Android native est en recette.
