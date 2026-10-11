@@ -55,6 +55,7 @@ export const I18N = {
       'Le blog est sans pub ni paywall. Si tu veux soutenir mon travail, tu peux m’offrir un café sur Ko-fi.',
     supportCta: 'M’offrir un café',
     supportFooter: 'Soutenir',
+    rssSupport: 'Cet article t’a été utile ? Tu peux soutenir le blog en m’offrant un café sur',
   },
   en: {
     blog: 'Blog',
@@ -87,10 +88,18 @@ export const I18N = {
       'This blog has no ads and no paywall. If you’d like to support my work, you can buy me a coffee on Ko-fi.',
     supportCta: 'Buy me a coffee',
     supportFooter: 'Support',
+    rssSupport: 'Found this article useful? You can support the blog by buying me a coffee on',
   },
 } as const;
 
 export type Lang = 'fr' | 'en';
+
+// Ko-fi support line appended to each RSS item (feed readers never see the on-site box).
+export const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+export const rssSupportHtml = (lang: Lang) =>
+  `<p>☕ ${I18N[lang].rssSupport} <a href="${SITE.kofi}">Ko-fi</a>.</p>`;
 
 // Home prefix per language: FR home is at "/", EN home at "/en/".
 export const homeUrl = (lang: Lang) => (lang === 'en' ? '/en/' : '/');

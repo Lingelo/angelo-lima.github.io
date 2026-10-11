@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import type { APIContext } from 'astro';
-import { SITE } from '../site';
+import { SITE, escapeHtml, rssSupportHtml } from '../site';
 import { getPosts, postUrl, excerpt } from '../lib/posts';
 
 export async function GET(context: APIContext) {
@@ -12,7 +12,7 @@ export async function GET(context: APIContext) {
     items: posts.map((p) => ({
       title: p.data.title,
       pubDate: p.data.date,
-      description: p.data.subtitle ?? excerpt(p, 50),
+      description: `<p>${escapeHtml(p.data.subtitle ?? excerpt(p, 50))}</p>${rssSupportHtml('fr')}`,
       link: postUrl(p),
       categories: p.data.tags,
     })),
