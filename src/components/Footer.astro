@@ -14,8 +14,17 @@ const year = new Date().getUTCFullYear();
       <a href={`https://linkedin.com/in/${SITE.linkedin}`} class="footer-link" rel="noopener" target="_blank">LinkedIn</a>
       <a href={`https://github.com/${SITE.github}`} class="footer-link" rel="noopener" target="_blank">GitHub</a>
       <a href={lang === 'en' ? '/en/feed.xml' : '/feed.xml'} class="footer-link">RSS</a>
-      <a href={SITE.kofi} class="footer-link" rel="noopener" target="_blank">☕ {I18N[lang].supportFooter}</a>
+      <a href={SITE.kofi} class="footer-link footer-link-support" data-kofi="footer" rel="noopener" target="_blank">☕ {I18N[lang].supportFooter}</a>
       <a href="#" class="footer-link footer-link-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top ↑</a>
     </nav>
   </div>
 </footer>
+<script is:inline>
+  // GA event on Ko-fi clicks; gtag only exists once cookies are accepted.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-kofi]');
+    if (a && typeof window.gtag === 'function') {
+      window.gtag('event', 'kofi_click', { placement: a.dataset.kofi, page_path: location.pathname });
+    }
+  });
+</script>
