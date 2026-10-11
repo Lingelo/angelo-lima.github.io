@@ -2298,3 +2298,62 @@ pre.highlight {
   border-radius: 4px;
   font-size: 0.9em;
 }
+
+/* ============================================================
+   SUPPORT (Ko-fi) — end-of-article box
+   ============================================================ */
+
+.post-support {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-outline-variant);
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-surface-low);
+}
+
+.post-support-body p {
+  margin: 0;
+}
+
+.article-content .post-support-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-on-surface);
+  margin-bottom: 0.35rem !important;
+}
+
+.post-support-text {
+  font-size: 0.95rem;
+  color: var(--color-on-surface-variant);
+}
+
+.article-content .post-support-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-primary);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.article-content .post-support-cta:hover,
+.article-content .post-support-cta:focus-visible {
+  background-color: var(--color-primary);
+  color: #131313;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .post-support {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
