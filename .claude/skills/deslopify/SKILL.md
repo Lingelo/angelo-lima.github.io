@@ -11,21 +11,28 @@ Cette skill relit un texte, croise son contenu avec la liste de marqueurs IA doc
 
 - L'utilisateur fournit un brouillon d'article et demande une relecture, une réécriture, un "deslopify", une naturalisation.
 - L'utilisateur rédige un nouvel article depuis zéro : appliquer les règles de `references/marqueurs-ia.md` en amont (prévention) plutôt qu'en aval (correction).
-- L'utilisateur pointe un fichier dans `_posts/` et demande de vérifier qu'il ne sonne pas IA.
+- L'utilisateur pointe un article dans `src/content/posts/fr/` ou `src/content/posts/en/` et demande de vérifier qu'il ne sonne pas IA.
+- Le skill `create-article` arrive à son étape anti-slop : la passe est alors **obligatoire**, pas optionnelle.
 - L'utilisateur colle un texte ou une URL et demande une version « plus humaine ».
 
 ## Procédure
 
 1. **Lire le texte cible** (fichier, texte collé, ou URL fetchée).
 2. **Charger `references/marqueurs-ia.md`** pour avoir la liste exhaustive des marqueurs à éliminer.
-3. **Identifier les marqueurs** en listant par catégorie : lexique, structures, ponctuation, ton. Cite les occurrences avec leur ligne quand c'est un fichier.
-4. **Proposer une réécriture** qui :
+3. **Lancer le scan chiffré** sur chaque fichier :
+   ```bash
+   python3 .claude/skills/deslopify/scripts/slop_scan.py src/content/posts/fr/AAAA-MM-JJ-slug.md src/content/posts/en/AAAA-MM-JJ-slug-en.md
+   ```
+   Il compte les marqueurs mesurables (tirets cadratins, points-virgules, gras dans la prose, « pas X, mais Y », participe présent après virgule, lexique signature) et donne les lignes. Il ne juge ni la voix, ni la redondance, ni le ton : la relecture reste nécessaire. **Un comptage de tirets seul ne vaut pas passe deslopify.**
+4. **Identifier les marqueurs** en listant par catégorie : lexique, structures, ponctuation, ton. Cite les occurrences avec leur ligne quand c'est un fichier.
+5. **Proposer une réécriture** qui :
    - Conserve le sens technique et les informations vérifiables (chiffres, noms propres, citations).
-   - Préserve la voix de l'auteur (Angelo Lima : ton direct, franco-portugais, technique avec touches personnelles ; voir anciens articles dans `_posts/` pour référence).
+   - Préserve la voix de l'auteur (Angelo Lima : ton direct, franco-portugais, technique avec touches personnelles ; voir les anciens articles dans `src/content/posts/` pour référence).
    - Remplace les formules génériques par du contenu spécifique (exemples concrets, anecdotes, chiffres).
    - Réduit la longueur quand le texte tourne en rond.
-5. **Présenter les changements** sous forme de diff ou d'avant/après pour les passages significatifs, pas ligne par ligne pour les retouches mineures.
-6. **Ne pas toucher** : les extraits de code, les citations directes, les termes techniques précis même s'ils figurent dans la liste (ex. « crucial » peut être légitime dans un contexte sécurité, « explorer » en contexte scientifique).
+6. **Présenter les changements** sous forme de diff ou d'avant/après pour les passages significatifs, pas ligne par ligne pour les retouches mineures.
+7. **Relancer le scan** après réécriture : il doit finir sans catégorie « À REVOIR », ou chaque alerte restante doit être justifiée (ex. gras volontaire).
+8. **Ne pas toucher** : les extraits de code, les citations directes, les termes techniques précis même s'ils figurent dans la liste (ex. « crucial » peut être légitime dans un contexte sécurité, « explorer » en contexte scientifique).
 
 ## Principes de réécriture
 
@@ -43,7 +50,8 @@ Si un pattern peut être soit légitime soit du slop selon le contexte, **demand
 
 ## Sortie attendue
 
-- Un résumé des marqueurs trouvés, groupés par catégorie.
+- Un résumé des marqueurs trouvés, groupés par catégorie, avec les lignes concernées.
+- Le résultat du scan avant / après.
 - Une version réécrite, prête à coller dans le fichier Markdown du blog.
 - Pour les articles longs, proposer la réécriture par sections (intro, développement, conclusion) pour garder le contexte maîtrisable.
 
