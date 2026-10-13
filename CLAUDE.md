@@ -190,7 +190,7 @@ git commit --allow-empty -m "chore: trigger rebuild" && git push
 - Reuse existing tags; keep the tag set small and standardized.
 - Write meaningful `subtitle` and `description` for important articles (better cards + SEO).
 - Thumbnails ~300×200 for consistent grid appearance; cover images full-width for the hero.
-- Anti-slop: the `deslopify` skill (`.claude/skills/deslopify/`) documents the AI-writing markers to avoid (over-used em-dashes, "not X but Y", ternary rhythm, generic openers). Apply it to drafts — this is a bilingual FR/EN blog with a personal, direct voice to preserve.
+- Anti-slop: the `deslopify` skill (`.claude/skills/deslopify/`) documents the AI-writing markers to avoid (over-used em-dashes, "not X but Y", ternary rhythm, generic openers). Apply it to drafts — this is a bilingual FR/EN blog with a personal, direct voice to preserve. Its scanner `python3 .claude/skills/deslopify/scripts/slop_scan.py <post.md>` counts the measurable markers (em-dashes, semicolons, bold in prose, "not X but Y", signature vocabulary) with line numbers; it complements the read-through, it does not replace it.
 
 ## Theme Maintenance
 
