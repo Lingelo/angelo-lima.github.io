@@ -46,11 +46,14 @@ const t = I18N[lang];
 
     function showBanner() {
       var o = document.getElementById('cookie-consent-overlay');
-      if (o) { o.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+      // No body scroll lock: content blockers (uBlock "Annoyances" lists, Zen/Firefox
+      // cookie-banner filters) often hide this overlay with CSS, and a lock would then
+      // leave the page unscrollable with no way to dismiss it.
+      if (o) { o.style.display = 'flex'; }
     }
     function hideBanner() {
       var o = document.getElementById('cookie-consent-overlay');
-      if (o) { o.style.display = 'none'; document.body.style.overflow = ''; }
+      if (o) { o.style.display = 'none'; }
     }
 
     function init() {
