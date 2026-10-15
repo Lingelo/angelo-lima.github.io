@@ -16,6 +16,10 @@ cover: "/assets/img/sourdine-transcription-ia.webp"
 thumbnail: "/assets/img/sourdine-transcription-ia.webp"
 aliases:
   - "/en/2026-02-15-sourdine-transcription-reunions-ia-locale-en/"
+related:
+  - "ollama-2026-state-of-the-art"
+  - "claude-code-ollama"
+  - "gbts-typescript-gameboy"
 ---
 How many meetings do you have this week? And how many notes did you actually take? Between actively participating and taking detailed notes, you have to choose. This frustration led to **Sourdine** — with one major constraint: **everything must stay on my machine**.
 

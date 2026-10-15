@@ -43,13 +43,33 @@ export async function getTranslation(post: Post): Promise<Post | undefined> {
   return candidates[0];
 }
 
-/** Up to `max` posts in the same language sharing at least one tag, newest first. */
+/**
+ * Up to `max` related posts in the same language.
+ * 1. Posts listed in the frontmatter `related:` field (by translationKey), in that order.
+ * 2. Then the best tag matches: each shared tag scores 1/frequency, so a niche tag
+ *    ("Claude Code") counts more than a catch-all one ("IA"). Ties → newest first.
+ */
 export async function relatedPosts(post: Post, max = 3): Promise<Post[]> {
-  const sameLang = await getPosts(post.data.lang);
-  const tags = new Set(post.data.tags);
-  return sameLang
-    .filter((p) => p.id !== post.id && p.data.tags.some((t) => tags.has(t)))
-    .slice(0, max);
+  const sameLang = (await getPosts(post.data.lang)).filter((p) => p.id !== post.id);
+
+  const byKey = new Map(sameLang.map((p) => [p.data.translationKey, p]));
+  const manual = post.data.related
+    .map((key) => byKey.get(key))
+    .filter((p): p is Post => p !== undefined);
+
+  const freq = new Map<string, number>();
+  for (const p of sameLang) for (const t of p.data.tags) freq.set(t, (freq.get(t) ?? 0) + 1);
+  const score = (p: Post) =>
+    p.data.tags.reduce((s, t) => (post.data.tags.includes(t) ? s + 1 / (freq.get(t) ?? 1) : s), 0);
+
+  const auto = sameLang
+    .filter((p) => !manual.includes(p))
+    .map((p, i) => ({ p, s: score(p), i }))
+    .filter((x) => x.s > 0)
+    .sort((a, b) => b.s - a.s || a.i - b.i)
+    .map((x) => x.p);
+
+  return [...manual, ...auto].slice(0, max);
 }
 
 /**

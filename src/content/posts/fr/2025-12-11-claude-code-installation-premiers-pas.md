@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-11-claude-code-installation-premiers-pas/"
+related:
+  - "claude-code-day-2"
+  - "claude-code-day-3"
+  - "claude-code-cheatsheet-octobre-2026"
 ---
 Bienvenue dans cette série de 20 articles pour maîtriser Claude Code ! Chaque jour, nous explorerons une fonctionnalité qui fera de vous un développeur plus efficace. Aujourd'hui : l'installation et les premiers pas.
 

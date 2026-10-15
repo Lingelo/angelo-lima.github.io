@@ -13,6 +13,10 @@ cover: "/assets/img/dunning-kruger-cover.webp"
 shareImg: "/assets/img/dunning-kruger-cover.webp"
 aliases:
   - "/2025-01-17-effet-dunning-kruger/"
+related:
+  - "ai-replacing-developers-analysis"
+  - "entropy-human-machine"
+  - "conventional-comments"
 ---
 # Effet Dunning-Kruger en développement : Analyse cognitive des compétences techniques
 

@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-13-claude-code-workflow-explore-plan-code-test-fr/"
+related:
+  - "claude-code-day-2"
+  - "claude-code-day-4"
+  - "ai-development-philosophies"
 ---
 Dans mon article sur [l'état de l'IA dans le développement en 2025](/fr/ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025/), j'évoquais le syndrome du code "presque correct" : **45% des développeurs passent plus de temps à débugger le code généré par l'IA qu'à l'écrire eux-mêmes**.
 

@@ -13,6 +13,10 @@ thumbnail: "/assets/img/thumb-conventional-commits.webp"
 shareImg: "/assets/img/conventional-commits.webp"
 aliases:
   - "/2024-12-24-conventional-commits/"
+related:
+  - "conventional-comments"
+  - "claude-code-day-6"
+  - "feature-sliced-design"
 ---
 ## Standardisation des messages de commit : un enjeu de lisibilité
 

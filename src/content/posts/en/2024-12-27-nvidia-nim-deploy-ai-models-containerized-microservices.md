@@ -14,6 +14,10 @@ cover: "/assets/img/nvidia-nim.webp"
 shareImg: "/assets/img/nvidia-nim.webp"
 aliases:
   - "/en/2024-12-27-nvidia-nim-deploy-ai-models-containerized-microservices/"
+related:
+  - "ollama-open-webui"
+  - "ollama-2026-state-of-the-art"
+  - "openai-gpt-oss"
 ---
 ## Microservices Architecture for AI Inference: Revolutionizing Deployment
 

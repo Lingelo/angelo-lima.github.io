@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-29-claude-code-vs-cursor-vs-copilot/"
+related:
+  - "claude-code-day-18"
+  - "claude-code-day-20"
+  - "orca-ide-agentic-development"
 ---
 Le marché des assistants IA pour développeurs explose. Claude Code, Cursor et GitHub Copilot sont les trois solutions majeures. Lequel choisir ? Comparons objectivement.
 

@@ -13,6 +13,10 @@ cover: "/assets/img/deepseek-jailbreak.webp"
 shareImg: "/assets/img/deepseek-jailbreak.webp"
 aliases:
   - "/2025-01-29-jailbreak-deepseek-r1/"
+related:
+  - "best-of-n-jailbreaking"
+  - "llm-hallucinations-devoxx-2026"
+  - "claude-code-day-7"
 ---
 # Analyse des vulnérabilités de contournement sur DeepSeek R1
 

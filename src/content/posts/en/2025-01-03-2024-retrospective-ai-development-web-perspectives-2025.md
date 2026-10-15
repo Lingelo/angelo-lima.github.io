@@ -13,6 +13,10 @@ cover: "/assets/img/bilan-2024-2025.webp"
 shareImg: "/assets/img/bilan-2024-2025.webp"
 aliases:
   - "/en/2025-01-03-2024-retrospective-ai-development-web-perspectives-2025/"
+related:
+  - "ai-development"
+  - "ai-replacing-developers-analysis"
+  - "dunning-kruger-effect"
 ---
 # 2024 Retrospective: Analysis and Technological Prospects for 2025
 

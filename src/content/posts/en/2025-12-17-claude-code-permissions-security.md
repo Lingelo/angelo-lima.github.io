@@ -15,6 +15,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-17-claude-code-permissions-security/"
+related:
+  - "claude-code-day-6"
+  - "claude-code-day-8"
+  - "llm-jailbreaking"
 ---
 Claude Code has access to your file system and can execute bash commands. It's powerful, but requires safeguards. Today, we'll see how to secure your environment.
 

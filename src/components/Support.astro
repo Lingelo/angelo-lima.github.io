@@ -1,8 +1,9 @@
 ---
-import { SITE, I18N, type Lang } from '../site';
+import { SITE, I18N, homeUrl, type Lang } from '../site';
 interface Props { lang: Lang }
 const { lang } = Astro.props as Props;
 const t = I18N[lang];
+const feedUrl = `${homeUrl(lang)}feed.xml`;
 ---
 <aside class="post-support" aria-labelledby="post-support-title">
   <div class="post-support-body">
@@ -11,3 +12,9 @@ const t = I18N[lang];
   </div>
   <a href={SITE.kofi} class="post-support-cta label-caps" data-kofi="article" rel="noopener" target="_blank">☕ {t.supportCta}</a>
 </aside>
+<nav class="post-follow" aria-label={t.followLabel}>
+  <span class="post-follow-label label-caps">{t.followLabel}</span>
+  <a href={`https://www.linkedin.com/in/${SITE.linkedin}/`} class="post-follow-link label-caps" data-follow="linkedin" rel="noopener" target="_blank">LinkedIn</a>
+  <a href={feedUrl} class="post-follow-link label-caps" data-follow="rss">RSS</a>
+  <a href={`https://github.com/${SITE.github}`} class="post-follow-link label-caps" data-follow="github" rel="noopener" target="_blank">GitHub</a>
+</nav>

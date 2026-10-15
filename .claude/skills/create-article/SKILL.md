@@ -26,7 +26,7 @@ Ce skill décrit la **procédure de bout en bout** pour publier un article bilin
 ## Procédure
 
 ### 1. Vérifier le schéma réel avant d'écrire le frontmatter
-Lire `src/content.config.ts` (le contrat Zod). Ne jamais écrire de frontmatter de mémoire : le site a migré de Jekyll vers Astro, et les tics Jekyll (`ref:`, `categories:`, `layout:`) sont **faux**. Champs actuels clés : `title`, `subtitle?`, `description?`, `date` (ISO), `lang`, `translationKey`, `tags[]`, `slug`, `thumbnail?`/`shareImg?`, `aliases[]`, `faq?`.
+Lire `src/content.config.ts` (le contrat Zod). Ne jamais écrire de frontmatter de mémoire : le site a migré de Jekyll vers Astro, et les tics Jekyll (`ref:`, `categories:`, `layout:`) sont **faux**. Champs actuels clés : `title`, `subtitle?`, `description?`, `date` (ISO), `lang`, `translationKey`, `tags[]`, `slug`, `thumbnail?`/`shareImg?`, `aliases[]`, `related[]`, `faq?`.
 
 ### 2. Créer les deux langues, appariées
 - FR dans `src/content/posts/fr/AAAA-MM-JJ-slug.md` (`lang: fr`).
@@ -41,6 +41,7 @@ Réutiliser les tags existants : **IA**, **Développement** / **Development**, *
 - Toujours `/fr/slug/` ou `/en/slug/`, jamais un nom de fichier ni une URL absolue `https://angelo-lima.fr/...`.
 - Lier FR → FR et EN → EN. **Vérifier chaque slug cible** dans `src/content/posts/` avant de l'écrire (les slugs EN diffèrent des FR).
 - Viser 2 à 4 liens internes vers des articles réellement connexes. Ne pas forcer un lien hors-sujet (cf. deslopify).
+- Renseigner `related:` (2 à 3 `translationKey` d'articles existants et publiés) pour piloter le bloc « Articles connexes ». Une seule liste, identique sur FR et EN. Si l'article prolonge une série, ajouter aussi sa clé dans le `related:` des articles de la série (sinon le lien ne va que dans un sens).
 
 ### 5. Optimisation SEO / GEO
 **Charger `references/seo-geo.md`** et appliquer la checklist. En résumé :
@@ -96,6 +97,7 @@ Le rapport final à l'auteur dit **étape par étape ce qui a été fait, et ce 
 - [ ] Tags dans la liste standardisée.
 - [ ] `date` au format ISO (ex. `2026-07-21T12:00:00.000Z`).
 - [ ] Liens internes relatifs, cibles vérifiées, FR→FR / EN→EN.
+- [ ] `related:` renseigné (mêmes clés FR et EN, `translationKey` vérifiés).
 - [ ] `description` ≤ 155 caractères.
 - [ ] Bloc « L'essentiel » / « In brief » présent.
 - [ ] `faq:` renseigné (4-5 Q/R autoportantes).

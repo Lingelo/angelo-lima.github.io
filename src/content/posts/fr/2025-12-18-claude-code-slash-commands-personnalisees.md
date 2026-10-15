@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-18-claude-code-slash-commands-personnalisees/"
+related:
+  - "claude-code-day-7"
+  - "claude-code-day-9"
+  - "claude-code-day-10"
 ---
 Les slash commands built-in sont utiles, mais la vraie puissance vient des **commandes personnalisées**. Aujourd'hui, nous allons créer nos propres commandes pour automatiser les workflows récurrents.
 

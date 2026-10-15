@@ -227,6 +227,40 @@ const faqJsonLd =
 
   {faqJsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />}
 
+  <script is:inline define:vars={{ copyLabel: t.copyCode, copiedLabel: t.copiedCode }}>
+    // "Copy" button on every code block. Clicks are sent to GA4 (only if consent was given).
+    document.querySelectorAll('.article-content pre').forEach(function (pre) {
+      var wrap = document.createElement('div');
+      wrap.className = 'code-block';
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(pre);
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'code-copy-btn label-caps';
+      btn.textContent = copyLabel;
+      btn.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(pre.innerText).then(function () {
+          btn.textContent = copiedLabel;
+          setTimeout(function () { btn.textContent = copyLabel; }, 2000);
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'copy_code', { page_path: location.pathname });
+          }
+        });
+      });
+      wrap.appendChild(btn);
+    });
+
+    // Follow links (LinkedIn / RSS / GitHub) at the end of the article.
+    document.querySelectorAll('[data-follow]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'follow_click', { channel: a.dataset.follow, page_path: location.pathname });
+        }
+      });
+    });
+  </script>
+
   <script is:inline>
     window.addEventListener('scroll', function () {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;

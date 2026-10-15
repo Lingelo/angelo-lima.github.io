@@ -14,6 +14,10 @@ cover: "/assets/img/sam-altman-bulle-ia.webp"
 thumbnail: "/assets/img/sam-altman-bulle-ia.webp"
 aliases:
   - "/en/2025-08-21-sam-altman-ai-bubble-markets-analysis/"
+related:
+  - "mensch-assemblee-nationale-2026"
+  - "ai-replacing-developers-analysis"
+  - "ai-ecology-2026"
 ---
 The technology world was shaken this week by the explosive statements from Sam Altman, CEO of OpenAI, who openly admitted that the artificial intelligence industry is experiencing a major speculative bubble period.
 

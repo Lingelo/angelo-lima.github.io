@@ -13,6 +13,10 @@ cover: "/assets/img/nvidia-nim.webp"
 shareImg: "/assets/img/nvidia-nim.webp"
 aliases:
   - "/2024-12-27-nvidia-nim/"
+related:
+  - "ollama-open-webui"
+  - "ollama-2026-state-of-the-art"
+  - "openai-gpt-oss"
 ---
 ## Architecture microservices pour l'inférence IA : révolutionner le déploiement
 

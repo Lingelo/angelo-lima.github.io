@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-26-claude-code-facturation-couts/"
+related:
+  - "claude-code-day-15"
+  - "claude-code-day-17"
+  - "claude-code-ollama"
 ---
 Claude Code est puissant, mais il consomme des tokens. Comprendre la facturation permet d'optimiser vos coûts. Voyons comment surveiller et maîtriser votre budget.
 

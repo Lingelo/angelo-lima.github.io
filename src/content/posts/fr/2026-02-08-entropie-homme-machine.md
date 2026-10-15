@@ -13,6 +13,10 @@ author: "Angelo Lima"
 thumbnail: "/assets/img/entropie.webp"
 aliases:
   - "/2026-02-08-entropie-homme-machine/"
+related:
+  - "dunning-kruger-effect"
+  - "ai-replacing-developers-analysis"
+  - "llm-hallucinations-devoxx-2026"
 ---
 ## Introduction : Une loi universelle que personne ne vous a expliquée
 

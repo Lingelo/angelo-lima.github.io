@@ -13,6 +13,10 @@ cover: "/assets/img/deepseek-jailbreak.webp"
 shareImg: "/assets/img/deepseek-jailbreak.webp"
 aliases:
   - "/en/2025-01-29-llm-jailbreaking-security-analysis-bypass-mechanisms/"
+related:
+  - "best-of-n-jailbreaking"
+  - "llm-hallucinations-devoxx-2026"
+  - "claude-code-day-7"
 ---
 # Analysis of Bypass Vulnerabilities in DeepSeek R1
 

@@ -56,6 +56,9 @@ export const I18N = {
     supportCta: 'M’offrir un café',
     supportFooter: 'Soutenir',
     rssSupport: 'Cet article t’a été utile ? Tu peux soutenir le blog en m’offrant un café sur',
+    followLabel: 'Suivre les prochains articles',
+    copyCode: 'Copier',
+    copiedCode: 'Copié ✓',
   },
   en: {
     blog: 'Blog',
@@ -89,6 +92,9 @@ export const I18N = {
     supportCta: 'Buy me a coffee',
     supportFooter: 'Support',
     rssSupport: 'Found this article useful? You can support the blog by buying me a coffee on',
+    followLabel: 'Follow upcoming articles',
+    copyCode: 'Copy',
+    copiedCode: 'Copied ✓',
   },
 } as const;
 

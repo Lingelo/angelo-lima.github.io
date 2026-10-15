@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2026-03-05-claude-code-insights-commande/"
+related:
+  - "claude-code-day-5"
+  - "claude-code-cheatsheet-octobre-2026"
+  - "ai-development-philosophies"
 ---
 Annoncée début février 2026 par Thariq Shihipar d'Anthropic, la commande `/insights` est l'une des dernières additions à Claude Code. Le principe : analyser vos 30 derniers jours de sessions et générer un rapport détaillé de vos habitudes. Patterns récurrents, points de friction, workflows inefficaces — tout y passe.
 

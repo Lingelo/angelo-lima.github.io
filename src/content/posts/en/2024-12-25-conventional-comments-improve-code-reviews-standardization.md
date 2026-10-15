@@ -12,6 +12,10 @@ cover: "/assets/img/conventional-comments.webp"
 shareImg: "/assets/img/conventional-comments.webp"
 aliases:
   - "/en/2024-12-25-conventional-comments-improve-code-reviews-standardization/"
+related:
+  - "conventional-commits"
+  - "dunning-kruger-effect"
+  - "nasa-methodologies"
 ---
 ## Review Comment Standardization: Optimizing Technical Communication
 

@@ -13,6 +13,10 @@ cover: "/assets/img/rice-nasa.webp"
 shareImg: "/assets/img/rice-nasa.webp"
 aliases:
   - "/2025-01-28-rice-power-of-10/"
+related:
+  - "feature-sliced-design"
+  - "conventional-commits"
+  - "bun-evaluation"
 ---
 # Développement web robuste : Appliquer les méthodologies NASA pour des applications critiques
 

@@ -15,6 +15,10 @@ thumbnail: "/assets/img/second-cerveau-obsidian.png"
 shareImg: "/assets/img/second-cerveau-obsidian.png"
 aliases:
   - "/2026-06-10-second-cerveau-obsidian-claude-karpathy/"
+related:
+  - "claude-code-day-5"
+  - "claude-code-day-10"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser** : c'est précisément là que l'effort humain s'effondre.
 

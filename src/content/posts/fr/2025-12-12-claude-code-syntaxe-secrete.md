@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-12-claude-code-syntaxe-secrete/"
+related:
+  - "claude-code-day-1"
+  - "claude-code-day-3"
+  - "claude-code-day-4"
 ---
 Hier, nous avons installé Claude Code et découvert les commandes de base. Aujourd'hui, nous passons au niveau supérieur avec la **syntaxe secrète** : quatre symboles qui transforment votre façon d'interagir avec Claude.
 

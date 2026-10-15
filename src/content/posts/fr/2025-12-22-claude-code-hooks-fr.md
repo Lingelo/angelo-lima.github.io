@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-22-claude-code-hooks-fr/"
+related:
+  - "claude-code-day-11"
+  - "claude-code-day-13"
+  - "claude-code-cheatsheet-octobre-2026"
 ---
 Les hooks permettent d'exécuter des actions automatiques en réponse aux événements Claude Code. C'est le pont entre Claude et vos outils de développement. Aujourd'hui, nous allons voir comment les utiliser et les créer.
 

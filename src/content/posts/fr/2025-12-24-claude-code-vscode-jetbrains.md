@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-24-claude-code-vscode-jetbrains/"
+related:
+  - "claude-code-day-13"
+  - "claude-code-day-15"
+  - "orca-ide-agentic-development"
 ---
 Jusqu'ici, nous avons utilisé Claude Code en terminal. Mais il existe aussi des extensions pour **VS Code** et **JetBrains**. Voyons comment tirer parti de l'interface graphique.
 

@@ -13,6 +13,10 @@ cover: "/assets/img/web-3-0.webp"
 shareImg: "/assets/img/web-3-0.webp"
 aliases:
   - "/en/2025-01-24-web-3-0-blockchain-technical-analysis-decentralized-revolution/"
+related:
+  - "meta-fact-checking"
+  - "sam-altman-ai-bubble"
+  - "bun-evaluation"
 ---
 # Understanding Web 3.0: A Digital Revolution
 

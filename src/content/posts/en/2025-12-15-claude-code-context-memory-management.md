@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-15-claude-code-context-memory-management/"
+related:
+  - "claude-code-day-4"
+  - "claude-code-day-6"
+  - "second-brain-karpathy"
 ---
 A Claude Code session can last hours. But the longer the conversation, the heavier the context becomes. Today, we'll see how to effectively manage memory and context for productive sessions.
 

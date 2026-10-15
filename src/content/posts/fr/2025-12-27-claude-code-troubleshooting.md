@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-27-claude-code-troubleshooting/"
+related:
+  - "claude-code-day-16"
+  - "claude-code-day-18"
+  - "claude-code-insights"
 ---
 Claude Code est robuste, mais des problèmes peuvent survenir. Voici un guide complet pour diagnostiquer et résoudre les erreurs les plus courantes.
 

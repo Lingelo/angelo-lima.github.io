@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-19-claude-code-subagents-fr/"
+related:
+  - "claude-code-day-8"
+  - "claude-code-day-10"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 Les commandes slash automatisent des workflows. Les **subagents** vont plus loin : ce sont des agents IA spécialisés avec leur propre contexte, instructions et outils. Aujourd'hui, nous allons apprendre à les utiliser et les créer.
 

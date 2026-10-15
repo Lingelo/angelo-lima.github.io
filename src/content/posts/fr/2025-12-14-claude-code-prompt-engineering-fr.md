@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-14-claude-code-prompt-engineering-fr/"
+related:
+  - "claude-code-day-3"
+  - "claude-code-day-5"
+  - "llm-hallucinations-devoxx-2026"
 ---
 Vous maîtrisez maintenant le workflow Explore → Plan → Code → Test. Mais la qualité des résultats dépend énormément de **comment** vous formulez vos requêtes. Aujourd'hui, nous allons aborder les techniques de prompt engineering spécifiques à Claude Code.
 

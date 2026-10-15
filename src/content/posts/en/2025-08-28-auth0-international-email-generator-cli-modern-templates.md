@@ -18,6 +18,10 @@ cover: "/assets/img/auth0-international-email.webp"
 shareImg: "/assets/img/auth0-international-email.webp"
 aliases:
   - "/en/2025-08-28-auth0-international-email-generator-cli-modern-templates/"
+related:
+  - "json-resume"
+  - "gbts-typescript-gameboy"
+  - "prelude-of-the-chambered-reborn"
 ---
 ## Auth0 Email Internationalization: The Challenge of Multilingual Templates
 

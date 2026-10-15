@@ -13,6 +13,10 @@ cover: "/assets/img/mcp-atlassian-cover.webp"
 shareImg: "/assets/img/mcp-atlassian-cover.webp"
 aliases:
   - "/en/2025-05-12-anthropic-mcp-model-context-protocol-llm-integration/"
+related:
+  - "claude-code-day-13"
+  - "sql-assistant"
+  - "claude-code-day-10"
 ---
 ## What is the MCP Protocol?
 

@@ -15,6 +15,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2026-04-24-claude-code-cheatsheet-avril-2026-mise-a-jour/"
+related:
+  - "claude-code-cheatsheet-octobre-2026"
+  - "claude-code-cheatsheet-juin-2026"
+  - "claude-code-cheatsheet-2026"
 ---
 J'avais publié une cheatsheet Claude Code fin mars. Moins de quatre semaines plus tard, elle est déjà incomplète : Opus 4.7 est sorti le 16 avril, Computer Use est descendu dans le CLI, Auto Mode est passé en GA sur Max, sept nouvelles commandes slash sont arrivées (et deux ont été supprimées), cinq événements hooks se sont ajoutés, et la Desktop app a été refondue le 14 avril. Entre v2.1.83 et v2.1.101, Anthropic a poussé une trentaine de releases en cinq semaines.
 

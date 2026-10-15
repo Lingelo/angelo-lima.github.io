@@ -1,5 +1,5 @@
 // Service Worker pour Angelo Lima - Performance et Cache
-const CACHE_NAME = 'angelo-lima-v7';
+const CACHE_NAME = 'angelo-lima-v8';
 const OFFLINE_PAGE = '/offline/';
 
 // Assets critiques à mettre en cache

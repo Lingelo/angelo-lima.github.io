@@ -1,0 +1,47 @@
+name: Dev.to drafts
+
+# Cross-posts new English articles to Dev.to as drafts (canonical → angelo-lima.fr).
+# Nothing is published automatically: review and publish each draft on dev.to/dashboard.
+# Requires the DEVTO_API_KEY repository secret; without it the job logs a warning and exits.
+
+on:
+  push:
+    branches: [master]
+    paths: ['src/content/posts/en/**']
+  schedule:
+    # After the daily rebuild, so scheduled posts get their draft on publication day.
+    - cron: '50 4 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Backfill: comma-separated slugs or translationKeys (ignores the date cutoff)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: devto-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Create Dev.to drafts
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          # Articles dated before this day are never synced automatically (use "only" to backfill).
+          DEVTO_SINCE: '2026-10-16'
+          DEVTO_ONLY: ${{ inputs.only }}
+        run: node scripts/devto-sync.mjs

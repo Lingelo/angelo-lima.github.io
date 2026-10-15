@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-16-claude-code-git-workflows-fr/"
+related:
+  - "claude-code-day-5"
+  - "claude-code-day-7"
+  - "conventional-commits"
 ---
 Claude Code s'intègre nativement avec Git. Aujourd'hui, nous allons explorer comment utiliser cette intégration pour des workflows de développement professionnels.
 

@@ -12,6 +12,10 @@ cover: "/assets/img/conventional-comments.webp"
 shareImg: "/assets/img/conventional-comments.webp"
 aliases:
   - "/2024-12-25-conventional-comments/"
+related:
+  - "conventional-commits"
+  - "dunning-kruger-effect"
+  - "nasa-methodologies"
 ---
 ## Standardisation des commentaires de revue : optimiser la communication technique
 

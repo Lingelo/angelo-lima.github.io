@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-13-claude-code-workflow-explore-plan-code-test/"
+related:
+  - "claude-code-day-2"
+  - "claude-code-day-4"
+  - "ai-development-philosophies"
 ---
 In my article about [the state of AI in development in 2025](/en/ai-development-between-promises-realities-2025-state/), I mentioned the "almost correct" code syndrome: **45% of developers spend more time debugging AI code than writing it themselves**.
 

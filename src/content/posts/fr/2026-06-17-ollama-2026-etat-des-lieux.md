@@ -15,6 +15,10 @@ thumbnail: "/assets/img/ollama-2026-cover.png"
 shareImg: "/assets/img/ollama-2026-cover.png"
 aliases:
   - "/2026-06-17-ollama-2026-etat-des-lieux/"
+related:
+  - "claude-code-ollama"
+  - "openai-gpt-oss"
+  - "ollama-open-webui"
 ---
 
 En janvier 2025, j'avais écrit [un guide de déploiement Ollama + Open WebUI](/fr/ollama-open-web-ui/) centré sur Docker et la configuration de base. Le projet tournait bien, mais restait un runner : on téléchargeait un GGUF, on interrogeait le port 11434, fin de l'histoire. Dix-huit mois et une version v0.30.8 plus tard, le périmètre a changé au point de rendre ce guide en partie obsolète. Cloud hybride, compatibilité Anthropic Messages API, web search native, agents. Voici l'état actuel.

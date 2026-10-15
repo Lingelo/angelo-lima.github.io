@@ -12,6 +12,10 @@ cover: "/assets/img/json-resume.webp"
 shareImg: "/assets/img/json-resume.webp"
 aliases:
   - "/2025-01-10-resume-json/"
+related:
+  - "auth0-international-email"
+  - "conventional-commits"
+  - "bun-evaluation"
 ---
 # JSON Resume : Approche structurée de la gestion documentaire professionnelle
 

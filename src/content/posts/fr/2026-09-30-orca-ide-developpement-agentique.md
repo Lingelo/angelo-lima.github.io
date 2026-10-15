@@ -10,6 +10,9 @@ tags:
   - "IA"
   - "Développement"
   - "Claude Code"
+related:
+  - "kaizen-ai-sdlc-claude-code"
+  - "claude-code-cheatsheet-octobre-2026"
 author: "Angelo Lima"
 thumbnail: "/assets/img/orca-ide-agentique.png"
 shareImg: "/assets/img/orca-ide-agentique.png"

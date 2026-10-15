@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-20-claude-code-skills/"
+related:
+  - "claude-code-day-9"
+  - "claude-code-day-11"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 Yesterday, we saw subagents that you explicitly invoke with `@`. Today, we discover **Skills**: capabilities that Claude activates **automatically** based on the context of your request.
 

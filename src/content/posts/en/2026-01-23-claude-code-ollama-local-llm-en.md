@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2026-01-23-claude-code-ollama-local-llm-en/"
+related:
+  - "ollama-2026-state-of-the-art"
+  - "claude-code-day-16"
+  - "ollama-open-webui"
 ---
 Big news for Claude Code users: **Ollama now supports the Anthropic Messages API**, which allows you to use Claude Code with local open-source models. No more exclusive dependency on Anthropic's cloud!
 

@@ -14,6 +14,10 @@ cover: "/assets/img/ia-remplacement-developpeurs.webp"
 thumbnail: "/assets/img/ia-remplacement-developpeurs.webp"
 aliases:
   - "/en/2025-12-31-will-ai-replace-developers-critical-analysis/"
+related:
+  - "ai-development"
+  - "dunning-kruger-effect"
+  - "llm-hallucinations-devoxx-2026"
 ---
 Panic is palpable on social media. Every new demo of a generative AI model triggers a wave of catastrophic predictions: "It's the end for developers", "AGI is coming in 2 years", "A team of 6 developers replaced by just one with AI". These claims deserve rigorous analysis, far from the collective hysteria.
 

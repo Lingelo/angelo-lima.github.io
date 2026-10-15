@@ -15,6 +15,10 @@ thumbnail: "/assets/img/ai-setup.webp"
 shareImg: "/assets/img/ai-setup.webp"
 aliases:
   - "/2025-01-02-ollama-open-web-ui/"
+related:
+  - "ollama-2026-state-of-the-art"
+  - "openai-gpt-oss"
+  - "claude-code-ollama"
 ---
 ## Architecture d'inférence locale : enjeux et solutions techniques
 

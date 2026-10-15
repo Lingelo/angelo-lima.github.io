@@ -10,6 +10,9 @@ tags:
   - "IA"
   - "Development"
   - "Claude Code"
+related:
+  - "kaizen-ai-sdlc-claude-code"
+  - "orca-ide-agentic-development"
 author: "Angelo Lima"
 cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"

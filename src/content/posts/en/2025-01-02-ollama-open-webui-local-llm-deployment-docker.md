@@ -15,6 +15,10 @@ thumbnail: "/assets/img/ai-setup.webp"
 shareImg: "/assets/img/ai-setup.webp"
 aliases:
   - "/en/2025-01-02-ollama-open-webui-local-llm-deployment-docker/"
+related:
+  - "ollama-2026-state-of-the-art"
+  - "openai-gpt-oss"
+  - "claude-code-ollama"
 ---
 ## Local inference architecture: challenges and technical solutions
 

@@ -15,6 +15,10 @@ cover: "/assets/img/mensch-assemblee-nationale-2026.webp"
 thumbnail: "/assets/img/mensch-assemblee-nationale-2026.webp"
 aliases:
   - "/en/2026-05-15-arthur-mensch-mistral-ai-national-assembly-hearing-en/"
+related:
+  - "amalia-portuguese-ai"
+  - "sam-altman-ai-bubble"
+  - "ai-ecology-2026"
 ---
 Tuesday May 12, 2026, 4:00 PM. **Arthur Mensch**, co-founder and CEO of Mistral AI, is heard by the [French National Assembly's inquiry commission](https://www.assemblee-nationale.fr/dyn/en/actualites-accueil-hub/vulnerabilites-du-secteur-du-numerique-en-france-auditions-de-mistral-ai-de-representants-des-gafam-en-france-et-de-cedric-o) "on structural dependencies and systemic vulnerabilities in the digital sector". Next to him sits Audrey Herblin-Stoop, Mistral's head of public affairs. Across the room, MPs trying to understand where Europe stands in the global AI race.
 

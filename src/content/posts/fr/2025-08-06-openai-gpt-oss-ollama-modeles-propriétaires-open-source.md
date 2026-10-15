@@ -13,6 +13,10 @@ author: "Angelo Lima"
 thumbnail: "/assets/img/ollama_openai.webp"
 aliases:
   - "/2025-08-06-openai-gpt-oss-ollama-modeles-propriétaires-open-source/"
+related:
+  - "ollama-open-webui"
+  - "ollama-2026-state-of-the-art"
+  - "claude-code-ollama"
 ---
 # OpenAI gpt-oss sur Ollama : Quand les modèles propriétaires passent en open source
 

@@ -15,6 +15,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2026-06-15-claude-code-cheatsheet-juin-2026-mise-a-jour/"
+related:
+  - "claude-code-cheatsheet-octobre-2026"
+  - "claude-code-cheatsheet-avril-2026"
+  - "orca-ide-agentic-development"
 ---
 **⚠ Mise à jour (12 juin 2026) :** Fable 5 et Mythos 5 ont été suspendus mondialement sur directive du gouvernement américain, quatre jours après leur lancement. Tous les autres modèles restent disponibles. Les entrées Fable 5 dans la cheat sheet sont conservées à titre de référence, marquées comme suspendues.
 

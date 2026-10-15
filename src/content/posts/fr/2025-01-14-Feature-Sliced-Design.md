@@ -14,6 +14,10 @@ cover: "/assets/img/feature-sliced-design.webp"
 shareImg: "/assets/img/feature-sliced-design.webp"
 aliases:
   - "/2025-01-14-Feature-Sliced-Design/"
+related:
+  - "nasa-methodologies"
+  - "bun-evaluation"
+  - "conventional-commits"
 ---
 # Feature-Sliced Design : Une architecture frontend moderne et méthodique
 

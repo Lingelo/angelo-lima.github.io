@@ -26,6 +26,10 @@ faq:
     a: "Yes. Compressed versions exist for Ollama and LM Studio. The Mac-optimized version runs at around 55 tokens per second in 6 GB of memory, which fits on an entry-level MacBook."
   - q: "Does Amália speak European or Brazilian Portuguese?"
     a: "Amália is specifically built for European Portuguese, whereas most international models answer in Brazilian Portuguese. The team even created a dedicated test to measure the model's tendency to drift toward Brazilian."
+related:
+  - "mensch-assemblee-nationale-2026"
+  - "ollama-2026-state-of-the-art"
+  - "llm-hallucinations-devoxx-2026"
 ---
 There's something people who grew up between two languages know well: the moment a tool makes you feel that one of the two counts for less than the other. The spell-checker that underlines your last name in red. The form that rejects accents. And, for the past three years, the chatbot you speak to in Portuguese that answers you in flawless Portuguese… from Brazil.
 

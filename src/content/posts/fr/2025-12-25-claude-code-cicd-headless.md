@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-25-claude-code-cicd-headless/"
+related:
+  - "claude-code-day-14"
+  - "claude-code-day-16"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 Claude Code n'est pas limité à l'usage interactif. Avec le **mode headless**, vous pouvez l'intégrer dans vos pipelines CI/CD. Voyons comment automatiser intelligemment.
 

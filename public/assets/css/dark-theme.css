@@ -2372,6 +2372,69 @@ pre.highlight {
   box-shadow: 0 6px 18px rgba(242, 202, 80, 0.3);
 }
 
+/* Follow links under the support box */
+.post-follow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  padding: 0 0.25rem;
+}
+
+.post-follow-label {
+  color: var(--color-on-surface-variant);
+}
+
+.article-content .post-follow-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.article-content .post-follow-link:hover,
+.article-content .post-follow-link:focus-visible {
+  border-bottom-color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Copy button on code blocks */
+.code-block {
+  position: relative;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 6px;
+  background: var(--color-surface-high);
+  color: var(--color-on-surface-variant);
+  font-size: 0.7rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.code-block:hover .code-copy-btn,
+.code-copy-btn:focus-visible {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+@media (hover: none) {
+  .code-copy-btn {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .post-support {
     flex-direction: column;

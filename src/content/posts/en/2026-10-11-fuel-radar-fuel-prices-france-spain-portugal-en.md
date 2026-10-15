@@ -23,6 +23,10 @@ faq:
     a: "No. Fuel Radar runs in the browser at lingelo.github.io/fuel-radar. It is a PWA, so it can be added to a phone's home screen and used like an app. A native Android version is being tested before its Play Store release."
   - q: "Does Fuel Radar use my location?"
     a: "Only if you allow it, to center the map around you. Fuel Radar does not store or share your location, needs no account and has no advertising tracker. Favorites and filters stay in your browser."
+related:
+  - "prelude-of-the-chambered-reborn"
+  - "sourdine-local-ai-transcription"
+  - "gbts-typescript-gameboy"
 ---
 On October 11, 2026, the median price of a liter of diesel was €2.34 in France, €2.22 in Portugal and €1.92 in Spain. On a 50-liter tank, the Spanish border is worth about twenty euros. And within the same city, two stations can be tens of cents apart.
 

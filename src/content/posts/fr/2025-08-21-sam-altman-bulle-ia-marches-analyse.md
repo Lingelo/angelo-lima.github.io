@@ -14,6 +14,10 @@ cover: "/assets/img/sam-altman-bulle-ia.webp"
 thumbnail: "/assets/img/sam-altman-bulle-ia.webp"
 aliases:
   - "/2025-08-21-sam-altman-bulle-ia-marches-analyse/"
+related:
+  - "mensch-assemblee-nationale-2026"
+  - "ai-replacing-developers-analysis"
+  - "ai-ecology-2026"
 ---
 Le monde de la technologie a été secoué cette semaine par les déclarations fracassantes de Sam Altman, PDG d'OpenAI, qui a ouvertement admis que l'industrie de l'intelligence artificielle traverse une période de bulle spéculative majeure.
 
