@@ -181,6 +181,7 @@ git commit --allow-empty -m "chore: trigger rebuild" && git push
 - **`.github/workflows/ci.yml`** — on push/PR: `npm ci`, `npm run check`, `npm run build`.
 - **`.github/workflows/deploy.yml`** — builds and deploys to GitHub Pages.
 - **`.github/workflows/daily-rebuild.yml`** — scheduled rebuild for future-dated posts (see above).
+- **`.github/workflows/devto-sync.yml`** — cross-posts new **English** articles to Dev.to as **drafts** (`published: false`, `canonical_url` → angelo-lima.fr) via `scripts/devto-sync.mjs`. Runs on push to `master` touching `posts/en/`, daily at 04:50 UTC (after the scheduled rebuild), or manually with an `only` input (slugs/translationKeys) to backfill older posts. Stateless: it skips any post whose canonical URL already exists on the Dev.to account. Only posts dated on/after `DEVTO_SINCE` are synced automatically. Needs the `DEVTO_API_KEY` repository secret (otherwise it logs a warning and exits). Test locally with `DRY_RUN=1 DEVTO_ONLY=<slug> node scripts/devto-sync.mjs`.
 - Custom domain via `public/CNAME` (angelo-lima.fr); site URL is set in `astro.config.mjs` and `src/site.ts`.
 
 **Before pushing content changes, run `npm run build` locally** to catch schema/frontmatter errors — an invalid frontmatter field fails the content-collection validation and breaks the build.
