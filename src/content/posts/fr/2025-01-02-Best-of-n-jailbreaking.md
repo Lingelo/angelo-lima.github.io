@@ -13,6 +13,10 @@ cover: "/assets/img/bon-llm.webp"
 shareImg: "/assets/img/bon-llm.webp"
 aliases:
   - "/2025-01-02-Best-of-n-jailbreaking/"
+related:
+  - "llm-jailbreaking"
+  - "llm-hallucinations-devoxx-2026"
+  - "claude-code-day-7"
 ---
 # Best-of-N Jailbreaking : Analyse des vulnérabilités par force brute sur les LLMs
 

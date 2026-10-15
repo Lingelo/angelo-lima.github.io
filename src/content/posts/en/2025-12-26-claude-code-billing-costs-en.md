@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-26-claude-code-billing-costs-en/"
+related:
+  - "claude-code-day-15"
+  - "claude-code-day-17"
+  - "claude-code-ollama"
 ---
 Claude Code is powerful, but it consumes tokens. Understanding billing helps optimize your costs. Let's see how to monitor and master your budget.
 

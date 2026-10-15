@@ -13,6 +13,10 @@ cover: "/assets/img/sql-assistant-cover.webp"
 shareImg: "/assets/img/sql-assistant-cover.webp"
 aliases:
   - "/en/2025-02-23-sql-assistant-ai-natural-language-sql-conversion/"
+related:
+  - "anthropic-mcp"
+  - "ollama-open-webui"
+  - "ai-development"
 ---
 # SQL Assistant AI: Natural Language to SQL Automatic Conversion
 

@@ -13,6 +13,10 @@ cover: "/assets/img/ia-impact-ecologique.webp"
 shareImg: "/assets/img/ia-impact-ecologique.webp"
 aliases:
   - "/2025-02-03-IA-impact-ecologique/"
+related:
+  - "ai-ecology-2026"
+  - "sam-altman-ai-bubble"
+  - "ollama-2026-state-of-the-art"
 ---
 # Impact écologique de l'IA : Analyse des coûts énergétiques d'entraînement vs inférence
 

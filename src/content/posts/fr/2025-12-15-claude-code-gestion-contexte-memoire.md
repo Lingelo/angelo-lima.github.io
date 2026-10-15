@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-15-claude-code-gestion-contexte-memoire/"
+related:
+  - "claude-code-day-4"
+  - "claude-code-day-6"
+  - "second-brain-karpathy"
 ---
 Une session Claude Code peut durer des heures. Mais plus la conversation s'allonge, plus le contexte devient lourd. Aujourd'hui, nous allons voir comment gérer efficacement la mémoire et le contexte pour des sessions productives.
 

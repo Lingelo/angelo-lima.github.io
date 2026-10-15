@@ -15,6 +15,10 @@ thumbnail: "/assets/img/ollama-2026-cover.png"
 shareImg: "/assets/img/ollama-2026-cover.png"
 aliases:
   - "/en/2026-06-17-ollama-2026-state-of-the-art-en/"
+related:
+  - "claude-code-ollama"
+  - "openai-gpt-oss"
+  - "ollama-open-webui"
 ---
 
 Back in January 2025 I wrote [a deployment guide for Ollama + Open WebUI](/en/ollama-open-webui-local-llm-deployment-docker/) focused on Docker and basic configuration. The project worked well, but it was still a runner: download a GGUF, query port 11434, done. Eighteen months and a v0.30.8 release later, the scope has changed enough to make parts of that guide obsolete. Hybrid cloud, Anthropic Messages API compatibility, native web search, agents. Here's where things stand.

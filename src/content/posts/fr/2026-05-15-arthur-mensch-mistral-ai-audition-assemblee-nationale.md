@@ -15,6 +15,10 @@ cover: "/assets/img/mensch-assemblee-nationale-2026.webp"
 thumbnail: "/assets/img/mensch-assemblee-nationale-2026.webp"
 aliases:
   - "/2026-05-15-arthur-mensch-mistral-ai-audition-assemblee-nationale/"
+related:
+  - "amalia-portuguese-ai"
+  - "sam-altman-ai-bubble"
+  - "ai-ecology-2026"
 ---
 Mardi 12 mai 2026, 16h00. **Arthur Mensch**, cofondateur et directeur général de Mistral AI, est auditionné par la [commission d'enquête de l'Assemblée nationale](https://www.assemblee-nationale.fr/dyn/en/actualites-accueil-hub/vulnerabilites-du-secteur-du-numerique-en-france-auditions-de-mistral-ai-de-representants-des-gafam-en-france-et-de-cedric-o) « sur les dépendances structurelles et les vulnérabilités systémiques dans le secteur du numérique ». À ses côtés, Audrey Herblin-Stoop, directrice des affaires publiques de Mistral. Face à eux, des députés qui veulent comprendre où l'Europe en est dans la course mondiale à l'IA.
 

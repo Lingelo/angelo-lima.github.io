@@ -13,6 +13,10 @@ cover: "/assets/img/rice-nasa.webp"
 shareImg: "/assets/img/rice-nasa.webp"
 aliases:
   - "/en/2025-01-28-robust-web-development-nasa-methodologies-critical-applications/"
+related:
+  - "feature-sliced-design"
+  - "conventional-commits"
+  - "bun-evaluation"
 ---
 # Robust Web Development: Applying NASA Methodologies for Critical Applications
 

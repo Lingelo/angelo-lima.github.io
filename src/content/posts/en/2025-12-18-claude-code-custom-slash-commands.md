@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-18-claude-code-custom-slash-commands/"
+related:
+  - "claude-code-day-7"
+  - "claude-code-day-9"
+  - "claude-code-day-10"
 ---
 Built-in slash commands are useful, but the real power comes from **custom commands**. Today, we'll create our own commands to automate recurring workflows.
 

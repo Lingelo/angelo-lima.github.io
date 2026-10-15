@@ -15,6 +15,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2026-03-31-claude-code-cheatsheet-2026-mise-a-jour/"
+related:
+  - "claude-code-cheatsheet-octobre-2026"
+  - "claude-code-cheatsheet-avril-2026"
+  - "claude-code-day-1"
 ---
 Claude Code évolue vite. La plupart des cheatsheets disponibles en ligne sont déjà incomplètes par rapport aux features sorties début 2026. J'ai construit une **référence exhaustive et visuelle** couvrant tout ce qui existe dans Claude Code v2.x en mars 2026 — et je la partage gratuitement.
 

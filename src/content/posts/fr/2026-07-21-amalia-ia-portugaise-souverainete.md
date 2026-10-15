@@ -26,6 +26,10 @@ faq:
     a: "Oui. Des versions compressées existent pour Ollama et LM Studio. La version optimisée pour Mac tourne à environ 55 mots par seconde dans 6 Go de mémoire, ce qui passe sur un MacBook d'entrée de gamme."
   - q: "Amália parle-t-il le portugais du Portugal ou du Brésil ?"
     a: "Amália est spécifiquement conçu pour le portugais du Portugal (portugais européen), là où la plupart des modèles internationaux répondent en portugais du Brésil. L'équipe a même créé un test dédié pour mesurer la tendance du modèle à dériver vers le brésilien."
+related:
+  - "mensch-assemblee-nationale-2026"
+  - "ollama-2026-state-of-the-art"
+  - "llm-hallucinations-devoxx-2026"
 ---
 Il y a une chose que les gens qui ont grandi entre deux langues connaissent bien : le moment où un outil vous fait sentir que l'une des deux compte moins que l'autre. Le correcteur orthographique qui souligne votre nom de famille en rouge. Le formulaire qui refuse les accents. Et, depuis trois ans, le chatbot à qui vous parlez en portugais et qui vous répond dans un portugais impeccable… du Brésil.
 

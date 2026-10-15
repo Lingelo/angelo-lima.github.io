@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-21-claude-code-plugins-marketplace/"
+related:
+  - "claude-code-day-10"
+  - "claude-code-day-12"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 We've seen how to create slash commands, subagents, and skills individually. **Plugins** allow you to package them together and share them. Today, we explore the Claude Code plugin ecosystem.
 

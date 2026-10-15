@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-28-claude-code-status-line-terminal/"
+related:
+  - "claude-code-day-17"
+  - "claude-code-day-19"
+  - "claude-code-cheatsheet-octobre-2026"
 ---
 Claude Code s'exécute dans votre terminal. Saviez-vous que vous pouvez personnaliser son apparence et son comportement ? Voyons comment adapter l'interface à vos préférences.
 

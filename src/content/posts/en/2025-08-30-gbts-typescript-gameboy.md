@@ -15,6 +15,10 @@ cover: "/assets/img/retro-gameboy-AI.webp"
 thumbnail: "/assets/img/retro-gameboy-AI.webp"
 aliases:
   - "/en/2025-08-30-gbts-typescript-gameboy/"
+related:
+  - "prelude-of-the-chambered-reborn"
+  - "claude-code-day-20"
+  - "sourdine-local-ai-transcription"
 ---
 Developing **GameBoy** games in 2025 is a fascinating challenge that blends nostalgia with extreme technical constraints. But what if we could use **TypeScript** — with all its modern power and features — to create retro games? This is exactly the problem I wanted to solve with **GBTS** (GameBoy TypeScript).
 

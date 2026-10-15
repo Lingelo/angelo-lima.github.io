@@ -12,6 +12,10 @@ cover: "/assets/img/json-resume.webp"
 shareImg: "/assets/img/json-resume.webp"
 aliases:
   - "/en/2025-01-10-json-resume-standardized-cv-format-developers-automation/"
+related:
+  - "auth0-international-email"
+  - "conventional-commits"
+  - "bun-evaluation"
 ---
 # JSON Resume: Structured Approach to Professional Document Management
 

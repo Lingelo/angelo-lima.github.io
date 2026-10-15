@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-23-claude-code-mcp-integration/"
+related:
+  - "claude-code-day-12"
+  - "claude-code-day-14"
+  - "anthropic-mcp"
 ---
 I've already explored the MCP protocol in my article [Model Context Protocol (MCP): Revolution in LLM Integration](/en/anthropic-mcp-model-context-protocol-llm-integration/). Today, we'll see how to use it concretely in Claude Code.
 

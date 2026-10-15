@@ -13,6 +13,10 @@ thumbnail: "/assets/img/thumb-conventional-commits.webp"
 shareImg: "/assets/img/conventional-commits.webp"
 aliases:
   - "/en/2024-12-24-conventional-commits-standardize-git-messages-optimized-collaboration/"
+related:
+  - "conventional-comments"
+  - "claude-code-day-6"
+  - "feature-sliced-design"
 ---
 ## Commit Message Standardization: A Readability Challenge
 

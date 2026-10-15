@@ -14,6 +14,10 @@ cover: "/assets/img/IA-developpeurs-avenir-2025.webp"
 thumbnail: "/assets/img/IA-developpeurs-avenir-2025.webp"
 aliases:
   - "/en/2025-08-03-ai-development-between-promises-realities-2025-state/"
+related:
+  - "ai-replacing-developers-analysis"
+  - "ai-development-philosophies"
+  - "llm-hallucinations-devoxx-2026"
 ---
 The ["Falkland Law"](https://www.hulkapps.com/fr/blogs/ecommerce-hub/comprendre-la-loi-des-iles-falkland-adopter-la-patience-dans-la-prise-de-decisions), formulated by psychologist Robert Falkland, states a simple principle: **if everything works well, why force change?** This rule, based on observation of corporate behaviors, reminds us to weigh costs before changing just for the sake of change.
 

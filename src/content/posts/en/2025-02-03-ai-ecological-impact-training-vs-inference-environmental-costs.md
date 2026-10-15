@@ -13,6 +13,10 @@ cover: "/assets/img/ia-impact-ecologique.webp"
 shareImg: "/assets/img/ia-impact-ecologique.webp"
 aliases:
   - "/en/2025-02-03-ai-ecological-impact-training-vs-inference-environmental-costs/"
+related:
+  - "ai-ecology-2026"
+  - "sam-altman-ai-bubble"
+  - "ollama-2026-state-of-the-art"
 ---
 # AI Ecological Impact: Analysis of Training vs Inference Energy Costs
 

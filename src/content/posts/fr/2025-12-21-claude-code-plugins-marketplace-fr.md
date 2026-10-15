@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/2025-12-21-claude-code-plugins-marketplace-fr/"
+related:
+  - "claude-code-day-10"
+  - "claude-code-day-12"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 Nous avons vu comment créer des commandes slash, subagents et skills individuellement. Les **Plugins** permettent de les packager ensemble et de les partager. Aujourd'hui, nous explorons l'écosystème de plugins Claude Code.
 

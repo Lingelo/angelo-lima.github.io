@@ -14,6 +14,10 @@ cover: "/assets/img/bun-cover.webp"
 shareImg: "/assets/img/bun-cover.webp"
 aliases:
   - "/en/2025-01-22-bun-2025-critical-evaluation-javascript-runtime-alternative/"
+related:
+  - "feature-sliced-design"
+  - "prelude-of-the-chambered-reborn"
+  - "nasa-methodologies"
 ---
 # Bun in 2025: Critical Evaluation of an Alternative JavaScript Runtime
 

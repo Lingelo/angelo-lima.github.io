@@ -15,6 +15,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2026-04-24-claude-code-cheatsheet-april-2026-update/"
+related:
+  - "claude-code-cheatsheet-octobre-2026"
+  - "claude-code-cheatsheet-juin-2026"
+  - "claude-code-cheatsheet-2026"
 ---
 I published a Claude Code cheatsheet at the end of March. Less than four weeks later it is already incomplete: Opus 4.7 shipped on April 16, Computer Use landed in the CLI, Auto Mode went GA on Max, seven new slash commands appeared (and two were removed), five hook updates arrived, and the Desktop app was redesigned on April 14. Between v2.1.83 and v2.1.101, Anthropic shipped roughly thirty releases in five weeks.
 

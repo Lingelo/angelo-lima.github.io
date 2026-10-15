@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-30-claude-code-case-study-prelude-en/"
+related:
+  - "claude-code-day-19"
+  - "prelude-of-the-chambered-reborn"
+  - "gbts-typescript-gameboy"
 ---
 To conclude this series, what better than a concrete experience report? Here's how I used Claude Code to convert **Prelude of the Chambered**, Notch's game (Minecraft creator), from Java to TypeScript — **in a single evening**.
 

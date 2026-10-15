@@ -26,6 +26,10 @@ faq:
     a: "AI is not a burden at the individual level: a single prompt weighs very little. It becomes one at the collective level, with data center electricity demand set to double by 2030 on a grid mix that is still partly fossil, and above all at the local level, where data centers strain water and power grids."
   - q: "How can developers reduce the environmental impact of AI?"
     a: "The main lever is sizing: route each task to the smallest model that can handle it, measure tokens per completed task, cap agent loops and use caching. Choosing a cloud region with low-carbon electricity and low water stress also changes the footprint."
+related:
+  - "ai-ecological-impact"
+  - "mensch-assemblee-nationale-2026"
+  - "ollama-2026-state-of-the-art"
 ---
 *A prompt uses less energy than an LED bulb left on for two minutes. And yet AI is becoming a real burden on power grids and water resources. Both sentences are true. That is the whole problem.*
 

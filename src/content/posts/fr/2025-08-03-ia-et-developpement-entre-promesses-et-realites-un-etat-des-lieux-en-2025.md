@@ -14,6 +14,10 @@ cover: "/assets/img/IA-developpeurs-avenir-2025.webp"
 thumbnail: "/assets/img/IA-developpeurs-avenir-2025.webp"
 aliases:
   - "/2025-08-03-ia-et-developpement-entre-promesses-et-realites-un-etat-des-lieux-en-2025/"
+related:
+  - "ai-replacing-developers-analysis"
+  - "ai-development-philosophies"
+  - "llm-hallucinations-devoxx-2026"
 ---
 La ["Loi de Falkland"](https://www.hulkapps.com/fr/blogs/ecommerce-hub/comprendre-la-loi-des-iles-falkland-adopter-la-patience-dans-la-prise-de-decisions), formulée par le psychologue Robert Falkland, énonce un principe simple : **si tout fonctionne bien, pourquoi forcer le changement ?** Cette règle, basée sur l'observation des comportements en entreprise, nous rappelle qu'il faut peser les coûts avant de changer juste pour changer.
 

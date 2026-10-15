@@ -15,6 +15,10 @@ thumbnail: "/assets/img/second-cerveau-obsidian.png"
 shareImg: "/assets/img/second-cerveau-obsidian.png"
 aliases:
   - "/en/2026-06-10-karpathy-second-brain-obsidian-claude-en/"
+related:
+  - "claude-code-day-5"
+  - "claude-code-day-10"
+  - "kaizen-ai-sdlc-claude-code"
 ---
 We all run a degraded version of the same dream: one single place that would hold everything we've ever read, watched, or learned. A backup brain. In practice, we pile up abandoned Notion pages, bookmarks we never reopen, highlighted PDFs rotting in a `Downloads` folder. The problem was never **collecting** information. It's **organizing** it. That's exactly where human effort collapses.
 

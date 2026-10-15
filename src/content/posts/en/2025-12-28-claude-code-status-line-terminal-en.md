@@ -14,6 +14,10 @@ cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
 aliases:
   - "/en/2025-12-28-claude-code-status-line-terminal-en/"
+related:
+  - "claude-code-day-17"
+  - "claude-code-day-19"
+  - "claude-code-cheatsheet-octobre-2026"
 ---
 Claude Code runs in your terminal. Did you know you can customize its appearance and behavior? Let's see how to adapt the interface to your preferences.
 

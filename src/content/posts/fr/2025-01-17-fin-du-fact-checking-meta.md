@@ -13,6 +13,10 @@ cover: "/assets/img/fake-news.webp"
 shareImg: "/assets/img/fake-news.webp"
 aliases:
   - "/2025-01-17-fin-du-fact-checking-meta/"
+related:
+  - "web-3-0"
+  - "sam-altman-ai-bubble"
+  - "llm-hallucinations-devoxx-2026"
 ---
 # Meta abandonne le fact-checking : Analyse des transformations de la gouvernance informationnelle
 

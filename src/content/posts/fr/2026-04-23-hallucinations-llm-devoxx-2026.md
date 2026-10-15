@@ -15,6 +15,10 @@ cover: "/assets/img/hallucinations-llm-devoxx-2026.png"
 thumbnail: "/assets/img/hallucinations-llm-devoxx-2026.png"
 aliases:
   - "/2026-04-23-hallucinations-llm-devoxx-2026/"
+related:
+  - "llm-jailbreaking"
+  - "ai-development"
+  - "entropy-human-machine"
 ---
 Jeudi 23 avril 2026, 15h40, Palais des Congrès. **Aygalic Jara**, consultant doctorant chez SCIAM en thèse CIFRE avec le LISN (Laboratoire Interdisciplinaire des Sciences du Numérique), a présenté un talk dont le titre résumait tout le programme : *"LLMs et hallucinations : comprendre, mesurer, maîtriser"*. Salle pleine, sujet brûlant. Le sujet est au cœur de ses travaux de thèse, dont un premier article d'état de l'art a été publié en 2025 aux journées JEP-TALN-RECITAL sous le titre *"État de l'art : évaluation, détection et mitigation des hallucinations des LLMs"*.
 

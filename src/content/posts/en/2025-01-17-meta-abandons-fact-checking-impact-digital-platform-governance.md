@@ -13,6 +13,10 @@ cover: "/assets/img/fake-news.webp"
 shareImg: "/assets/img/fake-news.webp"
 aliases:
   - "/en/2025-01-17-meta-abandons-fact-checking-impact-digital-platform-governance/"
+related:
+  - "web-3-0"
+  - "sam-altman-ai-bubble"
+  - "llm-hallucinations-devoxx-2026"
 ---
 # Meta Abandons Fact-Checking: Analysis of Informational Governance Transformations
 

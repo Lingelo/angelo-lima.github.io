@@ -26,6 +26,10 @@ faq:
     a: "L'IA n'est pas un fardeau au niveau individuel : un prompt pèse très peu. Elle le devient au niveau collectif, avec une demande électrique des data centers qui doit doubler d'ici 2030 sur un mix encore en partie fossile, et surtout au niveau local, là où les data centers pèsent sur l'eau et les réseaux électriques."
   - q: "Comment réduire l'impact environnemental de l'IA quand on développe ?"
     a: "Le levier principal est le dimensionnement : router chaque tâche vers le plus petit modèle suffisant, mesurer les tokens consommés par tâche terminée, plafonner les boucles des agents et utiliser le cache. Choisir une région cloud décarbonée et peu exposée au stress hydrique change aussi le bilan."
+related:
+  - "ai-ecological-impact"
+  - "mensch-assemblee-nationale-2026"
+  - "ollama-2026-state-of-the-art"
 ---
 *Un prompt consomme moins qu'une ampoule LED allumée deux minutes. Et pourtant, l'IA est en train de devenir une vraie charge pour les réseaux électriques et les ressources en eau. Les deux phrases sont vraies. C'est tout le problème.*
 

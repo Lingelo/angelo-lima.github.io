@@ -14,6 +14,10 @@ thumbnail: "/assets/img/sdd-compound-engineering.webp"
 shareImg: "/assets/img/sdd-compound-engineering.webp"
 aliases:
   - "/en/2026-04-04-sdd-compound-engineering-bmad-philosophies-en/"
+related:
+  - "kaizen-ai-sdlc-claude-code"
+  - "claude-code-day-3"
+  - "ai-development"
 ---
 Vibe coding democratized AI-assisted development. But by 2026, the verdict is unanimous: **it doesn't scale**. Serious projects demand more structure. Three families of approaches have emerged to fill that gap — each tackling the problem from a different angle.
 

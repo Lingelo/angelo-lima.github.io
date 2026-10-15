@@ -14,6 +14,10 @@ thumbnail: "/assets/img/thumb-welcome.webp"
 shareImg: "/assets/img/welcome.webp"
 aliases:
   - "/en/2024-12-23-introduction-franco-portuguese-developer-ai-web/"
+related:
+  - "2024-retrospective"
+  - "claude-code-day-1"
+  - "ai-development"
 ---
 # Introduction: Franco-Portuguese Developer Specialized in AI and Web Development
 

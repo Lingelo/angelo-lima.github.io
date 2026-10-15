@@ -13,6 +13,10 @@ cover: "/assets/img/dunning-kruger-cover.webp"
 shareImg: "/assets/img/dunning-kruger-cover.webp"
 aliases:
   - "/en/2025-01-17-dunning-kruger-effect-development-cognitive-psychology-tech-teams/"
+related:
+  - "ai-replacing-developers-analysis"
+  - "entropy-human-machine"
+  - "conventional-comments"
 ---
 # Dunning-Kruger Effect in Development: Cognitive Analysis of Technical Competencies
 

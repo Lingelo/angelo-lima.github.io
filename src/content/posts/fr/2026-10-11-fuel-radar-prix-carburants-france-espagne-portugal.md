@@ -23,6 +23,10 @@ faq:
     a: "Non. Fuel Radar s'ouvre dans le navigateur à l'adresse lingelo.github.io/fuel-radar. C'est une PWA : on peut l'ajouter à l'écran d'accueil du téléphone pour l'utiliser comme une application. Une version Android native est en cours de test avant sa publication sur le Play Store."
   - q: "Fuel Radar utilise-t-il ma position ?"
     a: "Seulement si tu l'autorises, pour centrer la carte autour de toi. Fuel Radar ne stocke ni ne partage la position, ne demande pas de compte et n'utilise pas de traceur publicitaire. Les favoris et les filtres restent dans le navigateur."
+related:
+  - "prelude-of-the-chambered-reborn"
+  - "sourdine-local-ai-transcription"
+  - "gbts-typescript-gameboy"
 ---
 Le 11 octobre 2026, le litre de gazole coûtait en prix médian 2,34 € en France, 2,22 € au Portugal et 1,92 € en Espagne. Sur un plein de 50 litres, la frontière espagnole vaut donc une vingtaine d'euros. Et dans une même ville, deux stations peuvent afficher plusieurs dizaines de centimes d'écart.
 
