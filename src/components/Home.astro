@@ -19,18 +19,18 @@ const pagePosts = rest.slice((currentPage - 1) * perPage, currentPage * perPage)
 
 const heroTitle =
   lang === 'en'
-    ? 'Angélo Lima — Web Dev & AI'
-    : 'Angélo Lima — Web Dev & IA';
+    ? 'Angélo Lima — AI-Augmented Developer'
+    : 'Angélo Lima — Développeur augmenté';
 const heroSubtitle =
   lang === 'en'
-    ? 'Tech blog exploring web development and artificial intelligence. Exploring the intersection of modern frameworks, LLMs, and robust engineering.'
-    : "Blog tech sur le développement web et l'intelligence artificielle. Explorer l'intersection des frameworks modernes, des LLMs et de l'ingénierie logicielle.";
+    ? "I've been coding with AI agents since they first showed up. I write about what that really changes in the job, and sometimes about what made me want to do it."
+    : "Je code avec des agents IA depuis qu'ils existent. J'écris sur ce que ça change vraiment dans le métier, et parfois sur ce qui m'a donné envie de le faire.";
 const featuredImg = featured?.data.thumbnail ?? featured?.data.cover;
 ---
 <section class="home-hero">
   <div class="home-container">
     <div class="home-hero-content">
-      <h1 class="home-hero-title" set:html={heroTitle.replace('Web Dev', '<span class="home-hero-accent">Web Dev</span>')} />
+      <h1 class="home-hero-title" set:html={heroTitle.replace(/(AI-Augmented|augmenté)/, '<span class="home-hero-accent">$1</span>')} />
       <p class="home-hero-subtitle">{heroSubtitle}</p>
     </div>
   </div>

@@ -1,7 +1,7 @@
 {
-  "name": "Angelo Lima - Dev Web & IA",
+  "name": "Angelo Lima - Développeur augmenté",
   "short_name": "Angelo Lima",
-  "description": "Angelo Lima, développeur web full-stack spécialisé en IA. Blog tech français avec tutoriels développement, analyses d'outils IA (Claude, ChatGPT), et réflexions sur l'innovation digitale moderne.",
+  "description": "Angelo Lima, développeur augmenté à l'IA, tech lead et engineering manager. Blog sur le développement agentique, l'IA générative (Claude Code, LLM) et le métier de développeur.",
   "start_url": "/",
   "display": "minimal-ui",
   "background_color": "#0a0a0a",
