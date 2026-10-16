@@ -20,6 +20,8 @@ faq:
     a: "Le remake de The Legend of Zelda: Ocarina of Time sort le 5 novembre 2026, en exclusivité sur Nintendo Switch 2. Nintendo l'a annoncé en juin 2026 et a confirmé la date lors du Direct des 40 ans de Zelda, le 8 septembre 2026."
   - q: "Qu'est-ce qui change dans le remake d'Ocarina of Time ?"
     a: "Le remake Switch 2 d'Ocarina of Time reconstruit entièrement les graphismes et ajoute une caméra libre, un saut et un sprint manuels, un cycle jour/nuit continu même en ville, des cinématiques doublées et une bande-son orchestrale. Il ajoute aussi un menu de quête, la reconnaissance des mélodies au micro et des revanches chronométrées contre les boss."
+  - q: "Peut-on jouer de l'ocarina en fredonnant dans le remake d'Ocarina of Time ?"
+    a: "Oui. Dans le remake Switch 2 d'Ocarina of Time, on peut fredonner une mélodie dans le micro de la console, ou la jouer sur un vrai instrument : le jeu la reconnaît et Link la joue à l'ocarina, à condition de l'avoir déjà apprise. Les boutons fonctionnent toujours."
   - q: "Pourquoi Ocarina of Time avait-il autant de brouillard sur Nintendo 64 ?"
     a: "Sur Nintendo 64, le brouillard d'Ocarina of Time masquait la limite de la distance d'affichage : la console ne pouvait pas afficher tout le décor au loin. Les développeurs en ont fait un élément d'ambiance plutôt qu'un défaut visible."
   - q: "Quelles concessions techniques Ocarina of Time faisait-il sur Nintendo 64 ?"
@@ -90,27 +92,41 @@ Et voilà qu'arrive une version qui n'a plus besoin de tricher. Les annonces de 
 |---|---|
 | Place du marché en image fixe, caméra bloquée | Bourg d'Hyrule reconstruit en vraie 3D, mieux relié au reste du monde |
 | Caméra automatique, ciblage Z indispensable | Caméra libre au stick droit |
-| Saut automatique au bord des plateformes | Saut et sprint manuels (l'ancien saut automatique reste en option) |
+| Saut automatique au bord des plateformes | Saut et sprint manuels |
 | Le temps s'arrête dans les villes | Cycle jour/nuit continu, villes comprises |
 | Musique générée par la console | Bande-son orchestrale |
 | Dialogues uniquement en texte | Cinématiques entièrement doublées |
 | Textures minuscules | Graphismes refaits : modèles, lumières, matériaux |
 
-Il y a aussi du contenu nouveau, d'après les previews :
+Il y a aussi du contenu nouveau, d'après les annonces et les previews :
 
-- Un menu de quête, « Threads of Time » en anglais, qui suit les objectifs et remplit une tapisserie au fil de l'aventure.
-- La reconnaissance des mélodies au micro de la Switch 2 : on fredonne un air appris, et Link le joue à l'ocarina.
-- Une salle où sont exposées les statues des monstres vaincus, avec des revanches chronométrées contre les boss.
+- Un menu de quête, « Threads of Time » en anglais, qui suit les objectifs, résume l'histoire pour reprendre une partie, et remplit une tapisserie au fil de l'aventure.
+- Le « Hall of Fallen Heroes », une salle où sont exposées les statues des monstres vaincus, avec des revanches contre les boss.
 - Des boss retravaillés, avec de nouvelles attaques pour King Dodongo et Volvagia et de nouvelles phases pour les sœurs Spectre.
 - Un temple de la Forêt revu, plus proche de la maison hantée, avec des énigmes modifiées.
 - Un cinquième flacon à gagner au bazar du Bourg, de nouveaux personnages et des dialogues plus longs.
-- Des combats plus nerveux, avec des enchaînements.
-
-![Link joue la berceuse de Zelda à l'ocarina, avec la partition affichée à l'écran](/assets/img/zelda-oot-remake-ocarina.webp)
-*La berceuse de Zelda à l'ocarina. Sur Switch 2, on peut aussi la fredonner au micro. Image : Nintendo*
 
 ![King Dodongo, gueule ouverte, face à Link enfant](/assets/img/zelda-oot-remake-king-dodongo.webp)
 *King Dodongo revient avec de nouvelles attaques. Image : Nintendo*
+
+### Courir, sauter, fredonner
+
+C'est en lisant les prises en main que j'ai mesuré à quel point la façon de jouer change.
+
+Sur N64, Link n'avait pas de sprint. Pour aller plus vite, on enchaînait les roulades, et tout le monde a traversé la plaine d'Hyrule comme ça. Le remake ajoute un vrai sprint. La roulade reste disponible, pour ceux qui veulent faire comme en 1998.
+
+Le saut, lui, était automatique : on courait vers le bord, et Link sautait tout seul. Il y a maintenant un bouton dédié, et le saut automatique au bord des plateformes disparaît. Dans une des previews, l'auteur raconte être tombé plusieurs fois pendant la démo, le temps de s'y habituer. Je sens que ce sera mon cas aussi.
+
+Le reste suit la même logique. La nage a été revue en profondeur, et on peut plonger pour ramasser des objets au fond de l'eau. On change d'objet sans passer par le menu de pause, là où la N64 obligeait à jongler avec trois boutons C. Et les portes, celles qui cachaient les chargements, Link les pousse désormais vraiment avec les mains.
+
+Les combats gardent le ciblage Z, mais ils sont plus nerveux. Les ennemis attaquent plus vite, Link enchaîne les coups, et l'attaque tournoyante envoie des ondes d'énergie. Côté voix, les grandes cinématiques sont doublées, l'Arbre Mojo compris. Les personnages secondaires parlent surtout en texte. Et Navi lance toujours son « Hey, listen! ».
+
+Reste la nouveauté qui m'a fait sourire. Sur N64, on jouait de l'ocarina avec les boutons A et C. Sur Switch 2, les boutons marchent toujours, mais on peut aussi fredonner la mélodie dans le micro de la console, ou la jouer sur un vrai instrument. Le jeu reconnaît l'air et Link le joue à l'ocarina, à condition qu'il l'ait déjà appris. HORI vend même un ocarina électronique, à 49,99 dollars, qui joue les 12 mélodies du jeu pour que le micro les capte.
+
+Combien de gamins ont fredonné le chant de Saria ou la berceuse de Zelda en dehors du jeu ? Cette fois, ça sert à jouer.
+
+![Link joue la berceuse de Zelda à l'ocarina, avec la partition affichée à l'écran](/assets/img/zelda-oot-remake-ocarina.webp)
+*La berceuse de Zelda à l'ocarina. Sur Switch 2, on peut aussi la fredonner au micro. Image : Nintendo*
 
 Pour se faire une idée du jeu en mouvement, Eiji Aonuma, le producteur de la série, en a fait une démonstration commentée :
 
