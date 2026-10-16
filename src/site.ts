@@ -1,8 +1,8 @@
 // Central site configuration — the Astro equivalent of the relevant parts of _config.yml.
 export const SITE = {
   url: 'https://angelo-lima.fr',
-  title: 'Angelo Lima - Dev Web & IA',
-  titleEn: 'Angelo Lima - Web Dev & AI',
+  title: 'Angelo Lima - Développeur augmenté',
+  titleEn: 'Angelo Lima - AI-Augmented Developer',
   author: 'Angélo LIMA',
   authorShort: 'Angelo Lima',
   email: 'angelomiguellima@gmail.com',
@@ -15,11 +15,11 @@ export const SITE = {
   postsPerPage: 6,
   excerptWords: 50,
   keywords:
-    'Angelo Lima développeur France, blog tech Angelo Lima, développeur web IA Angelo Lima, Angelo Lima blog français, programmation web Angelo Lima, tutoriels IA Claude ChatGPT, développeur full-stack France, blog développement Angelo Lima, innovation digitale Angelo Lima, outils IA développeurs, maillage interne SEO, optimisation performance web, développeur JavaScript TypeScript, blog tech français 2025',
+    'Angelo Lima, développeur augmenté, développement agentique, agents IA, Claude Code, IA générative, LLM, tech lead, engineering manager, ingénierie logicielle, TypeScript, Java, blog tech français',
   descriptionFr:
-    "Angelo Lima, développeur web full-stack spécialisé en IA. Blog tech français avec tutoriels développement, analyses d'outils IA (Claude, ChatGPT), et réflexions sur l'innovation digitale moderne.",
+    "Angelo Lima, développeur augmenté à l'IA, tech lead et engineering manager. Blog sur le développement agentique, l'IA générative (Claude Code, LLM) et le métier de développeur.",
   descriptionEn:
-    'Angelo Lima, full-stack web developer specialized in AI. Tech blog with development tutorials, AI tools analysis (Claude, ChatGPT), and reflections on modern digital innovation.',
+    "Angelo Lima, AI-augmented developer, tech lead and engineering manager. Blog about agentic development, generative AI (Claude Code, LLMs) and the craft of software.",
 } as const;
 
 // UI strings per language (the bits that were inlined as {% if page.lang == 'en' %} in Liquid).

@@ -18,7 +18,7 @@ export async function GET(ctx: APIContext) {
 
 > ${SITE.descriptionFr}
 
-Blog personnel bilingue (français / anglais) d'Angelo Lima, développeur web full-stack franco-portugais spécialisé en intelligence artificielle. Articles techniques sur le développement web, l'IA et les LLMs (Claude, ChatGPT, Ollama), Claude Code, la sécurité et l'ingénierie logicielle.
+Blog personnel bilingue (français / anglais) d'Angelo Lima, développeur augmenté à l'IA franco-portugais, tech lead et engineering manager. Articles sur le développement agentique, l'IA générative et les LLMs (Claude, ChatGPT, Ollama), Claude Code, la sécurité et l'ingénierie logicielle.
 
 Auteur : ${SITE.author} — ${abs('/aboutme/')}
 

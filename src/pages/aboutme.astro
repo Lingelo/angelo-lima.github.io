@@ -2,12 +2,12 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import { SITE } from '../site';
 const description =
-  "Angelo Lima, développeur web full-stack basé en France depuis 2013. Spécialisé en IA, JavaScript, et innovations tech. Blog technique français avec tutoriels, analyses d'outils IA (Claude, ChatGPT) et réflexions développement moderne.";
+  "Angelo Lima, développeur depuis 2013, aujourd'hui développeur augmenté à l'IA, tech lead et engineering manager. Parcours, outils et projets open source.";
 ---
 <PageLayout
   lang="fr"
   title="À propos de moi"
-  subtitle="Développeur web full-stack, spécialisé IA et architectures modernes"
+  subtitle="Développeur augmenté, tech lead et engineering manager"
   description={description}
   canonical="/aboutme/"
   active="about"
@@ -19,48 +19,41 @@ const description =
     { hreflang: 'en', href: '/en/aboutme/' },
   ]}
 >
-  <h2>Parcours professionnel</h2>
-  <p>Je suis <strong>Angelo Lima</strong>, développeur web full-stack Franco-Portugais avec plus d'une décennie d'expérience dans l'écosystème technologique. Mon parcours a débuté en 2013 après une formation approfondie en développement logiciel.</p>
-  <p>Ma pratique se concentre sur l'architecture de solutions web modernes, l'intégration d'intelligence artificielle et le développement d'outils productifs pour les équipes techniques.</p>
+  <h2>Parcours</h2>
+  <p>Je suis <strong>Angelo Lima</strong>, franco-portugais, et je fais du logiciel depuis 2013. J'ai commencé comme développeur fullstack chez SFEIR, une ESN, et j'y suis toujours. Entre-temps, le métier a changé, et moi avec.</p>
+  <p>Aujourd'hui, je suis tech lead et engineering manager. J'accompagne une équipe de plus de 12 consultants, je fais passer des entretiens techniques et j'anime des formations Angular. En mission, je suis référent technique chez InVivo Digital Factory depuis 2022, sur des plateformes e-commerce B2B agricoles. J'y ai notamment construit un assistant IA sur WhatsApp qui prend les commandes des agriculteurs, branché aux microservices métier grâce au function calling d'OpenAI.</p>
+  <p>Et je code avec des agents IA au quotidien. C'est ce que j'appelle être un développeur augmenté : l'agent écrit une bonne partie du code, je garde la conception, la revue et la responsabilité de ce qui part en production.</p>
 
-  <h2>Mon expertise technique 💻</h2>
+  <h2>Ce que j'utilise 💻</h2>
   <ul>
-    <li><strong>Langages</strong> : JavaScript, TypeScript, Python, PHP</li>
-    <li><strong>Frameworks</strong> : React, Vue.js, Angular, Node.js, Nest.js</li>
+    <li><strong>Langages</strong> : TypeScript, JavaScript, Java, Kotlin, Python, PHP</li>
+    <li><strong>Frameworks</strong> : Node.js, Nest.js, Angular, React, Vue.js</li>
     <li><strong>Bases de données</strong> : PostgreSQL, MySQL, MongoDB</li>
+    <li><strong>IA</strong> : Claude Code, API OpenAI (function calling), MCP, agents</li>
     <li><strong>Cloud &amp; DevOps</strong> : Docker, AWS, CI/CD</li>
-    <li><strong>Spécialités</strong> : Architecture web, APIs REST, Intelligence Artificielle</li>
   </ul>
 
   <h2>Ce que vous trouverez sur ce blog 📝</h2>
-  <p>Ce blog propose une analyse technique approfondie des tendances et innovations du secteur :</p>
 
-  <h3>Intelligence Artificielle</h3>
+  <h3>Développement agentique et IA</h3>
   <ul>
-    <li>Analyses techniques des modèles de langage (LLM)</li>
-    <li>Évaluation critique des outils IA (Ollama, OpenAI, Claude)</li>
-    <li>Implémentations pratiques et cas d'usage</li>
+    <li>Claude Code au quotidien : retours d'expérience, cheat sheets, workflows</li>
+    <li>Les modèles et outils IA testés pour de vrai (Claude, OpenAI, Ollama, Mistral)</li>
+    <li>Ce que l'IA change dans le cycle de développement, du ticket à la mise en production</li>
   </ul>
 
-  <h3>Développement Web</h3>
+  <h3>Ingénierie logicielle</h3>
   <ul>
-    <li>Architectures modernes et patterns avancés</li>
-    <li>Évaluation de frameworks et technologies émergentes</li>
-    <li>Méthodologies de développement et bonnes pratiques</li>
+    <li>Architecture, qualité de code et dette technique</li>
+    <li>Les frameworks et outils que j'utilise en mission</li>
+    <li>Sécurité</li>
   </ul>
 
-  <h3>Innovation Technologique</h3>
+  <h3>Le métier</h3>
   <ul>
-    <li>Analyse des tendances sectorielles</li>
-    <li>Évaluation critique des nouvelles technologies</li>
-    <li>Impact des innovations sur les pratiques de développement</li>
-  </ul>
-
-  <h3>Réflexions Professionnelles</h3>
-  <ul>
-    <li>Retours d'expérience sur des projets complexes</li>
-    <li>Évolution des compétences techniques</li>
-    <li>Perspectives sur l'écosystème technologique</li>
+    <li>Management d'équipe, recrutement et accompagnement</li>
+    <li>L'avenir du développeur à l'heure des agents</li>
+    <li>Et de temps en temps, un pas de côté plus personnel</li>
   </ul>
 
   <h2>Projets techniques</h2>
