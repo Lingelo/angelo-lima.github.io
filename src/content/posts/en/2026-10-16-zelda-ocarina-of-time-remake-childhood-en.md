@@ -83,6 +83,7 @@ None of this spoiled the memory. It made it more impressive. Now that this is my
 And now comes a version that no longer needs to cheat. Nintendo's announcements and the first hands-on previews published on October 14 show that many of the new features answer the N64's compromises directly.
 
 <iframe src="https://www.youtube-nocookie.com/embed/8v8eDMh1o3g" title="The Legend of Zelda: Ocarina of Time - Overview Trailer - Nintendo Switch 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+
 *The overview trailer Nintendo released on October 14, 2026.*
 
 | On Nintendo 64 (1998) | On Switch 2 (2026) |
@@ -114,6 +115,7 @@ There is also new content, according to the previews:
 To see the game in motion, series producer Eiji Aonuma walked through it in a commented demo:
 
 <iframe src="https://www.youtube-nocookie.com/embed/PQvD3p2yGwc" title="The Legend of Zelda: Ocarina of Time - Mr. Aonuma Gameplay Demonstration" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+
 *Eiji Aonuma's gameplay demonstration, published by Nintendo.*
 
 On the technical side, Nintendo announces HDR and VRR. Previews also point out two weak spots: shimmering on hair and foliage, and a Hyrule Field that still feels small next to *Breath of the Wild*. Nintendo hasn't shared the resolution or the frame rate.

@@ -83,6 +83,7 @@ Rien de tout ça ne m'a gâché le souvenir. Ça l'a rendu plus impressionnant. 
 Et voilà qu'arrive une version qui n'a plus besoin de tricher. Les annonces de Nintendo et les premières prises en main publiées par la presse le 14 octobre montrent qu'une bonne partie des nouveautés répond pile aux concessions de la N64.
 
 <iframe src="https://www.youtube-nocookie.com/embed/8v8eDMh1o3g" title="The Legend of Zelda: Ocarina of Time - Bande-annonce de présentation - Nintendo Switch 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+
 *La bande-annonce de présentation publiée par Nintendo le 14 octobre 2026 (en anglais).*
 
 | Sur Nintendo 64 (1998) | Sur Switch 2 (2026) |
@@ -114,6 +115,7 @@ Il y a aussi du contenu nouveau, d'après les previews :
 Pour se faire une idée du jeu en mouvement, Eiji Aonuma, le producteur de la série, en a fait une démonstration commentée :
 
 <iframe src="https://www.youtube-nocookie.com/embed/PQvD3p2yGwc" title="The Legend of Zelda: Ocarina of Time - Démonstration de gameplay par Eiji Aonuma" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+
 *La démonstration de gameplay par Eiji Aonuma, publiée par Nintendo (en anglais).*
 
 Côté technique, Nintendo annonce le HDR et le VRR. Les previews relèvent aussi deux bémols : un scintillement sur les cheveux et le feuillage, et une plaine d'Hyrule qui reste petite à côté de celle de *Breath of the Wild*. Nintendo n'a communiqué ni la résolution ni la fréquence d'images.
