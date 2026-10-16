@@ -10,6 +10,8 @@ tags:
   - "Personal"
   - "Tech"
 author: "Angelo Lima"
+thumbnail: "/assets/img/zelda-oot-remake-keyart.webp"
+shareImg: "/assets/img/zelda-oot-remake-keyart.webp"
 related:
   - "prelude-of-the-chambered-reborn"
   - "gbts-typescript-gameboy"
@@ -41,9 +43,18 @@ I was 11 or 12, in my first year of middle school, and I had the game. My own co
 
 From the first minutes, I loved it. Link asleep in his treehouse, lost in a nightmare. Navi rushing in to drag him out of bed. I didn't know yet that I would spend weeks in that world, but I was already in it.
 
+![Young Link and Navi in Kokiri Forest, Switch 2 version](/assets/img/zelda-oot-remake-kokiri-forest.webp)
+*Kokiri Forest in the Switch 2 remake. In 1998 it was the same path, with far fewer polygons. Image: Nintendo*
+
 Then came that moment. Link pulls the Master Sword in the Temple of Time, the screen goes white, and he wakes up seven years later. An adult. His shouts are no longer a kid's, his voice has broken. For an 11-year-old, it was a real cliffhanger. The hero had grown up all at once, and I was still 11 in front of my TV.
 
+![Young Link raising the Master Sword in the Temple of Time](/assets/img/zelda-oot-remake-master-sword.webp)
+*The moment everything shifts: the Master Sword, right before the seven-year jump. Image: Nintendo*
+
 The Forest Temple, seven years later in the game, hit me even harder. You go back to where it all started, and Saria hasn't grown. The Kokiri never age. Link has changed. It was the first time a game made me feel something close to nostalgia, when I was too young to know what that was.
+
+![Saria and young Link facing each other in Kokiri Forest](/assets/img/zelda-oot-remake-saria.webp)
+*Saria and Link, before the time jump. She won't grow up, he will. Image: Nintendo*
 
 I had nothing to compare it to. I didn't know what a draw distance was. To me, it was simply beautiful.
 
@@ -71,6 +82,9 @@ None of this spoiled the memory. It made it more impressive. Now that this is my
 
 And now comes a version that no longer needs to cheat. Nintendo's announcements and the first hands-on previews published on October 14 show that many of the new features answer the N64's compromises directly.
 
+<iframe src="https://www.youtube-nocookie.com/embed/8v8eDMh1o3g" title="The Legend of Zelda: Ocarina of Time - Overview Trailer - Nintendo Switch 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+*The overview trailer Nintendo released on October 14, 2026.*
+
 | On Nintendo 64 (1998) | On Switch 2 (2026) |
 |---|---|
 | Market as a still image, locked camera | Castle Town rebuilt in real 3D, better connected to the rest of the world |
@@ -91,10 +105,24 @@ There is also new content, according to the previews:
 - A fifth bottle to earn at the Castle Town bazaar, new characters and longer dialogue.
 - Faster combat, with combos.
 
+![Link playing Zelda's Lullaby on the ocarina, with the song shown on screen](/assets/img/zelda-oot-remake-ocarina.webp)
+*Zelda's Lullaby on the ocarina. On Switch 2 you can also hum it into the microphone. Image: Nintendo*
+
+![King Dodongo, jaws wide open, facing young Link](/assets/img/zelda-oot-remake-king-dodongo.webp)
+*King Dodongo returns with new attacks. Image: Nintendo*
+
+To see the game in motion, series producer Eiji Aonuma walked through it in a commented demo:
+
+<iframe src="https://www.youtube-nocookie.com/embed/PQvD3p2yGwc" title="The Legend of Zelda: Ocarina of Time - Mr. Aonuma Gameplay Demonstration" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
+*Eiji Aonuma's gameplay demonstration, published by Nintendo.*
+
 On the technical side, Nintendo announces HDR and VRR. Previews also point out two weak spots: shimmering on hair and foliage, and a Hyrule Field that still feels small next to *Breath of the Wild*. Nintendo hasn't shared the resolution or the frame rate.
 
 ## Will I miss the fog?
 
 That's the question I've been asking myself since the announcement. The 1998 fog was a constraint, and it became part of my memory. The remake will show me the horizon of Hyrule Field for the first time, and I don't know yet whether I'll find it more beautiful or just different.
+
+![Adult Link on Epona in Hyrule Field, Death Mountain on the horizon](/assets/img/zelda-oot-remake-hyrule-field.webp)
+*Hyrule Field and Death Mountain, no fog. Image: Nintendo*
 
 I'll go back to Kokiri Forest, climb up to the Forest Temple and find Saria, who still won't have grown. I'll be 28 years older than the middle-school kid in front of his TV. Same game, without the strings. And I really want to know what that feels like.
