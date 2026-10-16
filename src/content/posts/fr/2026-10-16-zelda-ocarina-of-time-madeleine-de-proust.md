@@ -22,10 +22,14 @@ faq:
     a: "Le remake Switch 2 d'Ocarina of Time reconstruit entièrement les graphismes et ajoute une caméra libre, un saut et un sprint manuels, un cycle jour/nuit continu même en ville, des cinématiques doublées et une bande-son orchestrale. Il ajoute aussi un menu de quête, la reconnaissance des mélodies au micro et des revanches chronométrées contre les boss."
   - q: "Peut-on jouer de l'ocarina en fredonnant dans le remake d'Ocarina of Time ?"
     a: "Oui. Dans le remake Switch 2 d'Ocarina of Time, on peut fredonner une mélodie dans le micro de la console, ou la jouer sur un vrai instrument : le jeu la reconnaît et Link la joue à l'ocarina, à condition de l'avoir déjà apprise. Les boutons fonctionnent toujours."
+  - q: "Quelle est la note d'Ocarina of Time sur Metacritic ?"
+    a: "The Legend of Zelda: Ocarina of Time (Nintendo 64, 1998) a un Metascore de 99 sur 100, la meilleure note de l'histoire de Metacritic. Metacritic calcule une moyenne pondérée des critiques de presse. En mars 2025, le Guinness World Records le reconnaissait comme le seul jeu vidéo à avoir atteint 99."
+  - q: "Le remake d'Ocarina of Time tourne-t-il à 60 images par seconde ?"
+    a: "D'après l'analyse de Digital Foundry sur les vidéos de septembre 2026, le remake Switch 2 d'Ocarina of Time tourne en 1080p à 60 images par seconde, sans DLSS. Nintendo n'a pas publié de chiffres officiels. La version Nintendo 64 tournait à 20 images par seconde, et à environ 17 en Europe."
   - q: "Pourquoi Ocarina of Time avait-il autant de brouillard sur Nintendo 64 ?"
     a: "Sur Nintendo 64, le brouillard d'Ocarina of Time masquait la limite de la distance d'affichage : la console ne pouvait pas afficher tout le décor au loin. Les développeurs en ont fait un élément d'ambiance plutôt qu'un défaut visible."
   - q: "Quelles concessions techniques Ocarina of Time faisait-il sur Nintendo 64 ?"
-    a: "Ocarina of Time tournait à environ 20 images par seconde, avec un cache de textures de 4 Ko. Le jeu utilisait des décors précalculés à caméra fixe (la place du marché, l'extérieur du temple du Temps), des portes lentes pour cacher les chargements et du brouillard pour limiter la distance d'affichage."
+    a: "Ocarina of Time tournait à 20 images par seconde (environ 17 en Europe), avec un cache de textures de 4 Ko. Le jeu utilisait des décors précalculés à caméra fixe (la place du marché, l'extérieur du temple du Temps), des portes lentes pour cacher les chargements et du brouillard pour limiter la distance d'affichage."
   - q: "La version française d'Ocarina of Time était-elle différente ?"
     a: "Oui. En France, comme dans toute l'Europe, Ocarina of Time tournait en PAL 50 Hz. Le jeu était environ un sixième plus lent que la version américaine ou japonaise, avec des bandes noires en haut et en bas de l'écran."
 ---
@@ -36,7 +40,8 @@ Je ne parle jamais de jeu vidéo sur ce blog. Mais le 5 novembre 2026, Nintendo 
 > - **Le jeu** : *Ocarina of Time*, sorti fin 1998 sur Nintendo 64, est le premier Zelda en 3D.
 > - **Le remake** : une reconstruction complète, exclusive à la Switch 2, disponible le 5 novembre 2026.
 > - **Les ficelles de 1998** : environ 20 images par seconde, 4 Ko de cache de textures, du brouillard pour cacher l'horizon, des décors précalculés et des portes qui servent d'écran de chargement.
-> - **Ce que le remake corrige** : caméra libre, saut manuel, temps qui passe même en ville, voix, orchestre, graphismes refaits.
+> - **La note** : 99/100 sur Metacritic, la meilleure moyenne jamais obtenue par un jeu vidéo.
+> - **Ce que le remake apporte** : 60 images par seconde (mesurées par Digital Foundry), caméra libre, saut manuel, temps qui passe même en ville, voix, orchestre, graphismes refaits.
 > - **Mon angle** : un souvenir d'enfance, revu avec des yeux de développeur.
 
 ## Onze ans, en sixième
@@ -73,16 +78,18 @@ Le reste, c'est la liste des concessions que j'ai apprises en même temps :
 - **Le brouillard.** Sur la plaine d'Hyrule ou dans les bois, il cache la limite de la distance d'affichage. Ce que je prenais pour de l'ambiance était aussi une rustine.
 - **Les décors précalculés.** La place du marché du Bourg d'Hyrule et l'extérieur du temple du Temps sont des images fixes, avec une caméra bloquée. On croit se promener dans une ville en 3D, on marche en fait devant un tableau.
 - **Les portes.** Elles s'ouvrent lentement, avec une petite mise en scène. Pendant ce temps, la console charge la salle suivante.
-- **La fluidité.** Le jeu tourne autour de 20 images par seconde.
+- **La fluidité.** Le jeu affiche 20 images par seconde : une image nouvelle toutes les trois actualisations d'une télé à 60 Hz.
 - **Les textures.** La Nintendo 64 n'a que 4 Ko de cache de textures. D'où ces surfaces floues que mon cerveau d'enfant complétait tout seul.
 
-Et il y a une concession qui me concerne directement. En France, j'ai joué à la version PAL, en 50 Hz. Elle tournait environ un sixième plus lentement que la version américaine ou japonaise, avec des bandes noires en haut et en bas de l'écran. J'ai donc joué à la version la plus bridée du jeu, sans le savoir, et je l'ai adorée quand même.
+Et il y a une concession qui me concerne directement. En France, j'ai joué à la version PAL, en 50 Hz. Elle tournait environ un sixième plus lentement que la version américaine ou japonaise, à environ 17 images par seconde, avec des bandes noires en haut et en bas de l'écran. J'ai donc joué à la version la plus bridée du jeu, sans le savoir, et je l'ai adorée quand même.
+
+Et pourtant, je n'étais pas le seul à trouver ça magnifique. *Ocarina of Time* a un Metascore de 99 sur 100. Metacritic est un site qui rassemble les critiques de la presse et en calcule une moyenne pondérée, le Metascore. En mars 2025, le Guinness World Records le reconnaissait encore comme le seul jeu vidéo à avoir atteint 99. Avec ses 20 images par seconde, ses décors peints et son brouillard, c'était déjà un chef-d'œuvre.
 
 Rien de tout ça ne m'a gâché le souvenir. Ça l'a rendu plus impressionnant. Maintenant que je fais ce métier, je sais ce que veut dire tenir dans des contraintes pareilles. Quand j'ai [réécrit Prelude of the Chambered en TypeScript](/fr/prelude-of-the-chambered-reborn/), j'ai retrouvé ce plaisir de voir un vieux moteur faire beaucoup avec très peu. Ocarina of Time, c'est ça à l'échelle d'un monde entier.
 
 ## La confiture : ce que le remake change
 
-Et voilà qu'arrive une version qui n'a plus besoin de tricher. Les annonces de Nintendo et les premières prises en main publiées par la presse le 14 octobre montrent qu'une bonne partie des nouveautés répond pile aux concessions de la N64.
+Il faut le dire clairement : un remake ne corrige rien. Le jeu de 1998 était un chef-d'œuvre et il le reste. Le remake refait ce même jeu avec les moyens de 2026. Les annonces de Nintendo et les premières prises en main publiées par la presse le 14 octobre montrent qu'une bonne partie des nouveautés touche justement aux endroits où la N64 avait dû faire des concessions.
 
 <iframe src="https://www.youtube-nocookie.com/embed/8v8eDMh1o3g" title="The Legend of Zelda: Ocarina of Time - Bande-annonce de présentation - Nintendo Switch 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
 
@@ -97,6 +104,7 @@ Et voilà qu'arrive une version qui n'a plus besoin de tricher. Les annonces de 
 | Musique générée par la console | Bande-son orchestrale |
 | Dialogues uniquement en texte | Cinématiques entièrement doublées |
 | Textures minuscules | Graphismes refaits : modèles, lumières, matériaux |
+| 20 images par seconde (environ 17 en PAL) | 60 images par seconde en 1080p, d'après Digital Foundry |
 
 Il y a aussi du contenu nouveau, d'après les annonces et les previews :
 
@@ -134,7 +142,7 @@ Pour se faire une idée du jeu en mouvement, Eiji Aonuma, le producteur de la s�
 
 *La démonstration de gameplay par Eiji Aonuma, publiée par Nintendo (en anglais).*
 
-Côté technique, Nintendo annonce le HDR et le VRR. Les previews relèvent aussi deux bémols : un scintillement sur les cheveux et le feuillage, et une plaine d'Hyrule qui reste petite à côté de celle de *Breath of the Wild*. Nintendo n'a communiqué ni la résolution ni la fréquence d'images.
+Côté technique, Nintendo annonce le HDR et le VRR. Les previews relèvent aussi deux bémols : un scintillement sur les cheveux et le feuillage, et une plaine d'Hyrule qui reste petite à côté de celle de *Breath of the Wild*. Nintendo n'a pas publié de chiffres officiels de résolution ni de fluidité. Digital Foundry, une équipe spécialisée dans l'analyse technique des jeux, a mesuré du 1080p à 60 images par seconde sur les vidéos de septembre, sans DLSS (la technique de mise à l'échelle de Nvidia). C'est trois fois plus d'images que sur N64, et plus de trois fois et demie la version PAL sur laquelle j'ai grandi.
 
 ## Est-ce que le brouillard va me manquer ?
 

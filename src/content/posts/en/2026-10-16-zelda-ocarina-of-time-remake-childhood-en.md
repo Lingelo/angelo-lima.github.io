@@ -22,10 +22,14 @@ faq:
     a: "The Switch 2 remake of Ocarina of Time fully rebuilds the graphics and adds a free camera, manual jumping and sprinting, a continuous day/night cycle even in towns, voiced cutscenes and an orchestral soundtrack. It also adds a quest menu, microphone recognition of songs and timed boss rematches."
   - q: "Can you play the ocarina by humming in the Ocarina of Time remake?"
     a: "Yes. In the Switch 2 remake of Ocarina of Time, you can hum a melody into the console's microphone, or play it on a real instrument: the game recognizes it and Link plays it on the ocarina, as long as he has already learned it. Button inputs still work."
+  - q: "What is Ocarina of Time's Metacritic score?"
+    a: "The Legend of Zelda: Ocarina of Time (Nintendo 64, 1998) has a Metascore of 99 out of 100, the highest in Metacritic's history. Metacritic computes a weighted average of press reviews. As of March 2025, Guinness World Records recognized it as the only video game to reach 99."
+  - q: "Does the Ocarina of Time remake run at 60 frames per second?"
+    a: "According to Digital Foundry's analysis of the September 2026 footage, the Switch 2 remake of Ocarina of Time runs at 1080p and 60 frames per second, without DLSS. Nintendo hasn't published official figures. The Nintendo 64 version ran at 20 frames per second, and about 17 in Europe."
   - q: "Why was there so much fog in Ocarina of Time on Nintendo 64?"
     a: "On Nintendo 64, the fog in Ocarina of Time hid the limit of the draw distance: the console could not render the whole landscape far away. The developers turned it into part of the atmosphere instead of a visible flaw."
   - q: "What technical compromises did Ocarina of Time make on Nintendo 64?"
-    a: "Ocarina of Time ran at around 20 frames per second with a 4 KB texture cache. The game used pre-rendered backgrounds with fixed cameras (the market, the outside of the Temple of Time), slow door animations to hide loading, and fog to limit the draw distance."
+    a: "Ocarina of Time ran at 20 frames per second (about 17 in Europe) with a 4 KB texture cache. The game used pre-rendered backgrounds with fixed cameras (the market, the outside of the Temple of Time), slow door animations to hide loading, and fog to limit the draw distance."
   - q: "Was the European version of Ocarina of Time different?"
     a: "Yes. In Europe, Ocarina of Time ran in PAL 50 Hz. The game ran about one sixth slower than the American or Japanese version, with black bars at the top and bottom of the screen."
 ---
@@ -36,7 +40,8 @@ I never write about video games on this blog. But on November 5, 2026, Nintendo 
 > - **The game:** *Ocarina of Time*, released at the end of 1998 on Nintendo 64, is the first 3D Zelda.
 > - **The remake:** a full rebuild, exclusive to Switch 2, out on November 5, 2026.
 > - **The 1998 tricks:** around 20 frames per second, a 4 KB texture cache, fog to hide the horizon, pre-rendered backgrounds and doors that double as loading screens.
-> - **What the remake fixes:** free camera, manual jump, time that flows even in towns, voices, orchestra, rebuilt graphics.
+> - **The score:** 99/100 on Metacritic, the highest average ever for a video game.
+> - **What the remake brings:** 60 frames per second (measured by Digital Foundry), free camera, manual jump, time that flows even in towns, voices, orchestra, rebuilt graphics.
 > - **My angle:** a childhood memory, revisited with a developer's eyes.
 
 ## Eleven years old, first year of middle school
@@ -73,16 +78,18 @@ The rest is the list of compromises I learned about at the same time:
 - **Fog.** On Hyrule Field or in the woods, it hides the limit of the draw distance. What I took for atmosphere was also a patch.
 - **Pre-rendered backgrounds.** The Castle Town market and the outside of the Temple of Time are still images with a locked camera. You think you're walking through a 3D town, you're actually walking in front of a painting.
 - **Doors.** They open slowly, with a little bit of staging. Meanwhile, the console loads the next room.
-- **Frame rate.** The game runs at around 20 frames per second.
+- **Frame rate.** The game shows 20 frames per second: one new image every three refreshes of a 60 Hz TV.
 - **Textures.** The Nintendo 64 only has a 4 KB texture cache. Hence those blurry surfaces my child brain filled in on its own.
 
-And one compromise was about me specifically. In France, I played the PAL version, at 50 Hz. It ran about one sixth slower than the American or Japanese version, with black bars at the top and bottom of the screen. So I played the most constrained version of the game without knowing it, and I loved it anyway.
+And one compromise was about me specifically. In France, I played the PAL version, at 50 Hz. It ran about one sixth slower than the American or Japanese version, at roughly 17 frames per second, with black bars at the top and bottom of the screen. So I played the most constrained version of the game without knowing it, and I loved it anyway.
+
+And yet I wasn't the only one who found it beautiful. *Ocarina of Time* has a Metascore of 99 out of 100. Metacritic is a site that gathers press reviews and computes a weighted average, the Metascore. As of March 2025, Guinness World Records still recognized it as the only video game to reach 99. With its 20 frames per second, painted backdrops and fog, it was already a masterpiece.
 
 None of this spoiled the memory. It made it more impressive. Now that this is my job, I know what it means to fit inside constraints like these. When I [rewrote Prelude of the Chambered in TypeScript](/en/prelude-of-the-chambered-reborn-typescript-web-port/), I found that same joy of watching an old engine do a lot with very little. Ocarina of Time is that, at the scale of a whole world.
 
 ## The jam: what the remake changes
 
-And now comes a version that no longer needs to cheat. Nintendo's announcements and the first hands-on previews published on October 14 show that many of the new features answer the N64's compromises directly.
+Let me be clear: a remake doesn't fix anything. The 1998 game was a masterpiece and still is. The remake rebuilds that same game with 2026 means. Nintendo's announcements and the first hands-on previews published on October 14 show that many of the new features touch exactly the places where the N64 had to compromise.
 
 <iframe src="https://www.youtube-nocookie.com/embed/8v8eDMh1o3g" title="The Legend of Zelda: Ocarina of Time - Overview Trailer - Nintendo Switch 2" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;margin:2rem 0 0.5rem"></iframe>
 
@@ -97,6 +104,7 @@ And now comes a version that no longer needs to cheat. Nintendo's announcements 
 | Music generated by the console | Orchestral soundtrack |
 | Text-only dialogue | Fully voiced cutscenes |
 | Tiny textures | Rebuilt graphics: models, lighting, materials |
+| 20 frames per second (about 17 in PAL) | 60 frames per second at 1080p, according to Digital Foundry |
 
 There is also new content, according to the announcements and previews:
 
@@ -134,7 +142,7 @@ To see the game in motion, series producer Eiji Aonuma walked through it in a co
 
 *Eiji Aonuma's gameplay demonstration, published by Nintendo.*
 
-On the technical side, Nintendo announces HDR and VRR. Previews also point out two weak spots: shimmering on hair and foliage, and a Hyrule Field that still feels small next to *Breath of the Wild*. Nintendo hasn't shared the resolution or the frame rate.
+On the technical side, Nintendo announces HDR and VRR. Previews also point out two weak spots: shimmering on hair and foliage, and a Hyrule Field that still feels small next to *Breath of the Wild*. Nintendo hasn't published official resolution or frame rate figures. Digital Foundry, a team that specializes in technical analysis of games, measured 1080p at 60 frames per second in the September footage, without DLSS (Nvidia's upscaling technique). That's three times as many frames as on N64, and more than three and a half times the PAL version I grew up with.
 
 ## Will I miss the fog?
 
