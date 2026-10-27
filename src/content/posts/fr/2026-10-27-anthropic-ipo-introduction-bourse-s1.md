@@ -10,8 +10,9 @@ tags:
   - "IA"
   - "Tech"
 author: "Angelo Lima"
-thumbnail: "/assets/img/anthropic-ipo-s1.png"
-shareImg: "/assets/img/anthropic-ipo-s1.png"
+cover: "/assets/img/anthropic-ipo-nasdaq.webp"
+thumbnail: "/assets/img/anthropic-ipo-nasdaq.webp"
+shareImg: "/assets/img/anthropic-ipo-nasdaq.webp"
 aliases:
   - "/2026-10-27-anthropic-ipo-introduction-bourse-s1/"
 related:
@@ -132,3 +133,5 @@ Reste la question qui m'intéresse le plus, celle que posait déjà [Arthur Mens
 - [Coin Academy : ce que révèle le dossier d'introduction en bourse](https://coinacademy.fr/actu/anthropic-s-1-bourse-dossier-revele/)
 - [CNN : Anthropic set to make stock market debut](https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo)
 - [Axios : Anthropic files for its IPO](https://www.axios.com/2026/10/26/anthropic-ipo)
+
+*Photo de couverture : le studio Nasdaq MarketSite à New York, par [Luca Marfè at Italia all'ONU](https://commons.wikimedia.org/wiki/File:NASDAQ_Market_Site_201506.jpg), licence [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), recadrée.*

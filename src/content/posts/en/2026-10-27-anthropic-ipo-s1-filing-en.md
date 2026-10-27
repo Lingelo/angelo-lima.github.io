@@ -10,8 +10,9 @@ tags:
   - "IA"
   - "Tech"
 author: "Angelo Lima"
-thumbnail: "/assets/img/anthropic-ipo-s1.png"
-shareImg: "/assets/img/anthropic-ipo-s1.png"
+cover: "/assets/img/anthropic-ipo-nasdaq.webp"
+thumbnail: "/assets/img/anthropic-ipo-nasdaq.webp"
+shareImg: "/assets/img/anthropic-ipo-nasdaq.webp"
 aliases:
   - "/2026-10-27-anthropic-ipo-s1-filing-en/"
 related:
@@ -131,3 +132,5 @@ The question I care most about is the one [Arthur Mensch raised before the Frenc
 - [Next: En route pour la bourse, Anthropic liste 800 milliards de dollars de dépenses (FR)](https://next.ink/263960/en-route-pour-la-bourse-anthropic-liste-800-milliards-de-dollars-de-depenses/)
 - [CNN: Anthropic set to make stock market debut](https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo)
 - [Axios: Anthropic files for its IPO](https://www.axios.com/2026/10/26/anthropic-ipo)
+
+*Cover photo: the Nasdaq MarketSite studio in New York, by [Luca Marfè at Italia all'ONU](https://commons.wikimedia.org/wiki/File:NASDAQ_Market_Site_201506.jpg), licensed [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), cropped.*
