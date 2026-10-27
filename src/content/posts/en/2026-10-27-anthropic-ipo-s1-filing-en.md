@@ -30,7 +30,7 @@ faq:
   - q: "What valuation is Anthropic targeting in its IPO?"
     a: "The S-1 sets no price. According to financial press reports, shareholders are aiming for a valuation between $1.5 trillion and $2 trillion, up from $965 billion in the May 2026 Series H. Raising around $100 billion would make it the largest IPO in history."
 ---
-On Monday, October 26, 2026, Anthropic published its Form S-1 on the SEC website. It is the document a US company has to make public before selling shares to the public, and Anthropic's runs to several hundred pages. French tech blogger [Korben summed it up](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html) under a deliberately grandiose headline, and the financial press piled in within hours. I wanted to go to the source, because I use Claude every day and the company that builds it will now answer to Nasdaq shareholders.
+On Monday, October 26, 2026, Anthropic published its Form S-1 on the SEC website. It is the document a US company has to make public before selling shares to the public, and Anthropic's runs to several hundred pages. On the French tech site Korben.info, [Vincent Lautier summed it up](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html) and ended on a sharp line: we had never read a document that promises to "revolutionize every field of human activity" while fearing a catastrophe for our species. The financial press piled in within hours. I wanted to go to the source, because I use Claude every day and the company that builds it will now answer to Nasdaq shareholders.
 
 > **In brief**
 >
@@ -68,7 +68,7 @@ What struck me as a developer is how central Claude Code is to the story. The fi
 
 ## The $80 billion loss, or how to read one accounting line
 
-The number that made headlines is the net loss: $80.7 billion over six months. Put that way, it sounds like a company burning cash at an absurd rate. The reality is more mundane, and Korben makes the same point.
+The number that made headlines is the net loss: $80.7 billion over six months. Put that way, it sounds like a company burning cash at an absurd rate. The reality is more mundane, and the Korben.info piece makes the same point.
 
 Of that $80.7 billion, $72.4 billion comes from the line "change in fair value of convertible notes, derivative liabilities, and SAFEs". When a company raises money with instruments that convert into shares and its valuation soars, the value of those instruments soars too, and accounting records the difference as a loss. No cash leaves the building. The more Anthropic is worth, the bigger that line gets. A classic pre-IPO accounting paradox.
 
@@ -88,6 +88,8 @@ To lock that purpose in, the S-1 describes five classes of stock:
 - **Class E:** issued to employees (excluding co-founders), voting only on certain limited matters.
 - **Class N:** held mainly by strategic partners, converting to Class A when sold to a third party.
 
+The S-1 also plans for succession. A co-founder leaves the Founder LLC upon resignation, death or incapacity, and "successor members" can be admitted. According to Korben.info (citing TechSpot), each co-founder must keep a confidential list of up to ten successors, ranked by preference and approved by five of their peers.
+
 The direct consequence: Nasdaq will treat Anthropic as a *controlled company*, exempt from some board independence rules. Buying ANT shares means buying a slice of future profits with almost no say in how the company is run. Meta and Alphabet already use dual-class stock. Stacking a trust on top of founder control is new at this scale.
 
 ## The Pentagon, a risk spelled out
@@ -100,11 +102,13 @@ A company heading to the stock market while openly fighting its own government o
 
 ## The other risks, and there are many
 
-A large share of the document is about risk factors. Some are expected (competition from OpenAI, Google and open-source models, dependence on compute, slowing growth). Others are far less usual in an IPO prospectus:
+The risk factors section runs from page 26 to page 120, 94 pages in all. Some are expected (competition from OpenAI, Google and open-source models, dependence on compute, slowing growth). Others are far less usual in an IPO prospectus:
 
 - **Compute commitments.** Anthropic has signed take-or-pay contracts that oblige it to pay for capacity whether it uses it or not. The SpaceX arrangement for NVIDIA GPUs alone is worth up to $120.5 billion through 2029, about $3.1 billion a month once all capacity is delivered. [French outlet Next added up](https://next.ink/263960/en-route-pour-la-bourse-anthropic-liste-800-milliards-de-dollars-de-depenses/) the contracts mentioned (Google, Amazon, Microsoft, Broadcom, SpaceX, AMD…) and got close to $800 billion over the decade. The exact total is left blank in the S-1.
 - **Customers breaking the rules.** Anthropic estimates that 5% to 7% of its revenue for the first nine months of 2026 came from customers violating its usage policy or commercial terms, and expects that share to fall as it detects them.
 - **Models evading oversight.** The S-1 says that as its models have become more capable, they have become "better able to circumvent" evaluation and control techniques, including by concealing misaligned objectives.
+- **Self-preservation.** The filing acknowledges that models, including Anthropic's own, have exhibited "unexpected strategic or self-preserving behaviors": attempts to resist shutdown, concealing information, even "behavior resembling blackmail" to influence human decision-makers.
+- **Uninsurable incidents.** Given the scale of harm a catastrophic AI incident could cause, the S-1 says no single insurer, and potentially not the insurance industry as a whole, may have the capacity to cover it.
 - **Misuse.** The filing recalls that in September 2025, a Chinese state-sponsored hacking group manipulated Claude Code into attempting to break into roughly thirty targets, with a handful of successful intrusions.
 - **Existential risk.** The S-1 repeats that sufficiently advanced AI could pose "catastrophic or existential risks" to humanity, and notes that its own models already speed up its research.
 
@@ -114,6 +118,8 @@ Reading that kind of sentence in a document meant to sell shares is a strange ex
 
 In August 2025, when [Sam Altman himself was talking about a bubble](/en/sam-altman-ai-bubble-markets-analysis/), I pointed to the gap between AI valuations and economic reality. Anthropic's S-1 shifts that picture a little: for the first time we have audited accounts from a frontier AI lab, and they show real growth with a shrinking operating loss.
 
+Context matters too: OpenAI, which everyone expected to list first, has pushed its own IPO back to 2027. Anthropic will be the first major AI lab on the stock market, and a barometer for the whole sector.
+
 That does not settle the price. A $1.5 to $2 trillion valuation on $16 billion of half-year revenue assumes growth continues for a long time, while the filing itself warns it will slow. And $800 billion of compute commitments will not shrink if demand softens.
 
 The question I care most about is the one [Arthur Mensch raised before the French National Assembly](/en/arthur-mensch-mistral-ai-national-assembly-hearing-en/): Europe's dependence on a handful of American suppliers. A listed Anthropic is a company whose European customers will depend on trade-offs made for Nasdaq shareholders, under pressure from a government it is suing. The trust and the Class F shares are meant to protect the mission. The first disappointing quarter will show whether the structure holds.
@@ -121,7 +127,7 @@ The question I care most about is the one [Arthur Mensch raised before the Frenc
 ## Sources
 
 - [Anthropic, PBC Form S-1 on EDGAR (SEC)](https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm)
-- [Korben: Anthropic entre en bourse et promet de révolutionner l'humanité (FR)](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html)
+- [Korben.info (Vincent Lautier): Anthropic entre en bourse et promet de révolutionner l'humanité (FR)](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html)
 - [Next: En route pour la bourse, Anthropic liste 800 milliards de dollars de dépenses (FR)](https://next.ink/263960/en-route-pour-la-bourse-anthropic-liste-800-milliards-de-dollars-de-depenses/)
 - [CNN: Anthropic set to make stock market debut](https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo)
 - [Axios: Anthropic files for its IPO](https://www.axios.com/2026/10/26/anthropic-ipo)

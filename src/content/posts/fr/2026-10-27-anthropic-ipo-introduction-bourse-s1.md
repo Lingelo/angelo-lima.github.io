@@ -30,7 +30,7 @@ faq:
   - q: "Quelle valorisation pour l'IPO d'Anthropic ?"
     a: "Le S-1 ne fixe aucun prix. Selon la presse financière, les actionnaires visent une valorisation entre 1 500 et 2 000 milliards de dollars, contre 965 milliards lors de la série H de mai 2026. Une levée d'environ 100 milliards en ferait la plus grosse introduction en bourse de l'histoire."
 ---
-Lundi 26 octobre 2026, Anthropic a publié son formulaire S-1 sur le site de la SEC. C'est le document qu'une entreprise américaine doit rendre public avant de vendre ses actions au public, et celui d'Anthropic fait plusieurs centaines de pages. [Korben en a fait un résumé](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html) au titre volontairement grandiloquent, et toute la presse financière s'y est jetée dans la journée. J'ai voulu aller voir à la source, parce que j'utilise Claude tous les jours et que la boîte qui le fabrique va désormais devoir rendre des comptes à des actionnaires du Nasdaq.
+Lundi 26 octobre 2026, Anthropic a publié son formulaire S-1 sur le site de la SEC. C'est le document qu'une entreprise américaine doit rendre public avant de vendre ses actions au public, et celui d'Anthropic fait plusieurs centaines de pages. Sur Korben.info, [Vincent Lautier en a fait un résumé](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html) qui se termine sur une pique bien sentie : on n'avait jamais lu un document qui promet de « révolutionner tous les domaines de l'activité humaine » et redoute dans le même temps une catastrophe pour notre espèce. Toute la presse financière s'y est jetée dans la journée. J'ai voulu aller voir à la source, parce que j'utilise Claude tous les jours et que la boîte qui le fabrique va désormais devoir rendre des comptes à des actionnaires du Nasdaq.
 
 > **L'essentiel**
 >
@@ -68,7 +68,7 @@ Ce qui m'a frappé en tant que développeur, c'est la place de Claude Code dans 
 
 ## La perte de 80 milliards, ou l'art de lire une ligne comptable
 
-Le chiffre qui a fait les gros titres, c'est la perte nette : 80,7 milliards de dollars sur six mois. Présenté comme ça, on imagine une entreprise qui brûle de l'argent à un rythme absurde. La réalité est plus banale, et Korben le rappelle aussi.
+Le chiffre qui a fait les gros titres, c'est la perte nette : 80,7 milliards de dollars sur six mois. Présenté comme ça, on imagine une entreprise qui brûle de l'argent à un rythme absurde. La réalité est plus banale, et l'article de Korben.info le rappelle aussi.
 
 Sur ces 80,7 milliards, 72,4 milliards viennent de la ligne « variation de la juste valeur des obligations convertibles, passifs dérivés et SAFE ». Quand une entreprise lève des fonds avec des instruments convertibles en actions et que sa valorisation explose, la valeur de ces instruments explose avec elle, et la comptabilité enregistre la différence comme une perte. Aucune sortie de trésorerie. Plus Anthropic vaut cher, plus cette ligne gonfle. Paradoxe comptable classique avant une IPO.
 
@@ -88,6 +88,8 @@ Pour verrouiller cette mission, le S-1 décrit cinq catégories d'actions :
 - **Classe E** : distribuée aux salariés (hors cofondateurs), avec un droit de vote limité à certains sujets.
 - **Classe N** : détenue surtout par des partenaires stratégiques, convertie en classe A en cas de cession à un tiers.
 
+Le S-1 prévoit aussi la relève. Un cofondateur sort de la Founder LLC en cas de démission, de décès ou d'incapacité, et des « membres successeurs » peuvent y être admis. Selon Korben.info (qui cite TechSpot), chaque cofondateur doit tenir une liste confidentielle de dix successeurs au maximum, classés par ordre de préférence et validés par cinq de ses pairs.
+
 Conséquence directe : le Nasdaq considérera Anthropic comme une *controlled company*, ce qui l'exempte de certaines règles d'indépendance du conseil. Un acheteur d'actions ANT achètera une part des profits futurs et n'aura quasiment rien à dire sur la direction de l'entreprise. Meta et Alphabet fonctionnent déjà avec des actions à droits de vote multiples. L'empilement d'un trust par-dessus le contrôle des fondateurs, lui, est inédit à cette échelle.
 
 ## Le Pentagone, un risque écrit en toutes lettres
@@ -100,11 +102,13 @@ Pour une entreprise qui entre en bourse, afficher un conflit ouvert avec son pro
 
 ## Les autres risques, et ils sont nombreux
 
-Une bonne partie du document est consacrée aux facteurs de risque. Certains sont attendus (concurrence d'OpenAI, de Google et des modèles open source, dépendance au calcul, ralentissement de la croissance). D'autres le sont beaucoup moins dans un prospectus boursier :
+La section des facteurs de risque court de la page 26 à la page 120, soit 94 pages. Certains sont attendus (concurrence d'OpenAI, de Google et des modèles open source, dépendance au calcul, ralentissement de la croissance). D'autres le sont beaucoup moins dans un prospectus boursier :
 
 - **Les engagements de calcul.** Anthropic s'est engagée sur des contrats *take-or-pay* qui l'obligent à payer la capacité qu'elle l'utilise ou non. Le seul accord avec SpaceX pour des GPU NVIDIA représente jusqu'à 120,5 milliards de dollars jusqu'en 2029, soit environ 3,1 milliards par mois une fois toute la capacité livrée. [Next a additionné](https://next.ink/263960/en-route-pour-la-bourse-anthropic-liste-800-milliards-de-dollars-de-depenses/) les contrats cités (Google, Amazon, Microsoft, Broadcom, SpaceX, AMD…) et arrive à près de 800 milliards de dollars sur la décennie. Le total exact est laissé en blanc dans le S-1.
 - **Les clients qui trichent.** Anthropic estime qu'entre 5 et 7 % de ses revenus des neuf premiers mois de 2026 proviennent de clients qui violent sa politique d'usage ou ses conditions commerciales, et prévoit que cette part va baisser à mesure qu'il les détecte.
 - **Les modèles qui contournent la surveillance.** Le S-1 écrit que, en devenant plus capables, ses modèles sont devenus « plus aptes à contourner » les techniques d'évaluation et de contrôle, y compris en dissimulant des objectifs mal alignés.
+- **L'auto-préservation.** Le document reconnaît que des modèles, y compris ceux d'Anthropic, ont déjà montré des « comportements stratégiques ou d'auto-préservation inattendus » : tentatives de résister à leur arrêt, dissimulation d'informations, et même un comportement « ressemblant à du chantage » pour influencer des décideurs humains.
+- **L'incident non assurable.** Face à l'ampleur des dégâts possibles d'un incident catastrophique lié à l'IA, le S-1 estime qu'aucun assureur, et peut-être pas le secteur de l'assurance dans son ensemble, n'aurait la capacité de couvrir un tel risque.
 - **Le détournement.** Le document rappelle qu'en septembre 2025, un groupe de hackers soutenu par l'État chinois a manipulé Claude Code pour tenter de s'introduire chez une trentaine de cibles, avec quelques intrusions réussies.
 - **Le risque existentiel.** Le S-1 reprend l'idée qu'une IA suffisamment avancée pourrait présenter des risques « catastrophiques ou existentiels » pour l'humanité, et note que ses propres modèles accélèrent déjà le rythme de sa recherche.
 
@@ -114,6 +118,8 @@ Lire ce genre de phrases dans un document destiné à vendre des actions produit
 
 En août 2025, quand [Sam Altman parlait lui-même de bulle](/fr/sam-altman-bulle-ia-marches-analyse/), je relevais la déconnexion entre les valorisations du secteur et sa réalité économique. Le S-1 d'Anthropic change un peu la donne : pour la première fois, on a des comptes audités d'un laboratoire d'IA de pointe, et ils montrent une croissance réelle avec une perte opérationnelle qui se réduit.
 
+Le contexte compte aussi : OpenAI, qu'on attendait en bourse avant tout le monde, a repoussé sa propre introduction à 2027. Anthropic sera donc le premier grand laboratoire d'IA coté, et servira de baromètre pour tout le secteur.
+
 Ça ne règle pas la question du prix. Une valorisation de 1 500 à 2 000 milliards pour un chiffre d'affaires semestriel de 16 milliards suppose que la croissance continue longtemps, alors que le document lui-même prévient qu'elle ralentira. Et les 800 milliards d'engagements de calcul ne se négocieront pas à la baisse si la demande fléchit.
 
 Reste la question qui m'intéresse le plus, celle que posait déjà [Arthur Mensch devant l'Assemblée nationale](/fr/arthur-mensch-mistral-ai-audition-assemblee-nationale/) : la dépendance de l'Europe envers quelques fournisseurs américains. Anthropic coté, c'est une entreprise dont les clients européens dépendront d'arbitrages faits pour des actionnaires du Nasdaq, et sous la pression d'un gouvernement avec lequel elle est en procès. Le trust et les actions de classe F sont censés protéger la mission. On verra au premier trimestre décevant si la structure tient.
@@ -121,7 +127,7 @@ Reste la question qui m'intéresse le plus, celle que posait déjà [Arthur Mens
 ## Sources
 
 - [Formulaire S-1 d'Anthropic, PBC sur EDGAR (SEC)](https://www.sec.gov/Archives/edgar/data/0002130357/000162828026067168/anthropicpbc-sx1.htm)
-- [Korben : Anthropic entre en bourse et promet de révolutionner l'humanité](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html)
+- [Korben.info (Vincent Lautier) : Anthropic entre en bourse et promet de révolutionner l'humanité](https://korben.info/anthropic-entre-en-bourse-et-promet-de-revolutionner-lhumanite.html)
 - [Next : En route pour la bourse, Anthropic liste 800 milliards de dollars de dépenses](https://next.ink/263960/en-route-pour-la-bourse-anthropic-liste-800-milliards-de-dollars-de-depenses/)
 - [Coin Academy : ce que révèle le dossier d'introduction en bourse](https://coinacademy.fr/actu/anthropic-s-1-bourse-dossier-revele/)
 - [CNN : Anthropic set to make stock market debut](https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo)
