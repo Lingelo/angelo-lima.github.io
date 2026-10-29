@@ -44,17 +44,17 @@ For a long time, this job title was a Palantir thing. In 2026, OpenAI, Anthropic
 
 ## First, where the word comes from
 
-"Forward-deployed" is US military jargon: a unit positioned forward, as close to the action as possible. Palantir picked it up in the 2000s to name the engineers it placed physically at customer sites, starting with government and defense agencies. Its data analysis software was useless until it was connected to each organization's databases, formats and habits. Instead of waiting for customers to do that themselves, Palantir sent its own developers.
+"Forward-deployed" comes from US military jargon, where it describes a unit positioned forward, as close to the action as possible. Palantir picked it up in the 2000s to name the engineers it placed physically at customer sites, starting with government and defense agencies. Its data analysis software was useless until it was connected to each organization's databases, formats and habits. Instead of waiting for customers to do that themselves, Palantir sent its own developers.
 
-[Palantir's engineering blog](https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87) explains that internally, it distinguishes "Devs", who build the product, from "Deltas", who deploy it at customers. The name "Delta" is a leftover from the company's early days, when every Business Development team was named after a letter of the NATO alphabet. A telling detail: Deltas reported to business development, not engineering.
+[Palantir's engineering blog](https://blog.palantir.com/dev-versus-delta-demystifying-engineering-roles-at-palantir-ad44c2a6e87) explains that internally, it distinguishes "Devs", who build the product, from "Deltas", who deploy it at customers. The name "Delta" is a leftover from the company's early days, when every Business Development team was named after a letter of the NATO alphabet. Deltas also reported to business development rather than engineering.
 
 ## Why AI brought the model back
 
 Generative AI recreated Palantir's exact problem. A language model looks impressive in a demo, but before it can take orders, answer customers or process files, someone has to connect it to internal data, APIs and business rules, and evaluate its answers on real cases. That work does not come off the shelf.
 
-In June 2025, Andreessen Horowitz partner Joe Schmidt published an essay that got passed around a lot: [Trading Margin for Moat](https://a16z.com/services-led-growth/). His argument: enterprise AI startups are wrong to chase classic software's 80% gross margin right away. He points out that ServiceNow had a 63.2% gross margin at its IPO and Workday 54.1%, because both vendors did a lot of integration work for their customers. By 2024, their margins had climbed back to 79% and 75%. Integration is expensive at first, but once the software sits at the heart of a customer's processes, it becomes very hard to rip out. When the essay came out, 22 of OpenAI's 311 open roles were forward deployed or solutions positions.
+In June 2025, Andreessen Horowitz partner Joe Schmidt published an essay that got passed around a lot, [Trading Margin for Moat](https://a16z.com/services-led-growth/). He argues that enterprise AI startups are wrong to chase classic software's 80% gross margin right away. He points out that ServiceNow had a 63.2% gross margin at its IPO and Workday 54.1%, because both vendors did a lot of integration work for their customers. By 2024, their margins had climbed back to 79% and 75%. Integration is expensive at first, but once the software sits at the heart of a customer's processes, it becomes very hard to rip out. When the essay came out, 22 of OpenAI's 311 open roles were forward deployed or solutions positions.
 
-Another figure, reported by [AFP](https://macaubusiness.com/microsoft-aws-deploy-engineer-armies-to-help-make-ai-profitable/) from a McKinsey study, explains the current rush: at the end of 2025, nearly nine in ten companies had deployed AI in at least one business function, yet 94% reported no significant benefit. Vendors sell licenses, and customers don't know what to do with them. The FDE is the answer to that gap.
+Another figure, reported by [AFP](https://macaubusiness.com/microsoft-aws-deploy-engineer-armies-to-help-make-ai-profitable/) from a McKinsey study, explains the current rush: at the end of 2025, nearly nine in ten companies had deployed AI in at least one business function, yet 94% reported no significant benefit. Vendors sell licenses that customers don't know how to use, and they now send engineers to do it for them.
 
 ## 2026, the year everyone joined in
 
@@ -80,7 +80,7 @@ The job descriptions all look alike. The FDE spends time with the customer's bus
 
 Gergely Orosz estimates that an FDE role at Google splits roughly into 25% coding, 50% integration and plumbing, and 25% meetings and customer work. It's an estimate, but it gives a good sense of the balance.
 
-The required skills follow from that. On the technical side: a general-purpose language (Python and TypeScript come up often), APIs, data, and for AI roles, experience with LLMs in production, agents and evals. On the human side: being able to talk to a business director as easily as to a sysadmin, run a demo, and say no to a request that makes no sense. People who already practice [agentic development day to day](/en/kaizen-ai-sdlc-claude-code-en/) have an obvious head start: they know where a model goes wrong and how to keep it in check.
+The required skills follow from that. You need a general-purpose language (Python and TypeScript come up often), a good grasp of APIs and data, and for AI roles, experience with LLMs in production, agents and evals. You also need to talk to a business director as easily as to a sysadmin, run a demo, and say no to a request that makes no sense. People who already practice [agentic development day to day](/en/kaizen-ai-sdlc-claude-code-en/) have a head start, because they already know where a model goes wrong and how to keep it in check.
 
 ## What it pays
 
@@ -92,7 +92,7 @@ France is another planet. Paris startups such as Gladia advertise ranges around 
 
 ## The on-site consultant, vendor edition
 
-Reading all this, a developer who has worked for a French IT services firm (an ESN) will get a strong sense of déjà vu. Being placed at the customer, learning their business, integrating a product into an information system you didn't design, living with its security rules and habits: that has been the daily life of tens of thousands of consultants in France for decades.
+Reading all this, a developer who has worked for a French IT services firm (an ESN) will get a strong sense of déjà vu. Being placed at the customer, learning their business, integrating a product into an information system you didn't design, living with its security rules and habits, all of that has been the daily life of tens of thousands of consultants in France for decades.
 
 The difference lies in who sends the engineer. The ESN consultant works for a services company, independent of the tool being integrated. The FDE is sent by the vendor itself, and part of the job is to improve the product based on what they see in the field. When that feedback loop works, every deployment makes the next one easier. When it doesn't, the FDE is doing custom services work under a flashier title.
 
@@ -107,10 +107,10 @@ The other complaints come up in most first-hand accounts:
 - **Scattered focus:** constant context switching means you rarely master one codebase in depth, which can make it harder to move back into a pure R&D role.
 - **Vagueness:** the title covers very different realities from one company to the next, from senior developer to technical salesperson.
 
-There's also a question job descriptions don't touch. If AI writes a growing share of the code, a question raised in [Will AI replace developers?](/en/will-ai-replace-developers-critical-analysis/), the work left to humans looks a lot like the FDE's: understanding a real problem, scoping it, integrating, owning what goes to production. You can see that as a new job, or simply as the part of a developer's job that models can't do yet.
+One question is missing from the job descriptions. [Will AI replace developers?](/en/will-ai-replace-developers-critical-analysis/) asked what would be left for developers if AI wrote a growing share of the code. What's left looks a lot like the FDE's work: understanding a real problem, scoping it, integrating, owning what goes to production. You can see that as a new job, or simply as the part of a developer's job that models can't do yet.
 
 ## My takeaway
 
-The Forward Deployed Engineer is not a 2026 invention. Palantir has been doing it for more than fifteen years, and French IT services firms have known a version of it for much longer. What changed is the scale and the money: billions invested by the biggest AI players, who have understood that selling a model is not enough and that someone has to be on site to make it work.
+The Forward Deployed Engineer is not a 2026 invention. Palantir has been doing it for more than fifteen years, and French IT services firms have known a version of it for much longer. The scale and the money are new, though. The biggest AI players are putting billions into it, because they've understood that a model is of little use without someone on site to make it work.
 
-For a developer, the role has real appeal: you see the effect of your work at the customer, and the big vendors pay above market. In return, you have to accept the travel and a less mapped-out career. Before applying, I would ask the employer one question: will what I see at customers actually make it back into the product?
+For a developer, the role has real appeal. You see the effect of your work at the customer, and the big vendors pay above market. In return, you have to accept the travel and a less mapped-out career. Before applying, I would ask the employer one question: will what I see at customers actually make it back into the product?
