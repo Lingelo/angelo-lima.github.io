@@ -7,7 +7,7 @@ export const SITE = {
   authorShort: 'Angelo Lima',
   email: 'angelomiguellima@gmail.com',
   github: 'lingelo',
-  linkedin: 'angélo-lima',
+  linkedin: 'https://www.linkedin.com/in/ang%C3%A9lo-lima/',
   kofi: 'https://ko-fi.com/angelolima',
   gtag: 'G-EQK9L2XD8X',
   avatar: '/assets/img/avatar-icon.png',
