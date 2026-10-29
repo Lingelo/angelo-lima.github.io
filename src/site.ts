@@ -15,11 +15,11 @@ export const SITE = {
   postsPerPage: 6,
   excerptWords: 50,
   keywords:
-    'Angelo Lima, développeur augmenté, développement agentique, agents IA, Claude Code, IA générative, LLM, tech lead, engineering manager, ingénierie logicielle, TypeScript, Java, blog tech français',
+    'Angelo Lima, développeur augmenté, développement agentique, agents IA, Claude Code, IA générative, LLM, staff engineer, AI engineer, plateforme agentique, ingénierie logicielle, TypeScript, Java, blog tech français',
   descriptionFr:
-    "Angelo Lima, développeur augmenté à l'IA, tech lead et engineering manager. Blog sur le développement agentique, l'IA générative (Claude Code, LLM) et le métier de développeur.",
+    "Angelo Lima, développeur augmenté à l'IA, staff engineer et AI engineer. Blog sur le développement agentique, l'IA générative (Claude Code, LLM) et le métier de développeur.",
   descriptionEn:
-    "Angelo Lima, AI-augmented developer, tech lead and engineering manager. Blog about agentic development, generative AI (Claude Code, LLMs) and the craft of software.",
+    "Angelo Lima, AI-augmented developer, staff engineer and AI engineer. Blog about agentic development, generative AI (Claude Code, LLMs) and the craft of software.",
 } as const;
 
 // UI strings per language (the bits that were inlined as {% if page.lang == 'en' %} in Liquid).
