@@ -19,6 +19,19 @@ interface Props {
 const p = Astro.props as Props;
 const avatar = new URL(SITE.avatar, Astro.site).href;
 
+// One Person entity shared by every page (same @id), so answer engines tie each article
+// to the author's About page and GitHub / LinkedIn profiles.
+const author = {
+  '@type': 'Person',
+  '@id': `${SITE.url}/aboutme/#person`,
+  name: SITE.authorShort,
+  alternateName: SITE.author,
+  url: `${SITE.url}/aboutme/`,
+  jobTitle: 'Développeur augmenté, Tech Lead & Engineering Manager',
+  image: avatar,
+  sameAs: [`https://github.com/${SITE.github}`, `https://www.linkedin.com/in/${SITE.linkedin}/`],
+};
+
 let json: Record<string, unknown>;
 
 if (p.type === 'article') {
@@ -28,7 +41,7 @@ if (p.type === 'article') {
     headline: p.title,
     ...(p.description ? { description: p.description } : {}),
     image: { '@type': 'ImageObject', url: p.image ?? avatar, height: 630, width: 1200 },
-    author: { '@type': 'Person', name: p.author ?? SITE.authorShort },
+    author: p.author && p.author !== SITE.authorShort ? { '@type': 'Person', name: p.author } : author,
     publisher: {
       '@type': 'Organization',
       name: SITE.title,
@@ -49,7 +62,7 @@ if (p.type === 'article') {
     name: SITE.title,
     description: SITE.descriptionFr,
     url: SITE.url,
-    author: { '@type': 'Person', name: SITE.author, url: `${SITE.url}/aboutme` },
+    author,
     publisher: {
       '@type': 'Organization',
       name: SITE.title,
@@ -62,17 +75,9 @@ const person =
   p.type === 'website'
     ? {
         '@context': 'https://schema.org',
-        '@type': 'Person',
-        name: SITE.author,
-        jobTitle: 'Développeur augmenté, Tech Lead & Engineering Manager',
+        ...author,
         description: SITE.descriptionFr,
-        url: SITE.url,
-        image: avatar,
-        sameAs: [
-          `https://github.com/${SITE.github}`,
-          `https://linkedin.com/in/${SITE.linkedin}`,
-          `mailto:${SITE.email}`,
-        ],
+        email: `mailto:${SITE.email}`,
       }
     : null;
 ---
