@@ -29,7 +29,7 @@ const author = {
   url: `${SITE.url}/aboutme/`,
   jobTitle: 'Développeur augmenté, Tech Lead & Engineering Manager',
   image: avatar,
-  sameAs: [`https://github.com/${SITE.github}`, `https://www.linkedin.com/in/${SITE.linkedin}/`],
+  sameAs: [`https://github.com/${SITE.github}`, `https://www.linkedin.com/in/${encodeURIComponent(SITE.linkedin)}/`],
 };
 
 let json: Record<string, unknown>;
