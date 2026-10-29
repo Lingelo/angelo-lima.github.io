@@ -18,7 +18,7 @@ aliases:
 related:
   - "sam-altman-ai-bubble"
   - "mensch-assemblee-nationale-2026"
-  - "claude-code-cheatsheet-octobre-2026"
+  - "forward-deployed-engineer-fde"
 faq:
   - q: "Quand Anthropic entre-t-il en bourse ?"
     a: "Anthropic a rendu public son formulaire S-1 auprès de la SEC le 26 octobre 2026, après un dépôt confidentiel le 1er juin 2026. La presse américaine (CNN, Axios) évoque une première cotation possible autour du 16 novembre 2026, après les élections de mi-mandat. Le prix par action et le nombre de titres ne sont pas encore fixés."
@@ -61,9 +61,9 @@ Le tableau des comptes de résultat tient en quelques lignes et il suffit à exp
 | S1 2025 | 1 163 | 2 334 | 2 135 |
 | S1 2026 | 16 286 | 8 945 | 693 |
 
-De 41 millions en 2023 à plus de 16 milliards sur un seul semestre en 2026. Le premier semestre 2026 pèse 14 fois celui de 2025. Le poste calcul (les GPU, les datacenters) représente encore 55 % du chiffre d'affaires, mais il croît bien moins vite que les revenus, et c'est ce qui fait fondre la perte opérationnelle.
+De 41 millions en 2023 à plus de 16 milliards sur un seul semestre en 2026. Le premier semestre 2026 pèse 14 fois celui de 2025. Le poste calcul (les GPU, les [datacenters](/fr/ia-ecologie-2026-prompt-infrastructure/)) représente encore 55 % du chiffre d'affaires, mais il croît bien moins vite que les revenus, et c'est ce qui fait fondre la perte opérationnelle.
 
-Côté clients, le S-1 compte au 30 septembre 2026 plus de 11 900 entreprises qui génèrent chacune au moins 100 000 dollars de revenus sur douze mois glissants, contre plus de 950 un an plus tôt. Plus de 1 900 dépassent le million, et environ 250 dépassent les 10 millions.
+Côté clients, le S-1 compte au 30 septembre 2026 plus de 11 900 entreprises qui génèrent chacune au moins 100 000 dollars de revenus sur douze mois glissants, contre plus de 950 un an plus tôt. Plus de 1 900 dépassent le million, et environ 250 dépassent les 10 millions. Pour accompagner ces grands comptes, Anthropic a aussi annoncé en mai 2026 une société dédiée aux [Forward Deployed Engineers](/fr/forward-deployed-engineer-fde-metier/), ces ingénieurs envoyés chez les clients pour y mettre Claude en production.
 
 Ce qui m'a frappé en tant que développeur, c'est la place de Claude Code dans le récit. Le document le présente comme « la manifestation la plus claire » de ce qu'Anthropic appelle les *Virtual Collaborators*, et compare son lancement, pour l'entreprise, à l'arrivée des premiers assistants conversationnels grand public. Quand on suit l'outil depuis un an (j'en tiens un [état des lieux régulier](/fr/claude-code-cheatsheet-octobre-2026-etat-des-lieux/)), on comprend pourquoi.
 

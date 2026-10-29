@@ -1,8 +1,9 @@
 ---
 title: "Karpathy's Second Brain: A Wiki the AI Writes For You"
 subtitle: "How to turn Obsidian + Claude into a knowledge base that compiles, links and fixes itself, no RAG, no vector database"
-description: "Andrej Karpathy's LLM wiki concept, explained and put into practice with Obsidian and Claude Code. Compilation over summarization, zero RAG, and how to implement it yourself with three folders and four commands."
+description: "Andrej Karpathy's LLM wiki put into practice with Obsidian and Claude Code: compile your notes instead of summarizing them, no RAG, three folders."
 date: 2026-06-10T12:00:00.000Z
+lastUpdated: 2026-10-29T12:00:00.000Z
 lang: en
 translationKey: "second-brain-karpathy"
 slug: "karpathy-second-brain-obsidian-claude-en"
@@ -19,12 +20,31 @@ related:
   - "claude-code-day-5"
   - "claude-code-day-10"
   - "kaizen-ai-sdlc-claude-code"
+faq:
+  - q: "What is Andrej Karpathy's LLM wiki?"
+    a: "The LLM wiki is a concept Andrej Karpathy shared in early 2026: the user only collects raw sources, and an LLM compiles them into encyclopedia-style articles linked by backlinks, deduplicated and free of contradictions. Karpathy sums it up: \"You rarely ever write or edit the wiki manually, it's the domain of the LLM.\""
+  - q: "What is the difference between an LLM wiki and RAG?"
+    a: "RAG splits documents into vectors and runs a new search at every question, over raw data that is never cleaned. An LLM wiki does the sorting once, at compile time, and produces readable Markdown files that fit in a model's context window. For a personal knowledge base of a few hundred articles, it removes the need for any RAG infrastructure."
+  - q: "How do you build a second brain with Obsidian and Claude Code?"
+    a: "You create a folder with `raw/` for raw sources, `wiki/` for compiled articles and a `CLAUDE.md` that sets the rules. Four Claude Code slash commands run the system: `/ingest` compiles, `/lint` checks consistency, `/query` answers questions and `/save` adds a page. Obsidian opens the `wiki/` folder and shows the link graph."
+  - q: "Does an LLM wiki replace RAG in companies?"
+    a: "No. An LLM wiki suits personal use or a small team. At company scale, with millions of documents, access control and real-time freshness requirements, RAG remains the right tool."
+  - q: "What are the limits of a second brain written by an LLM?"
+    a: "The LLM can hallucinate or rephrase things clumsily, so a human review is still needed, even with the `/lint` command. The system also relies on the context window: beyond a certain wiki size, you have to go back to retrieval strategies."
 ---
 We all run a degraded version of the same dream: one single place that would hold everything we've ever read, watched, or learned. A backup brain. In practice, we pile up abandoned Notion pages, bookmarks we never reopen, highlighted PDFs rotting in a `Downloads` folder. The problem was never **collecting** information. It's **organizing** it. That's exactly where human effort collapses.
 
 In early 2026, Andrej Karpathy (OpenAI co-founder, former Tesla AI director) shared a deceptively simple idea on X to solve this: what if we stopped writing the knowledge base ourselves, and handed it **entirely** to an LLM?
 
 He calls it the **LLM wiki**, or *second brain*. This article breaks the concept down, explains why it buries RAG for personal use, and shows how to implement it with Obsidian and Claude Code.
+
+> **In brief**
+>
+> - **What:** the LLM wiki, or second brain, is an idea from Andrej Karpathy. You drop raw sources into a folder, and an LLM writes, links and fixes a Markdown knowledge base on its own.
+> - **Key figure:** on a single research topic, Karpathy's wiki reached about 100 articles and 400,000 words without him writing a line of it.
+> - **Difference from RAG:** the sorting happens once, at compile time, instead of at every question. No vector database, just `.md` files versioned with git.
+> - **In practice:** Obsidian to browse the graph, Claude Code and four commands (`/ingest`, `/lint`, `/query`, `/save`) to run the system.
+> - **The catch:** it works as long as the wiki fits in the context window, and an LLM doing the writing can hallucinate.
 
 ---
 

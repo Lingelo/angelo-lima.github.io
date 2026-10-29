@@ -91,6 +91,10 @@ const twitterCard = imageUrl && image !== SITE.avatar ? 'summary_large_image' : 
 <link rel="alternate" type="application/rss+xml" title={SITE.title} href={abs('/feed.xml')} />
 <link rel="alternate" type="application/rss+xml" title={`${SITE.title} - English`} href={abs('/en/feed.xml')} />
 
+{type === 'article' && (
+  <link rel="alternate" type="text/markdown" href={abs(canonical.replace(/\/$/, '.md'))} />
+)}
+
 <!-- Hreflang -->
 {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={abs(a.href)} />)}
 

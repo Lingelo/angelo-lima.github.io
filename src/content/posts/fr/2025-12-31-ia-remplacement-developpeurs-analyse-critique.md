@@ -16,7 +16,7 @@ aliases:
   - "/2025-12-31-ia-remplacement-developpeurs-analyse-critique/"
 related:
   - "ai-development"
-  - "dunning-kruger-effect"
+  - "forward-deployed-engineer-fde"
   - "llm-hallucinations-devoxx-2026"
 ---
 La panique est palpable sur les réseaux sociaux. Chaque nouvelle démo d'un modèle d'IA générative déclenche une vague de prédictions catastrophistes : "C'est la fin des développeurs", "L'AGI arrive dans 2 ans", "Une équipe de 6 développeurs remplacée par un seul avec l'IA". Ces affirmations méritent une analyse rigoureuse, loin de l'hystérie collective.
