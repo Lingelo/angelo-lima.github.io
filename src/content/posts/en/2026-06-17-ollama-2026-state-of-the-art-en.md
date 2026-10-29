@@ -1,8 +1,9 @@
 ---
 title: "Ollama in 2026: From Local Runner to AI Platform"
 subtitle: "Models, API, cloud, agents — eighteen months on from the first article"
-description: "A full overview of Ollama in June 2026: v0.30.8, 200+ models, Anthropic Messages API compatibility, hybrid cloud with :cloud suffix, Claude Code / Hermes / OpenClaw integrations, and the ollama launch command."
+description: "Ollama in June 2026: v0.30.8, 200+ models, Anthropic-compatible API, cloud models and the ollama launch command to run Claude Code locally."
 date: 2026-06-17T00:00:00.000Z
+lastUpdated: 2026-10-29T12:00:00.000Z
 lang: en
 translationKey: "ollama-2026-state-of-the-art"
 slug: "ollama-2026-state-of-the-art-en"
@@ -17,11 +18,30 @@ aliases:
   - "/en/2026-06-17-ollama-2026-state-of-the-art-en/"
 related:
   - "claude-code-ollama"
-  - "openai-gpt-oss"
+  - "amalia-portuguese-ai"
   - "ollama-open-webui"
+faq:
+  - q: "What is Ollama?"
+    a: "Ollama is an open source tool for downloading and running language models locally on macOS, Linux and Windows. In June 2026, at v0.30.8, it offers more than 200 models and exposes an API on port 11434 that is compatible with both the OpenAI and Anthropic formats."
+  - q: "Can you use Claude Code with Ollama?"
+    a: "Yes. Since January 16, 2026, Ollama exposes the Anthropic Messages API, and the command `ollama launch claude-code --model qwen3.6:27b` sets the environment variables automatically. Claude Code needs at least 32k tokens of context (OLLAMA_CONTEXT_LENGTH=32768), and local models still trail Claude Sonnet or Opus on complex tasks."
+  - q: "Which model should you use on Ollama in 2026?"
+    a: "In June 2026, Qwen 3.6 27B is the general-purpose reference on consumer hardware: 77.2% on SWE-bench, a 256k-token context window, and it fits in 24 GB of VRAM at Q4. Qwen2.5-Coder 32B is the strongest for code, Gemma 4 for multimodal work, and Mistral 7B remains a good pick for French."
+  - q: "What are Ollama cloud models?"
+    a: "Models with the `:cloud` suffix, such as `qwen3-coder-480b:cloud`, do not run on your machine. Ollama runs them on its own servers, with the same command and API as a local model. They require an ollama.com account and should be avoided for confidential projects."
+  - q: "Should you choose Ollama or vLLM?"
+    a: "Ollama is built for a single developer and keeps a latency edge of about 18% on a single request. vLLM is built to serve many users: thanks to PagedAttention it reaches about 793 tokens/s under concurrent load, versus about 41 for Ollama."
 ---
 
 Back in January 2025 I wrote [a deployment guide for Ollama + Open WebUI](/en/ollama-open-webui-local-llm-deployment-docker/) focused on Docker and basic configuration. The project worked well, but it was still a runner: download a GGUF, query port 11434, done. Eighteen months and a v0.30.8 release later, the scope has changed enough to make parts of that guide obsolete. Hybrid cloud, Anthropic Messages API compatibility, native web search, agents. Here's where things stand.
+
+> **In brief**
+>
+> - **What:** Ollama, the open source tool for running LLMs locally, at v0.30.8 in June 2026, with more than 200 models in its library.
+> - **Key additions:** Anthropic Messages API compatibility since January 16, 2026, cloud models with the `:cloud` suffix, native web search since v0.27, and the `ollama launch` command.
+> - **With Claude Code:** `ollama launch claude-code --model qwen3.6:27b` sets everything up. You need at least 32k tokens of context.
+> - **The catch:** Ollama has neither PagedAttention nor continuous batching. Under concurrent load it tops out around 41 tokens/s, versus about 793 for vLLM.
+> - **Who it's for:** solo developers. For multi-user production, vLLM is still the right choice.
 
 ---
 

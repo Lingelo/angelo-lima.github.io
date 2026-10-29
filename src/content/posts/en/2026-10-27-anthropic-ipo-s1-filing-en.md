@@ -18,7 +18,7 @@ aliases:
 related:
   - "sam-altman-ai-bubble"
   - "mensch-assemblee-nationale-2026"
-  - "claude-code-cheatsheet-octobre-2026"
+  - "forward-deployed-engineer-fde"
 faq:
   - q: "When is Anthropic going public?"
     a: "Anthropic made its Form S-1 public with the SEC on October 26, 2026, after a confidential submission on June 1, 2026. US press reports (CNN, Axios) point to a possible first trading day around November 16, 2026, after the midterm elections. The share price and share count have not been set yet."
@@ -61,9 +61,9 @@ The income statement fits in a few lines, and it is enough to explain the hype. 
 | H1 2025 | 1,163 | 2,334 | 2,135 |
 | H1 2026 | 16,286 | 8,945 | 693 |
 
-From $41 million in 2023 to more than $16 billion in a single half-year in 2026. The first half of 2026 is 14 times the first half of 2025. Compute (GPUs, datacenters) still eats 55% of revenue, but it grows far more slowly than revenue, which is why the operating loss is shrinking.
+From $41 million in 2023 to more than $16 billion in a single half-year in 2026. The first half of 2026 is 14 times the first half of 2025. Compute (GPUs, [datacenters](/en/ai-ecology-2026-prompt-infrastructure-en/)) still eats 55% of revenue, but it grows far more slowly than revenue, which is why the operating loss is shrinking.
 
-On the customer side, the S-1 counts, as of September 30, 2026, more than 11,900 businesses each generating at least $100,000 in trailing twelve-month revenue, up from more than 950 a year earlier. More than 1,900 exceed $1 million, and about 250 exceed $10 million.
+On the customer side, the S-1 counts, as of September 30, 2026, more than 11,900 businesses each generating at least $100,000 in trailing twelve-month revenue, up from more than 950 a year earlier. More than 1,900 exceed $1 million, and about 250 exceed $10 million. To serve these large accounts, Anthropic also announced in May 2026 a company dedicated to [Forward Deployed Engineers](/en/forward-deployed-engineer-fde-role-en/), the engineers sent to customers to get Claude into production.
 
 What struck me as a developer is how central Claude Code is to the story. The filing calls it "the clearest manifestation" of what Anthropic calls *Virtual Collaborators*, and says that for enterprise AI its launch was comparable to the arrival of the first widely adopted conversational assistants. If you have followed the tool over the past year (I keep a [regular state of play](/en/claude-code-cheatsheet-october-2026-state-of-play-en/)), that is easy to believe.
 

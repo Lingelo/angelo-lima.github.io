@@ -17,8 +17,8 @@ aliases:
   - "/2025-11-29-prelude-of-the-chambered-reborn/"
 related:
   - "claude-code-day-20"
-  - "gbts-typescript-gameboy"
-  - "bun-evaluation"
+  - "fuel-radar-fuel-prices"
+  - "zelda-ocarina-of-time-remake"
 ---
 En 2011, **Markus Persson** (Notch), le créateur de Minecraft, participait à la **Ludum Dare 21** avec un petit jeu de dungeon-crawler rétro : **Prelude of the Chambered**. Un moteur de raycasting à la Wolfenstein 3D, des graphismes pixelisés, des puzzles et des boss. Un bijou technique compressé en 48 heures de game jam.
 

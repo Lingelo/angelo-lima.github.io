@@ -1,8 +1,9 @@
 ---
 title: "Claude Code Cheat Sheet — Juin 2026 : Fable 5, Opus 4.8, Agent View et Dynamic Workflows"
 subtitle: "Référence exhaustive à jour pour Claude Code v2.1.170 — Juin 2026"
-description: "Cheatsheet Claude Code juin 2026 exhaustive : 65+ commandes slash, 70+ flags et variables d'environnement, 27 événements hooks, Fable 5, Opus 4.8, Agent View, Dynamic Workflows, ultracode, security-guidance plugin, --safe-mode, fallback chains. Disponible en FR et EN."
+description: "Cheat sheet Claude Code de juin 2026 (v2.1.170) : 65+ commandes slash, 70+ flags, 27 hooks, Opus 4.8, Fable 5, Agent View et dynamic workflows."
 date: 2026-06-15T12:00:00.000Z
+lastUpdated: 2026-10-29T12:00:00.000Z
 lang: fr
 translationKey: "claude-code-cheatsheet-juin-2026"
 slug: "claude-code-cheatsheet-juin-2026-mise-a-jour"
@@ -13,20 +14,39 @@ tags:
 author: "Angelo Lima"
 cover: "/assets/img/claude-code.webp"
 thumbnail: "/assets/img/claude-code.webp"
+shareImg: "/assets/img/claude-code.webp"
 aliases:
   - "/2026-06-15-claude-code-cheatsheet-juin-2026-mise-a-jour/"
 related:
   - "claude-code-cheatsheet-octobre-2026"
   - "claude-code-cheatsheet-avril-2026"
   - "orca-ide-agentic-development"
+faq:
+  - q: "Qu'est-ce que la cheat sheet Claude Code de juin 2026 ?"
+    a: "C'est une référence HTML interactive et gratuite, en français et en anglais, qui couvre Claude Code v2.1.170 : plus de 65 commandes slash, plus de 70 flags CLI et variables d'environnement, 27 événements de hooks, les modèles, les permissions et la configuration. Une édition plus récente est parue en octobre 2026."
+  - q: "Quoi de neuf dans Claude Code en juin 2026 ?"
+    a: "Entre fin avril et juin 2026, Claude Code est passé de la v2.1.101 à la v2.1.170. Les ajouts principaux sont Opus 4.8 (28 mai), Fable 5 (9 juin), l'Agent View (`claude agents`), les dynamic workflows qui orchestrent des centaines de sous-agents, le plugin security-guidance et les commandes `/goal`, `/cd` et `/ultrareview`."
+  - q: "Qu'est-ce que l'Agent View de Claude Code ?"
+    a: "L'Agent View, arrivée dans Claude Code le 11 mai 2026, affiche sur un seul écran toutes les sessions : celles qui tournent, celles qui attendent une réponse et celles qui sont terminées. On l'ouvre avec `claude agents` ou avec `←←` depuis une session."
+  - q: "Que sont les dynamic workflows de Claude Code ?"
+    a: "Un dynamic workflow est un script d'orchestration que Claude écrit pour une tâche et exécute sur des dizaines à des centaines de sous-agents en arrière-plan, par exemple pour auditer tout un dépôt ou mener une grosse migration. On les gère avec `/workflows` et on les déclenche avec le niveau d'effort `ultracode`."
+  - q: "Pourquoi Fable 5 est-il marqué comme suspendu ?"
+    a: "Fable 5 et Mythos 5 ont été suspendus dans le monde entier sur directive du gouvernement américain, quelques jours après leur lancement du 9 juin 2026. Les autres modèles, dont Opus 4.8, restent disponibles, et la cheat sheet garde les entrées Fable 5 à titre de référence."
 ---
 **⚠ Mise à jour (12 juin 2026) :** Fable 5 et Mythos 5 ont été suspendus mondialement sur directive du gouvernement américain, quatre jours après leur lancement. Tous les autres modèles restent disponibles. Les entrées Fable 5 dans la cheat sheet sont conservées à titre de référence, marquées comme suspendues.
 
 ---
 
-J'avais republié une cheatsheet Claude Code fin avril. Sept semaines plus tard, elle a pris un sacré coup de vieux : entre v2.1.101 et v2.1.170, Anthropic a poussé une bonne soixantaine de releases. **Deux nouveaux modèles** sont sortis (Opus 4.8 le 28 mai, puis Fable 5 le 9 juin), l'**Agent View** est arrivée, les **dynamic workflows** orchestrent maintenant des centaines de sous-agents, et une poignée de nouvelles commandes (`/goal`, `/cd`, `/workflows`, `/ultrareview`, `/reload-skills`…) se sont ajoutées.
+J'avais republié [une cheatsheet Claude Code fin avril](/fr/claude-code-cheatsheet-avril-2026-mise-a-jour/). Sept semaines plus tard, elle a pris un sacré coup de vieux : entre v2.1.101 et v2.1.170, Anthropic a poussé une bonne soixantaine de releases. **Deux nouveaux modèles** sont sortis (Opus 4.8 le 28 mai, puis Fable 5 le 9 juin), l'**Agent View** est arrivée, les **dynamic workflows** orchestrent maintenant des centaines de sous-agents, et une poignée de nouvelles commandes (`/goal`, `/cd`, `/workflows`, `/ultrareview`, `/reload-skills`…) se sont ajoutées.
 
 J'ai donc republié une version juin 2026 — la **même architecture visuelle** que mars et avril, réécrite pour coller à chaque ajout, avec la **palette du blog** (fond sombre, accent doré).
+
+> **L'essentiel**
+>
+> - **Quoi** : une cheat sheet HTML interactive de Claude Code v2.1.170, en français et en anglais, mise à jour en juin 2026.
+> - **Couverture** : 16 sections, plus de 65 commandes slash, plus de 70 flags et variables d'environnement, 27 événements de hooks.
+> - **Nouveautés depuis avril** : Opus 4.8 (28 mai), Fable 5 (9 juin, suspendu depuis), Agent View, dynamic workflows et plugin security-guidance.
+> - **Version la plus récente** : [l'édition d'octobre 2026](/fr/claude-code-cheatsheet-octobre-2026-etat-des-lieux/).
 
 ## La cheat sheet
 

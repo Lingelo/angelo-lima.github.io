@@ -1,8 +1,9 @@
 ---
 title: "Le second cerveau selon Karpathy : un wiki que l'IA écrit à votre place"
 subtitle: "Comment transformer Obsidian + Claude en base de connaissances qui se compile, se relie et se corrige toute seule, sans RAG, sans base vectorielle"
-description: "Le concept de LLM wiki d'Andrej Karpathy expliqué et mis en pratique avec Obsidian et Claude Code. Compilation plutôt que résumé, zéro RAG, et comment l'implémenter vous-même avec trois dossiers et quatre commandes."
+description: "Le LLM wiki d'Andrej Karpathy mis en pratique avec Obsidian et Claude Code : compiler ses notes plutôt que les résumer, sans RAG, en trois dossiers."
 date: 2026-06-10T12:00:00.000Z
+lastUpdated: 2026-10-29T12:00:00.000Z
 lang: fr
 translationKey: "second-brain-karpathy"
 slug: "second-cerveau-obsidian-claude-karpathy"
@@ -19,12 +20,31 @@ related:
   - "claude-code-day-5"
   - "claude-code-day-10"
   - "kaizen-ai-sdlc-claude-code"
+faq:
+  - q: "Qu'est-ce que le LLM wiki d'Andrej Karpathy ?"
+    a: "Le LLM wiki est un concept partagé par Andrej Karpathy début 2026 : l'utilisateur se contente de collecter des sources brutes, et un LLM les compile en articles encyclopédiques reliés par des backlinks, dédupliqués et sans contradictions. Karpathy le résume ainsi : « You rarely ever write or edit the wiki manually, it's the domain of the LLM. »"
+  - q: "Quelle différence entre le LLM wiki et le RAG ?"
+    a: "Le RAG découpe les documents en vecteurs et refait une recherche à chaque question, sur de la donnée brute jamais nettoyée. Le LLM wiki fait le tri une seule fois, à la compilation, et produit des fichiers Markdown lisibles qui tiennent dans la fenêtre de contexte d'un modèle. Pour une base personnelle de quelques centaines d'articles, il évite toute l'infrastructure du RAG."
+  - q: "Comment créer un second cerveau avec Obsidian et Claude Code ?"
+    a: "On crée un dossier avec `raw/` pour les sources brutes, `wiki/` pour les articles compilés et un `CLAUDE.md` qui fixe les règles. Quatre slash commands Claude Code font tourner le système : `/ingest` compile, `/lint` vérifie la cohérence, `/query` interroge et `/save` ajoute une page. Obsidian ouvre le dossier `wiki/` et affiche le graphe des liens."
+  - q: "Le LLM wiki remplace-t-il le RAG en entreprise ?"
+    a: "Non. Le LLM wiki convient à un usage personnel ou à une petite équipe. À l'échelle d'une entreprise, avec des millions de documents, du contrôle d'accès et des besoins de fraîcheur en temps réel, le RAG garde tout son intérêt."
+  - q: "Quelles sont les limites d'un second cerveau écrit par un LLM ?"
+    a: "Le LLM peut halluciner ou reformuler maladroitement, donc une relecture reste nécessaire, même avec la commande `/lint`. Le système repose aussi sur la fenêtre de contexte : au-delà d'une certaine taille de wiki, il faut revenir à des stratégies de retrieval."
 ---
 On a tous une version dégradée du même rêve : un endroit unique où vivrait tout ce qu'on a lu, écouté, appris. Un cerveau de secours. En pratique, on accumule des notes Notion abandonnées, des marque-pages qu'on ne rouvre jamais, des PDF surlignés qui dorment dans un dossier `Téléchargements`. Le problème n'a jamais été de **collecter** l'information. C'est de l'**organiser** : c'est précisément là que l'effort humain s'effondre.
 
 Début 2026, Andrej Karpathy (cofondateur d'OpenAI, ex-directeur IA de Tesla) a partagé sur X une idée simple et redoutablement efficace pour résoudre ce problème : et si on arrêtait d'écrire la base de connaissances soi-même, pour la laisser **entièrement** à un LLM ?
 
 C'est ce qu'il appelle le **LLM wiki**, ou *second cerveau*. Cet article décortique le concept, explique pourquoi il enterre l'approche RAG pour un usage personnel, et montre comment l'implémenter avec Obsidian et Claude Code.
+
+> **L'essentiel**
+>
+> - **Quoi** : le LLM wiki, ou second cerveau, est une idée d'Andrej Karpathy. On dépose des sources brutes dans un dossier, et un LLM écrit, relie et corrige seul une base de connaissances en Markdown.
+> - **Chiffre clé** : sur un seul sujet de recherche, le wiki de Karpathy a atteint environ 100 articles et 400 000 mots sans qu'il en écrive une ligne.
+> - **Différence avec le RAG** : le tri se fait une fois, à la compilation, et non à chaque question. Pas de base vectorielle, juste des fichiers `.md` versionnés avec git.
+> - **Mise en pratique** : Obsidian pour visualiser le graphe, Claude Code et quatre commandes (`/ingest`, `/lint`, `/query`, `/save`) pour faire tourner le système.
+> - **La limite** : ça tient tant que le wiki rentre dans la fenêtre de contexte, et la rédaction confiée au LLM peut halluciner.
 
 ---
 
