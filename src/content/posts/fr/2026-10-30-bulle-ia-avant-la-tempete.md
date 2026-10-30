@@ -11,8 +11,9 @@ tags:
   - "Tech"
   - "Développement"
 author: "Angelo Lima"
-thumbnail: "/assets/img/sam-altman-bulle-ia.webp"
-shareImg: "/assets/img/sam-altman-bulle-ia.webp"
+cover: "/assets/img/bulle-ia-avant-la-tempete.webp"
+thumbnail: "/assets/img/bulle-ia-avant-la-tempete.webp"
+shareImg: "/assets/img/bulle-ia-avant-la-tempete.webp"
 aliases:
   - "/2026-10-30-bulle-ia-avant-la-tempete/"
 related:
@@ -55,11 +56,15 @@ Au centre de tout, il y a la puissance de calcul. Selon les estimations qui circ
 
 Elles sont arrivées avec les résultats trimestriels. Alphabet a publié le 28 octobre au soir une croissance de 103 % de Google Cloud. Mais le groupe a dépensé 51,4 milliards de dollars en investissements sur le trimestre, ce qui laisse un free cash flow de -9,1 milliards quand les analystes attendaient autour de -2,7 milliards. Le budget 2026 passe à 195-205 milliards, et la direction annonce une hausse « significative » en 2027. Le lendemain, l'action perdait 12,6 % et environ 500 milliards de dollars de valeur, [sa pire séance](https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/) selon plusieurs médias.
 
+![Croissance du cloud au troisième trimestre 2026 : Google Cloud +103 %, Microsoft Azure +48 %, AWS +39 %](/assets/img/bulle-ia-croissance-cloud.svg)
+
 Amazon a [suivi le 29 au soir](https://www.cnbc.com/2026/10/29/aws-q3-earnings-report-2026.html). AWS affiche sa meilleure croissance depuis fin 2021, à 39 %, avec 578 milliards de dollars de commandes signées. Mais le free cash flow sur douze mois tombe à -42,4 milliards et la dette à long terme est passée de 65,6 à 173,1 milliards en neuf mois. L'action a perdu 6 à 7 % après la clôture.
 
 Intel, le 30, est un cas à part. Son effondrement, que [CNBC](https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html) attribue au ralentissement du PC, s'explique aussi par un incident de production, sans rapport direct avec l'IA. Dans ce climat, le marché n'a pas fait le tri.
 
 Microsoft, lui, a été épargné. Azure progresse de 48 %, les investissements sont inférieurs à ce que le groupe avait annoncé et le free cash flow dépasse les attentes de 10 milliards. L'action a pris jusqu'à 4 % après la publication. Les rafales ont visé ceux qui paient l'IA sans encore pouvoir en montrer le retour.
+
+![Réaction en bourse fin octobre 2026 : Intel jusqu'à -30 %, Alphabet -12,6 %, Amazon environ -7 %, Microsoft jusqu'à +4 %](/assets/img/bulle-ia-reaction-bourse.svg)
 
 L'an dernier, j'écrivais sur [les déclarations de Sam Altman au sujet de la bulle](/fr/sam-altman-bulle-ia-marches-analyse/). Le patron d'OpenAI parlait d'un « grain de vérité » qui enthousiasme trop les gens intelligents. Le grain de vérité est toujours là, les taux de croissance du cloud le prouvent. C'est son prix qui inquiète.
 
@@ -87,9 +92,13 @@ Une tempête déplace autant qu'elle détruit. Quand le vent retombe, le relief 
 
 Capgemini a [publié le 30 octobre](https://www.globenewswire.com/news-release/2026/10/30/3392023/0/fr/la-dynamique-du-3%C3%A8me-trimestre-2026-conduit-capgemini-%C3%A0-relever-ses-perspectives-2026.html) un chiffre d'affaires trimestriel de 6,07 milliards d'euros, en hausse de 11,7 % à taux constants, et relevé son objectif annuel. Le groupe compte 417 500 collaborateurs, 18 % de plus en un an, surtout grâce au rachat de WNS, implanté principalement en Inde. En France, il a signé en mai une rupture conventionnelle collective portant sur 2 409 postes, environ 7 % de ses effectifs français. Un chiffre passe presque inaperçu : les prises de commandes ne progressent que de 3,4 %, trois fois moins vite que le chiffre d'affaires.
 
+![Capgemini au troisième trimestre 2026 : chiffre d'affaires +11,7 %, prises de commandes +3,4 %, effectifs du groupe +18 %](/assets/img/bulle-ia-capgemini.svg)
+
 Le reste du secteur avance prudemment. Numeum [prévoit 3 % de croissance](https://www.lemondeinformatique.fr/actualites/lire-numeum-prevoit-3-de-croissance-du-marche-numerique-en-2026-100693.html) du numérique français en 2026, mais seulement 1,4 % pour les ESN, et 35 % d'entre elles s'attendent à une baisse de leurs marges. Sopra Steria affiche 4,3 % de croissance organique au troisième trimestre.
 
 Ce sont les plus jeunes qui voient le terrain bouger le plus. Selon l'[enquête Numeum-KPMG 2026](https://kpmg.com/fr/fr/media/press-releases/2026/10/esn-ict-etude-ia-2026.html), 62 % des ESN disent que l'IA pèse déjà sur leurs recrutements, 47 % exigent une maîtrise de l'IA dès le début de carrière, et 22 % voient le recrutement des juniors en forte baisse, contre 9 % en hausse. Aux États-Unis, une étude de Stanford sur les données de paie ADP mesure en juin 2026 un emploi inférieur de 19 % chez les 22-25 ans dans les métiers exposés à l'IA. Selon Indeed, 71 % de la hausse des offres de développeurs entre mai 2025 et mai 2026 concernait des postes seniors. L'Apec prévoit malgré tout environ 61 000 recrutements de cadres informaticiens en 2026, en hausse de 4 %, mais ces prévisions datent d'avant le PIB négatif.
+
+![Enquête Numeum-KPMG 2026 : 62 % des ESN disent que l'IA pèse sur leurs recrutements, 47 % exigent une maîtrise de l'IA, 22 % voient le recrutement des juniors en forte baisse, 9 % en hausse](/assets/img/bulle-ia-esn-recrutement.svg)
 
 Une correction boursière accélérerait ce mouvement. Des entreprises sous pression cherchent des économies, et l'IA en est la promesse la plus facile à vendre en conseil d'administration. Dans [mon analyse sur le remplacement des développeurs](/fr/ia-remplacement-developpeurs-analyse-critique/), je notais que l'IA excelle sur les tâches répétitives, le scaffolding, les tests et la documentation, et que le métier glisse vers l'architecture. Ce sont justement ces tâches-là qu'on confiait aux juniors pour apprendre. Dans son audition, Arthur Mensch expliquait que la consommation d'IA représentait déjà 10 % de la masse salariale de Mistral. Derrière ce ratio, il y a des postes.
 
@@ -102,3 +111,5 @@ Le 3 novembre, les élections de mi-mandat américaines, avec le risque d'une es
 Et surtout deux signaux qui vaudront plus que n'importe quelle séance de Bourse : un géant de la tech qui réduit ses investissements, ou un acteur endetté comme CoreWeave qui n'arrive plus à se refinancer. Si l'un des deux apparaît, ce ne seront plus des rafales.
 
 *Les chiffres cités proviennent de la presse financière (CNBC, CNN, Fortune, Bloomberg, Boursorama), de l'Insee, de Numeum, de l'Apec et des communiqués des entreprises, consultés le 30 octobre 2026. Les cours évoluent vite : certains pourcentages sont des variations en séance ou après clôture.*
+
+*Illustration : « Le Simoun », lithographie d'E. Warnots d'après Jean Portaels, Salon de 1848 (British Museum, domaine public, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Le_Simoun_(BM_1861,1012.722).jpg)).*

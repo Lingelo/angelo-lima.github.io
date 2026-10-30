@@ -11,8 +11,9 @@ tags:
   - "Tech"
   - "Development"
 author: "Angelo Lima"
-thumbnail: "/assets/img/sam-altman-bulle-ia.webp"
-shareImg: "/assets/img/sam-altman-bulle-ia.webp"
+cover: "/assets/img/bulle-ia-avant-la-tempete.webp"
+thumbnail: "/assets/img/bulle-ia-avant-la-tempete.webp"
+shareImg: "/assets/img/bulle-ia-avant-la-tempete.webp"
 aliases:
   - "/2026-10-30-ai-bubble-before-the-storm-en/"
 related:
@@ -55,11 +56,15 @@ At the center of it all is compute. According to estimates in circulation, Alpha
 
 They came with quarterly earnings. On the evening of October 28, Alphabet reported 103% growth at Google Cloud. But the group spent $51.4 billion on capital expenditure in the quarter, leaving free cash flow at -$9.1 billion when analysts expected around -$2.7 billion. The 2026 budget rises to $195-205 billion, and management expects a "significant" increase in 2027. The next day, the stock lost 12.6% and roughly $500 billion in value, [its worst session](https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/) according to several outlets.
 
+![Cloud growth in Q3 2026: Google Cloud +103%, Microsoft Azure +48%, AWS +39%](/assets/img/ai-bubble-cloud-growth.svg)
+
 Amazon [followed on the evening of the 29th](https://www.cnbc.com/2026/10/29/aws-q3-earnings-report-2026.html). AWS posted its fastest growth since late 2021, at 39%, with a $578 billion backlog. But trailing twelve-month free cash flow fell to -$42.4 billion, and long-term debt went from $65.6 to $173.1 billion in nine months. The stock fell 6 to 7% after the close.
 
 Intel, on the 30th, is a separate case. Its collapse, which [CNBC](https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html) tied to the PC slowdown, also stems from a manufacturing incident, with no direct link to AI. In this climate, the market didn't sort things out.
 
 Microsoft was spared. Azure grew 48%, capital spending came in below what the company had guided, and free cash flow beat expectations by $10 billion. The stock rose as much as 4% after the release. The gusts hit those who pay for AI without being able to show the return yet.
+
+![Stock moves in late October 2026: Intel down as much as 30%, Alphabet down 12.6%, Amazon down about 7%, Microsoft up as much as 4%](/assets/img/ai-bubble-market-reaction.svg)
 
 Last year, I wrote about [Sam Altman's statements on the bubble](/en/sam-altman-ai-bubble-markets-analysis/). The OpenAI CEO spoke of a "grain of truth" that gets smart people overexcited. The grain of truth is still there, as cloud growth rates show. Its price is what worries people.
 
@@ -87,9 +92,13 @@ A storm moves things as much as it destroys them. When the wind drops, the terra
 
 On October 30, Capgemini [reported](https://www.globenewswire.com/news-release/2026/10/30/3392023/0/fr/la-dynamique-du-3%C3%A8me-trimestre-2026-conduit-capgemini-%C3%A0-relever-ses-perspectives-2026.html) quarterly revenue of €6.07 billion, up 11.7% at constant exchange rates, and raised its full-year target. The group has 417,500 employees, 18% more than a year ago, mostly thanks to the acquisition of WNS, which is largely based in India. In France, it signed a collective voluntary departure agreement in May covering 2,409 jobs, about 7% of its French workforce. One figure goes almost unnoticed: bookings grew only 3.4%, three times slower than revenue.
 
+![Capgemini in Q3 2026: revenue +11.7%, bookings +3.4%, group headcount +18%](/assets/img/ai-bubble-capgemini.svg)
+
 The rest of the sector is moving cautiously. Numeum, the French digital industry body, [forecasts 3% growth](https://www.lemondeinformatique.fr/actualites/lire-numeum-prevoit-3-de-croissance-du-marche-numerique-en-2026-100693.html) for the French digital market in 2026, but only 1.4% for IT services firms, and 35% of them expect lower margins. Sopra Steria posted 4.3% organic growth in the third quarter.
 
 The youngest feel the ground move the most. According to the [2026 Numeum-KPMG survey](https://kpmg.com/fr/fr/media/press-releases/2026/10/esn-ict-etude-ia-2026.html), 62% of French IT services firms say AI is already weighing on their hiring, 47% require AI skills from the start of a career, and 22% see junior hiring falling sharply, versus 9% rising. In the United States, a Stanford study based on ADP payroll data found employment 19% lower in June 2026 among 22-25 year-olds in AI-exposed jobs. According to Indeed, 71% of the increase in developer job postings between May 2025 and May 2026 was for senior roles. The French executive recruitment agency Apec still forecasts about 61,000 IT executive hires in 2026, up 4%, but those projections predate the negative GDP figure.
+
+![Numeum-KPMG 2026 survey: 62% of IT services firms say AI weighs on hiring, 47% require AI skills, 22% see junior hiring falling sharply, 9% rising](/assets/img/ai-bubble-it-services-hiring.svg)
 
 A market correction would speed this up. Companies under pressure look for savings, and AI is the easiest promise to sell to a board. In [my analysis of whether AI will replace developers](/en/will-ai-replace-developers-critical-analysis/), I noted that AI excels at repetitive tasks, scaffolding, test generation and documentation, and that the profession is shifting toward architecture. Those are exactly the tasks juniors used to learn on. In his hearing, Arthur Mensch said AI consumption already amounted to 10% of Mistral's payroll. Behind that ratio, there are jobs.
 
@@ -102,3 +111,5 @@ November 3, the US midterm elections, with the risk of escalation with Iran righ
 And above all, two signals worth more than any trading session: a tech giant cutting its capital spending, or an indebted player like CoreWeave failing to refinance. If either shows up, it will no longer be gusts.
 
 *Figures come from the financial press (CNBC, CNN, Fortune, Bloomberg, Boursorama), Insee, Numeum, Apec and company releases, accessed on October 30, 2026. Prices move fast: some percentages are intraday or after-hours moves.*
+
+*Illustration: "Le Simoun", lithograph by E. Warnots after Jean Portaels, Salon of 1848 (British Museum, public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Le_Simoun_(BM_1861,1012.722).jpg)).*
