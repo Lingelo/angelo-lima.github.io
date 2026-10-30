@@ -34,6 +34,8 @@ faq:
 ---
 Sur Arrakis, une tempête arrive rarement d'un coup. Le vent tourne, l'air se charge, une ligne sombre monte à l'horizon, et ceux qui vivent dans le désert savent qu'à ce moment-là, il faut déjà avoir choisi son abri.
 
+Arrakis, c'est la planète désertique de *Dune*, le roman de Frank Herbert paru en 1965. Toute l'économie de l'Empire y dépend d'une seule ressource, l'épice, qu'on extrait à grands frais sous la menace permanente des tempêtes. J'y repense souvent en regardant l'IA : une économie entière suspendue à une ressource rare et chère, la puissance de calcul, et des entreprises qui investissent des fortunes en pariant que le ciel restera dégagé.
+
 Cette semaine avait cette couleur-là. Le 29 octobre, Alphabet a perdu 12,6 %. Le lendemain, Intel a chuté de près de 30 % et le Nasdaq de plus de 3 %. Le même vendredi matin, l'Insee annonçait un recul du PIB français. Rien de tout ça n'est encore un éclatement de bulle. Ce sont des rafales, et elles disent d'où le vent souffle.
 
 > **L'essentiel**
