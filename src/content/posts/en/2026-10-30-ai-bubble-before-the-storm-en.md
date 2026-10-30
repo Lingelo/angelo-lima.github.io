@@ -32,7 +32,7 @@ faq:
   - q: "Are IT services firms and junior developers at risk?"
     a: "Capgemini signed a collective voluntary departure agreement covering 2,409 jobs in France in May 2026, while reporting 11.7% growth in Q3. According to the 2026 Numeum-KPMG survey, 22% of French IT services firms see junior hiring falling sharply versus 9% rising, and 47% require AI skills from the start of a career."
 ---
-A storm rarely arrives all at once. The wind shifts, the air thickens, a dark line rises on the horizon, and people who live in the desert know that by then, they should already have chosen their shelter.
+On Arrakis, a storm rarely arrives all at once. The wind shifts, the air thickens, a dark line rises on the horizon, and people who live in the desert know that by then, they should already have chosen their shelter.
 
 This week had that color. On October 29, Alphabet lost 12.6%. The next day, Intel fell almost 30% and the Nasdaq more than 3%. That same Friday morning, Insee announced that French GDP had shrunk. None of this is a bubble bursting yet. These are gusts, and they tell you which way the wind is blowing.
 
@@ -50,7 +50,7 @@ The first signs came from the debt market, which few people watch. In mid-Octobe
 
 Elsewhere, the storm has already passed. In China, the STAR50 AI index has lost about 40% since its July peak, wiping out some $480 billion according to [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/ai-bubble-bursts-china-wiping-195630824.html). In Frankfurt, the ECB has listed an AI valuation correction among the main risks to the euro area since May, and five of its economists consider it likely even if the technology delivers.
 
-At the center of it all is compute. According to estimates in circulation, Alphabet, Amazon, Microsoft and Meta will spend between $725 and $760 billion on capital expenditure this year. Nvidia is financing up to $105 billion for an OpenAI data center in Ohio, according to [CNBC](https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html). The supplier lends to its customer so the customer can buy its product. That kind of arrangement holds up fine as long as money keeps flowing. The bill is physical too: data centers used 448 TWh in 2025 and are projected to reach 945 TWh in 2030, roughly Japan's consumption, as I detailed in [my piece on AI's ecological footprint](/en/ai-ecology-2026-prompt-infrastructure-en/).
+At the center of it all is compute, the spice of this economy. According to estimates in circulation, Alphabet, Amazon, Microsoft and Meta will spend between $725 and $760 billion on capital expenditure this year. Nvidia is financing up to $105 billion for an OpenAI data center in Ohio, according to [CNBC](https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html). The supplier lends to its customer so the customer can buy its product. That kind of arrangement holds up fine as long as money keeps flowing. The bill is physical too: data centers used 448 TWh in 2025 and are projected to reach 945 TWh in 2030, roughly Japan's consumption, as I detailed in [my piece on AI's ecological footprint](/en/ai-ecology-2026-prompt-infrastructure-en/).
 
 ## The first gusts
 

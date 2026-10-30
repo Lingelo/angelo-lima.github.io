@@ -32,7 +32,7 @@ faq:
   - q: "Les ESN et les développeurs juniors sont-ils menacés ?"
     a: "Capgemini a signé en mai 2026 une rupture conventionnelle collective portant sur 2 409 postes en France, tout en affichant 11,7 % de croissance au troisième trimestre. Selon l'enquête Numeum-KPMG 2026, 22 % des ESN voient le recrutement des juniors en forte baisse contre 9 % en hausse, et 47 % exigent une maîtrise de l'IA dès le début de carrière."
 ---
-Une tempête arrive rarement d'un coup. Le vent tourne, l'air se charge, une ligne sombre monte à l'horizon, et ceux qui vivent dans le désert savent qu'à ce moment-là, il faut déjà avoir choisi son abri.
+Sur Arrakis, une tempête arrive rarement d'un coup. Le vent tourne, l'air se charge, une ligne sombre monte à l'horizon, et ceux qui vivent dans le désert savent qu'à ce moment-là, il faut déjà avoir choisi son abri.
 
 Cette semaine avait cette couleur-là. Le 29 octobre, Alphabet a perdu 12,6 %. Le lendemain, Intel a chuté de près de 30 % et le Nasdaq de plus de 3 %. Le même vendredi matin, l'Insee annonçait un recul du PIB français. Rien de tout ça n'est encore un éclatement de bulle. Ce sont des rafales, et elles disent d'où le vent souffle.
 
@@ -50,7 +50,7 @@ Les premiers signes sont venus du marché de la dette, que peu de gens regardent
 
 Ailleurs, la tempête est déjà passée. En Chine, l'indice IA STAR50 a perdu environ 40 % depuis son sommet de juillet, soit quelque 480 milliards de dollars effacés selon [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/ai-bubble-bursts-china-wiping-195630824.html). À Francfort, la BCE classe depuis mai une correction des valeurs IA parmi les grands risques pour la zone euro, et cinq de ses économistes la jugent probable même si la technologie tient ses promesses.
 
-Au centre de tout, il y a la puissance de calcul. Selon les estimations qui circulent, Alphabet, Amazon, Microsoft et Meta dépenseront entre 725 et 760 milliards de dollars en investissements cette année. Nvidia finance jusqu'à 105 milliards de dollars pour un datacenter d'OpenAI dans l'Ohio, selon [CNBC](https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html). Le fournisseur prête à son client pour que celui-ci lui achète sa production. Ce genre de montage tient très bien tant que l'argent circule. La facture est aussi physique : les data centers ont consommé 448 TWh en 2025 et devraient atteindre 945 TWh en 2030, à peu près la consommation du Japon, comme je le détaillais dans [mon article sur l'écologie de l'IA](/fr/ia-ecologie-2026-prompt-infrastructure/).
+Au centre de tout, il y a la puissance de calcul, l'épice de cette économie. Selon les estimations qui circulent, Alphabet, Amazon, Microsoft et Meta dépenseront entre 725 et 760 milliards de dollars en investissements cette année. Nvidia finance jusqu'à 105 milliards de dollars pour un datacenter d'OpenAI dans l'Ohio, selon [CNBC](https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html). Le fournisseur prête à son client pour que celui-ci lui achète sa production. Ce genre de montage tient très bien tant que l'argent circule. La facture est aussi physique : les data centers ont consommé 448 TWh en 2025 et devraient atteindre 945 TWh en 2030, à peu près la consommation du Japon, comme je le détaillais dans [mon article sur l'écologie de l'IA](/fr/ia-ecologie-2026-prompt-infrastructure/).
 
 ## Les premières rafales
 
