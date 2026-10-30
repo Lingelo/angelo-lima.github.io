@@ -1,0 +1,106 @@
+---
+title: "The AI Bubble: a Coriolis Storm on the Horizon"
+subtitle: "As on Arrakis, the storm shows itself before it strikes. October 2026's warning signs, what would be swept away, and where France and tech jobs stand in the desert"
+description: "Alphabet -12.6%, AI credit under strain, French GDP shrinking, IT services firms cutting jobs: the signs of an approaching AI storm, read through Dune."
+date: 2026-10-30T20:00:00.000Z
+lang: en
+translationKey: "ai-bubble-coriolis-storm-2026"
+slug: "ai-bubble-coriolis-storm-dune-en"
+tags:
+  - "IA"
+  - "Tech"
+  - "Development"
+author: "Angelo Lima"
+thumbnail: "/assets/img/sam-altman-bulle-ia.webp"
+shareImg: "/assets/img/sam-altman-bulle-ia.webp"
+aliases:
+  - "/2026-10-30-ai-bubble-coriolis-storm-dune-en/"
+related:
+  - "sam-altman-ai-bubble"
+  - "anthropic-ipo-s1-2026"
+  - "ai-replacing-developers-analysis"
+faq:
+  - q: "Did the AI bubble burst in October 2026?"
+    a: "No. In late October 2026, AI stocks went through a sharp correction: Alphabet lost 12.6% on October 29, Intel up to 30% and the Nasdaq more than 3% on October 30. But the S&P 500 stayed close to its record and AI demand kept growing. Analysts called it a correction, with more worrying signs of strain in credit markets."
+  - q: "Why did AI stocks fall in late October 2026?"
+    a: "Investors punished the cost of AI rather than its demand. Alphabet reported negative free cash flow of $9.1 billion in Q3 2026 despite 103% growth at Google Cloud, and Amazon's trailing twelve-month free cash flow fell to -$42.4 billion. Microsoft, which spent less than expected, was rewarded instead."
+  - q: "What are the warning signs of an AI bubble bursting?"
+    a: "The most closely watched signals in October 2026 were in credit: CoreWeave's credit default swaps traded above 1,100 basis points and Oracle's hit a record 288 basis points on October 15. A real burst would more likely show up as a heavily indebted player unable to refinance, or a tech giant cutting its capital spending."
+  - q: "Is France exposed to an AI bubble correction?"
+    a: "France is exposed mostly indirectly. French GDP shrank 0.1% in Q3 2026 according to Insee, unemployment stood at 8.3% in Q2, and the 10-year OAT yield went above 5% in October for the first time since 2002. The ECB says Europe has less fiscal and monetary room than in 2000 to absorb a shock coming from US tech."
+  - q: "Are IT services firms and junior developers at risk?"
+    a: "Capgemini signed a collective voluntary departure agreement covering 2,409 jobs in France in May 2026, while reporting 11.7% growth in Q3. According to the 2026 Numeum-KPMG survey, 22% of French IT services firms see junior hiring falling sharply versus 9% rising, and 47% require AI skills from the start of a career."
+---
+On Arrakis, a Coriolis storm announces itself long before it strikes. The wind shifts, the air fills with static, then a dark line forms on the horizon. In *Dune*, Frank Herbert describes winds of several hundred kilometers an hour and walls of sand that can strip flesh to the bone. Once the wall arrives, it is too late to decide where to take shelter. The Fremen survive because they know how to read the sky beforehand.
+
+This week, I felt like I was watching that sky. On October 29, Alphabet lost 12.6%. The next day, Intel fell almost 30% and the Nasdaq more than 3%. That same Friday morning, Insee announced that French GDP had shrunk. These are the first gusts. They tell you which way the wind is blowing.
+
+> **In brief**
+>
+> - **What:** a sharp correction in AI stocks on October 29 and 30, 2026, triggered by results from Alphabet, Amazon and Intel. Not yet a bubble bursting.
+> - **Key figures:** Alphabet -12.6% in one session and -$9.1 billion of free cash flow in Q3. Intel down as much as 30%, its worst day since 1974. Nasdaq -3% on October 30.
+> - **What the market punished:** the cost of AI. Demand keeps growing (Google Cloud +103%, AWS +39%, Azure +48%).
+> - **The most worrying sign:** credit. CoreWeave and Oracle are paying for their debt at the price of fragile companies.
+> - **In France:** GDP -0.1% in Q3, unemployment at 8.3%, 10-year OAT yield above 5%. And Capgemini is cutting 2,409 jobs in France while growing worldwide.
+
+## The sky changes color
+
+The first signs came from where few people look: the debt market. In mid-October, the cost of insuring against a default by CoreWeave, which rents computing power to AI companies, went above 1,100 basis points. That is distressed territory. Its bonds due 2032 traded around 77 cents on the dollar. Oracle's, which builds data centers for OpenAI, hit a record 288 basis points on October 15. An Evercore ISI trader quoted by [CNBC](https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html) put it in two words: the market is saying "no más" to AI debt without operating cash flow behind it.
+
+Meanwhile, another desert has already had its storm. In China, the STAR50 AI index has lost about 40% since its July peak, wiping out some $480 billion according to [Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/ai-bubble-bursts-china-wiping-195630824.html). In Frankfurt, the ECB has listed an AI valuation correction among the main risks to the euro area since May, and five of its economists consider it likely even if the technology delivers.
+
+And then there is the spice. On Arrakis, the whole economy of the Empire depends on melange, extracted at enormous cost on a hostile planet. In 2026, the spice is called compute. According to estimates in circulation, Alphabet, Amazon, Microsoft and Meta will spend between $725 and $760 billion on capital expenditure this year. Nvidia, the spice merchant, is financing up to $105 billion for an OpenAI data center in Ohio, according to [CNBC](https://www.cnbc.com/2026/08/17/nvidia-financing-open-ai-data-center-ohio.html). The supplier lends to its customer so the customer can buy its product. When the wind picks up, these arrangements are the first to whistle.
+
+## The first gusts
+
+The gusts came with quarterly earnings. On the evening of October 28, Alphabet reported 103% growth at Google Cloud. But the group spent $51.4 billion on capital expenditure in the quarter, leaving free cash flow at -$9.1 billion when analysts expected around -$2.7 billion. The 2026 budget rises to $195-205 billion, and management expects a "significant" increase in 2027. The next day, the stock lost 12.6% and roughly $500 billion in value, [its worst session](https://fortune.com/2026/10/28/alphabet-google-stock-drops-cloud-revenue-doubles-free-cash-flow-negative/) according to several outlets.
+
+Amazon followed on the evening of the 29th. AWS posted its fastest growth since late 2021, at 39%, with a $578 billion backlog. But trailing twelve-month free cash flow fell to -$42.4 billion, and long-term debt went from $65.6 to $173.1 billion in nine months. The stock fell 6 to 7% after the close.
+
+Intel, on the 30th, is a separate case. Its collapse came from a disappointing outlook for the PC market and a manufacturing incident, with no direct link to AI. But in a storm, the sand does not sort.
+
+Microsoft shows where the shelter is. Azure grew 48%, capital spending came in below what the company had guided, and free cash flow beat expectations by $10 billion. The stock rose as much as 4% after the release. The gusts hit those who pay for AI without being able to show the return yet.
+
+Last year, I wrote about [Sam Altman's statements on the bubble](/en/sam-altman-ai-bubble-markets-analysis/). The OpenAI CEO spoke of a "grain of truth" that gets smart people overexcited. The grain of truth is still there, as cloud growth rates show. Its price is what worries people.
+
+## What the storm would sweep away
+
+The S&P 500 is only a few percent off its record, and most analysts quoted by [CNBC](https://www.cnbc.com/2026/10/30/ai-stocks-selloff-ai-spending-returns.html) call this a correction like others before it. For the real storm to arrive, funding would have to dry up. A heavily indebted player unable to refinance, an OpenAI partner pulling out, or a giant announcing it is cutting capital spending. A bubble usually bursts when money stops flowing.
+
+If it came, the storm would first take whatever sits on the sand without foundations. Compute providers financed on credit, and hardware suppliers whose entire growth depends on data centers. It would also hit Anthropic's IPO, expected around November 16, whose [S-1 I went through](/en/anthropic-ipo-s1-filing-en/) this week. Listing on the Nasdaq under this sky will be a test.
+
+## France, out in the open desert
+
+In the desert, what decides survival when the storm comes is your water reserves and how close the shelter is. France faces this sky with low reserves and few rocks around it.
+
+On October 30, [Insee](https://www.insee.fr/fr/statistiques/9111036) reported that GDP fell 0.1% in the third quarter, after stagnating in the second. Economists had expected +0.1%. Exports fell 1.7%, investment 0.6%, and growth already locked in for 2026 is down to 0.2%. Unemployment stood at 8.3% in the second quarter.
+
+Water is also getting more expensive. The 10-year OAT yield crossed 5% in October for the first time since 2002 and reached 5.14% on October 22, according to [Boursorama](https://www.boursorama.com/bourse/actualites/taux-france-le-rendement-de-l-oat-a-dix-ans-grimpe-a-5-14-actualise-784f4f19fe052c6a20a06ce358d9c9c3). The spread over Germany went above 160 basis points. Moody's kept its Aa3 rating with a negative outlook, but doubts a compromise can be reached on the budget and its €43 billion of savings. Oil, pushed by the conflict between the United States and Iran, trades above $110 a barrel for Brent.
+
+ECB economists point out that Europe has less fiscal and monetary room than in 2000 to absorb a shock coming from US tech. A country borrowing at 5% with a deficit around 5% of GDP is exactly what they describe. For France, the danger would be an AI storm pushing investors away from anything that looks fragile, French government debt included.
+
+The Paris stock exchange ended October almost flat. AI hardware names fell (STMicroelectronics, Schneider Electric, Legrand), while IT services stocks rose.
+
+## After it passes, the dunes have moved
+
+A Coriolis storm redraws the desert. When the wind drops, dunes have advanced, some installations have vanished under the sand, others have been laid bare. That is already happening to tech jobs, before the storm even arrives.
+
+On October 30, Capgemini reported quarterly revenue of €6.07 billion, up 11.7% at constant exchange rates, and raised its full-year target. The group has 417,500 employees, 18% more than a year ago, mostly thanks to the acquisition of WNS, which is largely based in India. In France, it signed a collective voluntary departure agreement in May covering 2,409 jobs, about 7% of its French workforce. One figure goes almost unnoticed: bookings grew only 3.4%, three times slower than revenue.
+
+The rest of the sector is moving cautiously. Numeum, the French digital industry body, forecasts 3% growth for the French digital market in 2026, but only 1.4% for IT services firms, and 35% of them expect lower margins. Sopra Steria posted 4.3% organic growth in the third quarter.
+
+The sand moves most at the foot of the dune. According to the [2026 Numeum-KPMG survey](https://kpmg.com/fr/fr/media/press-releases/2026/10/esn-ict-etude-ia-2026.html), 62% of French IT services firms say AI is already weighing on their hiring, 47% require AI skills from the start of a career, and 22% see junior hiring falling sharply, versus 9% rising. In the United States, a Stanford study based on ADP payroll data found employment 19% lower in June 2026 among 22-25 year-olds in AI-exposed jobs. According to Indeed, 71% of the increase in developer job postings between May 2025 and May 2026 was for senior roles. The French executive recruitment agency Apec still forecasts about 61,000 IT executive hires in 2026, up 4%, but those projections predate the negative GDP figure.
+
+A market storm would speed this up. Companies under pressure look for savings, and AI is the easiest promise to sell to a board. In [my analysis of whether AI will replace developers](/en/will-ai-replace-developers-critical-analysis/), I noted that AI excels at repetitive tasks, scaffolding, test generation and documentation, and that the profession is shifting toward architecture. Those are exactly the tasks juniors used to learn on.
+
+The profiles that hold are the ones rooted in rock: architects, tech leads, security and cloud specialists, and people who know how to orchestrate models instead of competing with them. The [Forward Deployed Engineer](/en/forward-deployed-engineer-fde-role-en/) role, which AI vendors are hiring by the hundreds to plug their models into customers' systems, is one example.
+
+## Reading the sky
+
+The Fremen don't pretend to stop storms. They watch them come and know where to stand. Here is the sky I'm watching in the coming weeks.
+
+November 3, the US midterm elections, with the risk of escalation with Iran right after. Around November 16, Anthropic's IPO. November 17, Nvidia's earnings, the spice merchant. November 27, the detailed French GDP figures, with the budget vote and the spread over Germany in the background. And two signals worth more than any trading session: a tech giant cutting its capital spending, or an indebted player like CoreWeave failing to refinance.
+
+If either shows up, it will no longer be gusts.
+
+*Figures come from the financial press (CNBC, CNN, Fortune, Bloomberg, Boursorama), Insee, Numeum, Apec and company releases, accessed on October 30, 2026. Prices move fast: some percentages are intraday or after-hours moves.*
