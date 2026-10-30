@@ -34,7 +34,7 @@ faq:
 ---
 On Arrakis, a storm rarely arrives all at once. The wind shifts, the air thickens, a dark line rises on the horizon, and people who live in the desert know that by then, they should already have chosen their shelter.
 
-Arrakis is the desert planet of *Dune*, Frank Herbert's 1965 novel. The whole economy of the Empire depends on a single resource there, the spice, extracted at great cost under the constant threat of storms. Someone suggested the reference to me recently, and it fits AI uncannily well: an entire economy hanging on one scarce, expensive resource, compute, and companies investing fortunes on the bet that the sky will stay clear.
+Arrakis is the desert planet of *Dune*, Frank Herbert's 1965 novel. The whole economy of the Empire depends on a single resource there, the spice, extracted at great cost under the constant threat of storms. The image fits AI uncannily well: an entire economy hanging on one scarce, expensive resource, compute, and companies investing fortunes on the bet that the sky will stay clear.
 
 This week had that color. On October 29, Alphabet lost 12.6%. The next day, Intel fell almost 30% and the Nasdaq more than 3%. That same Friday morning, Insee announced that French GDP had shrunk. None of this is a bubble bursting yet. These are gusts, and they tell you which way the wind is blowing.
 
